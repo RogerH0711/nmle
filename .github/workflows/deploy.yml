@@ -1,25 +1,49 @@
-# push 到 main 時建置 web/ 並部署到 GitHub Pages。
+# push 到 main 時先跑測試，通過才建置 web/ 並部署到 GitHub Pages。
 # 題庫（data/）由 Roger 在本機用 pipeline 產生後 commit，這裡不重跑 pipeline。
-name: Deploy to GitHub Pages
+# 資料庫 migration 不在這裡套用，由 Roger 在本機用 Supabase CLI 推送（見 supabase/README.md）。
+name: Test and deploy
 
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-# 同時只跑一個部署；新的 push 進來時不取消正在進行的部署
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            web/package-lock.json
+
+      # 根目錄只需要 PGlite；--ignore-scripts 跳過 Supabase CLI 下載執行檔（測試用不到）
+      - name: 安裝套件
+        run: |
+          npm ci --ignore-scripts
+          npm ci --prefix web
+
+      - name: 資料庫測試（權限、判分、排行榜）
+        run: npm run test:db
+
+      - name: 錯題複習規則測試
+        run: npm test --prefix web
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write # configure-pages 要讀 Pages 設定
     steps:
       - uses: actions/checkout@v7
 
@@ -32,18 +56,29 @@ jobs:
       - run: npm ci
         working-directory: web
 
+      # 含 TypeScript 型別檢查
       - run: npm run build
         working-directory: web
 
       - uses: actions/configure-pages@v6
+        if: github.event_name != 'pull_request'
 
       - uses: actions/upload-pages-artifact@v5
+        if: github.event_name != 'pull_request'
         with:
           path: web/dist
 
   deploy:
     needs: build
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    # 同時只跑一個部署；新的 push 進來時不取消正在進行的部署
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

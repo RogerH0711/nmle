@@ -1,0 +1,17 @@
+{
+  "name": "nmle",
+  "private": true,
+  "description": "醫師一階刷題：資料庫測試與 Supabase CLI（網站本身在 web/）",
+  "type": "module",
+  "scripts": {
+    "test": "npm run test:db && npm --prefix web test",
+    "test:db": "node --test \"supabase/tests/*.test.js\"",
+    "db:status": "supabase migration list --linked",
+    "db:push:dry": "supabase db push --linked --include-seed --dry-run",
+    "db:push": "supabase db push --linked --include-seed"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.10",
+    "supabase": "2.121.0"
+  }
+}

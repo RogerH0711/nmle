@@ -271,7 +271,7 @@ Supabase（登入、進度、排行榜）← GitHub Pages 做不到的部分
 6. **自訂網域**：履歷上的連結比較好看，Google 驗證網域所有權也比較好處理。
 7. **隱私權政策和服務條款頁**：Google 發布登入應用程式時需要，公開服務本來也該有；寫清楚收集哪些資料、統計只做匿名彙總。
 8. **README**：架構圖、截圖、技術重點與取捨。
-9. **自動化測試進 CI**：複習排程的單元測試、題庫抽檢，每次 push 自動跑。
+9. **自動化測試進 CI**：資料庫測試與複習排程的單元測試已完成，每次 push 自動跑、沒過不部署；題庫抽檢還沒加。
 10. **Dcard 板規**：發文前確認醫師版是否允許分享自製工具，必要時先問板主。
 
 ## 開發里程碑與時程
@@ -327,5 +327,6 @@ Supabase（登入、進度、排行榜）← GitHub Pages 做不到的部分
 1. 先讀完這份 `plan.md` 和 `characters.md`。
 2. 階段 0、1 已完成：題庫 pipeline（`pipeline/`）、110–115 年題庫（`data/`）、網站（`web/`）、Supabase 登入與同步、錯題複習、GitHub Pages 自動部署。
 3. 下一步是階段 2：排行榜（週榜正確率、連續作答天數、模擬考成績），對錯改由資料庫判斷；兩位角色的立繪與台詞（台詞 JSON 依 `characters.md` 最後的格式）；角色模式開關。
-4. 題目正確率優先：改 pipeline 後重跑 `pipeline/build_exam.py --years 110 115`，確認每份考卷的自動檢查都通過，並和改之前的輸出比對差異；正解有變動就重跑 `pipeline/export_keys.py`，請 Roger 在 SQL Editor 執行產生的 `supabase/seed/question_keys.sql`。
-5. 資料庫變更寫成 `supabase/migrations/` 下的新檔案，由 Roger 在 SQL Editor 執行；每張新表都要開 Row Level Security，執行後從外部測一次未登入的讀寫。
+4. 題目正確率優先：改 pipeline 後重跑 `pipeline/build_exam.py --years 110 115`，確認每份考卷的自動檢查都通過，並和改之前的輸出比對差異；正解有變動就重跑 `pipeline/export_keys.py`，再由 Roger 執行 `npm run db:push` 更新資料庫。
+5. 資料庫變更寫成 `supabase/migrations/` 下的新檔案，並在 `supabase/tests/` 加測試（`npm run test:db`，用 PGlite 模擬 Supabase）；每張新表都要開 Row Level Security。推送流程見 `supabase/README.md`（Supabase CLI，`npm run db:push` 由 Roger 執行），推送後從外部測一次未登入的讀寫。
+6. GitHub Actions 每次 push 先跑資料庫測試和 `web/` 的單元測試，沒過就不部署。

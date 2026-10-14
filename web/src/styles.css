@@ -80,6 +80,65 @@ select {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-bottom: 12px;
+}
+
+.account {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px 10px;
+  font-size: 0.85rem;
+}
+
+.account .name {
+  font-weight: 600;
+}
+
+.sync {
+  color: var(--muted);
+}
+
+.sync.synced {
+  color: var(--right);
+}
+
+.sync.error {
+  color: var(--wrong);
+}
+
+.review {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+}
+
+.review-stats {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+button.small {
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button.small:disabled {
+  opacity: 0.4;
+  cursor: default;
 }
 
 .controls select {

@@ -1,14 +1,20 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import type { ExamFile, Index, Letter, Question } from './types'
+import type { User } from '@supabase/supabase-js'
+import type { Index, Letter, Question } from './types'
+import { imageUrl, loadIndex, loadPaper, loadQuestions } from './bank'
+import { recordAnswer, switchUser, syncNow, useAnswers, type SyncStatus } from './answers'
+import { reviewStates, reviewSummary } from './review'
+import { signInWithGoogle, signOut, supabase } from './supabase'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
-const BASE = import.meta.env.BASE_URL
 
 type Order = 'seq' | 'random'
 
-// 一回合的狀態：題目順序、目前位置、每題選了什麼。存在 localStorage，重新整理不會不見。
+// 一回合：依考卷刷題（paper）或錯題複習（review）。題目可以跨考卷，用題目 id 串起來。
+// 存在 localStorage，重新整理不會不見。
 interface Run {
-  paperId: string
+  kind: 'paper' | 'review'
+  paperId: string | null
   subject: string
   order: Order
   queue: string[]
@@ -16,7 +22,7 @@ interface Run {
   picks: Record<string, Letter>
 }
 
-const RUN_KEY = 'nmle.run.v1'
+const RUN_KEY = 'nmle.run.v2'
 
 function loadRun(): Run | null {
   try {
@@ -48,9 +54,8 @@ function isCorrect(q: Question, pick: Letter) {
   return q.free_point || q.answers.includes(pick)
 }
 
-function buildQueue(questions: Question[], subject: string, order: Order) {
-  const pool = questions.filter((q) => q.valid && (subject === 'all' || q.subject === subject))
-  const ids = pool.map((q) => q.id)
+function paperQueue(questions: Question[], subject: string, order: Order) {
+  const ids = questions.filter((q) => q.valid && (subject === 'all' || q.subject === subject)).map((q) => q.id)
   return order === 'random' ? shuffle(ids) : ids
 }
 
@@ -67,68 +72,91 @@ function pickLine(kind: keyof typeof FEEDBACK, seed: number) {
 
 export default function App() {
   const [index, setIndex] = useState<Index | null>(null)
-  const [exam, setExam] = useState<ExamFile | null>(null)
+  const [questions, setQuestions] = useState<Map<string, Question>>(new Map())
   const [run, setRun] = useState<Run | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [user, setUser] = useState<User | null>(null)
+  const answers = useAnswers()
+
+  // 登入狀態：切換本機紀錄的擁有者並同步。
+  // supabase 文件提醒不要在 onAuthStateChange 裡直接呼叫其他 supabase API，所以延後執行。
+  useEffect(() => {
+    const { data } = supabase.auth.onAuthStateChange((event, session) => {
+      setUser(session?.user ?? null)
+      setTimeout(() => void switchUser(session?.user.id ?? null), 0)
+      if (event === 'SIGNED_IN' && window.location.search.includes('code=')) {
+        window.history.replaceState(null, '', window.location.pathname) // 拿掉 OAuth 回傳的 ?code=
+      }
+    })
+    return () => data.subscription.unsubscribe()
+  }, [])
+
+  // 讓一回合的題目都載入後再開始
+  const startRun = useCallback(async (idx: Index, next: Run) => {
+    try {
+      const map = await loadQuestions(idx, next.queue)
+      setQuestions((prev) => new Map([...prev, ...map]))
+      setRun({ ...next, queue: next.queue.filter((id) => map.get(id)?.valid) })
+    } catch {
+      setError('題庫載入失敗')
+    }
+  }, [])
+
+  const openPaper = useCallback(
+    async (idx: Index, paperId: string, subject = 'all', order: Order = 'seq') => {
+      try {
+        const file = await loadPaper(idx, paperId)
+        await startRun(idx, {
+          kind: 'paper', paperId, subject, order,
+          queue: paperQueue(file.questions, subject, order), pos: 0, picks: {},
+        })
+      } catch {
+        setError('考卷載入失敗')
+      }
+    },
+    [startRun],
+  )
 
   // 載入考卷清單，恢復上次的回合
   useEffect(() => {
-    fetch(`${BASE}index.json`)
-      .then((r) => r.json())
-      .then((idx: Index) => {
+    loadIndex()
+      .then((idx) => {
         setIndex(idx)
         const saved = loadRun()
-        const paperId = saved && idx.papers.some((p) => p.id === saved.paperId) ? saved.paperId : idx.papers[0]?.id
-        if (paperId) openPaper(idx, paperId, saved?.paperId === paperId ? saved : null)
+        if (saved && saved.queue.length) void startRun(idx, saved)
+        else if (idx.papers[0]) void openPaper(idx, idx.papers[0].id)
       })
       .catch(() => setError('題庫載入失敗'))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  const openPaper = (idx: Index, paperId: string, resume: Run | null, subject = 'all', order: Order = 'seq') => {
-    const info = idx.papers.find((p) => p.id === paperId)!
-    fetch(`${BASE}${info.file}`)
-      .then((r) => r.json())
-      .then((data: ExamFile) => {
-        setExam(data)
-        const valid = new Set(data.questions.filter((q) => q.valid).map((q) => q.id))
-        if (resume && resume.queue.every((id) => valid.has(id))) {
-          setRun(resume)
-        } else {
-          setRun({ paperId, subject, order, queue: buildQueue(data.questions, subject, order), pos: 0, picks: {} })
-        }
-      })
-      .catch(() => setError('考卷載入失敗'))
-  }
+  }, [startRun, openPaper])
 
   useEffect(() => {
     if (run) saveRun(run)
   }, [run])
 
-  const byId = useMemo(() => new Map(exam?.questions.map((q) => [q.id, q]) ?? []), [exam])
+  const review = useMemo(() => reviewSummary(reviewStates(answers.records)), [answers.records])
   const done = run ? run.pos >= run.queue.length : false
-  const current = run && !done ? byId.get(run.queue[run.pos]) : undefined
+  const current = run && !done ? questions.get(run.queue[run.pos]) : undefined
   const picked = current && run ? run.picks[current.id] : undefined
 
   const stats = useMemo(() => {
-    if (!run) return { answered: 0, correct: 0 }
     let answered = 0
     let correct = 0
-    for (const id of run.queue) {
-      const q = byId.get(id)
-      const p = run.picks[id]
+    for (const id of run?.queue ?? []) {
+      const q = questions.get(id)
+      const p = run?.picks[id]
       if (q && p) {
         answered++
         if (isCorrect(q, p)) correct++
       }
     }
     return { answered, correct }
-  }, [run, byId])
+  }, [run, questions])
 
   const pick = useCallback(
     (letter: Letter) => {
       if (!run || !current || picked) return
       setRun({ ...run, picks: { ...run.picks, [current.id]: letter } })
+      recordAnswer(current.id, letter, isCorrect(current, letter))
     },
     [run, current, picked],
   )
@@ -136,24 +164,30 @@ export default function App() {
   const go = useCallback(
     (delta: number) => {
       if (!run) return
-      const pos = Math.max(0, Math.min(run.queue.length, run.pos + delta))
-      setRun({ ...run, pos })
+      setRun({ ...run, pos: Math.max(0, Math.min(run.queue.length, run.pos + delta)) })
     },
     [run],
   )
 
   const restart = (subject: string, order: Order, onlyWrong = false) => {
-    if (!exam || !run || !index) return
-    let queue = buildQueue(exam.questions, subject, order)
+    if (!index || !run) return
     if (onlyWrong) {
-      queue = run.queue.filter((id) => {
-        const q = byId.get(id)
+      const wrong = run.queue.filter((id) => {
+        const q = questions.get(id)
         const p = run.picks[id]
         return q && p && !isCorrect(q, p)
       })
-      if (order === 'random') queue = shuffle(queue)
+      setRun({ ...run, subject, order, queue: order === 'random' ? shuffle(wrong) : wrong, pos: 0, picks: {} })
+    } else if (run.kind === 'review') {
+      startReview()
+    } else if (run.paperId) {
+      void openPaper(index, run.paperId, subject, order)
     }
-    setRun({ paperId: run.paperId, subject, order, queue, pos: 0, picks: {} })
+  }
+
+  const startReview = () => {
+    if (!index || !review.due.length) return
+    void startRun(index, { kind: 'review', paperId: null, subject: 'all', order: 'seq', queue: review.due, pos: 0, picks: {} })
   }
 
   // 鍵盤：1–4 或 A–D 作答，Enter／→ 下一題，← 上一題
@@ -175,45 +209,61 @@ export default function App() {
   }, [pick, go, picked])
 
   if (error) return <div className="center">{error}</div>
-  if (!index || !exam || !run) return <div className="center">載入中…</div>
+  if (!index || !run) return <div className="center">載入中…</div>
 
-  const subjectsInPaper = [...new Set(exam.questions.map((q) => q.subject).filter(Boolean))] as string[]
+  const paperQuestions = run.paperId ? [...questions.values()].filter((q) => q.id.startsWith(run.paperId + '_')) : []
+  const subjectsInPaper = [...new Set(paperQuestions.map((q) => q.subject).filter(Boolean))] as string[]
   const accuracy = stats.answered ? Math.round((stats.correct / stats.answered) * 100) : 0
 
   return (
     <div className="app">
       <header className="bar">
         <h1>一階刷題</h1>
-        <div className="controls">
-          <select
-            aria-label="考卷"
-            value={run.paperId}
-            onChange={(e) => openPaper(index, e.target.value, null)}
-          >
-            {index.papers.map((p) => (
-              <option key={p.id} value={p.id}>
-                {p.year} 年{p.session ? `第 ${p.session} 次` : ''} {p.paper}
-              </option>
-            ))}
-          </select>
-          <select aria-label="學科" value={run.subject} onChange={(e) => restart(e.target.value, run.order)}>
-            <option value="all">全部學科</option>
-            {subjectsInPaper.map((s) => (
-              <option key={s} value={s}>
-                {index.subjects[s] ?? s}
-              </option>
-            ))}
-          </select>
-          <select
-            aria-label="順序"
-            value={run.order}
-            onChange={(e) => restart(run.subject, e.target.value as Order)}
-          >
-            <option value="seq">依題號</option>
-            <option value="random">隨機</option>
-          </select>
-        </div>
+        <Account user={user} status={answers.status} pending={answers.records.filter((r) => !r.synced).length} />
       </header>
+
+      <section className="review">
+        <div>
+          <strong>錯題複習</strong>
+          <span className="review-stats">
+            今天到期 {review.due.length} 題・等待中 {review.waiting}・已攻略 {review.done}
+          </span>
+        </div>
+        <button className="primary small" onClick={startReview} disabled={!review.due.length || run.kind === 'review'}>
+          {run.kind === 'review' ? '複習中' : '開始複習'}
+        </button>
+      </section>
+
+      <div className="controls">
+        <select
+          aria-label="考卷"
+          value={run.kind === 'paper' ? (run.paperId ?? '') : ''}
+          onChange={(e) => void openPaper(index, e.target.value)}
+        >
+          {run.kind === 'review' && <option value="">（錯題複習）</option>}
+          {index.papers.map((p) => (
+            <option key={p.id} value={p.id}>
+              {p.year} 年{p.session ? `第 ${p.session} 次` : ''} {p.paper}
+            </option>
+          ))}
+        </select>
+        {run.kind === 'paper' && (
+          <>
+            <select aria-label="學科" value={run.subject} onChange={(e) => restart(e.target.value, run.order)}>
+              <option value="all">全部學科</option>
+              {subjectsInPaper.map((s) => (
+                <option key={s} value={s}>
+                  {index.subjects[s] ?? s}
+                </option>
+              ))}
+            </select>
+            <select aria-label="順序" value={run.order} onChange={(e) => restart(run.subject, e.target.value as Order)}>
+              <option value="seq">依題號</option>
+              <option value="random">隨機</option>
+            </select>
+          </>
+        )}
+      </div>
 
       <div className="progress" aria-hidden>
         <div style={{ width: `${(Math.min(run.pos, run.queue.length) / Math.max(run.queue.length, 1)) * 100}%` }} />
@@ -230,16 +280,16 @@ export default function App() {
       {done ? (
         <Summary
           run={run}
-          byId={byId}
+          questions={questions}
           subjects={index.subjects}
-          onRestart={() => restart(run.subject, run.order)}
+          onRestart={run.kind === 'paper' ? () => restart(run.subject, run.order) : undefined}
           onRetryWrong={() => restart(run.subject, run.order, true)}
         />
       ) : current ? (
         <QuestionCard
           q={current}
+          index={index}
           picked={picked}
-          subjects={index.subjects}
           onPick={pick}
           onNext={() => go(1)}
           onPrev={run.pos > 0 ? () => go(-1) : undefined}
@@ -252,25 +302,66 @@ export default function App() {
   )
 }
 
+const STATUS_TEXT: Record<SyncStatus, string> = {
+  local: '只存在這台裝置',
+  syncing: '同步中…',
+  synced: '已同步',
+  offline: '離線，連線後自動同步',
+  error: '同步失敗',
+}
+
+function Account({ user, status, pending }: { user: User | null; status: SyncStatus; pending: number }) {
+  if (!user) {
+    return (
+      <div className="account">
+        <span className="sync">{STATUS_TEXT.local}</span>
+        <button className="ghost small" onClick={() => void signInWithGoogle()}>
+          用 Google 登入
+        </button>
+      </div>
+    )
+  }
+  const name = (user.user_metadata?.name as string | undefined) ?? user.email
+  return (
+    <div className="account">
+      <span className={`sync ${status}`} title={pending ? `${pending} 筆尚未上傳` : undefined}>
+        {STATUS_TEXT[status]}
+      </span>
+      {status === 'error' && (
+        <button className="ghost small" onClick={() => void syncNow()}>
+          重試
+        </button>
+      )}
+      <span className="name">{name}</span>
+      <button className="ghost small" onClick={() => void signOut()}>
+        登出
+      </button>
+    </div>
+  )
+}
+
 function QuestionCard(props: {
   q: Question
+  index: Index
   picked: Letter | undefined
-  subjects: Record<string, string>
   onPick: (l: Letter) => void
   onNext: () => void
   onPrev?: () => void
   seed: number
 }) {
-  const { q, picked, subjects, onPick, onNext, onPrev, seed } = props
+  const { q, index, picked, onPick, onNext, onPrev, seed } = props
   const correct = picked ? isCorrect(q, picked) : null
+  const paper = index.papers.find((p) => q.id.startsWith(p.id + '_'))
 
   return (
     <main className="card">
       <div className="qhead">
-        <span className="qnum">第 {q.number} 題</span>
+        <span className="qnum">
+          {paper && `${paper.year}-${paper.session ?? ''} ${paper.paper} `}第 {q.number} 題
+        </span>
         {q.subject && (
           <span className="tag" title={q.subject_status === 'range' ? '依題號區段粗分，尚未逐題確認' : undefined}>
-            {subjects[q.subject] ?? q.subject}
+            {index.subjects[q.subject] ?? q.subject}
           </span>
         )}
         {q.free_point && <span className="tag warn">本題一律給分</span>}
@@ -279,7 +370,7 @@ function QuestionCard(props: {
 
       <p className="stem">{q.stem}</p>
       {q.images.map((src) => (
-        <img key={src} className="figure" src={`${BASE}${src}`} alt={`第 ${q.number} 題附圖`} />
+        <img key={src} className="figure" src={imageUrl(src)} alt={`第 ${q.number} 題附圖`} />
       ))}
 
       <ol className="options">
@@ -326,16 +417,16 @@ function QuestionCard(props: {
 
 function Summary(props: {
   run: Run
-  byId: Map<string, Question>
+  questions: Map<string, Question>
   subjects: Record<string, string>
-  onRestart: () => void
+  onRestart?: () => void
   onRetryWrong: () => void
 }) {
-  const { run, byId, subjects, onRestart, onRetryWrong } = props
+  const { run, questions, subjects, onRestart, onRetryWrong } = props
   const rows = new Map<string, { total: number; correct: number }>()
   let wrong = 0
   for (const id of run.queue) {
-    const q = byId.get(id)
+    const q = questions.get(id)
     const p = run.picks[id]
     if (!q || !p) continue
     const key = q.subject ?? 'unknown'
@@ -348,7 +439,7 @@ function Summary(props: {
 
   return (
     <main className="card summary">
-      <h2>這回合結束</h2>
+      <h2>{run.kind === 'review' ? '今天的複習完成了' : '這回合結束'}</h2>
       <table>
         <thead>
           <tr>
@@ -370,9 +461,13 @@ function Summary(props: {
         </tbody>
       </table>
       <nav className="nav">
-        <button className="ghost" onClick={onRestart}>
-          重新開始
-        </button>
+        {onRestart ? (
+          <button className="ghost" onClick={onRestart}>
+            重新開始
+          </button>
+        ) : (
+          <span />
+        )}
         <button className="primary" onClick={onRetryWrong} disabled={wrong === 0}>
           重做錯題（{wrong}）
         </button>

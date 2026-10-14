@@ -5,3 +5,6 @@ __pycache__/
 node_modules/
 web/dist/
 *.tsbuildinfo
+
+# Colab 生成的比稿與候選圖（很大，只留在本機和 Google Drive）
+art/bakeoff/

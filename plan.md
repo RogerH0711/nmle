@@ -219,7 +219,13 @@ Supabase（登入、進度、排行榜）← GitHub Pages 做不到的部分
 - 基本立繪 1 張，表情差分 4–5 種（平常、開心、害羞、失望、驚訝），分別對應答對、答錯、解鎖劇情等時機。
 - 共用背景 2–3 張，例如圖書館、宿舍、解剖教室。
 
-**決定：用 Colab 跑開源動漫模型，主力選 Illustrious XL 系列**。品質優先、需要表情差分和角色一致，最看重的是人體結構穩定和 LoRA、ControlNet、inpainting 工具齊全，Illustrious 在這兩點最強。
+**決定：用 Colab 跑開源動漫模型，比稿後（10/15）定案 Animagine XL 4.0 Opt**。原本預定的主力是 Illustrious XL 系列；實際比稿（夏以晴、顏緋各 4 個 seed）的結果：
+
+- Illustrious XL v2.0（官方基礎版，不是社群微調的 WAI 版）：背景變成灰色，服裝最不照 tag（顏緋變成藍色洋裝或短裙），臉偏平、偏幼。淘汰。
+- NoobAI-XL v-pred：白背景最乾淨、站姿最穩、兩位角色畫風最一致，但臉小、畫風偏平。
+- Animagine XL 4.0 Opt：臉最好看、最明顯是成年人，最照 tag（側編髮、口袋插筆、紅色刷手服）。缺點是會自己加滿版特效背景，改 prompt 處理：拿掉 `energetic`、加回 `simple background`、負向加 `scenery, motion lines`。
+
+galgame 最常看的是臉，所以選 Animagine。兩位角色的 `scrubs` 常被畫成長洋裝，tag 改成 `red scrubs, scrub top, scrub pants`。
 
 | 模型 | 優點 | 缺點 | 定位 |
 | --- | --- | --- | --- |
@@ -318,7 +324,7 @@ Supabase（登入、進度、排行榜）← GitHub Pages 做不到的部分
 - [x] 每科題數與作答時間：各 100 題、各 2 小時。
 - [x] GitHub 帳號：放在 RogerH0711（公開 repo），作為作品集的一部分。
 - [x] 是否公開：先給朋友用，確認有成效後公開（見「公開與作品集」）。
-- [ ] AI 生圖：Colab 加 Illustrious XL 系列，比稿後定案最終模型，並確認授權。
+- [x] AI 生圖模型：Animagine XL 4.0 Opt（CreativeML Open RAIL++-M 授權）。公開前再讀一次授權條款的使用限制。
 - [ ] 自訂網域與專案專用 Gmail（公開前決定）。
 - [ ] 是否解析 105–109 年考卷。
 

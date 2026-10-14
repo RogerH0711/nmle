@@ -1,5 +1,5 @@
 {
-  "_說明": "角色基本資料，設定來源見 characters.md。enabled 為 false 的角色還沒有立繪和台詞，網站不會顯示。",
+  "_說明": "角色基本資料，設定來源見 characters.md。enabled 為 false 的角色還沒有立繪和台詞，網站不會顯示。bust 是小框（角色卡、手機版）顯示的胸像範圍，單位是立繪原圖（832×1216）的像素，寬高比約 0.73。",
   "characters": [
     {
       "id": "jingcheng",
@@ -19,6 +19,7 @@
       "title": "醫學系六年級・田徑隊",
       "subjects": ["physiology", "biochemistry"],
       "expressions": ["normal", "happy", "shy", "sad", "surprised"],
+      "bust": { "x": 320, "y": 25, "w": 250 },
       "enabled": true
     },
     {

@@ -438,8 +438,6 @@ button.small:disabled {
   flex: none;
   width: 72px;
   height: 96px;
-  object-fit: cover;
-  object-position: top;
   border-radius: 8px;
 }
 
@@ -460,6 +458,20 @@ button.small:disabled {
 .cast-info button {
   margin-top: auto;
   background: var(--char);
+}
+
+/* 小框只露出胸像：--bx、--by、--bw 是 bust 範圍佔原圖寬度的比例（見 CharacterStage）。
+   margin 的百分比以外框寬度計算，所以上下也能用寬度比例平移。 */
+.portrait {
+  overflow: hidden;
+}
+
+.portrait img {
+  display: block;
+  max-width: none;
+  width: calc(100% / var(--bw, 1));
+  margin-left: calc(-100% * var(--bx, 0) / var(--bw, 1));
+  margin-top: calc(-100% * var(--by, 0) / var(--bw, 1));
 }
 
 .portrait.placeholder {
@@ -493,8 +505,6 @@ button.small:disabled {
   flex: none;
   width: 96px;
   height: 132px;
-  object-fit: cover;
-  object-position: top;
   border-radius: 10px;
 }
 
@@ -562,11 +572,23 @@ button.small:disabled {
     order: -1;
   }
 
+  /* 對話框固定留四行高：台詞長短不同時，立繪才不會跟著上下跳 */
+  .stage .speech-text {
+    min-height: 4lh;
+  }
+
+  /* 大立繪顯示全身，不套用胸像裁切 */
   .stage .portrait {
     width: 100%;
     height: auto;
     max-height: calc(100vh - 220px);
     aspect-ratio: 832 / 1216;
+  }
+
+  .stage .portrait img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
     object-fit: contain;
     object-position: top;
   }

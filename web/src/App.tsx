@@ -380,7 +380,7 @@ export default function App() {
         <section className="cast">
           {characters.map((c) => (
             <div key={c.id} className="cast-card" style={{ '--char': c.color } as React.CSSProperties}>
-              <Portrait characterId={c.id} expression="normal" name={c.name} color={c.color} />
+              <Portrait character={c} expression="normal" />
               <div className="cast-info">
                 <strong>{c.name}</strong>
                 <span className="cast-type">{c.type}・{c.title}</span>

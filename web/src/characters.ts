@@ -12,8 +12,11 @@ export interface Character {
   title: string
   subjects: string[]
   expressions: string[]
+  bust?: { x: number; y: number; w: number } // 小框顯示的胸像範圍（立繪原圖像素）
   enabled: boolean
 }
+
+export const PORTRAIT_WIDTH = 832 // 立繪原圖寬度，所有角色相同
 
 export interface Line {
   id: string

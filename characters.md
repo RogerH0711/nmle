@@ -45,20 +45,27 @@
 
 ## 生圖共用設定
 
-建議主力模型：Illustrious XL 系列（比稿後定案），用 `diffusers` 在 Colab 執行。
+**模型：Animagine XL 4.0 Opt**（10/15 比稿定案，三個模型的比較見 `plan.md`「美術與內容」），用 `diffusers` 在 Colab 執行，notebook 是 `art/portraits.ipynb`。
 
 - **解析度**：832 × 1216（直式全身立繪）
-- **起始參數**：CFG 5–7、28–30 steps、Euler a；比稿時固定 seed，方便比較。以上是起始值，依定案模型的說明頁調整。
-- **共用正向 tag**（放在每位角色 tag 前面）：
+- **參數**：CFG 5、28 steps、Euler a（依模型說明頁的建議）。
+- **prompt 順序**：角色 tag → 共用 tag → 品質 tag。SDXL 的文字編碼器只讀前 75 個 token，超過的會被默默丟掉，所以角色外觀放最前面；notebook 會在超過時直接報錯。新增角色時要先確認 tag 不會太長（沈靜澄、溫芷薰目前的 tag 都超過，要先刪減）。
+- **共用 tag**：
 
 ```text
-masterpiece, best quality, amazing quality, very aesthetic, absurdres, 1girl, solo, mature female, adult, standing, full body, looking at viewer, simple background, white background
+1girl, solo, mature female, full body, standing, looking at viewer, simple background, white background
 ```
 
-- **共用負向 tag**：
+- **品質 tag**（Animagine 的格式，放在最後）：
 
 ```text
-lowres, worst quality, bad quality, bad anatomy, bad hands, extra fingers, missing fingers, extra limbs, deformed, jpeg artifacts, watermark, signature, text, logo, nsfw, nude, explicit, child, loli, aged down
+safe, masterpiece, high score, great score, absurdres
+```
+
+- **負向 tag**（Animagine 建議的負向 tag，加上尺度相關的 tag，以及壓背景特效的 `scenery, motion lines`）：
+
+```text
+lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer digits, cropped, worst quality, low quality, low score, bad score, average score, signature, watermark, username, blurry, scenery, motion lines, nsfw, nude, explicit, child, loli, aged down
 ```
 
 - **表情差分**（五人共用，用 inpainting 只重畫臉部）：
@@ -133,7 +140,7 @@ black hair, very long hair, straight hair, side part, blue eyes, glasses, semi-r
 **生圖 tag**
 
 ```text
-orange hair, short hair, bob cut, hairclip, amber eyes, athletic female, orange track jacket, open jacket, white t-shirt, track pants, sneakers, wristband, smile, energetic
+orange hair, short hair, bob cut, hairclip, amber eyes, athletic female, orange track jacket, open jacket, white t-shirt, track pants, sneakers, wristband, smile
 ```
 
 **好感度劇情大綱**
@@ -252,7 +259,7 @@ light purple hair, grey hair, long hair, wavy hair, low side ponytail, purple ey
 **生圖 tag**
 
 ```text
-red hair, medium hair, side braid, red eyes, tsurime, scrubs, red scrubs, labcoat, open labcoat, pen behind ear, crossed arms, slender
+red hair, medium hair, side braid, red eyes, tsurime, red scrubs, scrub top, scrub pants, labcoat, open labcoat, pen behind ear, crossed arms, slender
 ```
 
 **專屬表情**：`pout` → `pout, blush, looking away, crossed arms`
@@ -305,3 +312,4 @@ red hair, medium hair, side braid, red eyes, tsurime, scrubs, red scrubs, labcoa
 - 角色基本資料：`data/characters.json`（`enabled` 為 `false` 的角色網站不顯示）。
 - 台詞：`data/lines/yiqing.json`、`data/lines/fei.json`。好感度系統還沒做，目前只會出現 `affection_min` 為 0 的台詞。
 - 立繪：`data/characters/<角色 id>/<表情 id>.webp`，用 `art/portraits.ipynb` 產生。缺少某個表情時會改用 `normal`，連 `normal` 都沒有就顯示代表色的佔位圖。
+- 胸像範圍：角色卡和手機版的小框只顯示胸像，範圍是 `characters.json` 的 `bust`（`x`、`y`、`w`，單位是原圖像素，高度依小框比例自動算，約 `w ÷ 0.73`）。每位角色姿勢不同，立繪做好後要各設一次；沒設就從圖片頂端顯示全寬。

@@ -1,0 +1,16 @@
+{
+  "28": {
+    "options": {
+      "A": "屈拇長肌（flexor hallucis longus）",
+      "C": "屈拇短肌（flexor hallucis brevis）"
+    },
+    "reason": "原卷「𧿹」（足字旁加母）為圖片字，抽文字時遺失；手機字型多半不支援這個字，以通用字「拇」代替"
+  },
+  "66": {
+    "stem": "計算純水清除率（clearance of free-water, C_H₂O）的公式是 C_H₂O = V（urine flow rate）– C_osm（clearance of osmoles）。而 C_osm 之定義為：V ×（U_osm / P_osm），其中 U_osm 與 P_osm 分別為尿液與血漿之 osmolality。下列何種生理狀態，最可能使純水清除率（C_H₂O）成為負值？",
+    "reason": "原卷「C_H₂O」為行內公式圖片，抽文字時遺失，依原始 PDF 人工補字；下標 osm 一併標示",
+    "options": {
+      "D": "溶質清除率（C_osm）減少"
+    }
+  }
+}

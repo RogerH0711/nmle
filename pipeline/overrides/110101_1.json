@@ -1,0 +1,13 @@
+{
+  "28": {
+    "options": {
+      "C": "屈拇趾長肌（flexor hallucis longus）與屈趾長肌（flexor digitorum longus）",
+      "D": "屈拇趾短肌（flexor hallucis brevis）與屈趾短肌（flexor digitorum brevis）"
+    },
+    "reason": "原卷「𧿹」（足字旁加母）為圖片字，抽文字時遺失；手機字型多半不支援這個字，以通用字「拇」代替"
+  },
+  "61": {
+    "stem": "甲、乙兩試管內含有相同的正常人體血液，分別灌入氣體使得兩者血液之氧分壓（Po₂）均為40 mmHg，甲試管內血液之二氧化碳分壓（Pco₂）為40 mmHg，乙試管內血液之二氧化碳分壓為46 mmHg。下列敘述何者正確？",
+    "reason": "原卷「Po₂」「Pco₂」為行內公式圖片，抽文字時遺失，依原始 PDF 人工補字"
+  }
+}

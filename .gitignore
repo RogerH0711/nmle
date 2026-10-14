@@ -1,0 +1,7 @@
+# 考選部原始 PDF：可隨時用 pipeline 重新下載
+raw/
+.venv/
+__pycache__/
+node_modules/
+web/dist/
+*.tsbuildinfo

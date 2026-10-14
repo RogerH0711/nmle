@@ -1,0 +1,17 @@
+{
+  "_說明": "依題號區段粗分學科（含頭尾）。110–115 年每份考卷逐一確認過分界題，各學科題數固定；個別考卷不同時，用「考試代碼_1」或「考試代碼_2」為鍵另外寫。輸出時 subject_status 標為 range，代表未逐題確認。",
+  "default_1": {
+    "anatomy": [1, 31],
+    "embryology": [32, 36],
+    "histology": [37, 46],
+    "physiology": [47, 73],
+    "biochemistry": [74, 100]
+  },
+  "default_2": {
+    "microbiology": [1, 28],
+    "parasitology": [29, 35],
+    "public_health": [36, 50],
+    "pharmacology": [51, 75],
+    "pathology": [76, 100]
+  }
+}

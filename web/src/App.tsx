@@ -5,15 +5,20 @@ import { imageUrl, loadIndex, loadPaper, loadQuestions } from './bank'
 import { recordAnswer, switchUser, syncNow, useAnswers, type SyncStatus } from './answers'
 import { reviewStates, reviewSummary } from './review'
 import { signInWithGoogle, signOut, supabase } from './supabase'
+import {
+  characterForSubject, COMEBACK_DAYS, fillPlayer, loadCharacters, loadLines, pickLine as pickCharacterLine,
+  STREAK_EVERY, type Character, type Line, type Reaction, type Situation,
+} from './characters'
+import { CharacterStage, Portrait } from './CharacterStage'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
 
 type Order = 'seq' | 'random'
 
-// 一回合：依考卷刷題（paper）或錯題複習（review）。題目可以跨考卷，用題目 id 串起來。
-// 存在 localStorage，重新整理不會不見。
+// 一回合：依考卷刷題（paper）、錯題複習（review）或跟角色讀書（character，subject 存角色 id）。
+// 題目可以跨考卷，用題目 id 串起來。存在 localStorage，重新整理不會不見。
 interface Run {
-  kind: 'paper' | 'review'
+  kind: 'paper' | 'review' | 'character'
   paperId: string | null
   subject: string
   order: Order
@@ -23,6 +28,27 @@ interface Run {
 }
 
 const RUN_KEY = 'nmle.run.v2'
+const CHARACTER_MODE_KEY = 'nmle.characterMode'
+const ROUND_SIZE = 20 // 跟角色讀書一回合的題數
+
+// 角色反應對應到哪個時間點：題目 id、回合開始（start）或回合結束（finish）
+type StageReaction = Reaction & { key: string }
+
+function loadFlag(key: string) {
+  try {
+    return localStorage.getItem(key) === '1'
+  } catch {
+    return false
+  }
+}
+
+function saveFlag(key: string, on: boolean) {
+  try {
+    localStorage.setItem(key, on ? '1' : '0')
+  } catch {
+    // 存不了就只在這次瀏覽有效
+  }
+}
 
 function loadRun(): Run | null {
   try {
@@ -59,7 +85,7 @@ function paperQueue(questions: Question[], subject: string, order: Order) {
   return order === 'random' ? shuffle(ids) : ids
 }
 
-// 之後換成角色台詞（data/lines/*.json）；先用通用回饋
+// 一般模式（或這個學科的角色還沒推出）用的通用回饋
 const FEEDBACK = {
   correct: ['答對了！', '漂亮！', '正確！', '很穩！'],
   wrong: ['差一點，看一下正解。', '這題記下來，之後再複習。', '沒關係，下一題。'],
@@ -77,6 +103,40 @@ export default function App() {
   const [error, setError] = useState<string | null>(null)
   const [user, setUser] = useState<User | null>(null)
   const answers = useAnswers()
+  const [characters, setCharacters] = useState<Character[]>([])
+  const [lines, setLines] = useState<Record<string, Line[]>>({})
+  const [characterMode, setCharacterMode] = useState(() => loadFlag(CHARACTER_MODE_KEY))
+  const [reaction, setReaction] = useState<StageReaction | null>(null)
+  const [streak, setStreak] = useState(0)
+
+  // 角色和台詞都很小，一開始就全部載入，作答時才能同步挑台詞
+  useEffect(() => {
+    loadCharacters()
+      .then(async (list) => {
+        setCharacters(list)
+        const all = await Promise.all(list.map((c) => loadLines(c.id)))
+        setLines(Object.fromEntries(list.map((c, i) => [c.id, all[i]])))
+      })
+      .catch(() => setCharacters([]))
+  }, [])
+
+  const toggleCharacterMode = () => {
+    setCharacterMode((on) => {
+      saveFlag(CHARACTER_MODE_KEY, !on)
+      return !on
+    })
+  }
+
+  const react = (character: Character, situation: Situation, key: string): StageReaction => {
+    const line = pickCharacterLine(lines[character.id] ?? [], situation, 0, reaction?.lineId ?? null)
+    return {
+      key,
+      character,
+      expression: line?.expression ?? 'normal',
+      text: line ? fillPlayer(line.text, '學弟') : null,
+      lineId: line?.id ?? null,
+    }
+  }
 
   // 登入狀態：切換本機紀錄的擁有者並同步。
   // supabase 文件提醒不要在 onAuthStateChange 裡直接呼叫其他 supabase API，所以延後執行。
@@ -152,21 +212,41 @@ export default function App() {
     return { answered, correct }
   }, [run, questions])
 
+  // 這題由哪位角色陪：角色回合固定是那位，其他回合看題目學科歸誰
+  const stageCharacter = !characterMode
+    ? undefined
+    : run?.kind === 'character'
+      ? characters.find((c) => c.id === run.subject)
+      : characterForSubject(characters, current?.subject ?? null)
+
   const pick = useCallback(
     (letter: Letter) => {
       if (!run || !current || picked) return
+      const ok = isCorrect(current, letter)
       setRun({ ...run, picks: { ...run.picks, [current.id]: letter } })
-      recordAnswer(current.id, letter, isCorrect(current, letter))
+      recordAnswer(current.id, letter, ok)
+      const nextStreak = ok ? streak + 1 : 0
+      setStreak(nextStreak)
+      if (stageCharacter) {
+        const situation = !ok ? 'wrong' : nextStreak % STREAK_EVERY === 0 ? 'streak' : 'correct'
+        setReaction(react(stageCharacter, situation, current.id))
+      }
     },
-    [run, current, picked],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [run, current, picked, streak, stageCharacter, lines, reaction],
   )
 
   const go = useCallback(
     (delta: number) => {
       if (!run) return
-      setRun({ ...run, pos: Math.max(0, Math.min(run.queue.length, run.pos + delta)) })
+      const pos = Math.max(0, Math.min(run.queue.length, run.pos + delta))
+      setRun({ ...run, pos })
+      if (pos === run.queue.length && pos !== run.pos && stageCharacter && run.kind === 'character') {
+        setReaction(react(stageCharacter, 'finish', 'finish'))
+      }
     },
-    [run],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [run, stageCharacter, lines, reaction],
   )
 
   const restart = (subject: string, order: Order, onlyWrong = false) => {
@@ -180,6 +260,9 @@ export default function App() {
       setRun({ ...run, subject, order, queue: order === 'random' ? shuffle(wrong) : wrong, pos: 0, picks: {} })
     } else if (run.kind === 'review') {
       startReview()
+    } else if (run.kind === 'character') {
+      const c = characters.find((x) => x.id === run.subject)
+      if (c) void startCharacterRun(c)
     } else if (run.paperId) {
       void openPaper(index, run.paperId, subject, order)
     }
@@ -187,7 +270,28 @@ export default function App() {
 
   const startReview = () => {
     if (!index || !review.due.length) return
+    setStreak(0)
     void startRun(index, { kind: 'review', paperId: null, subject: 'all', order: 'seq', queue: review.due, pos: 0, picks: {} })
+  }
+
+  // 跟角色讀書：從她負責的學科（跨所有考卷）抽題，沒寫過的優先
+  const startCharacterRun = async (c: Character) => {
+    if (!index) return
+    try {
+      const files = await Promise.all(index.papers.map((p) => loadPaper(index, p.id)))
+      const pool = files.flatMap((f) => f.questions).filter((q) => q.valid && q.subject && c.subjects.includes(q.subject))
+      const seen = new Set(answers.records.map((r) => r.question_id))
+      const queue = [...shuffle(pool.filter((q) => !seen.has(q.id))), ...shuffle(pool.filter((q) => seen.has(q.id)))]
+        .slice(0, ROUND_SIZE)
+        .map((q) => q.id)
+      const last = answers.records.reduce((max, r) => (r.answered_at > max ? r.answered_at : max), '')
+      const away = last && Date.now() - new Date(last).getTime() > COMEBACK_DAYS * 86_400_000
+      setStreak(0)
+      setReaction(react(c, away ? 'comeback' : 'start', 'start'))
+      await startRun(index, { kind: 'character', paperId: null, subject: c.id, order: 'random', queue, pos: 0, picks: {} })
+    } catch {
+      setError('題庫載入失敗')
+    }
   }
 
   // 鍵盤：1–4 或 A–D 作答，Enter／→ 下一題，← 上一題
@@ -215,12 +319,47 @@ export default function App() {
   const subjectsInPaper = [...new Set(paperQuestions.map((q) => q.subject).filter(Boolean))] as string[]
   const accuracy = stats.answered ? Math.round((stats.correct / stats.answered) * 100) : 0
 
+  // 要顯示的角色反應：符合目前這一刻的才用，否則角色安靜待著
+  const stageKey = done ? 'finish' : !picked && run.pos === 0 && reaction?.key === 'start' ? 'start' : current?.id
+  const stage: Reaction | null = stageCharacter
+    ? reaction && reaction.key === stageKey && reaction.character.id === stageCharacter.id
+      ? reaction
+      : { character: stageCharacter, expression: 'normal', text: null, lineId: null }
+    : null
+  const runCharacter = run.kind === 'character' ? characters.find((c) => c.id === run.subject) : undefined
+
   return (
-    <div className="app">
+    <div className={stage ? 'app wide' : 'app'}>
       <header className="bar">
         <h1>一階刷題</h1>
-        <Account user={user} status={answers.status} pending={answers.records.filter((r) => !r.synced).length} />
+        <div className="bar-right">
+          {characters.length > 0 && (
+            <label className="toggle">
+              <input type="checkbox" checked={characterMode} onChange={toggleCharacterMode} />
+              角色模式
+            </label>
+          )}
+          <Account user={user} status={answers.status} pending={answers.records.filter((r) => !r.synced).length} />
+        </div>
       </header>
+
+      {characterMode && characters.length > 0 && (
+        <section className="cast">
+          {characters.map((c) => (
+            <div key={c.id} className="cast-card" style={{ '--char': c.color } as React.CSSProperties}>
+              <Portrait characterId={c.id} expression="normal" name={c.name} color={c.color} />
+              <div className="cast-info">
+                <strong>{c.name}</strong>
+                <span className="cast-type">{c.type}・{c.title}</span>
+                <span className="cast-subjects">{c.subjects.map((s) => index.subjects[s] ?? s).join('、')}</span>
+                <button className="primary small" onClick={() => void startCharacterRun(c)}>
+                  一起讀書（{ROUND_SIZE} 題）
+                </button>
+              </div>
+            </div>
+          ))}
+        </section>
+      )}
 
       <section className="review">
         <div>
@@ -241,6 +380,7 @@ export default function App() {
           onChange={(e) => void openPaper(index, e.target.value)}
         >
           {run.kind === 'review' && <option value="">（錯題複習）</option>}
+          {run.kind === 'character' && <option value="">（和{runCharacter?.name ?? '角色'}讀書）</option>}
           {index.papers.map((p) => (
             <option key={p.id} value={p.id}>
               {p.year} 年{p.session ? `第 ${p.session} 次` : ''} {p.paper}
@@ -277,27 +417,35 @@ export default function App() {
         </span>
       </div>
 
-      {done ? (
-        <Summary
-          run={run}
-          questions={questions}
-          subjects={index.subjects}
-          onRestart={run.kind === 'paper' ? () => restart(run.subject, run.order) : undefined}
-          onRetryWrong={() => restart(run.subject, run.order, true)}
-        />
-      ) : current ? (
-        <QuestionCard
-          q={current}
-          index={index}
-          picked={picked}
-          onPick={pick}
-          onNext={() => go(1)}
-          onPrev={run.pos > 0 ? () => go(-1) : undefined}
-          seed={run.pos}
-        />
-      ) : (
-        <div className="center">這個範圍沒有可作答的題目</div>
-      )}
+      <div className={stage ? 'play has-stage' : 'play'}>
+        {stage && <CharacterStage reaction={stage} answered={!done && !!picked && stage.text !== null} />}
+        <div className="play-main">
+          {done ? (
+            <Summary
+              run={run}
+              questions={questions}
+              subjects={index.subjects}
+              onRestart={run.kind !== 'review' ? () => restart(run.subject, run.order) : undefined}
+              restartLabel={run.kind === 'character' ? '再一回合' : '重新開始'}
+              onRetryWrong={() => restart(run.subject, run.order, true)}
+            />
+          ) : current ? (
+            <QuestionCard
+              q={current}
+              index={index}
+              picked={picked}
+              onPick={pick}
+              onNext={() => go(1)}
+              onPrev={run.pos > 0 ? () => go(-1) : undefined}
+              seed={run.pos}
+              showLine={!stage}
+              speech={stage && stage.text && picked ? { name: stage.character.name, color: stage.character.color, text: stage.text } : null}
+            />
+          ) : (
+            <div className="center">這個範圍沒有可作答的題目</div>
+          )}
+        </div>
+      </div>
     </div>
   )
 }
@@ -348,8 +496,10 @@ function QuestionCard(props: {
   onNext: () => void
   onPrev?: () => void
   seed: number
+  showLine: boolean // 有角色陪讀時，反應台詞由角色說，這裡只顯示正解
+  speech: { name: string; color: string; text: string } | null // 手機版把角色台詞放在選項下方，作答後一眼看得到
 }) {
-  const { q, index, picked, onPick, onNext, onPrev, seed } = props
+  const { q, index, picked, onPick, onNext, onPrev, seed, showLine, speech } = props
   const correct = picked ? isCorrect(q, picked) : null
   const paper = index.papers.find((p) => q.id.startsWith(p.id + '_'))
 
@@ -394,7 +544,12 @@ function QuestionCard(props: {
 
       {picked && (
         <div className={`feedback ${correct ? 'good' : 'bad'}`} role="status">
-          <p className="line">{pickLine(correct ? 'correct' : 'wrong', seed)}</p>
+          {showLine && <p className="line">{pickLine(correct ? 'correct' : 'wrong', seed)}</p>}
+          {speech && (
+            <p className="line char-line">
+              <span style={{ color: speech.color }}>{speech.name}</span>：{speech.text}
+            </p>
+          )}
           <p className="answer">
             {q.free_point ? '本題官方一律給分。' : `正解：${q.answers.join('、')}`}
             {q.answer_note && !q.free_point && <span className="note">（{q.answer_note}）</span>}
@@ -420,9 +575,10 @@ function Summary(props: {
   questions: Map<string, Question>
   subjects: Record<string, string>
   onRestart?: () => void
+  restartLabel: string
   onRetryWrong: () => void
 }) {
-  const { run, questions, subjects, onRestart, onRetryWrong } = props
+  const { run, questions, subjects, onRestart, restartLabel, onRetryWrong } = props
   const rows = new Map<string, { total: number; correct: number }>()
   let wrong = 0
   for (const id of run.queue) {
@@ -463,7 +619,7 @@ function Summary(props: {
       <nav className="nav">
         {onRestart ? (
           <button className="ghost" onClick={onRestart}>
-            重新開始
+            {restartLabel}
           </button>
         ) : (
           <span />

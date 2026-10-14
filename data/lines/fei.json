@@ -1,0 +1,42 @@
+{
+  "character": "fei",
+  "lines": [
+    { "id": "fei-start-001", "situation": "start", "affection_min": 0, "expression": "normal", "text": "喂，來了就坐好。今天病理跟公衛，一題都不准給我亂猜。" },
+    { "id": "fei-start-002", "situation": "start", "affection_min": 0, "expression": "pout", "text": "我值完班很累，只陪你一回合。……一回合而已喔！" },
+    { "id": "fei-start-003", "situation": "start", "affection_min": 0, "expression": "normal", "text": "考古題我印好了。才、才不是為了你！是剛好多印一份！" },
+    { "id": "fei-start-004", "situation": "start", "affection_min": 1, "expression": "shy", "text": "你來得剛好，我……我是說，玻片剛好看完了。坐吧。" },
+
+    { "id": "fei-comeback-001", "situation": "comeback", "affection_min": 0, "expression": "pout", "text": "你、你這幾天跑去哪了？我才沒有在等你！只是考古題印好了沒人拿而已！" },
+    { "id": "fei-comeback-002", "situation": "comeback", "affection_min": 0, "expression": "surprised", "text": "……喔，是你。還以為你放棄了。哼，回來就好，坐下。" },
+    { "id": "fei-comeback-003", "situation": "comeback", "affection_min": 0, "expression": "normal", "text": "失蹤這麼久，你的記憶大概已經萎縮了。萎縮是可逆的，現在開始補還來得及。" },
+
+    { "id": "fei-correct-001", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "哼，算你還有點腦袋。不是在誇你喔！" },
+    { "id": "fei-correct-002", "situation": "correct", "affection_min": 0, "expression": "pout", "text": "……對啦。幹嘛一臉等我稱讚的樣子。" },
+    { "id": "fei-correct-003", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "正確。這種程度本來就該會，下一題。" },
+    { "id": "fei-correct-004", "situation": "correct", "affection_min": 0, "expression": "happy", "text": "不錯嘛。……我、我是說題目出得不錯！" },
+    { "id": "fei-correct-005", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "答對了。記住，凋亡不會引起發炎，壞死才會——這種基本的不准再忘。" },
+    { "id": "fei-correct-006", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "嗯。敏感度高的檢驗，陰性才能拿來排除；特異度高的，陽性才能拿來確診。你剛剛有想到這點吧？" },
+    { "id": "fei-correct-007", "situation": "correct", "affection_min": 0, "expression": "pout", "text": "答對了又怎樣，一題而已，不要得意忘形。" },
+    { "id": "fei-correct-008", "situation": "correct", "affection_min": 1, "expression": "shy", "text": "……做得很好。只有這一次喔，我只說這一次！" },
+
+    { "id": "fei-wrong-001", "situation": "wrong", "affection_min": 0, "expression": "pout", "text": "這種題目都會錯？……好啦，我再講一次，最後一次喔！" },
+    { "id": "fei-wrong-002", "situation": "wrong", "affection_min": 0, "expression": "normal", "text": "錯了。看正解，然後記在你那本亂七八糟的筆記裡。" },
+    { "id": "fei-wrong-003", "situation": "wrong", "affection_min": 0, "expression": "pout", "text": "笨蛋學弟，你的病理爛到可以切片研究了。" },
+    { "id": "fei-wrong-004", "situation": "wrong", "affection_min": 0, "expression": "normal", "text": "細胞腫脹還可逆，核濃縮、核碎裂、核溶解就回不去了。你這題還在可逆的階段，快救回來。" },
+    { "id": "fei-wrong-005", "situation": "wrong", "affection_min": 0, "expression": "sad", "text": "……沒關係啦。我第一次也錯。不准跟別人說。" },
+    { "id": "fei-wrong-006", "situation": "wrong", "affection_min": 0, "expression": "normal", "text": "樣本數一題太小，檢定力不夠，不能下結論說你不會。多寫幾題再說。" },
+    { "id": "fei-wrong-007", "situation": "wrong", "affection_min": 1, "expression": "sad", "text": "……你錯的時候，我比你還不甘心。所以給我記起來，聽到沒。" },
+
+    { "id": "fei-streak-001", "situation": "streak", "affection_min": 0, "expression": "shy", "text": "才、才不是特地幫你整理考古題！只是剛好多印一份……全部答對的話，下次讀書會可以坐我旁邊。這是獎勵，不是約會！" },
+    { "id": "fei-streak-002", "situation": "streak", "affection_min": 0, "expression": "surprised", "text": "連對十題……這、這在統計上不太可能是運氣。p 值很小的意思。" },
+    { "id": "fei-streak-003", "situation": "streak", "affection_min": 0, "expression": "pout", "text": "十題全對。……幹嘛看我，我又沒有很開心。" },
+    { "id": "fei-streak-004", "situation": "streak", "affection_min": 1, "expression": "shy", "text": "你最近進步很多。……我有在看，一直都有。" },
+
+    { "id": "fei-finish-001", "situation": "finish", "affection_min": 0, "expression": "normal", "text": "一回合結束。錯的題目自己複習，我不會一直提醒你。……我會提醒你啦。" },
+    { "id": "fei-finish-002", "situation": "finish", "affection_min": 0, "expression": "pout", "text": "好了，我要去看玻片了。明天、明天也要來，聽到沒有！" },
+    { "id": "fei-finish-003", "situation": "finish", "affection_min": 0, "expression": "normal", "text": "今天就到這裡。……做得還可以。" },
+
+    { "id": "fei-mock_high-001", "situation": "mock_high", "affection_min": 0, "expression": "shy", "text": "這、這個分數……還不錯啦。今天、今天就特別准你叫我緋。" },
+    { "id": "fei-mock_high-002", "situation": "mock_high", "affection_min": 0, "expression": "surprised", "text": "……你真的是我帶出來的那個笨蛋學弟？" }
+  ]
+}

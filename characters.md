@@ -294,9 +294,14 @@ red hair, medium hair, side braid, red eyes, tsurime, scrubs, red scrubs, labcoa
 ```
 
 **欄位說明**
-- `situation`：`correct`、`wrong`、`streak`、`comeback`、`mock_high`、`jealous`、`story`
+- `situation`：`start`（回合開始）、`finish`（回合結束）、`correct`、`wrong`、`streak`（連對 10 題）、`comeback`（超過 3 天沒作答後第一次開始回合）、`mock_high`、`jealous`、`story`
 - `affection_min`：達到這個好感度階段（0–5）才會出現。同一情境有多句時，從符合條件的台詞中隨機挑一句。
 - `expression`：對應表情差分 ID。
 - `text`：台詞內容，玩家名字用 `{player}` 代入。
 
 完整台詞庫（每位角色每種情境多句、依好感度分層）由 Claude 另外撰寫。
+
+**目前的檔案**
+- 角色基本資料：`data/characters.json`（`enabled` 為 `false` 的角色網站不顯示）。
+- 台詞：`data/lines/yiqing.json`、`data/lines/fei.json`。好感度系統還沒做，目前只會出現 `affection_min` 為 0 的台詞。
+- 立繪：`data/characters/<角色 id>/<表情 id>.webp`，用 `art/portraits.ipynb` 產生。缺少某個表情時會改用 `normal`，連 `normal` 都沒有就顯示代表色的佔位圖。

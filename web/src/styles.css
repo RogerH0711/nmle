@@ -387,3 +387,200 @@ button.small:disabled {
 .summary td:not(:first-child) {
   text-align: right;
 }
+
+/* ---------- 角色 ---------- */
+
+.app.wide {
+  max-width: 1080px;
+}
+
+.bar-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px 14px;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+}
+
+.cast {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.cast-card {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--char);
+  border-radius: 12px;
+}
+
+.cast-card .portrait {
+  flex: none;
+  width: 72px;
+  height: 96px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+}
+
+.cast-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
+}
+
+.cast-type,
+.cast-subjects {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.cast-info button {
+  margin-top: auto;
+  background: var(--char);
+}
+
+.portrait.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.portrait.placeholder .initial {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.portrait.placeholder .soon {
+  font-size: 0.65rem;
+  opacity: 0.85;
+}
+
+/* 手機：立繪縮小放在題目上方，只露出上半身 */
+.stage {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.stage .portrait {
+  flex: none;
+  width: 96px;
+  height: 132px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+}
+
+.speech {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  background: var(--card);
+  border: 1.5px solid var(--char);
+  border-radius: 12px;
+}
+
+.speaker {
+  font-weight: 700;
+  color: var(--char);
+  font-size: 0.9rem;
+}
+
+.speaker-title {
+  margin-left: 6px;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.speech-text {
+  margin: 2px 0 0;
+}
+
+.speech-text.quiet {
+  color: var(--muted);
+}
+
+/* 手機：作答後台詞改在選項下方顯示，上方對話框收起來 */
+@media (max-width: 899px) {
+  .stage.answered .speech {
+    display: none;
+  }
+}
+
+/* 電腦：立繪在左側欄，題目在右；台詞留在對話框，不在選項下方重複 */
+@media (min-width: 900px) {
+  .feedback .char-line {
+    display: none;
+  }
+
+  .play.has-stage {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+  }
+
+  .stage {
+    position: sticky;
+    top: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 0;
+  }
+
+  /* 對話框放在立繪上方：台詞是作答後最重要的回饋，不能被擠到畫面外 */
+  .stage .speech {
+    order: -1;
+  }
+
+  .stage .portrait {
+    width: 100%;
+    height: auto;
+    max-height: calc(100vh - 220px);
+    aspect-ratio: 832 / 1216;
+    object-fit: contain;
+    object-position: top;
+  }
+
+  .stage .portrait.placeholder {
+    height: min(420px, calc(100vh - 220px));
+    aspect-ratio: auto;
+  }
+
+  .stage .portrait.placeholder .initial {
+    font-size: 4rem;
+  }
+
+  .stage .portrait.placeholder .soon {
+    font-size: 0.9rem;
+  }
+}

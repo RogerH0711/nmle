@@ -4,7 +4,8 @@ import type { Index, Letter, Question } from './types'
 import { imageUrl, loadIndex, loadPaper, loadQuestions } from './bank'
 import { recordAnswer, switchUser, syncNow, useAnswers, type SyncStatus } from './answers'
 import { reviewStates, reviewSummary } from './review'
-import { signInWithGoogle, signOut, supabase } from './supabase'
+import { getDisplayName, NAME_MAX, setDisplayName, signInWithGoogle, signOut, supabase } from './supabase'
+import { Leaderboard } from './Leaderboard'
 import {
   characterForSubject, COMEBACK_DAYS, fillPlayer, loadCharacters, loadLines, pickLine as pickCharacterLine,
   STREAK_EVERY, type Character, type Line, type Reaction, type Situation,
@@ -108,6 +109,20 @@ export default function App() {
   const [characterMode, setCharacterMode] = useState(() => loadFlag(CHARACTER_MODE_KEY))
   const [reaction, setReaction] = useState<StageReaction | null>(null)
   const [streak, setStreak] = useState(0)
+  const [view, setView] = useState<'quiz' | 'leaderboard'>('quiz')
+  const [displayName, setDisplayNameState] = useState<string | null>(null)
+
+  // 登入後讀自己的暱稱（排行榜上顯示的名字）
+  useEffect(() => {
+    setDisplayNameState(null)
+    if (user) getDisplayName(user.id).then(setDisplayNameState).catch(() => setDisplayNameState(null))
+  }, [user])
+
+  const renameTo = async (name: string) => {
+    if (!user) return
+    await setDisplayName(user.id, name)
+    setDisplayNameState(name)
+  }
 
   // 角色和台詞都很小，一開始就全部載入，作答時才能同步挑台詞
   useEffect(() => {
@@ -297,6 +312,7 @@ export default function App() {
   // 鍵盤：1–4 或 A–D 作答，Enter／→ 下一題，← 上一題
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (view !== 'quiz') return // 看排行榜時不要對藏起來的題目作答
       if (e.ctrlKey || e.metaKey || e.altKey) return
       if (e.target instanceof Element && e.target.closest('select, input, textarea')) return
       const k = e.key.toUpperCase()
@@ -310,7 +326,7 @@ export default function App() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [pick, go, picked])
+  }, [pick, go, picked, view])
 
   if (error) return <div className="center">{error}</div>
   if (!index || !run) return <div className="center">載入中…</div>
@@ -339,9 +355,26 @@ export default function App() {
               角色模式
             </label>
           )}
-          <Account user={user} status={answers.status} pending={answers.records.filter((r) => !r.synced).length} />
+          <button
+            className={view === 'leaderboard' ? 'primary small' : 'ghost small'}
+            onClick={() => setView(view === 'leaderboard' ? 'quiz' : 'leaderboard')}
+          >
+            排行榜
+          </button>
+          <Account
+            user={user}
+            displayName={displayName}
+            onRename={renameTo}
+            status={answers.status}
+            pending={answers.records.filter((r) => !r.synced).length}
+          />
         </div>
       </header>
+
+      {view === 'leaderboard' ? (
+        <Leaderboard user={user} onClose={() => setView('quiz')} />
+      ) : (
+        <>
 
       {characterMode && characters.length > 0 && (
         <section className="cast">
@@ -446,6 +479,8 @@ export default function App() {
           )}
         </div>
       </div>
+        </>
+      )}
     </div>
   )
 }
@@ -458,7 +493,37 @@ const STATUS_TEXT: Record<SyncStatus, string> = {
   error: '同步失敗',
 }
 
-function Account({ user, status, pending }: { user: User | null; status: SyncStatus; pending: number }) {
+function Account(props: {
+  user: User | null
+  displayName: string | null
+  onRename: (name: string) => Promise<void>
+  status: SyncStatus
+  pending: number
+}) {
+  const { user, displayName, onRename, status, pending } = props
+  const [editing, setEditing] = useState(false)
+  const [draft, setDraft] = useState('')
+  const [saving, setSaving] = useState(false)
+  const [renameError, setRenameError] = useState<string | null>(null)
+
+  const save = async () => {
+    const name = draft.trim()
+    if (!name || name.length > NAME_MAX) {
+      setRenameError(`暱稱要 1–${NAME_MAX} 個字`)
+      return
+    }
+    setSaving(true)
+    try {
+      await onRename(name)
+      setEditing(false)
+      setRenameError(null)
+    } catch {
+      setRenameError('儲存失敗，再試一次')
+    } finally {
+      setSaving(false)
+    }
+  }
+
   if (!user) {
     return (
       <div className="account">
@@ -469,7 +534,35 @@ function Account({ user, status, pending }: { user: User | null; status: SyncSta
       </div>
     )
   }
-  const name = (user.user_metadata?.name as string | undefined) ?? user.email
+  if (editing) {
+    return (
+      <form
+        className="account"
+        onSubmit={(e) => {
+          e.preventDefault()
+          void save()
+        }}
+      >
+        <input
+          className="name-input"
+          value={draft}
+          maxLength={NAME_MAX}
+          autoFocus
+          aria-label="暱稱"
+          placeholder="排行榜上顯示的名字"
+          onChange={(e) => setDraft(e.target.value)}
+        />
+        <button className="primary small" type="submit" disabled={saving}>
+          儲存
+        </button>
+        <button className="ghost small" type="button" onClick={() => setEditing(false)}>
+          取消
+        </button>
+        {renameError && <span className="sync error">{renameError}</span>}
+      </form>
+    )
+  }
+
   return (
     <div className="account">
       <span className={`sync ${status}`} title={pending ? `${pending} 筆尚未上傳` : undefined}>
@@ -480,7 +573,17 @@ function Account({ user, status, pending }: { user: User | null; status: SyncSta
           重試
         </button>
       )}
-      <span className="name">{name}</span>
+      <button
+        className="name link"
+        title="修改暱稱（排行榜上顯示的名字）"
+        onClick={() => {
+          setDraft(displayName ?? '')
+          setRenameError(null)
+          setEditing(true)
+        }}
+      >
+        {displayName ?? '…'} ✎
+      </button>
       <button className="ghost small" onClick={() => void signOut()}>
         登出
       </button>

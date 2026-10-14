@@ -584,3 +584,125 @@ button.small:disabled {
     font-size: 0.9rem;
   }
 }
+
+/* ---------- 暱稱、排行榜 ---------- */
+
+button.link {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+button.link:hover {
+  text-decoration: underline;
+}
+
+.name-input {
+  width: 11em;
+  max-width: 50vw;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+}
+
+.board-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.board-head h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin: 12px 0 8px;
+  border-bottom: 1px solid var(--line);
+  overflow-x: auto;
+}
+
+.tab {
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tab.active {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+.board-note {
+  margin: 4px 0 10px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.board-empty {
+  padding: 24px 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+.board-empty button {
+  margin-top: 8px;
+}
+
+.board-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.board-table th,
+.board-table td {
+  padding: 8px 6px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.board-table th:first-child,
+.board-table td:first-child {
+  width: 3em;
+  text-align: center;
+}
+
+.board-table td:nth-child(n + 3),
+.board-table th:nth-child(n + 3) {
+  text-align: right;
+}
+
+.board-table tr.me td {
+  background: var(--warn-bg);
+  font-weight: 600;
+}
+
+.you {
+  margin-left: 6px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.pending {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--muted);
+}

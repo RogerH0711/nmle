@@ -17,3 +17,46 @@ export function signInWithGoogle() {
 export function signOut() {
   return supabase.auth.signOut()
 }
+
+export const NAME_MAX = 30
+
+export async function getDisplayName(userId: string): Promise<string | null> {
+  const { data } = await supabase.from('profiles').select('display_name').eq('id', userId).maybeSingle()
+  return (data?.display_name as string | undefined) ?? null
+}
+
+export async function setDisplayName(userId: string, name: string) {
+  const { error } = await supabase.from('profiles').update({ display_name: name }).eq('id', userId)
+  if (error) throw new Error(error.message)
+}
+
+// 排行榜由資料庫函式彙總（supabase/migrations/20261015000000_leaderboard.sql），只回傳暱稱與統計數字
+export interface WeeklyRow {
+  display_name: string
+  answered: number
+  correct: number
+  accuracy: number
+  qualified: boolean
+  is_me: boolean
+}
+
+export interface StreakRow {
+  display_name: string
+  streak: number
+  is_me: boolean
+}
+
+export const WEEKLY_MIN_ANSWERS = 50
+export const STREAK_MIN_DAILY = 10
+
+export async function fetchWeekly(): Promise<WeeklyRow[]> {
+  const { data, error } = await supabase.rpc('leaderboard_weekly', { min_answers: WEEKLY_MIN_ANSWERS })
+  if (error) throw new Error(error.message)
+  return (data as WeeklyRow[]).map((r) => ({ ...r, accuracy: Number(r.accuracy) }))
+}
+
+export async function fetchStreaks(): Promise<StreakRow[]> {
+  const { data, error } = await supabase.rpc('leaderboard_streaks', { min_daily: STREAK_MIN_DAILY })
+  if (error) throw new Error(error.message)
+  return data as StreakRow[]
+}

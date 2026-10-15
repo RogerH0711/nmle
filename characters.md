@@ -49,7 +49,7 @@
 
 - **解析度**：832 × 1216（直式全身立繪）
 - **參數**：CFG 5、28 steps、Euler a（依模型說明頁的建議）。
-- **prompt 順序**：角色 tag → 共用 tag → 品質 tag。SDXL 的文字編碼器只讀前 75 個 token，超過的會被默默丟掉，所以角色外觀放最前面；notebook 會在超過時直接報錯。新增角色時要先確認 tag 不會太長（沈靜澄、溫芷薰目前的 tag 都超過，要先刪減）。
+- **prompt 順序**：角色 tag → 共用 tag → 品質 tag。SDXL 的文字編碼器只讀前 75 個 token，超過的會被默默丟掉，所以角色外觀放最前面；notebook 會在超過時直接報錯。共用 tag 加品質 tag 佔 36 個 token，所以**角色 tag 最多 39 個**（以晴 38、顏緋 39）。表情差分的臉部 prompt 另外計算，空間比較多。葉縈的 tag 是 40、溫芷薰是 47，做之前要先刪減。
 - **共用 tag**：
 
 ```text
@@ -86,6 +86,7 @@ lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer
 | --- | --- | --- | --- | --- | --- |
 | 夏以晴 | 119 | (375, 85, 140, 125) | 0.6 | normal 2、happy 2、shy 2、sad 3、surprised 2 | 完成 |
 | 顏緋 | 113 | (382, 108, 112, 122) | 0.6 | 六種表情都是 2 | 完成 |
+| 沈靜澄 | | | | | 進行中 |
 
 `PICKS` 的 seed 是步驟 3 表情差分的 seed；`normal` 也是重畫過臉的版本，不是基本立繪原圖。挑表情時，所有表情盡量用同一個 seed，臉型才會一致；也要檢查遮罩邊緣有沒有多畫東西（例如顏緋的 seed 4 每張都多一顆耳環，換表情時會忽隱忽現）。
 
@@ -112,8 +113,13 @@ lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer
 **生圖 tag**
 
 ```text
-black hair, very long hair, straight hair, side part, blue eyes, glasses, semi-rimless eyewear, tall female, slender, labcoat, open labcoat, navy blue turtleneck, sweater, black pants, holding book, expressionless
+black hair, very long hair, straight hair, blue eyes, glasses, tall female, labcoat, open labcoat, blue turtleneck, black pants, holding book, expressionless
 ```
+
+原本的 tag 有 53 個 token，超過上限 14 個。刪掉 `side part`、`semi-rimless eyewear`（一個詞就佔 5 個 token）、`slender`、`sweater`，`navy blue` 改成 `blue`，剛好 39 個。
+
+- **臉部 tag**（表情差分用）：`black hair, long hair, straight hair, side part, blue eyes, glasses, semi-rimless eyewear`。眼鏡一定在臉部遮罩內，每個表情都會重畫；鏡框寫清楚，每張才會一樣。基本立繪定稿後，鏡框要依實際畫出來的樣子調整（例如畫成全框就改 `black-framed eyewear`）。
+- **表情覆寫**：酷系平常面無表情、開心也只是淡淡一笑，所以 `normal` 改成 `closed mouth, expressionless`，`happy` 改成 `light smile, closed mouth`。
 
 **好感度劇情大綱**
 - 0 初識：她用打量標本的眼神看你，說你的筆記「結構混亂」。

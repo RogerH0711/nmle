@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { User } from '@supabase/supabase-js'
 import type { ExamFile, Index, Letter, Question } from './types'
 import { imageUrl, loadIndex, loadPaper, loadQuestions, paperLabel, paperOf } from './bank'
@@ -245,12 +245,43 @@ export default function App() {
       ? characters.find((c) => c.id === run.subject)
       : characterForSubject(characters, current?.subject ?? null)
 
+  // ---------- 手機版捲動 ----------
+  // 手機畫面短，題目上方又有標題、錯題複習、角色卡，作答後的回饋和「下一題」常常在畫面外。
+  // 作答後把它們捲進畫面；換題時捲回題目開頭；開始新的一回合時捲到題目。
+  const playRef = useRef<HTMLDivElement>(null)
+  const navRef = useRef<HTMLElement>(null)
+  const revealRef = useRef(false) // 剛作答，等回饋畫出來再捲動
+  const runQueue = run?.queue
+  const runPos = run?.pos
+  const seenQueue = useRef<string[] | undefined>(undefined)
+
+  useEffect(() => {
+    if (!revealRef.current) return
+    revealRef.current = false
+    navRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
+  })
+
+  useEffect(() => {
+    const el = playRef.current
+    if (!el || !runQueue) return
+    const first = seenQueue.current === undefined // 剛打開網頁、恢復上次的回合：不要自己捲動
+    const fresh = seenQueue.current !== runQueue // 開始了新的一回合
+    seenQueue.current = runQueue
+    if (first) return
+    const top = el.getBoundingClientRect().top
+    // 換題時題目開頭在畫面上方看不到，或新回合的題目在畫面下半部，才捲動
+    if (top < 0 || (fresh && top > window.innerHeight * 0.4)) {
+      window.scrollTo({ top: window.scrollY + top - 8 })
+    }
+  }, [runQueue, runPos])
+
   const pick = useCallback(
     (letter: Letter) => {
       if (!run || !current || picked) return
       const ok = isCorrect(current, letter)
       setRun({ ...run, picks: { ...run.picks, [current.id]: letter } })
       recordAnswer(current.id, letter, ok)
+      revealRef.current = true
       const nextStreak = ok ? streak + 1 : 0
       setStreak(nextStreak)
       if (stageCharacter) {
@@ -544,7 +575,7 @@ export default function App() {
                 <span className="cast-type">{c.type}・{c.title}</span>
                 <span className="cast-subjects">{c.subjects.map((s) => index.subjects[s] ?? s).join('、')}</span>
                 <button className="primary small" onClick={() => void startCharacterRun(c)}>
-                  一起讀書（{ROUND_SIZE} 題）
+                  一起讀書<span className="round-size">（{ROUND_SIZE} 題）</span>
                 </button>
               </div>
             </div>
@@ -609,7 +640,7 @@ export default function App() {
         </span>
       </div>
 
-      <div className={stage ? 'play has-stage' : 'play'}>
+      <div className={stage ? 'play has-stage' : 'play'} ref={playRef}>
         {stage && <CharacterStage reaction={stage} answered={!done && !!picked && stage.text !== null} />}
         <div className="play-main">
           {done ? (
@@ -632,6 +663,7 @@ export default function App() {
               seed={run.pos}
               showLine={!stage}
               speech={stage && stage.text && picked ? { name: stage.character.name, color: stage.character.color, text: stage.text } : null}
+              navRef={navRef}
             />
           ) : (
             <div className="center">這個範圍沒有可作答的題目</div>
@@ -760,8 +792,9 @@ function QuestionCard(props: {
   seed: number
   showLine: boolean // 有角色陪讀時，反應台詞由角色說，這裡只顯示正解
   speech: { name: string; color: string; text: string } | null // 手機版把角色台詞放在選項下方，作答後一眼看得到
+  navRef: React.RefObject<HTMLElement | null> // 作答後捲到這裡，回饋和「下一題」才看得到
 }) {
-  const { q, index, picked, onPick, onNext, onPrev, seed, showLine, speech } = props
+  const { q, index, picked, onPick, onNext, onPrev, seed, showLine, speech, navRef } = props
   const correct = picked ? isCorrect(q, picked) : null
   const paper = index.papers.find((p) => q.id.startsWith(p.id + '_'))
 
@@ -819,7 +852,7 @@ function QuestionCard(props: {
         </div>
       )}
 
-      <nav className="nav">
+      <nav className="nav" ref={navRef}>
         <button className="ghost" onClick={onPrev} disabled={!onPrev}>
           ← 上一題
         </button>

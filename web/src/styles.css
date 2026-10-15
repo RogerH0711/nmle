@@ -326,6 +326,7 @@ button.small:disabled {
   justify-content: space-between;
   gap: 8px;
   margin-top: 16px;
+  scroll-margin-bottom: 16px; /* 作答後捲到這裡時，按鈕下面留一點空間 */
 }
 
 .nav button {
@@ -939,4 +940,101 @@ button.link:hover {
   border-radius: 8px;
   background: var(--card);
   max-width: 100%;
+}
+
+/* ---------- 手機版：壓縮題目上方的區塊，讓題目早點出現 ---------- */
+
+@media (max-width: 599px) {
+  .app {
+    padding-top: 8px;
+  }
+
+  /* 標題列兩行：第一行標題、模擬考、排行榜；第二行角色模式、登入狀態 */
+  .bar {
+    margin-bottom: 8px;
+  }
+
+  .bar h1 {
+    flex: 1;
+    white-space: nowrap;
+  }
+
+  .bar-right {
+    display: contents;
+  }
+
+  /* 佔滿一整行的空元素，讓角色模式和登入狀態換到第二行 */
+  .bar::after {
+    content: '';
+    order: 1;
+    flex-basis: 100%;
+    height: 0;
+    margin-top: -8px;
+  }
+
+  .toggle {
+    order: 2;
+    margin-right: auto;
+  }
+
+  .bar .account {
+    order: 3;
+  }
+
+  /* 錯題複習：文字和按鈕放同一行 */
+  .review {
+    flex-wrap: nowrap;
+    margin-bottom: 8px;
+    padding: 8px 10px;
+  }
+
+  .review > div {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .review-stats {
+    font-size: 0.8rem;
+  }
+
+  .review button {
+    flex: none;
+  }
+
+  .controls {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  /* 角色卡：兩欄小卡，只留胸像、名字和按鈕 */
+  .cast {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .cast-card {
+    gap: 8px;
+    padding: 6px;
+  }
+
+  .cast-card .portrait {
+    width: 48px;
+    height: 64px;
+    border-radius: 6px;
+  }
+
+  .cast-type,
+  .cast-subjects,
+  .round-size {
+    display: none;
+  }
+
+  .cast-info button {
+    margin-top: 4px;
+  }
+
+  .card {
+    padding: 14px 12px;
+  }
 }

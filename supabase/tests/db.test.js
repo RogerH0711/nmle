@@ -316,3 +316,87 @@ describe('模擬考', () => {
     assert.equal((await tryAs(db, null, `select * from public.leaderboard_mock()`)).ok, false)
   })
 })
+
+describe('回報疑義', () => {
+  let reportSeq = 0
+  const DEVICE = 'ffffffff-0000-4000-8000-000000000001'
+
+  /** 以某個身分（null 為未登入）送一筆回報；extra 可以覆寫欄位 */
+  const report = (userId, extra = {}) => {
+    const row = {
+      id: `ffffffff-1111-4000-8000-${String(++reportSeq).padStart(12, '0')}`,
+      device_id: `ffffffff-2222-4000-8000-${String(reportSeq).padStart(12, '0')}`, // 預設每筆不同裝置，不會撞到頻率限制
+      question_id: '115090_1_001',
+      reason: 'answer',
+      note: '正解應該是 B',
+      ...extra,
+    }
+    const cols = Object.keys(row)
+    return tryAs(
+      db,
+      userId,
+      `insert into public.reports (${cols.join(', ')}) values (${cols.map((_, i) => `$${i + 1}`).join(', ')})`,
+      cols.map((c) => row[c]),
+    )
+  }
+  const stored = async (id) => (await db.query(`select * from public.reports where id = $1`, [id])).rows[0]
+
+  test('沒登入也能回報，user_id 是 null', async () => {
+    assert.equal((await report(null, { id: 'ffffffff-3333-4000-8000-000000000001' })).ok, true)
+    assert.equal((await stored('ffffffff-3333-4000-8000-000000000001')).user_id, null)
+  })
+
+  test('登入時自動帶入 user_id', async () => {
+    assert.equal((await report(A, { id: 'ffffffff-3333-4000-8000-000000000002' })).ok, true)
+    assert.equal((await stored('ffffffff-3333-4000-8000-000000000002')).user_id, A)
+  })
+
+  test('不能冒用別人的 user_id；沒登入也不能填 user_id', async () => {
+    assert.equal((await report(A, { user_id: B })).ok, false)
+    assert.equal((await report(null, { user_id: B })).ok, false)
+  })
+
+  test('處理狀態、備註、建立時間由資料庫決定', async () => {
+    const id = 'ffffffff-3333-4000-8000-000000000003'
+    const t = await report(null, { id, status: 'fixed', admin_note: '已處理', created_at: '2000-01-01T00:00:00Z' })
+    assert.equal(t.ok, true)
+    const r = await stored(id)
+    assert.equal(r.status, 'open')
+    assert.equal(r.admin_note, null)
+    assert.ok(new Date(r.created_at).getFullYear() > 2000)
+  })
+
+  test('原因、題目 id、答案、補充說明長度都有檢查', async () => {
+    assert.equal((await report(null, { reason: 'spam' })).ok, false)
+    assert.equal((await report(null, { question_id: 'x' })).ok, false)
+    assert.equal((await report(null, { picked: 'E' })).ok, false)
+    assert.equal((await report(null, { note: '長'.repeat(501) })).ok, false)
+    assert.equal((await report(null, { note: '長'.repeat(500), picked: 'C', build: '0afa325' })).ok, true)
+  })
+
+  test('同一台裝置每分鐘最多 5 筆', async () => {
+    const results = []
+    for (let i = 0; i < 6; i++) results.push((await report(null, { device_id: DEVICE })).ok)
+    assert.deepEqual(results, [true, true, true, true, true, false])
+  })
+
+  test('沒有人讀得到、改得到、刪得到回報', async () => {
+    for (const user of [A, null]) {
+      const r = await tryAs(db, user, `select * from public.reports`)
+      assert.ok(!r.ok || r.res.rows.length === 0, `${user ?? '未登入'} 讀到了回報`)
+      for (const sql of [`update public.reports set status = 'fixed'`, `delete from public.reports`]) {
+        const t = await tryAs(db, user, sql)
+        assert.ok(!t.ok || t.res.affectedRows === 0, sql)
+      }
+    }
+  })
+
+  test('匿名回報合計每小時最多 200 筆，登入的人不受影響', async () => {
+    const before = (await db.query(`select count(*)::int as n from public.reports where user_id is null`)).rows[0].n
+    for (let i = before; i < 200; i++) assert.equal((await report(null)).ok, true, `第 ${i + 1} 筆`)
+    const blocked = await report(null)
+    assert.equal(blocked.ok, false)
+    assert.match(blocked.error, /匿名回報太多/)
+    assert.equal((await report(B)).ok, true)
+  })
+})

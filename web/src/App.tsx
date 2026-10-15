@@ -14,6 +14,7 @@ import { CharacterStage, Portrait } from './CharacterStage'
 import { bestCharacter, firstAttempts, isMockCorrect, MOCK_HIGH, MOCK_MINUTES, mockQueue, scoreMock, submitTime, type MockSession } from './mock'
 import { addMock, loadSession, saveSession, switchMockUser, useMocks } from './mockStore'
 import { MockHome, MockResult, MockRunner } from './MockExam'
+import { ReportButton } from './Report'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
 
@@ -488,6 +489,7 @@ export default function App() {
         ) : (
           <div className="center">載入中…</div>
         )}
+        <Disclaimer />
       </div>
     )
   }
@@ -672,7 +674,21 @@ export default function App() {
       </div>
         </>
       )}
+      <Disclaimer />
     </div>
+  )
+}
+
+// 每一頁最下方的免責聲明
+function Disclaimer() {
+  return (
+    <footer className="disclaimer">
+      <p>
+        非官方題庫。試題與答案取自考選部公開的歷屆試題，正解以考選部公告（含更正答案）為準。題目由程式從 PDF
+        解析，可能有誤，發現問題請按題目下方的「回報疑義」。
+      </p>
+      <p>角色立繪為 AI 生成。</p>
+    </footer>
   )
 }
 
@@ -860,7 +876,10 @@ function QuestionCard(props: {
           下一題 →
         </button>
       </nav>
-      <p className="hint">鍵盤：1–4 作答，Enter 下一題</p>
+      <div className="card-foot">
+        <ReportButton key={q.id} questionId={q.id} picked={picked} />
+        <p className="hint">鍵盤：1–4 作答，Enter 下一題</p>
+      </div>
     </main>
   )
 }

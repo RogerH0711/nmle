@@ -329,7 +329,8 @@ galgame 最常看的是臉，所以選 Animagine。兩位角色的 `scrubs` 常�
 
 - 五位角色的立繪與台詞到齊後，Claude 做了好感度系統、五位角色各五段劇情（初識到告白前夕，結局等考完一階）、葉縈的吃醋觸發（見「遊戲設計」的「好感度與劇情」）。
 - 好感度門檻是先訂的建議值，朋友用一陣子後看大家實際升階的速度再調（`web/src/affection.ts` 的 `GOALS`）。
-- 下一步：Roger 在 Colab 做劇情背景（清單見「美術與內容」），以及看過劇情腳本、調整語氣。
+- 劇情背景：第一批五張（`cafe`、`library`、`anatomy_lab`、`lab`、`hospital`）已完成。還缺 `track`、`night_street`、`festival`、`stairwell`，用到它們的劇情暫時是漸層色。
+- 下一步：Roger 在 Colab 做剩下四張背景，以及看過劇情腳本、調整語氣。
 
 ## 風險與待決事項
 

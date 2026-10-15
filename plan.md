@@ -250,7 +250,7 @@ galgame 最常看的是臉，所以選 Animagine。兩位角色的 `scrubs` 常�
 1. **比稿**：同一組角色 tag、同一個 seed，分別用前三個模型各生成一批，憑眼睛挑一個定案。之後五位角色全用同一個模型，畫風才會統一。
 2. **定稿基本立繪**：用 `characters.md` 裡每位角色固定的 tag 組合，換不同 seed 生成幾十張，挑一張定稿。
 3. **表情差分**：用 inpainting 只重畫臉部，身體、服裝和姿勢不動。
-4. **去背**：用 rembg 輸出透明背景，合併 `isnet-anime` 和 BiRefNet 兩個模型的遮罩，再修掉半透明邊緣混到的背景白（`art/defringe.py`）。只用 `isnet-anime` 時，髮絲之間的背景會留下來，邊緣也有一圈白邊，在深色模式最明顯。已輸出的立繪用 `art/recut.py` 重做。
+4. **去背**：用 rembg 的 `bria-rmbg` 模型輸出透明背景，再修掉半透明邊緣混到的背景白（`art/defringe.py`）。比較過 `isnet-anime`、四種 BiRefNet 和 `bria-rmbg`：`isnet-anime` 會把細髮絲之間的背景當成頭髮留下來，在深色模式變成一條條白邊（沈靜澄的長髮最明顯）；BiRefNet 能去掉背景但細髮絲斷成點狀；`bria-rmbg` 兩者都沒問題。已輸出的立繪用 `art/recut.py` 重做；`bria-rmbg` 模型約 1 GB，本機下載慢的話先在 Colab 算遮罩（`art/recut.py --mask`）。
 5. **LoRA（之後再做）**：要畫劇情 CG、讓角色出現在不同場景時，再用定稿圖訓練每位角色的 LoRA。
 
 **Colab 注意事項**
@@ -342,6 +342,7 @@ galgame 最常看的是臉，所以選 Animagine。兩位角色的 `scrubs` 常�
 - [x] GitHub 帳號：放在 RogerH0711（公開 repo），作為作品集的一部分。
 - [x] 是否公開：先給朋友用，確認有成效後公開（見「公開與作品集」）。
 - [x] AI 生圖模型：Animagine XL 4.0 Opt（CreativeML Open RAIL++-M 授權）。公開前再讀一次授權條款的使用限制。
+- [ ] 去背模型 `bria-rmbg`（BRIA 的 RMBG 模型）是非商業授權：本專案不收費，目前可以用；公開前確認一次條款，以及作品集展示是否在允許範圍內。
 - [ ] 自訂網域與專案專用 Gmail（公開前決定）。
 - [ ] 是否解析 105–109 年考卷。
 

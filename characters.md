@@ -107,7 +107,7 @@ lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer
 - 共用 tag：`no humans, scenery, detailed background, visual novel background`，品質 tag 同立繪。
 - 負向 tag 和立繪不同：拿掉 `scenery`（這次要的就是場景），加上 `1girl, 1boy, person, people, character` 避免畫出人物，以及 `japanese text`（舞台在台灣，避免日文招牌）。解剖教室、醫院、實驗室另外排除 `skeleton, corpse, blood, gore` 這類 tag（輔導級）。
 - 各背景的 tag 寫在 notebook 的 `BACKGROUNDS`，都在 75 token 以內。
-- 第一批五張是把 Drive 的候選圖下載到本機（`art/bakeoff/`，不進 repo）再挑，轉檔和 notebook 步驟 2 相同（webp 品質 85）。挑選標準：畫面中間比較空（立繪站在正中間）、沒有亂碼文字、沒有人物。
+- 九張都是把 Drive 的候選圖下載到本機（`art/bakeoff/`，不進 repo）再挑，轉檔和 notebook 步驟 2 相同（webp 品質 85）。挑選標準：畫面中間比較空（立繪站在正中間）、沒有亂碼文字、沒有人物。
 - `anatomy_lab` 和 `hospital` 的候選圖大多畫成一般學校的教室與走廊，模型對這兩種場景的知識不多。之後要重做的話，可以換 seed 多跑幾張，或把 tag 寫得更具體（例如 `hospital corridor`）。`diffusers` 不吃 WebUI 的 `(tag:1.3)` 權重語法，不要用。
 
 | 背景 id | 場景 | seed | 狀態 |
@@ -117,10 +117,10 @@ lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer
 | `anatomy_lab` | 解剖教室 | 100 | 完成（唯一有不鏽鋼桌的一張，其他都畫成一般教室） |
 | `lab` | 微免實驗室 | 102 | 完成 |
 | `hospital` | 醫院（閱片室、藥局） | 105 | 完成（走廊有長椅，比較像醫院） |
-| `track` | 操場跑道 | | |
-| `night_street` | 夜晚街道、宿舍前 | | |
-| `festival` | 夏日祭典 | | |
-| `stairwell` | 醫院逃生梯 | | |
+| `track` | 操場跑道 | 108 | 完成 |
+| `night_street` | 夜晚街道、宿舍前 | 104 | 完成（路邊有機車，比較像台灣） |
+| `festival` | 夏日祭典 | 102 | 完成（其他張的燈籠、旗子多半有亂碼日文） |
+| `stairwell` | 醫院逃生梯 | 104 | 完成 |
 
 ---
 

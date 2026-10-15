@@ -86,7 +86,7 @@ lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer
 | --- | --- | --- | --- | --- | --- |
 | 夏以晴 | 119 | (375, 85, 140, 125) | 0.6 | normal 2、happy 2、shy 2、sad 3、surprised 2 | 完成 |
 | 顏緋 | 113 | (382, 108, 112, 122) | 0.6 | 六種表情都是 2 | 完成 |
-| 沈靜澄 | | | | | 進行中 |
+| 沈靜澄 | 123 | (338, 102, 106, 102) | 0.6 | 五種表情都是 1 | 去背輸出中 |
 
 `PICKS` 的 seed 是步驟 3 表情差分的 seed；`normal` 也是重畫過臉的版本，不是基本立繪原圖。挑表情時，所有表情盡量用同一個 seed，臉型才會一致；也要檢查遮罩邊緣有沒有多畫東西（例如顏緋的 seed 4 每張都多一顆耳環，換表情時會忽隱忽現）。
 
@@ -118,7 +118,7 @@ black hair, very long hair, straight hair, blue eyes, glasses, tall female, labc
 
 原本的 tag 有 53 個 token，超過上限 14 個。刪掉 `side part`、`semi-rimless eyewear`（一個詞就佔 5 個 token）、`slender`、`sweater`，`navy blue` 改成 `blue`，剛好 39 個。
 
-- **臉部 tag**（表情差分用）：`black hair, long hair, straight hair, side part, blue eyes, glasses, semi-rimless eyewear`。眼鏡一定在臉部遮罩內，每個表情都會重畫；鏡框寫清楚，每張才會一樣。基本立繪定稿後，鏡框要依實際畫出來的樣子調整（例如畫成全框就改 `black-framed eyewear`）。
+- **臉部 tag**（表情差分用）：`black hair, long hair, straight hair, side part, blue eyes, glasses, grey-framed eyewear`。眼鏡一定在臉部遮罩內，每個表情都會重畫，鏡框要和基本立繪一致。定稿的 seed 123 是灰色細金屬全框：寫 `semi-rimless eyewear`（半框）會被改畫成只有上框；只寫 `glasses` 會被畫成金框，而鏡腳在遮罩外仍是灰色，顏色接不起來。
 - **表情覆寫**：酷系平常面無表情、開心也只是淡淡一笑，所以 `normal` 改成 `closed mouth, expressionless`，`happy` 改成 `light smile, closed mouth`。
 
 **好感度劇情大綱**

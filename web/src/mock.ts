@@ -94,3 +94,24 @@ export function firstAttempts(records: MockRecord[]) {
   }
   return new Set([...first.values()].map((r) => r.id))
 }
+
+/**
+ * 高分交卷後由哪位角色來說話：這份考卷裡，她負責的學科得分率最高的那位。
+ * 得分率一樣時，選題數多的。考卷裡沒有她負責的學科就不算。
+ */
+export function bestCharacter<C extends { subjects: string[] }>(
+  questions: Question[],
+  picks: Record<string, Letter>,
+  characters: C[],
+): C | undefined {
+  let best: { c: C; rate: number; total: number } | undefined
+  for (const c of characters) {
+    const mine = questions.filter((q) => q.valid && q.subject && c.subjects.includes(q.subject))
+    if (!mine.length) continue
+    const rate = mine.filter((q) => isMockCorrect(q, picks[q.id])).length / mine.length
+    if (!best || rate > best.rate || (rate === best.rate && mine.length > best.total)) {
+      best = { c, rate, total: mine.length }
+    }
+  }
+  return best?.c
+}

@@ -11,7 +11,7 @@ import {
   STREAK_EVERY, type Character, type Line, type Reaction, type Situation,
 } from './characters'
 import { CharacterStage, Portrait } from './CharacterStage'
-import { firstAttempts, isMockCorrect, MOCK_HIGH, MOCK_MINUTES, mockQueue, scoreMock, submitTime, type MockSession } from './mock'
+import { bestCharacter, firstAttempts, isMockCorrect, MOCK_HIGH, MOCK_MINUTES, mockQueue, scoreMock, submitTime, type MockSession } from './mock'
 import { addMock, loadSession, saveSession, switchMockUser, useMocks } from './mockStore'
 import { MockHome, MockResult, MockRunner } from './MockExam'
 
@@ -396,16 +396,6 @@ export default function App() {
     }
   }
 
-  // 這份考卷題數最多的角色（高分時由她來說話）
-  const mainCharacter = (qs: Question[]) => {
-    const count = new Map<Character, number>()
-    for (const q of qs) {
-      const c = characterForSubject(characters, q.subject)
-      if (c) count.set(c, (count.get(c) ?? 0) + 1)
-    }
-    return [...count].sort((a, b) => b[1] - a[1])[0]?.[0]
-  }
-
   const submitMock = () => {
     if (!session) return
     const qs = paperQuestionsOf(session.paperId).filter((q) => q.valid)
@@ -418,7 +408,7 @@ export default function App() {
       submittedAt,
     )
     const { score } = scoreMock(paperQuestionsOf(session.paperId), picks)
-    const c = characterMode && score >= MOCK_HIGH ? mainCharacter(qs) : undefined
+    const c = characterMode && score >= MOCK_HIGH ? bestCharacter(qs, picks, characters) : undefined
     setMockStage(c ? react(c, 'mock_high', session.id) : null)
     updateSession(null)
     setMockResultId(session.id)

@@ -14,8 +14,8 @@
     { "id": "fei-correct-002", "situation": "correct", "affection_min": 0, "expression": "pout", "text": "……對啦。幹嘛一臉等我稱讚的樣子。" },
     { "id": "fei-correct-003", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "正確。這種程度本來就該會，下一題。" },
     { "id": "fei-correct-004", "situation": "correct", "affection_min": 0, "expression": "happy", "text": "不錯嘛。……我、我是說題目出得不錯！" },
-    { "id": "fei-correct-005", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "答對了。記住，凋亡不會引起發炎，壞死才會——這種基本的不准再忘。" },
-    { "id": "fei-correct-006", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "嗯。敏感度高的檢驗，陰性才能拿來排除；特異度高的，陽性才能拿來確診。你剛剛有想到這點吧？" },
+    { "id": "fei-correct-005", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "答對了。順便記住，凋亡不會引起發炎，壞死才會——這種基本的不准忘。" },
+    { "id": "fei-correct-006", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "嗯。順便考你：敏感度高的檢驗，陰性才能拿來排除；特異度高的，陽性才能拿來確診。這個很常考。" },
     { "id": "fei-correct-007", "situation": "correct", "affection_min": 0, "expression": "pout", "text": "答對了又怎樣，一題而已，不要得意忘形。" },
     { "id": "fei-correct-008", "situation": "correct", "affection_min": 1, "expression": "shy", "text": "……做得很好。只有這一次喔，我只說這一次！" },
 

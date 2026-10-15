@@ -1,7 +1,7 @@
 // 模擬考的計分與計時規則（要和資料庫的 leaderboard_mock 一致）。執行：npm test
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { firstAttempts, formatClock, mockQueue, scoreMock, submitTime, type MockRecord } from './mock.ts'
+import { bestCharacter, firstAttempts, formatClock, mockQueue, scoreMock, submitTime, type MockRecord } from './mock.ts'
 import type { Letter, Question } from './types.ts'
 
 const q = (number: number, subject: string, answers: Letter[], extra: Partial<Question> = {}): Question => ({
@@ -71,4 +71,24 @@ test('每份考卷只有第一次模擬考列入排行榜', () => {
     r('c', '115090_2', '2026-10-17T00:00:00Z'),
   ])
   assert.deepEqual([...ids].sort(), ['a', 'c'])
+})
+
+test('高分時由負責學科得分率最高的角色說話，不是題數最多的', () => {
+  const jingcheng = { id: 'jingcheng', subjects: ['anatomy'] }
+  const yiqing = { id: 'yiqing', subjects: ['physiology'] }
+  const fei = { id: 'fei', subjects: ['pathology'] } // 這份考卷沒有她的學科
+  const qs = [
+    q(1, 'anatomy', ['A']),
+    q(2, 'anatomy', ['A']),
+    q(3, 'physiology', ['A']),
+    q(4, 'physiology', ['A']),
+    q(5, 'physiology', ['A']),
+  ]
+  const all = (ids: number[]) => Object.fromEntries(ids.map((n) => [`115090_1_00${n}`, 'A' as Letter]))
+  // 解剖 2/2、生理 2/3：題數較少的沈靜澄得分率較高
+  assert.equal(bestCharacter(qs, all([1, 2, 3, 4]), [yiqing, jingcheng, fei])?.id, 'jingcheng')
+  // 都全對：得分率一樣，選題數多的
+  assert.equal(bestCharacter(qs, all([1, 2, 3, 4, 5]), [jingcheng, yiqing, fei])?.id, 'yiqing')
+  // 沒有任何角色負責這份考卷的學科
+  assert.equal(bestCharacter(qs, {}, [fei]), undefined)
 })

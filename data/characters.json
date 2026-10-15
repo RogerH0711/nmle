@@ -50,6 +50,7 @@
       "title": "病理科住院醫師",
       "subjects": ["pathology", "public_health"],
       "expressions": ["normal", "happy", "shy", "sad", "surprised", "pout"],
+      "bust": { "x": 324, "y": 33, "w": 228 },
       "enabled": true
     }
   ]

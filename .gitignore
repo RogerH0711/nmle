@@ -6,5 +6,8 @@ node_modules/
 web/dist/
 *.tsbuildinfo
 
-# Colab 生成的比稿與候選圖（很大，只留在本機和 Google Drive）
-art/bakeoff/
+# Colab 生成的比稿與候選圖（很大，只留在本機和 Google Drive）；art/ 底下只有 notebook 進 repo
+art/*/
+
+# macOS Finder 自動產生的檔案
+.DS_Store

@@ -80,6 +80,17 @@ lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer
 
 個別角色可以覆寫（例如葉縈多一個 `yandere` 表情、顏緋多一個 `pout`）。
 
+**定稿紀錄**：每位角色定稿後都要記在這裡，之後才能重現或修改同一張立繪。實際生成用的是 Colab 裡的 notebook，repo 的 `art/portraits.ipynb` 不一定是最新的，裡面的 `BASE_SEED` 等數值只是範例，不代表實際使用的值。每次生成的完整參數也記在 Google Drive 的 `nmle-art/log.jsonl`。
+
+| 角色 | 基本立繪 seed | `FACE_BOX`（x, y, 寬, 高） | `STRENGTH` | 各表情選用的 seed（`PICKS`） | 狀態 |
+| --- | --- | --- | --- | --- | --- |
+| 夏以晴 | 119 | (375, 85, 140, 125) | 0.6 | normal 2、happy 2、shy 2、sad 3、surprised 2 | 完成 |
+| 顏緋 | 113 | (382, 108, 112, 122) | 0.6 | 六種表情都是 2 | 完成 |
+
+`PICKS` 的 seed 是步驟 3 表情差分的 seed；`normal` 也是重畫過臉的版本，不是基本立繪原圖。挑表情時，所有表情盡量用同一個 seed，臉型才會一致；也要檢查遮罩邊緣有沒有多畫東西（例如顏緋的 seed 4 每張都多一顆耳環，換表情時會忽隱忽現）。
+
+`FACE_BOX` 的範圍是框內切的橢圓，只重畫橢圓裡面的部分。範圍只要包含眉毛到下巴；編髮、髮夾這類每張表情都要一樣的特徵要留在橢圓外，否則每換一個表情就會被重畫一次。
+
 ---
 
 ## 沈靜澄（酷系・藍）

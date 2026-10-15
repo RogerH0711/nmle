@@ -13,7 +13,7 @@
 | `zhixun` | 溫芷薰 | 大姊姊 | 紫 | 27 | 醫院臨床藥師 | 藥理學 | 25 |
 | `fei` | 顏緋 | 傲嬌 | 紅 | 28 | 病理科住院醫師 | 病理學、公共衛生學 | 40 |
 
-第一版（10/21 前）先做 **夏以晴**（醫學(一)）和 **顏緋**（醫學(二)），其餘三位考前陸續加入。**沈靜澄**已在 10/15 加入（立繪與台詞）；葉縈、溫芷薰還沒做。
+第一版（10/21 前）先做 **夏以晴**（醫學(一)）和 **顏緋**（醫學(二)），其餘三位考前陸續加入。**沈靜澄**、**溫芷薰**已在 10/15 加入（立繪與台詞）；葉縈還沒做。
 
 ## 世界觀與故事
 
@@ -87,11 +87,11 @@ lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer
 | 夏以晴 | 119 | (375, 85, 140, 125) | 0.6 | normal 2、happy 2、shy 2、sad 3、surprised 2 | 完成 |
 | 顏緋 | 113 | (382, 108, 112, 122) | 0.6 | 六種表情都是 2 | 完成 |
 | 沈靜澄 | 123 | (338, 102, 106, 102) | 0.6 | 五種表情都是 1 | 完成 |
-| 溫芷薰 | | | | | 進行中 |
+| 溫芷薰 | 110 | (378, 150, 106, 108) | 0.6 | 五種表情都是 4 | 完成；`KEEP_DARK = [(464, 197, 4)]`（左眼下的淚痣） |
 
 `PICKS` 的 seed 是步驟 3 表情差分的 seed；`normal` 也是重畫過臉的版本，不是基本立繪原圖。挑表情時，所有表情盡量用同一個 seed，臉型才會一致；也要檢查遮罩邊緣有沒有多畫東西（例如顏緋的 seed 4 每張都多一顆耳環，換表情時會忽隱忽現）。
 
-`FACE_BOX` 的範圍是框內切的橢圓，只重畫橢圓裡面的部分。範圍只要包含眉毛到下巴；編髮、髮夾這類每張表情都要一樣的特徵要留在橢圓外，否則每換一個表情就會被重畫一次。
+`FACE_BOX` 的範圍是框內切的橢圓，只重畫橢圓裡面的部分。範圍只要包含眉毛到下巴；編髮、髮夾這類每張表情都要一樣的特徵要留在橢圓外，否則每換一個表情就會被重畫一次。淚痣這種一定在臉上、又要固定位置的小點，用 `KEEP_DARK` 保留，不要寫進臉部 tag。
 
 ---
 
@@ -238,12 +238,14 @@ dark green hair, long hair, low twintails, hair ribbon, green eyes, bags under e
 **生圖 tag**
 
 ```text
-light purple hair, long hair, wavy hair, low side ponytail, purple eyes, droopy eyes, mole under eye, tall female, open labcoat, lavender cardigan, long skirt, lanyard
+light purple hair, long hair, wavy hair, side ponytail, purple eyes, droopy eyes, mole under eye, labcoat, open labcoat, purple sweater, long skirt, lanyard
 ```
 
-原本的 tag 有 47 個 token，超過上限 8 個。刪掉 `grey hair`（和 `light purple hair` 衝突）、`gentle smile`（表情會重畫）、`id card`（有 `lanyard` 就夠）、`labcoat`（`open labcoat` 已包含），剛好 39 個。一定要寫 `open labcoat`：白袍扣起來會看不到裡面的針織衫。
+原本的 tag 有 47 個 token，超過上限 8 個。刪掉 `grey hair`（和 `light purple hair` 衝突）、`gentle smile`（表情會重畫）、`id card`（有 `lanyard` 就夠）、`tall female` 和低馬尾的 `low`，剩 38 個。
 
-- **臉部 tag**（表情差分用）：`light purple hair, long hair, wavy hair, purple eyes, droopy eyes, mole under eye`。淚痣在臉部遮罩內，每個表情都會重畫，要寫進來才不會消失或換位置。
+第一次的版本只寫 `open labcoat`、針織衫寫 `lavender cardigan`，結果 24 張全部沒有白袍：開襟針織衫本身也是外套，被畫成一件紫色長外套；`lavender` 還被當成薰衣草，畫出花叢背景。所以 `labcoat` 要和 `open labcoat` 一起寫（以晴、顏緋也是這樣），針織衫改成穿在白袍裡面的 `purple sweater`。
+
+- **臉部 tag**（表情差分用）：`light purple hair, long hair, wavy hair, purple eyes, droopy eyes`。不寫 `mole under eye`：這個 tag 不分左右，試過 `STRENGTH` 0.6 和 0.5，重畫時淚痣都會換邊或變成兩顆。淚痣改用 notebook 的 `KEEP_DARK` 從基本立繪搬回來（只在痣周圍的小圓內取比較深的顏色），每個表情的位置都一樣，周圍的臉紅、膚色仍是新表情的。
 - **角色專屬負向 tag**：`large breasts, cleavage`。大姊姊類型容易被畫成刻意強調胸部，和輔導級的尺度規範衝突。只加在她身上，不影響其他角色的定稿參數。
 
 **好感度劇情大綱**
@@ -333,7 +335,7 @@ red hair, medium hair, side braid, red eyes, tsurime, red scrubs, scrub top, scr
 
 **目前的檔案**
 - 角色基本資料：`data/characters.json`（`enabled` 為 `false` 的角色網站不顯示）。
-- 台詞：`data/lines/yiqing.json`、`data/lines/fei.json`、`data/lines/jingcheng.json`。答對、答錯的台詞是從同一情境隨機抽的，不會對應題目內容；帶醫學知識的台詞要寫成「順便補充」的語氣，不要暗示剛才那題考的就是這個。好感度系統還沒做，目前只會出現 `affection_min` 為 0 的台詞。
+- 台詞：`data/lines/yiqing.json`、`data/lines/fei.json`、`data/lines/jingcheng.json`、`data/lines/zhixun.json`。答對、答錯的台詞是從同一情境隨機抽的，不會對應題目內容；帶醫學知識的台詞要寫成「順便補充」的語氣，不要暗示剛才那題考的就是這個。好感度系統還沒做，目前只會出現 `affection_min` 為 0 的台詞。
 - `mock_high`：角色模式下模擬考 70 分以上，交卷後由這份考卷裡負責學科得分率最高的角色說（得分率一樣時選題數多的）。例如醫學(一) 解剖、胚胎、組織考得最好，就是沈靜澄。
 - 立繪：`data/characters/<角色 id>/<表情 id>.webp`，用 `art/portraits.ipynb` 產生。缺少某個表情時會改用 `normal`，連 `normal` 都沒有就顯示代表色的佔位圖。
 - 胸像範圍：角色卡和手機版的小框只顯示胸像，範圍是 `characters.json` 的 `bust`（`x`、`y`、`w`，單位是原圖像素，高度依小框比例自動算，約 `w ÷ 0.73`）。每位角色姿勢不同，立繪做好後要各設一次；沒設就從圖片頂端顯示全寬。

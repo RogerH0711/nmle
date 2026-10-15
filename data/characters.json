@@ -41,7 +41,8 @@
       "title": "醫院臨床藥師",
       "subjects": ["pharmacology"],
       "expressions": ["normal", "happy", "shy", "sad", "surprised"],
-      "enabled": false
+      "bust": { "x": 314, "y": 75, "w": 234 },
+      "enabled": true
     },
     {
       "id": "fei",

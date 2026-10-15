@@ -349,7 +349,7 @@ galgame 最常看的是臉，所以選 Animagine。兩位角色的 `scrubs` 常�
 
 1. 先讀完這份 `plan.md` 和 `characters.md`。
 2. 階段 0、1 已完成：題庫 pipeline（`pipeline/`）、110–115 年題庫（`data/`）、網站（`web/`）、Supabase 登入與同步、錯題複習、GitHub Pages 自動部署。
-3. 階段 2 進度見里程碑表。階段 2 已完成。階段 3 的另外三位角色：沈靜澄已完成（立繪與台詞）；葉縈、溫芷薰還沒做，tag 要先刪減到 75 token 內（見 `characters.md`）。
+3. 階段 2 進度見里程碑表。階段 2 已完成。階段 3 的另外三位角色：沈靜澄、溫芷薰已完成（立繪與台詞）；葉縈還沒做，tag 要先刪 1 個 token（見 `characters.md`）。
 4. 題目正確率優先：改 pipeline 後重跑 `pipeline/build_exam.py --years 110 115`，確認每份考卷的自動檢查都通過，並和改之前的輸出比對差異；正解有變動就重跑 `pipeline/export_keys.py`，再由 Roger 執行 `npm run db:push` 更新資料庫。
 5. 資料庫變更寫成 `supabase/migrations/` 下的新檔案，並在 `supabase/tests/` 加測試（`npm run test:db`，用 PGlite 模擬 Supabase）；每張新表都要開 Row Level Security。推送流程見 `supabase/README.md`（Supabase CLI，`npm run db:push` 由 Roger 執行），推送後從外部測一次未登入的讀寫。
 6. GitHub Actions 每次 push 先跑資料庫測試和 `web/` 的單元測試，沒過就不部署。

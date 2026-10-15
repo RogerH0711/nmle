@@ -31,7 +31,8 @@
       "title": "微免研究所研究助理",
       "subjects": ["microbiology", "parasitology"],
       "expressions": ["normal", "happy", "shy", "sad", "surprised", "yandere"],
-      "enabled": false
+      "bust": { "x": 307, "y": 56, "w": 262 },
+      "enabled": true
     },
     {
       "id": "zhixun",

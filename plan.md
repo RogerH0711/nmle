@@ -250,7 +250,7 @@ galgame 最常看的是臉，所以選 Animagine。兩位角色的 `scrubs` 常�
 1. **比稿**：同一組角色 tag、同一個 seed，分別用前三個模型各生成一批，憑眼睛挑一個定案。之後五位角色全用同一個模型，畫風才會統一。
 2. **定稿基本立繪**：用 `characters.md` 裡每位角色固定的 tag 組合，換不同 seed 生成幾十張，挑一張定稿。
 3. **表情差分**：用 inpainting 只重畫臉部，身體、服裝和姿勢不動。
-4. **去背**：用 rembg 之類的工具輸出透明背景 PNG。
+4. **去背**：用 rembg 輸出透明背景，合併 `isnet-anime` 和 BiRefNet 兩個模型的遮罩，再修掉半透明邊緣混到的背景白（`art/defringe.py`）。只用 `isnet-anime` 時，髮絲之間的背景會留下來，邊緣也有一圈白邊，在深色模式最明顯。已輸出的立繪用 `art/recut.py` 重做。
 5. **LoRA（之後再做）**：要畫劇情 CG、讓角色出現在不同場景時，再用定稿圖訓練每位角色的 LoRA。
 
 **Colab 注意事項**
@@ -349,7 +349,7 @@ galgame 最常看的是臉，所以選 Animagine。兩位角色的 `scrubs` 常�
 
 1. 先讀完這份 `plan.md` 和 `characters.md`。
 2. 階段 0、1 已完成：題庫 pipeline（`pipeline/`）、110–115 年題庫（`data/`）、網站（`web/`）、Supabase 登入與同步、錯題複習、GitHub Pages 自動部署。
-3. 階段 2 進度見里程碑表。階段 2 已完成。階段 3 的另外三位角色：沈靜澄、溫芷薰已完成（立繪與台詞）；葉縈還沒做，tag 要先刪 1 個 token（見 `characters.md`）。
+3. 階段 2 進度見里程碑表。階段 2 已完成。階段 3 的另外三位角色都已完成（立繪與台詞），五位到齊。接下來是場景背景、好感度系統（含葉縈的吃醋觸發）。
 4. 題目正確率優先：改 pipeline 後重跑 `pipeline/build_exam.py --years 110 115`，確認每份考卷的自動檢查都通過，並和改之前的輸出比對差異；正解有變動就重跑 `pipeline/export_keys.py`，再由 Roger 執行 `npm run db:push` 更新資料庫。
 5. 資料庫變更寫成 `supabase/migrations/` 下的新檔案，並在 `supabase/tests/` 加測試（`npm run test:db`，用 PGlite 模擬 Supabase）；每張新表都要開 Row Level Security。推送流程見 `supabase/README.md`（Supabase CLI，`npm run db:push` 由 Roger 執行），推送後從外部測一次未登入的讀寫。
 6. GitHub Actions 每次 push 先跑資料庫測試和 `web/` 的單元測試，沒過就不部署。

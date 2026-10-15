@@ -13,7 +13,7 @@
 | `zhixun` | 溫芷薰 | 大姊姊 | 紫 | 27 | 醫院臨床藥師 | 藥理學 | 25 |
 | `fei` | 顏緋 | 傲嬌 | 紅 | 28 | 病理科住院醫師 | 病理學、公共衛生學 | 40 |
 
-第一版（10/21 前）先做 **夏以晴**（醫學(一)）和 **顏緋**（醫學(二)），其餘三位考前陸續加入。**沈靜澄**、**溫芷薰**已在 10/15 加入（立繪與台詞）；葉縈還沒做。
+第一版（10/21 前）先做 **夏以晴**（醫學(一)）和 **顏緋**（醫學(二)），其餘三位考前陸續加入。**沈靜澄**、**溫芷薰**、**葉縈**已在 10/15 加入（立繪與台詞），五位角色到齊。
 
 ## 世界觀與故事
 
@@ -49,7 +49,7 @@
 
 - **解析度**：832 × 1216（直式全身立繪）
 - **參數**：CFG 5、28 steps、Euler a（依模型說明頁的建議）。
-- **prompt 順序**：角色 tag → 共用 tag → 品質 tag。SDXL 的文字編碼器只讀前 75 個 token，超過的會被默默丟掉，所以角色外觀放最前面；notebook 會在超過時直接報錯。共用 tag 加品質 tag 佔 36 個 token，所以**角色 tag 最多 39 個**（以晴 38、顏緋 39）。表情差分的臉部 prompt 另外計算，空間比較多。葉縈的 tag 是 40，做之前要先刪 1 個。
+- **prompt 順序**：角色 tag → 共用 tag → 品質 tag。SDXL 的文字編碼器只讀前 75 個 token，超過的會被默默丟掉，所以角色外觀放最前面；notebook 會在超過時直接報錯。共用 tag 加品質 tag 佔 36 個 token，所以**角色 tag 最多 39 個**（以晴 38、顏緋 39）。表情差分的臉部 prompt 另外計算，空間比較多。五位角色的 tag 都已經在上限內。
 - **共用 tag**：
 
 ```text
@@ -88,6 +88,7 @@ lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer
 | 顏緋 | 113 | (382, 108, 112, 122) | 0.6 | 六種表情都是 2 | 完成 |
 | 沈靜澄 | 123 | (338, 102, 106, 102) | 0.6 | 五種表情都是 1 | 完成 |
 | 溫芷薰 | 110 | (378, 150, 106, 108) | 0.6 | 五種表情都是 4 | 完成；`KEEP_DARK = [(464, 197, 4)]`（左眼下的淚痣） |
+| 葉縈 | 100 | (387, 144, 100, 96) | 0.6 | 六種表情都是 1 | 完成 |
 
 `PICKS` 的 seed 是步驟 3 表情差分的 seed；`normal` 也是重畫過臉的版本，不是基本立繪原圖。挑表情時，所有表情盡量用同一個 seed，臉型才會一致；也要檢查遮罩邊緣有沒有多畫東西（例如顏緋的 seed 4 每張都多一顆耳環，換表情時會忽隱忽現）。
 
@@ -197,10 +198,15 @@ orange hair, short hair, bob cut, hairclip, amber eyes, athletic female, orange 
 **生圖 tag**
 
 ```text
-dark green hair, long hair, low twintails, hair ribbon, green eyes, bags under eyes, oversized labcoat, sleeves past fingers, test tube, breast pocket, gentle smile, head tilt
+dark green hair, long hair, low twintails, hair ribbon, green eyes, bags under eyes, oversized labcoat, sleeves past fingers, holding test tube, green sweater, long skirt
 ```
 
-**專屬表情**：`yandere` → `smile, shaded face, empty eyes, head tilt`（喜劇式的「眼神死」，用在吃醋台詞）
+原本的 tag 有 40 個 token。刪掉 `gentle smile`（表情會重畫）、`head tilt`（身體姿勢）、`breast pocket`（容易讓構圖往胸部靠），`test tube` 改成 `holding test tube`，補上白袍底下的 `green sweater`、`long skirt`，共 38 個。只寫過大的白袍、不寫裡面穿什麼，容易被畫成只穿一件白袍、露出腿，和輔導級的規範衝突。
+
+- **臉部 tag**（表情差分用）：`dark green hair, long hair, green eyes, bags under eyes`。黑眼圈左右對稱，寫進 tag 沒有淚痣那種換邊的問題。
+- **角色專屬負向 tag**：`bare legs, large breasts, cleavage`。
+
+**專屬表情**：`yandere` → `smile, shaded face, empty eyes`（喜劇式的「眼神死」，用在吃醋台詞）。原本還有 `head tilt`，但只重畫臉部時頭部動作沒有作用，所以拿掉。
 
 **好感度劇情大綱**
 - 0 初識：她遞給你一杯咖啡，說「我知道你喜歡半糖」，你從沒告訴過她。
@@ -335,7 +341,7 @@ red hair, medium hair, side braid, red eyes, tsurime, red scrubs, scrub top, scr
 
 **目前的檔案**
 - 角色基本資料：`data/characters.json`（`enabled` 為 `false` 的角色網站不顯示）。
-- 台詞：`data/lines/yiqing.json`、`data/lines/fei.json`、`data/lines/jingcheng.json`、`data/lines/zhixun.json`。答對、答錯的台詞是從同一情境隨機抽的，不會對應題目內容；帶醫學知識的台詞要寫成「順便補充」的語氣，不要暗示剛才那題考的就是這個。好感度系統還沒做，目前只會出現 `affection_min` 為 0 的台詞。
+- 台詞：`data/lines/yiqing.json`、`data/lines/fei.json`、`data/lines/jingcheng.json`、`data/lines/zhixun.json`、`data/lines/ying.json`。葉縈有 `jealous`（吃醋）台詞，但網站還沒有觸發吃醋的機制，之後和好感度一起做。答對、答錯的台詞是從同一情境隨機抽的，不會對應題目內容；帶醫學知識的台詞要寫成「順便補充」的語氣，不要暗示剛才那題考的就是這個。好感度系統還沒做，目前只會出現 `affection_min` 為 0 的台詞。
 - `mock_high`：角色模式下模擬考 70 分以上，交卷後由這份考卷裡負責學科得分率最高的角色說（得分率一樣時選題數多的）。例如醫學(一) 解剖、胚胎、組織考得最好，就是沈靜澄。
-- 立繪：`data/characters/<角色 id>/<表情 id>.webp`，用 `art/portraits.ipynb` 產生。缺少某個表情時會改用 `normal`，連 `normal` 都沒有就顯示代表色的佔位圖。
+- 立繪：`data/characters/<角色 id>/<表情 id>.webp`，用 `art/portraits.ipynb` 產生。去背方式見 `plan.md`「美術與內容」；重做去背用 `art/recut.py`（需要把 Drive 上的原圖下載到 `art/<角色>/<seed>/`）。缺少某個表情時會改用 `normal`，連 `normal` 都沒有就顯示代表色的佔位圖。
 - 胸像範圍：角色卡和手機版的小框只顯示胸像，範圍是 `characters.json` 的 `bust`（`x`、`y`、`w`，單位是原圖像素，高度依小框比例自動算，約 `w ÷ 0.73`）。每位角色姿勢不同，立繪做好後要各設一次；沒設就從圖片頂端顯示全寬。

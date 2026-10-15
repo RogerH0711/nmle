@@ -200,3 +200,119 @@ describe('排行榜', () => {
     assert.ok(!rows.some((r) => r.is_me))
   })
 })
+
+describe('模擬考', () => {
+  let mockSeq = 0
+  const P = '115090_2' // 有 5 題一律給分、1 題一題多解
+  let paperKeys
+
+  /** 以使用者身分交一次模擬考：started 是多久以前開始，minutes 是作答幾分鐘 */
+  const submit = (userId, paperId, picks, started = '3 hours', minutes = 100) =>
+    tryAs(
+      db,
+      userId,
+      `insert into public.mock_exams (id, paper_id, started_at, submitted_at, picks)
+       values ($1, $2, now() - $3::interval, now() - $3::interval + make_interval(mins => $4), $5)`,
+      [`dddddddd-0000-4000-8000-${String(++mockSeq).padStart(12, '0')}`, paperId, started, minutes, JSON.stringify(picks)],
+    )
+
+  // 前 n 題（不含送分題）答對、其餘答錯；回傳 picks 和預期分數
+  const attempt = (n) => {
+    const picks = {}
+    let score = 0
+    let i = 0
+    for (const k of paperKeys) {
+      if (k.free_point) {
+        score++
+        continue
+      }
+      const ok = i++ < n
+      picks[k.question_id] = ok ? k.answers[0] : ['A', 'B', 'C', 'D'].find((l) => !k.answers.includes(l))
+      if (ok) score++
+    }
+    return { picks, score }
+  }
+
+  const board = async (userId, paper = null) =>
+    (await as(db, userId, `select * from public.leaderboard_mock($1)`, [paper])).rows
+
+  before(async () => {
+    paperKeys = (
+      await db.query(`select question_id, answers, free_point from public.question_keys where question_id like $1 order by 1`, [`${P}_%`])
+    ).rows
+  })
+
+  test('分數依正解現算：送分題不論有沒有作答都給分，滿分 100', async () => {
+    const { picks, score } = attempt(60)
+    assert.equal((await submit(A, P, picks)).ok, true)
+    const me = (await board(A, P)).find((r) => r.is_me)
+    assert.deepEqual([me.score, me.total, me.seconds], [score, 100, 6000])
+    assert.equal(score, 65)
+  })
+
+  test('沒出題的送分題也算分：114020_1 交白卷得 1 分', async () => {
+    assert.equal((await submit(B, '114020_1', {})).ok, true)
+    const me = (await board(B, '114020_1')).find((r) => r.is_me)
+    assert.deepEqual([me.score, me.total], [1, 100])
+  })
+
+  test('同一份考卷只採計第一次', async () => {
+    assert.equal((await submit(A, P, attempt(90).picks, '1 hour', 30)).ok, true)
+    assert.equal((await board(A, P)).find((r) => r.is_me).score, 65)
+  })
+
+  test('不指定考卷：取各考卷第一次中最好的一次，並列出考過幾份', async () => {
+    assert.equal((await submit(A, '114020_1', {})).ok, true)
+    const me = (await board(A)).find((r) => r.is_me)
+    assert.deepEqual([me.paper_id, me.score, me.papers], [P, 65, 2])
+  })
+
+  test('同分時用時短的排前面', async () => {
+    // B 在 P 考出和 A 一樣的 65 分，但只用 50 分鐘
+    assert.equal((await submit(B, P, attempt(60).picks, '3 hours', 50)).ok, true)
+    const rows = await board(A, P)
+    assert.deepEqual(rows.map((r) => r.is_me), [false, true])
+  })
+
+  test('排行榜不回傳 user id 或作答內容', async () => {
+    const row = (await board(A))[0]
+    assert.ok(!('user_id' in row) && !('picks' in row))
+  })
+
+  test('超過 2 小時交卷會被拒絕', async () => {
+    assert.equal((await submit(A, '113020_1', {}, '5 hours', 125)).ok, false)
+  })
+
+  test('picks 只能有這份考卷的題目，答案只能是 A–D', async () => {
+    assert.equal((await submit(A, '113020_1', { '113020_2_001': 'A' })).ok, false)
+    assert.equal((await submit(A, '113020_1', { '113020_1_001': 'E' })).ok, false)
+    assert.equal((await submit(A, '113020_1', { '113020_1_1': 'A' })).ok, false)
+    assert.equal((await submit(A, '113020_1', ['A'])).ok, false)
+  })
+
+  test('看不到別人的模擬考，也不能替別人交', async () => {
+    const r = await as(db, B, `select count(*)::int as n from public.mock_exams where user_id <> $1`, [B])
+    assert.equal(r.rows[0].n, 0)
+    const t = await tryAs(
+      db,
+      A,
+      `insert into public.mock_exams (id, user_id, paper_id, started_at, submitted_at, picks)
+       values ('eeeeeeee-0000-4000-8000-000000000001', $1, '113020_1', now() - interval '1 hour', now(), '{}')`,
+      [B],
+    )
+    assert.equal(t.ok, false)
+  })
+
+  test('交卷後不能修改或刪除', async () => {
+    for (const sql of [`update public.mock_exams set picks = '{}'`, `delete from public.mock_exams`]) {
+      const t = await tryAs(db, A, sql)
+      assert.ok(!t.ok || t.res.affectedRows === 0, sql)
+    }
+  })
+
+  test('未登入不能讀寫模擬考，也不能看模擬考排行榜', async () => {
+    assert.equal((await as(db, null, `select count(*)::int as n from public.mock_exams`)).rows[0].n, 0)
+    assert.equal((await submit(null, '113020_1', {})).ok, false)
+    assert.equal((await tryAs(db, null, `select * from public.leaderboard_mock()`)).ok, false)
+  })
+})

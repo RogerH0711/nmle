@@ -68,15 +68,24 @@ export function useAnswers() {
 }
 
 export function recordAnswer(questionId: string, picked: Letter, correct: boolean) {
-  const record: AnswerRecord = {
+  recordAnswers([{ questionId, picked, correct }])
+}
+
+/** 一次寫入多筆（模擬考交卷時用），只存一次 localStorage。 */
+export function recordAnswers(
+  items: { questionId: string; picked: Letter; correct: boolean }[],
+  answeredAt = new Date().toISOString(),
+) {
+  if (!items.length) return
+  const added: AnswerRecord[] = items.map((x) => ({
     id: crypto.randomUUID(),
-    question_id: questionId,
-    picked,
-    correct,
-    answered_at: new Date().toISOString(),
+    question_id: x.questionId,
+    picked: x.picked,
+    correct: x.correct,
+    answered_at: answeredAt,
     synced: false,
-  }
-  setState({ records: [...state.records, record] })
+  }))
+  setState({ records: [...state.records, ...added] })
   if (state.owner !== ANON) schedulePush()
 }
 

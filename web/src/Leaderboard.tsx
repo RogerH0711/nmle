@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react'
 import type { User } from '@supabase/supabase-js'
 import {
-  fetchStreaks, fetchWeekly, signInWithGoogle, STREAK_MIN_DAILY, WEEKLY_MIN_ANSWERS,
-  type StreakRow, type WeeklyRow,
+  fetchMock, fetchStreaks, fetchWeekly, signInWithGoogle, STREAK_MIN_DAILY, WEEKLY_MIN_ANSWERS,
+  type MockRow, type StreakRow, type WeeklyRow,
 } from './supabase'
+import type { Index } from './types'
+import { paperLabel } from './bank'
+import { formatClock } from './mock'
 
 type Tab = 'weekly' | 'streak' | 'mock'
 
@@ -13,10 +16,12 @@ const TABS: { id: Tab; label: string }[] = [
   { id: 'mock', label: '模擬考' },
 ]
 
-export function Leaderboard({ user, onClose }: { user: User | null; onClose: () => void }) {
+export function Leaderboard({ user, index, onClose }: { user: User | null; index: Index; onClose: () => void }) {
   const [tab, setTab] = useState<Tab>('weekly')
   const [weekly, setWeekly] = useState<WeeklyRow[] | null>(null)
   const [streaks, setStreaks] = useState<StreakRow[] | null>(null)
+  const [mock, setMock] = useState<MockRow[] | null>(null)
+  const [mockPaper, setMockPaper] = useState<string | null>(null) // null：不分考卷
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -25,7 +30,11 @@ export function Leaderboard({ user, onClose }: { user: User | null; onClose: () 
     // 每次切到這個分頁都重抓，看到的是最新排名
     if (tab === 'weekly') fetchWeekly().then(setWeekly).catch((e) => setError(String(e)))
     if (tab === 'streak') fetchStreaks().then(setStreaks).catch((e) => setError(String(e)))
-  }, [tab, user])
+    if (tab === 'mock') {
+      setMock(null)
+      fetchMock(mockPaper).then(setMock).catch((e) => setError(String(e)))
+    }
+  }, [tab, user, mockPaper])
 
   return (
     <main className="card board">
@@ -64,7 +73,7 @@ export function Leaderboard({ user, onClose }: { user: User | null; onClose: () 
       ) : tab === 'streak' ? (
         <StreakTable rows={streaks} />
       ) : (
-        <p className="board-empty">模擬考模式完成後開放。</p>
+        <MockTable rows={mock} index={index} paper={mockPaper} onPaper={setMockPaper} />
       )}
     </main>
   )
@@ -137,6 +146,67 @@ function StreakTable({ rows }: { rows: StreakRow[] | null }) {
                   {r.is_me && <span className="you">你</span>}
                 </td>
                 <td>{r.streak} 天</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </>
+  )
+}
+
+function MockTable(props: { rows: MockRow[] | null; index: Index; paper: string | null; onPaper: (p: string | null) => void }) {
+  const { rows, index, paper, onPaper } = props
+  const label = (id: string) => {
+    const p = index.papers.find((x) => x.id === id)
+    return p ? paperLabel(p) : id
+  }
+  return (
+    <>
+      <div className="board-filter">
+        <select aria-label="考卷" value={paper ?? ''} onChange={(e) => onPaper(e.target.value || null)}>
+          <option value="">所有考卷（各人最好的一份）</option>
+          {index.papers.map((p) => (
+            <option key={p.id} value={p.id}>
+              {paperLabel(p)}
+            </option>
+          ))}
+        </select>
+      </div>
+      <p className="board-note">每份考卷只採計第一次模擬考；同分時用時短的排前面。</p>
+      {!rows ? (
+        <p className="board-empty">載入中…</p>
+      ) : rows.length === 0 ? (
+        <p className="board-empty">{paper ? '這份考卷還沒有人考過模擬考。' : '還沒有人考過模擬考。'}</p>
+      ) : (
+        <table className="board-table">
+          <thead>
+            <tr>
+              <th>名次</th>
+              <th>暱稱</th>
+              <th>分數</th>
+              <th>用時</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r, i) => (
+              <tr key={i} className={r.is_me ? 'me' : undefined}>
+                <td>{i + 1}</td>
+                <td>
+                  {r.display_name}
+                  {r.is_me && <span className="you">你</span>}
+                  {!paper && (
+                    <span className="pending">
+                      {label(r.paper_id)}
+                      {r.papers > 1 && `・考過 ${r.papers} 份`}
+                    </span>
+                  )}
+                </td>
+                <td>
+                  {r.score}
+                  {r.total !== 100 && <span className="pending">/ {r.total}</span>}
+                </td>
+                <td>{formatClock(r.seconds * 1000)}</td>
               </tr>
             ))}
           </tbody>

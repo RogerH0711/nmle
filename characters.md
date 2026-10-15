@@ -311,5 +311,6 @@ red hair, medium hair, side braid, red eyes, tsurime, red scrubs, scrub top, scr
 **目前的檔案**
 - 角色基本資料：`data/characters.json`（`enabled` 為 `false` 的角色網站不顯示）。
 - 台詞：`data/lines/yiqing.json`、`data/lines/fei.json`。好感度系統還沒做，目前只會出現 `affection_min` 為 0 的台詞。
+- `mock_high`：角色模式下模擬考 70 分以上，交卷後由這份考卷題數最多的角色說（醫學(一) 是夏以晴、醫學(二) 是顏緋）。
 - 立繪：`data/characters/<角色 id>/<表情 id>.webp`，用 `art/portraits.ipynb` 產生。缺少某個表情時會改用 `normal`，連 `normal` 都沒有就顯示代表色的佔位圖。
 - 胸像範圍：角色卡和手機版的小框只顯示胸像，範圍是 `characters.json` 的 `bust`（`x`、`y`、`w`，單位是原圖像素，高度依小框比例自動算，約 `w ÷ 0.73`）。每位角色姿勢不同，立繪做好後要各設一次；沒設就從圖片頂端顯示全寬。

@@ -1,5 +1,5 @@
 -- 由 pipeline/export_keys.py 產生，不要手動修改
--- 2399 題
+-- 2400 題
 insert into public.question_keys (question_id, answers, free_point) values
 ('110020_1_001', '{D}', false),
 ('110020_1_002', '{C}', false),
@@ -1677,6 +1677,7 @@ insert into public.question_keys (question_id, answers, free_point) values
 ('114020_1_074', '{B}', false),
 ('114020_1_075', '{B}', false),
 ('114020_1_076', '{B}', false),
+('114020_1_077', '{A,B,C,D}', true),
 ('114020_1_078', '{D}', false),
 ('114020_1_079', '{C}', false),
 ('114020_1_080', '{C}', false),

@@ -18,8 +18,9 @@ def main():
     rows = []
     for path in sorted((ROOT / "data" / "questions").glob("*.json")):
         for q in json.loads(path.read_text(encoding="utf-8"))["questions"]:
-            if not q["valid"]:
-                continue  # 沒出題的題目不會有人作答
+            # 沒出題的題目不會有人作答；但官方一律給分的仍要匯入，模擬考滿分才會是 100 分
+            if not q["valid"] and not q["free_point"]:
+                continue
             answers = "{" + ",".join(q["answers"]) + "}"
             rows.append(f"('{q['id']}', '{answers}', {'true' if q['free_point'] else 'false'})")
 

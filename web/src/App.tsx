@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import type { User } from '@supabase/supabase-js'
-import type { Index, Letter, Question } from './types'
-import { imageUrl, loadIndex, loadPaper, loadQuestions } from './bank'
-import { recordAnswer, switchUser, syncNow, useAnswers, type SyncStatus } from './answers'
+import type { ExamFile, Index, Letter, Question } from './types'
+import { imageUrl, loadIndex, loadPaper, loadQuestions, paperLabel, paperOf } from './bank'
+import { recordAnswer, recordAnswers, switchUser, syncNow, useAnswers, type SyncStatus } from './answers'
 import { reviewStates, reviewSummary } from './review'
 import { getDisplayName, NAME_MAX, setDisplayName, signInWithGoogle, signOut, supabase } from './supabase'
 import { Leaderboard } from './Leaderboard'
@@ -11,15 +11,19 @@ import {
   STREAK_EVERY, type Character, type Line, type Reaction, type Situation,
 } from './characters'
 import { CharacterStage, Portrait } from './CharacterStage'
+import { firstAttempts, isMockCorrect, MOCK_HIGH, MOCK_MINUTES, mockQueue, scoreMock, submitTime, type MockSession } from './mock'
+import { addMock, loadSession, saveSession, switchMockUser, useMocks } from './mockStore'
+import { MockHome, MockResult, MockRunner } from './MockExam'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
 
 type Order = 'seq' | 'random'
 
-// 一回合：依考卷刷題（paper）、錯題複習（review）或跟角色讀書（character，subject 存角色 id）。
+// 一回合：依考卷刷題（paper）、錯題複習（review）、跟角色讀書（character，subject 存角色 id）
+// 或檢討模擬考（mock，picks 預先填入交卷時的答案）。
 // 題目可以跨考卷，用題目 id 串起來。存在 localStorage，重新整理不會不見。
 interface Run {
-  kind: 'paper' | 'review' | 'character'
+  kind: 'paper' | 'review' | 'character' | 'mock'
   paperId: string | null
   subject: string
   order: Order
@@ -109,8 +113,12 @@ export default function App() {
   const [characterMode, setCharacterMode] = useState(() => loadFlag(CHARACTER_MODE_KEY))
   const [reaction, setReaction] = useState<StageReaction | null>(null)
   const [streak, setStreak] = useState(0)
-  const [view, setView] = useState<'quiz' | 'leaderboard'>('quiz')
+  const [view, setView] = useState<'quiz' | 'leaderboard' | 'mock'>('quiz')
   const [displayName, setDisplayNameState] = useState<string | null>(null)
+  const mocks = useMocks()
+  const [session, setSession] = useState<MockSession | null>(() => loadSession())
+  const [mockResultId, setMockResultId] = useState<string | null>(null) // 正在看哪一次模擬考的成績
+  const [mockStage, setMockStage] = useState<StageReaction | null>(null) // 剛交卷、高分時角色的反應
 
   // 登入後讀自己的暱稱（排行榜上顯示的名字）
   useEffect(() => {
@@ -158,7 +166,10 @@ export default function App() {
   useEffect(() => {
     const { data } = supabase.auth.onAuthStateChange((event, session) => {
       setUser(session?.user ?? null)
-      setTimeout(() => void switchUser(session?.user.id ?? null), 0)
+      setTimeout(() => {
+        void switchUser(session?.user.id ?? null)
+        void switchMockUser(session?.user.id ?? null)
+      }, 0)
       if (event === 'SIGNED_IN' && window.location.search.includes('code=')) {
         window.history.replaceState(null, '', window.location.pathname) // 拿掉 OAuth 回傳的 ?code=
       }
@@ -309,10 +320,90 @@ export default function App() {
     }
   }
 
+  // ---------- 模擬考 ----------
+
+  const mockRecord = mockResultId ? mocks.records.find((r) => r.id === mockResultId) : undefined
+  const paperQuestionsOf = (paperId: string) => [...questions.values()].filter((q) => paperOf(q.id) === paperId)
+  const mergePaper = (f: ExamFile) => setQuestions((prev) => new Map([...prev, ...f.questions.map((q) => [q.id, q] as const)]))
+
+  // 作答中、或正在看成績的那份考卷要先載入
+  const neededPaper = session?.paperId ?? mockRecord?.paper_id
+  useEffect(() => {
+    if (index && neededPaper) loadPaper(index, neededPaper).then(mergePaper).catch(() => setError('考卷載入失敗'))
+  }, [index, neededPaper])
+
+  const updateSession = (s: MockSession | null) => {
+    setSession(s)
+    saveSession(s)
+  }
+
+  const startMock = async (paperId: string) => {
+    const p = index?.papers.find((x) => x.id === paperId)
+    if (!index || !p) return
+    const again = mocks.records.some((r) => r.paper_id === paperId)
+    const message =
+      `開始 ${paperLabel(p)} 模擬考？\n限時 ${MOCK_MINUTES / 60} 小時，開始後計時不會暫停，要交卷才會結束。` +
+      (again ? '\n這份考卷之前考過，這次不會列入排行榜。' : '')
+    if (!window.confirm(message)) return
+    try {
+      mergePaper(await loadPaper(index, paperId))
+      setMockResultId(null)
+      setMockStage(null)
+      updateSession({ id: crypto.randomUUID(), paperId, startedAt: new Date().toISOString(), picks: {}, flags: [], pos: 0 })
+    } catch {
+      setError('考卷載入失敗')
+    }
+  }
+
+  // 這份考卷題數最多的角色（高分時由她來說話）
+  const mainCharacter = (qs: Question[]) => {
+    const count = new Map<Character, number>()
+    for (const q of qs) {
+      const c = characterForSubject(characters, q.subject)
+      if (c) count.set(c, (count.get(c) ?? 0) + 1)
+    }
+    return [...count].sort((a, b) => b[1] - a[1])[0]?.[0]
+  }
+
+  const submitMock = () => {
+    if (!session) return
+    const qs = paperQuestionsOf(session.paperId).filter((q) => q.valid)
+    const submittedAt = submitTime(session.startedAt)
+    const picks = Object.fromEntries(qs.filter((q) => session.picks[q.id]).map((q) => [q.id, session.picks[q.id]]))
+    addMock({ id: session.id, paper_id: session.paperId, started_at: session.startedAt, submitted_at: submittedAt, picks })
+    // 每題也寫進作答紀錄：答錯的進錯題複習，也算進週榜
+    recordAnswers(
+      qs.filter((q) => picks[q.id]).map((q) => ({ questionId: q.id, picked: picks[q.id], correct: isMockCorrect(q, picks[q.id]) })),
+      submittedAt,
+    )
+    const { score } = scoreMock(paperQuestionsOf(session.paperId), picks)
+    const c = characterMode && score >= MOCK_HIGH ? mainCharacter(qs) : undefined
+    setMockStage(c ? react(c, 'mock_high', session.id) : null)
+    updateSession(null)
+    setMockResultId(session.id)
+    setView('mock')
+  }
+
+  // 檢討：交卷時的答案預先填好，沒作答的題目可以當場作答
+  const reviewMock = async (recordId: string, onlyWrong: boolean) => {
+    const r = mocks.records.find((x) => x.id === recordId)
+    if (!index || !r) return
+    try {
+      const f = await loadPaper(index, r.paper_id)
+      const byId = new Map(f.questions.map((q) => [q.id, q]))
+      const queue = mockQueue(f.questions).filter((id) => !onlyWrong || !isMockCorrect(byId.get(id)!, r.picks[id]))
+      setStreak(0)
+      await startRun(index, { kind: 'mock', paperId: r.paper_id, subject: 'all', order: 'seq', queue, pos: 0, picks: { ...r.picks } })
+      setView('quiz')
+    } catch {
+      setError('考卷載入失敗')
+    }
+  }
+
   // 鍵盤：1–4 或 A–D 作答，Enter／→ 下一題，← 上一題
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (view !== 'quiz') return // 看排行榜時不要對藏起來的題目作答
+      if (view !== 'quiz' || session) return // 看排行榜、考模擬考時不要對藏起來的題目作答
       if (e.ctrlKey || e.metaKey || e.altKey) return
       if (e.target instanceof Element && e.target.closest('select, input, textarea')) return
       const k = e.key.toUpperCase()
@@ -326,7 +417,7 @@ export default function App() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [pick, go, picked, view])
+  }, [pick, go, picked, view, session])
 
   if (error) return <div className="center">{error}</div>
   if (!index || !run) return <div className="center">載入中…</div>
@@ -344,6 +435,62 @@ export default function App() {
     : null
   const runCharacter = run.kind === 'character' ? characters.find((c) => c.id === run.subject) : undefined
 
+  // 模擬考作答中：只留計時和題目，跟正式考試一樣不能中途去刷題或看排行榜
+  if (session) {
+    const p = index.papers.find((x) => x.id === session.paperId)
+    const byId = new Map(paperQuestionsOf(session.paperId).map((q) => [q.id, q]))
+    const qs = mockQueue([...byId.values()]).map((id) => byId.get(id)!)
+    return (
+      <div className="app">
+        <header className="bar">
+          <h1>一階刷題</h1>
+          <span className="tag warn">模擬考進行中</span>
+        </header>
+        {qs.length ? (
+          <MockRunner
+            session={session}
+            label={p ? paperLabel(p) : session.paperId}
+            questions={qs}
+            onChange={updateSession}
+            onSubmit={submitMock}
+          />
+        ) : (
+          <div className="center">載入中…</div>
+        )}
+      </div>
+    )
+  }
+
+  const mockPaper = mockRecord && index.papers.find((x) => x.id === mockRecord.paper_id)
+  const mockQuestions = mockRecord ? paperQuestionsOf(mockRecord.paper_id) : []
+  const mockView = !mockRecord ? (
+    <MockHome
+      index={index}
+      records={mocks.records}
+      user={user}
+      syncError={mocks.error}
+      onStart={(id) => void startMock(id)}
+      onOpen={(id) => {
+        setMockStage(null)
+        setMockResultId(id)
+      }}
+    />
+  ) : mockQuestions.length ? (
+    <MockResult
+      record={mockRecord}
+      label={mockPaper ? paperLabel(mockPaper) : mockRecord.paper_id}
+      questions={mockQuestions}
+      subjects={index.subjects}
+      counted={firstAttempts(mocks.records).has(mockRecord.id)}
+      user={user}
+      stage={mockStage?.key === mockRecord.id ? mockStage : null}
+      onReview={(onlyWrong) => void reviewMock(mockRecord.id, onlyWrong)}
+      onBack={() => setMockResultId(null)}
+    />
+  ) : (
+    <div className="center">載入中…</div>
+  )
+
   return (
     <div className={stage ? 'app wide' : 'app'}>
       <header className="bar">
@@ -355,6 +502,15 @@ export default function App() {
               角色模式
             </label>
           )}
+          <button
+            className={view === 'mock' ? 'primary small' : 'ghost small'}
+            onClick={() => {
+              setView(view === 'mock' ? 'quiz' : 'mock')
+              setMockResultId(null)
+            }}
+          >
+            模擬考
+          </button>
           <button
             className={view === 'leaderboard' ? 'primary small' : 'ghost small'}
             onClick={() => setView(view === 'leaderboard' ? 'quiz' : 'leaderboard')}
@@ -372,7 +528,9 @@ export default function App() {
       </header>
 
       {view === 'leaderboard' ? (
-        <Leaderboard user={user} onClose={() => setView('quiz')} />
+        <Leaderboard user={user} index={index} onClose={() => setView('quiz')} />
+      ) : view === 'mock' ? (
+        mockView
       ) : (
         <>
 
@@ -414,9 +572,10 @@ export default function App() {
         >
           {run.kind === 'review' && <option value="">（錯題複習）</option>}
           {run.kind === 'character' && <option value="">（和{runCharacter?.name ?? '角色'}讀書）</option>}
+          {run.kind === 'mock' && <option value="">（檢討模擬考）</option>}
           {index.papers.map((p) => (
             <option key={p.id} value={p.id}>
-              {p.year} 年{p.session ? `第 ${p.session} 次` : ''} {p.paper}
+              {paperLabel(p)}
             </option>
           ))}
         </select>
@@ -458,7 +617,7 @@ export default function App() {
               run={run}
               questions={questions}
               subjects={index.subjects}
-              onRestart={run.kind !== 'review' ? () => restart(run.subject, run.order) : undefined}
+              onRestart={run.kind === 'paper' || run.kind === 'character' ? () => restart(run.subject, run.order) : undefined}
               restartLabel={run.kind === 'character' ? '再一回合' : '重新開始'}
               onRetryWrong={() => restart(run.subject, run.order, true)}
             />
@@ -698,7 +857,7 @@ function Summary(props: {
 
   return (
     <main className="card summary">
-      <h2>{run.kind === 'review' ? '今天的複習完成了' : '這回合結束'}</h2>
+      <h2>{run.kind === 'review' ? '今天的複習完成了' : run.kind === 'mock' ? '檢討完成' : '這回合結束'}</h2>
       <table>
         <thead>
           <tr>

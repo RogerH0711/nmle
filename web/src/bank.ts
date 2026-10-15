@@ -1,4 +1,4 @@
-import type { ExamFile, Index, Question } from './types'
+import type { ExamFile, Index, PaperInfo, Question } from './types'
 
 const BASE = import.meta.env.BASE_URL
 const papers = new Map<string, Promise<ExamFile>>()
@@ -38,3 +38,6 @@ export async function loadQuestions(index: Index, ids: string[]): Promise<Map<st
 }
 
 export const imageUrl = (path: string) => `${BASE}${path}`
+
+/** 115 年第 2 次 醫學(一) */
+export const paperLabel = (p: PaperInfo) => `${p.year} 年${p.session ? `第 ${p.session} 次` : ''} ${p.paper}`

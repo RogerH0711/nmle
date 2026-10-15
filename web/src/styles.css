@@ -728,3 +728,215 @@ button.link:hover {
   font-weight: 400;
   color: var(--muted);
 }
+
+/* ---------- 模擬考 ---------- */
+
+.muted {
+  color: var(--muted);
+}
+
+.mock-home h2,
+.mock-result h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.mock-home h3 {
+  margin: 20px 0 4px;
+  font-size: 1rem;
+}
+
+.mock-rules {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+}
+
+.mock-papers {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mock-papers td {
+  padding: 6px 4px;
+  border-bottom: 1px solid var(--line);
+}
+
+.mock-papers td:last-child {
+  width: 1%;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.mock-status {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.9rem;
+}
+
+.mock-history tr.clickable {
+  cursor: pointer;
+}
+
+.mock-history tr.clickable:hover td {
+  background: var(--bg);
+}
+
+.mock-history th:first-child,
+.mock-history td:first-child {
+  width: auto;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* 作答中的上方列：捲動時固定在畫面頂端，隨時看得到剩餘時間 */
+.mock-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  margin: 0 -16px 12px;
+  padding: 8px 16px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.mock-title {
+  flex: 1 1 auto;
+  font-weight: 600;
+  min-width: 0;
+}
+
+.clock {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.clock.low {
+  color: var(--wrong);
+}
+
+.mock-count {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.mock-bar > button {
+  margin-left: auto;
+}
+
+/* 手機：考卷名稱自己一行，倒數、題數、交卷排在下一行 */
+@media (max-width: 599px) {
+  .mock-title {
+    flex-basis: 100%;
+    font-size: 0.85rem;
+  }
+}
+
+.option.is-picked {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--card));
+}
+
+.option.is-picked .key {
+  background: var(--accent);
+  color: #fff;
+}
+
+.flag.on {
+  border-color: var(--warn);
+  color: var(--warn);
+  background: var(--warn-bg);
+}
+
+.mock-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(38px, 1fr));
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.cell {
+  display: inline-block;
+  min-height: 34px;
+  padding: 0;
+  border: 1.5px solid var(--line);
+  border-radius: 6px;
+  background: var(--card);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+
+.cell.answered {
+  background: color-mix(in srgb, var(--accent) 38%, var(--card));
+  border-color: transparent;
+}
+
+.cell.flagged {
+  border-color: var(--warn);
+  box-shadow: inset 0 0 0 1px var(--warn);
+}
+
+.cell.current {
+  outline: 2px solid var(--text);
+  outline-offset: 1px;
+}
+
+.mock-legend {
+  margin: 8px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.mock-legend .cell {
+  width: 14px;
+  min-height: 14px;
+  height: 14px;
+  vertical-align: -2px;
+  cursor: default;
+}
+
+.score {
+  margin: 4px 0;
+  font-size: 1.1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.score strong {
+  font-size: 2.6rem;
+  line-height: 1.1;
+  color: var(--accent);
+}
+
+.score-meta {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+}
+
+.mock-result .nav {
+  flex-wrap: wrap;
+}
+
+.mock-result .nav button {
+  white-space: nowrap;
+}
+
+.nav-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.board-filter select {
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  max-width: 100%;
+}

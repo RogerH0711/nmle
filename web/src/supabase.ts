@@ -60,3 +60,20 @@ export async function fetchStreaks(): Promise<StreakRow[]> {
   if (error) throw new Error(error.message)
   return data as StreakRow[]
 }
+
+export interface MockRow {
+  display_name: string
+  paper_id: string
+  score: number
+  total: number
+  seconds: number
+  papers: number // 考過幾份不同的考卷
+  is_me: boolean
+}
+
+/** paper 為 null：每人取各考卷第一次模擬考中最好的一次 */
+export async function fetchMock(paper: string | null): Promise<MockRow[]> {
+  const { data, error } = await supabase.rpc('leaderboard_mock', { paper })
+  if (error) throw new Error(error.message)
+  return data as MockRow[]
+}

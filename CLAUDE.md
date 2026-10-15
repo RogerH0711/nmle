@@ -18,6 +18,8 @@ Roger 會在兩台電腦之間切換（家裡 Windows、外出 Mac），交接�
 
 ## 指令
 
+Node 版本固定在 `.node-version`（CI 也讀這個檔）。兩台電腦都用 [fnm](https://github.com/Schniz/fnm) 管理：`fnm install` 後，shell 設定加上 `fnm env --use-on-cd`，進專案資料夾就會自動切換版本。Mac 不要用 `brew install node@24`，Homebrew 的 openssl 別名 bug 會讓安裝自己卡住。
+
 ```bash
 npm ci && npm ci --prefix web       # 第一次 clone 後
 npm --prefix web run dev            # 本機網站 http://localhost:5173

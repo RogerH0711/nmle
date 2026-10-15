@@ -14,7 +14,7 @@ Roger 會在兩台電腦之間切換（家裡 Windows、外出 Mac），交接�
 - `data/`：網站的靜態資料（題庫、角色、台詞、立繪），Vite 的 `publicDir`。
 - `web/`：Vite + React + TypeScript 前端，部署到 GitHub Pages。
 - `supabase/`：migration、正解 seed、PGlite 資料庫測試。
-- `art/portraits.ipynb`：Colab 立繪 notebook（Animagine XL 4.0）。
+- `art/portraits.ipynb`：Colab 立繪 notebook（Animagine XL 4.0）。`art/backgrounds.ipynb`：劇情背景，同一個模型。
 
 ## 指令
 

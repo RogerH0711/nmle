@@ -240,7 +240,7 @@ Supabase（登入、進度、排行榜）← GitHub Pages 做不到的部分
 **每位角色需要的素材**
 
 - 基本立繪 1 張，表情差分 4–5 種（平常、開心、害羞、失望、驚訝），分別對應答對、答錯、解鎖劇情等時機。
-- 劇情背景：放在 `data/backgrounds/<id>.webp`，沒有圖的先用漸層色。劇情腳本用到 9 個：`cafe`（自習咖啡廳「夜燈」）、`library`（圖書館）、`anatomy_lab`（解剖教室）、`lab`（微免實驗室）、`hospital`（醫院，病理科閱片室或藥局）、`track`（操場跑道）、`night_street`（夜晚街道、宿舍前）、`festival`（夏日祭典）、`stairwell`（醫院逃生梯）。最常出現的是 `cafe`、`library`、`anatomy_lab`、`lab`、`hospital`，先做這五張。背景不需要人物，橫式（例如 1216 × 832）。
+- 劇情背景：放在 `data/backgrounds/<id>.webp`，沒有圖的先用漸層色。劇情腳本用到 9 個：`cafe`（自習咖啡廳「夜燈」）、`library`（圖書館）、`anatomy_lab`（解剖教室）、`lab`（微免實驗室）、`hospital`（醫院，病理科閱片室或藥局）、`track`（操場跑道）、`night_street`（夜晚街道、宿舍前）、`festival`（夏日祭典）、`stairwell`（醫院逃生梯）。最常出現的是 `cafe`、`library`、`anatomy_lab`、`lab`、`hospital`，先做這五張。用 `art/backgrounds.ipynb` 在 Colab 生成（同一個模型，橫式 1216 × 832，不畫人物），tag 與定稿紀錄見 `characters.md`「劇情背景」。
 
 **決定：用 Colab 跑開源動漫模型，比稿後（10/15）定案 Animagine XL 4.0 Opt**。原本預定的主力是 Illustrious XL 系列；實際比稿（夏以晴、顏緋各 4 個 seed）的結果：
 

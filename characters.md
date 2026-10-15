@@ -99,6 +99,27 @@ lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer
 
 `FACE_BOX` 的範圍是框內切的橢圓，只重畫橢圓裡面的部分。範圍只要包含眉毛到下巴；編髮、髮夾這類每張表情都要一樣的特徵要留在橢圓外，否則每換一個表情就會被重畫一次。淚痣這種一定在臉上、又要固定位置的小點，用 `KEEP_DARK` 保留，不要寫進臉部 tag。
 
+### 劇情背景
+
+用 `art/backgrounds.ipynb` 生成，模型與參數和立繪相同（Animagine XL 4.0 Opt、CFG 5、28 steps、Euler a），畫風才會統一。輸出到 `data/backgrounds/<背景 id>.webp`，沒有圖的背景網站會用漸層色代替。
+
+- 解析度 1216 × 832（橫式）。網站上填滿整個畫面，手機直拿時只看得到中間，左右會被裁掉。
+- 共用 tag：`no humans, scenery, detailed background, visual novel background`，品質 tag 同立繪。
+- 負向 tag 和立繪不同：拿掉 `scenery`（這次要的就是場景），加上 `1girl, 1boy, person, people, character` 避免畫出人物，以及 `japanese text`（舞台在台灣，避免日文招牌）。解剖教室、醫院、實驗室另外排除 `skeleton, corpse, blood, gore` 這類 tag（輔導級）。
+- 各背景的 tag 寫在 notebook 的 `BACKGROUNDS`，都在 75 token 以內。
+
+| 背景 id | 場景 | seed | 狀態 |
+| --- | --- | --- | --- |
+| `cafe` | 自習咖啡廳「夜燈」 | | |
+| `library` | 圖書館 | | |
+| `anatomy_lab` | 解剖教室 | | |
+| `lab` | 微免實驗室 | | |
+| `hospital` | 醫院（閱片室、藥局） | | |
+| `track` | 操場跑道 | | |
+| `night_street` | 夜晚街道、宿舍前 | | |
+| `festival` | 夏日祭典 | | |
+| `stairwell` | 醫院逃生梯 | | |
+
 ---
 
 ## 沈靜澄（酷系・藍）

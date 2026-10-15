@@ -49,7 +49,7 @@
 
 - **解析度**：832 × 1216（直式全身立繪）
 - **參數**：CFG 5、28 steps、Euler a（依模型說明頁的建議）。
-- **prompt 順序**：角色 tag → 共用 tag → 品質 tag。SDXL 的文字編碼器只讀前 75 個 token，超過的會被默默丟掉，所以角色外觀放最前面；notebook 會在超過時直接報錯。共用 tag 加品質 tag 佔 36 個 token，所以**角色 tag 最多 39 個**（以晴 38、顏緋 39）。表情差分的臉部 prompt 另外計算，空間比較多。葉縈的 tag 是 40、溫芷薰是 47，做之前要先刪減。
+- **prompt 順序**：角色 tag → 共用 tag → 品質 tag。SDXL 的文字編碼器只讀前 75 個 token，超過的會被默默丟掉，所以角色外觀放最前面；notebook 會在超過時直接報錯。共用 tag 加品質 tag 佔 36 個 token，所以**角色 tag 最多 39 個**（以晴 38、顏緋 39）。表情差分的臉部 prompt 另外計算，空間比較多。葉縈的 tag 是 40，做之前要先刪 1 個。
 - **共用 tag**：
 
 ```text
@@ -87,6 +87,7 @@ lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer
 | 夏以晴 | 119 | (375, 85, 140, 125) | 0.6 | normal 2、happy 2、shy 2、sad 3、surprised 2 | 完成 |
 | 顏緋 | 113 | (382, 108, 112, 122) | 0.6 | 六種表情都是 2 | 完成 |
 | 沈靜澄 | 123 | (338, 102, 106, 102) | 0.6 | 五種表情都是 1 | 完成 |
+| 溫芷薰 | | | | | 進行中 |
 
 `PICKS` 的 seed 是步驟 3 表情差分的 seed；`normal` 也是重畫過臉的版本，不是基本立繪原圖。挑表情時，所有表情盡量用同一個 seed，臉型才會一致；也要檢查遮罩邊緣有沒有多畫東西（例如顏緋的 seed 4 每張都多一顆耳環，換表情時會忽隱忽現）。
 
@@ -237,8 +238,13 @@ dark green hair, long hair, low twintails, hair ribbon, green eyes, bags under e
 **生圖 tag**
 
 ```text
-light purple hair, grey hair, long hair, wavy hair, low side ponytail, purple eyes, droopy eyes, mole under eye, tall female, labcoat, lavender cardigan, long skirt, id card, lanyard, gentle smile
+light purple hair, long hair, wavy hair, low side ponytail, purple eyes, droopy eyes, mole under eye, tall female, open labcoat, lavender cardigan, long skirt, lanyard
 ```
+
+原本的 tag 有 47 個 token，超過上限 8 個。刪掉 `grey hair`（和 `light purple hair` 衝突）、`gentle smile`（表情會重畫）、`id card`（有 `lanyard` 就夠）、`labcoat`（`open labcoat` 已包含），剛好 39 個。一定要寫 `open labcoat`：白袍扣起來會看不到裡面的針織衫。
+
+- **臉部 tag**（表情差分用）：`light purple hair, long hair, wavy hair, purple eyes, droopy eyes, mole under eye`。淚痣在臉部遮罩內，每個表情都會重畫，要寫進來才不會消失或換位置。
+- **角色專屬負向 tag**：`large breasts, cleavage`。大姊姊類型容易被畫成刻意強調胸部，和輔導級的尺度規範衝突。只加在她身上，不影響其他角色的定稿參數。
 
 **好感度劇情大綱**
 - 0 初識：她把藥理講義遞給你，順手幫你把亂掉的領子整理好。

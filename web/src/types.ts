@@ -31,6 +31,7 @@ export interface PaperInfo {
   paper: string
   file: string
   count: number
+  subject_runs?: [number, number, string][] // 題號區段 [起, 迄, 學科]，不載入考卷就能查學科
 }
 
 export interface Index {

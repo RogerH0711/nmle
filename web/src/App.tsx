@@ -15,8 +15,12 @@ import { bestCharacter, firstAttempts, isMockCorrect, MOCK_HIGH, MOCK_MINUTES, m
 import { addMock, loadSession, saveSession, switchMockUser, useMocks } from './mockStore'
 import { MockHome, MockResult, MockRunner } from './MockExam'
 import { ReportButton } from './Report'
+import { affection as affectionOf, rival as rivalOf, STAGE_NAMES, subjectMap, type Affection } from './affection'
+import { loadSeen, loadStory, saveSeen, sceneId, unseenScene, type Scene } from './stories'
+import { AffectionMeter, StoryList, StoryPlayer } from './Story'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
+const PLAYER = '學弟' // 玩家名字還不能自訂，台詞和劇情的 {player} 先用這個
 
 type Order = 'seq' | 'random'
 
@@ -31,6 +35,7 @@ interface Run {
   queue: string[]
   pos: number
   picks: Record<string, Letter>
+  affection?: number // 角色回合開始時的好感度階段，回合結束時比較有沒有升階
 }
 
 const RUN_KEY = 'nmle.run.v2'
@@ -120,6 +125,10 @@ export default function App() {
   const [session, setSession] = useState<MockSession | null>(() => loadSession())
   const [mockResultId, setMockResultId] = useState<string | null>(null) // 正在看哪一次模擬考的成績
   const [mockStage, setMockStage] = useState<StageReaction | null>(null) // 剛交卷、高分時角色的反應
+  const [stories, setStories] = useState<Record<string, Scene[]>>({})
+  const [seen, setSeen] = useState(() => loadSeen()) // 這台裝置看過的劇情
+  const [story, setStory] = useState<{ character: Character; scene: Scene; then?: () => void } | null>(null)
+  const [storyList, setStoryList] = useState<Character | null>(null)
 
   // 登入後讀自己的暱稱（排行榜上顯示的名字）
   useEffect(() => {
@@ -140,6 +149,8 @@ export default function App() {
         setCharacters(list)
         const all = await Promise.all(list.map((c) => loadLines(c.id)))
         setLines(Object.fromEntries(list.map((c, i) => [c.id, all[i]])))
+        const scenes = await Promise.all(list.map((c) => loadStory(c.id)))
+        setStories(Object.fromEntries(list.map((c, i) => [c.id, scenes[i]])))
       })
       .catch(() => setCharacters([]))
   }, [])
@@ -151,16 +162,38 @@ export default function App() {
     })
   }
 
-  const react = (character: Character, situation: Situation, key: string): StageReaction => {
-    const line = pickCharacterLine(lines[character.id] ?? [], situation, 0, reaction?.lineId ?? null)
+  // ---------- 好感度 ----------
+  // 由作答紀錄和模擬考紀錄推算（見 affection.ts），只在角色模式算
+  const subjects = useMemo(() => (index ? subjectMap(index.papers) : null), [index])
+  const affections = useMemo(() => {
+    const m = new Map<string, Affection>()
+    if (!characterMode || !subjects) return m
+    for (const c of characters) m.set(c.id, affectionOf(c.subjects, answers.records, mocks.records, subjects))
+    return m
+  }, [characterMode, subjects, characters, answers.records, mocks.records])
+  const stageOf = (c: Character) => affections.get(c.id)?.stage ?? 0
+
+  const react = (character: Character, situation: Situation, key: string, rival?: string): StageReaction => {
+    const line = pickCharacterLine(lines[character.id] ?? [], situation, stageOf(character), reaction?.lineId ?? null)
     return {
       key,
       character,
       expression: line?.expression ?? 'normal',
-      text: line ? fillPlayer(line.text, '學弟') : null,
+      text: line ? fillPlayer(line.text, PLAYER).replaceAll('{rival}', rival ?? '別的學姊') : null,
       lineId: line?.id ?? null,
     }
   }
+
+  const closeStory = () => {
+    if (!story) return
+    const next = new Set(seen).add(sceneId(story.character.id, story.scene.stage))
+    setSeen(next)
+    saveSeen(next)
+    setStory(null)
+    story.then?.()
+  }
+
+  const newScene = (c: Character) => unseenScene(c.id, stories[c.id] ?? [], stageOf(c), seen)
 
   // 登入狀態：切換本機紀錄的擁有者並同步。
   // supabase 文件提醒不要在 onAuthStateChange 裡直接呼叫其他 supabase API，所以延後執行。
@@ -330,7 +363,7 @@ export default function App() {
       startReview()
     } else if (run.kind === 'character') {
       const c = characters.find((x) => x.id === run.subject)
-      if (c) void startCharacterRun(c)
+      if (c) startCharacterRun(c)
     } else if (run.paperId) {
       void openPaper(index, run.paperId, subject, order)
     }
@@ -342,8 +375,15 @@ export default function App() {
     void startRun(index, { kind: 'review', paperId: null, subject: 'all', order: 'seq', queue: review.due, pos: 0, picks: {} })
   }
 
-  // 跟角色讀書：從她負責的學科（跨所有考卷）抽題，沒寫過的優先
-  const startCharacterRun = async (c: Character) => {
+  // 跟角色讀書：有還沒看過的劇情就先播，看完再開始
+  const startCharacterRun = (c: Character) => {
+    const scene = newScene(c)
+    if (scene) setStory({ character: c, scene, then: () => void beginCharacterRun(c) })
+    else void beginCharacterRun(c)
+  }
+
+  // 從她負責的學科（跨所有考卷）抽題，沒寫過的優先
+  const beginCharacterRun = async (c: Character) => {
     if (!index) return
     try {
       const files = await Promise.all(index.papers.map((p) => loadPaper(index, p.id)))
@@ -354,9 +394,17 @@ export default function App() {
         .map((q) => q.id)
       const last = answers.records.reduce((max, r) => (r.answered_at > max ? r.answered_at : max), '')
       const away = last && Date.now() - new Date(last).getTime() > COMEBACK_DAYS * 86_400_000
+      // 吃醋：有吃醋台詞的角色，熟識之後，上次跟她讀書之後跑去讀別人的學科
+      const jealous =
+        !away && subjects && stageOf(c) >= 1 && (lines[c.id] ?? []).some((l) => l.situation === 'jealous')
+          ? rivalOf(c, characters, answers.records, subjects)
+          : undefined
+      const rivalName = jealous && `${(index.subjects[jealous.subjects[0]] ?? '').replace(/學$/, '')}那位`
       setStreak(0)
-      setReaction(react(c, away ? 'comeback' : 'start', 'start'))
-      await startRun(index, { kind: 'character', paperId: null, subject: c.id, order: 'random', queue, pos: 0, picks: {} })
+      setReaction(react(c, away ? 'comeback' : jealous ? 'jealous' : 'start', 'start', rivalName || undefined))
+      await startRun(index, {
+        kind: 'character', paperId: null, subject: c.id, order: 'random', queue, pos: 0, picks: {}, affection: stageOf(c),
+      })
     } catch {
       setError('題庫載入失敗')
     }
@@ -435,7 +483,7 @@ export default function App() {
   // 鍵盤：1–4 或 A–D 作答，Enter／→ 下一題，← 上一題
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (view !== 'quiz' || session) return // 看排行榜、考模擬考時不要對藏起來的題目作答
+      if (view !== 'quiz' || session || story || storyList) return // 看排行榜、考模擬考、看劇情時不要對藏起來的題目作答
       if (e.ctrlKey || e.metaKey || e.altKey) return
       if (e.target instanceof Element && e.target.closest('select, input, textarea')) return
       const k = e.key.toUpperCase()
@@ -449,7 +497,7 @@ export default function App() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [pick, go, picked, view, session])
+  }, [pick, go, picked, view, session, story, storyList])
 
   if (error) return <div className="center">{error}</div>
   if (!index || !run) return <div className="center">載入中…</div>
@@ -569,19 +617,38 @@ export default function App() {
 
       {characterMode && characters.length > 0 && (
         <section className="cast">
-          {characters.map((c) => (
-            <div key={c.id} className="cast-card" style={{ '--char': c.color } as React.CSSProperties}>
-              <Portrait character={c} expression="normal" />
-              <div className="cast-info">
-                <strong>{c.name}</strong>
-                <span className="cast-type">{c.type}・{c.title}</span>
-                <span className="cast-subjects">{c.subjects.map((s) => index.subjects[s] ?? s).join('、')}</span>
-                <button className="primary small" onClick={() => void startCharacterRun(c)}>
-                  一起讀書<span className="round-size">（{ROUND_SIZE} 題）</span>
-                </button>
+          {characters.map((c) => {
+            const a = affections.get(c.id)
+            const fresh = !!newScene(c)
+            return (
+              <div key={c.id} className="cast-card" style={{ '--char': c.color } as React.CSSProperties}>
+                <Portrait character={c} expression="normal" />
+                <div className="cast-info">
+                  <strong>
+                    {c.name}
+                    {fresh && (
+                      <span className="new-badge" title="有新劇情">
+                        新<span className="round-size">劇情</span>
+                      </span>
+                    )}
+                  </strong>
+                  <span className="cast-type">{c.type}・{c.title}</span>
+                  <span className="cast-subjects">{c.subjects.map((s) => index.subjects[s] ?? s).join('、')}</span>
+                  {a && <AffectionMeter affection={a} />}
+                  <div className="cast-actions">
+                    <button className="primary small" onClick={() => startCharacterRun(c)}>
+                      一起讀書<span className="round-size">（{ROUND_SIZE} 題）</span>
+                    </button>
+                    {stories[c.id]?.length ? (
+                      <button className="ghost small" onClick={() => setStoryList(c)}>
+                        劇情
+                      </button>
+                    ) : null}
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </section>
       )}
 
@@ -653,6 +720,16 @@ export default function App() {
               onRestart={run.kind === 'paper' || run.kind === 'character' ? () => restart(run.subject, run.order) : undefined}
               restartLabel={run.kind === 'character' ? '再一回合' : '重新開始'}
               onRetryWrong={() => restart(run.subject, run.order, true)}
+              unlock={
+                runCharacter && run.affection !== undefined && stageOf(runCharacter) > run.affection
+                  ? {
+                      text: `和${runCharacter.name}的好感度提升到「${STAGE_NAMES[stageOf(runCharacter)]}」！`,
+                      onPlay: newScene(runCharacter)
+                        ? () => setStory({ character: runCharacter, scene: newScene(runCharacter)! })
+                        : undefined,
+                    }
+                  : undefined
+              }
             />
           ) : current ? (
             <QuestionCard
@@ -675,6 +752,20 @@ export default function App() {
         </>
       )}
       <Disclaimer />
+      {storyList && affections.get(storyList.id) && (
+        <StoryList
+          character={storyList}
+          scenes={stories[storyList.id] ?? []}
+          affection={affections.get(storyList.id)!}
+          seen={seen}
+          onPlay={(scene) => {
+            setStoryList(null)
+            setStory({ character: storyList, scene })
+          }}
+          onClose={() => setStoryList(null)}
+        />
+      )}
+      {story && <StoryPlayer key={sceneId(story.character.id, story.scene.stage)} character={story.character} scene={story.scene} player={PLAYER} onClose={closeStory} />}
     </div>
   )
 }
@@ -891,8 +982,9 @@ function Summary(props: {
   onRestart?: () => void
   restartLabel: string
   onRetryWrong: () => void
+  unlock?: { text: string; onPlay?: () => void } // 這回合好感度升階
 }) {
-  const { run, questions, subjects, onRestart, restartLabel, onRetryWrong } = props
+  const { run, questions, subjects, onRestart, restartLabel, onRetryWrong, unlock } = props
   const rows = new Map<string, { total: number; correct: number }>()
   let wrong = 0
   for (const id of run.queue) {
@@ -910,6 +1002,16 @@ function Summary(props: {
   return (
     <main className="card summary">
       <h2>{run.kind === 'review' ? '今天的複習完成了' : run.kind === 'mock' ? '檢討完成' : '這回合結束'}</h2>
+      {unlock && (
+        <div className="unlock">
+          <span>{unlock.text}</span>
+          {unlock.onPlay && (
+            <button className="primary small" onClick={unlock.onPlay}>
+              看新劇情
+            </button>
+          )}
+        </div>
+      )}
       <table>
         <thead>
           <tr>

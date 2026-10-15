@@ -1,0 +1,92 @@
+{
+  "character": "ying",
+  "scenes": [
+    {
+      "stage": 0,
+      "title": "初識",
+      "background": "cafe",
+      "lines": [
+        { "speaker": "narration", "text": "「夜燈」靠窗的位子。你坐下不到一分鐘，一杯咖啡就放到你面前。" },
+        { "speaker": "ying", "expression": "happy", "text": "給你。半糖。" },
+        { "speaker": "player", "text": "謝謝……咦？學姊怎麼知道我喝半糖？" },
+        { "speaker": "ying", "expression": "normal", "text": "我叫葉縈，微免研究所的研究助理。微生物免疫和寄生蟲，由我陪你讀喔。" },
+        { "speaker": "player", "text": "呃，那個半糖……" },
+        { "speaker": "ying", "expression": "happy", "text": "你上禮拜在這裡點了三次，三次都是半糖。我只是剛好坐在後面而已。" },
+        { "speaker": "narration", "text": "她笑得很溫柔。過大的白袍袖子蓋住了手指，只露出一點點指尖捧著自己的杯子。" },
+        { "speaker": "ying", "expression": "normal", "text": "微免的細菌、病毒、黴菌，名字很多，很多人背到一半就放棄了。" },
+        { "speaker": "ying", "expression": "happy", "text": "可是你不會放棄的，對吧？因為我會一直陪著你。一直喔。" },
+        { "speaker": "narration", "text": "那天晚上回宿舍，你才想起來——上禮拜，你並沒有看到她坐在後面。" }
+      ]
+    },
+    {
+      "stage": 1,
+      "title": "熟識",
+      "background": "lab",
+      "lines": [
+        { "speaker": "narration", "text": "週末的微免實驗室。她說要帶你「認識一下大家」。" },
+        { "speaker": "ying", "expression": "happy", "text": "這盤是小金。血液培養基上金黃色的菌落，周圍一圈完全透明，那是 β 溶血喔。" },
+        { "speaker": "player", "text": "金黃色葡萄球菌……學姊幫它們取名字？" },
+        { "speaker": "ying", "expression": "normal", "text": "嗯。這盤 MacConkey 上的是小粉，大腸桿菌會發酵乳糖，菌落就變成粉紅色。" },
+        { "speaker": "ying", "expression": "happy", "text": "還有這盤，綠綠的、聞起來有一點葡萄味——綠膿桿菌，叫小綠。" },
+        { "speaker": "narration", "text": "她介紹每一盤的時候，聲音都比平常更輕，像在介紹家人。" },
+        { "speaker": "ying", "expression": "shy", "text": "……很奇怪吧？大家都覺得我很奇怪。對著細菌說話。" },
+        { "speaker": "player", "text": "不會啊。這樣講我反而記住了。小金、小粉、小綠。" },
+        { "speaker": "ying", "expression": "surprised", "text": "…………" },
+        { "speaker": "ying", "expression": "shy", "text": "那、那你也要有一個名字。這間實驗室裡，我最喜歡的那一個。" },
+        { "speaker": "ying", "expression": "happy", "text": "……開玩笑的喔。你又不是細菌。你是{player}。" }
+      ]
+    },
+    {
+      "stage": 2,
+      "title": "在意",
+      "background": "cafe",
+      "lines": [
+        { "speaker": "narration", "text": "你跟別的學姊讀了一整個下午。回到「夜燈」的位子上，你的錯題本整整齊齊地放在桌上。" },
+        { "speaker": "narration", "text": "每一題都重新抄過，按照學科、日期排好，旁邊用綠色的筆寫了提示。" },
+        { "speaker": "ying", "expression": "happy", "text": "回來了呢。我幫你整理好了。全部。" },
+        { "speaker": "player", "text": "學姊……整理了多久？" },
+        { "speaker": "ying", "expression": "normal", "text": "從你離開到現在。四小時又二十分鐘。我不生氣喔。" },
+        { "speaker": "ying", "expression": "yandere", "text": "我只是想，你去別的地方的時候，至少你的錯題，還是跟我在一起的。" },
+        { "speaker": "narration", "text": "你翻到最後一頁。她在空白處畫了一隻小小的、歪歪扭扭的蟲，旁邊寫著「宿主：{player}」。" },
+        { "speaker": "player", "text": "這是……" },
+        { "speaker": "ying", "expression": "shy", "text": "啊、那個不要看！那是、是蟯蟲，只是隨手畫的！" },
+        { "speaker": "ying", "expression": "shy", "text": "……明天也會回來這裡吧？我會留位子。只留給你。" }
+      ]
+    },
+    {
+      "stage": 3,
+      "title": "心動",
+      "background": "lab",
+      "lines": [
+        { "speaker": "narration", "text": "晚上的實驗室，燈「啪」地一聲全暗了。只剩超低溫冰箱的備用電源燈亮著。" },
+        { "speaker": "ying", "expression": "surprised", "text": "——！" },
+        { "speaker": "narration", "text": "黑暗裡，有人緊緊抓住了你的袖子。" },
+        { "speaker": "player", "text": "學姊？" },
+        { "speaker": "ying", "expression": "sad", "text": "……不要走。我、我怕黑。" },
+        { "speaker": "narration", "text": "平常說話讓人背脊發涼的人，現在連聲音都在發抖。" },
+        { "speaker": "player", "text": "我不走。我在這裡。" },
+        { "speaker": "ying", "expression": "shy", "text": "……騙人。大家都會走的。" },
+        { "speaker": "narration", "text": "你沒有回答，只是把手覆在她抓著袖子的那隻手上。過了很久，燈才重新亮起來。" },
+        { "speaker": "ying", "expression": "shy", "text": "…………你的手，好暖。" },
+        { "speaker": "ying", "expression": "happy", "text": "這件事我要記在筆記本裡。不，要記在最重要的那一本。" }
+      ]
+    },
+    {
+      "stage": 4,
+      "title": "告白前夕",
+      "background": "night_street",
+      "lines": [
+        { "speaker": "narration", "text": "讀書會散了。她陪你走到宿舍前的路口，卻遲遲不說再見。" },
+        { "speaker": "ying", "expression": "normal", "text": "{player}，我可以問你一件事嗎？" },
+        { "speaker": "ying", "expression": "sad", "text": "我記得你每天幾點上線、跟誰讀書、錯了哪幾題。我知道這樣……有一點點太在意了。" },
+        { "speaker": "ying", "expression": "sad", "text": "你會不會覺得，我很奇怪？會不會……有一天就不來了？" },
+        { "speaker": "player", "text": "學姊整理的錯題本，我每天都在用。上禮拜病毒那題，就是靠學姊寫的提示答對的。" },
+        { "speaker": "ying", "expression": "surprised", "text": "……你有看那些提示？" },
+        { "speaker": "player", "text": "每一條都有看。" },
+        { "speaker": "narration", "text": "路燈下，她低著頭，袖子蓋著的手指緊緊握在一起。" },
+        { "speaker": "ying", "expression": "shy", "text": "那……等你考完一階，我有一個研究結果要發表。只發表給你一個人。" },
+        { "speaker": "ying", "expression": "happy", "text": "在那之前，要好好讀書喔。我不生氣——但是你要考好。" }
+      ]
+    }
+  ]
+}

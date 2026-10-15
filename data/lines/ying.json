@@ -39,8 +39,8 @@
     { "id": "ying-mock_high-001", "situation": "mock_high", "affection_min": 0, "expression": "happy", "text": "這個分數……我好驕傲。這張成績單，可以給我收著嗎？" },
     { "id": "ying-mock_high-002", "situation": "mock_high", "affection_min": 0, "expression": "surprised", "text": "好厲害……你越來越厲害，會不會就不需要我了呢。……不行喔，還是要需要我。" },
 
-    { "id": "ying-jealous-001", "situation": "jealous", "affection_min": 0, "expression": "yandere", "text": "你昨天跟藥理那位讀到兩點對吧？我不生氣喔……寄生蟲離開宿主就活不下去，我覺得我也是。所以今天的題目，只跟我寫，好嗎？" },
+    { "id": "ying-jealous-001", "situation": "jealous", "affection_min": 0, "expression": "yandere", "text": "你這幾天，都跟{rival}讀書對吧？我不生氣喔……有些寄生蟲離開宿主就活不下去，我覺得我也是。所以今天的題目，只跟我寫，好嗎？" },
     { "id": "ying-jealous-002", "situation": "jealous", "affection_min": 0, "expression": "yandere", "text": "身上有別人的咖啡味呢。……我不生氣喔。今天的咖啡，喝我泡的就好。" },
-    { "id": "ying-jealous-003", "situation": "jealous", "affection_min": 0, "expression": "yandere", "text": "其他學姊教得好嗎？……我不生氣喔。只是我的筆記本，今天寫得特別用力。" }
+    { "id": "ying-jealous-003", "situation": "jealous", "affection_min": 0, "expression": "yandere", "text": "{rival}教得好嗎？……我不生氣喔。只是我的筆記本，今天寫得特別用力。" }
   ]
 }

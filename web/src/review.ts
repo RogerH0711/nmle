@@ -24,9 +24,10 @@ function addDays(date: string, days: number) {
   return localDate(new Date(y, m - 1, d + days))
 }
 
-export function reviewStates(records: AnswerRecord[]): Map<string, ReviewState> {
+// onPass：到期後按時答對（往後移一格或攻略完成）時呼叫，好感度用來算複習完成次數
+function walk(records: AnswerRecord[], onPass?: (r: AnswerRecord) => void): Map<string, ReviewState> {
   const states = new Map<string, ReviewState>()
-  const sorted = [...records].sort((a, b) => a.answered_at.localeCompare(b.answered_at))
+  const sorted = [...records].sort((a, b) => new Date(a.answered_at).getTime() - new Date(b.answered_at).getTime())
   for (const r of sorted) {
     const day = localDate(new Date(r.answered_at))
     const s = states.get(r.question_id)
@@ -35,9 +36,21 @@ export function reviewStates(records: AnswerRecord[]): Map<string, ReviewState> 
     } else if (s && !s.done && day >= s.due) {
       if (s.box === INTERVALS.length - 1) states.set(r.question_id, { ...s, done: true })
       else states.set(r.question_id, { box: s.box + 1, due: addDays(day, INTERVALS[s.box + 1]), done: false })
+      onPass?.(r)
     }
   }
   return states
+}
+
+export function reviewStates(records: AnswerRecord[]): Map<string, ReviewState> {
+  return walk(records)
+}
+
+/** 依時間順序列出每一次「到期後按時答對」的作答紀錄 */
+export function reviewPasses(records: AnswerRecord[]): AnswerRecord[] {
+  const passes: AnswerRecord[] = []
+  walk(records, (r) => passes.push(r))
+  return passes
 }
 
 export function reviewSummary(states: Map<string, ReviewState>, today = localDate()) {

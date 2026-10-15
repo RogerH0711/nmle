@@ -1134,3 +1134,270 @@ button.link:hover {
 .disclaimer p {
   margin: 0 0 4px;
 }
+
+/* ---------- 好感度、劇情 ---------- */
+
+.new-badge {
+  margin-left: 6px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--char);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  vertical-align: 2px;
+}
+
+.affection {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.hearts {
+  color: var(--char);
+  letter-spacing: 1px;
+}
+
+.affection-bar {
+  flex: 1;
+  max-width: 80px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.affection-bar span {
+  display: block;
+  height: 100%;
+  background: var(--char);
+}
+
+.cast-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.cast-actions .ghost {
+  background: transparent;
+  color: var(--char);
+  border-color: var(--char);
+}
+
+.unlock {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--warn-bg);
+  color: var(--warn);
+  font-weight: 700;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgb(0 0 0 / 0.45);
+}
+
+.modal {
+  width: min(420px, 100%);
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--card);
+  border-top: 4px solid var(--char);
+}
+
+.modal h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.story-list ol {
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.story-list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.story-list li.locked {
+  color: var(--muted);
+}
+
+.story-stage {
+  flex: none;
+  font-weight: 700;
+}
+
+.story-list li .link {
+  color: var(--char);
+}
+
+.story-lock {
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+/* 劇情：全螢幕，背景圖在最下層、立繪在中間、對話框在底部。不論淺色深色模式都用深色底，文字才看得清楚 */
+.story {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  color: #fff;
+  background: linear-gradient(160deg, #3a3550, #1d1b26);
+}
+
+.story.bg-cafe { background: linear-gradient(165deg, #6b4a32, #2b1d14); }
+.story.bg-library { background: linear-gradient(165deg, #5b4b3a, #23201c); }
+.story.bg-anatomy_lab { background: linear-gradient(165deg, #4d6470, #1c2429); }
+.story.bg-lab { background: linear-gradient(165deg, #3f6b5a, #17261f); }
+.story.bg-hospital { background: linear-gradient(165deg, #6f7f8c, #262c31); }
+.story.bg-track { background: linear-gradient(170deg, #c9773f, #5a2f2a 60%, #2a1a1d); }
+.story.bg-night_street { background: linear-gradient(170deg, #26304d, #11131d); }
+.story.bg-festival { background: linear-gradient(170deg, #4a2c5a, #1b1226); }
+.story.bg-stairwell { background: linear-gradient(170deg, #4f5257, #1d1e21); }
+
+.story-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: linear-gradient(rgb(0 0 0 / 0.45), transparent);
+}
+
+.story-title {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.story-head .ghost {
+  color: #fff;
+  border-color: rgb(255 255 255 / 0.6);
+  background: rgb(0 0 0 / 0.2);
+}
+
+.story-figure {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 1;
+  height: 92%;
+  aspect-ratio: 832 / 1216;
+  transform: translateX(-50%);
+  transition: opacity 0.3s;
+}
+
+.story-figure.hidden {
+  opacity: 0;
+}
+
+.story-figure .portrait {
+  width: 100%;
+  height: 100%;
+}
+
+.story-figure .portrait img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: contain;
+  object-position: top;
+}
+
+.story-figure .portrait.placeholder {
+  border-radius: 16px 16px 0 0;
+}
+
+.story-box {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  z-index: 2;
+  width: min(760px, calc(100% - 32px));
+  min-height: 7.5em;
+  padding: 12px 16px 22px;
+  transform: translateX(-50%);
+  border: 1.5px solid var(--char);
+  border-radius: 14px;
+  background: rgb(20 18 26 / 0.86);
+  line-height: 1.7;
+}
+
+.story-box p {
+  margin: 0;
+}
+
+.story-box.narration p {
+  color: #d9d4ea;
+}
+
+.story-speaker {
+  margin-bottom: 2px;
+  font-weight: 700;
+  color: var(--char);
+  filter: brightness(1.35);
+}
+
+.story-speaker.player {
+  color: #fff;
+  filter: none;
+}
+
+.story-more {
+  position: absolute;
+  right: 14px;
+  bottom: 6px;
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 599px) {
+  .story-figure {
+    height: 78%;
+  }
+
+  .affection-bar {
+    display: none;
+  }
+}

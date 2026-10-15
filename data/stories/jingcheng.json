@@ -1,0 +1,92 @@
+{
+  "character": "jingcheng",
+  "scenes": [
+    {
+      "stage": 0,
+      "title": "初識",
+      "background": "anatomy_lab",
+      "lines": [
+        { "speaker": "narration", "text": "讀書會的第一天，五位學姊要各自挑一個學弟。輪到解剖的時候，教室安靜得只剩冷氣聲。" },
+        { "speaker": "jingcheng", "expression": "normal", "text": "……你就是學弟？" },
+        { "speaker": "player", "text": "是、是的。學姊好。" },
+        { "speaker": "narration", "text": "她沒有回答，直接抽走你桌上的筆記，一頁一頁翻過去。眼神像在看一副還沒解剖完的標本。" },
+        { "speaker": "jingcheng", "expression": "normal", "text": "臂神經叢寫在第三頁，橈神經寫在第十一頁，中間夾著生化。……結構混亂。" },
+        { "speaker": "player", "text": "我是照上課順序抄的……" },
+        { "speaker": "jingcheng", "expression": "normal", "text": "上課順序不是身體的順序。考試問的是身體。" },
+        { "speaker": "narration", "text": "她把筆記放回桌上，對齊桌緣，連角度都擺正。" },
+        { "speaker": "jingcheng", "expression": "normal", "text": "解剖、胚胎、組織，三科我負責。每次考試四十幾題，不是小數目。" },
+        { "speaker": "jingcheng", "expression": "happy", "text": "……明天同一個時間。筆記重寫一份帶來。" },
+        { "speaker": "narration", "text": "她轉身離開。你後來才知道，那句話的意思是「我收你了」。" }
+      ]
+    },
+    {
+      "stage": 1,
+      "title": "熟識",
+      "background": "library",
+      "lines": [
+        { "speaker": "narration", "text": "圖書館的角落。你第五次背錯臂神經叢，對面傳來一聲很輕的嘆氣。" },
+        { "speaker": "jingcheng", "expression": "normal", "text": "……筆給我。" },
+        { "speaker": "narration", "text": "她把你的筆記翻到空白頁，從左邊開始畫。線條乾淨得像印出來的。" },
+        { "speaker": "jingcheng", "expression": "normal", "text": "C5 到 T1，五條神經根。往外依序是根、幹、股、索、支。順序記住，就不會亂。" },
+        { "speaker": "jingcheng", "expression": "normal", "text": "最後分出五條終末分支：肌皮、腋、橈、正中、尺。……你每次都漏掉腋神經。" },
+        { "speaker": "player", "text": "學姊怎麼知道我每次都漏掉？" },
+        { "speaker": "jingcheng", "expression": "surprised", "text": "…………" },
+        { "speaker": "jingcheng", "expression": "shy", "text": "你寫錯的地方，很好記而已。不要多想。" },
+        { "speaker": "narration", "text": "一整頁畫完，她把筆還給你。指尖沾到一點墨水，她低頭擦了很久。" },
+        { "speaker": "jingcheng", "expression": "normal", "text": "照著畫三次。……我在這裡看著。" }
+      ]
+    },
+    {
+      "stage": 2,
+      "title": "在意",
+      "background": "anatomy_lab",
+      "lines": [
+        { "speaker": "narration", "text": "晚上十一點的解剖教室。你來拿忘記的圖譜，燈卻還亮著。" },
+        { "speaker": "jingcheng", "expression": "surprised", "text": "……學弟？這麼晚。" },
+        { "speaker": "player", "text": "學姊也還沒走？" },
+        { "speaker": "jingcheng", "expression": "normal", "text": "明天的課要準備標本的標籤。……坐吧，反正你也睡不著。" },
+        { "speaker": "narration", "text": "你們並肩坐在窗邊。她難得沒有翻書。" },
+        { "speaker": "jingcheng", "expression": "sad", "text": "我一階的時候，模擬考差一點不及格。解剖還好，生化完全不行。" },
+        { "speaker": "player", "text": "學姊也會這樣？" },
+        { "speaker": "jingcheng", "expression": "normal", "text": "所有人都會。只是我那時候，沒有人陪。" },
+        { "speaker": "narration", "text": "她說得很平靜，你卻聽出那句話底下壓著很多個像今晚一樣的夜。" },
+        { "speaker": "jingcheng", "expression": "shy", "text": "……所以你錯的題目，我都有記著。不是因為你特別笨。是因為，我不想讓你也一個人。" },
+        { "speaker": "jingcheng", "expression": "normal", "text": "剛才那句，忘掉。……再一次。下一題。" }
+      ]
+    },
+    {
+      "stage": 3,
+      "title": "心動",
+      "background": "library",
+      "lines": [
+        { "speaker": "narration", "text": "閉館前的書架間，你在地上撿到一副灰色細框眼鏡。" },
+        { "speaker": "jingcheng", "expression": "surprised", "text": "……學弟？你有沒有看到——" },
+        { "speaker": "narration", "text": "她從書架另一頭走出來，瞇著眼睛，伸手扶著書架找路。和平常那個什麼都看得清清楚楚的學姊，完全不一樣。" },
+        { "speaker": "player", "text": "學姊，眼鏡在這裡。" },
+        { "speaker": "jingcheng", "expression": "shy", "text": "……給我。不、不要看我。" },
+        { "speaker": "narration", "text": "你把眼鏡放進她手心。她的指尖碰到你的手，停了一下，沒有馬上收回去。" },
+        { "speaker": "jingcheng", "expression": "shy", "text": "手很冷。……你又沒吃晚餐。" },
+        { "speaker": "player", "text": "學姊連這個都看得出來？" },
+        { "speaker": "jingcheng", "expression": "shy", "text": "眼鏡戴回去了。看得很清楚。" },
+        { "speaker": "jingcheng", "expression": "happy", "text": "……剛才的樣子，不准告訴別人。這是交換條件——我請你吃晚餐。" }
+      ]
+    },
+    {
+      "stage": 4,
+      "title": "告白前夕",
+      "background": "anatomy_lab",
+      "lines": [
+        { "speaker": "narration", "text": "學期末的大體老師感恩儀式。家屬離開後，教室只剩下你們兩個人收拾花。" },
+        { "speaker": "jingcheng", "expression": "normal", "text": "每年這一天，我都會想起我的第一位大體老師。" },
+        { "speaker": "jingcheng", "expression": "sad", "text": "他教會我的東西，比任何一本圖譜都多。可是我連一句謝謝，都只能對著照片說。" },
+        { "speaker": "player", "text": "我想他會知道的。學姊把他教的東西，一直教給下一屆。" },
+        { "speaker": "narration", "text": "她看了你很久。窗外的光照在她的鏡片上，看不清她的眼睛。" },
+        { "speaker": "jingcheng", "expression": "shy", "text": "……所以，有些話要趁還能說的時候說。" },
+        { "speaker": "jingcheng", "expression": "shy", "text": "謝謝你陪我。這半年，陪我讀書，陪我待在這間很冷的教室。" },
+        { "speaker": "player", "text": "學姊……" },
+        { "speaker": "jingcheng", "expression": "normal", "text": "剩下的話，等你考完一階再說。……現在說，你會分心。" },
+        { "speaker": "jingcheng", "expression": "happy", "text": "所以，考好。我在終點等你。" }
+      ]
+    }
+  ]
+}

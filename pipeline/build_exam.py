@@ -509,8 +509,21 @@ def validate(questions, answer_count):
 
 # ---------- 主程式 ----------
 
+def subject_runs(questions):
+    """每題的學科壓成連續區段 [起, 迄, 學科]，前端不用載入整份考卷就能查題目的學科（算好感度用）。"""
+    runs = []
+    for q in sorted(questions, key=lambda q: q["number"]):
+        if not q["subject"]:
+            continue
+        if runs and runs[-1][2] == q["subject"] and runs[-1][1] == q["number"] - 1:
+            runs[-1][1] = q["number"]
+        else:
+            runs.append([q["number"], q["number"], q["subject"]])
+    return runs
+
+
 def write_index():
-    """data/index.json：前端用來列出有哪些考卷，以及學科名稱。"""
+    """data/index.json：前端用來列出有哪些考卷、學科名稱，以及各考卷題號對應的學科。"""
     papers = []
     # 新的考試在前；同一次考試醫學(一) 在醫學(二) 前
     files = sorted((DATA_DIR / "questions").glob("*.json"), key=lambda p: (-int(p.stem.split("_")[0]), p.stem))
@@ -521,6 +534,7 @@ def write_index():
             "id": e["id"], "year": e["year"], "session": e["session"], "paper": e["paper"],
             "file": f"questions/{path.name}",
             "count": sum(q["valid"] for q in data["questions"]),
+            "subject_runs": subject_runs(data["questions"]),
         })
     index = {"subjects": SUBJECTS, "papers": papers}
     (DATA_DIR / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8")

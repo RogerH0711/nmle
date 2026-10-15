@@ -1,0 +1,42 @@
+{
+  "character": "jingcheng",
+  "lines": [
+    { "id": "jingcheng-start-001", "situation": "start", "affection_min": 0, "expression": "normal", "text": "……來了。今天是解剖、胚胎、組織。先把筆記翻開。" },
+    { "id": "jingcheng-start-002", "situation": "start", "affection_min": 0, "expression": "normal", "text": "坐。……結構要一層一層記，不要跳。" },
+    { "id": "jingcheng-start-003", "situation": "start", "affection_min": 0, "expression": "normal", "text": "上次錯的地方，我記著。今天看你會不會再錯。" },
+    { "id": "jingcheng-start-004", "situation": "start", "affection_min": 1, "expression": "shy", "text": "……今天也來了。嗯。……我泡了兩杯茶。" },
+
+    { "id": "jingcheng-comeback-001", "situation": "comeback", "affection_min": 0, "expression": "sad", "text": "好幾天沒來。……我把你的位子留著。只是剛好沒人坐而已。" },
+    { "id": "jingcheng-comeback-002", "situation": "comeback", "affection_min": 0, "expression": "normal", "text": "……你回來了。忘掉的部分，從頭再一次。" },
+    { "id": "jingcheng-comeback-003", "situation": "comeback", "affection_min": 0, "expression": "surprised", "text": "……學弟？我以為你不會再來了。……坐吧。" },
+
+    { "id": "jingcheng-correct-001", "situation": "correct", "affection_min": 0, "expression": "happy", "text": "……正確。位置記住了，就不要忘。" },
+    { "id": "jingcheng-correct-002", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "對。下一題。" },
+    { "id": "jingcheng-correct-003", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "嗯。……答案對，過程也要對。" },
+    { "id": "jingcheng-correct-004", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "正確。……順便考你：臂神經叢來自 C5 到 T1，神經根、神經幹、神經分部、神經索、分支。順序也要會。" },
+    { "id": "jingcheng-correct-005", "situation": "correct", "affection_min": 0, "expression": "happy", "text": "……對。順便記一個：腕隧道裡走的是正中神經，尺神經不走那裡。很多人會搞混。" },
+    { "id": "jingcheng-correct-006", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "正確。……胚胎學的時間點也要記。三胚層在第三週形成，那時是原腸胚期。" },
+    { "id": "jingcheng-correct-007", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "對。……順便記：膀胱是移形上皮，撐開的時候會變薄。" },
+    { "id": "jingcheng-correct-008", "situation": "correct", "affection_min": 1, "expression": "shy", "text": "……做得很好。這句話，我不常說。" },
+
+    { "id": "jingcheng-wrong-001", "situation": "wrong", "affection_min": 0, "expression": "normal", "text": "錯了。……沒關係，再一次。這次我在旁邊看著你寫——不要一直看我，看題目。" },
+    { "id": "jingcheng-wrong-002", "situation": "wrong", "affection_min": 0, "expression": "normal", "text": "……再一次。" },
+    { "id": "jingcheng-wrong-003", "situation": "wrong", "affection_min": 0, "expression": "sad", "text": "這種地方，上次也錯過。……我記得。你也要記得。" },
+    { "id": "jingcheng-wrong-004", "situation": "wrong", "affection_min": 0, "expression": "normal", "text": "錯了。……趁這時候多記一個：左邊的喉返神經繞過主動脈弓，右邊的繞過鎖骨下動脈。" },
+    { "id": "jingcheng-wrong-005", "situation": "wrong", "affection_min": 0, "expression": "normal", "text": "……再看一次正解。順便記：食道上三分之一是骨骼肌，下三分之一是平滑肌，中間混合。" },
+    { "id": "jingcheng-wrong-006", "situation": "wrong", "affection_min": 0, "expression": "normal", "text": "錯了。……背書的時候，結構和神經要一起背。像第一咽弓是三叉神經，第二咽弓是顏面神經。" },
+    { "id": "jingcheng-wrong-007", "situation": "wrong", "affection_min": 1, "expression": "sad", "text": "……你錯的題目，我都畫成圖了。下次拿給你。不要問為什麼。" },
+
+    { "id": "jingcheng-streak-001", "situation": "streak", "affection_min": 0, "expression": "happy", "text": "十題全對。……今天的你，結構很清楚。" },
+    { "id": "jingcheng-streak-002", "situation": "streak", "affection_min": 0, "expression": "surprised", "text": "……連對十題。我沒有很驚訝。只是筆掉了而已。" },
+    { "id": "jingcheng-streak-003", "situation": "streak", "affection_min": 0, "expression": "normal", "text": "一直答對。……不要停，再一次。" },
+    { "id": "jingcheng-streak-004", "situation": "streak", "affection_min": 1, "expression": "shy", "text": "……你認真的樣子，比圖譜好看。……我在說什麼。忘掉。" },
+
+    { "id": "jingcheng-finish-001", "situation": "finish", "affection_min": 0, "expression": "normal", "text": "一回合結束。錯的題目，明天再一次。" },
+    { "id": "jingcheng-finish-002", "situation": "finish", "affection_min": 0, "expression": "happy", "text": "……今天可以了。回去早點睡，記憶要靠睡眠鞏固。" },
+    { "id": "jingcheng-finish-003", "situation": "finish", "affection_min": 0, "expression": "normal", "text": "結束。……我還要留下來整理筆記。你先走。" },
+
+    { "id": "jingcheng-mock_high-001", "situation": "mock_high", "affection_min": 0, "expression": "happy", "text": "解剖這部分，你已經比我當年好了。……不准驕傲。" },
+    { "id": "jingcheng-mock_high-002", "situation": "mock_high", "affection_min": 0, "expression": "surprised", "text": "……這個分數。我、我去倒杯水。……不要跟過來。" }
+  ]
+}

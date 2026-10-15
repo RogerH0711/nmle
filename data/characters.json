@@ -9,7 +9,8 @@
       "title": "解剖學研究所碩二",
       "subjects": ["anatomy", "embryology", "histology"],
       "expressions": ["normal", "happy", "shy", "sad", "surprised"],
-      "enabled": false
+      "bust": { "x": 277, "y": 30, "w": 228 },
+      "enabled": true
     },
     {
       "id": "yiqing",

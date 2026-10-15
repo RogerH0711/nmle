@@ -189,6 +189,7 @@ Supabase（登入、進度、排行榜）← GitHub Pages 做不到的部分
 - Vite + React + TypeScript 靜態 SPA，push 到 `main` 後由 GitHub Actions 建置並部署到 GitHub Pages。
 - 題庫 JSON 和圖片跟網站一起部署，作答不需要等後端。
 - 作答紀錄先寫進瀏覽器，登入後和 Supabase 雙向同步，網路斷掉也能繼續刷；登入前在同一台裝置刷的題目會併進帳號。
+- 資料檔（題庫、角色、台詞、立繪）網址後面加上部署時的 commit（`?v=`）。GitHub Pages 讓瀏覽器快取每個檔案 10 分鐘，不加的話剛部署完可能新程式配到舊資料（例如顏緋的胸像設定還沒更新，角色卡顯示成全身）。
 
 **對錯由資料庫判斷（已完成，`supabase/migrations/20261015000000_leaderboard.sql`）**：各題正解放在 `question_keys` 表，前端讀不到；作答寫入時由 trigger 算出對錯，蓋掉瀏覽器送來的值。正解由 `pipeline/export_keys.py` 匯出成 `supabase/seed/question_keys.sql`，題庫有更新就重新匯出並執行，執行時也會重新判斷已有的作答紀錄。
 

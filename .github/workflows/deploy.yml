@@ -56,9 +56,11 @@ jobs:
       - run: npm ci
         working-directory: web
 
-      # 含 TypeScript 型別檢查
+      # 含 TypeScript 型別檢查。VITE_BUILD 加在資料檔網址後面，每次部署都讓瀏覽器抓新的資料
       - run: npm run build
         working-directory: web
+        env:
+          VITE_BUILD: ${{ github.sha }}
 
       - uses: actions/configure-pages@v6
         if: github.event_name != 'pull_request'

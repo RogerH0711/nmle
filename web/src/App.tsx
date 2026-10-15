@@ -224,6 +224,16 @@ export default function App() {
   const current = run && !done ? questions.get(run.queue[run.pos]) : undefined
   const picked = current && run ? run.picks[current.id] : undefined
 
+  // 重新整理後恢復角色回合時，補一句台詞，不然角色會一直是「……」直到作答
+  useEffect(() => {
+    if (reaction || !characterMode || run?.kind !== 'character') return
+    const c = characters.find((x) => x.id === run.subject)
+    if (!c || !lines[c.id]) return // 台詞還沒載入
+    if (done) setReaction(react(c, 'finish', 'finish'))
+    else if (current && !picked) setReaction(react(c, 'start', run.pos === 0 ? 'start' : current.id))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reaction, characterMode, run, characters, lines, done, current, picked])
+
   const stats = useMemo(() => {
     let answered = 0
     let correct = 0

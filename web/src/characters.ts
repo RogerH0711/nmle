@@ -1,6 +1,5 @@
 // 角色資料與台詞（data/characters.json、data/lines/<id>.json，格式見 characters.md）
-
-const BASE = import.meta.env.BASE_URL
+import { dataUrl } from './bank'
 
 export type Situation = 'start' | 'comeback' | 'correct' | 'wrong' | 'streak' | 'finish' | 'mock_high' | 'jealous' | 'story'
 
@@ -37,7 +36,7 @@ export const STREAK_EVERY = 10 // 連對幾題觸發 streak 台詞
 export const COMEBACK_DAYS = 3 // 幾天沒作答算「久沒上線」
 
 export async function loadCharacters(): Promise<Character[]> {
-  const r = await fetch(`${BASE}characters.json`)
+  const r = await fetch(dataUrl('characters.json'))
   if (!r.ok) throw new Error(`characters.json ${r.status}`)
   const data = (await r.json()) as { characters: Character[] }
   return data.characters.filter((c) => c.enabled)
@@ -48,7 +47,7 @@ const lineCache = new Map<string, Promise<Line[]>>()
 export function loadLines(characterId: string): Promise<Line[]> {
   let p = lineCache.get(characterId)
   if (!p) {
-    p = fetch(`${BASE}lines/${characterId}.json`)
+    p = fetch(dataUrl(`lines/${characterId}.json`))
       .then((r) => (r.ok ? r.json() : { lines: [] }))
       .then((d: { lines: Line[] }) => d.lines)
       .catch(() => [])
@@ -73,4 +72,4 @@ export function fillPlayer(text: string, player: string) {
 }
 
 export const portraitUrl = (characterId: string, expression: string) =>
-  `${BASE}characters/${characterId}/${expression}.webp`
+  dataUrl(`characters/${characterId}/${expression}.webp`)

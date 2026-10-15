@@ -3,8 +3,15 @@ import type { ExamFile, Index, PaperInfo, Question } from './types'
 const BASE = import.meta.env.BASE_URL
 const papers = new Map<string, Promise<ExamFile>>()
 
+// 部署時的 commit（GitHub Actions 帶入 VITE_BUILD）。資料檔網址加上它，每次部署都會抓新的：
+// GitHub Pages 讓瀏覽器快取每個檔案 10 分鐘，不加的話剛部署完可能新程式配到舊的題庫或角色設定。
+const BUILD = (import.meta.env.VITE_BUILD as string | undefined)?.slice(0, 7) ?? 'dev'
+
+/** 資料檔網址（相對於網站根目錄），加上版本號 */
+export const dataUrl = (path: string) => `${BASE}${path}?v=${BUILD}`
+
 export function loadIndex(): Promise<Index> {
-  return fetch(`${BASE}index.json`).then((r) => {
+  return fetch(dataUrl('index.json')).then((r) => {
     if (!r.ok) throw new Error(`index.json ${r.status}`)
     return r.json()
   })
@@ -20,7 +27,7 @@ export function loadPaper(index: Index, paperId: string): Promise<ExamFile> {
   if (!p) {
     const info = index.papers.find((x) => x.id === paperId)
     if (!info) return Promise.reject(new Error(`找不到考卷 ${paperId}`))
-    p = fetch(`${BASE}${info.file}`).then((r) => {
+    p = fetch(dataUrl(info.file)).then((r) => {
       if (!r.ok) throw new Error(`${info.file} ${r.status}`)
       return r.json()
     })

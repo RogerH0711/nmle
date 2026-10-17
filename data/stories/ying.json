@@ -10,7 +10,12 @@
         { "speaker": "ying", "expression": "happy", "text": "給你。半糖。" },
         { "speaker": "player", "text": "謝謝……咦？學姊怎麼知道我喝半糖？" },
         { "speaker": "ying", "expression": "normal", "text": "我叫葉縈，微免研究所的研究助理。微生物免疫和寄生蟲，由我陪你讀喔。" },
-        { "speaker": "player", "text": "呃，那個半糖……" },
+        { "speaker": "choice", "options": [
+          { "text": "呃，那個半糖……", "lines": [] },
+          { "text": "謝謝學姊，剛好想喝。", "lines": [
+            { "speaker": "ying", "expression": "happy", "text": "嗯，我知道喔。" }
+          ] }
+        ] },
         { "speaker": "ying", "expression": "happy", "text": "你上禮拜在這裡點了三次，三次都是半糖。我只是剛好坐在後面而已。" },
         { "speaker": "narration", "text": "她笑得很溫柔。過大的白袍袖子蓋住了手指，只露出一點點指尖捧著自己的杯子。" },
         { "speaker": "ying", "expression": "normal", "text": "微免的細菌、病毒、黴菌，名字很多，很多人背到一半就放棄了。" },

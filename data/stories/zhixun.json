@@ -15,7 +15,12 @@
         { "speaker": "zhixun", "expression": "happy", "text": "啊，等一下。別動。" },
         { "speaker": "narration", "text": "她傾身過來，把你翻起來的領子一點一點折好。淡淡的洗衣精香味。" },
         { "speaker": "zhixun", "expression": "happy", "text": "好了。讀書之前，先把自己整理好。這是姊姊的第一堂課。" },
-        { "speaker": "player", "text": "……謝謝學姊。" },
+        { "speaker": "choice", "options": [
+          { "text": "……謝謝學姊。", "lines": [] },
+          { "text": "我、我自己來就好！", "lines": [
+            { "speaker": "zhixun", "expression": "happy", "text": "來不及了，已經整理好了喔。" }
+          ] }
+        ] },
         { "speaker": "zhixun", "expression": "shy", "text": "臉紅了呢。小學弟好可愛。……乖，慢慢來，我們有很多時間。" }
       ]
     },

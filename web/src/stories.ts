@@ -2,9 +2,38 @@
 import { dataUrl } from './bank'
 
 export interface StoryLine {
-  speaker: string // 角色 id、player（玩家）或 narration（旁白）
+  speaker: string // 角色 id、player（玩家）、narration（旁白）或 choice（選項）
   expression?: string
+  text?: string // choice 沒有
+  options?: StoryOption[] // 只有 choice 有
+}
+
+// 選項：選了之後玩家說出 text，接著播 lines，再回到主線。不影響好感度（「選了沒差」型）
+export interface StoryOption {
   text: string
+  lines: StoryLine[]
+}
+
+/**
+ * 依已經做的選擇，把劇本攤平成實際播放的順序：選項換成「玩家說出選項」加上那個選項的回應。
+ * 遇到還沒選的選項就停在那裡（最後一行是 choice）。
+ */
+export function storyTimeline(lines: StoryLine[], picks: number[]): StoryLine[] {
+  const out: StoryLine[] = []
+  let k = 0
+  for (const line of lines) {
+    if (line.speaker !== 'choice') {
+      out.push(line)
+      continue
+    }
+    const option = line.options?.[picks[k++]]
+    if (!option) {
+      out.push(line)
+      return out
+    }
+    out.push({ speaker: 'player', text: option.text }, ...option.lines)
+  }
+  return out
 }
 
 export interface Scene {

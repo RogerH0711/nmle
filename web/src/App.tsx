@@ -765,7 +765,7 @@ export default function App() {
           onClose={() => setStoryList(null)}
         />
       )}
-      {story && <StoryPlayer key={sceneId(story.character.id, story.scene.stage)} character={story.character} scene={story.scene} player={PLAYER} onClose={closeStory} />}
+      {story && <StoryPlayer key={sceneId(story.character.id, story.scene.stage)} character={story.character} scene={story.scene} player={PLAYER} affection={affections.get(story.character.id)} onClose={closeStory} />}
     </div>
   )
 }

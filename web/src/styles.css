@@ -1311,10 +1311,21 @@ button.link:hover {
   opacity: 0.9;
 }
 
-.story-head .ghost {
-  color: #fff;
-  border-color: rgb(255 255 255 / 0.6);
-  background: rgb(0 0 0 / 0.2);
+/* 右上角的好感度愛心 */
+.story-heart {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgb(0 0 0 / 0.35);
+  border: 1px solid var(--char);
+  font-size: 0.8rem;
+}
+
+.story-heart .hearts {
+  color: var(--char);
+  filter: brightness(1.4);
 }
 
 .story-figure {
@@ -1349,19 +1360,70 @@ button.link:hover {
   border-radius: 16px 16px 0 0;
 }
 
-.story-box {
+/* 選項：半透明圓角長條，疊在畫面中間 */
+.story-choices {
   position: absolute;
   left: 50%;
-  bottom: 16px;
+  top: 42%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(520px, calc(100% - 48px));
+  transform: translate(-50%, -50%);
+}
+
+.story-choices button {
+  padding: 12px 18px;
+  border: 1.5px solid var(--char);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.9);
+  color: #2a2530;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.3);
+}
+
+.story-choices button:hover,
+.story-choices button:focus-visible {
+  background: var(--char);
+  color: #fff;
+}
+
+/* 底部：名字牌、對話框、控制列 */
+.story-bottom {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
   z-index: 2;
-  width: min(760px, calc(100% - 32px));
-  min-height: 7.5em;
-  padding: 12px 16px 22px;
+  width: min(780px, calc(100% - 24px));
   transform: translateX(-50%);
+}
+
+.story-name {
+  display: inline-block;
+  margin: 0 0 -1px 14px;
+  padding: 3px 18px;
+  border-radius: 10px 10px 0 0;
+  background: var(--char);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.story-name.player {
+  background: #5d5868;
+}
+
+.story-box {
+  position: relative;
+  min-height: 7.2em;
+  padding: 12px 18px 22px;
   border: 1.5px solid var(--char);
   border-radius: 14px;
   background: rgb(20 18 26 / 0.86);
   line-height: 1.7;
+  box-shadow: inset 0 0 0 4px rgb(255 255 255 / 0.04);
 }
 
 .story-box p {
@@ -1372,18 +1434,6 @@ button.link:hover {
   color: #d9d4ea;
 }
 
-.story-speaker {
-  margin-bottom: 2px;
-  font-weight: 700;
-  color: var(--char);
-  filter: brightness(1.35);
-}
-
-.story-speaker.player {
-  color: #fff;
-  filter: none;
-}
-
 .story-more {
   position: absolute;
   right: 14px;
@@ -1392,9 +1442,86 @@ button.link:hover {
   opacity: 0.7;
 }
 
+.story-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.story-controls button {
+  padding: 2px 12px;
+  border: 1px solid rgb(255 255 255 / 0.35);
+  border-radius: 999px;
+  background: rgb(0 0 0 / 0.45);
+  color: #fff;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.story-controls button.on {
+  background: var(--char);
+  border-color: var(--char);
+}
+
+/* 紀錄：回看前面的台詞 */
+.story-backlog {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  overflow-y: auto;
+  padding: 48px max(16px, calc(50% - 380px)) 24px;
+  background: rgb(12 10 18 / 0.92);
+}
+
+.story-backlog h2 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.story-backlog ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.story-backlog li {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgb(255 255 255 / 0.1);
+  line-height: 1.6;
+}
+
+.story-backlog li strong {
+  flex: none;
+  width: 4em;
+  color: var(--char);
+  filter: brightness(1.4);
+}
+
+.story-backlog li strong.player {
+  color: #fff;
+  filter: none;
+}
+
+.story-backlog li.narration span {
+  color: #d9d4ea;
+  margin-left: calc(4em + 12px);
+}
+
+.story-backlog-hint {
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* 手機：立繪放大，只露出上半身（對話框蓋住下半身） */
 @media (max-width: 599px) {
   .story-figure {
-    height: 78%;
+    height: 115%;
+    bottom: -28%;
   }
 
   .affection-bar {

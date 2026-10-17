@@ -385,7 +385,18 @@ red hair, medium hair, side braid, red eyes, tsurime, red scrubs, scrub top, scr
 }
 ```
 
-- `speaker`：角色 id、`player`（畫面上顯示「我」）或 `narration`（旁白，不顯示名字）。
+- `speaker`：角色 id、`player`（畫面上顯示「我」）、`narration`（旁白，不顯示名字）或 `choice`（選項）。
+- 選項的格式如下。選了之後，玩家說出那個選項（`text`），接著播那個選項的 `lines`，再回到主線。`lines` 可以是空的，表示選了直接接主線。選項不影響好感度，所以兩個選項之後的主線都要說得通。
+
+```json
+{ "speaker": "choice", "options": [
+  { "text": "……我會讀到讓學姊刮目相看。", "lines": [
+    { "speaker": "fei", "expression": "pout", "text": "哼，口氣倒不小。……說到做到喔。" }
+  ] },
+  { "text": "學姊說得對，我會努力的。", "lines": [] }
+] }
+```
+
 - `expression`：只有角色台詞需要；旁白和玩家說話時，立繪維持上一個表情。角色第一次說話前不顯示立繪。
 - `background`：背景 id，清單見 `plan.md`「美術與內容」。
 - 劇情裡的醫學內容和台詞一樣要正確，寫完要核對。

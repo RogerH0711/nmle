@@ -11,6 +11,14 @@
         { "speaker": "player", "text": "我、我只是還沒讀到……" },
         { "speaker": "fei", "expression": "normal", "text": "還沒讀到可以錯成這樣，也算一種才能了。你的病理，爛到可以切片研究。" },
         { "speaker": "narration", "text": "整間「夜燈」都安靜了一秒。有人在偷笑。" },
+        { "speaker": "choice", "options": [
+          { "text": "……我會讀到讓學姊刮目相看。", "lines": [
+            { "speaker": "fei", "expression": "pout", "text": "哼，口氣倒不小。……說到做到喔。" }
+          ] },
+          { "text": "學姊說得對，我會努力的。", "lines": [
+            { "speaker": "fei", "expression": "normal", "text": "不用跟我道歉。分數拿出來就好。" }
+          ] }
+        ] },
         { "speaker": "fei", "expression": "normal", "text": "我是顏緋，病理科住院醫師。病理和公衛歸我。" },
         { "speaker": "fei", "expression": "pout", "text": "……既然被分到我這裡，就別想混過去。考成這樣，丟臉的是我。" },
         { "speaker": "narration", "text": "她把考卷甩回你桌上，轉身就走。走到門口，又停下來。" },

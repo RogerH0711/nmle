@@ -13,6 +13,14 @@
         { "speaker": "jingcheng", "expression": "normal", "text": "臂神經叢寫在第三頁，橈神經寫在第十一頁，中間夾著生化。……結構混亂。" },
         { "speaker": "player", "text": "我是照上課順序抄的……" },
         { "speaker": "jingcheng", "expression": "normal", "text": "上課順序不是身體的順序。考試問的是身體。" },
+        { "speaker": "choice", "options": [
+          { "text": "那學姊會怎麼整理？", "lines": [
+            { "speaker": "jingcheng", "expression": "normal", "text": "……按區域。上肢讀完，骨頭、肌肉、神經、血管放在同一頁。讀完一區，再換下一區。" }
+          ] },
+          { "text": "我回去重寫。", "lines": [
+            { "speaker": "jingcheng", "expression": "normal", "text": "嗯。……至少你不頂嘴。" }
+          ] }
+        ] },
         { "speaker": "narration", "text": "她把筆記放回桌上，對齊桌緣，連角度都擺正。" },
         { "speaker": "jingcheng", "expression": "normal", "text": "解剖、胚胎、組織，三科我負責。每次考試四十幾題，不是小數目。" },
         { "speaker": "jingcheng", "expression": "happy", "text": "……明天同一個時間。筆記重寫一份帶來。" },

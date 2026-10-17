@@ -14,7 +14,12 @@
         { "speaker": "yiqing", "expression": "happy", "text": "五十幾題！醫學(一) 一半以上，是最大的一塊。所以——" },
         { "speaker": "narration", "text": "她從包包裡拿出一張紙，上面用螢光筆畫滿了格子。標題寫著「一階選手訓練計畫」。" },
         { "speaker": "yiqing", "expression": "happy", "text": "從今天開始，你就是我的選手！每天的量都排好了，有暖身、有主課表、有緩和！" },
-        { "speaker": "player", "text": "這、這是課表嗎……" },
+        { "speaker": "choice", "options": [
+          { "text": "這、這是課表嗎……", "lines": [] },
+          { "text": "好！請學姊多指教！", "lines": [
+            { "speaker": "yiqing", "expression": "happy", "text": "喔喔，很有精神嘛！我喜歡！" }
+          ] }
+        ] },
         { "speaker": "yiqing", "expression": "normal", "text": "讀書跟跑步一樣啦。一次衝太猛會受傷，每天固定跑，才會變快。" },
         { "speaker": "yiqing", "expression": "happy", "text": "好！選手就位——衝了啦！" }
       ]

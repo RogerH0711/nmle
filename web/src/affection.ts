@@ -23,11 +23,15 @@ export interface SubjectMap {
   of: (questionId: string) => string | null
   /** 這份考卷裡屬於這些學科的題數 */
   count: (paperId: string, subjects: string[]) => number
+  /** 整個題庫裡這個學科的題數 */
+  total: (subject: string) => number
 }
 
 /** 用 index.json 的 subject_runs 查題目的學科，不用載入整份考卷 */
 export function subjectMap(papers: Pick<PaperInfo, 'id' | 'subject_runs'>[]): SubjectMap {
   const runs = new Map(papers.map((p) => [p.id, p.subject_runs ?? []]))
+  const count = (paperId: string, subjects: string[]) =>
+    (runs.get(paperId) ?? []).reduce((sum, [lo, hi, s]) => sum + (subjects.includes(s) ? hi - lo + 1 : 0), 0)
   return {
     of(questionId) {
       const cut = questionId.lastIndexOf('_')
@@ -35,9 +39,8 @@ export function subjectMap(papers: Pick<PaperInfo, 'id' | 'subject_runs'>[]): Su
       const run = runs.get(questionId.slice(0, cut))?.find(([lo, hi]) => lo <= n && n <= hi)
       return run ? run[2] : null
     },
-    count(paperId, subjects) {
-      return (runs.get(paperId) ?? []).reduce((sum, [lo, hi, s]) => sum + (subjects.includes(s) ? hi - lo + 1 : 0), 0)
-    },
+    count,
+    total: (subject) => [...runs.keys()].reduce((sum, id) => sum + count(id, [subject]), 0),
   }
 }
 
@@ -55,6 +58,17 @@ export interface Affection {
 
 const time = (iso: string) => new Date(iso).getTime()
 
+/** 同一題同一天只算第一次，避免重做錯題刷正確率（同週榜）。records 要先依時間排好 */
+export function dailyFirsts(records: AnswerRecord[]): AnswerRecord[] {
+  const seen = new Set<string>()
+  return records.filter((r) => {
+    const key = `${r.question_id}|${localDate(new Date(r.answered_at))}`
+    if (seen.has(key)) return false
+    seen.add(key)
+    return true
+  })
+}
+
 export function affection(
   subjects: string[],
   records: AnswerRecord[],
@@ -71,14 +85,8 @@ export function affection(
   // 2 在意
   const passes = reviewPasses(mine).length
 
-  // 3 心動：同一題同一天只算第一次，避免重做錯題刷正確率（同週榜）
-  const seen = new Set<string>()
-  const firsts = mine.filter((r) => {
-    const key = `${r.question_id}|${localDate(new Date(r.answered_at))}`
-    if (seen.has(key)) return false
-    seen.add(key)
-    return true
-  })
+  // 3 心動：同一題同一天只算第一次
+  const firsts = dailyFirsts(mine)
   let hits = 0
   let bestRate = 0
   let lastRate = 0

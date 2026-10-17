@@ -19,6 +19,7 @@ import { affection as affectionOf, rival as rivalOf, STAGE_NAMES, subjectMap, ty
 import { loadSeen, loadStory, saveSeen, sceneId, unseenScene, type Scene } from './stories'
 import { StoryList, StoryPlayer } from './Story'
 import { CampusMap } from './CampusMap'
+import { StatusPanel } from './StatusPanel'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
 const PLAYER = '學弟' // 玩家名字還不能自訂，台詞和劇情的 {player} 先用這個
@@ -132,6 +133,7 @@ export default function App() {
   const [seen, setSeen] = useState(() => loadSeen()) // 這台裝置看過的劇情
   const [story, setStory] = useState<{ character: Character; scene: Scene; then?: () => void } | null>(null)
   const [storyList, setStoryList] = useState<Character | null>(null)
+  const [statusOpen, setStatusOpen] = useState(false) // 狀態面板（能力值）
   const [onMap, setOnMap] = useState(true) // 角色模式的首頁是校園地圖；開始讀書後切到題目畫面
 
   // 登入後讀自己的暱稱（排行榜上顯示的名字）
@@ -491,7 +493,8 @@ export default function App() {
   // 鍵盤：1–4 或 A–D 作答，Enter／→ 下一題，← 上一題
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (view !== 'quiz' || session || story || storyList) return // 看排行榜、考模擬考、看劇情時不要對藏起來的題目作答
+      // 看排行榜、考模擬考、看劇情、看能力值、在校園地圖上時，不要對藏起來的題目作答
+      if (view !== 'quiz' || session || story || storyList || statusOpen || (characterMode && onMap && characters.length > 0)) return
       if (e.ctrlKey || e.metaKey || e.altKey) return
       if (e.target instanceof Element && e.target.closest('select, input, textarea')) return
       const k = e.key.toUpperCase()
@@ -505,7 +508,7 @@ export default function App() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [pick, go, picked, view, session, story, storyList])
+  }, [pick, go, picked, view, session, story, storyList, statusOpen, characterMode, onMap, characters])
 
   if (error) return <div className="center">{error}</div>
   if (!index || !run) return <div className="center">載入中…</div>
@@ -522,6 +525,10 @@ export default function App() {
       : { character: stageCharacter, expression: 'normal', text: null, lineId: null }
     : null
   const runCharacter = run.kind === 'character' ? characters.find((c) => c.id === run.subject) : undefined
+
+  // 和她讀到一半：接著讀，不要重開一回合
+  const studyWith = (c: Character) =>
+    run.kind === 'character' && run.subject === c.id && !done && run.pos > 0 ? setOnMap(false) : startCharacterRun(c)
 
   // 角色模式的首頁：校園地圖
   const showMap = characterMode && characters.length > 0 && onMap
@@ -647,13 +654,11 @@ export default function App() {
           reviewDue={review.due.length}
           answeredToday={answeredToday}
           resume={resumeLabel}
-          onStudy={(c) =>
-            // 和她讀到一半：接著讀，不要重開一回合
-            run.kind === 'character' && run.subject === c.id && !done && run.pos > 0 ? setOnMap(false) : startCharacterRun(c)
-          }
+          onStudy={studyWith}
           onStories={setStoryList}
           onReview={startReview}
           onFree={() => setOnMap(false)}
+          onStatus={() => setStatusOpen(true)}
         />
       ) : (
         <>
@@ -779,6 +784,16 @@ export default function App() {
             setStory({ character: storyList, scene })
           }}
           onClose={() => setStoryList(null)}
+        />
+      )}
+      {statusOpen && subjects && (
+        <StatusPanel
+          characters={characters}
+          subjectNames={index.subjects}
+          records={answers.records}
+          map={subjects}
+          onStudy={studyWith}
+          onClose={() => setStatusOpen(false)}
         />
       )}
       {story && <StoryPlayer key={sceneId(story.character.id, story.scene.stage)} character={story.character} scene={story.scene} player={PLAYER} affection={affections.get(story.character.id)} onClose={closeStory} />}

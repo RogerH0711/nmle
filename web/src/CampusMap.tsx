@@ -73,6 +73,7 @@ interface Props {
   onStories: (c: Character) => void
   onReview: () => void
   onFree: () => void
+  onStatus: () => void
 }
 
 /**
@@ -104,7 +105,12 @@ export function CampusMap(props: Props) {
           <h2>今天要找誰一起讀書？</h2>
           <p>點學姊所在的地點，就會開始一起讀書（{props.roundSize} 題一回合）。</p>
         </div>
-        <span className="campus-today">今天已作答 {props.answeredToday} 題</span>
+        <div className="campus-actions">
+          <span className="campus-today">今天已作答 {props.answeredToday} 題</span>
+          <button className="ghost small" onClick={props.onStatus}>
+            能力值
+          </button>
+        </div>
       </header>
 
       {layouts.length === 0 ? (

@@ -3,23 +3,23 @@
   "wide": {
     "image": "campus_map",
     "spots": {
-      "anatomy_lab": [20, 34],
-      "lab": [48, 26],
-      "hospital": [78, 32],
-      "cafe": [24, 74],
-      "library": [52, 62],
-      "track": [80, 76]
+      "anatomy_lab": [15, 42],
+      "lab": [66, 22],
+      "hospital": [82, 38],
+      "cafe": [58, 84],
+      "library": [27, 28],
+      "track": [50, 50]
     }
   },
   "tall": {
     "image": "campus_map_tall",
     "spots": {
-      "anatomy_lab": [28, 16],
-      "lab": [72, 22],
-      "hospital": [30, 40],
-      "cafe": [72, 50],
-      "library": [30, 68],
-      "track": [70, 84]
+      "anatomy_lab": [22, 42],
+      "lab": [62, 32],
+      "hospital": [86, 47],
+      "cafe": [78, 64],
+      "library": [27, 20],
+      "track": [32, 64]
     }
   }
 }

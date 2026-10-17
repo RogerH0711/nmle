@@ -1891,3 +1891,20 @@ button.link:hover {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* 中等寬度：地圖比較小，標記跟著縮小，才不會互相擋住 */
+@media (min-width: 600px) and (max-width: 899px) {
+  .pin-avatar {
+    width: 52px;
+    height: 52px;
+  }
+
+  .pin-label span {
+    display: none;
+  }
+}
+
+/* 錯題數不論多窄都要顯示（上面兩段會藏掉名字牌的第二行） */
+.pin-label .pin-count {
+  display: inline;
+}

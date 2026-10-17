@@ -215,7 +215,7 @@ function MapView(props: Props & { layout: Layout; config: MapLayout; onFail: () 
         </span>
         <span className="pin-label">
           <strong>錯題複習</strong>
-          <span>{reviewDue ? `${LOCATION_NAMES[REVIEW_LOCATION]}・到期 ${reviewDue} 題` : `${LOCATION_NAMES[REVIEW_LOCATION]}・今天沒有`}</span>
+          <span className="pin-count">{reviewDue ? `到期 ${reviewDue} 題` : '今天沒有'}</span>
         </span>
       </button>
     </div>

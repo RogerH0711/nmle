@@ -121,6 +121,10 @@ lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer
 | `night_street` | 夜晚街道、宿舍前 | 104 | 完成（路邊有機車，比較像台灣） |
 | `festival` | 夏日祭典 | 102 | 完成（其他張的燈籠、旗子多半有亂碼日文） |
 | `stairwell` | 醫院逃生梯 | 104 | 完成 |
+| `campus_map` | 校園俯視圖（橫式，電腦版首頁） | | 未生成 |
+| `campus_map_tall` | 校園俯視圖（直式 832 × 1216，手機版首頁） | | 未生成 |
+
+校園俯視圖的 tag 是 `from above, isometric, school, building, multiple buildings, running track, field, trees, road, path, garden, plaza, day, sunlight`，負向加 `sky, horizon, cloud`（俯視不該看到天空）。挑圖時看：要看得出幾棟不同的建築和一座操場，才放得下六個地點；建築不要太密，標記才不會互相擋住。
 
 ---
 

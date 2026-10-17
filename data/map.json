@@ -1,0 +1,25 @@
+{
+  "_說明": "角色模式首頁的校園地圖。wide 給電腦（橫式圖），tall 給手機（直式圖）。image 是 data/backgrounds/ 的檔名（不含 .webp）。spots 是各地點在圖上的位置，[x, y] 是佔圖片寬、高的百分比，標記的底部中間對準這個點。地點 id 對應 characters.json 的 location；library 是錯題複習。圖還沒做好（載入失敗）時，首頁改用地點卡片排成的格子。",
+  "wide": {
+    "image": "campus_map",
+    "spots": {
+      "anatomy_lab": [20, 34],
+      "lab": [48, 26],
+      "hospital": [78, 32],
+      "cafe": [24, 74],
+      "library": [52, 62],
+      "track": [80, 76]
+    }
+  },
+  "tall": {
+    "image": "campus_map_tall",
+    "spots": {
+      "anatomy_lab": [28, 16],
+      "lab": [72, 22],
+      "hospital": [30, 40],
+      "cafe": [72, 50],
+      "library": [30, 68],
+      "track": [70, 84]
+    }
+  }
+}

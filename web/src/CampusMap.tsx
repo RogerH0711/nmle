@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { dataUrl } from './bank'
 import type { Character } from './characters'
 import { Portrait } from './CharacterStage'
 import type { Affection } from './affection'
@@ -20,13 +21,30 @@ export const LOCATION_NAMES: Record<string, string> = {
 
 const REVIEW_LOCATION = 'library' // 錯題複習在圖書館
 
-// 背景圖載入失敗（還沒做）的地點改用漸層色
-const missingBg = new Set<string>()
+// ---------- 地圖設定（data/map.json） ----------
+
+type Layout = 'wide' | 'tall' // 電腦用橫式圖、手機用直式圖
+interface MapLayout {
+  image: string
+  spots: Record<string, [number, number]> // 地點 id → [x%, y%]
+}
+type MapConfig = Record<Layout, MapLayout>
+
+let mapConfig: Promise<MapConfig | null> | null = null
+function loadMapConfig() {
+  mapConfig ??= fetch(dataUrl('map.json'))
+    .then((r) => (r.ok ? (r.json() as Promise<MapConfig>) : null))
+    .catch(() => null)
+  return mapConfig
+}
+
+// 載入失敗（還沒做）的圖：背景改用漸層色，地圖改用格子
+const missingImg = new Set<string>()
 
 function SpotBackground({ id }: { id: string }) {
   const [, rerender] = useState(0)
   const src = backgroundUrl(id)
-  if (missingBg.has(src)) return null
+  if (missingImg.has(src)) return null
   return (
     <img
       className="spot-bg"
@@ -34,18 +52,14 @@ function SpotBackground({ id }: { id: string }) {
       alt=""
       loading="lazy"
       onError={() => {
-        missingBg.add(src)
+        missingImg.add(src)
         rerender((n) => n + 1)
       }}
     />
   )
 }
 
-/**
- * 角色模式的首頁：校園地圖。每位學姊待在自己的地點，點她就一起讀書；圖書館是錯題複習。
- * 參考 galgame 的「地圖型」選擇（見 plan.md「遊戲介面方向」）。
- */
-export function CampusMap(props: {
+interface Props {
   characters: Character[]
   subjects: Record<string, string>
   affections: Map<string, Affection>
@@ -59,8 +73,30 @@ export function CampusMap(props: {
   onStories: (c: Character) => void
   onReview: () => void
   onFree: () => void
-}) {
-  const { characters, subjects, affections, hasNewScene, hasStories, reviewDue, answeredToday, resume } = props
+}
+
+/**
+ * 角色模式的首頁：校園地圖。每位學姊待在自己的地點，點她就一起讀書；圖書館是錯題複習。
+ * 參考 galgame 的「地圖型」選擇（見 plan.md「遊戲介面方向」）。
+ * 有校園俯視圖（data/map.json）時，地點是圖上的標記；圖還沒做好時，地點排成格子。
+ */
+export function CampusMap(props: Props) {
+  const [config, setConfig] = useState<MapConfig | null>(null)
+  const [failed, setFailed] = useState<Layout[]>([])
+  useEffect(() => {
+    void loadMapConfig().then((c) => {
+      if (!c) return
+      setFailed((['wide', 'tall'] as Layout[]).filter((l) => missingImg.has(backgroundUrl(c[l].image))))
+      setConfig(c)
+    })
+  }, [])
+
+  const layouts = (['wide', 'tall'] as Layout[]).filter((l) => config && !failed.includes(l))
+  const fail = (l: Layout) => {
+    if (config) missingImg.add(backgroundUrl(config[l].image))
+    setFailed((f) => [...f, l])
+  }
+
   return (
     <section className="campus" aria-label="校園地圖">
       <header className="campus-head">
@@ -68,54 +104,146 @@ export function CampusMap(props: {
           <h2>今天要找誰一起讀書？</h2>
           <p>點學姊所在的地點，就會開始一起讀書（{props.roundSize} 題一回合）。</p>
         </div>
-        <span className="campus-today">今天已作答 {answeredToday} 題</span>
+        <span className="campus-today">今天已作答 {props.answeredToday} 題</span>
       </header>
 
-      <div className="campus-grid">
-        {characters.map((c) => {
-          const a = affections.get(c.id)
-          const loc = c.location ?? 'cafe'
-          return (
-            <div key={c.id} className={`spot bg-${loc}`} style={{ '--char': c.color } as React.CSSProperties}>
-              <SpotBackground id={loc} />
-              <button className="spot-main" onClick={() => props.onStudy(c)} aria-label={`到${LOCATION_NAMES[loc] ?? loc}找${c.name}一起讀書`}>
-                <span className="spot-place">{LOCATION_NAMES[loc] ?? loc}</span>
-                <Portrait character={c} expression={hasNewScene(c) ? 'happy' : 'normal'} />
-                <span className="spot-info">
-                  <strong>
-                    {c.name}
-                    {hasNewScene(c) && <span className="new-badge">新劇情</span>}
-                  </strong>
-                  <span className="spot-subjects">{c.subjects.map((s) => subjects[s] ?? s).join('、')}</span>
-                  {a && <AffectionMeter affection={a} />}
-                </span>
-              </button>
-              {hasStories(c) && (
-                <button className="spot-story" onClick={() => props.onStories(c)}>
-                  劇情
-                </button>
-              )}
-            </div>
-          )
-        })}
-
-        <div className={`spot spot-review bg-${REVIEW_LOCATION}`}>
-          <SpotBackground id={REVIEW_LOCATION} />
-          <button className="spot-main" onClick={props.onReview} disabled={!reviewDue}>
-            <span className="spot-place">{LOCATION_NAMES[REVIEW_LOCATION]}</span>
-            <span className="spot-info">
-              <strong>錯題複習</strong>
-              <span className="spot-count">{reviewDue ? `今天到期 ${reviewDue} 題` : '今天沒有到期的錯題'}</span>
-            </span>
-          </button>
-        </div>
-      </div>
+      {layouts.length === 0 ? (
+        <SpotGrid {...props} />
+      ) : (
+        <>
+          {/* 只有一種版面的圖做好時，另一種版面用格子 */}
+          {(['wide', 'tall'] as Layout[]).map((l) =>
+            layouts.includes(l) ? (
+              <MapView key={l} layout={l} config={config![l]} onFail={() => fail(l)} {...props} />
+            ) : (
+              <SpotGrid key={l} className={`only-${l}`} {...props} />
+            ),
+          )}
+          <Roster {...props} />
+        </>
+      )}
 
       <div className="campus-foot">
         <button className="ghost small" onClick={props.onFree}>
-          {resume ? `繼續：${resume}` : '依考卷刷題'}
+          {props.resume ? `繼續：${props.resume}` : '依考卷刷題'}
         </button>
       </div>
     </section>
+  )
+}
+
+/** 地點卡片排成格子（還沒有校園俯視圖時用） */
+function SpotGrid(props: Props & { className?: string }) {
+  const { characters, subjects, affections, hasNewScene, hasStories, reviewDue } = props
+  return (
+    <div className={`campus-grid ${props.className ?? ''}`}>
+      {characters.map((c) => {
+        const a = affections.get(c.id)
+        const loc = c.location ?? 'cafe'
+        return (
+          <div key={c.id} className={`spot bg-${loc}`} style={{ '--char': c.color } as React.CSSProperties}>
+            <SpotBackground id={loc} />
+            <button className="spot-main" onClick={() => props.onStudy(c)} aria-label={`到${LOCATION_NAMES[loc] ?? loc}找${c.name}一起讀書`}>
+              <span className="spot-place">{LOCATION_NAMES[loc] ?? loc}</span>
+              <Portrait character={c} expression={hasNewScene(c) ? 'happy' : 'normal'} />
+              <span className="spot-info">
+                <strong>
+                  {c.name}
+                  {hasNewScene(c) && <span className="new-badge">新劇情</span>}
+                </strong>
+                <span className="spot-subjects">{c.subjects.map((s) => subjects[s] ?? s).join('、')}</span>
+                {a && <AffectionMeter affection={a} />}
+              </span>
+            </button>
+            {hasStories(c) && (
+              <button className="spot-story" onClick={() => props.onStories(c)}>
+                劇情
+              </button>
+            )}
+          </div>
+        )
+      })}
+
+      <div className={`spot spot-review bg-${REVIEW_LOCATION}`}>
+        <SpotBackground id={REVIEW_LOCATION} />
+        <button className="spot-main" onClick={props.onReview} disabled={!reviewDue}>
+          <span className="spot-place">{LOCATION_NAMES[REVIEW_LOCATION]}</span>
+          <span className="spot-info">
+            <strong>錯題複習</strong>
+            <span className="spot-count">{reviewDue ? `今天到期 ${reviewDue} 題` : '今天沒有到期的錯題'}</span>
+          </span>
+        </button>
+      </div>
+    </div>
+  )
+}
+
+/** 校園俯視圖：學姊的頭像標在她的地點上 */
+function MapView(props: Props & { layout: Layout; config: MapLayout; onFail: () => void }) {
+  const { layout, config, characters, hasNewScene, reviewDue } = props
+  const at = (loc: string) => {
+    const [x, y] = config.spots[loc] ?? [50, 50]
+    return { left: `${x}%`, top: `${y}%` }
+  }
+  return (
+    <div className={`campus-map only-${layout}`}>
+      <img className="campus-map-img" src={backgroundUrl(config.image)} alt="校園地圖" onError={props.onFail} />
+      {characters.map((c) => {
+        const loc = c.location ?? 'cafe'
+        return (
+          <button
+            key={c.id}
+            className="pin"
+            style={{ ...at(loc), '--char': c.color } as React.CSSProperties}
+            onClick={() => props.onStudy(c)}
+            aria-label={`到${LOCATION_NAMES[loc] ?? loc}找${c.name}一起讀書`}
+          >
+            <span className="pin-avatar">
+              <Portrait character={c} expression={hasNewScene(c) ? 'happy' : 'normal'} />
+              {hasNewScene(c) && <span className="pin-new" title="有新劇情" />}
+            </span>
+            <span className="pin-label">
+              <strong>{c.name}</strong>
+              <span>{LOCATION_NAMES[loc] ?? loc}</span>
+            </span>
+          </button>
+        )
+      })}
+      <button className="pin pin-review" style={at(REVIEW_LOCATION)} onClick={props.onReview} disabled={!reviewDue}>
+        <span className="pin-avatar pin-icon" aria-hidden>
+          {reviewDue || '✓'}
+        </span>
+        <span className="pin-label">
+          <strong>錯題複習</strong>
+          <span>{reviewDue ? `${LOCATION_NAMES[REVIEW_LOCATION]}・到期 ${reviewDue} 題` : `${LOCATION_NAMES[REVIEW_LOCATION]}・今天沒有`}</span>
+        </span>
+      </button>
+    </div>
+  )
+}
+
+/** 地圖下方的學姊狀態列：好感度、下一階進度、劇情 */
+function Roster(props: Props) {
+  const { characters, affections, hasNewScene, hasStories } = props
+  return (
+    <ul className="roster">
+      {characters.map((c) => {
+        const a = affections.get(c.id)
+        return (
+          <li key={c.id} style={{ '--char': c.color } as React.CSSProperties}>
+            <span className="roster-name">
+              {c.name}
+              {hasNewScene(c) && <span className="new-badge">新</span>}
+            </span>
+            {a && <AffectionMeter affection={a} />}
+            {hasStories(c) && (
+              <button className="roster-story" onClick={() => props.onStories(c)}>
+                劇情
+              </button>
+            )}
+          </li>
+        )
+      })}
+    </ul>
   )
 }

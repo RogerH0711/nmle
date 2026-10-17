@@ -46,11 +46,13 @@ const ROUND_SIZE = 20 // 跟角色讀書一回合的題數
 // 角色反應對應到哪個時間點：題目 id、回合開始（start）或回合結束（finish）
 type StageReaction = Reaction & { key: string }
 
-function loadFlag(key: string) {
+// fallback：還沒設定過時的預設值
+function loadFlag(key: string, fallback = false) {
   try {
-    return localStorage.getItem(key) === '1'
+    const v = localStorage.getItem(key)
+    return v === null ? fallback : v === '1'
   } catch {
-    return false
+    return fallback
   }
 }
 
@@ -117,7 +119,7 @@ export default function App() {
   const answers = useAnswers()
   const [characters, setCharacters] = useState<Character[]>([])
   const [lines, setLines] = useState<Record<string, Line[]>>({})
-  const [characterMode, setCharacterMode] = useState(() => loadFlag(CHARACTER_MODE_KEY))
+  const [characterMode, setCharacterMode] = useState(() => loadFlag(CHARACTER_MODE_KEY, true)) // 角色模式為主：第一次打開就是校園地圖
   const [reaction, setReaction] = useState<StageReaction | null>(null)
   const [streak, setStreak] = useState(0)
   const [view, setView] = useState<'quiz' | 'leaderboard' | 'mock'>('quiz')

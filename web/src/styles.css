@@ -2238,3 +2238,78 @@ button.link:hover {
     grid-column: 1 / -1;
   }
 }
+
+/* ---------- 使用說明 ---------- */
+
+.modal.guide {
+  width: min(640px, 100%);
+  padding: 20px;
+  border-top-color: var(--accent);
+  line-height: 1.7;
+}
+
+.guide h3 {
+  margin: 16px 0 4px;
+  font-size: 1rem;
+}
+
+.guide p,
+.guide ul,
+.guide ol {
+  margin: 0 0 6px;
+}
+
+.guide ul,
+.guide ol {
+  padding-left: 1.4em;
+}
+
+.guide-lead {
+  color: var(--muted);
+}
+
+.guide-cast {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.guide-cast th,
+.guide-cast td {
+  padding: 4px 6px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.guide-cast th {
+  white-space: nowrap;
+  color: var(--char);
+  border-left: 4px solid var(--char);
+}
+
+.guide-place {
+  white-space: nowrap;
+  color: var(--muted);
+}
+
+.guide-stages {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.guide-stages strong {
+  color: var(--accent);
+}
+
+.guide-note {
+  margin-top: 16px !important;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.guide > .primary {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+}

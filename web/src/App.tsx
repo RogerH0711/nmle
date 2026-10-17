@@ -20,6 +20,7 @@ import { loadSeen, loadStory, saveSeen, sceneId, unseenScene, type Scene } from 
 import { StoryList, StoryPlayer } from './Story'
 import { CampusMap } from './CampusMap'
 import { StatusPanel } from './StatusPanel'
+import { Guide, guideSeen } from './Guide'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
 const PLAYER = '學弟' // 玩家名字還不能自訂，台詞和劇情的 {player} 先用這個
@@ -134,6 +135,7 @@ export default function App() {
   const [story, setStory] = useState<{ character: Character; scene: Scene; then?: () => void } | null>(null)
   const [storyList, setStoryList] = useState<Character | null>(null)
   const [statusOpen, setStatusOpen] = useState(false) // 狀態面板（能力值）
+  const [guideOpen, setGuideOpen] = useState(() => !guideSeen()) // 使用說明：第一次打開網站時自動顯示
   const [onMap, setOnMap] = useState(true) // 角色模式的首頁是校園地圖；開始讀書後切到題目畫面
 
   // 登入後讀自己的暱稱（排行榜上顯示的名字）
@@ -494,7 +496,7 @@ export default function App() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       // 看排行榜、考模擬考、看劇情、看能力值、在校園地圖上時，不要對藏起來的題目作答
-      if (view !== 'quiz' || session || story || storyList || statusOpen || (characterMode && onMap && characters.length > 0)) return
+      if (view !== 'quiz' || session || story || storyList || statusOpen || guideOpen || (characterMode && onMap && characters.length > 0)) return
       if (e.ctrlKey || e.metaKey || e.altKey) return
       if (e.target instanceof Element && e.target.closest('select, input, textarea')) return
       const k = e.key.toUpperCase()
@@ -508,7 +510,7 @@ export default function App() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [pick, go, picked, view, session, story, storyList, statusOpen, characterMode, onMap, characters])
+  }, [pick, go, picked, view, session, story, storyList, statusOpen, guideOpen, characterMode, onMap, characters])
 
   if (error) return <div className="center">{error}</div>
   if (!index || !run) return <div className="center">載入中…</div>
@@ -625,6 +627,9 @@ export default function App() {
             onClick={() => setView(view === 'leaderboard' ? 'quiz' : 'leaderboard')}
           >
             排行榜
+          </button>
+          <button className="ghost small" onClick={() => setGuideOpen(true)}>
+            說明
           </button>
           <Account
             user={user}
@@ -785,6 +790,9 @@ export default function App() {
           }}
           onClose={() => setStoryList(null)}
         />
+      )}
+      {guideOpen && (
+        <Guide characters={characters} subjects={index.subjects} roundSize={ROUND_SIZE} onClose={() => setGuideOpen(false)} />
       )}
       {statusOpen && subjects && (
         <StatusPanel

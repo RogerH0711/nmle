@@ -409,4 +409,5 @@ red hair, medium hair, side braid, red eyes, tsurime, red scrubs, scrub top, scr
 - 劇情：`data/stories/<角色 id>.json`，五位角色都有初識到告白前夕五段。
 - `mock_high`：角色模式下模擬考 70 分以上，交卷後由這份考卷裡負責學科得分率最高的角色說（得分率一樣時選題數多的）。例如醫學(一) 解剖、胚胎、組織考得最好，就是沈靜澄。
 - 立繪：`data/characters/<角色 id>/<表情 id>.webp`，用 `art/portraits.ipynb` 產生。去背方式見 `plan.md`「美術與內容」；重做去背用 `art/recut.py`（需要把 Drive 上的原圖下載到 `art/<角色>/<seed>/`）。缺少某個表情時會改用 `normal`，連 `normal` 都沒有就顯示代表色的佔位圖。
-- 胸像範圍：角色卡和手機版的小框只顯示胸像，範圍是 `characters.json` 的 `bust`（`x`、`y`、`w`，單位是原圖像素，高度依小框比例自動算，約 `w ÷ 0.73`）。每位角色姿勢不同，立繪做好後要各設一次；沒設就從圖片頂端顯示全寬。
+- 地點：`characters.json` 的 `location` 是角色模式首頁（校園地圖）上她所在的地點，值是背景 id（見 `plan.md`「美術與內容」）。
+- 胸像範圍：校園地圖的地點和手機版的小框只顯示胸像，範圍是 `characters.json` 的 `bust`（`x`、`y`、`w`，單位是原圖像素，高度依小框比例自動算，約 `w ÷ 0.73`）。每位角色姿勢不同，立繪做好後要各設一次；沒設就從圖片頂端顯示全寬。

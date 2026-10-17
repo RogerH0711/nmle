@@ -3,7 +3,7 @@ import type { User } from '@supabase/supabase-js'
 import type { ExamFile, Index, Letter, Question } from './types'
 import { imageUrl, loadIndex, loadPaper, loadQuestions, paperLabel, paperOf } from './bank'
 import { recordAnswer, recordAnswers, switchUser, syncNow, useAnswers, type SyncStatus } from './answers'
-import { reviewStates, reviewSummary } from './review'
+import { localDate, reviewStates, reviewSummary } from './review'
 import { getDisplayName, NAME_MAX, setDisplayName, signInWithGoogle, signOut, supabase } from './supabase'
 import { Leaderboard } from './Leaderboard'
 import {
@@ -17,7 +17,8 @@ import { MockHome, MockResult, MockRunner } from './MockExam'
 import { ReportButton } from './Report'
 import { affection as affectionOf, rival as rivalOf, STAGE_NAMES, subjectMap, type Affection } from './affection'
 import { loadSeen, loadStory, saveSeen, sceneId, unseenScene, type Scene } from './stories'
-import { AffectionMeter, StoryList, StoryPlayer } from './Story'
+import { StoryList, StoryPlayer } from './Story'
+import { CampusMap } from './CampusMap'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
 const PLAYER = '學弟' // 玩家名字還不能自訂，台詞和劇情的 {player} 先用這個
@@ -129,6 +130,7 @@ export default function App() {
   const [seen, setSeen] = useState(() => loadSeen()) // 這台裝置看過的劇情
   const [story, setStory] = useState<{ character: Character; scene: Scene; then?: () => void } | null>(null)
   const [storyList, setStoryList] = useState<Character | null>(null)
+  const [onMap, setOnMap] = useState(true) // 角色模式的首頁是校園地圖；開始讀書後切到題目畫面
 
   // 登入後讀自己的暱稱（排行榜上顯示的名字）
   useEffect(() => {
@@ -160,6 +162,7 @@ export default function App() {
       saveFlag(CHARACTER_MODE_KEY, !on)
       return !on
     })
+    setOnMap(true)
   }
 
   // ---------- 好感度 ----------
@@ -372,6 +375,7 @@ export default function App() {
   const startReview = () => {
     if (!index || !review.due.length) return
     setStreak(0)
+    setOnMap(false)
     void startRun(index, { kind: 'review', paperId: null, subject: 'all', order: 'seq', queue: review.due, pos: 0, picks: {} })
   }
 
@@ -405,6 +409,7 @@ export default function App() {
       await startRun(index, {
         kind: 'character', paperId: null, subject: c.id, order: 'random', queue, pos: 0, picks: {}, affection: stageOf(c),
       })
+      setOnMap(false)
     } catch {
       setError('題庫載入失敗')
     }
@@ -475,6 +480,7 @@ export default function App() {
       setStreak(0)
       await startRun(index, { kind: 'mock', paperId: r.paper_id, subject: 'all', order: 'seq', queue, pos: 0, picks: { ...r.picks } })
       setView('quiz')
+      setOnMap(false) // 檢討模擬考直接看題目，不回地圖
     } catch {
       setError('考卷載入失敗')
     }
@@ -514,6 +520,19 @@ export default function App() {
       : { character: stageCharacter, expression: 'normal', text: null, lineId: null }
     : null
   const runCharacter = run.kind === 'character' ? characters.find((c) => c.id === run.subject) : undefined
+
+  // 角色模式的首頁：校園地圖
+  const showMap = characterMode && characters.length > 0 && onMap
+  const today = localDate()
+  const answeredToday = answers.records.filter((r) => localDate(new Date(r.answered_at)) === today).length
+  // 地圖下方的「繼續」：上次寫到一半的回合
+  const runPaper = index.papers.find((p) => p.id === run.paperId)
+  const runLabel =
+    run.kind === 'character' ? `和${runCharacter?.name ?? '角色'}讀書`
+    : run.kind === 'review' ? '錯題複習'
+    : run.kind === 'mock' ? '檢討模擬考'
+    : runPaper ? paperLabel(runPaper) : '刷題'
+  const resumeLabel = !done && run.pos > 0 ? `${runLabel} ${run.pos + 1} / ${run.queue.length}` : null
 
   // 模擬考作答中：只留計時和題目，跟正式考試一樣不能中途去刷題或看排行榜
   if (session) {
@@ -615,54 +634,47 @@ export default function App() {
       ) : (
         <>
 
+      {showMap ? (
+        <CampusMap
+          characters={characters}
+          subjects={index.subjects}
+          affections={affections}
+          hasNewScene={(c) => !!newScene(c)}
+          hasStories={(c) => !!stories[c.id]?.length}
+          roundSize={ROUND_SIZE}
+          reviewDue={review.due.length}
+          answeredToday={answeredToday}
+          resume={resumeLabel}
+          onStudy={(c) =>
+            // 和她讀到一半：接著讀，不要重開一回合
+            run.kind === 'character' && run.subject === c.id && !done && run.pos > 0 ? setOnMap(false) : startCharacterRun(c)
+          }
+          onStories={setStoryList}
+          onReview={startReview}
+          onFree={() => setOnMap(false)}
+        />
+      ) : (
+        <>
       {characterMode && characters.length > 0 && (
-        <section className="cast">
-          {characters.map((c) => {
-            const a = affections.get(c.id)
-            const fresh = !!newScene(c)
-            return (
-              <div key={c.id} className="cast-card" style={{ '--char': c.color } as React.CSSProperties}>
-                <Portrait character={c} expression="normal" />
-                <div className="cast-info">
-                  <strong>
-                    {c.name}
-                    {fresh && (
-                      <span className="new-badge" title="有新劇情">
-                        新<span className="round-size">劇情</span>
-                      </span>
-                    )}
-                  </strong>
-                  <span className="cast-type">{c.type}・{c.title}</span>
-                  <span className="cast-subjects">{c.subjects.map((s) => index.subjects[s] ?? s).join('、')}</span>
-                  {a && <AffectionMeter affection={a} />}
-                  <div className="cast-actions">
-                    <button className="primary small" onClick={() => startCharacterRun(c)}>
-                      一起讀書<span className="round-size">（{ROUND_SIZE} 題）</span>
-                    </button>
-                    {stories[c.id]?.length ? (
-                      <button className="ghost small" onClick={() => setStoryList(c)}>
-                        劇情
-                      </button>
-                    ) : null}
-                  </div>
-                </div>
-              </div>
-            )
-          })}
-        </section>
+        <button className="ghost small back-to-map" onClick={() => setOnMap(true)}>
+          ← 回地圖
+        </button>
       )}
 
-      <section className="review">
-        <div>
-          <strong>錯題複習</strong>
-          <span className="review-stats">
-            今天到期 {review.due.length} 題・等待中 {review.waiting}・已攻略 {review.done}
-          </span>
-        </div>
-        <button className="primary small" onClick={startReview} disabled={!review.due.length || run.kind === 'review'}>
-          {run.kind === 'review' ? '複習中' : '開始複習'}
-        </button>
-      </section>
+      {/* 角色模式的錯題複習在地圖的圖書館 */}
+      {!characterMode && (
+        <section className="review">
+          <div>
+            <strong>錯題複習</strong>
+            <span className="review-stats">
+              今天到期 {review.due.length} 題・等待中 {review.waiting}・已攻略 {review.done}
+            </span>
+          </div>
+          <button className="primary small" onClick={startReview} disabled={!review.due.length || run.kind === 'review'}>
+            {run.kind === 'review' ? '複習中' : '開始複習'}
+          </button>
+        </section>
+      )}
 
       <div className="controls">
         <select
@@ -749,6 +761,8 @@ export default function App() {
           )}
         </div>
       </div>
+        </>
+      )}
         </>
       )}
       <Disclaimer />

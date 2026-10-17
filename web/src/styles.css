@@ -418,49 +418,6 @@ button.small:disabled {
   accent-color: var(--accent);
 }
 
-.cast {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 10px;
-  margin-bottom: 12px;
-}
-
-.cast-card {
-  display: flex;
-  gap: 12px;
-  padding: 10px;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-left: 4px solid var(--char);
-  border-radius: 12px;
-}
-
-.cast-card .portrait {
-  flex: none;
-  width: 72px;
-  height: 96px;
-  border-radius: 8px;
-}
-
-.cast-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
-  min-width: 0;
-}
-
-.cast-type,
-.cast-subjects {
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-.cast-info button {
-  margin-top: auto;
-  background: var(--char);
-}
-
 /* 小框只露出胸像：--bx、--by、--bw 是 bust 範圍佔原圖寬度的比例（見 CharacterStage）。
    margin 的百分比以外框寬度計算，所以上下也能用寬度比例平移。 */
 .portrait {
@@ -1006,34 +963,6 @@ button.link:hover {
     margin-bottom: 8px;
   }
 
-  /* 角色卡：兩欄小卡，只留胸像、名字和按鈕 */
-  .cast {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 8px;
-    margin-bottom: 8px;
-  }
-
-  .cast-card {
-    gap: 8px;
-    padding: 6px;
-  }
-
-  .cast-card .portrait {
-    width: 48px;
-    height: 64px;
-    border-radius: 6px;
-  }
-
-  .cast-type,
-  .cast-subjects,
-  .round-size {
-    display: none;
-  }
-
-  .cast-info button {
-    margin-top: 4px;
-  }
-
   .card {
     padding: 14px 12px;
   }
@@ -1175,19 +1104,6 @@ button.link:hover {
   display: block;
   height: 100%;
   background: var(--char);
-}
-
-.cast-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: auto;
-}
-
-.cast-actions .ghost {
-  background: transparent;
-  color: var(--char);
-  border-color: var(--char);
 }
 
 .unlock {
@@ -1523,8 +1439,246 @@ button.link:hover {
     height: 115%;
     bottom: -28%;
   }
+}
 
-  .affection-bar {
+/* ---------- 校園地圖（角色模式的首頁） ---------- */
+
+/* 遊戲畫面：不論淺色深色模式都是深色外框 */
+.campus {
+  margin-bottom: 12px;
+  padding: 14px;
+  border-radius: 18px;
+  background: linear-gradient(160deg, #2a2438, #15131c);
+  color: #fff;
+  box-shadow: 0 6px 24px rgb(0 0 0 / 0.25);
+}
+
+.campus-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 6px 12px;
+  margin-bottom: 12px;
+}
+
+.campus-head h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.campus-head p {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+.campus-today {
+  padding: 2px 12px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.12);
+  font-size: 0.8rem;
+}
+
+.campus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.spot {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 2px solid var(--char, #6d6880);
+  border-radius: 14px;
+  background: #2f2b3b;
+}
+
+.spot-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.spot:hover .spot-bg {
+  transform: scale(1.06);
+}
+
+.spot-main {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.spot-main:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: -5px;
+}
+
+.spot-main:disabled {
+  cursor: default;
+}
+
+.spot-review .spot-main:disabled .spot-info {
+  opacity: 0.75;
+}
+
+.spot-place {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+  padding: 1px 10px;
+  border-radius: 999px;
+  max-width: calc(100% - 70px); /* 不要壓到右上角的「劇情」 */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background: rgb(0 0 0 / 0.55);
+  font-size: 0.75rem;
+}
+
+.spot-count {
+  font-size: 0.8rem;
+}
+
+/* 學姊站在地點右側，只露出上半身 */
+.spot .portrait {
+  position: absolute;
+  right: 2%;
+  bottom: 0;
+  width: 46%;
+  height: 92%;
+  filter: drop-shadow(0 4px 10px rgb(0 0 0 / 0.45));
+  transition: transform 0.3s;
+}
+
+.spot:hover .portrait {
+  transform: translateY(-4px);
+}
+
+.spot-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  padding: 28px 46% 8px 10px;
+  background: linear-gradient(transparent, rgb(0 0 0 / 0.78) 55%);
+}
+
+.spot-review .spot-info {
+  padding-right: 10px;
+}
+
+.spot-info strong {
+  font-size: 1.05rem;
+  text-shadow: 0 1px 4px rgb(0 0 0 / 0.6);
+}
+
+.spot-subjects {
+  font-size: 0.72rem;
+  opacity: 0.85;
+}
+
+.spot-info .affection {
+  color: #f1edf7;
+}
+
+.spot-info .affection-bar {
+  background: rgb(255 255 255 / 0.25);
+}
+
+.spot-info .hearts {
+  filter: brightness(1.4);
+}
+
+.spot-story {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  padding: 1px 10px;
+  border: 1px solid var(--char);
+  border-radius: 999px;
+  background: rgb(0 0 0 / 0.55);
+  color: #fff;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.campus-foot {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.campus-foot .ghost {
+  color: #fff;
+  border-color: rgb(255 255 255 / 0.4);
+  background: rgb(255 255 255 / 0.06);
+}
+
+.back-to-map {
+  margin-bottom: 10px;
+}
+
+/* 手機：兩欄直式的地點，學姊站在中間 */
+@media (max-width: 599px) {
+  .campus {
+    margin: 0 -8px 10px;
+    padding: 10px;
+    border-radius: 14px;
+  }
+
+  .campus-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .spot {
+    aspect-ratio: 3 / 4;
+  }
+
+  .spot .portrait {
+    right: 50%;
+    width: 86%;
+    height: 82%;
+    transform: translateX(50%);
+  }
+
+  .spot:hover .portrait {
+    transform: translateX(50%);
+  }
+
+  .spot-info {
+    padding: 24px 8px 6px;
+  }
+
+  .spot-subjects {
     display: none;
+  }
+}
+
+/* 太窄（三欄放不下）時改成兩欄 */
+@media (min-width: 600px) and (max-width: 719px) {
+  .campus-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

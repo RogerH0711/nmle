@@ -1,8 +1,9 @@
 {
-  "_說明": "角色基本資料，設定來源見 characters.md。enabled 為 false 的角色還沒有立繪和台詞，網站不會顯示。bust 是小框（角色卡、手機版）顯示的胸像範圍，單位是立繪原圖（832×1216）的像素，寬高比約 0.73。",
+  "_說明": "角色基本資料，設定來源見 characters.md。enabled 為 false 的角色還沒有立繪和台詞，網站不會顯示。bust 是小框（角色卡、手機版）顯示的胸像範圍，單位是立繪原圖（832×1216）的像素，寬高比約 0.73。location 是角色模式首頁（校園地圖）上她所在的地點，對應 data/backgrounds/ 的背景 id。",
   "characters": [
     {
       "id": "jingcheng",
+      "location": "anatomy_lab",
       "name": "沈靜澄",
       "type": "酷系",
       "color": "#3b6fd4",
@@ -14,6 +15,7 @@
     },
     {
       "id": "yiqing",
+      "location": "track",
       "name": "夏以晴",
       "type": "元氣",
       "color": "#e8772e",
@@ -25,6 +27,7 @@
     },
     {
       "id": "ying",
+      "location": "lab",
       "name": "葉縈",
       "type": "病嬌",
       "color": "#3d9a5b",
@@ -36,6 +39,7 @@
     },
     {
       "id": "zhixun",
+      "location": "cafe",
       "name": "溫芷薰",
       "type": "大姊姊",
       "color": "#8a63c9",
@@ -47,6 +51,7 @@
     },
     {
       "id": "fei",
+      "location": "hospital",
       "name": "顏緋",
       "type": "傲嬌",
       "color": "#d23c4a",

@@ -232,12 +232,12 @@ export function StoryList(props: {
   )
 }
 
-/** 角色卡上的好感度：愛心表示階段，下一階的進度條 */
+/** 好感度：愛心表示階段，下一階的進度條（校園地圖的地點上用）。外層是 span，才能放在按鈕裡 */
 export function AffectionMeter({ affection }: { affection: Affection }) {
   const { stage, next } = affection
   const ratio = next ? Math.min(1, next.current / next.target) : 1
   return (
-    <div className="affection" title={next ? `下一階：${next.label} ${next.current} / ${next.target} ${next.unit}` : undefined}>
+    <span className="affection" title={next ? `下一階：${next.label} ${next.current} / ${next.target} ${next.unit}` : undefined}>
       <span className="hearts" aria-label={`好感度：${STAGE_NAMES[stage]}`}>
         {Array.from({ length: STAGE_NAMES.length - 1 }, (_, i) => (i < stage ? '♥' : '♡')).join('')}
       </span>
@@ -247,6 +247,6 @@ export function AffectionMeter({ affection }: { affection: Affection }) {
           <span style={{ width: `${ratio * 100}%` }} />
         </span>
       )}
-    </div>
+    </span>
   )
 }

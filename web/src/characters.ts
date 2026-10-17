@@ -12,6 +12,7 @@ export interface Character {
   subjects: string[]
   expressions: string[]
   bust?: { x: number; y: number; w: number } // 小框顯示的胸像範圍（立繪原圖像素）
+  location?: string // 校園地圖上她所在的地點（背景 id）
   enabled: boolean
 }
 

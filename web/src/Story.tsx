@@ -7,14 +7,22 @@ import { backgroundUrl, sceneId, storyTimeline, type Scene, type StoryLine } fro
 // 背景圖還沒做好時改用漸層色，載入失敗的不要每次重抓
 const missingBg = new Set<string>()
 
-// 自動播放：每句停留的時間，依字數加長；快轉固定很短
-const autoDelay = (text: string) => 1500 + text.length * 70
+// 自動播放：字打完後每句停留的時間，依字數加長；快轉固定很短
+const autoDelay = (text: string) => 1200 + text.length * 40
 const FAST_DELAY = 250
+
+// 文字逐字出現：每個字的間隔，句尾標點多停一下
+const CHAR_DELAY = 30
+const PAUSE_DELAY = 180
+const PAUSE_AFTER = '。！？…，'
+
+// 系統設定「減少動態效果」時，文字直接整句出現
+const reducedMotion = () => typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches
 
 type Mode = 'manual' | 'auto' | 'fast'
 
 /**
- * 劇情播放：點一下（或 Enter、空白鍵）下一句，← 上一句，Esc 跳過。
+ * 劇情播放：點一下（或 Enter、空白鍵）下一句，← 上一句，Esc 跳過。字還在逐字出現時，點一下先把整句顯示完。
  * 控制列有自動、快轉、紀錄（回看前面的台詞）。不需要存檔、讀檔：看過的劇情隨時可以從「劇情」清單重看。
  */
 export function StoryPlayer(props: {
@@ -41,10 +49,34 @@ export function StoryPlayer(props: {
   const expression = [...shownLines].reverse().find((l) => l.speaker === character.id && l.expression)?.expression ?? 'normal'
   const shown = shownLines.some((l) => l.speaker === character.id)
 
+  // 逐字出現：記下目前這句（第幾個選擇之後的第幾句）打到第幾個字，換句就從頭打
+  const text = choosing ? '' : fillPlayer(line.text ?? '', player)
+  const chars = Array.from(text)
+  const lineKey = `${picks.length}:${pos}`
+  const [typing, setTyping] = useState({ key: lineKey, count: 0 })
+  const count = mode === 'fast' || reducedMotion() ? chars.length : typing.key === lineKey ? typing.count : 0
+  const typed = count >= chars.length
+  const finishTyping = () => setTyping({ key: lineKey, count: chars.length })
+
+  useEffect(() => {
+    if (typed || backlog) return
+    const delay = PAUSE_AFTER.includes(chars[count - 1] ?? '') ? PAUSE_DELAY : CHAR_DELAY
+    const t = setTimeout(() => setTyping({ key: lineKey, count: count + 1 }), delay)
+    return () => clearTimeout(t)
+  }, [typed, backlog, lineKey, count, text])
+
   const next = () => {
     if (choosing || backlog) return
-    if (last) onClose()
+    if (!typed) finishTyping()
+    else if (last) onClose()
     else setPos(pos + 1)
+  }
+
+  // 往回看的句子直接整句顯示
+  const back = () => {
+    const p = Math.max(0, pos - 1)
+    setPos(p)
+    setTyping({ key: `${picks.length}:${p}`, count: Infinity })
   }
 
   const choose = (i: number) => {
@@ -52,16 +84,16 @@ export function StoryPlayer(props: {
     setPos(pos + 1) // 跳過「玩家說出選項」那一句（剛點過），直接看她的回應
   }
 
-  // 自動、快轉：遇到選項或最後一句就停下來
+  // 自動、快轉：字打完才開始計時，遇到選項或最後一句就停下來
   useEffect(() => {
-    if (mode === 'manual' || backlog || choosing) return
+    if (mode === 'manual' || backlog || choosing || !typed) return
     if (last) {
       setMode('manual')
       return
     }
-    const t = setTimeout(() => setPos((p) => p + 1), mode === 'fast' ? FAST_DELAY : autoDelay(line.text ?? ''))
+    const t = setTimeout(() => setPos((p) => p + 1), mode === 'fast' ? FAST_DELAY : autoDelay(text))
     return () => clearTimeout(t)
-  }, [mode, backlog, choosing, last, pos, line])
+  }, [mode, backlog, choosing, typed, last, pos, text])
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -69,7 +101,7 @@ export function StoryPlayer(props: {
         if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') setBacklog(false)
         else return
       } else if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowRight') next()
-      else if (e.key === 'ArrowLeft') setPos(Math.max(0, pos - 1))
+      else if (e.key === 'ArrowLeft') back()
       else if (e.key === 'Escape') onClose()
       else if (choosing && '123'.includes(e.key) && line.options?.[Number(e.key) - 1]) choose(Number(e.key) - 1)
       else return
@@ -86,7 +118,10 @@ export function StoryPlayer(props: {
   const textLine = choosing ? [...shownLines].reverse().find((l) => l.speaker !== 'choice') : line
   const speaker = textLine && nameOf(textLine)
   const stop = (e: React.MouseEvent) => e.stopPropagation()
-  const toggle = (m: Mode) => setMode(mode === m ? 'manual' : m)
+  const toggle = (m: Mode) => {
+    if (mode === 'fast') finishTyping() // 從快轉切出來時，這句已經整句顯示了，不要重打
+    setMode(mode === m ? 'manual' : m)
+  }
 
   return (
     <div
@@ -94,7 +129,7 @@ export function StoryPlayer(props: {
       style={{ '--char': character.color } as React.CSSProperties}
       role="dialog"
       aria-label={`${character.name}・${scene.title}`}
-      onClick={() => (mode === 'manual' ? next() : setMode('manual'))}
+      onClick={() => (mode === 'manual' ? next() : toggle(mode))}
     >
       {!missingBg.has(bg) && (
         <img
@@ -137,11 +172,21 @@ export function StoryPlayer(props: {
       <div className="story-bottom">
         {speaker && <div className={textLine?.speaker === 'player' ? 'story-name player' : 'story-name'}>{speaker}</div>}
         <div className={textLine?.speaker === 'narration' ? 'story-box narration' : 'story-box'}>
-          <p>{fillPlayer(textLine?.text ?? '', player)}</p>
-          {!choosing && (
-            <span className="story-more" aria-hidden>
-              {last ? '結束' : '▼'}
-            </span>
+          {choosing ? (
+            <p>{fillPlayer(textLine?.text ?? '', player)}</p>
+          ) : (
+            // 還沒打出來的字先佔位（看不見），對話框才不會邊打邊換行、變高
+            <p aria-label={text}>
+              <span aria-hidden>{chars.slice(0, count).join('')}</span>
+              <span className="story-untyped" aria-hidden>
+                {chars.slice(count).join('')}
+              </span>
+              {typed && (
+                <span className="story-more" aria-hidden>
+                  {last ? '結束' : '▼'}
+                </span>
+              )}
+            </p>
           )}
         </div>
         <nav className="story-controls" onClick={stop}>

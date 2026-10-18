@@ -9,7 +9,7 @@
         { "speaker": "narration", "text": "晚上八點的自習咖啡廳「夜燈」。門被推開的聲音大到整間店都回頭。" },
         { "speaker": "yiqing", "expression": "happy", "text": "抱歉抱歉！剛跑完間歇，衝過來的！讀書會還沒開始吧？" },
         { "speaker": "narration", "text": "橘色運動外套、頭髮還有點濕。她一眼就在人群裡找到你，直直走過來。" },
-        { "speaker": "yiqing", "expression": "normal", "text": "你就是學弟？我是夏以晴，六年級。生理跟生化歸我管！" },
+        { "speaker": "yiqing", "expression": "normal", "text": "你就是{player}？我是夏以晴，六年級。生理跟生化歸我管！" },
         { "speaker": "player", "text": "學姊好……生理跟生化，加起來好像很多題？" },
         { "speaker": "yiqing", "expression": "happy", "text": "五十幾題！醫學(一) 一半以上，是最大的一塊。所以——" },
         { "speaker": "narration", "text": "她從包包裡拿出一張紙，上面用螢光筆畫滿了格子。標題寫著「一階選手訓練計畫」。" },
@@ -30,7 +30,7 @@
       "background": "library",
       "lines": [
         { "speaker": "narration", "text": "你盯著克氏循環的圖已經半小時，八個步驟還是背不起來。" },
-        { "speaker": "yiqing", "expression": "normal", "text": "學弟，你的表情跟跑到第三十公里的人一樣耶。" },
+        { "speaker": "yiqing", "expression": "normal", "text": "{player}，你的表情跟跑到第三十公里的人一樣耶。" },
         { "speaker": "player", "text": "克氏循環太長了……" },
         { "speaker": "yiqing", "expression": "happy", "text": "那就把它當成一場馬拉松！乙醯 CoA 是選手，跟草醯乙酸會合，變成檸檬酸——鳴槍起跑！" },
         { "speaker": "yiqing", "expression": "normal", "text": "一圈八個補給站。異檸檬酸去氫酶是整場的配速員，它慢，整場就慢——所以它是速率限制步驟。" },
@@ -55,7 +55,7 @@
         { "speaker": "yiqing", "expression": "sad", "text": "下個月有比賽。……我一直跑，是因為只有跑步的時候，不用想自己是不是夠好。" },
         { "speaker": "player", "text": "學姊已經很好了。至少我的生化，是學姊救回來的。" },
         { "speaker": "yiqing", "expression": "surprised", "text": "…………" },
-        { "speaker": "yiqing", "expression": "shy", "text": "笨蛋學弟。這種時候講這種話，很犯規耶。" },
+        { "speaker": "yiqing", "expression": "shy", "text": "笨蛋{player}。這種時候講這種話，很犯規耶。" },
         { "speaker": "yiqing", "expression": "happy", "text": "腳抬高、冰敷——你也幫我記好喔。這次換你照顧我。" }
       ]
     },
@@ -68,13 +68,13 @@
         { "speaker": "yiqing", "expression": "sad", "text": "啊……傘放在社辦。" },
         { "speaker": "player", "text": "一起撐吧。我送學姊回宿舍。" },
         { "speaker": "narration", "text": "傘不大。為了不讓她淋到，你們只能靠得很近，近到肩膀一直碰在一起。" },
-        { "speaker": "yiqing", "expression": "shy", "text": "學、學弟，你走路的步頻跟我好像不一樣……" },
+        { "speaker": "yiqing", "expression": "shy", "text": "學、{player}，你走路的步頻跟我好像不一樣……" },
         { "speaker": "player", "text": "學姊的心跳好像很快？" },
         { "speaker": "yiqing", "expression": "shy", "text": "那、那是交感神經！正腎上腺素作用在竇房結的 β1 受體，心跳本來就會變快！生理學！" },
         { "speaker": "player", "text": "那為什麼交感神經會興奮？" },
         { "speaker": "yiqing", "expression": "shy", "text": "…………因為在下雨啦！很冷！" },
         { "speaker": "narration", "text": "走到宿舍門口，她跑上台階，又回頭。" },
-        { "speaker": "yiqing", "expression": "happy", "text": "學弟！下次……下次我也不帶傘了！" }
+        { "speaker": "yiqing", "expression": "happy", "text": "{player}！下次……下次我也不帶傘了！" }
       ]
     },
     {

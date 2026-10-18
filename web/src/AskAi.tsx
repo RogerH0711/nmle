@@ -31,7 +31,7 @@ export function AskAi(props: { q: Question; paper: PaperInfo | undefined; subjec
       prefilled
         ? `已在 ${site.name} 帶入題目${hasImage ? '，記得把附圖也貼上' : ''}。`
         : copied
-          ? `已複製題目，到 ${site.name} 的對話框貼上就能問${hasImage ? '（附圖要另外貼上）' : ''}。`
+          ? `已複製題目。${site.name} 不會自動帶入，請在對話框按 Ctrl+V（手機長按）貼上${hasImage ? '（附圖要另外貼上）' : ''}。`
           : `瀏覽器不讓網站複製文字，請選取下面的提問，貼到 ${site.name}。`,
     )
   }
@@ -47,7 +47,7 @@ export function AskAi(props: { q: Question; paper: PaperInfo | undefined; subjec
       <span className="ask-ai-label">看不懂為什麼？問 AI：</span>
       {AI_SITES.map((s) => (
         <button key={s.id} className="ghost small" onClick={() => void open(s)}>
-          {s.name}
+          {s.label}
         </button>
       ))}
       <button className="ghost small" onClick={() => void copyOnly()}>

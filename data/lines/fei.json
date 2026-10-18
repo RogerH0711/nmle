@@ -21,7 +21,7 @@
 
     { "id": "fei-wrong-001", "situation": "wrong", "affection_min": 0, "expression": "pout", "text": "這種題目都會錯？……好啦，我再講一次，最後一次喔！" },
     { "id": "fei-wrong-002", "situation": "wrong", "affection_min": 0, "expression": "normal", "text": "錯了。看正解，然後記在你那本亂七八糟的筆記裡。" },
-    { "id": "fei-wrong-003", "situation": "wrong", "affection_min": 0, "expression": "pout", "text": "笨蛋學弟，你的病理爛到可以切片研究了。" },
+    { "id": "fei-wrong-003", "situation": "wrong", "affection_min": 0, "expression": "pout", "text": "笨蛋{player}，你的病理爛到可以切片研究了。" },
     { "id": "fei-wrong-004", "situation": "wrong", "affection_min": 0, "expression": "normal", "text": "細胞腫脹還可逆，核濃縮、核碎裂、核溶解就回不去了。你這題還在可逆的階段，快救回來。" },
     { "id": "fei-wrong-005", "situation": "wrong", "affection_min": 0, "expression": "sad", "text": "……沒關係啦。我第一次也錯。不准跟別人說。" },
     { "id": "fei-wrong-006", "situation": "wrong", "affection_min": 0, "expression": "normal", "text": "樣本數一題太小，檢定力不夠，不能下結論說你不會。多寫幾題再說。" },
@@ -37,6 +37,6 @@
     { "id": "fei-finish-003", "situation": "finish", "affection_min": 0, "expression": "normal", "text": "今天就到這裡。……做得還可以。" },
 
     { "id": "fei-mock_high-001", "situation": "mock_high", "affection_min": 0, "expression": "shy", "text": "這、這個分數……還不錯啦。今天、今天就特別准你叫我緋。" },
-    { "id": "fei-mock_high-002", "situation": "mock_high", "affection_min": 0, "expression": "surprised", "text": "……你真的是我帶出來的那個笨蛋學弟？" }
+    { "id": "fei-mock_high-002", "situation": "mock_high", "affection_min": 0, "expression": "surprised", "text": "……你真的是我帶出來的那個笨蛋{player}？" }
   ]
 }

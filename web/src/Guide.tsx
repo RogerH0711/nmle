@@ -86,6 +86,7 @@ export function Guide({
               ))}
             </tbody>
           </table>
+          <p className="guide-small">學姊們叫你「學弟」或「學妹」，第一次進地圖時選，之後在地圖下方的「稱呼」可以改。</p>
         </section>
 
         <section>

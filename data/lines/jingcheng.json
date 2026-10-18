@@ -8,7 +8,7 @@
 
     { "id": "jingcheng-comeback-001", "situation": "comeback", "affection_min": 0, "expression": "sad", "text": "好幾天沒來。……我把你的位子留著。只是剛好沒人坐而已。" },
     { "id": "jingcheng-comeback-002", "situation": "comeback", "affection_min": 0, "expression": "normal", "text": "……你回來了。忘掉的部分，從頭再一次。" },
-    { "id": "jingcheng-comeback-003", "situation": "comeback", "affection_min": 0, "expression": "surprised", "text": "……學弟？我以為你不會再來了。……坐吧。" },
+    { "id": "jingcheng-comeback-003", "situation": "comeback", "affection_min": 0, "expression": "surprised", "text": "……{player}？我以為你不會再來了。……坐吧。" },
 
     { "id": "jingcheng-correct-001", "situation": "correct", "affection_min": 0, "expression": "happy", "text": "……正確。位置記住了，就不要忘。" },
     { "id": "jingcheng-correct-002", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "對。下一題。" },

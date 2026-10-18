@@ -1,12 +1,12 @@
 {
   "character": "yiqing",
   "lines": [
-    { "id": "yiqing-start-001", "situation": "start", "affection_min": 0, "expression": "happy", "text": "學弟！今天的菜單是生理跟生化，熱身完就開跑囉！" },
+    { "id": "yiqing-start-001", "situation": "start", "affection_min": 0, "expression": "happy", "text": "{player}！今天的菜單是生理跟生化，熱身完就開跑囉！" },
     { "id": "yiqing-start-002", "situation": "start", "affection_min": 0, "expression": "happy", "text": "衝了啦！一回合就當一趟間歇跑，跑完再休息！" },
     { "id": "yiqing-start-003", "situation": "start", "affection_min": 0, "expression": "normal", "text": "先深呼吸——吸氣靠橫膈收縮，吐氣平常是被動的喔。好，開始！" },
     { "id": "yiqing-start-004", "situation": "start", "affection_min": 1, "expression": "shy", "text": "今天也來陪學姊讀書啦？……才、才沒有在等你，我剛好也在！" },
 
-    { "id": "yiqing-comeback-001", "situation": "comeback", "affection_min": 0, "expression": "sad", "text": "學弟——！你跑去哪了啦！我一個人讀書好無聊，以後不准偷跑！" },
+    { "id": "yiqing-comeback-001", "situation": "comeback", "affection_min": 0, "expression": "sad", "text": "{player}——！你跑去哪了啦！我一個人讀書好無聊，以後不准偷跑！" },
     { "id": "yiqing-comeback-002", "situation": "comeback", "affection_min": 0, "expression": "surprised", "text": "欸，你終於回來了！停練太久肌肉會掉的，讀書也一樣，快歸隊！" },
     { "id": "yiqing-comeback-003", "situation": "comeback", "affection_min": 0, "expression": "happy", "text": "沒關係沒關係，跑步也有休息日嘛！今天開始重新累積就好！" },
 
@@ -17,7 +17,7 @@
     { "id": "yiqing-correct-005", "situation": "correct", "affection_min": 0, "expression": "happy", "text": "對啦！你看，你明明就會嘛！" },
     { "id": "yiqing-correct-006", "situation": "correct", "affection_min": 0, "expression": "happy", "text": "完美過彎！下一題繼續！" },
     { "id": "yiqing-correct-007", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "穩穩的。克氏循環一圈也是穩穩地給你 3 個 NADH、1 個 FADH₂ 跟 1 個 GTP 喔！" },
-    { "id": "yiqing-correct-008", "situation": "correct", "affection_min": 1, "expression": "shy", "text": "答對了……學弟認真的樣子，還、還蠻帥的嘛。好啦下一題！" },
+    { "id": "yiqing-correct-008", "situation": "correct", "affection_min": 1, "expression": "shy", "text": "答對了……{player}認真的樣子，還、還蠻帥的嘛。好啦下一題！" },
 
     { "id": "yiqing-wrong-001", "situation": "wrong", "affection_min": 0, "expression": "sad", "text": "哎呀，跌倒了！沒關係，跌倒就站起來，再跑一次！" },
     { "id": "yiqing-wrong-002", "situation": "wrong", "affection_min": 0, "expression": "normal", "text": "這題記下來，學姊幫你排進複習。明天再來挑戰一次！" },
@@ -29,7 +29,7 @@
 
     { "id": "yiqing-streak-001", "situation": "streak", "affection_min": 0, "expression": "happy", "text": "連對十題！來，擊掌——欸，手不用握這麼久啦，笨蛋，我的心跳都要用生理學來解釋了。" },
     { "id": "yiqing-streak-002", "situation": "streak", "affection_min": 0, "expression": "happy", "text": "十連對！你現在就像回心血量變多的心臟，越撐越有力——Frank-Starling！" },
-    { "id": "yiqing-streak-003", "situation": "streak", "affection_min": 0, "expression": "surprised", "text": "等等，十題全對？學弟你今天是不是偷偷吃了什麼！" },
+    { "id": "yiqing-streak-003", "situation": "streak", "affection_min": 0, "expression": "surprised", "text": "等等，十題全對？{player}你今天是不是偷偷吃了什麼！" },
     { "id": "yiqing-streak-004", "situation": "streak", "affection_min": 1, "expression": "shy", "text": "又連對了……這樣下去學姊要沒東西可以教你了啦。……那你還會來找我嗎？" },
 
     { "id": "yiqing-finish-001", "situation": "finish", "affection_min": 0, "expression": "happy", "text": "一回合跑完！收操時間，喝口水再繼續！" },

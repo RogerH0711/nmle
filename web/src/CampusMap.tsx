@@ -74,6 +74,8 @@ interface Props {
   onReview: () => void
   onFree: () => void
   onStatus: () => void
+  player: string // 學姊們怎麼叫你
+  onPlayer: () => void
 }
 
 /**
@@ -132,6 +134,9 @@ export function CampusMap(props: Props) {
       <div className="campus-foot">
         <button className="ghost small" onClick={props.onFree}>
           {props.resume ? `繼續：${props.resume}` : '依考卷刷題'}
+        </button>
+        <button className="ghost small" onClick={props.onPlayer}>
+          稱呼：{props.player}
         </button>
       </div>
     </section>

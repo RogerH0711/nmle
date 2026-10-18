@@ -6,8 +6,8 @@
       "title": "初識",
       "background": "anatomy_lab",
       "lines": [
-        { "speaker": "narration", "text": "讀書會的第一天，五位學姊要各自挑一個學弟。輪到解剖的時候，教室安靜得只剩冷氣聲。" },
-        { "speaker": "jingcheng", "expression": "normal", "text": "……你就是學弟？" },
+        { "speaker": "narration", "text": "讀書會的第一天，五位學姊要各自挑一個{player}。輪到解剖的時候，教室安靜得只剩冷氣聲。" },
+        { "speaker": "jingcheng", "expression": "normal", "text": "……你就是{player}？" },
         { "speaker": "player", "text": "是、是的。學姊好。" },
         { "speaker": "narration", "text": "她沒有回答，直接抽走你桌上的筆記，一頁一頁翻過去。眼神像在看一副還沒解剖完的標本。" },
         { "speaker": "jingcheng", "expression": "normal", "text": "臂神經叢寫在第三頁，橈神經寫在第十一頁，中間夾著生化。……結構混亂。" },
@@ -50,7 +50,7 @@
       "background": "anatomy_lab",
       "lines": [
         { "speaker": "narration", "text": "晚上十一點的解剖教室。你來拿忘記的圖譜，燈卻還亮著。" },
-        { "speaker": "jingcheng", "expression": "surprised", "text": "……學弟？這麼晚。" },
+        { "speaker": "jingcheng", "expression": "surprised", "text": "……{player}？這麼晚。" },
         { "speaker": "player", "text": "學姊也還沒走？" },
         { "speaker": "jingcheng", "expression": "normal", "text": "明天的課要準備標本的標籤。……坐吧，反正你也睡不著。" },
         { "speaker": "narration", "text": "你們並肩坐在窗邊。她難得沒有翻書。" },
@@ -68,7 +68,7 @@
       "background": "library",
       "lines": [
         { "speaker": "narration", "text": "閉館前的書架間，你在地上撿到一副灰色細框眼鏡。" },
-        { "speaker": "jingcheng", "expression": "surprised", "text": "……學弟？你有沒有看到——" },
+        { "speaker": "jingcheng", "expression": "surprised", "text": "……{player}？你有沒有看到——" },
         { "speaker": "narration", "text": "她從書架另一頭走出來，瞇著眼睛，伸手扶著書架找路。和平常那個什麼都看得清清楚楚的學姊，完全不一樣。" },
         { "speaker": "player", "text": "學姊，眼鏡在這裡。" },
         { "speaker": "jingcheng", "expression": "shy", "text": "……給我。不、不要看我。" },

@@ -7,7 +7,7 @@
       "background": "cafe",
       "lines": [
         { "speaker": "narration", "text": "「夜燈」最裡面的沙發區。一位穿著白袍的學姊朝你招手，動作慢條斯理。" },
-        { "speaker": "zhixun", "expression": "happy", "text": "你就是小學弟吧？過來，坐姊姊旁邊。" },
+        { "speaker": "zhixun", "expression": "happy", "text": "你就是小{player}吧？過來，坐姊姊旁邊。" },
         { "speaker": "zhixun", "expression": "normal", "text": "我是溫芷薰，在醫院當臨床藥師。藥理就交給姊姊了。" },
         { "speaker": "narration", "text": "她把一疊講義推過來。每一頁都整理成表格：作用機轉、適應症、副作用、交互作用，一格都沒有空著。" },
         { "speaker": "player", "text": "好、好詳細……" },
@@ -21,7 +21,7 @@
             { "speaker": "zhixun", "expression": "happy", "text": "來不及了，已經整理好了喔。" }
           ] }
         ] },
-        { "speaker": "zhixun", "expression": "shy", "text": "臉紅了呢。小學弟好可愛。……乖，慢慢來，我們有很多時間。" }
+        { "speaker": "zhixun", "expression": "shy", "text": "臉紅了呢。小{player}好可愛。……乖，慢慢來，我們有很多時間。" }
       ]
     },
     {
@@ -37,7 +37,7 @@
         { "speaker": "narration", "text": "你不敢動。就這樣維持同一個姿勢，用另一隻手默默把她講到一半的那頁讀完。" },
         { "speaker": "zhixun", "expression": "surprised", "text": "……嗯？我、我睡著了？多久？" },
         { "speaker": "player", "text": "大概四十分鐘。我把膽鹼作用劑那一頁讀完了。" },
-        { "speaker": "zhixun", "expression": "shy", "text": "……姊姊居然在小學弟面前出糗了。" },
+        { "speaker": "zhixun", "expression": "shy", "text": "……姊姊居然在小{player}面前出糗了。" },
         { "speaker": "zhixun", "expression": "happy", "text": "那、那就當作獎勵你。肩膀借我四十分鐘，下次換姊姊的肩膀借你。……要記得來領喔。" }
       ]
     },
@@ -46,7 +46,7 @@
       "title": "在意",
       "background": "library",
       "lines": [
-        { "speaker": "zhixun", "expression": "normal", "text": "小學弟，問你。重複給藥的時候，大概要經過幾個半衰期，血中濃度才會到穩定狀態？" },
+        { "speaker": "zhixun", "expression": "normal", "text": "小{player}，問你。重複給藥的時候，大概要經過幾個半衰期，血中濃度才會到穩定狀態？" },
         { "speaker": "player", "text": "四到五個半衰期。" },
         { "speaker": "zhixun", "expression": "happy", "text": "答對了。跟劑量多寡無關，只看半衰期。所以不管怎麼加量，都急不來。" },
         { "speaker": "zhixun", "expression": "normal", "text": "姊姊教你一個記法：「不管多喜歡，都要經過四、五個週期，才會穩定下來。」" },
@@ -67,7 +67,7 @@
         { "speaker": "narration", "text": "淡紫色的浴衣，頭髮盤起來，手上提著一個小小的提袋。沒有白袍，也沒有識別證。" },
         { "speaker": "zhixun", "expression": "shy", "text": "……怎麼一直盯著看？不適合嗎？" },
         { "speaker": "player", "text": "不是！很、很適合……" },
-        { "speaker": "zhixun", "expression": "happy", "text": "呵呵，小學弟的臉比蘋果糖還紅呢。" },
+        { "speaker": "zhixun", "expression": "happy", "text": "呵呵，小{player}的臉比蘋果糖還紅呢。" },
         { "speaker": "narration", "text": "人潮把你們擠散了兩次。第三次，她自己牽起了你的手。" },
         { "speaker": "zhixun", "expression": "normal", "text": "這樣就不會走散了。……是為了安全喔。" },
         { "speaker": "narration", "text": "煙火在頭頂炸開。她握著你的手，聲音輕得差點被蓋過去。" },
@@ -81,14 +81,14 @@
       "background": "hospital",
       "lines": [
         { "speaker": "narration", "text": "醫院的藥局下班後。你來接她，她卻坐在休息室裡，難得地沒有笑。" },
-        { "speaker": "zhixun", "expression": "sad", "text": "小學弟。姊姊問你一個問題，你要誠實回答喔。" },
+        { "speaker": "zhixun", "expression": "sad", "text": "小{player}。姊姊問你一個問題，你要誠實回答喔。" },
         { "speaker": "zhixun", "expression": "sad", "text": "我比你大三歲。你考完一階、考完二階、當上住院醫師……那時候，姊姊已經三十多歲了。" },
         { "speaker": "zhixun", "expression": "sad", "text": "你身邊會有很多年紀相仿的人。……我是不是，只是你準備考試這段時間的止痛藥？" },
         { "speaker": "player", "text": "芷薰。" },
         { "speaker": "zhixun", "expression": "surprised", "text": "…………" },
         { "speaker": "player", "text": "止痛藥只是暫時壓住症狀。可是我每天都想來這裡，不是因為哪裡痛。" },
         { "speaker": "narration", "text": "她看著你，眼眶慢慢紅了。然後她笑了，是你看過最不從容的一次。" },
-        { "speaker": "zhixun", "expression": "shy", "text": "……居然被小學弟用藥理反駁了。" },
+        { "speaker": "zhixun", "expression": "shy", "text": "……居然被小{player}用藥理反駁了。" },
         { "speaker": "zhixun", "expression": "happy", "text": "那，答案等你考完一階再告訴我。姊姊會等。這次，不用慢慢來也可以喔。" }
       ]
     }

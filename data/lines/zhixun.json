@@ -1,22 +1,22 @@
 {
   "character": "zhixun",
   "lines": [
-    { "id": "zhixun-start-001", "situation": "start", "affection_min": 0, "expression": "happy", "text": "小學弟來了呀。今天姊姊陪你讀藥理，乖，慢慢來。" },
+    { "id": "zhixun-start-001", "situation": "start", "affection_min": 0, "expression": "happy", "text": "小{player}來了呀。今天姊姊陪你讀藥理，乖，慢慢來。" },
     { "id": "zhixun-start-002", "situation": "start", "affection_min": 0, "expression": "normal", "text": "先坐好。藥理不用急著背，先懂機轉，劑量才不會下錯。" },
-    { "id": "zhixun-start-003", "situation": "start", "affection_min": 0, "expression": "happy", "text": "剛值完大夜班……不過看到小學弟，精神就回來了。比咖啡因還有效呢。" },
+    { "id": "zhixun-start-003", "situation": "start", "affection_min": 0, "expression": "happy", "text": "剛值完大夜班……不過看到小{player}，精神就回來了。比咖啡因還有效呢。" },
     { "id": "zhixun-start-004", "situation": "start", "affection_min": 1, "expression": "shy", "text": "今天……其實姊姊有點期待。噓，這是我們之間的祕密。" },
 
     { "id": "zhixun-comeback-001", "situation": "comeback", "affection_min": 0, "expression": "sad", "text": "好久不見了呢。藥要按時吃，書也要按時讀喔。姊姊有點寂寞了。" },
     { "id": "zhixun-comeback-002", "situation": "comeback", "affection_min": 0, "expression": "normal", "text": "停藥太久，血中濃度會掉下來的。讀書也一樣，從今天重新開始給藥吧。" },
-    { "id": "zhixun-comeback-003", "situation": "comeback", "affection_min": 0, "expression": "surprised", "text": "哎呀，小學弟？我還以為你對姊姊產生耐受性了呢。" },
+    { "id": "zhixun-comeback-003", "situation": "comeback", "affection_min": 0, "expression": "surprised", "text": "哎呀，小{player}？我還以為你對姊姊產生耐受性了呢。" },
 
-    { "id": "zhixun-correct-001", "situation": "correct", "affection_min": 0, "expression": "happy", "text": "好棒好棒，小學弟今天的吸收率很好呢。" },
+    { "id": "zhixun-correct-001", "situation": "correct", "affection_min": 0, "expression": "happy", "text": "好棒好棒，小{player}今天的吸收率很好呢。" },
     { "id": "zhixun-correct-002", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "正確。姊姊就知道你會。" },
     { "id": "zhixun-correct-003", "situation": "correct", "affection_min": 0, "expression": "happy", "text": "答對了。這個劑量的稱讚剛剛好，再多就有副作用了。" },
     { "id": "zhixun-correct-004", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "對了。順便記：葡萄柚汁會抑制 CYP3A4，有些藥跟它一起吃，血中濃度會變高。" },
     { "id": "zhixun-correct-005", "situation": "correct", "affection_min": 0, "expression": "normal", "text": "很好。順便考你：warfarin 過量給維生素 K，heparin 過量給 protamine。解毒劑要成對記喔。" },
     { "id": "zhixun-correct-006", "situation": "correct", "affection_min": 0, "expression": "happy", "text": "答對了，乖。順便記一個：乙醯胺酚（acetaminophen）過量，解毒劑是 N-acetylcysteine。" },
-    { "id": "zhixun-correct-007", "situation": "correct", "affection_min": 0, "expression": "happy", "text": "正確。……小學弟認真的時候，姊姊會忍不住多看兩眼呢。" },
+    { "id": "zhixun-correct-007", "situation": "correct", "affection_min": 0, "expression": "happy", "text": "正確。……小{player}認真的時候，姊姊會忍不住多看兩眼呢。" },
     { "id": "zhixun-correct-008", "situation": "correct", "affection_min": 1, "expression": "shy", "text": "……做得真好。這句不是在逗你，是真心的。" },
 
     { "id": "zhixun-wrong-001", "situation": "wrong", "affection_min": 0, "expression": "normal", "text": "錯了也沒關係。乖，慢慢來，先看一下正解。" },
@@ -28,15 +28,15 @@
     { "id": "zhixun-wrong-007", "situation": "wrong", "affection_min": 1, "expression": "sad", "text": "……看你皺眉，姊姊也跟著難過。這題我們一起把它記熟，好嗎？" },
 
     { "id": "zhixun-streak-001", "situation": "streak", "affection_min": 0, "expression": "happy", "text": "十題全對，獎勵你一下——頭過來，姊姊摸摸。" },
-    { "id": "zhixun-streak-002", "situation": "streak", "affection_min": 0, "expression": "surprised", "text": "連對十題？小學弟的實力已經進到治療範圍了呢。" },
+    { "id": "zhixun-streak-002", "situation": "streak", "affection_min": 0, "expression": "surprised", "text": "連對十題？小{player}的實力已經進到治療範圍了呢。" },
     { "id": "zhixun-streak-003", "situation": "streak", "affection_min": 0, "expression": "happy", "text": "好厲害。再這樣下去，姊姊要對你上癮了喔。" },
-    { "id": "zhixun-streak-004", "situation": "streak", "affection_min": 1, "expression": "shy", "text": "一直答對的小學弟……有點帥。啊，剛剛那句，就當作姊姊說溜嘴吧。" },
+    { "id": "zhixun-streak-004", "situation": "streak", "affection_min": 1, "expression": "shy", "text": "一直答對的小{player}……有點帥。啊，剛剛那句，就當作姊姊說溜嘴吧。" },
 
     { "id": "zhixun-finish-001", "situation": "finish", "affection_min": 0, "expression": "happy", "text": "今天的療程結束囉。錯的題目是明天的處方，記得按時回診。" },
     { "id": "zhixun-finish-002", "situation": "finish", "affection_min": 0, "expression": "normal", "text": "辛苦了。回去早點休息，睡不夠的時候，讀的東西很難記住。" },
     { "id": "zhixun-finish-003", "situation": "finish", "affection_min": 0, "expression": "happy", "text": "這回合結束。……下次也要來找姊姊喔，約好了。" },
 
     { "id": "zhixun-mock_high-001", "situation": "mock_high", "affection_min": 0, "expression": "happy", "text": "考這個分數，姊姊請你喝咖啡。……要約在哪裡，你決定。" },
-    { "id": "zhixun-mock_high-002", "situation": "mock_high", "affection_min": 0, "expression": "surprised", "text": "這個分數……小學弟，姊姊是不是太小看你了？" }
+    { "id": "zhixun-mock_high-002", "situation": "mock_high", "affection_min": 0, "expression": "surprised", "text": "這個分數……小{player}，姊姊是不是太小看你了？" }
   ]
 }

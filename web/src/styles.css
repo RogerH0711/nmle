@@ -1674,7 +1674,9 @@ button.link:hover {
 
 .campus-foot {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
+  gap: 8px;
   margin-top: 10px;
 }
 
@@ -2351,4 +2353,33 @@ button.link:hover {
   .ask-ai-label {
     flex-basis: 100%;
   }
+}
+
+/* ---------- 選稱呼 ---------- */
+
+.modal.player-choice {
+  border-top-color: var(--accent);
+  text-align: center;
+}
+
+.player-choice p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.player-options {
+  display: flex;
+  gap: 12px;
+}
+
+.player-options button {
+  flex: 1;
+  padding: 14px;
+  font-size: 1.1rem;
+}
+
+.guide-small {
+  font-size: 0.85rem;
+  color: var(--muted);
 }

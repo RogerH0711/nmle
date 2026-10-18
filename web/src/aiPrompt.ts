@@ -35,9 +35,9 @@ export function askPrompt(q: Question, paper: PaperInfo | undefined, subject: st
 }
 
 export const AI_SITES = [
-  { id: 'chatgpt', name: 'ChatGPT', url: (p: string) => `https://chatgpt.com/?q=${encodeURIComponent(p)}`, home: 'https://chatgpt.com/' },
-  { id: 'claude', name: 'Claude', url: (p: string) => `https://claude.ai/new?q=${encodeURIComponent(p)}`, home: 'https://claude.ai/new' },
-  { id: 'gemini', name: 'Gemini', url: null, home: 'https://gemini.google.com/app' }, // Gemini 不支援網址帶入，只能貼上
+  { id: 'chatgpt', name: 'ChatGPT', label: 'ChatGPT', url: (p: string) => `https://chatgpt.com/?q=${encodeURIComponent(p)}`, home: 'https://chatgpt.com/' },
+  { id: 'claude', name: 'Claude', label: 'Claude', url: (p: string) => `https://claude.ai/new?q=${encodeURIComponent(p)}`, home: 'https://claude.ai/new' },
+  { id: 'gemini', name: 'Gemini', label: 'Gemini（複製後貼上）', url: null, home: 'https://gemini.google.com/app' }, // Gemini 不支援網址帶入，只能貼上
 ] as const
 
 /** 開哪個網址：提問太長或網站不支援帶入時，只開首頁（提問已經複製，貼上就好） */

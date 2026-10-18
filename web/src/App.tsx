@@ -22,9 +22,10 @@ import { StoryList, StoryPlayer } from './Story'
 import { CampusMap } from './CampusMap'
 import { StatusPanel } from './StatusPanel'
 import { Guide, guideSeen } from './Guide'
+import { DEFAULT_PLAYER, loadPlayer, savePlayer, type PlayerTitle } from './player'
+import { PlayerChoice } from './PlayerChoice'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
-const PLAYER = '學弟' // 玩家名字還不能自訂，台詞和劇情的 {player} 先用這個
 
 type Order = 'seq' | 'random'
 
@@ -137,6 +138,9 @@ export default function App() {
   const [storyList, setStoryList] = useState<Character | null>(null)
   const [statusOpen, setStatusOpen] = useState(false) // 狀態面板（能力值）
   const [guideOpen, setGuideOpen] = useState(() => !guideSeen()) // 使用說明：第一次打開網站時自動顯示
+  const [player, setPlayer] = useState<PlayerTitle | null>(loadPlayer) // 學姊們叫你學弟還是學妹；null 是還沒選
+  const [playerOpen, setPlayerOpen] = useState(false) // 從地圖下方打開「稱呼」
+  const PLAYER = player ?? DEFAULT_PLAYER
   const [onMap, setOnMap] = useState(true) // 角色模式的首頁是校園地圖；開始讀書後切到題目畫面
 
   // 登入後讀自己的暱稱（排行榜上顯示的名字）
@@ -665,6 +669,8 @@ export default function App() {
           onReview={startReview}
           onFree={() => setOnMap(false)}
           onStatus={() => setStatusOpen(true)}
+          player={PLAYER}
+          onPlayer={() => setPlayerOpen(true)}
         />
       ) : (
         <>
@@ -790,6 +796,18 @@ export default function App() {
             setStory({ character: storyList, scene })
           }}
           onClose={() => setStoryList(null)}
+        />
+      )}
+      {/* 第一次進角色模式：看完說明後問稱呼，選了才繼續 */}
+      {(playerOpen || (showMap && !player && !guideOpen && !story)) && (
+        <PlayerChoice
+          current={player}
+          onPick={(t) => {
+            savePlayer(t)
+            setPlayer(t)
+            setPlayerOpen(false)
+          }}
+          onClose={player ? () => setPlayerOpen(false) : undefined}
         />
       )}
       {guideOpen && (

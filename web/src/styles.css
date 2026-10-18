@@ -2313,3 +2313,42 @@ button.link:hover {
   width: 100%;
   margin-top: 12px;
 }
+
+/* ---------- 問 AI（作答後） ---------- */
+
+.ask-ai {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--line);
+}
+
+.ask-ai-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.ask-ai-status,
+.ask-ai-note {
+  flex-basis: 100%;
+  font-size: 0.8rem;
+}
+
+.feedback .ask-ai-note {
+  color: var(--muted);
+}
+
+.ask-ai-text {
+  flex-basis: 100%;
+  font: inherit;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 599px) {
+  .ask-ai-label {
+    flex-basis: 100%;
+  }
+}

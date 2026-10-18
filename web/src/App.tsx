@@ -15,6 +15,7 @@ import { bestCharacter, firstAttempts, isMockCorrect, MOCK_HIGH, MOCK_MINUTES, m
 import { addMock, loadSession, saveSession, switchMockUser, useMocks } from './mockStore'
 import { MockHome, MockResult, MockRunner } from './MockExam'
 import { ReportButton } from './Report'
+import { AskAi } from './AskAi'
 import { affection as affectionOf, rival as rivalOf, STAGE_NAMES, subjectMap, type Affection } from './affection'
 import { loadSeen, loadStory, saveSeen, sceneId, unseenScene, type Scene } from './stories'
 import { StoryList, StoryPlayer } from './Story'
@@ -995,6 +996,7 @@ function QuestionCard(props: {
             {q.free_point ? '本題官方一律給分。' : `正解：${q.answers.join('、')}`}
             {q.answer_note && !q.free_point && <span className="note">（{q.answer_note}）</span>}
           </p>
+          <AskAi key={q.id} q={q} paper={paper} subject={q.subject ? (index.subjects[q.subject] ?? q.subject) : null} picked={picked} />
         </div>
       )}
 

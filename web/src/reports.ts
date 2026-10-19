@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from 'react'
 import { supabase } from './supabase'
 import { BUILD } from './bank'
+import { deviceId } from './device'
 import type { Letter } from './types'
 
 // 回報疑義：送到 Supabase 的 reports 表，Roger 在 Dashboard 處理。沒登入也能回報。
@@ -30,7 +31,6 @@ interface PendingReport {
 
 const PENDING_KEY = 'nmle.reports.pending.v1'
 const SENT_KEY = 'nmle.reports.sent.v1' // 回報過的題目 id
-const DEVICE_KEY = 'nmle.device.v1'
 
 function read<T>(key: string, fallback: T): T {
   try {
@@ -49,15 +49,6 @@ function write(key: string, value: unknown) {
   }
 }
 
-/** 這台裝置的亂數 id，資料庫用來限制回報頻率 */
-function deviceId() {
-  let id = read<string | null>(DEVICE_KEY, null)
-  if (!id) {
-    id = crypto.randomUUID()
-    write(DEVICE_KEY, id)
-  }
-  return id
-}
 
 let pending = read<PendingReport[]>(PENDING_KEY, [])
 let reported = new Set(read<string[]>(SENT_KEY, []))

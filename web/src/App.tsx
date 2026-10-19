@@ -26,6 +26,7 @@ import { DEFAULT_PLAYER, loadPlayer, savePlayer, type PlayerTitle } from './play
 import { PlayerChoice } from './PlayerChoice'
 import { fillVars, loadMessages, MESSAGE_SITUATION, messageEvents, saveMessages, type Message } from './messages'
 import { MessageCenter, MessageToast } from './MessageCenter'
+import { reportUsage } from './usage'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
 
@@ -273,6 +274,11 @@ export default function App() {
   }, [run])
 
   const review = useMemo(() => reviewSummary(reviewStates(answers.records)), [answers.records])
+
+  // 匿名使用統計（usage.ts）：打開網站、切換角色模式或登入時送一次
+  useEffect(() => {
+    reportUsage({ characterMode, signedIn: !!user })
+  }, [characterMode, user])
 
   // ---------- 學姊傳訊息 ----------
   // 依作答紀錄判斷該不該傳（messages.ts），同一件事只傳一次。只在角色模式傳
@@ -912,7 +918,7 @@ function Disclaimer() {
         非官方題庫。試題與答案取自考選部公開的歷屆試題，正解以考選部公告（含更正答案）為準。題目由程式從 PDF
         解析，可能有誤，發現問題請按題目下方的「回報疑義」。
       </p>
-      <p>角色立繪為 AI 生成。</p>
+      <p>角色立繪為 AI 生成。網站會記錄匿名的使用統計（隨機的裝置代碼和每天作答題數，不含個人資料）。</p>
     </footer>
   )
 }

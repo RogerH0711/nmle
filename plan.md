@@ -30,6 +30,8 @@
 
 這些都能從 `answers` 表算出來，從朋友開始用的第一天就累積；寫履歷時要用的是這些數字（例如「上線三個月、N 位使用者、累計作答 M 題」）。統計只做匿名彙總，並寫進隱私權政策。
 
+**匿名使用統計（10/19，`usage_daily` 表）**：`answers` 只有登入的人才有，沒登入的人（大多數）看不到，所以另外記每台裝置每天一筆：隨機的裝置代碼、當天在這台裝置作答幾題、有沒有開角色模式、有沒有登入、網站版本。不記 user id 或作答內容，連不回是誰。只能透過 `ping_usage()` 寫入，前端讀不到，Roger 在 Dashboard 用 `supabase/README.md` 的 SQL 查。頁尾和使用說明都有註明。一台裝置不等於一個人（同一人用手機和電腦會算兩台、清掉瀏覽器資料會換新代碼），看趨勢用。
+
 **不做的事**：不收費、不取代正式教材或補習班講義、不放未經授權的詳解。
 
 ## 考試與題庫背景
@@ -210,7 +212,7 @@ Supabase（登入、進度、排行榜）← GitHub Pages 做不到的部分
 
 第一階段約十幾人，用 Google 帳號登入，免費方案綽綽有餘。公開後作答紀錄會隨人數一直長，要依 Supabase 當時的免費方案上限估算可以撐多少人，接近上限前再決定升級或精簡資料。
 
-**已完成**：Supabase 專案（`supabase/migrations/`）、Google 登入（OAuth 用戶端在 Roger 的學校 Google Workspace 帳號下，目前是「測試中」，只有測試使用者名單上的人能登入）、Email 註冊已關閉、GitHub Pages 自動部署（`.github/workflows/deploy.yml`）。網址：https://rogerh0711.github.io/nmle/
+**已完成**：Supabase 專案（`supabase/migrations/`）、Google 登入（OAuth 用戶端在 Roger 的學校 Google Workspace 帳號下。Google Cloud 上顯示「測試中、外部、1 位測試使用者」，照說只有名單上的人能登入，但 10/19 Roger 確認個人 Gmail 不在名單上也能直接登入，原因不明；Google 顯示的「100 位使用者上限」是否真的會擋人也不確定，人數接近時要留意）、Email 註冊已關閉、GitHub Pages 自動部署（`.github/workflows/deploy.yml`）。網址：https://rogerh0711.github.io/nmle/
 
 **前端**
 
@@ -240,6 +242,7 @@ Supabase（登入、進度、排行榜）← GitHub Pages 做不到的部分
 | 複習佇列 | 不存，由作答紀錄推算 | Leitner 格數、下次複習日期 |
 | 角色進度 | 不存，由作答紀錄和模擬考紀錄推算；看過哪些劇情存在瀏覽器 | 好感度階段、下一階進度 |
 | 模擬考成績 | Supabase `mock_exams`（已建） | 使用者、考卷、開始與交卷時間、每題選的答案；分數不存，依正解現算 |
+| 使用統計 | Supabase `usage_daily`（已建） | 隨機裝置代碼、日期、當天作答題數、角色模式、登入與否、網站版本；不含個人資料 |
 
 排行榜不另外存，直接由作答紀錄和模擬考成績算出來（資料庫函式 `leaderboard_weekly`、`leaderboard_streaks`，只回傳暱稱與統計數字）：
 
@@ -345,6 +348,7 @@ galgame 最常看的是臉，所以選 Animagine。兩位角色的 `scrubs` 常�
 - **先把遊戲做完整，再寫使用說明給朋友**：目前還沒有場景背景，和一開始參考的 Dokicode 差距還很大。使用說明等場景、好感度這些做出來再寫。
   - 10/18 已完成：劇情、背景、校園地圖、能力值都做好後，加了網站內的使用說明（`web/src/Guide.tsx`）。第一次打開網站自動顯示，之後從標題列「說明」打開；好感度門檻、複習間隔、回合題數直接讀程式的設定值，改數字時說明會跟著變。給朋友的邀請訊息見 `docs/invite.md`。
 - **Google 登入的測試使用者名單之後再加**：登入不是必要功能，沒登入也能刷題（紀錄存在瀏覽器）。朋友用過覺得好用、想登入的時候，再把他們的 Gmail 加進測試使用者名單。
+  - 10/19 更正：實際上不用加名單，個人 Gmail 直接就能登入（見「技術架構」）。使用說明和邀請訊息原本寫要先給 Gmail，已改掉；第一批朋友可能因此以為還不能登入。
 - **接下來的分工**：Roger 在 Colab 做溫芷薰的立繪；Claude 做回報疑義按鈕和免責聲明（已完成）。之後再做場景背景（共用背景 2–3 張，見「美術與內容」）。
 
 **好感度與劇情完成後**
@@ -452,7 +456,7 @@ Roger 想要的劇情畫面接近一般 galgame。參考的是三款遊戲的截
    - 接下來（依序，Claude）：依朋友回饋調整好感度門檻；之後是禮物與服裝商店。學姊傳訊息（「遊戲介面方向」清單第 4 點）已在 10/19 完成。
    - 網站載入速度（10/19 已處理）：JS 壓縮前 510 KB，其中網站程式只有 77 KB，其餘是 React（219 KB）和 Supabase（214 KB），所以把排行榜、模擬考拆成用到才載入幫助不大。改成把兩個套件分開打包（`vite.config.ts`），部署新版時瀏覽器沿用套件的快取。首頁實際載入約 1.4 MB，最大的浪費是橫式、直式兩張校園地圖都下載（CSS 只是藏起其中一張），改成依螢幕寬度只渲染一種（`CampusMap.tsx` 的 `useLayout`），省約 240 KB。首頁的 `happy` 立繪是「有新劇情」的表情，不是浪費。
    - 等 Roger 決定：要不要用 Claude API 產生完整詳解（成本估算見「詳解與題目正確率」）。
-   - Roger 這邊：把朋友的 Gmail 加進 Google 登入的測試使用者名單；繼續收朋友回饋；看過五位學姊的劇本、調整語氣；劇情服裝立繪（Colab）。
+   - Roger 這邊：告訴第一批朋友不用給 Gmail、直接按登入就好；繼續收朋友回饋；看過五位學姊的劇本、調整語氣；劇情服裝立繪（Colab）。
 4. 題目正確率優先：改 pipeline 後重跑 `pipeline/build_exam.py --years 110 115`，確認每份考卷的自動檢查都通過，並和改之前的輸出比對差異；正解有變動就重跑 `pipeline/export_keys.py`，再由 Roger 執行 `npm run db:push` 更新資料庫。
 5. 資料庫變更寫成 `supabase/migrations/` 下的新檔案，並在 `supabase/tests/` 加測試（`npm run test:db`，用 PGlite 模擬 Supabase）；每張新表都要開 Row Level Security。推送流程見 `supabase/README.md`（Supabase CLI，`npm run db:push` 由 Roger 執行），推送後從外部測一次未登入的讀寫。
 6. GitHub Actions 每次 push 先跑資料庫測試和 `web/` 的單元測試，沒過就不部署。

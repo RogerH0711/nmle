@@ -43,4 +43,37 @@ npx supabase migration repair --status applied 20261014000000 20261015000000
 3. 確認有錯：在 `pipeline/overrides/` 寫修正並寫明原因，重跑 pipeline（正解有變就重跑 `export_keys.py` 再 `npm run db:push`）。
 4. 在 Dashboard 把 `status` 改成 `fixed`（已修正）或 `rejected`（題目沒錯），`admin_note` 寫處理方式。
 
+## 查使用統計
+
+`usage_daily` 是匿名的使用統計：每台裝置每天一筆（隨機的裝置代碼、當天在這台裝置作答幾題、有沒有開角色模式、有沒有登入）。沒登入的人也會記到，所以比 `profiles` 準。一台裝置不等於一個人：同一人用手機和電腦算兩台，清掉瀏覽器資料會換新代碼。
+
+在 Dashboard → SQL Editor 執行：
+
+```sql
+-- 最近 14 天，每天有幾台裝置打開網站、幾台有作答、總共作答幾題
+select day,
+       count(*) as 打開網站,
+       count(*) filter (where answered > 0) as 有作答,
+       sum(answered) as 作答題數,
+       count(*) filter (where signed_in) as 有登入,
+       count(*) filter (where character_mode) as 角色模式
+from usage_daily
+where day > current_date - 14
+group by day
+order by day desc;
+
+-- 最近 7 天有作答的裝置數，以及每台裝置作答幾天、幾題
+select count(*) as 裝置數, round(avg(days), 1) as 平均天數, round(avg(total)) as 平均題數
+from (select device_id, count(*) as days, sum(answered) as total
+      from usage_daily
+      where day > current_date - 7 and answered > 0
+      group by device_id) t;
+
+-- 每台裝置第一次出現的日期（看新來的人和留下來的人）
+select first_day, count(*) as 新裝置
+from (select device_id, min(day) as first_day from usage_daily group by device_id) t
+group by first_day
+order by first_day desc;
+```
+
 **不要執行 `supabase config push`**：它會用 `config.toml` 的預設值覆蓋線上的登入設定（Site URL、Google 登入、關閉 Email 註冊等）。

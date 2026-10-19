@@ -1,5 +1,6 @@
 import { useSyncExternalStore } from 'react'
 import { supabase } from './supabase'
+import { countAnswers } from './usage'
 import type { Letter } from './types'
 
 // 作答紀錄：先寫進瀏覽器（離線也能刷），登入後再和 Supabase 雙向同步。
@@ -86,6 +87,7 @@ export function recordAnswers(
     synced: false,
   }))
   setState({ records: [...state.records, ...added] })
+  countAnswers(added.length) // 匿名使用統計：只算在這台裝置作答的
   if (state.owner !== ANON) schedulePush()
 }
 

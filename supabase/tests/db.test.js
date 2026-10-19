@@ -400,3 +400,58 @@ describe('回報疑義', () => {
     assert.equal((await report(B)).ok, true)
   })
 })
+
+describe('匿名使用統計', () => {
+  const DEV = 'abababab-0000-4000-8000-000000000001'
+  const ping = (userId, answered, device = DEV, extra = { cm: true, signed: false, build: 'abc1234' }) =>
+    tryAs(db, userId, `select public.ping_usage($1, $2, $3, $4, $5)`, [device, answered, extra.cm, extra.signed, extra.build])
+  const row = async (device = DEV) =>
+    (await db.query(`select * from public.usage_daily where device_id = $1`, [device])).rows
+
+  test('沒登入也能記錄，同一台裝置同一天只有一筆', async () => {
+    assert.equal((await ping(null, 3)).ok, true)
+    assert.equal((await ping(null, 8)).ok, true)
+    const rows = await row()
+    assert.equal(rows.length, 1)
+    assert.equal(rows[0].answered, 8)
+  })
+
+  test('作答題數只增不減（重送或亂序時舊的數字不會蓋掉新的）', async () => {
+    assert.equal((await ping(null, 5)).ok, true)
+    assert.equal((await row())[0].answered, 8)
+  })
+
+  test('登入過一次就記成有登入；日期由資料庫用台灣時間決定', async () => {
+    assert.equal((await ping(A, 9, DEV, { cm: false, signed: true, build: 'x' })).ok, true)
+    assert.equal((await ping(null, 9, DEV, { cm: false, signed: false, build: 'x' })).ok, true)
+    const r = (await row())[0]
+    assert.equal(r.signed_in, true)
+    assert.equal(r.character_mode, false)
+    const today = (await db.query(`select (now() at time zone 'Asia/Taipei')::date as d`)).rows[0].d
+    assert.equal(r.day.toISOString(), today.toISOString())
+  })
+
+  test('不記錄 user id：登入時呼叫也連不回是誰', async () => {
+    const cols = (await db.query(`select column_name from information_schema.columns where table_name = 'usage_daily'`)).rows.map((c) => c.column_name)
+    assert.ok(!cols.includes('user_id'), cols.join(','))
+  })
+
+  test('題數超出範圍、沒有裝置代碼會被拒絕', async () => {
+    assert.equal((await ping(null, -1)).ok, false)
+    assert.equal((await ping(null, 5001)).ok, false)
+    assert.equal((await ping(null, 1, null)).ok, false)
+  })
+
+  test('沒有人能直接讀寫這張表', async () => {
+    for (const user of [A, null]) {
+      const r = await tryAs(db, user, `select * from public.usage_daily`)
+      assert.ok(!r.ok || r.res.rows.length === 0, `${user ?? '未登入'} 讀到了使用統計`)
+      const ins = await tryAs(db, user, `insert into public.usage_daily (device_id, day, character_mode, signed_in) values ($1, current_date, true, true)`, ['cdcdcdcd-0000-4000-8000-000000000001'])
+      assert.equal(ins.ok, false)
+      for (const sql of [`update public.usage_daily set answered = 4999`, `delete from public.usage_daily`]) {
+        const t = await tryAs(db, user, sql)
+        assert.ok(!t.ok || t.res.affectedRows === 0, sql)
+      }
+    }
+  })
+})

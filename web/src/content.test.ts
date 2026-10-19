@@ -21,3 +21,11 @@ test('玩家的稱呼一律寫 {player}，不能寫死學弟或學妹（玩家�
     assert.deepEqual(hits, [], `${f.name} 有寫死的稱呼`)
   }
 })
+
+test('每位學姊都有四種訊息的台詞（學姊傳訊息用，見 messages.ts）', () => {
+  const kinds = ['msg_review', 'msg_comeback', 'msg_story', 'msg_streak']
+  for (const f of files.filter((f) => f.name.startsWith('lines/'))) {
+    const situations = new Set((JSON.parse(f.text) as { lines: { situation: string }[] }).lines.map((l) => l.situation))
+    for (const k of kinds) assert.ok(situations.has(k), `${f.name} 沒有 ${k}`)
+  }
+})

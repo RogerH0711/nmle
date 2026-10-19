@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
-import type { Character } from './characters'
+import { COMEBACK_DAYS, type Character } from './characters'
 import { LOCATION_NAMES } from './CampusMap'
 import { GOALS } from './affection'
 import { INTERVALS } from './review'
 import { MIN_ANSWERS, RECENT } from './abilities'
+import { STREAK_MILESTONES, STREAK_MIN_DAILY } from './messages'
 
 const SEEN_KEY = 'nmle.guide.seen.v1'
 
@@ -128,6 +129,10 @@ export function Guide({
           </p>
           <p>
             地圖右上角的「能力值」是各科最近 {RECENT} 題的正確率（寫滿 {MIN_ANSWERS} 題才有數字），看哪一科最需要加強。
+          </p>
+          <p>
+            地圖右上角的「訊息」是學姊傳來的訊息：錯題到期、超過 {COMEBACK_DAYS} 天沒來、有新劇情、連續作答天數（一天至少{' '}
+            {STREAK_MIN_DAILY} 題）達到 {STREAK_MILESTONES.slice(0, 3).join('、')} 天等時候。打開網站時才會收到，不會推播到手機。
           </p>
         </section>
 

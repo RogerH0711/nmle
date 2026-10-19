@@ -1,7 +1,10 @@
 // 角色資料與台詞（data/characters.json、data/lines/<id>.json，格式見 characters.md）
 import { dataUrl } from './bank'
 
-export type Situation = 'start' | 'comeback' | 'correct' | 'wrong' | 'streak' | 'finish' | 'mock_high' | 'jealous' | 'story'
+export type Situation =
+  | 'start' | 'comeback' | 'correct' | 'wrong' | 'streak' | 'finish' | 'mock_high' | 'jealous' | 'story'
+  // 學姊傳的訊息（messages.ts）
+  | 'msg_review' | 'msg_comeback' | 'msg_story' | 'msg_streak'
 
 export interface Character {
   id: string

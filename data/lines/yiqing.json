@@ -37,6 +37,22 @@
     { "id": "yiqing-finish-003", "situation": "finish", "affection_min": 0, "expression": "happy", "text": "今天的訓練量達標！明天也要來喔，說好了！" },
 
     { "id": "yiqing-mock_high-001", "situation": "mock_high", "affection_min": 0, "expression": "surprised", "text": "這個分數！我要繞操場跑三圈慶祝！你也要一起！" },
-    { "id": "yiqing-mock_high-002", "situation": "mock_high", "affection_min": 0, "expression": "happy", "text": "看吧！我就說你是一階選手的料！" }
+    { "id": "yiqing-mock_high-002", "situation": "mock_high", "affection_min": 0, "expression": "happy", "text": "看吧！我就說你是一階選手的料！" },
+
+    { "id": "yiqing-msg_review-001", "situation": "msg_review", "affection_min": 0, "expression": "normal", "text": "{player}！今天有 {n} 題錯題到期了，複習就像收操，不做會抽筋喔！圖書館見！" },
+    { "id": "yiqing-msg_review-002", "situation": "msg_review", "affection_min": 0, "expression": "happy", "text": "叮咚～教練提醒：{n} 題錯題該複習了！趁記憶還熱，衝一波！" },
+    { "id": "yiqing-msg_review-003", "situation": "msg_review", "affection_min": 0, "expression": "happy", "text": "今天的訓練菜單：錯題 {n} 題。做完我請你喝運動飲料！" },
+
+    { "id": "yiqing-msg_story-001", "situation": "msg_story", "affection_min": 0, "expression": "shy", "text": "欸欸，今天練完跑……你有空嗎？有件事想跟你說，來找我！" },
+    { "id": "yiqing-msg_story-002", "situation": "msg_story", "affection_min": 0, "expression": "shy", "text": "{player}，我在等你喔。不是要你陪跑啦……來就對了！" },
+    { "id": "yiqing-msg_story-003", "situation": "msg_story", "affection_min": 0, "expression": "happy", "text": "今天想跟你多聊一下。來找我吧，我等你！" },
+
+    { "id": "yiqing-msg_streak-001", "situation": "msg_streak", "affection_min": 0, "expression": "happy", "text": "連續 {days} 天了！這個節奏太完美了，我們繼續保持配速！" },
+    { "id": "yiqing-msg_streak-002", "situation": "msg_streak", "affection_min": 0, "expression": "surprised", "text": "{days} 天都沒斷！{player} 你根本是一階選手了吧！" },
+    { "id": "yiqing-msg_streak-003", "situation": "msg_streak", "affection_min": 0, "expression": "happy", "text": "連續 {days} 天！今天也辛苦了，記得伸展、早點睡！" },
+
+    { "id": "yiqing-msg_comeback-001", "situation": "msg_comeback", "affection_min": 0, "expression": "sad", "text": "{player}，最近都沒看到你耶……還好嗎？休息夠了就回來跑吧，我等你！" },
+    { "id": "yiqing-msg_comeback-002", "situation": "msg_comeback", "affection_min": 0, "expression": "sad", "text": "好幾天沒一起讀書了！我的配速都亂掉了啦，快回來！" },
+    { "id": "yiqing-msg_comeback-003", "situation": "msg_comeback", "affection_min": 0, "expression": "normal", "text": "欸，你還好嗎？今天來操場露個臉就好，寫一題也算數！" }
   ]
 }

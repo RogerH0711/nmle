@@ -37,6 +37,22 @@
     { "id": "jingcheng-finish-003", "situation": "finish", "affection_min": 0, "expression": "normal", "text": "結束。……我還要留下來整理筆記。你先走。" },
 
     { "id": "jingcheng-mock_high-001", "situation": "mock_high", "affection_min": 0, "expression": "happy", "text": "解剖這部分，你已經比我當年好了。……不准驕傲。" },
-    { "id": "jingcheng-mock_high-002", "situation": "mock_high", "affection_min": 0, "expression": "surprised", "text": "……這個分數。我、我去倒杯水。……不要跟過來。" }
+    { "id": "jingcheng-mock_high-002", "situation": "mock_high", "affection_min": 0, "expression": "surprised", "text": "……這個分數。我、我去倒杯水。……不要跟過來。" },
+
+    { "id": "jingcheng-msg_review-001", "situation": "msg_review", "affection_min": 0, "expression": "normal", "text": "錯題 {n} 題，今天到期。……再一次。" },
+    { "id": "jingcheng-msg_review-002", "situation": "msg_review", "affection_min": 0, "expression": "normal", "text": "{n} 題該複習了。我在圖書館。" },
+    { "id": "jingcheng-msg_review-003", "situation": "msg_review", "affection_min": 0, "expression": "normal", "text": "今天有 {n} 題要複習。……位子幫你留了。" },
+
+    { "id": "jingcheng-msg_story-001", "situation": "msg_story", "affection_min": 0, "expression": "normal", "text": "……今天有空的話，來找我。" },
+    { "id": "jingcheng-msg_story-002", "situation": "msg_story", "affection_min": 0, "expression": "shy", "text": "……有東西想給你看。" },
+    { "id": "jingcheng-msg_story-003", "situation": "msg_story", "affection_min": 0, "expression": "normal", "text": "等你。老位子。" },
+
+    { "id": "jingcheng-msg_streak-001", "situation": "msg_streak", "affection_min": 0, "expression": "happy", "text": "連續 {days} 天。……很好。" },
+    { "id": "jingcheng-msg_streak-002", "situation": "msg_streak", "affection_min": 0, "expression": "normal", "text": "{days} 天了。……結構很穩。繼續。" },
+    { "id": "jingcheng-msg_streak-003", "situation": "msg_streak", "affection_min": 0, "expression": "happy", "text": "連續 {days} 天。我有在看。" },
+
+    { "id": "jingcheng-msg_comeback-001", "situation": "msg_comeback", "affection_min": 0, "expression": "sad", "text": "……好幾天沒看到你。" },
+    { "id": "jingcheng-msg_comeback-002", "situation": "msg_comeback", "affection_min": 0, "expression": "sad", "text": "{days} 天沒來。……位子還留著。" },
+    { "id": "jingcheng-msg_comeback-003", "situation": "msg_comeback", "affection_min": 0, "expression": "normal", "text": "還好嗎。……不用回。來就好。" }
   ]
 }

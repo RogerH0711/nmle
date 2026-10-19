@@ -37,6 +37,22 @@
     { "id": "zhixun-finish-003", "situation": "finish", "affection_min": 0, "expression": "happy", "text": "這回合結束。……下次也要來找姊姊喔，約好了。" },
 
     { "id": "zhixun-mock_high-001", "situation": "mock_high", "affection_min": 0, "expression": "happy", "text": "考這個分數，姊姊請你喝咖啡。……要約在哪裡，你決定。" },
-    { "id": "zhixun-mock_high-002", "situation": "mock_high", "affection_min": 0, "expression": "surprised", "text": "這個分數……小{player}，姊姊是不是太小看你了？" }
+    { "id": "zhixun-mock_high-002", "situation": "mock_high", "affection_min": 0, "expression": "surprised", "text": "這個分數……小{player}，姊姊是不是太小看你了？" },
+
+    { "id": "zhixun-msg_review-001", "situation": "msg_review", "affection_min": 0, "expression": "happy", "text": "小{player}，今天有 {n} 題錯題到期了喔。藥要按時吃，書也要按時讀，乖。" },
+    { "id": "zhixun-msg_review-002", "situation": "msg_review", "affection_min": 0, "expression": "normal", "text": "錯題 {n} 題到期了呢。姊姊在圖書館等你，慢慢來。" },
+    { "id": "zhixun-msg_review-003", "situation": "msg_review", "affection_min": 0, "expression": "happy", "text": "提醒你一下：{n} 題該複習了。今天的處方，記得服用喔。" },
+
+    { "id": "zhixun-msg_story-001", "situation": "msg_story", "affection_min": 0, "expression": "normal", "text": "今天下班後，來找姊姊好嗎？有點話想跟你說。" },
+    { "id": "zhixun-msg_story-002", "situation": "msg_story", "affection_min": 0, "expression": "shy", "text": "小{player}，姊姊在等你喔。……不是什麼大事，只是想見你。" },
+    { "id": "zhixun-msg_story-003", "situation": "msg_story", "affection_min": 0, "expression": "happy", "text": "下班了。陪姊姊聊一下好嗎？" },
+
+    { "id": "zhixun-msg_streak-001", "situation": "msg_streak", "affection_min": 0, "expression": "happy", "text": "連續 {days} 天了呢，好棒好棒。下次見面摸摸頭。" },
+    { "id": "zhixun-msg_streak-002", "situation": "msg_streak", "affection_min": 0, "expression": "happy", "text": "{days} 天，一劑都沒漏呢。姊姊很驕傲喔。" },
+    { "id": "zhixun-msg_streak-003", "situation": "msg_streak", "affection_min": 0, "expression": "normal", "text": "連續 {days} 天，規律得剛剛好。記得也要好好休息喔。" },
+
+    { "id": "zhixun-msg_comeback-001", "situation": "msg_comeback", "affection_min": 0, "expression": "sad", "text": "小{player}，好幾天沒見了呢。是不是太累了？休息夠了再回來就好，姊姊等你。" },
+    { "id": "zhixun-msg_comeback-002", "situation": "msg_comeback", "affection_min": 0, "expression": "sad", "text": "{days} 天沒見了……姊姊有點擔心。今天能來一下嗎？" },
+    { "id": "zhixun-msg_comeback-003", "situation": "msg_comeback", "affection_min": 0, "expression": "shy", "text": "停藥太久會沒效喔。……開玩笑的，只是想你了。" }
   ]
 }

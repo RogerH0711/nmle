@@ -24,6 +24,8 @@ import { StatusPanel } from './StatusPanel'
 import { Guide, guideSeen } from './Guide'
 import { DEFAULT_PLAYER, loadPlayer, savePlayer, type PlayerTitle } from './player'
 import { PlayerChoice } from './PlayerChoice'
+import { fillVars, loadMessages, MESSAGE_SITUATION, messageEvents, saveMessages, type Message } from './messages'
+import { MessageCenter, MessageToast } from './MessageCenter'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
 
@@ -142,6 +144,9 @@ export default function App() {
   const [playerOpen, setPlayerOpen] = useState(false) // 從地圖下方打開「稱呼」
   const PLAYER = player ?? DEFAULT_PLAYER
   const [onMap, setOnMap] = useState(true) // 角色模式的首頁是校園地圖；開始讀書後切到題目畫面
+  const [messages, setMessages] = useState<Message[]>(() => loadMessages()) // 學姊傳的訊息（存在這台裝置）
+  const [messagesOpen, setMessagesOpen] = useState<string | null | false>(false) // false：關著；null：訊息列表；字串：那位學姊的對話
+  const [toast, setToast] = useState<Message | null>(null) // 剛收到的訊息，在畫面下方通知
 
   // 登入後讀自己的暱稱（排行榜上顯示的名字）
   useEffect(() => {
@@ -268,6 +273,45 @@ export default function App() {
   }, [run])
 
   const review = useMemo(() => reviewSummary(reviewStates(answers.records)), [answers.records])
+
+  // ---------- 學姊傳訊息 ----------
+  // 依作答紀錄判斷該不該傳（messages.ts），同一件事只傳一次。只在角色模式傳
+  useEffect(() => {
+    if (!characterMode || !characters.length || !subjects || !Object.keys(lines).length || !Object.keys(stories).length) return
+    if (answers.status === 'syncing') return // 登入時等雲端的紀錄同步完，不然會誤判「久沒上線」
+    const events = messageEvents({
+      characters,
+      records: answers.records,
+      dueIds: review.due,
+      subjects,
+      newScenes: characters.flatMap((c) => {
+        const scene = newScene(c)
+        return scene ? [{ character: c.id, stage: scene.stage }] : []
+      }),
+      comebackDays: COMEBACK_DAYS,
+    })
+    const known = new Set(messages.map((m) => m.key))
+    const fresh = events.flatMap((e): Message[] => {
+      const c = characters.find((x) => x.id === e.character)
+      const line = c && !known.has(e.key) ? pickCharacterLine(lines[c.id] ?? [], MESSAGE_SITUATION[e.kind], stageOf(c)) : null
+      if (!c || !line) return []
+      const text = fillVars(fillPlayer(line.text, PLAYER), e.vars)
+      return [{ key: e.key, kind: e.kind, character: c.id, text, expression: line.expression, at: new Date().toISOString(), read: false }]
+    })
+    if (!fresh.length) return
+    const next = [...messages, ...fresh]
+    setMessages(next)
+    saveMessages(next)
+    setToast(fresh[fresh.length - 1])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [characterMode, characters, subjects, lines, stories, answers.status, answers.records, review.due, seen, affections, messages])
+
+  const readThread = (characterId: string) => {
+    if (!messages.some((m) => m.character === characterId && !m.read)) return
+    const next = messages.map((m) => (m.character === characterId ? { ...m, read: true } : m))
+    setMessages(next)
+    saveMessages(next)
+  }
   const done = run ? run.pos >= run.queue.length : false
   const current = run && !done ? questions.get(run.queue[run.pos]) : undefined
   const picked = current && run ? run.picks[current.id] : undefined
@@ -501,7 +545,7 @@ export default function App() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       // 看排行榜、考模擬考、看劇情、看能力值、在校園地圖上時，不要對藏起來的題目作答
-      if (view !== 'quiz' || session || story || storyList || statusOpen || guideOpen || (characterMode && onMap && characters.length > 0)) return
+      if (view !== 'quiz' || session || story || storyList || statusOpen || guideOpen || messagesOpen !== false || (characterMode && onMap && characters.length > 0)) return
       if (e.ctrlKey || e.metaKey || e.altKey) return
       if (e.target instanceof Element && e.target.closest('select, input, textarea')) return
       const k = e.key.toUpperCase()
@@ -515,7 +559,7 @@ export default function App() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [pick, go, picked, view, session, story, storyList, statusOpen, guideOpen, characterMode, onMap, characters])
+  }, [pick, go, picked, view, session, story, storyList, statusOpen, guideOpen, messagesOpen, characterMode, onMap, characters])
 
   if (error) return <div className="center">{error}</div>
   if (!index || !run) return <div className="center">載入中…</div>
@@ -669,6 +713,8 @@ export default function App() {
           onReview={startReview}
           onFree={() => setOnMap(false)}
           onStatus={() => setStatusOpen(true)}
+          unreadMessages={messages.filter((m) => !m.read).length}
+          onMessages={() => setMessagesOpen(null)}
           player={PLAYER}
           onPlayer={() => setPlayerOpen(true)}
         />
@@ -823,6 +869,36 @@ export default function App() {
           onClose={() => setStatusOpen(false)}
         />
       )}
+      {messagesOpen !== false && (
+        <MessageCenter
+          messages={messages}
+          characters={characters}
+          initial={messagesOpen}
+          onRead={readThread}
+          onAction={(m) => {
+            setMessagesOpen(false)
+            const c = characters.find((x) => x.id === m.character)
+            if (m.kind === 'review') startReview()
+            else if (c) studyWith(c)
+          }}
+          onClose={() => setMessagesOpen(false)}
+        />
+      )}
+      {/* 新訊息的通知：只在地圖上、沒有其他視窗時跳出 */}
+      {toast && showMap && !story && !storyList && !guideOpen && !statusOpen && messagesOpen === false && player && (() => {
+        const c = characters.find((x) => x.id === toast.character)
+        return c ? (
+          <MessageToast
+            message={toast}
+            character={c}
+            onOpen={() => {
+              setToast(null)
+              setMessagesOpen(c.id)
+            }}
+            onDismiss={() => setToast(null)}
+          />
+        ) : null
+      })()}
       {story && <StoryPlayer key={sceneId(story.character.id, story.scene.stage)} character={story.character} scene={story.scene} player={PLAYER} affection={affections.get(story.character.id)} onClose={closeStory} />}
     </div>
   )

@@ -2372,3 +2372,255 @@ button.link:hover {
   font-size: 0.85rem;
   color: var(--muted);
 }
+
+/* ---------- 學姊傳訊息 ---------- */
+
+.messages-btn {
+  position: relative;
+}
+
+.unread {
+  display: inline-grid;
+  place-items: center;
+  min-width: 18px;
+  height: 18px;
+  margin-left: 6px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: #e8344a;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  width: min(760px, 100%);
+  height: min(600px, calc(100vh - 32px));
+  border-radius: 14px;
+  background: var(--card);
+  overflow: hidden;
+}
+
+.messages-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.messages-head h2 {
+  flex: 1;
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.messages-back {
+  display: none;
+}
+
+.messages-empty {
+  padding: 24px 16px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.messages-body {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  flex: 1;
+  min-height: 0;
+}
+
+.threads {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-right: 1px solid var(--line);
+  overflow-y: auto;
+}
+
+.thread {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-left: 4px solid transparent;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.thread:hover,
+.thread.active {
+  background: var(--bg);
+  border-left-color: var(--char);
+}
+
+.thread-avatar {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--char);
+  border-radius: 50%;
+  background: #f4f0ea;
+  overflow: hidden;
+}
+
+.thread-avatar .portrait {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.thread-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.thread-text span {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.82rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 14px;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.bubble-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.bubble-avatar {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--char);
+  border-radius: 50%;
+  background: #f4f0ea;
+  overflow: hidden;
+}
+
+.bubble-avatar .portrait {
+  width: 100%;
+  height: 100%;
+}
+
+.bubble {
+  display: inline-block;
+  max-width: 100%;
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 4px 14px 14px 14px;
+  background: color-mix(in srgb, var(--char) 16%, var(--card));
+  white-space: pre-wrap;
+}
+
+.bubble-time {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.bubble-action {
+  margin-top: 6px;
+  background: var(--char);
+}
+
+/* 手機：列表和對話分開兩頁 */
+@media (max-width: 599px) {
+  .messages-body {
+    grid-template-columns: 1fr;
+  }
+
+  .messages.has-thread .threads {
+    display: none;
+  }
+
+  .messages:not(.has-thread) .chat {
+    display: none;
+  }
+
+  .messages.has-thread .messages-back {
+    display: inline-block;
+  }
+
+  .threads {
+    border-right: none;
+  }
+}
+
+/* 新訊息的通知 */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  width: min(420px, calc(100% - 32px));
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--char);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.25);
+  transform: translateX(-50%);
+  animation: toast-in 0.25s ease-out;
+}
+
+.toast-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.toast-close {
+  flex: none;
+  width: 36px;
+  height: 36px;
+  margin-right: 6px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast {
+    animation: none;
+  }
+}

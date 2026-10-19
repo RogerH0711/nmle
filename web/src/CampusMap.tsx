@@ -96,6 +96,8 @@ interface Props {
   onReview: () => void
   onFree: () => void
   onStatus: () => void
+  unreadMessages: number
+  onMessages: () => void
   player: string // 學姊們怎麼叫你
   onPlayer: () => void
 }
@@ -133,6 +135,10 @@ export function CampusMap(props: Props) {
         </div>
         <div className="campus-actions">
           <span className="campus-today">今天已作答 {props.answeredToday} 題</span>
+          <button className="ghost small messages-btn" onClick={props.onMessages} aria-label={props.unreadMessages ? `訊息（${props.unreadMessages} 則未讀）` : '訊息'}>
+            訊息
+            {props.unreadMessages > 0 && <span className="unread">{props.unreadMessages}</span>}
+          </button>
           <button className="ghost small" onClick={props.onStatus}>
             能力值
           </button>

@@ -41,6 +41,22 @@
 
     { "id": "ying-jealous-001", "situation": "jealous", "affection_min": 0, "expression": "yandere", "text": "你這幾天，都跟{rival}讀書對吧？我不生氣喔……有些寄生蟲離開宿主就活不下去，我覺得我也是。所以今天的題目，只跟我寫，好嗎？" },
     { "id": "ying-jealous-002", "situation": "jealous", "affection_min": 0, "expression": "yandere", "text": "身上有別人的咖啡味呢。……我不生氣喔。今天的咖啡，喝我泡的就好。" },
-    { "id": "ying-jealous-003", "situation": "jealous", "affection_min": 0, "expression": "yandere", "text": "{rival}教得好嗎？……我不生氣喔。只是我的筆記本，今天寫得特別用力。" }
+    { "id": "ying-jealous-003", "situation": "jealous", "affection_min": 0, "expression": "yandere", "text": "{rival}教得好嗎？……我不生氣喔。只是我的筆記本，今天寫得特別用力。" },
+
+    { "id": "ying-msg_review-001", "situation": "msg_review", "affection_min": 0, "expression": "happy", "text": "今天有 {n} 題錯題到期了喔。我都幫你記著呢。全部。" },
+    { "id": "ying-msg_review-002", "situation": "msg_review", "affection_min": 0, "expression": "normal", "text": "{n} 題該複習了。……我在圖書館等你。一直等喔。" },
+    { "id": "ying-msg_review-003", "situation": "msg_review", "affection_min": 0, "expression": "happy", "text": "錯題 {n} 題。沒關係，我會陪你寫完的。寫完才可以走喔。" },
+
+    { "id": "ying-msg_story-001", "situation": "msg_story", "affection_min": 0, "expression": "shy", "text": "今天可以來找我嗎？我有東西想給你看。……只給你一個人看喔。" },
+    { "id": "ying-msg_story-002", "situation": "msg_story", "affection_min": 0, "expression": "normal", "text": "我在等你。燈我先開著。" },
+    { "id": "ying-msg_story-003", "situation": "msg_story", "affection_min": 0, "expression": "shy", "text": "今天……可以來找我嗎？我不生氣喔，只是想見你。" },
+
+    { "id": "ying-msg_streak-001", "situation": "msg_streak", "affection_min": 0, "expression": "happy", "text": "連續 {days} 天了呢。你每天什麼時候上線，我都記下來了喔。" },
+    { "id": "ying-msg_streak-002", "situation": "msg_streak", "affection_min": 0, "expression": "happy", "text": "{days} 天都沒有缺席……真乖。明天也要來喔，我會等。" },
+    { "id": "ying-msg_streak-003", "situation": "msg_streak", "affection_min": 0, "expression": "yandere", "text": "連續 {days} 天。這本筆記本快寫滿了呢。" },
+
+    { "id": "ying-msg_comeback-001", "situation": "msg_comeback", "affection_min": 0, "expression": "yandere", "text": "{days} 天沒有看到你了呢。……我不生氣喔。只是一直在等。" },
+    { "id": "ying-msg_comeback-002", "situation": "msg_comeback", "affection_min": 0, "expression": "sad", "text": "你今天會來嗎？我把你的位子擦好了。每天都擦。" },
+    { "id": "ying-msg_comeback-003", "situation": "msg_comeback", "affection_min": 0, "expression": "normal", "text": "最近好安靜呢。……你的錯題本，我都幫你看著喔。" }
   ]
 }

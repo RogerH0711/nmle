@@ -37,6 +37,22 @@
     { "id": "fei-finish-003", "situation": "finish", "affection_min": 0, "expression": "normal", "text": "今天就到這裡。……做得還可以。" },
 
     { "id": "fei-mock_high-001", "situation": "mock_high", "affection_min": 0, "expression": "shy", "text": "這、這個分數……還不錯啦。今天、今天就特別准你叫我緋。" },
-    { "id": "fei-mock_high-002", "situation": "mock_high", "affection_min": 0, "expression": "surprised", "text": "……你真的是我帶出來的那個笨蛋{player}？" }
+    { "id": "fei-mock_high-002", "situation": "mock_high", "affection_min": 0, "expression": "surprised", "text": "……你真的是我帶出來的那個笨蛋{player}？" },
+
+    { "id": "fei-msg_review-001", "situation": "msg_review", "affection_min": 0, "expression": "pout", "text": "喂，你有 {n} 題錯題到期了。才、才不是在關心你，是你的錯題本在哭。" },
+    { "id": "fei-msg_review-002", "situation": "msg_review", "affection_min": 0, "expression": "normal", "text": "{n} 題該複習了。……我只是剛好看到，順便提醒而已。" },
+    { "id": "fei-msg_review-003", "situation": "msg_review", "affection_min": 0, "expression": "pout", "text": "錯題 {n} 題到期。今天不複習的話，下次讀書會我會罵人喔。" },
+
+    { "id": "fei-msg_story-001", "situation": "msg_story", "affection_min": 0, "expression": "shy", "text": "……今天值班結束後，你有空嗎？沒、沒什麼事，來找我一趟就是了。" },
+    { "id": "fei-msg_story-002", "situation": "msg_story", "affection_min": 0, "expression": "pout", "text": "喂，等一下來找我。不是約你，是有東西要給你。" },
+    { "id": "fei-msg_story-003", "situation": "msg_story", "affection_min": 0, "expression": "shy", "text": "我在等你。……要來就快點，不來我也不會怎樣。" },
+
+    { "id": "fei-msg_streak-001", "situation": "msg_streak", "affection_min": 0, "expression": "normal", "text": "連續 {days} 天……哼，還算有點毅力嘛。不准停喔。" },
+    { "id": "fei-msg_streak-002", "situation": "msg_streak", "affection_min": 0, "expression": "normal", "text": "{days} 天沒斷。這在統計上已經不是運氣了，是你的實力。……我只是陳述事實。" },
+    { "id": "fei-msg_streak-003", "situation": "msg_streak", "affection_min": 0, "expression": "shy", "text": "連續 {days} 天了。……做得很好。這句不准截圖。" },
+
+    { "id": "fei-msg_comeback-001", "situation": "msg_comeback", "affection_min": 0, "expression": "pout", "text": "……你這幾天都沒上線。我才沒有在數。只是錯題本積灰塵了。" },
+    { "id": "fei-msg_comeback-002", "situation": "msg_comeback", "affection_min": 0, "expression": "normal", "text": "喂，還活著就回個訊息。……不回也沒關係，來讀書就好。" },
+    { "id": "fei-msg_comeback-003", "situation": "msg_comeback", "affection_min": 0, "expression": "pout", "text": "失聯 {days} 天。……下次要消失，至少先說一聲。" }
   ]
 }

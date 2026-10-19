@@ -24,6 +24,28 @@ const REVIEW_LOCATION = 'library' // 錯題複習在圖書館
 // ---------- 地圖設定（data/map.json） ----------
 
 type Layout = 'wide' | 'tall' // 電腦用橫式圖、手機用直式圖
+
+// 和 styles.css 手機版的斷點一致（max-width: 599px）
+const TALL_QUERY = '(max-width: 599px)'
+
+/** 目前螢幕寬度用哪種版面。兩種都渲染再用 CSS 藏起一種的話，瀏覽器兩張地圖都會下載（各約 240 KB） */
+function useLayout(): Layout {
+  const query = () => (window.matchMedia(TALL_QUERY).matches ? 'tall' : 'wide')
+  const [layout, setLayout] = useState<Layout>(query)
+  useEffect(() => {
+    // 斷點的 change 事件之外也聽 resize：有些情況（手機轉向、瀏覽器縮放）只會發其中一種
+    const mq = window.matchMedia(TALL_QUERY)
+    const onChange = () => setLayout(query())
+    mq.addEventListener('change', onChange)
+    window.addEventListener('resize', onChange)
+    return () => {
+      mq.removeEventListener('change', onChange)
+      window.removeEventListener('resize', onChange)
+    }
+  }, [])
+  return layout
+}
+
 interface MapLayout {
   image: string
   spots: Record<string, [number, number]> // 地點 id → [x%, y%]
@@ -86,6 +108,7 @@ interface Props {
 export function CampusMap(props: Props) {
   const [config, setConfig] = useState<MapConfig | null>(null)
   const [failed, setFailed] = useState<Layout[]>([])
+  const layout = useLayout()
   useEffect(() => {
     void loadMapConfig().then((c) => {
       if (!c) return
@@ -95,6 +118,7 @@ export function CampusMap(props: Props) {
   }, [])
 
   const layouts = (['wide', 'tall'] as Layout[]).filter((l) => config && !failed.includes(l))
+  const hasMap = layouts.includes(layout)
   const fail = (l: Layout) => {
     if (config) missingImg.add(backgroundUrl(config[l].image))
     setFailed((f) => [...f, l])
@@ -115,20 +139,14 @@ export function CampusMap(props: Props) {
         </div>
       </header>
 
-      {layouts.length === 0 ? (
-        <SpotGrid {...props} />
-      ) : (
+      {/* 這種版面的圖還沒做好（或載入失敗）時，地點排成格子 */}
+      {hasMap ? (
         <>
-          {/* 只有一種版面的圖做好時，另一種版面用格子 */}
-          {(['wide', 'tall'] as Layout[]).map((l) =>
-            layouts.includes(l) ? (
-              <MapView key={l} layout={l} config={config![l]} onFail={() => fail(l)} {...props} />
-            ) : (
-              <SpotGrid key={l} className={`only-${l}`} {...props} />
-            ),
-          )}
+          <MapView key={layout} layout={layout} config={config![layout]} onFail={() => fail(layout)} {...props} />
           <Roster {...props} />
         </>
+      ) : (
+        <SpotGrid {...props} />
       )}
 
       <div className="campus-foot">
@@ -144,10 +162,10 @@ export function CampusMap(props: Props) {
 }
 
 /** 地點卡片排成格子（還沒有校園俯視圖時用） */
-function SpotGrid(props: Props & { className?: string }) {
+function SpotGrid(props: Props) {
   const { characters, subjects, affections, hasNewScene, hasStories, reviewDue } = props
   return (
-    <div className={`campus-grid ${props.className ?? ''}`}>
+    <div className="campus-grid">
       {characters.map((c) => {
         const a = affections.get(c.id)
         const loc = c.location ?? 'cafe'
@@ -197,7 +215,7 @@ function MapView(props: Props & { layout: Layout; config: MapLayout; onFail: () 
     return { left: `${x}%`, top: `${y}%` }
   }
   return (
-    <div className={`campus-map only-${layout}`}>
+    <div className={`campus-map map-${layout}`}>
       <img className="campus-map-img" src={backgroundUrl(config.image)} alt="校園地圖" onError={props.onFail} />
       {characters.map((c) => {
         const loc = c.location ?? 'cafe'

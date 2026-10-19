@@ -1736,18 +1736,7 @@ button.link:hover {
 
 /* ---------- 校園俯視圖與地點標記 ---------- */
 
-/* 電腦用橫式圖、手機用直式圖 */
-@media (max-width: 599px) {
-  .only-wide {
-    display: none !important;
-  }
-}
-
-@media (min-width: 600px) {
-  .only-tall {
-    display: none !important;
-  }
-}
+/* 電腦用橫式圖、手機用直式圖：由 CampusMap.tsx 的 useLayout 判斷（599px 以下是手機），只渲染一種 */
 
 /* 不裁切：靠近上緣的標記可以超出地圖 */
 .campus-map {

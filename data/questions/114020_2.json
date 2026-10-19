@@ -91,7 +91,7 @@
       "number": 4,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "結核菌素皮膚測試（tuberculin skin test）所使用的purified protein derivatives（PPDs）是從結核桿菌何處純化出來的結合蛋白質？",
+      "stem": "結核菌素皮膚測試（tuberculin skin test）所使用的 purified protein derivatives（PPDs）是從結核桿菌何處純化出來的結合蛋白質？",
       "options": [
         "細菌細胞壁",
         "宿主細胞核",
@@ -237,9 +237,9 @@
       "subject_status": "range",
       "stem": "下列有關病毒感染細胞之病變機制，何者最適當？",
       "options": [
-        "單純疱疹病毒（herpes simplex virus）感染之細胞核內可形成Cowdry type A 包涵體（Cowdry type A inclusion body）",
+        "單純疱疹病毒（herpes simplex virus）感染之細胞核內可形成 Cowdry type A 包涵體（Cowdry type A inclusion body）",
         "腸病毒（enterovirus）感染之細胞會發生細胞融合（syncytia）現象",
-        "德國麻疹病毒（rubella virus）感染之細胞質會形成Negri 包涵體（Negri body）",
+        "德國麻疹病毒（rubella virus）感染之細胞質會形成 Negri 包涵體（Negri body）",
         "腺病毒（adenovirus）主要是透過與細胞膜的融合入侵細胞"
       ],
       "answers": [
@@ -283,7 +283,7 @@
       "number": 12,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列那一個肝炎病毒感染最有可能在一般人造成約1%～2%的致死率，但在懷孕婦女則可能有高達20%的致死率？",
+      "stem": "下列那一個肝炎病毒感染最有可能在一般人造成約 1%～2%的致死率，但在懷孕婦女則可能有高達 20%的致死率？",
       "options": [
         "Hepatitis A virus",
         "Hepatitis C virus",
@@ -334,7 +334,7 @@
       "stem": "有關腸病毒（enterovirus）的敘述，何者最不適當？",
       "options": [
         "腸病毒只在腸胃道細胞複製",
-        "屬於小RNA 病毒科（Picornaviridae）",
+        "屬於小 RNA 病毒科（Picornaviridae）",
         "糞口為主要傳染管道",
         "大部分的腸病毒感染不會造成如肢體麻痺（paralytic disease）等重症"
       ],
@@ -359,7 +359,7 @@
       "options": [
         "感染後，病毒不會在肌肉細胞複製",
         "被帶有狂犬病病毒的狗咬傷後立刻施打抗病毒免疫球蛋白，再配合疫苗施打，可有效防止狂犬病的發生",
-        "狂犬病病毒的基因體為環狀DNA",
+        "狂犬病病毒的基因體為環狀 DNA",
         "犬類是狂犬病病毒的唯一宿主"
       ],
       "answers": [
@@ -456,7 +456,7 @@
         "B 細胞",
         "NK 細胞",
         "嗜中性白血球",
-        "CD8 毒殺T 細胞"
+        "CD8 毒殺 T 細胞"
       ],
       "answers": [
         "C"
@@ -475,11 +475,11 @@
       "number": 20,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列對於MHC 分子的描述，何者最不適當？",
+      "stem": "下列對於 MHC 分子的描述，何者最不適當？",
       "options": [
-        "MHC class I 及MHC class II 分子是由多個基因所表達（polygenic）",
+        "MHC class I 及 MHC class II 分子是由多個基因所表達（polygenic）",
         "MHC class III 的基因產物在免疫系統中不具功能",
-        "每一個表達MHC class I 及MHC class II 分子的基因是具有基因多型性（polymorphism）",
+        "每一個表達 MHC class I 及 MHC class II 分子的基因是具有基因多型性（polymorphism）",
         "MHC class II 分子間的差異大部分是在β1 region 上的胺基酸序列"
       ],
       "answers": [
@@ -499,12 +499,12 @@
       "number": 21,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列關於B 細胞發育的敘述，何者最不適當？",
+      "stem": "下列關於 B 細胞發育的敘述，何者最不適當？",
       "options": [
-        "骨髓是B 細胞開始進行發育的器官",
-        "會辨識自體抗原的B 細胞可以在骨髓中被清除",
-        "會辨識自體抗原的B 細胞可以在脾臟中被清除",
-        "無法表現替代輕鏈（surrogate light chain）的B 細胞，發育時會停滯在immature B 細胞時期"
+        "骨髓是 B 細胞開始進行發育的器官",
+        "會辨識自體抗原的 B 細胞可以在骨髓中被清除",
+        "會辨識自體抗原的 B 細胞可以在脾臟中被清除",
+        "無法表現替代輕鏈（surrogate light chain）的 B 細胞，發育時會停滯在 immature B 細胞時期"
       ],
       "answers": [
         "D"
@@ -547,12 +547,12 @@
       "number": 23,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "慢性感染Mycobacterium tuberculosis 時，病人肺部常形成肉芽腫（granuloma），是一種群聚巨噬細胞及其他免疫細胞的病理組織，下列有關肉芽腫的敘述何者最不適當？",
+      "stem": "慢性感染 Mycobacterium tuberculosis 時，病人肺部常形成肉芽腫（granuloma），是一種群聚巨噬細胞及其他免疫細胞的病理組織，下列有關肉芽腫的敘述何者最不適當？",
       "options": [
-        "巨噬細胞無法有效清除感染的Mycobacterium tuberculosis",
+        "巨噬細胞無法有效清除感染的 Mycobacterium tuberculosis",
         "被感染的巨噬細胞形成融合在一起的現象",
-        "常見T_H17 細胞圍繞在融合的巨噬細胞周圍",
-        "常見於病人帶有NADPH oxidase 基因突變"
+        "常見 T_H17 細胞圍繞在融合的巨噬細胞周圍",
+        "常見於病人帶有 NADPH oxidase 基因突變"
       ],
       "answers": [
         "C"
@@ -573,8 +573,8 @@
       "subject_status": "range",
       "stem": "有關體細胞超突變（somatic hypermutation），下列敘述何者最不適當？",
       "options": [
-        "主要發生在germinal center 的B 細胞中",
-        "由activation-induced cytidine deaminase（AID）在抗體的Fc region 造成點突變",
+        "主要發生在 germinal center 的 B 細胞中",
+        "由 activation-induced cytidine deaminase（AID）在抗體的 Fc region 造成點突變",
         "為促進親和力成熟（affinity maturation）的主要機制",
         "可增加抗體的多樣性（diversity）"
       ],
@@ -595,7 +595,7 @@
       "number": 25,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "肺結核是由Mycobacterium tuberculosis 感染後引起的慢性傳染病。下列何者是造成該細菌長期潛伏於被感染的細胞內的最主要因素？",
+      "stem": "肺結核是由 Mycobacterium tuberculosis 感染後引起的慢性傳染病。下列何者是造成該細菌長期潛伏於被感染的細胞內的最主要因素？",
       "options": [
         "複製繁殖力高",
         "抵抗吞噬體的作用",
@@ -619,7 +619,7 @@
       "number": 26,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列何種自體免疫疾病，最主要是由T 細胞攻擊組織，進而影響中樞神經系統功能？",
+      "stem": "下列何種自體免疫疾病，最主要是由 T 細胞攻擊組織，進而影響中樞神經系統功能？",
       "options": [
         "類風濕性關節炎",
         "多發性硬化症",
@@ -646,7 +646,7 @@
       "stem": "在腫瘤微環境（tumor microenvironment）中，下列何者是最不具免疫抑制性的分子或細胞？",
       "options": [
         "programmed death-1（PD-1）",
-        "調節性T 細胞（regulatory T cell, Treg）",
+        "調節性 T 細胞（regulatory T cell, Treg）",
         "M1 巨噬細胞（M1 macrophage）",
         "interleukin 10（IL-10）"
       ],
@@ -667,7 +667,7 @@
       "number": 28,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "以PD-L1 單株抗體作為免疫癌症療法最主要的機轉，是阻斷下列何種細胞表現的PD-L1 與PD-1 的結合？",
+      "stem": "以 PD-L1 單株抗體作為免疫癌症療法最主要的機轉，是阻斷下列何種細胞表現的 PD-L1 與 PD-1 的結合？",
       "options": [
         "巨噬細胞",
         "樹突細胞",
@@ -859,12 +859,12 @@
       "number": 36,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "已知某一個隨機試驗須利用自由度為18 的t 檢定（t-test）評估利尿劑（diuretic）是否有效，α=0.01，經過計算後統計檢定力為0.27（power=0.27）。下列敘述何者正確？",
+      "stem": "已知某一個隨機試驗須利用自由度為 18 的 t 檢定（t-test）評估利尿劑（diuretic）是否有效，α=0.01，經過計算後統計檢定力為 0.27（power=0.27）。下列敘述何者正確？",
       "options": [
-        "此試驗的顯著水準是5％",
-        "在對立假說為真的情況下，此試驗p 值小於1％的機率為0.27",
-        "此試驗虛無假設的可能性為0.27",
-        "此試驗的型二錯誤為0.27"
+        "此試驗的顯著水準是 5％",
+        "在對立假說為真的情況下，此試驗 p 值小於 1％的機率為 0.27",
+        "此試驗虛無假設的可能性為 0.27",
+        "此試驗的型二錯誤為 0.27"
       ],
       "answers": [
         "B"
@@ -883,12 +883,12 @@
       "number": 37,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "為了解大學生之平均BMI 為何（假設母體BMI 標準差為2），A 研究者自母體隨機抽取100 位大學生得其平均BMI 為21.5，B 研究者自母體隨機抽取225 位大學生得其平均BMI 為22.5。A、B 研究者利用自己收集之資料計算母體平均BMI 之95％信賴區間（confidence interval, CI），下列敘述何者最恰當？",
+      "stem": "為了解大學生之平均 BMI 為何（假設母體 BMI 標準差為 2），A 研究者自母體隨機抽取 100 位大學生得其平均BMI 為 21.5，B 研究者自母體隨機抽取 225 位大學生得其平均 BMI 為 22.5。A、B 研究者利用自己收集之資料計算母體平均 BMI 之 95％信賴區間（confidence interval, CI），下列敘述何者最恰當？",
       "options": [
-        "A 研究者計算之95％ CI 意義為約95％的大學生之BMI 可能出現之範圍",
-        "A 研究者計算之95％ CI 寬度會是B 研究者計算之95％ CI 寬度的1.5 倍",
-        "因信心水準皆為95％，故A 研究者計算之95％ CI 寬度會與B 研究者計算之95％ CI 寬度相同",
-        "A 研究者計算之95％ CI 中點會與B 研究者計算之95％ CI 中點相同"
+        "A 研究者計算之 95％ CI 意義為約 95％的大學生之 BMI 可能出現之範圍",
+        "A 研究者計算之 95％ CI 寬度會是 B 研究者計算之 95％ CI 寬度的 1.5 倍",
+        "因信心水準皆為 95％，故 A 研究者計算之 95％ CI 寬度會與 B 研究者計算之 95％ CI 寬度相同",
+        "A 研究者計算之 95％ CI 中點會與 B 研究者計算之 95％ CI 中點相同"
       ],
       "answers": [
         "B"
@@ -907,12 +907,12 @@
       "number": 38,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "某篩檢工具同時在A、B 兩個年齡類似的族群進行女性乳癌篩檢。篩檢數據顯示，A 族群偽陽性（false-positive）個案在所有A 族群陽性個案中的占比（proportion），明顯高於B 族群中偽陽性個案在所有B 族群陽性個案中的占比。下列敘述用於解釋這樣的現象何者最恰當？",
+      "stem": "某篩檢工具同時在 A、B 兩個年齡類似的族群進行女性乳癌篩檢。篩檢數據顯示，A 族群偽陽性（false-positive）個案在所有 A 族群陽性個案中的占比（proportion），明顯高於 B 族群中偽陽性個案在所有 B 族群陽性個案中的占比。下列敘述用於解釋這樣的現象何者最恰當？",
       "options": [
-        "該篩檢工具於A 族群使用時其特異度（specificity）較低",
-        "該篩檢工具於A 族群使用時其敏感度（sensitivity）較低",
-        "A 族群的乳癌盛行率明顯低於B 族群的可能性非常高",
-        "A 族群的乳癌發生率明顯高於B 族群的可能性非常高"
+        "該篩檢工具於 A 族群使用時其特異度（specificity）較低",
+        "該篩檢工具於 A 族群使用時其敏感度（sensitivity）較低",
+        "A 族群的乳癌盛行率明顯低於 B 族群的可能性非常高",
+        "A 族群的乳癌發生率明顯高於 B 族群的可能性非常高"
       ],
       "answers": [
         "C"
@@ -1078,9 +1078,9 @@
       "number": 45,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "我國於2006 年起透過政策鼓勵醫院調整過去醫療為主的思維，改以健康促進為服務導向，先後推動「健康促進醫院」與「健康醫院」認證，下列相關敘述，何者錯誤？",
+      "stem": "我國於 2006 年起透過政策鼓勵醫院調整過去醫療為主的思維，改以健康促進為服務導向，先後推動「健康促進醫院」與「健康醫院」認證，下列相關敘述，何者錯誤？",
       "options": [
-        "健康醫院認證目前已邁入2.0 版",
+        "健康醫院認證目前已邁入 2.0 版",
         "我國已加入世界衛生組織（WHO）健康促進醫院國際網絡，成為國家／區域網絡會員",
         "氣候行動非為目前健康醫院認證的標準項目",
         "醫院為符合認證健康醫院的基本資格，在願景與目標中要能呈現可見具承諾性的臨床健康促進政策"
@@ -1177,7 +1177,7 @@
       "stem": "有關我國在愛滋病防治的敘述，何者最不適當？",
       "options": [
         "主要法源依據之一為傳染病防治法",
-        "在2030 年前達成國際消除愛滋90-90-90 目標",
+        "在 2030 年前達成國際消除愛滋 90-90-90 目標",
         "提高感染者知道自己感染狀態的比率是目標指標之一",
         "鼓勵在暴露愛滋病毒前進行預防性投藥"
       ],
@@ -1201,7 +1201,7 @@
       "stem": "下列何項不是由政府衛生主管機關規範或辦理之醫療品質提升制度？",
       "options": [
         "訂立醫療機構設置標準",
-        "發展臨床路徑和參加ISO 品質認證",
+        "發展臨床路徑和參加 ISO 品質認證",
         "辦理醫院評鑑",
         "建立醫事人員執業登記及繼續教育辦法"
       ],
@@ -1246,7 +1246,7 @@
       "number": 52,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列抗生素中，何者長期使用最容易造成8 歲以下兒童產生牙齒、骨骼之傷害？",
+      "stem": "下列抗生素中，何者長期使用最容易造成 8 歲以下兒童產生牙齒、骨骼之傷害？",
       "options": [
         "erythromycin",
         "omadacycline",
@@ -1270,7 +1270,7 @@
       "number": 53,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列抗病毒藥物中，何者可對抗HIV 病毒，用於治療愛滋病？",
+      "stem": "下列抗病毒藥物中，何者可對抗 HIV 病毒，用於治療愛滋病？",
       "options": [
         "amantadine",
         "ganciclovir",
@@ -1294,7 +1294,7 @@
       "number": 54,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列免疫檢查點抑制劑（immune checkpoint inhibitor），何者不是作用在T 細胞？",
+      "stem": "下列免疫檢查點抑制劑（immune checkpoint inhibitor），何者不是作用在 T 細胞？",
       "options": [
         "pembrolizumab",
         "basiliximab",
@@ -1320,10 +1320,10 @@
       "subject_status": "range",
       "stem": "下列抗癌藥物與其作用機轉之配對，何者正確？",
       "options": [
-        "etoposide—抑制thymidylate synthase",
-        "irinotecan—抑制topoisomerase I",
-        "pemetrexed—抑制topoisomerase II",
-        "vinorelbine—抑制dihydrofolate reductase"
+        "etoposide—抑制 thymidylate synthase",
+        "irinotecan—抑制 topoisomerase I",
+        "pemetrexed—抑制 topoisomerase II",
+        "vinorelbine—抑制 dihydrofolate reductase"
       ],
       "answers": [
         "B"
@@ -1342,7 +1342,7 @@
       "number": 56,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列藥物中，何者為長效型凝血因子IX 的製劑，用以預防或治療B 型血友病（hemophilia B）病人出血的問題？",
+      "stem": "下列藥物中，何者為長效型凝血因子 IX 的製劑，用以預防或治療 B 型血友病（hemophilia B）病人出血的問題？",
       "options": [
         "eloctate",
         "idelvion",
@@ -1390,12 +1390,12 @@
       "number": 58,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "當病人器官移植，使用免疫抑制劑mycophenolate mofetil（MMF）以緩解排斥作用發生，下列敘述何者正確？",
+      "stem": "當病人器官移植，使用免疫抑制劑 mycophenolate mofetil（MMF）以緩解排斥作用發生，下列敘述何者正確？",
       "options": [
-        "MMF 抑制淋巴細胞的pyrimidine 生合成",
+        "MMF 抑制淋巴細胞的 pyrimidine 生合成",
         "mycophenolic acid 為不具活性之代謝成分",
-        "MMF 主要由CYP450 3A 代謝",
-        "使用MMF 可能產生嗜中性白血球低下症（neutropenia）之副作用"
+        "MMF 主要由 CYP450 3A 代謝",
+        "使用 MMF 可能產生嗜中性白血球低下症（neutropenia）之副作用"
       ],
       "answers": [
         "D"
@@ -1414,7 +1414,7 @@
       "number": 59,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列關於finasteride 之敘述，何者錯誤？",
+      "stem": "下列關於 finasteride 之敘述，何者錯誤？",
       "options": [
         "可用於早期雄性禿治療",
         "可用於良性攝護腺肥大治療",
@@ -1438,7 +1438,7 @@
       "number": 60,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何者為RANK ligand（RANKL）單株抗體製劑，可作為治療骨質疏鬆症之藥物？",
+      "stem": "下列何者為 RANK ligand（RANKL）單株抗體製劑，可作為治療骨質疏鬆症之藥物？",
       "options": [
         "adalimumab",
         "infliximab",
@@ -1486,12 +1486,12 @@
       "number": 62,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列關於neprilysin inhibitor 的敘述，何者錯誤？",
+      "stem": "下列關於 neprilysin inhibitor 的敘述，何者錯誤？",
       "options": [
-        "可減少brain natriuretic peptide（BNP）之降解",
+        "可減少 brain natriuretic peptide（BNP）之降解",
         "可使血管擴張",
         "減少交感神經活性",
-        "不適合與valsartan 併用於治療心衰竭"
+        "不適合與 valsartan 併用於治療心衰竭"
       ],
       "answers": [
         "D"
@@ -1510,12 +1510,12 @@
       "number": 63,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列關於nitrates 之敘述，何者錯誤？",
+      "stem": "下列關於 nitrates 之敘述，何者錯誤？",
       "options": [
-        "青光眼病人當腦內壓高時，不宜使用nitrates",
-        "連續使用長效型nitroglycerin 時，兩劑間隔需至少8 小時，以預防產生耐藥性",
-        "長時間使用nitroprusside 易產生耐藥性",
-        "爆裂性化學工廠工人的“Monday disease”消失係因其對nitrates 產生耐藥性"
+        "青光眼病人當腦內壓高時，不宜使用 nitrates",
+        "連續使用長效型 nitroglycerin 時，兩劑間隔需至少 8 小時，以預防產生耐藥性",
+        "長時間使用 nitroprusside 易產生耐藥性",
+        "爆裂性化學工廠工人的“Monday disease”消失係因其對 nitrates 產生耐藥性"
       ],
       "answers": [
         "C"
@@ -1534,7 +1534,7 @@
       "number": 64,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何種藥物作用於dopamine D₁ receptor，可使周邊血管平滑肌舒張，靜脈注射用於治療嚴重性高血壓？",
+      "stem": "下列何種藥物作用於 dopamine D₁ receptor，可使周邊血管平滑肌舒張，靜脈注射用於治療嚴重性高血壓？",
       "options": [
         "candesartan",
         "fenoldopam",
@@ -1558,11 +1558,11 @@
       "number": 65,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列關於pralidoxime 的敘述，何者最不適當？",
+      "stem": "下列關於 pralidoxime 的敘述，何者最不適當？",
       "options": [
-        "可幫助被磷酸化的acetylcholinesterase 恢復活性",
-        "不可作為carbamate 類cholinesterase 抑制劑的解毒劑",
-        "與diacetylmonoxime 相比，其中樞神經系統的穿透力較強",
+        "可幫助被磷酸化的 acetylcholinesterase 恢復活性",
+        "不可作為 carbamate 類 cholinesterase 抑制劑的解毒劑",
+        "與 diacetylmonoxime 相比，其中樞神經系統的穿透力較強",
         "過量時可能導致肌肉無力"
       ],
       "answers": [
@@ -1582,7 +1582,7 @@
       "number": 66,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "陳先生清晨上廁所時昏倒，家人量血壓時發現收縮壓只有76 mmHg，而被送來醫院。就診時病人已清醒，血壓為100/70 mmHg，心跳規則，每分鐘70 下，無其它不適。醫師評估後，認為是藥物引起的暫時性低血壓。下列陳先生平常服用的藥物中，何者與他的血壓下降關聯最低？",
+      "stem": "陳先生清晨上廁所時昏倒，家人量血壓時發現收縮壓只有 76 mmHg，而被送來醫院。就診時病人已清醒，血壓為 100/70 mmHg，心跳規則，每分鐘 70 下，無其它不適。醫師評估後，認為是藥物引起的暫時性低血壓。下列陳先生平常服用的藥物中，何者與他的血壓下降關聯最低？",
       "options": [
         "tamsulosin",
         "verapamil",
@@ -1606,7 +1606,7 @@
       "number": 67,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "在H₂ antagonists 中，何者的first-pass hepatic metabolism 最小？",
+      "stem": "在 H₂ antagonists 中，何者的 first-pass hepatic metabolism 最小？",
       "options": [
         "cimetidine",
         "nizatidine",
@@ -1630,7 +1630,7 @@
       "number": 68,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何種抗體藥物之標的為IL-5，用於治療嚴重型嗜酸性（eosinophilic）氣喘？",
+      "stem": "下列何種抗體藥物之標的為 IL-5，用於治療嚴重型嗜酸性（eosinophilic）氣喘？",
       "options": [
         "reslizumab",
         "omalizumab",
@@ -1680,10 +1680,10 @@
       "subject_status": "range",
       "stem": "關於預防或治療偏頭痛的藥物，下列敘述何者正確？",
       "options": [
-        "aspirin 及ibuprofen 對於偏頭痛無明顯鎮痛作用",
-        "lasmiditan 可作為偏頭痛急性發作的用藥，且較sumatriptan 無血管收縮之副作用",
-        "結合calcitonin gene-related peptide（CGRP）或其受體的抗體可用於治療偏頭痛",
-        "可口服的小分子calcitonin gene-related peptide（CGRP）受體拮抗劑ubrogepant 可預防偏頭痛"
+        "aspirin 及 ibuprofen 對於偏頭痛無明顯鎮痛作用",
+        "lasmiditan 可作為偏頭痛急性發作的用藥，且較 sumatriptan 無血管收縮之副作用",
+        "結合 calcitonin gene-related peptide（CGRP）或其受體的抗體可用於治療偏頭痛",
+        "可口服的小分子 calcitonin gene-related peptide（CGRP）受體拮抗劑 ubrogepant 可預防偏頭痛"
       ],
       "answers": [
         "B"
@@ -1702,7 +1702,7 @@
       "number": 71,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何者為前列腺素製劑，可與mifepristone 合併使用，作為早期懷孕人工流產之藥物？",
+      "stem": "下列何者為前列腺素製劑，可與 mifepristone 合併使用，作為早期懷孕人工流產之藥物？",
       "options": [
         "latanoprost",
         "treprostinil",
@@ -1728,8 +1728,8 @@
       "subject_status": "range",
       "stem": "下列有關全身麻醉劑的敘述，何者錯誤？",
       "options": [
-        "isoflurane 及nitrous oxide 為吸入型麻醉藥",
-        "propofol 及midazolam 為靜脈注射型麻醉藥",
+        "isoflurane 及 nitrous oxide 為吸入型麻醉藥",
+        "propofol 及 midazolam 為靜脈注射型麻醉藥",
         "etomidate 具有安眠效果，但無止痛作用",
         "propofol 藥效短的主要原因是其肝臟代謝快"
       ],
@@ -1750,7 +1750,7 @@
       "number": 73,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何者不是治療Huntington 舞蹈症的主要藥物？",
+      "stem": "下列何者不是治療 Huntington 舞蹈症的主要藥物？",
       "options": [
         "tetrabenazine",
         "haloperidol",
@@ -1897,9 +1897,9 @@
       "stem": "有關漢生病（Hansen disease, leprosy）的特徵描述，下列何者錯誤？",
       "options": [
         "顯微鏡下，病灶常沿著神經分布",
-        "tuberculoid leprosy 比起lepromatous leprosy 有較強的Th1 反應（Th1 response）",
+        "tuberculoid leprosy 比起 lepromatous leprosy 有較強的 Th1 反應（Th1 response）",
         "tuberculoid leprosy 的病理特色是含有脂肪的巨噬細胞吞噬許多細菌",
-        "溫度較低的皮膚適合Mycobacterium leprae 增生"
+        "溫度較低的皮膚適合 Mycobacterium leprae 增生"
       ],
       "answers": [
         "C"
@@ -1918,11 +1918,11 @@
       "number": 80,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "下列何者不是p53 的主要功能之一？",
+      "stem": "下列何者不是 p53 的主要功能之一？",
       "options": [
         "促進細胞衰老（senescence）",
-        "結合並抑制MDM2",
-        "使細胞週期（cell cycle）停滯於G1 phase（G1 arrest）",
+        "結合並抑制 MDM2",
+        "使細胞週期（cell cycle）停滯於 G1 phase（G1 arrest）",
         "引發細胞凋亡（apoptosis）的內在路徑（intrinsic pathway）"
       ],
       "answers": [
@@ -2041,9 +2041,9 @@
       "stem": "有關急性淋巴母細胞性白血病（acute lymphoblastic leukemia）的敘述，下列何者最適當？",
       "options": [
         "臨床表現與急性骨髓性白血病（acute myeloid leukemia）相似",
-        "病人多數為40 歲以上的成年人",
-        "大多數腫瘤會有MYC 基因的轉位，造成MYC 的過度表現",
-        "腫瘤細胞不會有BCR-ABL 融合基因"
+        "病人多數為 40 歲以上的成年人",
+        "大多數腫瘤會有 MYC 基因的轉位，造成 MYC 的過度表現",
+        "腫瘤細胞不會有 BCR-ABL 融合基因"
       ],
       "answers": [
         "A"
@@ -2134,7 +2134,7 @@
       "number": 89,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "關於B 型肝炎病毒（Hepatitis B virus），下列敘述何者最不適當？",
+      "stem": "關於 B 型肝炎病毒（Hepatitis B virus），下列敘述何者最不適當？",
       "options": [
         "HBeAg 是病毒包膜醣蛋白（envelope glycoproteins）",
         "HBcAg 是病毒核衣殼蛋白（nucleocapsid protein）",
@@ -2162,7 +2162,7 @@
       "options": [
         "與其他自體免疫疾病相關，例如：甲狀腺炎、糖尿病、Graves 氏病（Graves disease）",
         "與惡性貧血（pernicious anemia）有關",
-        "迴腸（ileum）維生素B₁₂吸收缺陷",
+        "迴腸（ileum）維生素 B₁₂吸收缺陷",
         "常見到內分泌細胞萎縮減少（atrophy and decrease of endocrine cells）"
       ],
       "answers": [
@@ -2209,7 +2209,7 @@
       "stem": "最常造成息肉性膀胱炎（polypoid cystitis）的原因為下列何者？",
       "options": [
         "長期放置尿管",
-        "長期吸食K 他命（ketamine）",
+        "長期吸食 K 他命（ketamine）",
         "細菌感染，以大腸桿菌最為常見",
         "人類乳突病毒（human papillomavirus）感染"
       ],
@@ -2352,10 +2352,10 @@
       "subject_status": "range",
       "stem": "下列關於眼睛疾病的敘述，何者最不適當？",
       "options": [
-        "Fuchs dystrophy 主要是因為角膜endothelium 缺損所致",
-        "pinguecula 和pterygium 都與日光造成的結膜受損有關",
+        "Fuchs dystrophy 主要是因為角膜 endothelium 缺損所致",
+        "pinguecula 和 pterygium 都與日光造成的結膜受損有關",
         "herpes stromal keratitis 主要是因免疫作用造成角膜受損",
-        "keratoconus 主要的病理特徵是Descemet membrane 斷裂"
+        "keratoconus 主要的病理特徵是 Descemet membrane 斷裂"
       ],
       "answers": [
         "D"
@@ -2398,7 +2398,7 @@
       "number": 100,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "以直接免疫螢光法（direct immunofluorescence）檢查天皰瘡（pemphigus vulgaris）所引起的水泡，可以發現IgG 免疫球蛋白主要沉積於什麼位置？",
+      "stem": "以直接免疫螢光法（direct immunofluorescence）檢查天皰瘡（pemphigus vulgaris）所引起的水泡，可以發現 IgG 免疫球蛋白主要沉積於什麼位置？",
       "options": [
         "表皮層鱗狀上皮細胞之間（intercellular regions of epidermal cells）",
         "表皮層下之基底膜（basement membrane）",

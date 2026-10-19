@@ -8,5 +8,17 @@
       "C": "屈拇長肌（flexor hallucis longus）"
     },
     "reason": "原卷「𧿹」（足字旁加母）為字型私用區字元，網頁無法顯示；以通用字「拇」代替"
+  },
+  "72": {
+    "options": {
+      "D": "血中游離脂肪酸（free fatty acid）濃度升高"
+    },
+    "reason": "原卷「fatty」的「tt」是連字（ligature），PDF 畫成一個特殊字形，抽文字時遺失，變成「faty」；依原始 PDF 補字"
+  },
+  "100": {
+    "options": {
+      "D": "長條墨點法（slot blotting）"
+    },
+    "reason": "原卷「blotting」的「tt」是連字（ligature），PDF 畫成一個特殊字形，抽文字時遺失，變成「bloting」；依原始 PDF 補字"
   }
 }

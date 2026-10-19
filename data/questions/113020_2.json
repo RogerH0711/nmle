@@ -66,12 +66,12 @@
       "number": 3,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "一位8 歲孩童在吃過漢堡及生菜沙拉後48 小時，出現出血性腹瀉症狀，到醫院後又發現其有溶血性尿毒症（hemolytic uremic syndrome），最有可能的病原菌是：",
+      "stem": "一位 8 歲孩童在吃過漢堡及生菜沙拉後 48 小時，出現出血性腹瀉症狀，到醫院後又發現其有溶血性尿毒症（hemolytic uremic syndrome），最有可能的病原菌是：",
       "options": [
-        "侵襲性大腸桿菌EIEC（enteroinvasive E. coli）",
-        "腸道凝集性大腸桿菌EAEC（enteroaggregative E. coli）",
-        "病原性大腸桿菌EPEC（enteropathogenic E. coli）",
-        "產志賀氏毒素大腸桿菌STEC（Shiga toxin-producing E. coli）"
+        "侵襲性大腸桿菌 EIEC（enteroinvasive E. coli）",
+        "腸道凝集性大腸桿菌 EAEC（enteroaggregative E. coli）",
+        "病原性大腸桿菌 EPEC（enteropathogenic E. coli）",
+        "產志賀氏毒素大腸桿菌 STEC（Shiga toxin-producing E. coli）"
       ],
       "answers": [
         "D"
@@ -142,7 +142,7 @@
       "options": [
         "僅革蘭氏陽性菌具有壁膜間隙（periplasmic space）之構造",
         "胜肽聚醣（peptidoglycan）為革蘭氏陰性菌才有之結構",
-        "細菌具有粒線體，為產生ATP 之重要胞器",
+        "細菌具有粒線體，為產生 ATP 之重要胞器",
         "部分細菌具有鞭毛（flagellum）"
       ],
       "answers": [
@@ -258,9 +258,9 @@
       "number": 11,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "有關parvovirus B19 的敘述，下列何者最適當？",
+      "stem": "有關 parvovirus B19 的敘述，下列何者最適當？",
       "options": [
-        "為雙股DNA 病毒",
+        "為雙股 DNA 病毒",
         "主要傳播途徑為糞口傳染",
         "感染並引起紅血球的先驅細胞（erythroid precursor）溶解",
         "感染兒童時，造成嬰兒玫瑰疹"
@@ -282,12 +282,12 @@
       "number": 12,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "藉由血清學的方式無法檢驗出正常的prion（PrP^C）與異常的prion（PrP^SC）的差異。一種新的檢驗方式稱作“real-time quaking-induced conversion（RT-QuIC）”，可以快速檢驗出檢體內是否含有PrP^SC。這是利用prion 的那一種特性？",
+      "stem": "藉由血清學的方式無法檢驗出正常的 prion（PrP^C）與異常的 prion（PrP^SC）的差異。一種新的檢驗方式稱作“real-time quaking-induced conversion（RT-QuIC）”，可以快速檢驗出檢體內是否含有 PrP^SC。這是利用 prion 的那一種特性？",
       "options": [
         "PrP^C會聚集成纖絲（prion fibril）",
         "PrP^SC會聚集成纖絲（prion fibril）",
-        "PrP^C會將PrP^SC轉換成PrP^C",
-        "PrP^SC的蛋白質半衰期較PrP^C短"
+        "PrP^C會將 PrP^SC轉換成 PrP^C",
+        "PrP^SC的蛋白質半衰期較 PrP^C短"
       ],
       "answers": [
         "B"
@@ -306,12 +306,12 @@
       "number": 13,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "痘病毒（poxvirus）與大多數其他人類DNA 病毒主要之差異為：",
+      "stem": "痘病毒（poxvirus）與大多數其他人類 DNA 病毒主要之差異為：",
       "options": [
         "在細胞質複製",
-        "其基因體為線型雙股DNA",
-        "有自己的DNA 聚合酶",
-        "利用strand-displacement 的方式複製其DNA"
+        "其基因體為線型雙股 DNA",
+        "有自己的 DNA 聚合酶",
+        "利用 strand-displacement 的方式複製其 DNA"
       ],
       "answers": [
         "A"
@@ -333,9 +333,9 @@
       "stem": "有關病毒感染治療藥物之敘述，下列何者最不適當？",
       "options": [
         "茚地那韋（indinavir）常用來治療單純疱疹病毒（herpes simplex virus）之感染",
-        "利巴韋林（ribavirin）合併干擾素（interferon）可用於治療C 型肝炎病毒之感染",
+        "利巴韋林（ribavirin）合併干擾素（interferon）可用於治療 C 型肝炎病毒之感染",
         "被狂犬病動物咬到之病人，必須施打馬或人之抗狂犬病病毒血清或免疫球蛋白",
-        "金剛烷胺（amantadine）可抑制A 型流行性感冒病毒（influenza A virus）"
+        "金剛烷胺（amantadine）可抑制 A 型流行性感冒病毒（influenza A virus）"
       ],
       "answers": [
         "A"
@@ -378,12 +378,12 @@
       "number": 16,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "關於Emergomyces 之敘述，下列何者最不適當？",
+      "stem": "關於 Emergomyces 之敘述，下列何者最不適當？",
       "options": [
-        "為溫度雙型性真菌，即25℃培養呈絲狀（mold form），37℃培養呈酵母狀（yeast form）",
+        "為溫度雙型性真菌，即 25℃培養呈絲狀（mold form），37℃培養呈酵母狀（yeast form）",
         "主要經由呼吸道吸入孢子感染，常出現皮膚病灶",
         "多數被感染者都是健康人，並無明顯免疫不全的症狀",
-        "可使用amphotericin B 和triazole 治療"
+        "可使用 amphotericin B 和 triazole 治療"
       ],
       "answers": [
         "C"
@@ -454,8 +454,8 @@
       "options": [
         "病毒感染有核細胞後，會刺激第一型干擾素的產生",
         "第一型干擾素可以直接參與分解病毒",
-        "第一型干擾素可以活化細胞內基因以破壞病毒mRNA 及抑制病毒蛋白的轉譯",
-        "第一型干擾素可以誘導細胞第一型MHC 分子的表達，增加感染的細胞呈獻抗原給CD8 毒殺T 細胞"
+        "第一型干擾素可以活化細胞內基因以破壞病毒 mRNA 及抑制病毒蛋白的轉譯",
+        "第一型干擾素可以誘導細胞第一型 MHC 分子的表達，增加感染的細胞呈獻抗原給 CD8 毒殺 T 細胞"
       ],
       "answers": [
         "B"
@@ -474,12 +474,12 @@
       "number": 20,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列有關T 細胞或B 細胞抗原受體的敘述，何者最不適當？",
+      "stem": "下列有關 T 細胞或 B 細胞抗原受體的敘述，何者最不適當？",
       "options": [
-        "TCR α chain 和TCR β chain 形成配對，而TCR γ chain 和TCR δ chain 形成配對",
+        "TCR α chain 和 TCR β chain 形成配對，而 TCR γ chain 和 TCR δ chain 形成配對",
         "氫鍵與凡德瓦力參與受體與抗原的結合過程",
         "clonal expansion 是指淋巴細胞於胸腺或骨髓的發育過程中，其細胞表面上的抗原受體與外來抗原結合後，引起細胞大量增殖",
-        "MHC restriction 是指成熟T 細胞的TCR 只能夠辨識自身細胞MHC 分子呈獻的抗原，不會辨識其他MHC 分子呈獻的相同抗原"
+        "MHC restriction 是指成熟 T 細胞的 TCR 只能夠辨識自身細胞 MHC 分子呈獻的抗原，不會辨識其他 MHC 分子呈獻的相同抗原"
       ],
       "answers": [
         "C"
@@ -498,11 +498,11 @@
       "number": 21,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "有關B 細胞、樹突細胞及巨噬細胞之敘述，下列何者最適當？",
+      "stem": "有關 B 細胞、樹突細胞及巨噬細胞之敘述，下列何者最適當？",
       "options": [
-        "三者皆會表現MHC class II 及B7 分子，所以被稱為抗原呈獻細胞",
-        "三者皆會表現MHC class II，但不表現MHC class I",
-        "三者皆會活化T 細胞，但以B 細胞最易活化naïve T 細胞",
+        "三者皆會表現 MHC class II 及 B7 分子，所以被稱為抗原呈獻細胞",
+        "三者皆會表現 MHC class II，但不表現 MHC class I",
+        "三者皆會活化 T 細胞，但以 B 細胞最易活化 naïve T 細胞",
         "三者平常皆維持不成熟狀態在周邊巡邏，遇到抗原後會分化進入成熟狀態，遷移至附近淋巴組織中"
       ],
       "answers": [
@@ -526,8 +526,8 @@
       "options": [
         "IgA 可穿過胎盤，讓胎兒獲得被動免疫力",
         "IgE 是活化補體的最主要抗體",
-        "IgM 是B 細胞活化後最早分泌出來的抗體",
-        "IgG 是活化mast cells 的最主要抗體"
+        "IgM 是 B 細胞活化後最早分泌出來的抗體",
+        "IgG 是活化 mast cells 的最主要抗體"
       ],
       "answers": [
         "C"
@@ -549,9 +549,9 @@
       "stem": "當病原菌入侵腸道時，腸道上皮細胞最不可能利用下列何種分子來幫助清除病原菌？",
       "options": [
         "TLRs",
-        "NOD1 及NOD2",
+        "NOD1 及 NOD2",
         "PGE2",
-        "MIC-A 及MIC-B"
+        "MIC-A 及 MIC-B"
       ],
       "answers": [
         "C"
@@ -594,7 +594,7 @@
       "number": 25,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列何者屬於IgE 介導的第一型過敏反應疾病？",
+      "stem": "下列何者屬於 IgE 介導的第一型過敏反應疾病？",
       "options": [
         "麩質病（celiac disease）",
         "血清病（serum sickness）",
@@ -645,9 +645,9 @@
       "stem": "腫瘤抗原根據其特徵可以分為腫瘤相關抗原（tumor associated antigen, TAA）與腫瘤特異性抗原（tumor specific antigen, TSA），下列關於腫瘤抗原的描述，何者最不適當？",
       "options": [
         "TAA 這類抗原在正常組織與癌細胞中都可能表現，但在癌細胞中的表現量通常比正常組織要高",
-        "TSA 因為是基因突變、基因重組或病毒感染所產生的抗原，使用全外顯子定序（whole exome sequence,WES）是目前最常用來鑑定TSA 的方法",
-        "目前CAR-T 所針對的抗原，主要是TAA 為主，少部分常見的TSA，亦可成為CAR-T 的目標",
-        "使用單細胞轉錄體定序（single cell transcriptome sequence），是目前最常用來鑑定TAA 的方法"
+        "TSA 因為是基因突變、基因重組或病毒感染所產生的抗原，使用全外顯子定序（whole exome sequence,WES）是目前最常用來鑑定 TSA 的方法",
+        "目前 CAR-T 所針對的抗原，主要是 TAA 為主，少部分常見的 TSA，亦可成為 CAR-T 的目標",
+        "使用單細胞轉錄體定序（single cell transcriptome sequence），是目前最常用來鑑定 TAA 的方法"
       ],
       "answers": [
         "D"
@@ -743,7 +743,7 @@
         "曼森血吸蟲（Schistosoma mansoni）成蟲主要寄生於人體之膀胱靜脈叢",
         "埃及血吸蟲（Schistosoma haematobium）成蟲主要寄生於人體之腸繫膜靜脈叢",
         "血吸蟲蟲卵經血流、異位陷入（ectopic trapped）腎臟而導致肉芽腫（granuloma）",
-        "日本血吸蟲（Schistosoma japonicum）成蟲之每日產卵量（egg deposition）最多可超過3000 顆"
+        "日本血吸蟲（Schistosoma japonicum）成蟲之每日產卵量（egg deposition）最多可超過 3000 顆"
       ],
       "answers": [
         "D"
@@ -814,7 +814,7 @@
       "options": [
         "宿主專一性不強，可感染人類或非人靈長類",
         "並不限定入侵年輕或老的紅血球",
-        "生活史中的裂殖體週期（schizogonic cycle）僅需24 小時",
+        "生活史中的裂殖體週期（schizogonic cycle）僅需 24 小時",
         "會在肝臟形成隱眠小體（hypnozoites）"
       ],
       "answers": [
@@ -858,10 +858,10 @@
       "number": 36,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "吳醫師想利用假說檢定來探討某個降血壓藥物是否能有效降低血壓，經隨機抽取100 位高血壓病患，測量其服藥前的血壓收縮壓，服藥滿三個月後再測量其血壓收縮壓，共得到200 筆血壓收縮壓資料。下列敘述何者最恰當？",
+      "stem": "吳醫師想利用假說檢定來探討某個降血壓藥物是否能有效降低血壓，經隨機抽取 100 位高血壓病患，測量其服藥前的血壓收縮壓，服藥滿三個月後再測量其血壓收縮壓，共得到 200 筆血壓收縮壓資料。下列敘述何者最恰當？",
       "options": [
-        "因為是隨機抽樣的高血壓病患，所以收集到的200 筆資料為互相獨立的資料",
-        "可以利用成對樣本的t（paired-t）檢定藥物是否有效，檢定的自由度為100+100-2=198",
+        "因為是隨機抽樣的高血壓病患，所以收集到的 200 筆資料為互相獨立的資料",
+        "可以利用成對樣本的 t（paired-t）檢定藥物是否有效，檢定的自由度為 100+100-2=198",
         "吳醫師的假說檢定不管是單尾或是雙尾檢定，都不會影響檢定統計值（test-statistic）",
         "要完成吳醫師的假說檢定必須先假設高血壓病患的血壓收縮壓服從常態分布"
       ],
@@ -882,7 +882,7 @@
       "number": 37,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "某醫師分析200 位成年人手部握力（grip strength，單位：Kg）與年齡（age，單位：歲）的關係，以手部握力為依變項（dependent variable），年齡為自變項（independent variable），估計簡單線性迴歸模式其截距項為26.8，斜率為 -0.25，則估計之簡單線性迴歸模式為何？",
+      "stem": "某醫師分析 200 位成年人手部握力（grip strength，單位：Kg）與年齡（age，單位：歲）的關係，以手部握力為依變項（dependent variable），年齡為自變項（independent variable），估計簡單線性迴歸模式其截距項為 26.8，斜率為 -0.25，則估計之簡單線性迴歸模式為何？",
       "options": [
         "手部握力=(26.8/200)-0.25×年齡",
         "年齡=-0.25+26.8×手部握力",
@@ -906,7 +906,7 @@
       "number": 38,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "某流感快篩的敏感度為60%，特異度為70%，對發燒病人篩檢的陰性預測值為80%，此流感快篩之陰性反應的人中估計得到流感的百分比為多少？",
+      "stem": "某流感快篩的敏感度為 60%，特異度為 70%，對發燒病人篩檢的陰性預測值為 80%，此流感快篩之陰性反應的人中估計得到流感的百分比為多少？",
       "options": [
         "40%",
         "30%",
@@ -1002,12 +1002,12 @@
       "number": 42,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "關於空氣品質，我國從2016 年12 月開始實施的空氣品質監測標準，採取空氣品質指標（air qualityindex，簡稱AQI）。下列有關AQI 之敘述，何者最不恰當？",
+      "stem": "關於空氣品質，我國從 2016 年 12 月開始實施的空氣品質監測標準，採取空氣品質指標（air qualityindex，簡稱 AQI）。下列有關 AQI 之敘述，何者最不恰當？",
       "options": [
         "測量的污染項目包含六種，分別是臭氧（O₃）、細懸浮微粒（PM₂.₅）、懸浮微粒（PM₁₀）、一氧化碳（CO）、二氧化硫（SO₂）及二氧化氮（NO₂）",
         "AQI 係依據空氣污染物的監測資料，將當日空氣污染物濃度值，以其對人體健康之影響程度，換算出各污染物之副指標值",
         "AQI 是以當日各污染物副指標值中之最小值，做為該測站當日之空氣品質指標值",
-        "當AQI 值大於100 時，表示空氣品質不良，對呼吸系統不好且較敏感之人會使其症狀惡化"
+        "當 AQI 值大於 100 時，表示空氣品質不良，對呼吸系統不好且較敏感之人會使其症狀惡化"
       ],
       "answers": [
         "C"
@@ -1028,8 +1028,8 @@
       "subject_status": "range",
       "stem": "有關作業環境測定，下列敘述何者最不恰當？",
       "options": [
-        "8 小時日時量平均容許濃度的意義是指在該濃度下，大部分的正常年輕人，每天工作8 小時，每週工作5天，終其一生不會發生不良的健康效應的濃度",
-        "我國短時間時量平均容許濃度，是指任何一次連續15 分鐘內的時量平均容許濃度不得超過的標準",
+        "8 小時日時量平均容許濃度的意義是指在該濃度下，大部分的正常年輕人，每天工作 8 小時，每週工作 5天，終其一生不會發生不良的健康效應的濃度",
+        "我國短時間時量平均容許濃度，是指任何一次連續 15 分鐘內的時量平均容許濃度不得超過的標準",
         "最高容許濃度是指任何時間均不能超過的最高容許濃度",
         "作業環境測定標準的意義，是作為職業病診斷標準"
       ],
@@ -1218,7 +1218,7 @@
       "number": 51,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "pKa=6 的弱酸性藥物，在pH 值為4 的酸性環境下，其離子型與非離子型藥物（[A⁻]：[HA]）的比例為何？",
+      "stem": "pKa=6 的弱酸性藥物，在 pH 值為 4 的酸性環境下，其離子型與非離子型藥物（[A⁻]：[HA]）的比例為何？",
       "options": [
         "1：10",
         "10：1",
@@ -1266,7 +1266,7 @@
       "number": 53,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "長春花生物鹼類（vinca alkaloids）抗腫瘤藥物中，vincristine 較vinblastine 更容易出現下列何種副作用？",
+      "stem": "長春花生物鹼類（vinca alkaloids）抗腫瘤藥物中，vincristine 較 vinblastine 更容易出現下列何種副作用？",
       "options": [
         "骨髓抑制",
         "禿頭",
@@ -1292,10 +1292,10 @@
       "subject_status": "range",
       "stem": "下列關於癌症治療之敘述，何者錯誤？",
       "options": [
-        "具有KRAS 突變的大腸直腸癌，以FOLFOX 與cetuximab 併用可以得到顯著療效",
-        "治療晚期或無法手術切除的肝癌，一般以sorafenib 作為單一藥物進行治療",
+        "具有 KRAS 突變的大腸直腸癌，以 FOLFOX 與 cetuximab 併用可以得到顯著療效",
+        "治療晚期或無法手術切除的肝癌，一般以 sorafenib 作為單一藥物進行治療",
         "gemcitabine 可使用於治療轉移性胰臟癌",
-        "erlotinib、afatinib 及osimertinib 皆可用於治療EGFR 突變的非小細胞肺癌"
+        "erlotinib、afatinib 及 osimertinib 皆可用於治療 EGFR 突變的非小細胞肺癌"
       ],
       "answers": [
         "A"
@@ -1316,10 +1316,10 @@
       "subject_status": "range",
       "stem": "下列關於血清素（serotonin）受體之敘述，何者錯誤？",
       "options": [
-        "活化5-HT_1B或5-HT_1D可減少cAMP 生成",
-        "活化腸道神經系統5-HT₄可增加腸道蠕動",
-        "活化5-HT₂受體與chemoreceptor reflex 作用有關",
-        "5-HT₃受體是ligand-gated Na⁺/K⁺ channel"
+        "活化 5-HT_1B或 5-HT_1D可減少 cAMP 生成",
+        "活化腸道神經系統 5-HT₄可增加腸道蠕動",
+        "活化 5-HT₂受體與 chemoreceptor reflex 作用有關",
+        "5-HT₃受體是 ligand-gated Na⁺/K⁺ channel"
       ],
       "answers": [
         "C"
@@ -1340,10 +1340,10 @@
       "subject_status": "range",
       "stem": "下列治療癌症抗體藥物之敘述，何者錯誤？",
       "options": [
-        "avelumab 主要結合在癌細胞上的PD-L1 表面蛋白",
-        "nivolumab 主要結合在T 淋巴細胞上的PD-1 表面蛋白",
-        "panitumumab 主要結合在大腸癌細胞表面的EGFR 蛋白",
-        "pertuzumab 主要結合在乳癌細胞表面的VEGFR 蛋白"
+        "avelumab 主要結合在癌細胞上的 PD-L1 表面蛋白",
+        "nivolumab 主要結合在 T 淋巴細胞上的 PD-1 表面蛋白",
+        "panitumumab 主要結合在大腸癌細胞表面的 EGFR 蛋白",
+        "pertuzumab 主要結合在乳癌細胞表面的 VEGFR 蛋白"
       ],
       "answers": [
         "D"
@@ -1362,9 +1362,9 @@
       "number": 57,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "有關erythropoietin 之敘述，下列何者錯誤？",
+      "stem": "有關 erythropoietin 之敘述，下列何者錯誤？",
       "options": [
-        "人體貧血時erythropoietin 合成會增加",
+        "人體貧血時 erythropoietin 合成會增加",
         "用於慢性腎疾和部分化療引發之貧血患者",
         "會產生血栓的副作用",
         "高血壓控制不良之患者可使用"
@@ -1410,10 +1410,10 @@
       "number": 59,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列關於repaglinide 之敘述，何者錯誤？",
+      "stem": "下列關於 repaglinide 之敘述，何者錯誤？",
       "options": [
         "用於控制餐後血糖波動",
-        "可用於對硫（sulfur）或磺脲類 (sulfonylurea）藥物嚴重過敏的第2 型糖尿病患者",
+        "可用於對硫（sulfur）或磺脲類 (sulfonylurea）藥物嚴重過敏的第 2 型糖尿病患者",
         "可單獨使用或與雙胍類（biguanides）藥物併用，以治療糖尿病",
         "不宜用於腎功能不全的患者和老年人"
       ],
@@ -1482,12 +1482,12 @@
       "number": 62,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何者為furosemide 產生利尿作用的主要機轉？",
+      "stem": "下列何者為 furosemide 產生利尿作用的主要機轉？",
       "options": [
-        "在亨利氏環上升支，抑制Na⁺/K⁺/2Cl–共同運送系統",
-        "在亨利氏環上升支，抑制Na⁺/Cl–共同運送系統",
-        "在近端腎小管，抑制Na⁺/K⁺/2Cl–共同運送系統",
-        "在近端腎小管，抑制Na⁺/Cl–共同運送系統"
+        "在亨利氏環上升支，抑制 Na⁺/K⁺/2Cl–共同運送系統",
+        "在亨利氏環上升支，抑制 Na⁺/Cl–共同運送系統",
+        "在近端腎小管，抑制 Na⁺/K⁺/2Cl–共同運送系統",
+        "在近端腎小管，抑制 Na⁺/Cl–共同運送系統"
       ],
       "answers": [
         "A"
@@ -1506,7 +1506,7 @@
       "number": 63,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列藥物中，何者不是藉由增加細胞內cGMP，而使血管擴張？",
+      "stem": "下列藥物中，何者不是藉由增加細胞內 cGMP，而使血管擴張？",
       "options": [
         "molsidomine",
         "bosentan",
@@ -1530,7 +1530,7 @@
       "number": 64,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列抗心律不整藥物中，何者不抑制K⁺ channel？",
+      "stem": "下列抗心律不整藥物中，何者不抑制 K⁺ channel？",
       "options": [
         "adenosine",
         "amiodarone",
@@ -1674,7 +1674,7 @@
       "number": 70,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列藥物中，何者不能抑制IL-1 訊息傳遞路徑，因此無法用於治療關節炎？",
+      "stem": "下列藥物中，何者不能抑制 IL-1 訊息傳遞路徑，因此無法用於治療關節炎？",
       "options": [
         "apremilast",
         "anakinra",
@@ -1698,7 +1698,7 @@
       "number": 71,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列cyclooxygenase（COX）的抑制藥物中，何者對COX-2 的選擇性最低？",
+      "stem": "下列 cyclooxygenase（COX）的抑制藥物中，何者對 COX-2 的選擇性最低？",
       "options": [
         "celecoxib",
         "etodolac",
@@ -1722,7 +1722,7 @@
       "number": 72,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何者最不適合用於治療bipolar disorders 之mania？",
+      "stem": "下列何者最不適合用於治療 bipolar disorders 之 mania？",
       "options": [
         "valproic acid",
         "lithium",
@@ -1748,10 +1748,10 @@
       "subject_status": "range",
       "stem": "下列嗎啡類藥物（opioids）及其受體的敘述，何者錯誤？",
       "options": [
-        "mu（μ）opioid receptors 是G_(i/o) protein-coupled receptors",
-        "opioid receptors 可以出現在pre-synaptic site 或是post-synaptic site",
-        "endorphins 和dynorphins 兩者都是內生性的opioids",
-        "tramadol 是kappa（κ）opioid receptor agonist"
+        "mu（μ）opioid receptors 是 G_(i/o) protein-coupled receptors",
+        "opioid receptors 可以出現在 pre-synaptic site 或是 post-synaptic site",
+        "endorphins 和 dynorphins 兩者都是內生性的 opioids",
+        "tramadol 是 kappa（κ）opioid receptor agonist"
       ],
       "answers": [
         "D"
@@ -1772,10 +1772,10 @@
       "subject_status": "range",
       "stem": "Paroxetine 可用於憂鬱症的治療，下列何者為該藥物主要的作用機制？",
       "options": [
-        "抑制serotonin 的回收",
-        "抑制norepinephrine 的回收",
-        "阻斷dopamine D₂受體",
-        "阻斷5-HT₂受體"
+        "抑制 serotonin 的回收",
+        "抑制 norepinephrine 的回收",
+        "阻斷 dopamine D₂受體",
+        "阻斷 5-HT₂受體"
       ],
       "answers": [
         "A"
@@ -1869,7 +1869,7 @@
       "stem": "關於馬凡氏症候群（Marfan syndrome）的敘述，下列何者最適當？",
       "options": [
         "最主要出現病變的器官為心臟血管系統、骨骼系統與神經系統",
-        "致病原因為形成第一型膠原纖維相關的基因COL1A1 和COL1A2 產生突變而引起",
+        "致病原因為形成第一型膠原纖維相關的基因 COL1A1 和 COL1A2 產生突變而引起",
         "轉化生長因子-β（transforming growth factor-β, TGF-β）的過度活化是馬凡氏症候群的成因之一",
         "螢光原位雜交法（fluorescent in situ hybridization）是最適合用來診斷馬凡氏症候群的檢驗工具"
       ],
@@ -1890,7 +1890,7 @@
       "number": 79,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "下列疾病中，何者一般被認為大部分是與T_H2 細胞的作用或反應有關？ћ蠕蟲類寄生蟲感染 ќ外因性過敏性鼻炎（allergic rhinitis） ѝ肉芽腫性發炎（granulomatous inflammation）",
+      "stem": "下列疾病中，何者一般被認為大部分是與 T_H2 細胞的作用或反應有關？ћ蠕蟲類寄生蟲感染 ќ外因性過敏性鼻炎（allergic rhinitis） ѝ肉芽腫性發炎（granulomatous inflammation）",
       "options": [
         "ћќѝ",
         "僅ћќ",
@@ -1938,10 +1938,10 @@
       "number": 81,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "紫外線（UV light）之致癌作用，主要是對於DNA 造成下列何種損傷？",
+      "stem": "紫外線（UV light）之致癌作用，主要是對於 DNA 造成下列何種損傷？",
       "options": [
         "形成嘧啶二聚體（pyrimidine dimer）",
-        "雙股DNA 斷裂（double-stranded DNA break）",
+        "雙股 DNA 斷裂（double-stranded DNA break）",
         "染色體非平衡性轉位（chromosome unbalanced translocation）",
         "基因擴增（gene amplification）"
       ],
@@ -1962,12 +1962,12 @@
       "number": 82,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "70 歲男性吃了生牛肉兩天後出現發燒、腹痛與出血性腹瀉，數天後他表現出少尿、水腫、出血、血尿與急性腎衰竭，糞便細菌培養出大腸桿菌，此大腸桿菌的血清型經鑑定後確定是O157:H7 。關於這個疾病，下列敘述何者最適當？",
+      "stem": "70 歲男性吃了生牛肉兩天後出現發燒、腹痛與出血性腹瀉，數天後他表現出少尿、水腫、出血、血尿與急性腎衰竭，糞便細菌培養出大腸桿菌，此大腸桿菌的血清型經鑑定後確定是 O157:H7 。關於這個疾病，下列敘述何者最適當？",
       "options": [
-        "血液中的ADAMTS13 下降是主要致病機制",
+        "血液中的 ADAMTS13 下降是主要致病機制",
         "血管內皮細胞受傷是致病主因",
         "凝血活酶時間（partial thromboplastin time）延長是疾病初期常見的變化",
-        "此病是因為產生Von Willebrand factor 的抗體所導致"
+        "此病是因為產生 Von Willebrand factor 的抗體所導致"
       ],
       "answers": [
         "B"
@@ -2010,7 +2010,7 @@
       "number": 84,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "下列何種疾病最可能藉由抑制前列腺素E2（prostaglandin E2）來治療？",
+      "stem": "下列何種疾病最可能藉由抑制前列腺素 E2（prostaglandin E2）來治療？",
       "options": [
         "開放動脈導管（patent ductus arteriosus）",
         "心房中膈缺損（atrial septal defect）",
@@ -2034,7 +2034,7 @@
       "number": 85,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "在骨髓切片中，骨髓母細胞（myeloblasts）占比為25%，病理診斷為何？",
+      "stem": "在骨髓切片中，骨髓母細胞（myeloblasts）占比為 25%，病理診斷為何？",
       "options": [
         "原發性骨髓纖維化（primary myelofibrosis）",
         "慢性骨髓性白血病（chronic myelogenous leukemia）",
@@ -2085,7 +2085,7 @@
       "stem": "下列有關惡性間皮瘤（malignant mesothelioma）的敘述，何者錯誤？",
       "options": [
         "與石棉暴露關係密切",
-        "常見BAP1 突變",
+        "常見 BAP1 突變",
         "最常發生於胸膜",
         "常造成遠端轉移"
       ],
@@ -2181,7 +2181,7 @@
       "stem": "下列關於胰臟炎的敘述何者錯誤？",
       "options": [
         "嚴重的急性胰臟炎是一種醫療急症。可導致瀰散性血管內凝血、水腫、急性呼吸窘迫、休克及急性腎小管壞死",
-        "PRSS1 和SPINK1 突變可誘導胰臟炎",
+        "PRSS1 和 SPINK1 突變可誘導胰臟炎",
         "在組織學中，慢性胰臟炎經常呈現廣泛的纖維化和殘留的蘭氏小島和導管",
         "慢性胰臟炎是一種可逆的變化"
       ],
@@ -2252,10 +2252,10 @@
       "subject_status": "range",
       "stem": "下列何種細胞基因異常最不可能發生在腎臟之乳突狀癌（papillary carcinoma）？",
       "options": [
-        "染色體3p 缺失（3p deletions）",
-        "三染色體7（trisomy 7）",
-        "三染色體17（trisomy 17）",
-        "男性病患之Y 染色體丟失（loss of Y）"
+        "染色體 3p 缺失（3p deletions）",
+        "三染色體 7（trisomy 7）",
+        "三染色體 17（trisomy 17）",
+        "男性病患之 Y 染色體丟失（loss of Y）"
       ],
       "answers": [
         "A"
@@ -2396,7 +2396,7 @@
       "number": 100,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "圖示是腦底Willis 氏環，其中有一處病變，最可能引發下列何者？",
+      "stem": "圖示是腦底 Willis 氏環，其中有一處病變，最可能引發下列何者？",
       "options": [
         "痴呆",
         "步態不穩、共濟失調",

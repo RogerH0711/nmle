@@ -19,7 +19,7 @@
       "number": 1,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "65 歲罹患糖尿病的男性因長期咳嗽、體重減輕及夜間盜汗就醫。經胸部X 光檢查發現雙側肺上葉有空洞性病變，痰液抹片檢查顯示抗酸性染色（acid-fast stain）為陽性。醫師進一步詢問病史，發現該患者年輕時曾與肺結核患者有密切接觸。下列何種免疫機制最可能使該患者在年輕時感染無明顯症狀，而經過多年後才發病？",
+      "stem": "65 歲罹患糖尿病的男性因長期咳嗽、體重減輕及夜間盜汗就醫。經胸部 X 光檢查發現雙側肺上葉有空洞性病變，痰液抹片檢查顯示抗酸性染色（acid-fast stain）為陽性。醫師進一步詢問病史，發現該患者年輕時曾與肺結核患者有密切接觸。下列何種免疫機制最可能使該患者在年輕時感染無明顯症狀，而經過多年後才發病？",
       "options": [
         "大型乾酪化肉芽腫（caseous granulomas）的形成因而抑制細菌的清除",
         "結核分枝桿菌的抗原快速突變以逃脫免疫系統辨識",
@@ -213,10 +213,10 @@
       "subject_status": "range",
       "stem": "下列關於梅毒檢驗之敘述，何者錯誤？",
       "options": [
-        "VDRL 與RPR 都屬於nontreponemal test，通常用於篩檢",
+        "VDRL 與 RPR 都屬於 nontreponemal test，通常用於篩檢",
         "Nontreponemal test 具有高敏感性的優點，但在下疳（chancre）時期常呈陰性",
-        "紅斑性狼瘡（systemic lupus erythematosus）患者nontreponemal test 和treponemal test 都可能出現偽陽性結果",
-        "血清treponemal test 在治療後抗體轉陰（seroreversion）的比例較nontreponemal test 高，適合做為疾病治療成效的指標"
+        "紅斑性狼瘡（systemic lupus erythematosus）患者 nontreponemal test 和 treponemal test 都可能出現偽陽性結果",
+        "血清 treponemal test 在治療後抗體轉陰（seroreversion）的比例較 nontreponemal test 高，適合做為疾病治療成效的指標"
       ],
       "answers": [
         "D"
@@ -237,7 +237,7 @@
       "subject_status": "range",
       "stem": "金黃色葡萄球菌（Staphylococcus aureus）對萬古黴素（vancomycin）高度抗藥性的主要機制為何？",
       "options": [
-        "獲得vanA 操縱組（operon），產生對萬古黴素低親和力的細胞壁肽聚糖（peptidoglycan）末端D-alanine-D-lactate",
+        "獲得 vanA 操縱組（operon），產生對萬古黴素低親和力的細胞壁肽聚糖（peptidoglycan）末端 D-alanine-D-lactate",
         "利用外排泵（efflux pump）主動將萬古黴素自細菌細胞質排出",
         "孔蛋白（porin）突變而減少萬古黴素進入細菌",
         "產生萬古黴素水解酶分解萬古黴素"
@@ -283,7 +283,7 @@
       "number": 12,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列何者可以在人類造成癌症？①腺病毒（adenovirus） ②單純疱疹病毒（herpes simplex virus） ③人類疱疹病毒4 型（human herpesvirus 4） ④人類疱疹病毒8 型（human herpesvirus 8） ⑤痘病毒（poxviruses） ⑥人類嗜T 淋巴細胞病毒1 型（human T-lymphotropic virus 1）",
+      "stem": "下列何者可以在人類造成癌症？①腺病毒（adenovirus） ②單純疱疹病毒（herpes simplex virus） ③人類疱疹病毒 4 型（human herpesvirus 4） ④人類疱疹病毒 8 型（human herpesvirus 8） ⑤痘病毒（poxviruses） ⑥人類嗜 T 淋巴細胞病毒 1 型（human T-lymphotropic virus 1）",
       "options": [
         "①③⑥",
         "②④⑤",
@@ -311,7 +311,7 @@
       "options": [
         "B 型肝炎病毒容易透過口糞傳染，主要來自受污染之海鮮食品",
         "C 型肝炎基因體與茲卡病毒（Zika virus）屬同一病毒家族",
-        "D 型肝炎病毒需要與E 型肝炎病毒在共同感染下誘發猛爆性肝炎",
+        "D 型肝炎病毒需要與 E 型肝炎病毒在共同感染下誘發猛爆性肝炎",
         "A 型肝炎病毒感染容易誘發孕婦死亡"
       ],
       "answers": [
@@ -361,9 +361,9 @@
       "stem": "下列關於病毒構造的敘述，何者錯誤？",
       "options": [
         "腸病毒（enterovirus）由殼體（capsid）包覆，因此酒精對其殺滅效果不佳",
-        "杯狀病毒科（caliciviridae）之基因組為雙股線性DNA（double-stranded linear DNA）",
+        "杯狀病毒科（caliciviridae）之基因組為雙股線性 DNA（double-stranded linear DNA）",
         "病毒套膜（envelope）的組成包含脂質、蛋白質、醣蛋白",
-        "彈狀病毒科（rhabdoviridae）之基因組為負股RNA（negative-sense RNA）"
+        "彈狀病毒科（rhabdoviridae）之基因組為負股 RNA（negative-sense RNA）"
       ],
       "answers": [
         "B"
@@ -387,7 +387,7 @@
         "病毒之潛伏性感染（latent infection）造成細胞之衰老（senescence）",
         "病毒流產性的感染（abortive infection）會造成細胞的死亡",
         "病毒感染，被轉型（transformation）的細胞即成為永生（immortalization）細胞",
-        "只有DNA 病毒才有可能將被感染的細胞轉型"
+        "只有 DNA 病毒才有可能將被感染的細胞轉型"
       ],
       "answers": [
         "C"
@@ -454,12 +454,12 @@
       "number": 19,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "關於major histocompatibility complex（MHC，包括class I 與class II），下列敘述何者最適當？",
+      "stem": "關於 major histocompatibility complex（MHC，包括 class I 與 class II），下列敘述何者最適當？",
       "options": [
         "它們都是由單一基因（monogeny）構成",
-        "具有三種主要的MHC class I 基因",
-        "具有allelic exclusion 的特點",
-        "IL-5 可以促進MHC class II 表現在抗原呈獻細胞表面上"
+        "具有三種主要的 MHC class I 基因",
+        "具有 allelic exclusion 的特點",
+        "IL-5 可以促進 MHC class II 表現在抗原呈獻細胞表面上"
       ],
       "answers": [
         "B"
@@ -478,12 +478,12 @@
       "number": 20,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "過量表現細胞激素BAFF 的個體，發生自體免疫疾病Sjögren's syndrome（又名乾燥症）的機率會上升，乾燥症以破壞人體外分泌腺體，如淚腺及唾液腺的症狀最顯著。檢查BAFF 過量之乾燥症患者的免疫系統及血液，預期最可能發現下列何種異狀？",
+      "stem": "過量表現細胞激素 BAFF 的個體，發生自體免疫疾病 Sjögren's syndrome（又名乾燥症）的機率會上升，乾燥症以破壞人體外分泌腺體，如淚腺及唾液腺的症狀最顯著。檢查 BAFF 過量之乾燥症患者的免疫系統及血液，預期最可能發現下列何種異狀？",
       "options": [
-        "骨髓內發育中的pre-B 細胞增加",
-        "從骨髓製造出來的immature B 細胞增加",
-        "血液中自體反應性（autoreactive）的成熟B 細胞增加",
-        "血液中自體反應性（autoreactive）的成熟T 細胞增加"
+        "骨髓內發育中的 pre-B 細胞增加",
+        "從骨髓製造出來的 immature B 細胞增加",
+        "血液中自體反應性（autoreactive）的成熟 B 細胞增加",
+        "血液中自體反應性（autoreactive）的成熟 T 細胞增加"
       ],
       "answers": [
         "C"
@@ -502,7 +502,7 @@
       "number": 21,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "有關T 細胞次群生成及其轉錄因子的配對，下列何者最適當？",
+      "stem": "有關 T 細胞次群生成及其轉錄因子的配對，下列何者最適當？",
       "options": [
         "T_H1：Tbet",
         "T_H2：RORγt",
@@ -526,7 +526,7 @@
       "number": 22,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "A 型肝炎病毒藉由糞口傳染途徑，造成病人急性肝炎症狀。檢測病人血液中專一性對抗A 型肝炎病毒的抗體，當發現下列何種類型的抗體濃度最高，最可能顯示該病人剛遭受該病毒感染？",
+      "stem": "A 型肝炎病毒藉由糞口傳染途徑，造成病人急性肝炎症狀。檢測病人血液中專一性對抗 A 型肝炎病毒的抗體，當發現下列何種類型的抗體濃度最高，最可能顯示該病人剛遭受該病毒感染？",
       "options": [
         "IgA",
         "IgE",
@@ -576,10 +576,10 @@
       "subject_status": "range",
       "stem": "不同類型的抗體具有不同的功能，而這些抗體是經由抗體類型轉換（isotype switch）的機制產生，下列敘述何者最不適當？",
       "options": [
-        "活化的B 細胞在生發中心（germinal center）進行抗體類型轉換，而且這個過程需要AID（activation-induced cytidine deaminase）酵素的參與進行DNA 重組",
-        "施打疫苗的目的除了增加抗體的質和量外，也促進抗體從IgM 轉換到IgG 及其他的抗體類型，提升免疫力",
-        "活化的B 細胞在進行抗體類型轉換的過程會受到細胞激素的影響，比如IFN-γ會促進IgG3 及IgG2a 的轉換，而IL-4 則是促進IgG1 及IgA 的轉換",
-        "B 細胞和輔助型T 細胞的交互作用對於抗體類型轉換的發生十分重要，如果CD40L 或是CD40 的缺失會造成B細胞和T 細胞無法交互作用而引起IgM 過多症候群（hyper IgM syndrome）"
+        "活化的 B 細胞在生發中心（germinal center）進行抗體類型轉換，而且這個過程需要 AID（activation-induced cytidine deaminase）酵素的參與進行 DNA 重組",
+        "施打疫苗的目的除了增加抗體的質和量外，也促進抗體從 IgM 轉換到 IgG 及其他的抗體類型，提升免疫力",
+        "活化的 B 細胞在進行抗體類型轉換的過程會受到細胞激素的影響，比如 IFN-γ會促進 IgG3 及 IgG2a 的轉換，而 IL-4 則是促進 IgG1 及 IgA 的轉換",
+        "B 細胞和輔助型 T 細胞的交互作用對於抗體類型轉換的發生十分重要，如果 CD40L 或是 CD40 的缺失會造成 B細胞和 T 細胞無法交互作用而引起 IgM 過多症候群（hyper IgM syndrome）"
       ],
       "answers": [
         "C"
@@ -598,7 +598,7 @@
       "number": 25,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列何者不屬於mucosa-associated lymphoid tissue（MALT）？",
+      "stem": "下列何者不屬於 mucosa-associated lymphoid tissue（MALT）？",
       "options": [
         "gut-associated lymphoid tissue（GALT）",
         "nasal-associated lymphoid tissue（NALT）",
@@ -625,11 +625,11 @@
       "number": 26,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "大明去爬山，一時興起用手去觸摸路旁植物的葉子，第2 天之後，發現手背很癢，並開始出現一些水泡與紅腫現象，醫師診斷出是過敏反應，下列何者是最適當的敘述？",
+      "stem": "大明去爬山，一時興起用手去觸摸路旁植物的葉子，第 2 天之後，發現手背很癢，並開始出現一些水泡與紅腫現象，醫師診斷出是過敏反應，下列何者是最適當的敘述？",
       "options": [
         "屬於第三型過敏反應",
-        "過度活化之T_H1 與CD8 T 細胞所致",
-        "IL-4 與IL-5 這兩種細胞激素被大量分泌",
+        "過度活化之 T_H1 與 CD8 T 細胞所致",
+        "IL-4 與 IL-5 這兩種細胞激素被大量分泌",
         "葉片上油脂物質即為抗原，直接活化體內免疫反應所致"
       ],
       "answers": [
@@ -649,12 +649,12 @@
       "number": 27,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "自主性免疫調節因子（AIRE）是一種轉錄調節因子，它能夠促進胸腺基質細胞表達某些「組織特異性」蛋白質。在T 細胞的發育過程中，這個機制提供了T 細胞對這些組織特異自體抗原建立中樞免疫耐受性。在AIRE中發生缺失突變的病患（一種稱為APECED 的疾病）會出現一系列症狀，其中一些涉及到自體免疫攻擊分泌腺體。從這樣的分析觀察中，下列敘述何者最適當？",
+      "stem": "自主性免疫調節因子（AIRE）是一種轉錄調節因子，它能夠促進胸腺基質細胞表達某些「組織特異性」蛋白質。在 T 細胞的發育過程中，這個機制提供了 T 細胞對這些組織特異自體抗原建立中樞免疫耐受性。在 AIRE中發生缺失突變的病患（一種稱為 APECED 的疾病）會出現一系列症狀，其中一些涉及到自體免疫攻擊分泌腺體。從這樣的分析觀察中，下列敘述何者最適當？",
       "options": [
-        "AIRE 所調控的基因表現，對於中樞免疫耐受性移除對某些組織產生反應的自體免疫T 細胞上至關重要",
-        "受到自體免疫攻擊的分泌腺體肇因於由AIRE 所調控的高量自體抗原表現",
-        "AIRE 的表現抑制T 細胞的發育",
-        "AIRE 過度表現時直接造成T 細胞的活化，因此引發自體免疫的症狀"
+        "AIRE 所調控的基因表現，對於中樞免疫耐受性移除對某些組織產生反應的自體免疫 T 細胞上至關重要",
+        "受到自體免疫攻擊的分泌腺體肇因於由 AIRE 所調控的高量自體抗原表現",
+        "AIRE 的表現抑制 T 細胞的發育",
+        "AIRE 過度表現時直接造成 T 細胞的活化，因此引發自體免疫的症狀"
       ],
       "answers": [
         "A"
@@ -673,12 +673,12 @@
       "number": 28,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "有關毒殺T 細胞抗原4（CTLA-4）之作用，下列敘述何者最不適當？",
+      "stem": "有關毒殺 T 細胞抗原 4（CTLA-4）之作用，下列敘述何者最不適當？",
       "options": [
-        "與CD28 競爭相同的配體（ligand）",
+        "與 CD28 競爭相同的配體（ligand）",
         "可以傳遞共同刺激訊息（co-stimulatory signals）到細胞內",
-        "可與CD80 結合",
-        "可與CD86 結合"
+        "可與 CD80 結合",
+        "可與 CD86 結合"
       ],
       "answers": [
         "B"
@@ -795,9 +795,9 @@
       "subject_status": "range",
       "stem": "有關痢疾阿米巴（Entamoeba histolytica）的診斷，下列何者錯誤？",
       "options": [
-        "針對肝膿瘍患者可選擇使用已商品化之ELISA 抗體診斷試劑組合",
+        "針對肝膿瘍患者可選擇使用已商品化之 ELISA 抗體診斷試劑組合",
         "於急性下痢患者的糞便中主要發現具有感染性的囊體（cysts）",
-        "利用PCR 技術可鑑別該寄生蟲及迪斯帕阿米巴（E. dispar）",
+        "利用 PCR 技術可鑑別該寄生蟲及迪斯帕阿米巴（E. dispar）",
         "可於患者肛門潰瘍周圍組織切片發現活動體（trophozoites）"
       ],
       "answers": [
@@ -820,7 +820,7 @@
       "stem": "有關非洲錐蟲（African trypanosomes）的敘述，下列何者最為適當？",
       "options": [
         "有關布氏羅德西亞錐蟲（Trypanosoma brucei rhodesiense）的毒力（virulence）決定於寄生蟲與受感染人類的基因型（genotype）之交互作用",
-        "受感染者會在頸部與鼠蹊部位出現淋巴結的水腫，臨床稱為Jericho boil",
+        "受感染者會在頸部與鼠蹊部位出現淋巴結的水腫，臨床稱為 Jericho boil",
         "當錐蟲被病媒（vector）攝入後，蟲體細胞膜上的前環素蛋白（procyclin）會被變異表面醣蛋白（variantsurface glycoprotein）所取代，以逃避宿主的免疫攻擊",
         "在許多人類罹患非洲錐蟲症的案例中，蟲體入侵神經系統大多發生在感染初期，因此導致昏睡症（sleepingsickness）"
       ],
@@ -865,7 +865,7 @@
       "number": 36,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "兩個獨立樣本之樣本數分別為19 與27，變異數（variance）分別為1.5 與1.7。若此二獨立樣本之母體的變異數相等，則母體變異數的估計值最接近下列何者？",
+      "stem": "兩個獨立樣本之樣本數分別為 19 與 27，變異數（variance）分別為 1.5 與 1.7。若此二獨立樣本之母體的變異數相等，則母體變異數的估計值最接近下列何者？",
       "options": [
         "1.6",
         "2.0",
@@ -889,11 +889,11 @@
       "number": 37,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "依據我國111 年死亡統計結果，惡性腫瘤、心臟疾病與嚴重特殊傳染性肺炎（COVID-19）居主要死因前三位，嚴重特殊傳染性肺炎（COVID-19）由110 年19 名往前至第3 名。111 年死亡人數計20 萬8,438 人，較110 年增加2 萬4,266 人；死亡率為每十萬人口893.8 人，增加13.9％；以WHO 2000 年世界人口結構調整後之標準化死亡率為每十萬人口443.9 人，增加9.5％。增加原因在於老年人口增加以及新進入之死因影響。下列何者錯誤？",
+      "stem": "依據我國 111 年死亡統計結果，惡性腫瘤、心臟疾病與嚴重特殊傳染性肺炎（COVID-19）居主要死因前三位，嚴重特殊傳染性肺炎（COVID-19）由 110 年 19 名往前至第 3 名。111 年死亡人數計 20 萬 8,438 人，較110 年增加 2 萬 4,266 人；死亡率為每十萬人口 893.8 人，增加 13.9％；以 WHO 2000 年世界人口結構調整後之標準化死亡率為每十萬人口 443.9 人，增加 9.5％。增加原因在於老年人口增加以及新進入之死因影響。下列何者錯誤？",
       "options": [
         "111 年度總死亡率為該年度死亡人數除以年初人口數",
         "標準化死亡率是指以特定的人口結構以及各年齡層死亡率來計算調整後死亡率",
-        "111 年度死亡率較110 年度增加的原因主要受COVID-19 疫情及人口老化影響",
+        "111 年度死亡率較 110 年度增加的原因主要受 COVID-19 疫情及人口老化影響",
         "疾病別死亡率是指該年度死於特定疾病別的死亡率"
       ],
       "answers": [
@@ -937,12 +937,12 @@
       "number": 39,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "收集800 位胃食道逆流症病人資料，調查其胃食道逆流症類型（分為A、B、C 三類型）與肥胖狀態（分為非肥胖、肥胖），利用此資料欲分析胃食道逆流症類型與肥胖之關係，採用下列何者統計方法分析最適當？",
+      "stem": "收集 800 位胃食道逆流症病人資料，調查其胃食道逆流症類型（分為 A、B、C 三類型）與肥胖狀態（分為非肥胖、肥胖），利用此資料欲分析胃食道逆流症類型與肥胖之關係，採用下列何者統計方法分析最適當？",
       "options": [
         "變異數分析（Analysis of Variance, ANOVA）",
         "對數等級檢定（Log rank test）",
         "卡方檢定（Chi-square test）",
-        "雙樣本t 檢定（Two-sample t-test）"
+        "雙樣本 t 檢定（Two-sample t-test）"
       ],
       "answers": [
         "C"
@@ -1035,7 +1035,7 @@
       "subject_status": "range",
       "stem": "關於環境毒性化學物質的敘述，下列何者最不適當？",
       "options": [
-        "Cr⁶⁺的毒性通常較Cr³⁺強",
+        "Cr⁶⁺的毒性通常較 Cr³⁺強",
         "三氯乙烯廣泛用於乾洗劑",
         "四氯化碳具有肝臟毒性",
         "甲苯的分子量較苯為大，所以毒性也比苯更強"
@@ -1105,7 +1105,7 @@
       "number": 46,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "提供65 歲以上年長者公費肺炎鏈球菌疫苗注射，屬於公共衛生三段五級預防策略中那一級？",
+      "stem": "提供 65 歲以上年長者公費肺炎鏈球菌疫苗注射，屬於公共衛生三段五級預防策略中那一級？",
       "options": [
         "第一級預防策略",
         "第二級預防策略",
@@ -1132,7 +1132,7 @@
       "stem": "下列有關健康促進與衛生教育介入方案「評價（evaluation）」的敘述，何者最不適當？",
       "options": [
         "進行評價工作，需要與計畫的目標呼應，其結果有助於瞭解計畫的效用（effectiveness）、效率（efficiency）與功效（efficacy）",
-        "依據PRECEDE-PROCEED 模式，評價可以分為過程評價（process evaluation）、衝擊評價（impact evaluation）及結果評價（outcome evaluation）",
+        "依據 PRECEDE-PROCEED 模式，評價可以分為過程評價（process evaluation）、衝擊評價（impact evaluation）及結果評價（outcome evaluation）",
         "總結性評價（summative evaluation）是從計畫擬定、發展一直到計畫執行結束所進行的一系列監測",
         "相較於結果評價（outcome evaluation），衝擊評價（impact evaluation）所需要的時間較短，可以觀察到計畫的立即效果，如認知或信念的改變"
       ],
@@ -1249,7 +1249,7 @@
       "number": 52,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何者是降血糖藥物sulfonylureas 於胰臟β細胞膜上的作用標的？",
+      "stem": "下列何者是降血糖藥物 sulfonylureas 於胰臟β細胞膜上的作用標的？",
       "options": [
         "potassium channel",
         "calcium channel",
@@ -1273,11 +1273,11 @@
       "number": 53,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列關於pilocarpine 的敘述，何者最不適當？",
+      "stem": "下列關於 pilocarpine 的敘述，何者最不適當？",
       "options": [
         "口服使用易產生腹瀉的副作用",
         "可刺激睫狀體（ciliary body）收縮，幫助房水（aqueous humor）排出，因此可用於治療青光眼（glaucoma）",
-        "可刺激唾液分泌，可用於緩解Sjögren syndrome 病患的症狀",
+        "可刺激唾液分泌，可用於緩解 Sjögren syndrome 病患的症狀",
         "口服可治療膀胱過動症"
       ],
       "answers": [
@@ -1299,10 +1299,10 @@
       "subject_status": "range",
       "stem": "下列有關骨骼肌鬆弛劑作用機轉之敘述，何者錯誤？",
       "options": [
-        "diazepam 活化中樞神經之GABA_A receptor",
-        "baclofen 活化中樞神經之GABA_B receptor",
+        "diazepam 活化中樞神經之 GABA_A receptor",
+        "baclofen 活化中樞神經之 GABA_B receptor",
         "tizanidine 拮抗中樞神經之α₂-adrenoceptor",
-        "dantrolene 抑制骨骼肌細胞內之ryanodine receptor channel"
+        "dantrolene 抑制骨骼肌細胞內之 ryanodine receptor channel"
       ],
       "answers": [
         "C"
@@ -1350,10 +1350,10 @@
       "subject_status": "range",
       "stem": "下列關於治療乳癌第二期或第三期病患之敘述，何者錯誤？",
       "options": [
-        "術後之停經婦女可以先使用tamoxifen，之後接續以anastrozole 治療",
+        "術後之停經婦女可以先使用 tamoxifen，之後接續以 anastrozole 治療",
         "cyclophosphamide、methotrexate、fluorouracil 可做為輔助性化療（adjuvant chemotherapy）",
-        "在癌組織過度表現HER-2 情況下，trastuzumab 可增加anthracycline 及taxane 輔助性化療效益",
-        "letrozole 及anastrozole 皆能輔助治療缺乏雌激素受體及黃體素受體表現的癌組織"
+        "在癌組織過度表現 HER-2 情況下，trastuzumab 可增加 anthracycline 及 taxane 輔助性化療效益",
+        "letrozole 及 anastrozole 皆能輔助治療缺乏雌激素受體及黃體素受體表現的癌組織"
       ],
       "answers": [
         "D"
@@ -1376,8 +1376,8 @@
       "options": [
         "chloroquine 不宜用於乾癬症病患",
         "chloroquine 避免與含鈣及鎂制酸劑同時服用",
-        "對chloroquine 產生抗藥性之惡性瘧原蟲，可用mefloquine 治療",
-        "對於已經投與mefloquine 治療原蟲者，可併用quinine 加強治療效益"
+        "對 chloroquine 產生抗藥性之惡性瘧原蟲，可用 mefloquine 治療",
+        "對於已經投與 mefloquine 治療原蟲者，可併用 quinine 加強治療效益"
       ],
       "answers": [
         "D"
@@ -1396,7 +1396,7 @@
       "number": 58,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何者不是抗癌藥物vincristine 之副作用？",
+      "stem": "下列何者不是抗癌藥物 vincristine 之副作用？",
       "options": [
         "姿勢性低血壓",
         "腹瀉",
@@ -1420,7 +1420,7 @@
       "number": 59,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列藥物中，何者為ADP P2Y₁₂ receptor 拮抗劑，可抑制血小板凝集活性？",
+      "stem": "下列藥物中，何者為 ADP P2Y₁₂ receptor 拮抗劑，可抑制血小板凝集活性？",
       "options": [
         "abciximab",
         "alteplase",
@@ -1444,7 +1444,7 @@
       "number": 60,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何種藥物引發出血問題時，最適合使用andexanet alfa 反轉（reversal）其抗凝血作用？",
+      "stem": "下列何種藥物引發出血問題時，最適合使用 andexanet alfa 反轉（reversal）其抗凝血作用？",
       "options": [
         "apixaban",
         "dabigatran",
@@ -1468,7 +1468,7 @@
       "number": 61,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列治療多發性硬化症（multiple sclerosis）藥物中，何者之主要作用機制為調節細胞上的鞘胺酸1–磷酸鹽（sphingosine 1-phosphate）受體，以阻斷淋巴球由淋巴結滲出，並減低淋巴球細胞在中樞神經系統之數量？",
+      "stem": "下列治療多發性硬化症（multiple sclerosis）藥物中，何者之主要作用機制為調節細胞上的鞘胺酸 1–磷酸鹽（sphingosine 1-phosphate）受體，以阻斷淋巴球由淋巴結滲出，並減低淋巴球細胞在中樞神經系統之數量？",
       "options": [
         "interferon beta",
         "glatiramer acetate",
@@ -1540,10 +1540,10 @@
       "number": 64,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列關於chlorothiazide 的敘述，何者錯誤？",
+      "stem": "下列關於 chlorothiazide 的敘述，何者錯誤？",
       "options": [
         "主要作用部位在近端腎小管",
-        "可抑制Na⁺/Cl–共同運送系統",
+        "可抑制 Na⁺/Cl–共同運送系統",
         "可增加鈣離子再吸收",
         "具有碳酸酐酶的抑制作用"
       ],
@@ -1588,12 +1588,12 @@
       "number": 66,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列有關強心劑digitalis 的敘述，何者錯誤？",
+      "stem": "下列有關強心劑 digitalis 的敘述，何者錯誤？",
       "options": [
         "除心律不整的副作用外，也會產生噁心、嘔吐、腹瀉等問題",
-        "可能引發動作電位出現early after-depolarizations",
+        "可能引發動作電位出現 early after-depolarizations",
         "治療指數（therapeutic index）小",
-        "與loop diuretics 合用時，易產生心臟毒性"
+        "與 loop diuretics 合用時，易產生心臟毒性"
       ],
       "answers": [
         "B"
@@ -1636,7 +1636,7 @@
       "number": 68,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列藥物中，何者屬於methylxanthines，能導致氣管平滑肌舒張，但不會拮抗adenosine 之作用？",
+      "stem": "下列藥物中，何者屬於 methylxanthines，能導致氣管平滑肌舒張，但不會拮抗 adenosine 之作用？",
       "options": [
         "tiotropium",
         "enprofylline",
@@ -1663,7 +1663,7 @@
       "number": 69,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "病人做大腸內視鏡檢查前，下列何種藥物最常配合polyethylene glycol，用來清理大腸？",
+      "stem": "病人做大腸內視鏡檢查前，下列何種藥物最常配合 polyethylene glycol，用來清理大腸？",
       "options": [
         "bisacodyl",
         "erythromycin",
@@ -1687,7 +1687,7 @@
       "number": 70,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列藥物中，何者可將尿酸（uric acid）轉變成allantoin 而排出，用於治療痛風？",
+      "stem": "下列藥物中，何者可將尿酸（uric acid）轉變成 allantoin 而排出，用於治療痛風？",
       "options": [
         "probenecid",
         "pegloticase",
@@ -1711,7 +1711,7 @@
       "number": 71,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列藥物中，何者是第二代bradykinin B₂ receptor 拮抗劑，具有治療遺傳血管性水腫（hereditaryangioedema）的作用？",
+      "stem": "下列藥物中，何者是第二代 bradykinin B₂ receptor 拮抗劑，具有治療遺傳血管性水腫（hereditaryangioedema）的作用？",
       "options": [
         "aliskiren",
         "captopril",
@@ -1735,7 +1735,7 @@
       "number": 72,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何種藥物，若用於治療小孩因病毒感染所引起的發燒，最容易產生Reye syndrome？",
+      "stem": "下列何種藥物，若用於治療小孩因病毒感染所引起的發燒，最容易產生 Reye syndrome？",
       "options": [
         "acetaminophen",
         "ibuprofen",
@@ -1759,12 +1759,12 @@
       "number": 73,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列關於benzodiazepines 之敘述，何者錯誤？",
+      "stem": "下列關於 benzodiazepines 之敘述，何者錯誤？",
       "options": [
-        "作用在type A GABA 受體上",
-        "與GABA 受體之結合位點是在α subunit 和β subunit 之間",
-        "於GABA 不存在的情況下，無法直接開啟GABA 受體",
-        "flurazepam 的血中半衰期比alprazolam 長"
+        "作用在 type A GABA 受體上",
+        "與 GABA 受體之結合位點是在α subunit 和β subunit 之間",
+        "於 GABA 不存在的情況下，無法直接開啟 GABA 受體",
+        "flurazepam 的血中半衰期比 alprazolam 長"
       ],
       "answers": [
         "B"
@@ -1882,8 +1882,8 @@
       "stem": "薛格連氏症候群（Sjögren syndrome）具備下列何種特徵？",
       "options": [
         "腎絲球病變是常見的病變",
-        "anti-SS-A 或anti-SS-B 抗體是此病的專一性自體抗體",
-        "最常見併發的惡性淋巴瘤是T 細胞淋巴瘤",
+        "anti-SS-A 或 anti-SS-B 抗體是此病的專一性自體抗體",
+        "最常見併發的惡性淋巴瘤是 T 細胞淋巴瘤",
         "類風濕因子（rheumatoid factor）陽性常見於此病"
       ],
       "answers": [
@@ -1927,7 +1927,7 @@
       "number": 80,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "臺灣這20 年來，子宮頸癌死亡率逐年穩定下降的最重要原因是：",
+      "stem": "臺灣這 20 年來，子宮頸癌死亡率逐年穩定下降的最重要原因是：",
       "options": [
         "子宮頸抹片（Pap smear）檢查的普及",
         "人類乳突病毒（human papillomavirus）疫苗的發展",
@@ -2076,7 +2076,7 @@
         "可發生在臟側肋膜（visceral pleura）或體側肋膜（parietal pleura）",
         "大多數病人可存活超過兩年",
         "鑑別診斷包含轉移到肋膜的肺腺癌，可用免疫組織化學染色來幫助診斷",
-        "常見突變的基因有CDKN2A、BAP1、NF2"
+        "常見突變的基因有 CDKN2A、BAP1、NF2"
       ],
       "answers": [
         "B"
@@ -2169,10 +2169,10 @@
       "subject_status": "range",
       "stem": "關於胃淋巴瘤，下列敘述何者最不適當？",
       "options": [
-        "胃最常見的淋巴瘤種類是淋巴結外邊緣區B 細胞淋巴瘤（extranodal marginal zone B-cell lymphoma）",
-        "幽門螺旋桿菌感染是胃MALT 瘤（MALToma）最常見的誘發因素",
-        "胃MALT 瘤（MALToma）轉化為瀰漫性大B 細胞淋巴瘤（diffuse large B-cell lymphoma）的情況通常與p53 及p16 的失活（inactivation）有關",
-        "胃MALT 瘤（MALToma）相關的最常見基因易位是t(9;22)(q21;q21)"
+        "胃最常見的淋巴瘤種類是淋巴結外邊緣區 B 細胞淋巴瘤（extranodal marginal zone B-cell lymphoma）",
+        "幽門螺旋桿菌感染是胃 MALT 瘤（MALToma）最常見的誘發因素",
+        "胃 MALT 瘤（MALToma）轉化為瀰漫性大 B 細胞淋巴瘤（diffuse large B-cell lymphoma）的情況通常與p53 及 p16 的失活（inactivation）有關",
+        "胃 MALT 瘤（MALToma）相關的最常見基因易位是 t(9;22)(q21;q21)"
       ],
       "answers": [
         "D"
@@ -2193,10 +2193,10 @@
       "subject_status": "range",
       "stem": "下列對於第一型自體免疫胰臟炎（type 1 autoimmune pancreatitis）的敘述，何者最不適當？",
       "options": [
-        "常出現CFTR 或PRSS1 的突變",
+        "常出現 CFTR 或 PRSS1 的突變",
         "許多漿細胞（plasma cell）浸潤及纖維化",
         "常見靜脈炎（phlebitis）的表現",
-        "與IgG4 相關疾病（IgG4-related disease）有關"
+        "與 IgG4 相關疾病（IgG4-related disease）有關"
       ],
       "answers": [
         "A"
@@ -2265,7 +2265,7 @@
       "subject_status": "range",
       "stem": "關於原發性膜性腎病變（membranous nephropathy），下列敘述何者正確？",
       "options": [
-        "原發性膜性腎病變中，大多數病人體內可測到針對磷脂酶A2 受體（phospholipase A2 receptor）自體抗體",
+        "原發性膜性腎病變中，大多數病人體內可測到針對磷脂酶 A2 受體（phospholipase A2 receptor）自體抗體",
         "次發性膜性腎病變，誘發原因包含感染、惡性腫瘤、藥物等，大多數病人體內可偵測到針對基底膜的自體抗體",
         "光學顯微鏡下可見腎絲球血管壁呈現銳角狀分叉，並合併有膈細胞（mesangial cells）明顯增生",
         "電子顯微鏡下可見免疫沉澱物主要沉著於膈細胞（mesangial cells）下方，造成基底膜增厚"
@@ -2290,7 +2290,7 @@
       "stem": "有關睪丸腫瘤的描述，下列何者正確？",
       "options": [
         "單側隱睪症病人的雙側睪丸罹患生殖細胞腫瘤的風險增加",
-        "大於60 歲的男性，最常見的睪丸腫瘤是精原細胞性腫瘤（spermatocytic tumor）",
+        "大於 60 歲的男性，最常見的睪丸腫瘤是精原細胞性腫瘤（spermatocytic tumor）",
         "兒童的睪丸畸胎瘤（teratoma）病灶常可見到原位生殖細胞瘤（germ cell neoplasia in situ）",
         "畸胎瘤（teratoma）是兒童最常見的生殖細胞腫瘤"
       ],
@@ -2360,7 +2360,7 @@
       "number": 98,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "下列皮膚水泡性疾病，何者是以IgA 沿表皮與真皮層交界分布為主要診斷特徵？",
+      "stem": "下列皮膚水泡性疾病，何者是以 IgA 沿表皮與真皮層交界分布為主要診斷特徵？",
       "options": [
         "pemphigus",
         "bullous pemphigoid",
@@ -2389,7 +2389,7 @@
       "subject_status": "range",
       "stem": "下列有關庫魯斑塊（Kuru plaques）的敘述，何者最不適當？",
       "options": [
-        "最常為Aβ蛋白質沉積",
+        "最常為 Aβ蛋白質沉積",
         "可能與克雅氏病（Creutzfeldt-Jakob disease）有關",
         "剛果紅（Congo red）染色可呈現陽性反應",
         "較常發現於小腦"
@@ -2416,7 +2416,7 @@
         "大多屬於良性腫瘤",
         "較少見於小孩",
         "懷孕時受到黃體素（progesterone）影響，腫瘤生長較慢",
-        "可能與第22 對染色體缺失有關"
+        "可能與第 22 對染色體缺失有關"
       ],
       "answers": [
         "C"

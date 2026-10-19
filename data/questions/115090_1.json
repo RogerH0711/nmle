@@ -814,7 +814,7 @@
       "stem": "下列關於胃（stomach）發育的敘述，何者正確？",
       "options": [
         "一開始右側開始膨大，之後左側前方發育快於後方，因而產生胃大彎（greater curvature）",
-        "發育時會逆時針旋轉180 度，使頭端移至右下側，而尾端移至左下側",
+        "發育時會逆時針旋轉 180 度，使頭端移至右下側，而尾端移至左下側",
         "原始背側胃繫膜（primordial dorsal mesogastrium）因胃旋轉被帶至左側，形成網膜囊（omentalbursa）",
         "胃部發育不正常很普遍，常見於女嬰，且多為幽門閉鎖（pyloric atresia）的症狀"
       ],
@@ -1123,7 +1123,7 @@
       "number": 47,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "在正常生理狀況下，若將細胞外鈉或鉀離子濃度分別提高2 mM，在其他條件不變下，關於此兩種處理對細胞膜靜止電位產生的影響，下列何者最可能發生？",
+      "stem": "在正常生理狀況下，若將細胞外鈉或鉀離子濃度分別提高 2 mM，在其他條件不變下，關於此兩種處理對細胞膜靜止電位產生的影響，下列何者最可能發生？",
       "options": [
         "提高鈉離子濃度較提高鉀離子濃度會造成更大的膜電位變化，而提高鉀離子濃度本身會造成細胞膜過極化（hyperpolarization）",
         "提高鈉離子濃度較提高鉀離子濃度會造成更大的膜電位變化，而提高鉀離子濃度本身會造成細胞膜去極化（depolarization）",
@@ -1199,7 +1199,7 @@
       "options": [
         "乙醯膽鹼",
         "正腎上腺素",
-        "神經胜肽Y（neuropeptide Y）",
+        "神經胜肽 Y（neuropeptide Y）",
         "食慾素（orexin）"
       ],
       "answers": [
@@ -1291,12 +1291,12 @@
       "number": 54,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "下列何者最符合傳遞slow pain 的神經纖維所具有之特性？",
+      "stem": "下列何者最符合傳遞 slow pain 的神經纖維所具有之特性？",
       "options": [
-        "因傳導速度慢，所以較fast pain 能精確定位疼痛點",
-        "釋出的傳導物質通常為glutamate 及substance P",
-        "傳入神經纖維為無髓鞘的A-beta 纖維",
-        "傳入神經纖維為具髓鞘的C 纖維"
+        "因傳導速度慢，所以較 fast pain 能精確定位疼痛點",
+        "釋出的傳導物質通常為 glutamate 及 substance P",
+        "傳入神經纖維為無髓鞘的 A-beta 纖維",
+        "傳入神經纖維為具髓鞘的 C 纖維"
       ],
       "answers": [
         "B"
@@ -1363,12 +1363,12 @@
       "number": 57,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "下列有關副交感神經對SA node 細胞的調控，何者最為適當？",
+      "stem": "下列有關副交感神經對 SA node 細胞的調控，何者最為適當？",
       "options": [
-        "增加SA node 細胞pacemaker potential 的斜率（slope），而增加心跳速率",
-        "減少SA node 細胞pacemaker potential 的斜率（slope），而減少心跳速率",
-        "增加SA node 細胞pacemaker potential 的斜率（slope），而減少心跳速率",
-        "減少SA node 細胞pacemaker potential 的斜率（slope），而增加心跳速率"
+        "增加 SA node 細胞 pacemaker potential 的斜率（slope），而增加心跳速率",
+        "減少 SA node 細胞 pacemaker potential 的斜率（slope），而減少心跳速率",
+        "增加 SA node 細胞 pacemaker potential 的斜率（slope），而減少心跳速率",
+        "減少 SA node 細胞 pacemaker potential 的斜率（slope），而增加心跳速率"
       ],
       "answers": [
         "B"
@@ -1413,10 +1413,10 @@
       "subject_status": "range",
       "stem": "微動脈（arterioles）可受神經系統與荷爾蒙系統調控，下列敘述何者最不合理？",
       "options": [
-        "大多數微動脈可受交感神經節後纖維釋放正腎上腺素（norepinephrine）作用，使其血管平滑肌上的alpha腎上腺接受器 （adrenergic receptor）活化，導致微動脈血管收縮",
+        "大多數微動脈可受交感神經節後纖維釋放正腎上腺素（norepinephrine）作用，使其血管平滑肌上的 alpha腎上腺接受器 （adrenergic receptor）活化，導致微動脈血管收縮",
         "大多數微動脈可受副交感神經節後纖維釋放乙醯膽鹼（acetylcholine）作用，使其血管平滑肌上的蕈毒型接受器（muscarinic receptor）活化，導致微動脈血管舒張",
         "微動脈血管平滑肌可受非膽鹼、非腎上腺素型（noncholinergic, nonadrenergic）神經元末梢釋放的一氧化氮作用，使微動脈血管舒張",
-        "腎上腺素可作用於微動脈血管平滑肌上的beta 腎上腺接受器（adrenergic receptor），使微動脈血管舒張"
+        "腎上腺素可作用於微動脈血管平滑肌上的 beta 腎上腺接受器（adrenergic receptor），使微動脈血管舒張"
       ],
       "answers": [
         "B"
@@ -1556,12 +1556,12 @@
       "number": 65,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "在短時間內喝下2,000 mL 白開水後，血漿滲透壓濃度和血漿antidiuretic hormone（ADH）濃度較大量喝水前之基礎值（baseline）有何變化？",
+      "stem": "在短時間內喝下 2,000 mL 白開水後，血漿滲透壓濃度和血漿 antidiuretic hormone（ADH）濃度較大量喝水前之基礎值（baseline）有何變化？",
       "options": [
         "兩者均減少",
         "兩者均增加",
-        "血漿滲透壓濃度增加，而血漿ADH 濃度減少",
-        "血漿滲透壓濃度減少，而血漿ADH 濃度增加"
+        "血漿滲透壓濃度增加，而血漿 ADH 濃度減少",
+        "血漿滲透壓濃度減少，而血漿 ADH 濃度增加"
       ],
       "answers": [
         "A"
@@ -1582,10 +1582,10 @@
       "subject_status": "range",
       "stem": "下列那一構造，與控制腎素分泌（renin secretion）的輸入（input）訊號最不相關？",
       "options": [
-        "直接分布在juxtaglomerular 細胞的腎臟交感神經",
-        "分布在出球（efferent）小動脈血管壁的juxtaglomerular 細胞",
-        "分布在入球（afferent）小動脈血管壁的juxtaglomerular 細胞",
-        "在亨氏管末端上升端的一層分化的macula densa 細胞"
+        "直接分布在 juxtaglomerular 細胞的腎臟交感神經",
+        "分布在出球（efferent）小動脈血管壁的 juxtaglomerular 細胞",
+        "分布在入球（afferent）小動脈血管壁的 juxtaglomerular 細胞",
+        "在亨氏管末端上升端的一層分化的 macula densa 細胞"
       ],
       "answers": [
         "A",
@@ -1705,10 +1705,10 @@
       "subject_status": "range",
       "stem": "在飢餓數日之後，有關甲狀腺素（T₃、T₄、RT₃）分泌和功能所受之影響，下列敘述何者最適當？",
       "options": [
-        "數日飢餓對血漿中T₄濃度的影響最為明顯",
-        "血漿中RT₃濃度最不會受到數日飢餓狀態所影響",
-        "在先經歷數日飢餓，而後再進食之狀態下，血漿中T₃濃度上升最為明顯",
-        "在先經歷數日飢餓，而後再進食之狀態下，血漿中T₄濃度上升最為明顯"
+        "數日飢餓對血漿中 T₄濃度的影響最為明顯",
+        "血漿中 RT₃濃度最不會受到數日飢餓狀態所影響",
+        "在先經歷數日飢餓，而後再進食之狀態下，血漿中 T₃濃度上升最為明顯",
+        "在先經歷數日飢餓，而後再進食之狀態下，血漿中 T₄濃度上升最為明顯"
       ],
       "answers": [
         "C"
@@ -1847,7 +1847,7 @@
       "number": 77,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列何者不是輔酶A（coenzyme A）結構中的化學組成單元？",
+      "stem": "下列何者不是輔酶 A（coenzyme A）結構中的化學組成單元？",
       "options": [
         "pantothenic acid",
         "β-mercaptoethylamine",
@@ -1871,7 +1871,7 @@
       "number": 78,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "原核細胞之DNA 會維持於何種狀態，使其結構更緊湊地排列，並協助轉錄作用時雙股DNA 之分離？",
+      "stem": "原核細胞之 DNA 會維持於何種狀態，使其結構更緊湊地排列，並協助轉錄作用時雙股 DNA 之分離？",
       "options": [
         "負超螺旋化－低度纏繞（supercoiling-underwound）",
         "正超螺旋化－過度纏繞（supercoiling-overwound）",
@@ -1895,7 +1895,7 @@
       "number": 79,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "核小體（nucleosome）是由DNA 和組蛋白（histone）構成的，下列何種組蛋白不屬於核小體中的組蛋白核心（histone core）？",
+      "stem": "核小體（nucleosome）是由 DNA 和組蛋白（histone）構成的，下列何種組蛋白不屬於核小體中的組蛋白核心（histone core）？",
       "options": [
         "H1",
         "H2A",
@@ -1921,10 +1921,10 @@
       "subject_status": "range",
       "stem": "在大腸桿菌的複製體（replisome）結構中，下列那一項蛋白功能描述為錯誤？",
       "options": [
-        "DNA 解旋酶（helicase）：緩解複製過程中引入的DNA 超螺旋張力",
-        "單股結合蛋白（single-stranded DNA-binding protein, SSB）：負責結合並穩定單股DNA",
-        "引子酶（primase）：負責合成RNA 引子",
-        "DNA 聚合酶Ⅲ（polymerase Ⅲ）：負責新股DNA 的複製合成"
+        "DNA 解旋酶（helicase）：緩解複製過程中引入的 DNA 超螺旋張力",
+        "單股結合蛋白（single-stranded DNA-binding protein, SSB）：負責結合並穩定單股 DNA",
+        "引子酶（primase）：負責合成 RNA 引子",
+        "DNA 聚合酶Ⅲ（polymerase Ⅲ）：負責新股 DNA 的複製合成"
       ],
       "answers": [
         "A"
@@ -1943,7 +1943,7 @@
       "number": 81,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "在細菌的DNA 轉座（transposition）過程中，當轉座子（transposon）插入受體DNA 時，目標位點DNA 序列會如何變化？",
+      "stem": "在細菌的 DNA 轉座（transposition）過程中，當轉座子（transposon）插入受體 DNA 時，目標位點 DNA 序列會如何變化？",
       "options": [
         "無變化",
         "在轉座子插入的兩側，形成相同順序的短重複序列",
@@ -1967,7 +1967,7 @@
       "number": 82,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "化療藥物cisplatin 對DNA 造成的損傷，主要是以那個修復機制移除？",
+      "stem": "化療藥物 cisplatin 對 DNA 造成的損傷，主要是以那個修復機制移除？",
       "options": [
         "直接修復機制（direct repair）",
         "鹼基切除修復（base excision repair）",
@@ -1993,7 +1993,7 @@
       "subject_status": "range",
       "stem": "基因轉錄作用中，RNA 聚合酶（RNA polymerase）催化的反應不需要下列何者？",
       "options": [
-        "四種ribonucleoside 5'-triphosphates",
+        "四種 ribonucleoside 5'-triphosphates",
         "引子（primer）",
         "鎂離子",
         "DNA 模板"
@@ -2015,12 +2015,12 @@
       "number": 84,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列有關ubiquitin 對蛋白質進行的轉譯後修飾，何者錯誤？",
+      "stem": "下列有關 ubiquitin 對蛋白質進行的轉譯後修飾，何者錯誤？",
       "options": [
-        "被ubiquitin 修飾的蛋白質一定會被26S proteasome 分解",
-        "被修飾的蛋白質在分解前，deubiquitinating enzymes 會先將ubiquitin 釋出並回收使用",
+        "被 ubiquitin 修飾的蛋白質一定會被 26S proteasome 分解",
+        "被修飾的蛋白質在分解前，deubiquitinating enzymes 會先將 ubiquitin 釋出並回收使用",
         "ubiquitin 主要連接於標的蛋白上之離胺酸（lysine）",
-        "E3 接合酶（E3 ligase）可將ubiquitin 連接於標的蛋白上"
+        "E3 接合酶（E3 ligase）可將 ubiquitin 連接於標的蛋白上"
       ],
       "answers": [
         "A"
@@ -2039,7 +2039,7 @@
       "number": 85,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列何種培養情況下，大腸桿菌會同時高度表達lacZ、lacY 和 lacA 基因？",
+      "stem": "下列何種培養情況下，大腸桿菌會同時高度表達 lacZ、lacY 和 lacA 基因？",
       "options": [
         "乳糖（lactose）和葡萄糖（glucose）同時存在",
         "只存在乳糖（lactose）但沒有葡萄糖（glucose）",
@@ -2063,7 +2063,7 @@
       "number": 86,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列何種真核細胞轉譯起始因子（eIF）直接參與蛋白質合成起始階段（initiation stage）之mRNA 5'端帽結構（5' cap structure）的辨識與結合？",
+      "stem": "下列何種真核細胞轉譯起始因子（eIF）直接參與蛋白質合成起始階段（initiation stage）之 mRNA 5'端帽結構（5' cap structure）的辨識與結合？",
       "options": [
         "eIF4A",
         "eIF4B",
@@ -2113,10 +2113,10 @@
       "subject_status": "range",
       "stem": "下列有關糖解作用（glycolysis）及葡萄糖新生（gluconeogenesis）的協同調控之敘述，何者錯誤？",
       "options": [
-        "acetyl-CoA 會藉由抑制pyruvate kinase 活性來抑制糖解作用",
-        "acetyl-CoA 會藉由增強pyruvate carboxylase 活性來增加葡萄糖新生",
-        "fructose-1,6-bisphosphate 會藉由抑制pyruvate kinase 活性來抑制糖解作用",
-        "fructose-2,6-bisphosphate 會藉由增強phosphofructokinase 活性來增加糖解作用"
+        "acetyl-CoA 會藉由抑制 pyruvate kinase 活性來抑制糖解作用",
+        "acetyl-CoA 會藉由增強 pyruvate carboxylase 活性來增加葡萄糖新生",
+        "fructose-1,6-bisphosphate 會藉由抑制 pyruvate kinase 活性來抑制糖解作用",
+        "fructose-2,6-bisphosphate 會藉由增強 phosphofructokinase 活性來增加糖解作用"
       ],
       "answers": [
         "C"
@@ -2159,7 +2159,7 @@
       "number": 90,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "關於脂質合成相關酶，何者催化之反應與condensation 無關？",
+      "stem": "關於脂質合成相關酶，何者催化之反應與 condensation 無關？",
       "options": [
         "acetyl-CoA acetyl transferase",
         "HMG-CoA synthase",
@@ -2183,7 +2183,7 @@
       "number": 91,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列有關ionophores 的敘述，何者錯誤？",
+      "stem": "下列有關 ionophores 的敘述，何者錯誤？",
       "options": [
         "可以影響離子的穿膜擴散",
         "可為一種抗生素（antibiotics）",
@@ -2255,7 +2255,7 @@
       "number": 94,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "細胞加入粒線體呼吸鏈抑制劑會造成呼吸鏈電子傳遞中斷。假設一新發現之藥物已知其功能為呼吸鏈抑制劑，並會完全阻斷complex Ⅲ的功能。當細胞加入此藥物一段時間後，下列那一組呼吸鏈代謝物，兩者主要皆以還原態存在？",
+      "stem": "細胞加入粒線體呼吸鏈抑制劑會造成呼吸鏈電子傳遞中斷。假設一新發現之藥物已知其功能為呼吸鏈抑制劑，並會完全阻斷 complex Ⅲ的功能。當細胞加入此藥物一段時間後，下列那一組呼吸鏈代謝物，兩者主要皆以還原態存在？",
       "options": [
         "coenzyme Q，NADH",
         "coenzyme Q，cytochrome c",
@@ -2305,7 +2305,7 @@
       "subject_status": "range",
       "stem": "下列有關細胞持續存在腎上腺素時，對於β-腎上腺素受體（receptor）之去敏感化（desensitization）的描述，何者錯誤？",
       "options": [
-        "腎上腺素結合到受體促進Gsα與Gsβγ的分開，Gsβγ會招引β-adrenergic receptor kinase（βARK）來將β-腎上腺素受體位於胺基（amino）端的絲胺酸（serine）磷酸化",
+        "腎上腺素結合到受體促進 Gsα與 Gsβγ的分開，Gsβγ會招引β-adrenergic receptor kinase（βARK）來將β-腎上腺素受體位於胺基（amino）端的絲胺酸（serine）磷酸化",
         "β-arrestin 會結合於β-腎上腺素受體上被磷酸化之絲胺酸（serine），引發細胞內吞（endocytosis）作用",
         "結合於β-腎上腺素受體的β-arrestin 在被內吞進入細胞內的囊泡（vesicles）後，會與β-腎上腺素受體分開",
         "β-腎上腺素受體在其絲胺酸（serine）於胞內囊泡（vesicles）中被去磷酸化（dephosphorylated）後，可再度被運回細胞膜上，解除去敏感化"
@@ -2327,12 +2327,12 @@
       "number": 97,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "在細胞週期進行過程中，下列分子間的作用何者無助於從G1 期進入S 期？",
+      "stem": "在細胞週期進行過程中，下列分子間的作用何者無助於從 G1 期進入 S 期？",
       "options": [
-        "上游轉錄因子p53 活化，進而刺激p21 的轉錄（transcription）",
-        "p21 從CDK2/cyclin E 複合體脫離",
-        "活化的CDK2∕cyclin E 複合體磷酸化pRb，使之與E2F 分離",
-        "被活化的E2F 轉錄因子促使參與DNA 合成之相關基因被轉錄"
+        "上游轉錄因子 p53 活化，進而刺激 p21 的轉錄（transcription）",
+        "p21 從 CDK2/cyclin E 複合體脫離",
+        "活化的 CDK2∕cyclin E 複合體磷酸化 pRb，使之與 E2F 分離",
+        "被活化的 E2F 轉錄因子促使參與 DNA 合成之相關基因被轉錄"
       ],
       "answers": [
         "A"
@@ -2351,7 +2351,7 @@
       "number": 98,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "如果想要製作標記具有放射性之³²P 的基因片段探針（probe），通常會利用DNA 聚合酶（DNA polymerase）來合成此片段 ，進行該反應時需加入下列何種³²P-dATP 材料來進行標記？",
+      "stem": "如果想要製作標記具有放射性之³²P 的基因片段探針（probe），通常會利用 DNA 聚合酶（DNA polymerase）來合成此片段 ，進行該反應時需加入下列何種³²P-dATP 材料來進行標記？",
       "options": [
         "α-³²P-dATP",
         "β-³²P-dATP",
@@ -2379,7 +2379,7 @@
       "options": [
         "限制酶片段長度多型性（restriction fragment length polymorphism, RFLP）",
         "螢光原位雜交（fluorescent in situ hybridization, FISH）",
-        "反轉錄PCR（reverse transcription-PCR, RT-PCR）",
+        "反轉錄 PCR（reverse transcription-PCR, RT-PCR）",
         "DNA 微陣列（DNA microarrays）"
       ],
       "answers": [
@@ -2403,7 +2403,7 @@
       "options": [
         "核苷三磷酸（NTP）包括腺苷三磷酸（ATP）、鳥苷三磷酸（GTP）、胞苷三磷酸（CTP）以及胸腺苷三磷酸（TTP）",
         "DNA 模板（DNA template）",
-        "熱穩定性DNA 聚合酶（thermostable DNA polymerase）",
+        "熱穩定性 DNA 聚合酶（thermostable DNA polymerase）",
         "兩個寡核苷酸引子（oligonucleotide primers）"
       ],
       "answers": [

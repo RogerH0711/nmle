@@ -43,7 +43,7 @@
       "number": 2,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "大腸桿菌O157:H7 常引起出血性腹瀉，H7 的H 指的是細菌的那一部分？",
+      "stem": "大腸桿菌 O157:H7 常引起出血性腹瀉，H7 的 H 指的是細菌的那一部分？",
       "options": [
         "鞭毛（flagella）",
         "脂多醣（lipopolysaccharide）",
@@ -69,9 +69,9 @@
       "subject_status": "range",
       "stem": "關於鈎端螺旋體病（leptospirosis）之敘述，下列何者最不適當？",
       "options": [
-        "病原體是Leptospira interrogans，為絕對嗜氧菌（obligate aerobe），容易培養",
+        "病原體是 Leptospira interrogans，為絕對嗜氧菌（obligate aerobe），容易培養",
         "雖具有主動穿透黏膜的能力，但不會透過性行為傳染",
-        "通常以doxycycline 治療或預防",
+        "通常以 doxycycline 治療或預防",
         "嚙齒類動物是主要的保菌宿主（reservoir），其帶菌的尿液會污染土壤"
       ],
       "answers": [
@@ -238,7 +238,7 @@
       "stem": "下列有關病毒複製之敘述，何者最不適當？",
       "options": [
         "病毒的基因體複製是在病毒結構蛋白合成之後才開始進行",
-        "所有病毒複製過程中均需合成RNA",
+        "所有病毒複製過程中均需合成 RNA",
         "B 型肝炎病毒之外套膜來自寄主細胞之細胞膜",
         "在隱蝕期（eclipse period）時可測到極少量之感染性病毒"
       ],
@@ -261,10 +261,10 @@
       "subject_status": "range",
       "stem": "下列有關致癌性病毒（oncogenic virus）的敘述，何者最適當？",
       "options": [
-        "多瘤病毒（polyomavirus, SV40）之T 抗原可與寄主細胞中之腫瘤抑制蛋白結合",
+        "多瘤病毒（polyomavirus, SV40）之 T 抗原可與寄主細胞中之腫瘤抑制蛋白結合",
         "多瘤病毒（polyomavirus, SV40）可在人類形成腫瘤",
-        "乳突瘤病毒（papillomavirus）之E7 蛋白可與寄主細胞中之p53 蛋白結合",
-        "腺病毒（adenovirus）之E1B 可與寄主細胞中之p105RB 蛋白結合"
+        "乳突瘤病毒（papillomavirus）之 E7 蛋白可與寄主細胞中之 p53 蛋白結合",
+        "腺病毒（adenovirus）之 E1B 可與寄主細胞中之 p105RB 蛋白結合"
       ],
       "answers": [
         "A"
@@ -307,10 +307,10 @@
       "number": 13,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "有關流行性感冒病毒蛋白neuraminidase（NA）的敘述，下列何者最不適當？",
+      "stem": "有關流行性感冒病毒蛋白 neuraminidase（NA）的敘述，下列何者最不適當？",
       "options": [
         "為一種酵素，能幫助病毒離開宿主細胞",
-        "A 型流感病毒具有多種NA 亞型",
+        "A 型流感病毒具有多種 NA 亞型",
         "為抗病毒藥物金剛烷胺類（amantadine）主要抑制對象",
         "在病毒外套膜上形成四倍體（tetramer）"
       ],
@@ -333,9 +333,9 @@
       "subject_status": "range",
       "stem": "有關輪狀病毒（rotaviruses）的特色，下列敘述何者最不適當？",
       "options": [
-        "是一個雙股RNA（double-stranded RNA）病毒",
-        "被蛋白酶降解後形成的intermediate subviral particle（ISVP）不具感染力",
-        "基因體（genome）由多段的RNA 組成",
+        "是一個雙股 RNA（double-stranded RNA）病毒",
+        "被蛋白酶降解後形成的 intermediate subviral particle（ISVP）不具感染力",
+        "基因體（genome）由多段的 RNA 組成",
         "對腸胃道環境的耐受性很高"
       ],
       "answers": [
@@ -358,9 +358,9 @@
       "stem": "關於麻疹（Measles）的敘述，下列何者最適當？",
       "options": [
         "其致病原麻疹病毒屬黏液病毒（Myxovirus）",
-        "麻疹病毒之基因體為八段單股的RNA",
+        "麻疹病毒之基因體為八段單股的 RNA",
         "麻疹病毒具有多種血清型",
-        "病毒感染時，體內T 細胞會攻擊被病毒感染的上皮細胞，造成病人身上的大塊紅斑（maculopapular measles rash）"
+        "病毒感染時，體內 T 細胞會攻擊被病毒感染的上皮細胞，造成病人身上的大塊紅斑（maculopapular measles rash）"
       ],
       "answers": [
         "D"
@@ -379,7 +379,7 @@
       "number": 16,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "在2015～2016 年間爆發茲卡（Zika）病毒大流行，下列有關該病毒的敘述何者最不適當？",
+      "stem": "在 2015～2016 年間爆發茲卡（Zika）病毒大流行，下列有關該病毒的敘述何者最不適當？",
       "options": [
         "猴子是茲卡病毒的宿主之一",
         "不需要蚊子的媒介，病毒可以直接人傳人",
@@ -475,12 +475,12 @@
       "number": 20,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "主要組織相容性複合體（major histocompatibility complex, MHC）為T 細胞辨識抗原過程中重要的分子，關於MHC 的敘述，下列何者最不適當？",
+      "stem": "主要組織相容性複合體（major histocompatibility complex, MHC）為 T 細胞辨識抗原過程中重要的分子，關於 MHC 的敘述，下列何者最不適當？",
       "options": [
-        "MHC class I 呈獻的抗原胜肽較短，而MHC class II 呈獻的抗原胜肽較長",
-        "MHC class I 呈獻抗原給CD8 T 細胞，而MHC class II 呈獻抗原給CD4 T 細胞",
-        "組成MHC class II 的分子有兩個，分別是α chain 與β chain，其中β chain 的變化性（variability）遠高於α chain",
-        "MHC class I 與 class II 都有分子不會接觸到抗原，class I 中是β₂-microglobulin，而class II 中是αchain"
+        "MHC class I 呈獻的抗原胜肽較短，而 MHC class II 呈獻的抗原胜肽較長",
+        "MHC class I 呈獻抗原給 CD8 T 細胞，而 MHC class II 呈獻抗原給 CD4 T 細胞",
+        "組成 MHC class II 的分子有兩個，分別是α chain 與β chain，其中β chain 的變化性（variability）遠高於α chain",
+        "MHC class I 與 class II 都有分子不會接觸到抗原，class I 中是β₂-microglobulin，而 class II 中是αchain"
       ],
       "answers": [
         "D"
@@ -499,11 +499,11 @@
       "number": 21,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列有關pre-B 細胞受體（pre-B cell receptor）的敘述，何者最不適當？",
+      "stem": "下列有關 pre-B 細胞受體（pre-B cell receptor）的敘述，何者最不適當？",
       "options": [
         "具有免疫球蛋白輕鏈之κ鏈（κ chain）",
-        "可以傳遞存活訊號使pre-B 細胞繼續發育",
-        "具有Igα和Igβ兩個訊號傳遞蛋白",
+        "可以傳遞存活訊號使 pre-B 細胞繼續發育",
+        "具有 Igα和 Igβ兩個訊號傳遞蛋白",
         "可以傳遞訊號抑制免疫球蛋白重鏈（heavy chain）基因進行重組（rearrangement）"
       ],
       "answers": [
@@ -523,7 +523,7 @@
       "number": 22,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列何者最不可能高度表現於調節性T 細胞（T_reg）？",
+      "stem": "下列何者最不可能高度表現於調節性 T 細胞（T_reg）？",
       "options": [
         "CD25",
         "IL-10",
@@ -549,10 +549,10 @@
       "subject_status": "range",
       "stem": "在沒有病原菌感染的情況下，人體腸胃道組織中的樹突細胞（dendritic cell）最常見的特徵是：",
       "options": [
-        "會分泌大量細胞激素IL-12",
-        "細胞表面有高量B7-1 分子，是高效能的抗原呈獻細胞",
-        "腸道中的TGF-β與IL-10 會增進樹突細胞對共生菌的耐受性",
-        "可製造A 酸（retinoic acid）並增進T 毒殺細胞功能"
+        "會分泌大量細胞激素 IL-12",
+        "細胞表面有高量 B7-1 分子，是高效能的抗原呈獻細胞",
+        "腸道中的 TGF-β與 IL-10 會增進樹突細胞對共生菌的耐受性",
+        "可製造 A 酸（retinoic acid）並增進 T 毒殺細胞功能"
       ],
       "answers": [
         "C"
@@ -571,7 +571,7 @@
       "number": 24,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "革蘭氏陽性細菌細胞壁的peptidoglycan 最主要是經由下列何種受體被辨識？",
+      "stem": "革蘭氏陽性細菌細胞壁的 peptidoglycan 最主要是經由下列何種受體被辨識？",
       "options": [
         "Toll-like receptor 2",
         "Toll-like receptor 4",
@@ -600,7 +600,7 @@
         "自體免疫疾病的病程中，免疫系統不斷接受抗原的刺激，形成一個正回饋的發炎反應",
         "治療上無法移除自身抗原",
         "表位擴散（epitope spreading）的特性造成更多辨識自身抗原的免疫細胞活化",
-        "自體免疫疾病的病人都有調節型T 細胞（regulatory T cell）的異常"
+        "自體免疫疾病的病人都有調節型 T 細胞（regulatory T cell）的異常"
       ],
       "answers": [
         "D"
@@ -621,7 +621,7 @@
       "subject_status": "range",
       "stem": "有關腫瘤免疫反應的敘述，下列何者最適當？",
       "options": [
-        "有腫瘤特異性抗原的呈獻，可產生並存在著腫瘤專一性T 淋巴球",
+        "有腫瘤特異性抗原的呈獻，可產生並存在著腫瘤專一性 T 淋巴球",
         "免疫細胞無法進入腫瘤組織內，因而無法抑制腫瘤細胞的生長",
         "腫瘤細胞不斷生長增加時，亦產生性質變異，表現突變的細胞表面分子，進而造成免疫細胞的死亡",
         "因腫瘤細胞性質的變異，表現出腫瘤抑制基因（tumor suppressor gene）的產物，引起了腫瘤抑制自然殺手細胞的效果"
@@ -643,7 +643,7 @@
       "number": 27,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列何種移植最容易發生graft-versus-host disease（GVHD）？",
+      "stem": "下列何種移植最容易發生 graft-versus-host disease（GVHD）？",
       "options": [
         "肝臟",
         "骨髓",
@@ -787,7 +787,7 @@
       "number": 33,
       "subject": "parasitology",
       "subject_status": "range",
-      "stem": "臨床上，免疫妥協（immunocompromised）患者嚴重腹瀉的症狀，主要不是由下列何種寄生蟲引起？①微孢子蟲（Enterocytozoon bieneusi） ②肺孢子蟲（Pneumosystis carinii 或Pneumosystis jirovecii ） ③貝氏等孢子蟲（Isospora belli） ④弓蟲（Toxoplasma gondii）",
+      "stem": "臨床上，免疫妥協（immunocompromised）患者嚴重腹瀉的症狀，主要不是由下列何種寄生蟲引起？①微孢子蟲（Enterocytozoon bieneusi） ②肺孢子蟲（Pneumosystis carinii 或 Pneumosystis jirovecii ） ③貝氏等孢子蟲（Isospora belli） ④弓蟲（Toxoplasma gondii）",
       "options": [
         "①②",
         "③④",
@@ -883,7 +883,7 @@
       "number": 37,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "已知抽菸可導致肺活量降低，亦即香菸攝取量越高，則未來肺活量下降越多，兩者之間有因果關係。若某一研究者想要檢定抽菸與肺活量無關的虛無假說（H₀：抽菸與肺活量獨立），隨機抽樣30 人並完成一次試驗後，由於統計檢定未達顯著水準，P 值（p-value）大於0.05，統計決策是不拒絕虛無假說，並總結抽菸與肺活量並無統計上顯著的相關性。則此試驗結果為下列那一項？",
+      "stem": "已知抽菸可導致肺活量降低，亦即香菸攝取量越高，則未來肺活量下降越多，兩者之間有因果關係。若某一研究者想要檢定抽菸與肺活量無關的虛無假說（H₀：抽菸與肺活量獨立），隨機抽樣 30 人並完成一次試驗後，由於統計檢定未達顯著水準，P 值（p-value）大於 0.05，統計決策是不拒絕虛無假說，並總結抽菸與肺活量並無統計上顯著的相關性。則此試驗結果為下列那一項？",
       "options": [
         "型一錯誤（Type Ⅰ error）",
         "型二錯誤（Type Ⅱ error）",
@@ -909,8 +909,8 @@
       "subject_status": "range",
       "stem": "某研究探討吸菸與腎臟癌症間的相關性，研究者從多家醫院蒐集腎臟癌症新發生個案，並進行性別、年齡（±5 歲）、種族以及居住所在鄰里等變項之匹配，選取無任何癌症病史的其他住院病人為對照組個案。該研究之研究數據如下表所示。下列有關吸菸與腎臟癌症相關性的相關分析數據中何者最恰當？",
       "options": [
-        "曾經吸菸的人，腎臟癌的發生率為800/1513",
-        "腎臟癌症病人曾經吸菸的勝算（odds）為800/1157",
+        "曾經吸菸的人，腎臟癌的發生率為 800/1513",
+        "腎臟癌症病人曾經吸菸的勝算（odds）為 800/1157",
         "腎臟癌症病人曾經吸菸的勝算大於沒有任何癌症病史住院病人的吸菸勝算，也就是（800/357）＞（713/444）",
         "吸菸與腎臟癌症發生的相對危險性估計值為（800/1513）/（357/801）"
       ],
@@ -933,7 +933,7 @@
       "number": 39,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "分析抽菸與口腔癌的關係，針對有酗酒者，抽菸的相對危險性（relative risk）為4；無酗酒者，抽菸的相對危險性為2，若將有或無酗酒者合併則抽菸的相對危險性為1。有關酗酒與抽菸及口腔癌關係的敘述，下列何者最恰當？",
+      "stem": "分析抽菸與口腔癌的關係，針對有酗酒者，抽菸的相對危險性（relative risk）為 4；無酗酒者，抽菸的相對危險性為 2，若將有或無酗酒者合併則抽菸的相對危險性為 1。有關酗酒與抽菸及口腔癌關係的敘述，下列何者最恰當？",
       "options": [
         "是干擾因子而非修飾因子",
         "是修飾因子而非干擾因子",
@@ -1007,8 +1007,8 @@
       "subject_status": "range",
       "stem": "風險評估中，苯為已知人類致癌物質，有關其致癌風險的估計，下列敘述何者最恰當？",
       "options": [
-        "應用具閾值模式，斜率因子單位為mg/kg-day",
-        "應用無閾值模式，斜率因子單位為mg/kg-day",
+        "應用具閾值模式，斜率因子單位為 mg/kg-day",
+        "應用無閾值模式，斜率因子單位為 mg/kg-day",
         "應用具閾值模式，斜率因子單位為（mg/kg-day）⁻¹",
         "應用無閾值模式，斜率因子單位為（mg/kg-day）⁻¹"
       ],
@@ -1032,7 +1032,7 @@
       "stem": "有關疫苗注射，下列敘述何者最不適當？",
       "options": [
         "有的疫苗一生只要接受一劑就夠了",
-        "B 型肝炎疫苗不但能預防B 型肝炎，也能預防肝癌",
+        "B 型肝炎疫苗不但能預防 B 型肝炎，也能預防肝癌",
         "各種疫苗都是全民接種最符合公眾利益",
         "經過核准上市的疫苗（非緊急授權），一般來說，較少發生過敏"
       ],
@@ -1053,7 +1053,7 @@
       "number": 44,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "家庭對個人發展的影響至深且遠，學者Duvall 指出，家庭也有其生命週期，並將之劃分為八個階段，每個階段都有其發展任務，對身處在其中的家人的健康也會受到發展任務的影響。關於家庭生命週期階段會如何影響家人健康之敘述，下列何者最不恰當？",
+      "stem": "家庭對個人發展的影響至深且遠，學者 Duvall 指出，家庭也有其生命週期，並將之劃分為八個階段，每個階段都有其發展任務，對身處在其中的家人的健康也會受到發展任務的影響。關於家庭生命週期階段會如何影響家人健康之敘述，下列何者最不恰當？",
       "options": [
         "在初為父母階段，新生兒報到是喜悅的事，這時候的家庭是壓力最小的時期",
         "在子女學齡階段，需要建立與孩子的學校、同學家長以及社區的連結，家庭與工作需要取得平衡，以維護身心健康",
@@ -1247,10 +1247,10 @@
       "subject_status": "range",
       "stem": "5-Fluorouracil 為臨床常用的抗腫瘤藥物，下列何者為其抗癌作用機轉？",
       "options": [
-        "與DNA 進行烷基化結合（alkylating）",
-        "抑制topoisomerase II",
-        "抑制thymidylate synthase",
-        "抑制dihydrofolate reductase"
+        "與 DNA 進行烷基化結合（alkylating）",
+        "抑制 topoisomerase II",
+        "抑制 thymidylate synthase",
+        "抑制 dihydrofolate reductase"
       ],
       "answers": [
         "C"
@@ -1293,7 +1293,7 @@
       "number": 54,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列藥物中，何者可抑制squalene epoxidase，其主要臨床用途為治療指甲癬（onychomycosis）？",
+      "stem": "下列藥物中，何者可抑制 squalene epoxidase，其主要臨床用途為治療指甲癬（onychomycosis）？",
       "options": [
         "nystatin",
         "terbinafine",
@@ -1319,10 +1319,10 @@
       "subject_status": "range",
       "stem": "下列關於抗生素應用之敘述，何者錯誤？",
       "options": [
-        "cefepime 可單獨用於對penicillin G 產生抗藥性的鏈球菌（streptococci）感染",
+        "cefepime 可單獨用於對 penicillin G 產生抗藥性的鏈球菌（streptococci）感染",
         "ceftolozane-tazobactam 可併用於抗藥性革蘭氏陰性菌株的感染",
         "ceftazidime 可單獨用來治療能產生碳青黴烯酶（carbapenemase）的菌種感染",
-        "ceftazidime-avibactam 需合併metronidazole 以用於治療複雜性腹腔內感染"
+        "ceftazidime-avibactam 需合併 metronidazole 以用於治療複雜性腹腔內感染"
       ],
       "answers": [
         "C"
@@ -1341,7 +1341,7 @@
       "number": 56,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列藥物中，何者為anti-CD19 chimeric antigen receptor (CAR) T cells 產品，用於治療relapsedlarge B-cell lymphoma？",
+      "stem": "下列藥物中，何者為 anti-CD19 chimeric antigen receptor (CAR) T cells 產品，用於治療 relapsedlarge B-cell lymphoma？",
       "options": [
         "abatacept",
         "siponimod",
@@ -1389,12 +1389,12 @@
       "number": 58,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "鐮刀型紅血球疾病（sickle cell disease）屬於溶血性貧血症，下列有關此疾病治療藥物hydroxyurea 之敘述，何者錯誤？",
+      "stem": "鐮刀型紅血球疾病（sickle cell disease）屬於溶血性貧血症，下列有關此疾病治療藥物 hydroxyurea 之敘述，何者錯誤？",
       "options": [
-        "可抑制ribonucleotide reductase 而產生抗癌作用",
+        "可抑制 ribonucleotide reductase 而產生抗癌作用",
         "可減少紅血球內β-hemoglobin S 的聚合反應",
         "可減低靜脈內栓塞現象（veno-occlusive events）",
-        "可減少fetal hemoglobin γ生成，而緩解症狀"
+        "可減少 fetal hemoglobin γ生成，而緩解症狀"
       ],
       "answers": [
         "D"
@@ -1413,7 +1413,7 @@
       "number": 59,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何者為降血糖藥物canagliflozin 的主要作用機轉？",
+      "stem": "下列何者為降血糖藥物 canagliflozin 的主要作用機轉？",
       "options": [
         "dipeptidyl peptidase 4（DPP-4）抑制劑",
         "glucagon-like peptide-1（GLP-1）受體致效劑",
@@ -1437,10 +1437,10 @@
       "number": 60,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列關於thioamides 藥理機制之敘述，何者錯誤？",
+      "stem": "下列關於 thioamides 藥理機制之敘述，何者錯誤？",
       "options": [
         "抑制甲狀腺過氧化酶（thyroid peroxidase）和阻斷碘的有機化過程（iodine organification）",
-        "propylthiouracil 可抑制周邊T₄的去碘作用，減少T₃生成",
+        "propylthiouracil 可抑制周邊 T₄的去碘作用，減少 T₃生成",
         "抑制甲狀腺素釋放",
         "降低碘酪胺酸（iodotyrosines）之偶合反應"
       ],
@@ -1461,7 +1461,7 @@
       "number": 61,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列關於維生素D 與其相關活性產物的敘述，何者錯誤？",
+      "stem": "下列關於維生素 D 與其相關活性產物的敘述，何者錯誤？",
       "options": [
         "可能產生高血鈣症之副作用",
         "可用於改善骨質疏鬆症",
@@ -1485,7 +1485,7 @@
       "number": 62,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列關於thiazide 類利尿劑的敘述，何者錯誤？",
+      "stem": "下列關於 thiazide 類利尿劑的敘述，何者錯誤？",
       "options": [
         "可用於改善骨質疏鬆症（osteoporosis）",
         "可用於治療高鈣尿症（hypercalciuria）",
@@ -1536,7 +1536,7 @@
       "stem": "下列藥物產生療效之主要作用機制，何者正確？",
       "options": [
         "ranolazine：抑制鈣離子通道以舒張動脈",
-        "nitroprusside：抑制phosphodiesterase 以增加cGMP",
+        "nitroprusside：抑制 phosphodiesterase 以增加 cGMP",
         "nitroglycerin：舒張靜脈以減少心臟前負荷（preload）",
         "nicardipine：增加鉀離子傳導以降低周邊血管阻力"
       ],
@@ -1583,10 +1583,10 @@
       "subject_status": "range",
       "stem": "70 歲王先生在接受白內障開刀手術時，出現了虹膜鬆脫症候群（floppy iris syndrome），經檢視王先生平時服用的藥物，推測最可能是由下列何者所造成？",
       "options": [
-        "降血壓藥atenolol",
-        "降血糖藥sitagliptin",
-        "慢性阻塞性肺病用藥ipratropium",
-        "良性攝護腺肥大用藥tamsulosin"
+        "降血壓藥 atenolol",
+        "降血糖藥 sitagliptin",
+        "慢性阻塞性肺病用藥 ipratropium",
+        "良性攝護腺肥大用藥 tamsulosin"
       ],
       "answers": [
         "D"
@@ -1629,7 +1629,7 @@
       "number": 68,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "有位70 歲老人，患有心臟病及慢性阻塞肺部疾病，常伴隨著偶發性氣管痙攣的症狀。下列何者可以有效解除此病人的氣管痙攣症狀，且較不易引發心律不整的副作用？",
+      "stem": "有位 70 歲老人，患有心臟病及慢性阻塞肺部疾病，常伴隨著偶發性氣管痙攣的症狀。下列何者可以有效解除此病人的氣管痙攣症狀，且較不易引發心律不整的副作用？",
       "options": [
         "prednisone",
         "salmeterol",
@@ -1653,7 +1653,7 @@
       "number": 69,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列那一個藥物應避免使用於HLA-B*5801 基因變異的痛風病人？",
+      "stem": "下列那一個藥物應避免使用於 HLA-B*5801 基因變異的痛風病人？",
       "options": [
         "colchicine",
         "allopurinol",
@@ -1679,10 +1679,10 @@
       "subject_status": "range",
       "stem": "下列關於組織胺（histamine）受體的敘述，何者最適當？",
       "options": [
-        "epinephrine 藉由拮抗組織胺H₁受體以治療急性過敏反應（anaphylaxis）",
-        "組織胺H₁受體拮抗劑常用於治療氣喘",
-        "第一代組織胺H₁受體拮抗劑可用於協助入眠",
-        "組織胺H₂受體拮抗劑常用於治療過敏性鼻炎"
+        "epinephrine 藉由拮抗組織胺 H₁受體以治療急性過敏反應（anaphylaxis）",
+        "組織胺 H₁受體拮抗劑常用於治療氣喘",
+        "第一代組織胺 H₁受體拮抗劑可用於協助入眠",
+        "組織胺 H₂受體拮抗劑常用於治療過敏性鼻炎"
       ],
       "answers": [
         "C"
@@ -1725,12 +1725,12 @@
       "number": 72,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列關於sodium channel blockers 類之抗癲癇藥物的敘述，何者錯誤？",
+      "stem": "下列關於 sodium channel blockers 類之抗癲癇藥物的敘述，何者錯誤？",
       "options": [
-        "phenytoin 是結合在inactivated state 的sodium channel，使其快速進入resting state",
-        "lamotrigine 具有use-dependent blocking 的作用，對高頻放電的神經產生比較強的抑制作用",
-        "oxcarbazepine 會加重Dravet syndrome 的癲癇反應",
-        "carbamazepine 可能會引發Stevens-Johnson syndrome，而產生生命危險"
+        "phenytoin 是結合在 inactivated state 的 sodium channel，使其快速進入 resting state",
+        "lamotrigine 具有 use-dependent blocking 的作用，對高頻放電的神經產生比較強的抑制作用",
+        "oxcarbazepine 會加重 Dravet syndrome 的癲癇反應",
+        "carbamazepine 可能會引發 Stevens-Johnson syndrome，而產生生命危險"
       ],
       "answers": [
         "A"
@@ -1773,12 +1773,12 @@
       "number": 74,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "Entacapone 併用levodopa 來治療巴金森氏病，主要因為該藥具有下列何種作用？",
+      "stem": "Entacapone 併用 levodopa 來治療巴金森氏病，主要因為該藥具有下列何種作用？",
       "options": [
-        "抑制腦部monoamine oxidase B，增加腦部levodopa 的含量",
-        "抑制周邊組織catechol-O-methyltransferase，延長levodopa 的作用",
-        "增加周邊組織3-O-methyldopa 的含量，加強levodopa 的作用",
-        "促進中樞神經末梢dopamine 的釋放"
+        "抑制腦部 monoamine oxidase B，增加腦部 levodopa 的含量",
+        "抑制周邊組織 catechol-O-methyltransferase，延長 levodopa 的作用",
+        "增加周邊組織 3-O-methyldopa 的含量，加強 levodopa 的作用",
+        "促進中樞神經末梢 dopamine 的釋放"
       ],
       "answers": [
         "B"
@@ -1797,12 +1797,12 @@
       "number": 75,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "Acetylcysteine 可用於治療acetaminophen 中毒，下列何者為其解毒之主要作用機制？",
+      "stem": "Acetylcysteine 可用於治療 acetaminophen 中毒，下列何者為其解毒之主要作用機制？",
       "options": [
         "抑制轉胺酵素（aminotransferase）活性",
-        "增加肝臟cytochrome P450 酵素活性",
-        "增加肝臟內glutathione 含量",
-        "抑制促發炎酵素cyclooxygenase-2 表現"
+        "增加肝臟 cytochrome P450 酵素活性",
+        "增加肝臟內 glutathione 含量",
+        "抑制促發炎酵素 cyclooxygenase-2 表現"
       ],
       "answers": [
         "C"
@@ -1968,7 +1968,7 @@
       "stem": "先天性心臟病中，長期處於下列何種狀況最容易造成肺高壓？",
       "options": [
         "明顯的心室中隔缺損（ventricular septal defect）",
-        "典型的Fallot 氏四合症（classic tetralogy of Fallot）",
+        "典型的 Fallot 氏四合症（classic tetralogy of Fallot）",
         "成人型導管後主動脈狹窄（adult form postductal coarctation of aorta）",
         "單獨的肺動脈瓣狹窄（isolated pulmonary stenosis）"
       ],
@@ -2015,7 +2015,7 @@
       "subject_status": "range",
       "stem": "下列何種惡性淋巴瘤，在組織切片中腫瘤細胞通常只占所有細胞的小部分？",
       "options": [
-        "瀰漫性大B 細胞淋巴瘤（diffuse large B-cell lymphoma）",
+        "瀰漫性大 B 細胞淋巴瘤（diffuse large B-cell lymphoma）",
         "退行性大細胞淋巴瘤（anaplastic large cell lymphoma）",
         "何杰金氏淋巴瘤（Hodgkin lymphoma）",
         "Burkitt 氏淋巴瘤（Burkitt lymphoma）"
@@ -2091,8 +2091,8 @@
       "stem": "下列有關小細胞肺癌（small cell carcinoma）的敘述，何者錯誤？",
       "options": [
         "與抽菸有強烈相關性",
-        "在臺灣，小細胞肺癌有三成帶有EGFR 突變",
-        "大多數小細胞肺癌帶有TP53 與RB 基因突變",
+        "在臺灣，小細胞肺癌有三成帶有 EGFR 突變",
+        "大多數小細胞肺癌帶有 TP53 與 RB 基因突變",
         "小細胞肺癌也會有副贅瘤症候群（paraneoplastic syndromes）"
       ],
       "answers": [
@@ -2115,9 +2115,9 @@
       "stem": "下列有關塵肺病（pneumoconiosis）的敘述，何者錯誤？",
       "options": [
         "成因可為無機物或有機物，多與職業或工作環境有關",
-        "矽肺病是目前最常見的塵肺病，成因為吸入silica，形成的肺結節多出現在上肺葉",
+        "矽肺病是目前最常見的塵肺病，成因為吸入 silica，形成的肺結節多出現在上肺葉",
         "矽肺病患者停止接觸矽塵暴露後肺功能通常會逐漸恢復，惟嚴重者需接受肺移植治療",
-        "矽肺病的肺結節常出現嚴重纖維化且有whorled collagen fibers，在偏光顯微鏡下可看到silica 沉積"
+        "矽肺病的肺結節常出現嚴重纖維化且有 whorled collagen fibers，在偏光顯微鏡下可看到 silica 沉積"
       ],
       "answers": [
         "C"
@@ -2140,7 +2140,7 @@
       "options": [
         "白斑（leukoplakia）與紅斑（erythroplakia）是可觀察到的早期病變",
         "紅斑（erythroplakia）病理上大多數是嚴重異生（severe dysplasia）或原位癌（carcinoma in situ）",
-        "口腔癌最常突變的基因有TP53、CDKN2A、PIK3CA，與肺腺癌類似，目前已有多種有效的標靶藥物",
+        "口腔癌最常突變的基因有 TP53、CDKN2A、PIK3CA，與肺腺癌類似，目前已有多種有效的標靶藥物",
         "口腔癌的危險因子包含抽菸、喝酒、檳榔，定期篩檢若能早期診斷則可提高患者預後"
       ],
       "answers": [
@@ -2160,12 +2160,12 @@
       "number": 90,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "關於肝細胞核因子1-α失活的肝細胞腺瘤（HNF1α-inactivated hepatocellular adenoma），下列敘述何者最不適當？",
+      "stem": "關於肝細胞核因子 1-α失活的肝細胞腺瘤（HNF1α-inactivated hepatocellular adenoma），下列敘述何者最不適當？",
       "options": [
-        "與成熟型青少年糖尿病3 型（maturity onset diabetes of the young, type 3）相關",
+        "與成熟型青少年糖尿病 3 型（maturity onset diabetes of the young, type 3）相關",
         "好發於女性",
         "轉化為肝細胞癌的風險極小",
-        "免疫組織化學染色下，腫瘤細胞的liver fatty acid binding protein（LFABP）會高度表達"
+        "免疫組織化學染色下，腫瘤細胞的 liver fatty acid binding protein（LFABP）會高度表達"
       ],
       "answers": [
         "D"
@@ -2407,7 +2407,7 @@
         "兩歲以下幼兒最常見的化膿性關節炎病原體是沙門氏桿菌（Salmonella）",
         "成年人的化膿性關節炎最常見之病原體是金黃色葡萄球菌（Staphylococcus aureus）",
         "結核病關節炎（mycobacterial arthritis）最常感染承重的關節，如髖關節與膝關節",
-        "淋病關節炎（gonococcal arthritis）好發於補體C5-C9 功能缺損的病人"
+        "淋病關節炎（gonococcal arthritis）好發於補體 C5-C9 功能缺損的病人"
       ],
       "answers": [
         "A"

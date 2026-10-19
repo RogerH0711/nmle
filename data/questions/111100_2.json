@@ -95,7 +95,7 @@
       "options": [
         "可在細菌間傳遞帶有抗藥性相關基因",
         "與細菌染色體同步進行複製",
-        "多為存在於細胞質內之線狀RNA",
+        "多為存在於細胞質內之線狀 RNA",
         "僅存在於革蘭氏陰性菌之細胞質中"
       ],
       "answers": [
@@ -117,10 +117,10 @@
       "subject_status": "range",
       "stem": "當細菌培養液只含有乳糖，此時抑制子（repressor）和代謝基因活化蛋白質（catabolite gene-activator protein ,CAP）之活性，以及調節乳糖操縱子（lac operon）表現的敘述，下列何者正確？",
       "options": [
-        "抑制子的功能被抑制，且CAP 不活化，促使乳糖操縱子表現",
-        "抑制子的功能被抑制，且CAP 不活化，導致乳糖操縱子不表現",
-        "抑制子的功能被抑制，且CAP 被活化，導致乳糖操縱子不表現",
-        "抑制子的功能被抑制，且CAP 被活化，促使乳糖操縱子表現"
+        "抑制子的功能被抑制，且 CAP 不活化，促使乳糖操縱子表現",
+        "抑制子的功能被抑制，且 CAP 不活化，導致乳糖操縱子不表現",
+        "抑制子的功能被抑制，且 CAP 被活化，導致乳糖操縱子不表現",
+        "抑制子的功能被抑制，且 CAP 被活化，促使乳糖操縱子表現"
       ],
       "answers": [
         "D"
@@ -141,7 +141,7 @@
       "subject_status": "range",
       "stem": "有關無乳鏈球菌（Streptococcus agalactiae）的敘述，下列何者錯誤？",
       "options": [
-        "屬於B 群鏈球菌（Group B streptococci）",
+        "屬於 B 群鏈球菌（Group B streptococci）",
         "血清學鑑定的三個主要標誌為 Lancefield group B 抗原（antigen）、型特異性莢膜多醣體（type-specific capsularpolysaccharides）、表面蛋白質（surface proteins）",
         "主要棲居在人體上呼吸道",
         "此菌可經由產婦生產時感染嬰兒"
@@ -166,7 +166,7 @@
       "stem": "關於白喉桿菌（Corynebacterium diphtheriae）的敘述，下列何者錯誤？",
       "options": [
         "主要的致病因子為白喉毒素（diptheria toxin），作用於轉譯延長因子（elongation factor-2 , EF-2）",
-        "造成疾病的主要生物型（biotype）是gravis biotype",
+        "造成疾病的主要生物型（biotype）是 gravis biotype",
         "細胞壁上含有短鏈分枝菌酸（short-chain mycolic acids）",
         "主要造成呼吸道或皮膚的疾病"
       ],
@@ -243,7 +243,7 @@
         "愛滋病毒（human immunodeficiency virus）之酵素均由被感染細胞的基因轉譯製造",
         "茲卡病毒（Zika virus）為負股(-) RNA 病毒",
         "新型冠狀病毒（SARS-CoV-2）之複製在細胞質中進行",
-        "腸病毒（enterovirus）具有外套膜，為RNA 病毒"
+        "腸病毒（enterovirus）具有外套膜，為 RNA 病毒"
       ],
       "answers": [
         "C"
@@ -286,10 +286,10 @@
       "number": 12,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列何者不是Bunyavirus 與Arenavirus 共同具有的特性？",
+      "stem": "下列何者不是 Bunyavirus 與 Arenavirus 共同具有的特性？",
       "options": [
         "為人畜共同傳染（zoonoses）的病毒",
-        "基因體為片段RNA 組成（segmented RNA genome）",
+        "基因體為片段 RNA 組成（segmented RNA genome）",
         "可能造成出血熱（hemorrhagic fever）",
         "二者病毒顆粒（virion）中都沒有包裹核糖體（ribosome）"
       ],
@@ -310,7 +310,7 @@
       "number": 13,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列何者不是負股RNA 病毒（negative-sense RNA virus）？",
+      "stem": "下列何者不是負股 RNA 病毒（negative-sense RNA virus）？",
       "options": [
         "流感病毒（influenza virus）",
         "伊波拉病毒（Ebola virus）",
@@ -358,7 +358,7 @@
       "number": 15,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列那一種藥物，主要抑制C 型肝炎病毒（hepatitis C virus）的聚合酶（polymerase）？",
+      "stem": "下列那一種藥物，主要抑制 C 型肝炎病毒（hepatitis C virus）的聚合酶（polymerase）？",
       "options": [
         "索華迪（sofosbuvir）",
         "波普瑞韋（boceprevir）",
@@ -454,7 +454,7 @@
       "number": 19,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "王小弟今年13 歲，因鼻腔內長了膿包並有持續擴大的跡象，而到醫院就診。醫生檢查結果有類似慢性發炎的現象，問診發現以往王小弟也常有類似感染後，很緩慢痊癒的情況。經由詳細檢查發現他的CD8 T 細胞數量異常的低，而其MHC class I 分子在細胞上的表現量也極少，因此醫生分析後認為王小弟最有可能得了：",
+      "stem": "王小弟今年 13 歲，因鼻腔內長了膿包並有持續擴大的跡象，而到醫院就診。醫生檢查結果有類似慢性發炎的現象，問診發現以往王小弟也常有類似感染後，很緩慢痊癒的情況。經由詳細檢查發現他的 CD8 T 細胞數量異常的低，而其 MHC class I 分子在細胞上的表現量也極少，因此醫生分析後認為王小弟最有可能得了：",
       "options": [
         "chronic granulomatous disease",
         "MHC class I deficiency",
@@ -478,7 +478,7 @@
       "number": 20,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "T 細胞的抗原受體（T cel receptor, TCR）在發育過程中會產生多樣性，下列何種機制和TCR 多樣性有關？①V region 由數個基因片段（gene segments）組成 ②V(D)J DNA 重組 ③RAG1 和RAG2 基因表現 ④AIRE 基因表現 ⑤terminal deoxynucleotidyl transferase （TdT） 基因表現 ⑥類型轉換重組（class switch recombination） ⑦N-nucleotide addition",
+      "stem": "T 細胞的抗原受體（T cel receptor, TCR）在發育過程中會產生多樣性，下列何種機制和 TCR 多樣性有關？①V region 由數個基因片段（gene segments）組成 ②V(D)J DNA 重組 ③RAG1 和 RAG2 基因表現 ④AIRE 基因表現 ⑤terminal deoxynucleotidyl transferase （TdT） 基因表現 ⑥類型轉換重組（class switch recombination） ⑦N-nucleotide addition",
       "options": [
         "①②③⑤⑦",
         "①③⑤⑥⑦",
@@ -502,7 +502,7 @@
       "number": 21,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "毒殺性CD8 T 細胞（cytotoxic CD8 T cells）所執行細胞凋亡之內在徑路（intrinsic pathway），下列何者為主要調節抑制的分子？",
+      "stem": "毒殺性 CD8 T 細胞（cytotoxic CD8 T cells）所執行細胞凋亡之內在徑路（intrinsic pathway），下列何者為主要調節抑制的分子？",
       "options": [
         "Bcl-2 family",
         "Bax family",
@@ -526,11 +526,11 @@
       "number": 22,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "我國目前嬰幼兒常規肺炎鏈球菌疫苗接種為結合型疫苗（pneumococcal conjugate vaccine, PCV），此疫苗是將莢膜多醣（capsular polysaccharide）結合白喉毒素蛋白來施打，未滿一歲嬰幼兒常規接種是採用2+1（2 劑基礎劑，1 劑追加劑）共3 劑接種。下列有關肺炎鏈球菌疫苗接種的敘述何者錯誤？",
+      "stem": "我國目前嬰幼兒常規肺炎鏈球菌疫苗接種為結合型疫苗（pneumococcal conjugate vaccine, PCV），此疫苗是將莢膜多醣（capsular polysaccharide）結合白喉毒素蛋白來施打，未滿一歲嬰幼兒常規接種是採用 2+1（2 劑基礎劑，1 劑追加劑）共 3 劑接種。下列有關肺炎鏈球菌疫苗接種的敘述何者錯誤？",
       "options": [
         "接種後如果嬰幼兒產生良好的免疫反應，血清可以測到對抗莢膜多醣及抗白喉蛋白的專一性抗體",
         "主要是對抗莢膜多醣專一性抗體能夠保護嬰幼兒不被肺炎鏈球菌感染",
-        "抗莢膜多醣抗體的產生，主因是專一性辨識莢膜多醣的CD4 輔助T 細胞（T helper cells）先產生之後，幫助B 細胞進一步分化成漿細胞（plasma cells）",
+        "抗莢膜多醣抗體的產生，主因是專一性辨識莢膜多醣的 CD4 輔助 T 細胞（T helper cells）先產生之後，幫助B 細胞進一步分化成漿細胞（plasma cells）",
         "莢膜多醣和白喉毒素蛋白必須以共價鍵（covalent bond）連結在一起，方能有效引發高親和力的抗體產生"
       ],
       "answers": [
@@ -574,11 +574,11 @@
       "number": 24,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "3 歲的小美已在幼兒園一年的時間，她的父母因為相信施打MMR 疫苗可能引起自閉症的說法而拒絕讓她接種MMR 疫苗，不過在這之前她已經先接種了DTP 疫苗。請問小美雖與一群小朋友朝夕相處很長的時間，但至今仍沒感染麻疹的最有可能原因為何？",
+      "stem": "3 歲的小美已在幼兒園一年的時間，她的父母因為相信施打 MMR 疫苗可能引起自閉症的說法而拒絕讓她接種MMR 疫苗，不過在這之前她已經先接種了 DTP 疫苗。請問小美雖與一群小朋友朝夕相處很長的時間，但至今仍沒感染麻疹的最有可能原因為何？",
       "options": [
         "小美對麻疹抗原不會引起免疫反應",
-        "幼兒園的其他小朋友均有接種MMR 疫苗而提供了她群體免疫力（herd immunity）",
-        "小美接受的DTP 疫苗對麻疹具有交互免疫保護（cross-protective immunity）的功能",
+        "幼兒園的其他小朋友均有接種 MMR 疫苗而提供了她群體免疫力（herd immunity）",
+        "小美接受的 DTP 疫苗對麻疹具有交互免疫保護（cross-protective immunity）的功能",
         "小美雖被麻疹病毒感染，但因服用抗生素所以沒有發病"
       ],
       "answers": [
@@ -622,7 +622,7 @@
       "number": 26,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "假設有種臨床藥物X，某群孩童經過多年使用治療相關症狀後，皆出現類似自體免疫疾病之副作用，例如：脾臟及淋巴結腫大、出現自體抗體等，最近的研究顯示藥物X 可能藉由干擾某個分子的正常功能，而導致這些副作用，請選出最不可能的分子？",
+      "stem": "假設有種臨床藥物 X，某群孩童經過多年使用治療相關症狀後，皆出現類似自體免疫疾病之副作用，例如：脾臟及淋巴結腫大、出現自體抗體等，最近的研究顯示藥物 X 可能藉由干擾某個分子的正常功能，而導致這些副作用，請選出最不可能的分子？",
       "options": [
         "CTLA-4",
         "FasL",
@@ -718,7 +718,7 @@
       "number": 30,
       "subject": "parasitology",
       "subject_status": "range",
-      "stem": "李先生經常往返臺灣及非洲經商，在非洲有時會喝到沒煮沸的水，最近他腳踝皮膚出現潰瘍，醫師從潰瘍處拉出100 公分長的寄生蟲，您認為李先生最有可能感染下列何種寄生蟲？",
+      "stem": "李先生經常往返臺灣及非洲經商，在非洲有時會喝到沒煮沸的水，最近他腳踝皮膚出現潰瘍，醫師從潰瘍處拉出 100 公分長的寄生蟲，您認為李先生最有可能感染下列何種寄生蟲？",
       "options": [
         "鉤蟲（hookworm）",
         "羅阿絲蟲（Loa loa）",
@@ -865,8 +865,8 @@
       "stem": "若欲探討「是否吸菸」與「肺功能是否正常」兩者是不是有相關，下列敘述何者最不恰當？",
       "options": [
         "可以利用卡方檢定來檢定兩者之間是否有相關性",
-        "可以利用檢定勝算比值（odds ratio）是否為1 來檢定兩者之間是否有相關性",
-        "可以建立檢定勝算比值（odds ratio）的95%信賴區間，並據以檢定兩者之間是否有相關性",
+        "可以利用檢定勝算比值（odds ratio）是否為 1 來檢定兩者之間是否有相關性",
+        "可以建立檢定勝算比值（odds ratio）的 95%信賴區間，並據以檢定兩者之間是否有相關性",
         "卡方檢定的檢定統計量越大，表示計算出來的檢定勝算比值（odds ratio）越大"
       ],
       "answers": [
@@ -888,9 +888,9 @@
       "subject_status": "range",
       "stem": "下列有關相關係數（correlation coefficient）之敘述，何者最不恰當？",
       "options": [
-        "若體重與血壓之相關係數為0.6，可以推論體重與血壓有顯著正相關",
-        "衡量體重（單位：Kg）與薪資水準（分為低、中、高）之相關性，可以採用Spearman 相關係數",
-        "Pearson 相關係數為0，表示兩變項不具有線性相關",
+        "若體重與血壓之相關係數為 0.6，可以推論體重與血壓有顯著正相關",
+        "衡量體重（單位：Kg）與薪資水準（分為低、中、高）之相關性，可以採用 Spearman 相關係數",
+        "Pearson 相關係數為 0，表示兩變項不具有線性相關",
         "Pearson 相關係數之數值介於 -1 到 1 之間"
       ],
       "answers": [
@@ -961,7 +961,7 @@
       "stem": "下列關於游離性輻射對人體的作用或傷害的敘述，何者最不恰當？",
       "options": [
         "游離性輻射可能造成原子的離子化，而造成生物體內分子的破壞",
-        "不同輻射線的種類，所產生的生物效應不一樣，實務上以1 侖目迦馬線或X 射線所產生的生物效應作為1 雷德",
+        "不同輻射線的種類，所產生的生物效應不一樣，實務上以 1 侖目迦馬線或 X 射線所產生的生物效應作為 1 雷德",
         "游離輻射劑量大時，會造成對細胞分裂的抑制，甚至使該生物立即死亡（1 萬侖目以上時）",
         "游離性輻射長期暴露可誘發癌症，通常細胞分裂能力愈強者愈容易"
       ],
@@ -1054,7 +1054,7 @@
       "number": 44,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "根據Hancock 以及Duhl（1986）對健康城市（healthy city）的定義，下列何者最不恰當？",
+      "stem": "根據 Hancock 以及 Duhl（1986）對健康城市（healthy city）的定義，下列何者最不恰當？",
       "options": [
         "健康城市是擴展社區的資源",
         "健康城市是健康促進的結果",
@@ -1150,7 +1150,7 @@
       "number": 48,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "影響醫療保健服務需求，最常用到的模式之一就是健康服務利用行為模式，此為社會學者Andersen 於1968 年所提出。下列何者不屬於影響病人利用醫療服務的因素？",
+      "stem": "影響醫療保健服務需求，最常用到的模式之一就是健康服務利用行為模式，此為社會學者 Andersen 於 1968 年所提出。下列何者不屬於影響病人利用醫療服務的因素？",
       "options": [
         "前置因素（predisposition factors）",
         "能力因素（enabling factors）",
@@ -1224,10 +1224,10 @@
       "subject_status": "range",
       "stem": "Warfarin 在人體內的代謝主要受到下列那兩種基因的多型性變異（polymorphism）影響？",
       "options": [
-        "CYP2C19 和VKORC1（vitamin K epoxide reductase complex subunit 1）",
-        "CYP2C9 和VKORC1",
-        "CYP2D6 和VKORC1",
-        "CYP2B6 和CYP2C19"
+        "CYP2C19 和 VKORC1（vitamin K epoxide reductase complex subunit 1）",
+        "CYP2C9 和 VKORC1",
+        "CYP2D6 和 VKORC1",
+        "CYP2B6 和 CYP2C19"
       ],
       "answers": [
         "B"
@@ -1297,7 +1297,7 @@
       "number": 54,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列治療乳癌的藥物中，何者可與乳癌細胞膜上之human epidermal growth factor 2（HER-2）受體結合而抑制癌細胞生長？",
+      "stem": "下列治療乳癌的藥物中，何者可與乳癌細胞膜上之 human epidermal growth factor 2（HER-2）受體結合而抑制癌細胞生長？",
       "options": [
         "anastrozole",
         "doxorubicin",
@@ -1321,7 +1321,7 @@
       "number": 55,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "抗癌藥合併療法CHOP 治療non-Hodgkin's lymphoma，其中對細胞週期M 期有專一性的抗癌藥物是：",
+      "stem": "抗癌藥合併療法 CHOP 治療 non-Hodgkin's lymphoma，其中對細胞週期 M 期有專一性的抗癌藥物是：",
       "options": [
         "cyclophosphamide",
         "doxorubicin",
@@ -1345,7 +1345,7 @@
       "number": 56,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "抗血小板凝集的藥物中，下列何者可阻斷血小板上的ADP 受體？",
+      "stem": "抗血小板凝集的藥物中，下列何者可阻斷血小板上的 ADP 受體？",
       "options": [
         "aspirin",
         "ticlopidine",
@@ -1371,9 +1371,9 @@
       "subject_status": "range",
       "stem": "有關免疫抑制劑之敘述，下列何者錯誤？",
       "options": [
-        "mycophenolate mofetil 因抑制inosine monophosphate dehydrogenase，進而抑制T 淋巴球增生",
-        "sirolimus 與細胞內FKBP-12 結合成的複合體會活化mTOR，進而抑制T 淋巴球增生",
-        "daclizumab 因抑制IL-2 受體，可減緩器官移植後的排斥反應",
+        "mycophenolate mofetil 因抑制 inosine monophosphate dehydrogenase，進而抑制 T 淋巴球增生",
+        "sirolimus 與細胞內 FKBP-12 結合成的複合體會活化 mTOR，進而抑制 T 淋巴球增生",
+        "daclizumab 因抑制 IL-2 受體，可減緩器官移植後的排斥反應",
         "azathioprine 能干擾核酸的合成，抑制淋巴細胞的生長"
       ],
       "answers": [
@@ -1395,10 +1395,10 @@
       "subject_status": "range",
       "stem": "有關治療血脂異常（dyslipidemia）藥物之作用及機制敘述，下列何者錯誤？",
       "options": [
-        "atrovastatin：抑制HMG-CoA reductase",
-        "fenofibrate：增加lipoprotein lipase 活性",
+        "atrovastatin：抑制 HMG-CoA reductase",
+        "fenofibrate：增加 lipoprotein lipase 活性",
         "colestipol：減少膽酸的吸收",
-        "niacin：活化peroxisome proliferator-activated receptor alpha"
+        "niacin：活化 peroxisome proliferator-activated receptor alpha"
       ],
       "answers": [
         "D"
@@ -1417,7 +1417,7 @@
       "number": 59,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何種狀況比較不適合用octreotide 治療？",
+      "stem": "下列何種狀況比較不適合用 octreotide 治療？",
       "options": [
         "胃泌素瘤",
         "食道靜脈瘤出血",
@@ -1465,7 +1465,7 @@
       "number": 61,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "酗酒且患有第二型糖尿病的病人應避免使用metformin 治療，因為metformin 和酒精一起使用很容易造成：",
+      "stem": "酗酒且患有第二型糖尿病的病人應避免使用 metformin 治療，因為 metformin 和酒精一起使用很容易造成：",
       "options": [
         "肥胖",
         "乳酸中毒",
@@ -1513,12 +1513,12 @@
       "number": 63,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列有關ranolazine 的藥理作用機轉，何者錯誤？",
+      "stem": "下列有關 ranolazine 的藥理作用機轉，何者錯誤？",
       "options": [
-        "可抑制late sodium current",
+        "可抑制 late sodium current",
         "可直接抑制鈉鈣交換 sodium-calcium exchanger",
         "可降低細胞內鈣離子濃度",
-        "對無long QT syndrome，但有冠狀動脈疾病患者會延長QT interval"
+        "對無 long QT syndrome，但有冠狀動脈疾病患者會延長 QT interval"
       ],
       "answers": [
         "B"
@@ -1561,7 +1561,7 @@
       "number": 65,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何者是一種前驅藥（prodrug），經酵素水解後的產物成為選擇性alpha-1 交感受體致效劑（selective α₁-receptor agonist）？",
+      "stem": "下列何者是一種前驅藥（prodrug），經酵素水解後的產物成為選擇性 alpha-1 交感受體致效劑（selective α₁-receptor agonist）？",
       "options": [
         "oxymetazoline",
         "ephedrine",
@@ -1585,7 +1585,7 @@
       "number": 66,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列藥物中，何者對M₃蕈毒性受體（M₃ muscarinic receptor）的選擇性最高，因有較長半衰期，故一天只需服藥一次即可用於治療成人尿失禁（urinary incontinence）？",
+      "stem": "下列藥物中，何者對 M₃蕈毒性受體（M₃ muscarinic receptor）的選擇性最高，因有較長半衰期，故一天只需服藥一次即可用於治療成人尿失禁（urinary incontinence）？",
       "options": [
         "darifenacin",
         "tolterodine",
@@ -1681,7 +1681,7 @@
       "number": 70,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何種藥物與mifepristone（RU-486）合併使用，可以做為懷孕初期的墮胎藥（terminate early pregnancy）？",
+      "stem": "下列何種藥物與 mifepristone（RU-486）合併使用，可以做為懷孕初期的墮胎藥（terminate early pregnancy）？",
       "options": [
         "treprostinil",
         "misoprostol",
@@ -1705,12 +1705,12 @@
       "number": 71,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "第一代與第二代antihistamines 的區分，主要是根據下列何者而來？",
+      "stem": "第一代與第二代 antihistamines 的區分，主要是根據下列何者而來？",
       "options": [
-        "與H₁-receptor 的親和力",
+        "與 H₁-receptor 的親和力",
         "通過血腦屏障（blood brain barrier）的能力",
-        "產生antiadrenergic activity 的強弱",
-        "與H₃-receptor 的親和力"
+        "產生 antiadrenergic activity 的強弱",
+        "與 H₃-receptor 的親和力"
       ],
       "answers": [
         "B"
@@ -1729,7 +1729,7 @@
       "number": 72,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "Haloperidol 和clozapine 皆為治療思覺失調症的藥物，但clozapine 較不會引起錐體外症候群（extrapyramidal syndrome），因為clozapine 具有下列那一個特性？",
+      "stem": "Haloperidol 和 clozapine 皆為治療思覺失調症的藥物，但 clozapine 較不會引起錐體外症候群（extrapyramidal syndrome），因為 clozapine 具有下列那一個特性？",
       "options": [
         "對多巴胺受體（D₂）具有較低的阻斷作用",
         "對蕈毒鹼（muscarine）受體具有較強的阻斷作用",
@@ -1756,9 +1756,9 @@
       "stem": "有關抗憂鬱藥物作用的敘述，下列何者正確？",
       "options": [
         "amitriptyline 較不會造成口乾、便秘等副作用，適合用於老年人",
-        "trazodone 為5-HT₂受體的拮抗劑，除抗憂鬱的作用外亦具有安眠的作用",
-        "mirtazapine 為突觸前α₂腎上腺素受體的作用劑，增加norepinephrine 和5-HT 的釋放",
-        "venlafaxine 為單胺氧化酶B 的選擇性抑制劑，增加突觸norepinephrine 的含量"
+        "trazodone 為 5-HT₂受體的拮抗劑，除抗憂鬱的作用外亦具有安眠的作用",
+        "mirtazapine 為突觸前α₂腎上腺素受體的作用劑，增加 norepinephrine 和 5-HT 的釋放",
+        "venlafaxine 為單胺氧化酶 B 的選擇性抑制劑，增加突觸 norepinephrine 的含量"
       ],
       "answers": [
         "B"
@@ -1876,7 +1876,7 @@
       "stem": "關於體染色體遺傳疾病（autosomal inheritable disease）的敘述，下列何者正確？",
       "options": [
         "酵素蛋白缺陷所引起的遺傳性疾病以顯性遺傳疾病（autosomal dominant disease）為主",
-        "家族性高膽固醇血症（familial hypercholesterolemia）為LDL 蛋白結構異常所致，以顯性遺傳疾病為主",
+        "家族性高膽固醇血症（familial hypercholesterolemia）為 LDL 蛋白結構異常所致，以顯性遺傳疾病為主",
         "高雪氏症（Gaucher disease）以隱性（recessive）遺傳為主，為葡萄糖腦苷脂（glucocerebroside）接受器（receptor）蛋白結構異常所致",
         "埃勒斯–丹洛斯症候群（Ehlers-Danlos syndromes）因是纖維性膠原蛋白（fibrillar collagen）結構或合成異常所致，所以顯性或隱性遺傳兼具"
       ],
@@ -1901,7 +1901,7 @@
       "options": [
         "巨細胞病毒（cytomegalovirus）也會造成類似臨床表現與出現非典型淋巴細胞",
         "引起的淋巴濾泡（lymphoid follicle）大量增生是造成肝脾腫大的主因",
-        "t(8;14)染色體轉位主要可在增生的T 淋巴細胞中出現",
+        "t(8;14)染色體轉位主要可在增生的 T 淋巴細胞中出現",
         "引起的竇組織細胞增生症（sinus histiocytosis）是造成淋巴結腫大的主因"
       ],
       "answers": [
@@ -1969,7 +1969,7 @@
       "number": 82,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "一個過去身體健康的25 歲女性，懷孕在某醫院婦產科定期接受產前檢查，檢查結果都正常，她後來自然產生出一個足月男嬰，但在生產後她很快出現呼吸急促、心跳加快、發紺（cyanosis）與血壓下降，接著出現痙攣與失去意識，請問下列情形是最可能出現在此病人的情況？",
+      "stem": "一個過去身體健康的 25 歲女性，懷孕在某醫院婦產科定期接受產前檢查，檢查結果都正常，她後來自然產生出一個足月男嬰，但在生產後她很快出現呼吸急促、心跳加快、發紺（cyanosis）與血壓下降，接著出現痙攣與失去意識，請問下列情形是最可能出現在此病人的情況？",
       "options": [
         "肺動脈血管管腔出現空氣阻塞",
         "肺動脈血管管腔出現骨髓（bone marrow）",
@@ -1995,10 +1995,10 @@
       "subject_status": "range",
       "stem": "60 歲男性因為心肌梗塞（myocardial infarct）引起的心肌破裂而死亡，心肌破裂的最常見時間與當時的顯微鏡下變化為何？",
       "options": [
-        "心肌梗塞後1 天，心肌細胞出現凝固性壞死（coagulation necrosis）",
-        "心肌梗塞後3 天，心肌細胞出現凝固性壞死與嗜中性白血球（neutrophil）浸潤",
-        "心肌梗塞後7 天，心肌細胞出現凝固性壞死與巨噬細胞（macrophage）浸潤",
-        "心肌梗塞後10 天，肉芽組織（granulation tissue）形成"
+        "心肌梗塞後 1 天，心肌細胞出現凝固性壞死（coagulation necrosis）",
+        "心肌梗塞後 3 天，心肌細胞出現凝固性壞死與嗜中性白血球（neutrophil）浸潤",
+        "心肌梗塞後 7 天，心肌細胞出現凝固性壞死與巨噬細胞（macrophage）浸潤",
+        "心肌梗塞後 10 天，肉芽組織（granulation tissue）形成"
       ],
       "answers": [
         "B"
@@ -2041,7 +2041,7 @@
       "number": 85,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "12 歲男孩因腹痛求診，影像檢查發現迴盲區（ileocecal region）腫瘤導致腸套疊，腫瘤切片顯示瀰漫浸潤的中等大小淋巴球，且有散布的巨噬細胞形成星空樣模式（starry-sky pattern），腫瘤細胞表現CD20 及CD10，但並未表現BCL2 及TdT。此種腫瘤最常有下列何種基因轉位？",
+      "stem": "12 歲男孩因腹痛求診，影像檢查發現迴盲區（ileocecal region）腫瘤導致腸套疊，腫瘤切片顯示瀰漫浸潤的中等大小淋巴球，且有散布的巨噬細胞形成星空樣模式（starry-sky pattern），腫瘤細胞表現 CD20 及 CD10，但並未表現 BCL2 及 TdT。此種腫瘤最常有下列何種基因轉位？",
       "options": [
         "MYC",
         "ALK",
@@ -2093,7 +2093,7 @@
       "options": [
         "常出現於雙側肺葉",
         "男性比女性常見",
-        "患者以小於50 歲的年輕人居多",
+        "患者以小於 50 歲的年輕人居多",
         "後期可見蜂巢樣纖維化"
       ],
       "answers": [
@@ -2113,7 +2113,7 @@
       "number": 88,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "60 歲女性有抽菸史，主訴咳嗽、胸痛及體重下降。胸部X-ray 顯示，有一陰影，組織圖如下，其最可能的診斷為：",
+      "stem": "60 歲女性有抽菸史，主訴咳嗽、胸痛及體重下降。胸部 X-ray 顯示，有一陰影，組織圖如下，其最可能的診斷為：",
       "options": [
         "小細胞癌",
         "腺癌",
@@ -2163,10 +2163,10 @@
       "number": 90,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "關於Alpha1-antitrypsin deficiency 的敘述，下列何者錯誤？",
+      "stem": "關於 Alpha1-antitrypsin deficiency 的敘述，下列何者錯誤？",
       "options": [
-        "肝細胞含有periodic acid-Schiff（PAS）染色陽性的圓形細胞質球狀內含物（globular inclusions），此球狀內含物可被澱粉酶分解（PAS-positive and diastase-sensitive）",
-        "最常見的突變是PiZ，PiZZ homozygotes 的血中的Alpha1-antitrypsin 僅為正常值的10％",
+        "肝細胞含有 periodic acid-Schiff（PAS）染色陽性的圓形細胞質球狀內含物（globular inclusions），此球狀內含物可被澱粉酶分解（PAS-positive and diastase-sensitive）",
+        "最常見的突變是 PiZ，PiZZ homozygotes 的血中的 Alpha1-antitrypsin 僅為正常值的 10％",
         "可能以新生兒肝炎來表現，可能發展為膽汁淤積，壞死，慢性肝炎",
         "與肺氣腫相關"
       ],
@@ -2235,12 +2235,12 @@
       "number": 93,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "40 歲女性，十年前因經常頭痛而自行購買含phenacetin 複方止痛藥，且常合併服用阿斯匹靈（aspirin），目前腎功能下降，病理巨觀發現腎乳突脫落，有關此病患的相關病理變化中，下列何者最不正確？",
+      "stem": "40 歲女性，十年前因經常頭痛而自行購買含 phenacetin 複方止痛藥，且常合併服用阿斯匹靈（aspirin），目前腎功能下降，病理巨觀發現腎乳突脫落，有關此病患的相關病理變化中，下列何者最不正確？",
       "options": [
         "病灶常見鈣化",
         "腎乳突壞死",
         "會引起慢性腎小管間質性腎炎",
-        "超過90%的病患合併有尿路感染"
+        "超過 90%的病患合併有尿路感染"
       ],
       "answers": [
         "D"
@@ -2382,7 +2382,7 @@
       "number": 99,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "包涵體肌炎（inclusion body myositis）患者之肌肉切片在Gomori trichrome stain 下觀察到的包涵體（cytoplasmic inclusion）稱為：",
+      "stem": "包涵體肌炎（inclusion body myositis）患者之肌肉切片在 Gomori trichrome stain 下觀察到的包涵體（cytoplasmic inclusion）稱為：",
       "options": [
         "Hirano body",
         "rimmed vacuole",

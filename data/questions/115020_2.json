@@ -90,7 +90,7 @@
       "number": 4,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "若先天interferon-γ受體基因缺陷的病人感染結核分枝桿菌，最可能導致下列何種結果？",
+      "stem": "若先天 interferon-γ受體基因缺陷的病人感染結核分枝桿菌，最可能導致下列何種結果？",
       "options": [
         "病人將在沒有症狀的情況下清除結核分枝桿菌的感染",
         "病人將產生更強的免疫反應，並降低活動性結核病的風險",
@@ -117,7 +117,7 @@
       "stem": "關於廣泛抗藥性結核（extensively drug-resistant tuberculosis, XDR TB）的敘述，下列何者最適當？",
       "options": [
         "XDR TB 是一種多重抗藥性結核病（multidrug-resistant tuberculosis），同時對氟喹諾酮類藥物（fluoroquinolones）和至少一種二線藥物具有額外的抗藥性",
-        "XDR TB 只發生在AIDS 患者身上，尚非全球性的問題",
+        "XDR TB 只發生在 AIDS 患者身上，尚非全球性的問題",
         "XDR TB 感染者目前無抗生素可治療，因此只能隔離",
         "XDR TB 接觸者，應給與預防性抗生素治療"
       ],
@@ -189,7 +189,7 @@
       "stem": "關於抗病毒藥物的敘述，下列何者最適當？",
       "options": [
         "高效抗反轉錄病毒療法（Highly Active Antiretroviral Therapy, HAART）通常使用單一藥物進行治療，主要是為了減少副作用",
-        "C 型肝炎病毒（Hepatitis C virus, HCV）抗病毒藥物可有效清除體內病毒，而其成分皆針對病毒RNA 聚合酶（RNA polymerase）",
+        "C 型肝炎病毒（Hepatitis C virus, HCV）抗病毒藥物可有效清除體內病毒，而其成分皆針對病毒 RNA 聚合酶（RNA polymerase）",
         "抗病毒藥物只能對單一種病毒有效，無法用於治療不同種類的病毒感染",
         "Zidovudine（Retrovir）是一種反轉錄酶（reverse transcriptase）抑制劑，可用來針對人類免疫缺乏病毒"
       ],
@@ -213,9 +213,9 @@
       "stem": "下列關於各類型肝炎病毒的敘述中，何者最適當？",
       "options": [
         "C 型肝炎病毒（HCV）目前有有效的疫苗可預防，並且可以通過食物和水傳播",
-        "D 型肝炎病毒（HDV）無法獨立複製，必須依賴B 型肝炎病毒（HBV），並且主要通過血液與性接觸傳播",
+        "D 型肝炎病毒（HDV）無法獨立複製，必須依賴 B 型肝炎病毒（HBV），並且主要通過血液與性接觸傳播",
         "A 型肝炎病毒（HAV）主要通過血液與性接觸傳播，並且目前有有效疫苗可預防",
-        "除D 型肝炎病毒（HDV）基因體屬於DNA 外，其他皆屬於RNA 病毒"
+        "除 D 型肝炎病毒（HDV）基因體屬於 DNA 外，其他皆屬於 RNA 病毒"
       ],
       "answers": [
         "B"
@@ -330,11 +330,11 @@
       "number": 14,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列關於Sofosbuvir、Oseltamivir、Darunavir、Raltegravir 藥物的比較何者最適當？",
+      "stem": "下列關於 Sofosbuvir、Oseltamivir、Darunavir、Raltegravir 藥物的比較何者最適當？",
       "options": [
         "Darunavir、Raltegravir 皆為人類免疫不全病毒（human immunodeficiency virus）的抗病毒藥物",
         "Oseltamivir 抑制病毒進入細胞（entry），Darunavir 抑制病毒的釋放（release）",
-        "Sofosbuvir 為B 型肝炎病毒（hepatitis B virus）的抗病毒藥物，Oseltamivir 為流感病毒（influenza virus）的抗病毒藥物",
+        "Sofosbuvir 為 B 型肝炎病毒（hepatitis B virus）的抗病毒藥物，Oseltamivir 為流感病毒（influenza virus）的抗病毒藥物",
         "Sofosbuvir、Raltegravir 皆為蛋白酶抑制劑（protease inhibitor）"
       ],
       "answers": [
@@ -378,10 +378,10 @@
       "number": 16,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "有一種正股RNA 病毒（positive-sense RNA virus）具有二十面體病毒殼體（capsid），無套膜（envelope），經糞口傳播，在罕見病例中會引起癱瘓。此病毒屬於那一病毒科？",
+      "stem": "有一種正股 RNA 病毒（positive-sense RNA virus）具有二十面體病毒殼體（capsid），無套膜（envelope），經糞口傳播，在罕見病例中會引起癱瘓。此病毒屬於那一病毒科？",
       "options": [
         "腺病毒科（Adenoviridae）",
-        "小RNA 病毒科（Picornaviridae）",
+        "小 RNA 病毒科（Picornaviridae）",
         "呼腸孤病毒科（Reoviridae）",
         "披衣病毒科（Togaviridae）"
       ],
@@ -474,12 +474,12 @@
       "number": 20,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "關於major histocompatibility complex（MHC）polymorphism 與抗病毒免疫反應，下列敘述何者最具相關性？",
+      "stem": "關於 major histocompatibility complex（MHC）polymorphism 與抗病毒免疫反應，下列敘述何者最具相關性？",
       "options": [
-        "增加可被MHC 呈獻的抗原種類，有利於抑制病毒在族群中傳播",
-        "呈獻出最容易被T 細胞記憶的主要抗原點（predominant epitope）",
+        "增加可被 MHC 呈獻的抗原種類，有利於抑制病毒在族群中傳播",
+        "呈獻出最容易被 T 細胞記憶的主要抗原點（predominant epitope）",
         "確保沒有年齡別的抗病毒免疫力差異性",
-        "避免T 細胞在毒殺病毒時造成過度的自體免疫反應"
+        "避免 T 細胞在毒殺病毒時造成過度的自體免疫反應"
       ],
       "answers": [
         "A"
@@ -498,7 +498,7 @@
       "number": 21,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列何種CD4 效應T 細胞（effector CD4 T cells）分泌的細胞激素（cytokines），扮演最重要的免疫抑制功能？",
+      "stem": "下列何種 CD4 效應 T 細胞（effector CD4 T cells）分泌的細胞激素（cytokines），扮演最重要的免疫抑制功能？",
       "options": [
         "IL-4",
         "IL-10",
@@ -546,7 +546,7 @@
       "number": 23,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "每一顆B 細胞只表現一種專一性（specificity）抗原受體，其最主要的機制為：",
+      "stem": "每一顆 B 細胞只表現一種專一性（specificity）抗原受體，其最主要的機制為：",
       "options": [
         "RNA 選擇性剪接（alternative splicing）",
         "DNA 重組（rearrangement）",
@@ -594,9 +594,9 @@
       "number": 25,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "Streptococcus pneumoniae 是一種胞外菌（extracellular bacteria）。下列何者最有可能幫助S.pneumoniae 逃脫免疫偵測？",
+      "stem": "Streptococcus pneumoniae 是一種胞外菌（extracellular bacteria）。下列何者最有可能幫助 S.pneumoniae 逃脫免疫偵測？",
       "options": [
-        "產生大量的lipopolysaccharide（LPS），毒殺免疫細胞",
+        "產生大量的 lipopolysaccharide（LPS），毒殺免疫細胞",
         "形成孢子，躲避免疫偵測",
         "減少基因表達，避免刺激免疫反應",
         "細菌表面的莢膜多醣（capsular polysaccharide），干擾補體活化反應"
@@ -618,12 +618,12 @@
       "number": 26,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "2018 年諾貝爾生醫獎，由James Allison 與Tasuku Honjo 共同獲得，表彰他們發展出利用免疫檢查點抑制劑（immune checkpoint inhibitor, ICI）對抗癌療法的突破性研究，下列關於免疫檢查點抑制劑的描述，何者最不適當？",
+      "stem": "2018 年諾貝爾生醫獎，由 James Allison 與 Tasuku Honjo 共同獲得，表彰他們發展出利用免疫檢查點抑制劑（immune checkpoint inhibitor, ICI）對抗癌療法的突破性研究，下列關於免疫檢查點抑制劑的描述，何者最不適當？",
       "options": [
         "ICI 在癌症治療取得突破性的結果，如：黑色素瘤（melanoma）獲得較好的反應",
-        "Pembrolizumab 與Nivolumab 是兩種常見的PD-1 抗體藥物，其治療反應率優於CTLA-4 抗體藥物",
-        "Ipilimumab 是CTLA-4 抗體藥物，其治療副作用率高於PD-1 抗體藥物",
-        "對於急性淋巴細胞白血病（acute lymphocytic leukemia, ALL），除了CAR-T 療法外，ICI 亦有顯著的療效"
+        "Pembrolizumab 與 Nivolumab 是兩種常見的 PD-1 抗體藥物，其治療反應率優於 CTLA-4 抗體藥物",
+        "Ipilimumab 是 CTLA-4 抗體藥物，其治療副作用率高於 PD-1 抗體藥物",
+        "對於急性淋巴細胞白血病（acute lymphocytic leukemia, ALL），除了 CAR-T 療法外，ICI 亦有顯著的療效"
       ],
       "answers": [
         "D"
@@ -666,11 +666,11 @@
       "number": 28,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "抗CD20 抗體（Rituximab）可治療非霍奇金氏淋巴瘤（non-Hodgkin's lymphoma）。主要是經由下列何種機轉引起B 細胞的凋亡，達到抗腫瘤效果？",
+      "stem": "抗 CD20 抗體（Rituximab）可治療非霍奇金氏淋巴瘤（non-Hodgkin's lymphoma）。主要是經由下列何種機轉引起 B 細胞的凋亡，達到抗腫瘤效果？",
       "options": [
-        "ADCC（經由活化Fc receptor）",
+        "ADCC（經由活化 Fc receptor）",
         "immunotoxin（抗體 + toxin）",
-        "抗體結合chemotherapeutic drug",
+        "抗體結合 chemotherapeutic drug",
         "免疫檢查點阻斷方法（immune checkpoint blockade）"
       ],
       "answers": [
@@ -738,7 +738,7 @@
       "number": 31,
       "subject": "parasitology",
       "subject_status": "range",
-      "stem": "李先生因頭痛、肌肉痙攣及視力急速減退而就醫，血液檢查有輕微的嗜伊紅性白血球（eosinophil）上升，糞便檢查未發現任何寄生蟲蟲卵或蟲體，電腦斷層掃描（CT）和磁振造影（MRI）在腦實質組織、腦室發現許多囊體（直徑4～15 毫米），患者先前曾被公司派駐墨西哥一年，他最可能罹患下列何種疾病？",
+      "stem": "李先生因頭痛、肌肉痙攣及視力急速減退而就醫，血液檢查有輕微的嗜伊紅性白血球（eosinophil）上升，糞便檢查未發現任何寄生蟲蟲卵或蟲體，電腦斷層掃描（CT）和磁振造影（MRI）在腦實質組織、腦室發現許多囊體（直徑 4～15 毫米），患者先前曾被公司派駐墨西哥一年，他最可能罹患下列何種疾病？",
       "options": [
         "幼裂絛蟲症（sparganosis）",
         "囊尾幼蟲症（cysticercosis）",
@@ -839,7 +839,7 @@
         "為長期罹患瘧疾的臨床症狀，以卵形瘧原蟲（Plasmodium ovale）感染最為顯著",
         "因肝臟細胞受到瘧原蟲寄生，間接造成血小板低下（thrombocytopenia）所致",
         "血管內大量溶血併發血紅素尿（hemoglobinuria）所造成的症狀",
-        "與患者體內IFN-γ受體損傷有關"
+        "與患者體內 IFN-γ受體損傷有關"
       ],
       "answers": [
         "C"
@@ -858,7 +858,7 @@
       "number": 36,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "某大型汽車公司的3,000 名員工從1980 年就開始接受了初步健康檢查。從1980 年後該公司每三年提供一次員工健康檢查，並可透過健康檢查結果與追蹤結果找出員工是否有罹患肝癌。研究者使用該公司之上述相關數據來探討肝癌與該公司工廠中接觸油漆之間的相關性。上述描述最有可能是下列何種研究設計？",
+      "stem": "某大型汽車公司的 3,000 名員工從 1980 年就開始接受了初步健康檢查。從 1980 年後該公司每三年提供一次員工健康檢查，並可透過健康檢查結果與追蹤結果找出員工是否有罹患肝癌。研究者使用該公司之上述相關數據來探討肝癌與該公司工廠中接觸油漆之間的相關性。上述描述最有可能是下列何種研究設計？",
       "options": [
         "隨機對照試驗",
         "世代研究",
@@ -906,7 +906,7 @@
       "number": 38,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "對某國小一年級學童進行齲齒調查，發現每百名男學童有24 人齲齒，每百名女學童有12 人齲齒，因此推論男學童的齲齒發生率是女學童的2 倍。上述推論不適當，其最主要原因為何？",
+      "stem": "對某國小一年級學童進行齲齒調查，發現每百名男學童有 24 人齲齒，每百名女學童有 12 人齲齒，因此推論男學童的齲齒發生率是女學童的 2 倍。上述推論不適當，其最主要原因為何？",
       "options": [
         "不知道調查總人數",
         "此為盛行率，並非發生率",
@@ -930,7 +930,7 @@
       "number": 39,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "某研究者想探討某基因多型性（AA／AG 組相對GG 組）是否與口腔癌的發生有關，收集200 名口腔癌患者與200 名沒有口腔癌的健康者的資料，但該研究者懷疑該基因型與口腔癌的關聯性是否因抽菸狀態不同而不一樣，下列那一個考量或處理最能幫助該研究者解決此問題？",
+      "stem": "某研究者想探討某基因多型性（AA／AG 組相對 GG 組）是否與口腔癌的發生有關，收集 200 名口腔癌患者與200 名沒有口腔癌的健康者的資料，但該研究者懷疑該基因型與口腔癌的關聯性是否因抽菸狀態不同而不一樣，下列那一個考量或處理最能幫助該研究者解決此問題？",
       "options": [
         "檢定抽菸與基因型對口腔癌的交互作用（interaction）",
         "將抽菸狀態的變項加入羅吉斯（logistic）迴歸模式中做調整即可解決",
@@ -981,7 +981,7 @@
       "stem": "埃及斑蚊為臺灣登革熱主要病媒蚊，下列何者最不符合埃及斑蚊之生態習性描述？",
       "options": [
         "喜歡棲息在戶外",
-        "在攝氏17 度以下活性低",
+        "在攝氏 17 度以下活性低",
         "警覺性高，易受驚動",
         "中斷式吸血"
       ],
@@ -1122,7 +1122,7 @@
       "number": 47,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "衛生福利部組織架構包含6 處10 司，10 個司中何者不是在民國106 年之後成立的？",
+      "stem": "衛生福利部組織架構包含 6 處 10 司，10 個司中何者不是在民國 106 年之後成立的？",
       "options": [
         "長期照顧司",
         "社會救助及社工司",
@@ -1149,8 +1149,8 @@
       "stem": "臺灣針對傳染病訂有五類傳染病通報的分級，其中有關通報時間的敘述何者最不恰當？",
       "options": [
         "第一類傳染病必須立刻通報",
-        "第二類傳染病應於3 天內通報",
-        "第三類傳染病應於1 週內通報，必要時中央主管機關得調整之",
+        "第二類傳染病應於 3 天內通報",
+        "第三類傳染病應於 1 週內通報，必要時中央主管機關得調整之",
         "第四類傳染病依中央主管機關公告之期限及規定"
       ],
       "answers": [
@@ -1218,7 +1218,7 @@
       "number": 51,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何者不屬於肝臟代謝藥物的phase II 反應？",
+      "stem": "下列何者不屬於肝臟代謝藥物的 phase II 反應？",
       "options": [
         "acetylation",
         "glycine conjugation",
@@ -1242,7 +1242,7 @@
       "number": 52,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列抗腫瘤藥物中，何者可與微小管蛋白tubulin 結合，進而阻斷tubulin 聚合成小管，抑制腫瘤細胞生長？",
+      "stem": "下列抗腫瘤藥物中，何者可與微小管蛋白 tubulin 結合，進而阻斷 tubulin 聚合成小管，抑制腫瘤細胞生長？",
       "options": [
         "cisplatin",
         "cytarabine",
@@ -1266,9 +1266,9 @@
       "number": 53,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列關於aminoglycosides 抗生素之敘述，何者錯誤？",
+      "stem": "下列關於 aminoglycosides 抗生素之敘述，何者錯誤？",
       "options": [
-        "可藉由併用ampicillin 增加藥物穿透細菌的能力，以增強治療enterococcal endocarditis 效用",
+        "可藉由併用 ampicillin 增加藥物穿透細菌的能力，以增強治療 enterococcal endocarditis 效用",
         "作用強度及毒殺細菌速度與使用劑量呈正相關",
         "可產生後抗生素效應（postantibiotic effect），因此單日使用單一高劑量會比多次低劑量效用更好",
         "靜脈注射給藥後在腦脊髓液的濃度比在腎臟皮質中的濃度高"
@@ -1290,7 +1290,7 @@
       "number": 54,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列治療癌症之抗體藥物中，何者可與乳癌細胞之HER2 受體結合，而達到抗癌作用？",
+      "stem": "下列治療癌症之抗體藥物中，何者可與乳癌細胞之 HER2 受體結合，而達到抗癌作用？",
       "options": [
         "bevacizumab",
         "necitumumab",
@@ -1314,7 +1314,7 @@
       "number": 55,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列藥物中，何者可抑制黴菌之cytochrome P450 酵素，進而抑制細胞膜麥角脂醇（ergosterol）生成？",
+      "stem": "下列藥物中，何者可抑制黴菌之 cytochrome P450 酵素，進而抑制細胞膜麥角脂醇（ergosterol）生成？",
       "options": [
         "amphotericin B",
         "fluconazole",
@@ -1338,7 +1338,7 @@
       "number": 56,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列藥物中，何者與warfarin 合併使用時，最可能產生出血的風險？",
+      "stem": "下列藥物中，何者與 warfarin 合併使用時，最可能產生出血的風險？",
       "options": [
         "cholestyramine",
         "chlorthalidone",
@@ -1386,11 +1386,11 @@
       "number": 58,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列有關大分子抗體藥物evolocumab 改善高血脂之敘述，何者錯誤？",
+      "stem": "下列有關大分子抗體藥物 evolocumab 改善高血脂之敘述，何者錯誤？",
       "options": [
-        "具抑制proprotein convertase subtilisin/kexin type 9（PCSK9）之作用",
-        "促使LDL 含量明顯下降",
-        "促使apoB-100 明顯上升",
+        "具抑制 proprotein convertase subtilisin/kexin type 9（PCSK9）之作用",
+        "促使 LDL 含量明顯下降",
+        "促使 apoB-100 明顯上升",
         "具有類流感症狀（flu-like symptoms）之副作用"
       ],
       "answers": [
@@ -1458,7 +1458,7 @@
       "number": 61,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列口服利尿劑中，何者屬於loop diuretics？",
+      "stem": "下列口服利尿劑中，何者屬於 loop diuretics？",
       "options": [
         "bumetanide",
         "acetazolamide",
@@ -1482,11 +1482,11 @@
       "number": 62,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列關於testosterone cypionate 之敘述，何者錯誤？",
+      "stem": "下列關於 testosterone cypionate 之敘述，何者錯誤？",
       "options": [
         "可使用肌肉注射",
         "會有黃疸（jaundice）的副作用",
-        "可增加HDL 及降低LDL 之血中濃度",
+        "可增加 HDL 及降低 LDL 之血中濃度",
         "會有男性乳房增大之副作用"
       ],
       "answers": [
@@ -1506,12 +1506,12 @@
       "number": 63,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "Sacubitril 可與valsartan 併用治療心衰竭，下列有關其作用機轉之敘述，何者錯誤？",
+      "stem": "Sacubitril 可與 valsartan 併用治療心衰竭，下列有關其作用機轉之敘述，何者錯誤？",
       "options": [
-        "sacubitril 會抑制BNP 及ANP 的代謝",
-        "sacubitril 會增加angiotensin I 及angiotensin II 的含量，因此需要與valsartan 合用",
-        "valsartan 抑制AT₁受體後，有利於AT₂受體的活化",
-        "sacubitril 不會增加bradykinin 累積而產生angioedema"
+        "sacubitril 會抑制 BNP 及 ANP 的代謝",
+        "sacubitril 會增加 angiotensin I 及 angiotensin II 的含量，因此需要與 valsartan 合用",
+        "valsartan 抑制 AT₁受體後，有利於 AT₂受體的活化",
+        "sacubitril 不會增加 bradykinin 累積而產生 angioedema"
       ],
       "answers": [
         "D"
@@ -1554,9 +1554,9 @@
       "number": 65,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列關於ipratropium 的敘述，何者最不適當？",
+      "stem": "下列關於 ipratropium 的敘述，何者最不適當？",
       "options": [
-        "為muscarinic cholinergic receptor 的拮抗劑",
+        "為 muscarinic cholinergic receptor 的拮抗劑",
         "最常用的劑型為吸入劑型與霧化劑型",
         "常用於慢性阻塞性肺病（chronic obstructive pulmonary disease），幫助支氣管擴張",
         "常用於青光眼（glaucoma），幫助房水（aqueous humor）排出"
@@ -1578,7 +1578,7 @@
       "number": 66,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "病人使用clonidine 時，最不容易出現下列何種效果？",
+      "stem": "病人使用 clonidine 時，最不容易出現下列何種效果？",
       "options": [
         "血壓降低",
         "口乾舌燥",
@@ -1626,7 +1626,7 @@
       "number": 68,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何種胃腸道藥物是cystic fibrosis transmembrane conductance regulator 抑制劑，最適合用於治療HIV 藥物引起的腹瀉？",
+      "stem": "下列何種胃腸道藥物是 cystic fibrosis transmembrane conductance regulator 抑制劑，最適合用於治療HIV 藥物引起的腹瀉？",
       "options": [
         "linaclotide",
         "crofelemer",
@@ -1650,7 +1650,7 @@
       "number": 69,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何者為PGE₁衍生物，可用來治療便秘型腸躁症（irritable bowel syndrome with constipation）？",
+      "stem": "下列何者為 PGE₁衍生物，可用來治療便秘型腸躁症（irritable bowel syndrome with constipation）？",
       "options": [
         "linaclotide",
         "prucalopride",
@@ -1674,7 +1674,7 @@
       "number": 70,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列治療類風濕性關節炎的藥物中，何者不是經由直接抑制TNF-α的作用而產生療效？",
+      "stem": "下列治療類風濕性關節炎的藥物中，何者不是經由直接抑制 TNF-α的作用而產生療效？",
       "options": [
         "infliximab",
         "etanercept",
@@ -1698,7 +1698,7 @@
       "number": 71,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何種藥物可併用opioid 來減低病人術後的疼痛，但不建議使用超過5 天？",
+      "stem": "下列何種藥物可併用 opioid 來減低病人術後的疼痛，但不建議使用超過 5 天？",
       "options": [
         "belimumab",
         "tramadol",
@@ -1722,11 +1722,11 @@
       "number": 72,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列關於ethosuximide 之敘述，何者錯誤？",
+      "stem": "下列關於 ethosuximide 之敘述，何者錯誤？",
       "options": [
-        "突然停藥可能會加重absence seizure",
-        "可抑制丘腦皮質神經細胞之T-type calcium channels",
-        "合併使用valproate 時，ethosuximide 之療效會降低",
+        "突然停藥可能會加重 absence seizure",
+        "可抑制丘腦皮質神經細胞之 T-type calcium channels",
+        "合併使用 valproate 時，ethosuximide 之療效會降低",
         "最常見的副作用為胃腸不適"
       ],
       "answers": [
@@ -1770,7 +1770,7 @@
       "number": 74,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列藥物中，何者可經由拮抗orexin 受體產生安眠作用？",
+      "stem": "下列藥物中，何者可經由拮抗 orexin 受體產生安眠作用？",
       "options": [
         "tasimelteon",
         "suvorexant",
@@ -1794,7 +1794,7 @@
       "number": 75,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列何種天然藥物因其具有提高T cell 活性的免疫調節作用，可用於治療上呼吸道感染（upper respiratory infection）？",
+      "stem": "下列何種天然藥物因其具有提高 T cell 活性的免疫調節作用，可用於治療上呼吸道感染（upper respiratory infection）？",
       "options": [
         "St. John's wort",
         "Echinacea",
@@ -1890,7 +1890,7 @@
       "number": 79,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "腎臟移植後腎臟切片發現腎臟間質、腎小管上皮細胞間與血管內皮有淋巴細胞浸潤，有小血管壁出現壞死現象，未出現間質纖維化與腎小管萎縮，螢光染色未發現有抗體或C4d 補體沉積。下列何者為最可能的診斷？",
+      "stem": "腎臟移植後腎臟切片發現腎臟間質、腎小管上皮細胞間與血管內皮有淋巴細胞浸潤，有小血管壁出現壞死現象，未出現間質纖維化與腎小管萎縮，螢光染色未發現有抗體或 C4d 補體沉積。下列何者為最可能的診斷？",
       "options": [
         "慢性排斥（chronic rejection）",
         "超急性排斥（hyperacute rejection）",
@@ -1991,7 +1991,7 @@
         "主要影響頭部的血管",
         "冠狀動脈（coronary artery）出現動脈瘤（aneurysm）是此疾病常見的併發症",
         "嗜伊紅性白血球（eosinophil）出現在發炎的血管是此疾病的重要病理表現",
-        "此疾病多出現在35 歲以前的年輕人，可能會造成視力減退"
+        "此疾病多出現在 35 歲以前的年輕人，可能會造成視力減退"
       ],
       "answers": [
         "A"
@@ -2061,9 +2061,9 @@
       "stem": "關於乳糜瀉（celiac disease），下列敘述何者最不適當？",
       "options": [
         "又稱麩質敏感腸病（gluten-sensitive enteropathy）",
-        "與HLA-DQ2 或HLA-DQ8 等位基因有關",
+        "與 HLA-DQ2 或 HLA-DQ8 等位基因有關",
         "組織病理學特徵包含上皮內淋巴球增多（intraepithelial lymphocytosis）",
-        "最常發生的惡性腫瘤是腸病相關B 細胞淋巴瘤（enteropathy-associated B-cell lymphoma）"
+        "最常發生的惡性腫瘤是腸病相關 B 細胞淋巴瘤（enteropathy-associated B-cell lymphoma）"
       ],
       "answers": [
         "D"
@@ -2158,8 +2158,8 @@
       "options": [
         "左心衰竭可造成肺高壓",
         "間質性肺病（interstitial lung disease）可造成肺高壓",
-        "從主肺動脈到小動脈都會受影響而出現medial hypertrophy 及intimal fibrosis",
-        "小動脈的plexiform lesion 為肺高壓早期出現的病理特徵"
+        "從主肺動脈到小動脈都會受影響而出現 medial hypertrophy 及 intimal fibrosis",
+        "小動脈的 plexiform lesion 為肺高壓早期出現的病理特徵"
       ],
       "answers": [
         "D"
@@ -2228,10 +2228,10 @@
       "subject_status": "range",
       "stem": "關於自體免疫性肝炎（autoimmune hepatitis），下列敘述何者最不適當？",
       "options": [
-        "與HLA 等位基因DR3、DR4 及DRB1 密切相關",
-        "第1 型自體免疫性肝炎的典型特徵是存在抗核抗體（ANA）和抗平滑肌肌動蛋白（SMA）抗體",
-        "第2 型疾病的典型特徵是抗肝腎微粒體1（LKM-1）抗體",
-        "血清IgM 升高為自體免疫性肝炎之典型表現"
+        "與 HLA 等位基因 DR3、DR4 及 DRB1 密切相關",
+        "第 1 型自體免疫性肝炎的典型特徵是存在抗核抗體（ANA）和抗平滑肌肌動蛋白（SMA）抗體",
+        "第 2 型疾病的典型特徵是抗肝腎微粒體 1（LKM-1）抗體",
+        "血清 IgM 升高為自體免疫性肝炎之典型表現"
       ],
       "answers": [
         "D"
@@ -2274,7 +2274,7 @@
       "number": 95,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "下列何者為不依賴ACTH（ACTH-independent）Cushing 氏症候群（Cushing syndrome）最常見的原因？",
+      "stem": "下列何者為不依賴 ACTH（ACTH-independent）Cushing 氏症候群（Cushing syndrome）最常見的原因？",
       "options": [
         "small cell carcinoma of the lung",
         "adrenocortical adenoma",
@@ -2300,10 +2300,10 @@
       "subject_status": "range",
       "stem": "關於局部節段型腎絲球硬化症（focal segmental glomerulosclerosis, FSGS），下列敘述何者正確？",
       "options": [
-        "該疾病為造成小孩（小於18 歲）腎病症候群（nephrotic syndrome）最常見的原因",
-        "原發性FSGS 腎絲球病變最先發生於近髓質（juxtamedullary）腎絲球",
+        "該疾病為造成小孩（小於 18 歲）腎病症候群（nephrotic syndrome）最常見的原因",
+        "原發性 FSGS 腎絲球病變最先發生於近髓質（juxtamedullary）腎絲球",
         "電子顯微鏡下的變化主要為大量免疫沉澱物堆積在膈細胞（mesangial cell）區域造成硬化",
-        "一般而言，以類固醇治療FSGS 的效果極佳"
+        "一般而言，以類固醇治療 FSGS 的效果極佳"
       ],
       "answers": [
         "B"
@@ -2324,10 +2324,10 @@
       "subject_status": "range",
       "stem": "橋本氏甲狀腺炎（Hashimoto thyroiditis）病患較常出現下列那些自體免疫抗體？",
       "options": [
-        "antithyroglobulin antibody 和antithyroid peroxidase antibody",
-        "antithyroglobulin antibody 和anti-TSH receptor antibody",
-        "antinuclear antibody 和antithyroid peroxidase antibody",
-        "antimitochondrial antibody 和anti-TSH receptor antibody"
+        "antithyroglobulin antibody 和 antithyroid peroxidase antibody",
+        "antithyroglobulin antibody 和 anti-TSH receptor antibody",
+        "antinuclear antibody 和 antithyroid peroxidase antibody",
+        "antimitochondrial antibody 和 anti-TSH receptor antibody"
       ],
       "answers": [
         "A"
@@ -2370,7 +2370,7 @@
       "number": 99,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "侵犯性乳癌，其腫瘤細胞之雌激素受體（estrogen receptor, ER），助孕素受體（progesterone receptor,PR），人類表皮生長因子受體2（HER2）表現，下列何種組合最為常見？",
+      "stem": "侵犯性乳癌，其腫瘤細胞之雌激素受體（estrogen receptor, ER），助孕素受體（progesterone receptor,PR），人類表皮生長因子受體 2（HER2）表現，下列何種組合最為常見？",
       "options": [
         "ER 陽性，PR 陽性，HER2 陰性",
         "ER 陰性，PR 陰性，HER2 陽性",

@@ -18,19 +18,19 @@
       "number": 1,
       "subject": "anatomy",
       "subject_status": "range",
-      "stem": "光線照射右眼會使得雙側瞳孔同時縮小，這主要是因為右側的頂蓋前區（pretectal area）接收光線刺激後，其神經纖維經由下列何者傳遞到左側的E-W 神經核（Edinger-Westphal nucleus）？",
+      "stem": "光線照射右眼會使得雙側瞳孔同時縮小，這主要是因為右側的頂蓋前區（pretectal area）接收光線刺激後，其神經纖維經由下列何者傳遞到左側的 E-W 神經核（Edinger-Westphal nucleus）？",
       "options": [
         "前聯合神經束（anterior commissure）",
         "後聯合神經束（posterior commissure）",
         "視神經交叉（optic chiasma）",
-        "上小腦腳交叉（superior cerebelar decussation）"
+        "上小腦腳交叉（superior cerebellar decussation）"
       ],
       "answers": [
         "B"
       ],
       "free_point": false,
       "answer_note": null,
-      "override_reason": null,
+      "override_reason": "原卷「cerebellar」的「ll」是連字（ligature），PDF 畫成一個特殊字形，抽文字時遺失，變成「cerebelar」；依原始 PDF 補字",
       "images": [],
       "explanation": null,
       "explanation_status": "none",
@@ -116,7 +116,7 @@
       "subject_status": "range",
       "stem": "關於交感節前神經元（sympathetic preganglionic neuron）之敘述，下列何者錯誤？",
       "options": [
-        "細胞體主要位於脊髓灰質（gray matter of spinal cord）之lamina VII",
+        "細胞體主要位於脊髓灰質（gray matter of spinal cord）之 lamina VII",
         "可接受下視丘脊髓徑（hypothalamospinal fiber）之訊息",
         "神經元位於脊髓背核（nucleus dorsalis of Clarke）中",
         "脊髓胸段（thoracic spinal cord）含有交感節前神經元"
@@ -954,7 +954,7 @@
       "number": 40,
       "subject": "histology",
       "subject_status": "range",
-      "stem": "下列有關中樞神經膠細胞（neuroglial cel）的敘述，何者錯誤？",
+      "stem": "下列有關中樞神經膠細胞（neuroglial cell）的敘述，何者錯誤？",
       "options": [
         "寡突膠細胞（oligodendrocyte）主要與中樞神經系統之髓鞘（myelin sheath）的形成與維持有關",
         "原漿性星狀膠細胞（protoplasmic astrocyte）主要位於中樞神經系統的白質（white matter）",
@@ -966,7 +966,7 @@
       ],
       "free_point": false,
       "answer_note": null,
-      "override_reason": null,
+      "override_reason": "原卷「cell」的「ll」是連字（ligature），PDF 畫成一個特殊字形，抽文字時遺失，變成「cel」；依原始 PDF 補字",
       "images": [],
       "explanation": null,
       "explanation_status": "none",
@@ -1150,7 +1150,7 @@
       "options": [
         "錐細胞（cone）和桿細胞（rod）皆位於視網膜內，最遠離玻璃體的外層位置",
         "錐細胞（cone）因數量遠較桿細胞（rod）多，因此錐細胞對空間解像力（或視覺敏銳度）的貢獻較桿細胞多",
-        "亮適應主要涉及rhodopsin 之分解而非形成，所以較暗適應需時較短",
+        "亮適應主要涉及 rhodopsin 之分解而非形成，所以較暗適應需時較短",
         "錐細胞（cone）被激起反應所需的光子量較桿細胞（rod）為多，因此在黑暗中去尋找光度極低的目標時，不宜聚焦凝視"
       ],
       "answers": [
@@ -1170,7 +1170,7 @@
       "number": 49,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "已知corticospinal tract、corticobulbar tract、rubrospinal tract 下行的刺激訊息多匯集於四肢的縮肌（flexor muscle）群，使之收縮；而pontine reticulospinal tract 主要的下行刺激訊息最終傾向引起四肢伸肌（extensor muscle）群的收縮。若uncal herniation-induced supratentorial lesion 發生在中腦四疊體（superior and inferior colliculi）之中線間，則肢體的狀態最可能是下列何者？",
+      "stem": "已知 corticospinal tract、corticobulbar tract、rubrospinal tract 下行的刺激訊息多匯集於四肢的縮肌（flexor muscle）群，使之收縮；而 pontine reticulospinal tract 主要的下行刺激訊息最終傾向引起四肢伸肌（extensor muscle）群的收縮。若 uncal herniation-induced supratentorial lesion 發生在中腦四疊體（superior and inferior colliculi）之中線間，則肢體的狀態最可能是下列何者？",
       "options": [
         "上下肢皆伸直僵硬",
         "上肢蜷起向內靠近胸部，下肢伸直僵硬",
@@ -1218,7 +1218,7 @@
       "number": 51,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "兔子僅以左眼多次學習light flickering 和shock 前後依序出現的制約，並以瞬膜在light flickering 出現後隨即迅速關閉來表現該制約的學習記憶成果。學習結束後發現左右眼瞬膜皆能因應light flickering 出現而關閉。即使在制約前先切除兔子的optic chiasm，左右眼仍能表現出這個記憶。但若在制約訓練前將聯絡左右腦的corpus callosum 完全切斷，右眼不能表現出該制約記憶，僅左眼能。這個現象最適合說明下列何項？",
+      "stem": "兔子僅以左眼多次學習 light flickering 和 shock 前後依序出現的制約，並以瞬膜在 light flickering 出現後隨即迅速關閉來表現該制約的學習記憶成果。學習結束後發現左右眼瞬膜皆能因應 light flickering 出現而關閉。即使在制約前先切除兔子的 optic chiasm，左右眼仍能表現出這個記憶。但若在制約訓練前將聯絡左右腦的 corpus callosum 完全切斷，右眼不能表現出該制約記憶，僅左眼能。這個現象最適合說明下列何項？",
       "options": [
         "該制約的學習有偏重大腦皮質某一邊的功能側化現象（lateralization）",
         "該制約記憶僅能存於左腦皮質",
@@ -1290,12 +1290,12 @@
       "number": 54,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "傳遞fast pain 的神經有下列何種特性？",
+      "stem": "傳遞 fast pain 的神經有下列何種特性？",
       "options": [
-        "傳入纖維為具有髓鞘的C 纖維",
-        "傳入神經纖維活化後，釋出的傳導物質通常為serotonin",
-        "傳入纖維為具有髓鞘的A-delta 纖維",
-        "因傳導速度快，通常較slow pain 不能精確定位疼痛點"
+        "傳入纖維為具有髓鞘的 C 纖維",
+        "傳入神經纖維活化後，釋出的傳導物質通常為 serotonin",
+        "傳入纖維為具有髓鞘的 A-delta 纖維",
+        "因傳導速度快，通常較 slow pain 不能精確定位疼痛點"
       ],
       "answers": [
         "C"
@@ -1341,9 +1341,9 @@
       "stem": "下列何者與二氧化碳（CO₂）在血液運送的機制最無關？",
       "options": [
         "CO₂溶解於血漿（plasma）中",
-        "CO₂經碳酸酐酶（carbonic anhydrase）轉化成H₂CO₃",
-        "紅血球醣解作用產物2,3-biphosphoglycerate（2,3-BPG）減少，可增加CO₂與Fe²⁺結合",
-        "紅血球之血紅素（hemoglobin）可結合CO₂"
+        "CO₂經碳酸酐酶（carbonic anhydrase）轉化成 H₂CO₃",
+        "紅血球醣解作用產物 2,3-biphosphoglycerate（2,3-BPG）減少，可增加 CO₂與 Fe²⁺結合",
+        "紅血球之血紅素（hemoglobin）可結合 CO₂"
       ],
       "answers": [
         "C"
@@ -1388,7 +1388,7 @@
       "subject_status": "range",
       "stem": "下列那一個現象不會發生在正常的心臟收縮期中？",
       "options": [
-        "心電圖出現T 波",
+        "心電圖出現 T 波",
         "聽見第二心音",
         "主動脈壓力達到最高",
         "肺動脈壓力達到最高"
@@ -1434,7 +1434,7 @@
       "number": 60,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "微血管之淨過濾壓（net filtration pressure）是決定微血管內液體流出微血管或是流入微血管的重要因素。某段微血管之微血管流體靜壓為15 毫米汞柱，組織間液流體靜壓為0 毫米汞柱，血漿蛋白質造成之滲透壓為28 毫米汞柱，組織間液蛋白質造成之滲透壓為3 毫米汞柱。此段微血管其淨過濾壓值，與該淨過濾壓值導致的微血管液體流向傾向分別為何？",
+      "stem": "微血管之淨過濾壓（net filtration pressure）是決定微血管內液體流出微血管或是流入微血管的重要因素。某段微血管之微血管流體靜壓為 15 毫米汞柱，組織間液流體靜壓為 0 毫米汞柱，血漿蛋白質造成之滲透壓為 28 毫米汞柱，組織間液蛋白質造成之滲透壓為 3 毫米汞柱。此段微血管其淨過濾壓值，與該淨過濾壓值導致的微血管液體流向傾向分別為何？",
       "options": [
         "-16 毫米汞柱，液體流向傾向流入微血管",
         "-10 毫米汞柱，液體流向傾向流入微血管",
@@ -1482,7 +1482,7 @@
       "number": 62,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "三種血液樣本分別置於甲、乙、丙三支試管內，甲試管：血紅素（hemoglobin）濃度與成分皆正常、乙試管：血紅素濃度為正常值的50%、丙試管：血紅素總濃度正常，但是其中50%為一氧化碳血紅素（carboxyhemoglobin），三管血液其餘條件皆相同。若將氧分壓（Po₂）均為40 mmHg 之相同氣體分別灌入三支試管，達成反應平衡後，下列敘述何者正確？",
+      "stem": "三種血液樣本分別置於甲、乙、丙三支試管內，甲試管：血紅素（hemoglobin）濃度與成分皆正常、乙試管：血紅素濃度為正常值的 50%、丙試管：血紅素總濃度正常，但是其中 50%為一氧化碳血紅素（carboxyhemoglobin），三管血液其餘條件皆相同。若將氧分壓（Po₂）均為 40 mmHg 之相同氣體分別灌入三支試管，達成反應平衡後，下列敘述何者正確？",
       "options": [
         "甲試管血液中的氧分壓最高",
         "乙試管血液中的血氧飽和度百分比（oxygen saturation percentage, Sao₂）為甲試管的50%",
@@ -1534,7 +1534,7 @@
       "options": [
         "受胃泌素釋放胜肽（gastrin releasing peptide, GRP）直接刺激細胞生成胃酸",
         "經氫氯離子共同轉運蛋白（H⁺-Cl⁻ cotransporter）作用後，釋放胃酸",
-        "受黏液素（mucin）直接抑制Gs 蛋白，因而打開氯離子通道（Cl⁻ channel），抑制細胞生成胃酸",
+        "受黏液素（mucin）直接抑制 Gs 蛋白，因而打開氯離子通道（Cl⁻ channel），抑制細胞生成胃酸",
         "需有碳酸酐酵素（carbonic anhydrase）的參與，才能生成胃酸"
       ],
       "answers": [
@@ -1554,7 +1554,7 @@
       "number": 65,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "病人的血漿中[Na⁺]: 135 meq/L；[K⁺]: 3.5 meq/L；[Cl⁻]: 114 meq/L；Glucose: 180 mg/dL；Blood urea nitrogen（BUN）: 56 mg/dL；Creatinine: 1.5 mg/dL，依此數據計算該病人的血漿滲透壓osmolality（mOsm/kg H₂O）為何？",
+      "stem": "病人的血漿中[Na⁺]: 135 meq/L；[K⁺]: 3.5 meq/L；[Cl⁻]: 114 meq/L；Glucose: 180 mg/dL；Blood urea nitrogen（BUN）: 56 mg/dL；Creatinine: 1.5 mg/dL，依此數據計算該病人的血漿滲透壓 osmolality（mOsm/kg H₂O）為何？",
       "options": [
         "300",
         "310",
@@ -1654,8 +1654,8 @@
       "options": [
         "SGLT 運送葡萄糖進入細胞通常是經由促進性擴散（facilitated diffusion）作用",
         "SGLT 主要分布在肝臟及脂肪組織",
-        "胰島素通常不直接調控SGLT 運送葡萄糖之作用",
-        "給與第二型SGLT 抑制劑通常會導致血糖升高"
+        "胰島素通常不直接調控 SGLT 運送葡萄糖之作用",
+        "給與第二型 SGLT 抑制劑通常會導致血糖升高"
       ],
       "answers": [
         "C"
@@ -1794,7 +1794,7 @@
       "number": 75,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "在非競爭性抑制劑（uncompetitive inhibitor）的存在下，下列何項是可預期的Michaelis-Menten 酵素動力學變化？",
+      "stem": "在非競爭性抑制劑（uncompetitive inhibitor）的存在下，下列何項是可預期的 Michaelis-Menten 酵素動力學變化？",
       "options": [
         "V_max下降，K_M下降",
         "V_max不變，K_M下降",
@@ -1844,10 +1844,10 @@
       "subject_status": "range",
       "stem": "下列有關輔因子參與酶催化之含碳原子團轉移反應的敘述，何者錯誤？",
       "options": [
-        "Tetrahydrofolate 可參與不同氧化態的一個碳轉移，如CH₃-, CH₂OH-, and CHO-",
-        "S-adenosylmethionine（adoMet）由ATP 和methionine 合成，參與甲基（methyl group）轉移",
-        "Biotin 與cysteine 結合，參與pyruvate carboxylase 催化pyruvate 的carboxylation，形成oxaloacetate",
-        "Thiamine pyrophosphate（TPP）參與pyruvate dehydrogenase 反應，促使pyruvate 形成acetyl-CoA"
+        "Tetrahydrofolate 可參與不同氧化態的一個碳轉移，如 CH₃-, CH₂OH-, and CHO-",
+        "S-adenosylmethionine（adoMet）由 ATP 和 methionine 合成，參與甲基（methyl group）轉移",
+        "Biotin 與 cysteine 結合，參與 pyruvate carboxylase 催化 pyruvate 的 carboxylation，形成 oxaloacetate",
+        "Thiamine pyrophosphate（TPP）參與 pyruvate dehydrogenase 反應，促使 pyruvate 形成 acetyl-CoA"
       ],
       "answers": [
         "C"
@@ -1890,12 +1890,12 @@
       "number": 79,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "抗生素azaserine 可抑制嘌呤的形成，其主要作用機制為下列何者？",
+      "stem": "抗生素 azaserine 可抑制嘌呤的形成，其主要作用機制為下列何者？",
       "options": [
-        "抑制N¹⁰-formyl tetrahydrofolate 合成",
-        "抑制5-phospho-α-D-ribosyl-pyrophosphate（PRPP）合成",
-        "抑制ribose 5-phosphate 合成以降低核苷酸形成",
-        "抑制glutamine 作為嘌呤核苷酸合成原料"
+        "抑制 N¹⁰-formyl tetrahydrofolate 合成",
+        "抑制 5-phospho-α-D-ribosyl-pyrophosphate（PRPP）合成",
+        "抑制 ribose 5-phosphate 合成以降低核苷酸形成",
+        "抑制 glutamine 作為嘌呤核苷酸合成原料"
       ],
       "answers": [
         "D"
@@ -1914,7 +1914,7 @@
       "number": 80,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "大腸桿菌的DNA 聚合酶 I 沒有下列何種酵素活性？",
+      "stem": "大腸桿菌的 DNA 聚合酶 I 沒有下列何種酵素活性？",
       "options": [
         "5'→3' DNA 聚合活性",
         "3'→5' DNA 聚合活性",
@@ -1938,7 +1938,7 @@
       "number": 81,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "聚合酶連鎖反應（polymerase chain reaction）可用來偵測微量的DNA，反應中通常不需要加：",
+      "stem": "聚合酶連鎖反應（polymerase chain reaction）可用來偵測微量的 DNA，反應中通常不需要加：",
       "options": [
         "DNA 聚合酶（DNA polymerase）",
         "ATP",
@@ -1962,7 +1962,7 @@
       "number": 82,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "遺傳性非息肉症大腸直腸癌（hereditary nonpolyposis colon cancer, HNPCC）病患，主要是在何種DNA 修復功能上產生缺失？",
+      "stem": "遺傳性非息肉症大腸直腸癌（hereditary nonpolyposis colon cancer, HNPCC）病患，主要是在何種 DNA 修復功能上產生缺失？",
       "options": [
         "核苷酸切除修復（nucleotide excision repair）",
         "鹼基切除修復（base excision repair）",
@@ -1986,12 +1986,12 @@
       "number": 83,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "核糖體辨識mRNA 之起始密碼子（initiation codon）AUG，啟動蛋白質合成，使用之起始胺基酸為何者？",
+      "stem": "核糖體辨識 mRNA 之起始密碼子（initiation codon）AUG，啟動蛋白質合成，使用之起始胺基酸為何者？",
       "options": [
-        "在真核和細菌中均為methionine",
-        "在真核和細菌中均為N-formylmethionine",
-        "在真核細胞中為methionine；而細菌中為N-formylmethionine",
-        "在真核細胞中為N-formylmethionine；而細菌中為methionine"
+        "在真核和細菌中均為 methionine",
+        "在真核和細菌中均為 N-formylmethionine",
+        "在真核細胞中為 methionine；而細菌中為 N-formylmethionine",
+        "在真核細胞中為 N-formylmethionine；而細菌中為 methionine"
       ],
       "answers": [
         "C"
@@ -2012,10 +2012,10 @@
       "subject_status": "range",
       "stem": "下列關於組織蛋白（histones）之特性何者正確？",
       "options": [
-        "富含酸性胺基酸並與DNA 結合",
-        "富含酸性胺基酸並與RNA 結合",
-        "富含鹼性胺基酸並與DNA 結合",
-        "富含鹼性胺基酸並與RNA 結合"
+        "富含酸性胺基酸並與 DNA 結合",
+        "富含酸性胺基酸並與 RNA 結合",
+        "富含鹼性胺基酸並與 DNA 結合",
+        "富含鹼性胺基酸並與 RNA 結合"
       ],
       "answers": [
         "C"
@@ -2034,12 +2034,12 @@
       "number": 85,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列何者為真核細胞mRNA 5' capping 的方式？",
+      "stem": "下列何者為真核細胞 mRNA 5' capping 的方式？",
       "options": [
-        "7-methylguanosine 以5'-to-3' diphosphate linkage 方式結合至mRNA",
-        "7-methylguanosine 以5'-to-5' triphosphate linkage 方式結合至mRNA",
-        "N⁶-methyladenosine 以5'-to-5' triphosphate linkage 方式結合至mRNA",
-        "O⁶-methylguanosine 以5'-to-3' diphosphate linkage 方式結合至mRNA"
+        "7-methylguanosine 以 5'-to-3' diphosphate linkage 方式結合至 mRNA",
+        "7-methylguanosine 以 5'-to-5' triphosphate linkage 方式結合至 mRNA",
+        "N⁶-methyladenosine 以 5'-to-5' triphosphate linkage 方式結合至 mRNA",
+        "O⁶-methylguanosine 以 5'-to-3' diphosphate linkage 方式結合至 mRNA"
       ],
       "answers": [
         "B"
@@ -2058,12 +2058,12 @@
       "number": 86,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列何者是trp operon 調降作用（attenuation）的最佳敘述？",
+      "stem": "下列何者是 trp operon 調降作用（attenuation）的最佳敘述？",
       "options": [
-        "當色胺酸（tryptophan）存在時，可增進trp operon 的轉錄表現",
-        "可調節此operon 的轉錄表現，以因應細胞中微量色胺酸（tryptophan）的改變",
-        "可直接抑制trp mRNA 轉譯作用的機制",
-        "作用在trp operon 內每一個基因個別的啟動子（promoter）上"
+        "當色胺酸（tryptophan）存在時，可增進 trp operon 的轉錄表現",
+        "可調節此 operon 的轉錄表現，以因應細胞中微量色胺酸（tryptophan）的改變",
+        "可直接抑制 trp mRNA 轉譯作用的機制",
+        "作用在 trp operon 內每一個基因個別的啟動子（promoter）上"
       ],
       "answers": [
         "B"
@@ -2109,9 +2109,9 @@
       "stem": "下列關於葡萄糖新生（gluconeogenesis）的敘述，何者正確？",
       "options": [
         "葡萄糖新生全部的反應都發生在細胞質",
-        "葡萄糖新生將pyruvate 轉化成葡萄糖需要消耗ATP 及GTP",
+        "葡萄糖新生將 pyruvate 轉化成葡萄糖需要消耗 ATP 及 GTP",
         "葡萄糖新生過程中所參與的酵素與糖解作用（glycolysis）完全相同，只是反應方向相反",
-        "Phosphoenolpyruvate carboxykinase（PEPCK）的功能是將phosphoenolpyruvate 轉化成oxaloacetate"
+        "Phosphoenolpyruvate carboxykinase（PEPCK）的功能是將 phosphoenolpyruvate 轉化成 oxaloacetate"
       ],
       "answers": [
         "B"
@@ -2157,7 +2157,7 @@
       "stem": "Acetyl-CoA carboxylase 為脂肪酸生合成的第一個酵素，其活性最不受下列何者調控？",
       "options": [
         "胰島素（insulin）",
-        "輔酶A（coenzyme A）",
+        "輔酶 A（coenzyme A）",
         "檸檬酸（citrate）",
         "AMP-activated protein kinase（AMPK）"
       ],
@@ -2178,7 +2178,7 @@
       "number": 91,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "參與凝血作用的維生素K 是下列何者的衍生物？",
+      "stem": "參與凝血作用的維生素 K 是下列何者的衍生物？",
       "options": [
         "7-dehydrocholesterol",
         "arachidonate",
@@ -2204,7 +2204,7 @@
       "subject_status": "range",
       "stem": "下列有關膜周邊蛋白（peripheral membrane proteins）的描述，何者錯誤？",
       "options": [
-        "調整溶液的pH 值與離子強度可以將它和細胞膜分離",
+        "調整溶液的 pH 值與離子強度可以將它和細胞膜分離",
         "具有穿透膜結構",
         "可以利用離子鍵和其他細胞膜蛋白穩定結合",
         "可以利用氫鍵和其他細胞膜蛋白穩定結合"
@@ -2255,7 +2255,7 @@
         "為非必需胺基酸（nonessential amino acid）",
         "可代謝成為天門冬胺酸（aspartate）",
         "屬於生酮性胺基酸（ketogenic amino acid）",
-        "天門冬醯胺酶（asparaginase）能分解血液中的asparagine"
+        "天門冬醯胺酶（asparaginase）能分解血液中的 asparagine"
       ],
       "answers": [
         "C"
@@ -2322,7 +2322,7 @@
       "number": 97,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列何種訊息分子通常不會直接結合於G protein-coupled receptor（GPCR）來進行訊息傳遞？",
+      "stem": "下列何種訊息分子通常不會直接結合於 G protein-coupled receptor（GPCR）來進行訊息傳遞？",
       "options": [
         "angiotensin",
         "prostaglandin",
@@ -2397,9 +2397,9 @@
       "stem": "下列有關限制酶（restriction enzymes）的描述，何者最適當？",
       "options": [
         "作用在胞膜上的通道，以限制某些病毒進入細胞",
-        "具特異性的核糖核酸酶（ribonuclease），能在特定的生理狀況下降解mRNA",
-        "是一種具序列特異性（sequence-specific）的DNA 內切酶（endonuclease）",
-        "能催化胺基酸與特異性的tRNA 結合"
+        "具特異性的核糖核酸酶（ribonuclease），能在特定的生理狀況下降解 mRNA",
+        "是一種具序列特異性（sequence-specific）的 DNA 內切酶（endonuclease）",
+        "能催化胺基酸與特異性的 tRNA 結合"
       ],
       "answers": [
         "C"

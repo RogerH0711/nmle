@@ -285,7 +285,7 @@
       "subject_status": "range",
       "stem": "下列何者由第九對腦神經（CN IX）負責？",
       "options": [
-        "舌頭後1/3 的肌肉運動",
+        "舌頭後 1/3 的肌肉運動",
         "耳廓（auricle）的一般感覺",
         "腭帆張肌（tensor veli palatini）的收縮",
         "莖突咽肌（stylopharyngeus）的收縮"
@@ -405,7 +405,7 @@
       "subject_status": "range",
       "stem": "有關假肋骨（false ribs）之敘述，下列何者正確？",
       "options": [
-        "第7～12 對肋骨為假肋骨",
+        "第 7～12 對肋骨為假肋骨",
         "前端以軟骨直接附著於胸骨",
         "有肋橫突關節（costotransverse joint）附著點",
         "沒有肋溝（costal groove）"
@@ -765,10 +765,10 @@
       "subject_status": "range",
       "stem": "下列關於頭側神經孔（rostral neuropore）與尾側神經孔（caudal neuropore）關閉時間的比較，何者正確？",
       "options": [
-        "頭側神經孔提早2~3 天關閉",
-        "尾側神經孔提早2~3 天關閉",
-        "頭側神經孔提早7~9 天關閉",
-        "尾側神經孔提早7~9 天關閉"
+        "頭側神經孔提早 2~3 天關閉",
+        "尾側神經孔提早 2~3 天關閉",
+        "頭側神經孔提早 7~9 天關閉",
+        "尾側神經孔提早 7~9 天關閉"
       ],
       "answers": [
         "A"
@@ -1147,7 +1147,7 @@
       "number": 48,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "眼震（nystagmus）常被用以反映vestibular system 的反射功能。但眼震通常被定義為在頭部轉動後為抵抗眼球位置的慣性，而拉往與頭部轉動的方向相同的急速眼球運動。而眼震的方向和兩耳水平半規管內之淋巴液流動方向通常是相反的。在檢查時可使受測者挺直坐下，以水平軸為基準使其頭部向下偏約30 度，將冷水注入受測者的左耳，其眼震的方向最可能是下列何項？",
+      "stem": "眼震（nystagmus）常被用以反映 vestibular system 的反射功能。但眼震通常被定義為在頭部轉動後為抵抗眼球位置的慣性，而拉往與頭部轉動的方向相同的急速眼球運動。而眼震的方向和兩耳水平半規管內之淋巴液流動方向通常是相反的。在檢查時可使受測者挺直坐下，以水平軸為基準使其頭部向下偏約 30 度，將冷水注入受測者的左耳，其眼震的方向最可能是下列何項？",
       "options": [
         "向左",
         "向右",
@@ -1171,7 +1171,7 @@
       "number": 49,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "被診斷成unilaterally left visual neglect，但視網膜和視神經皆健全正常的病人，模仿繪圖時將左邊畫紙留白，對鏡中自己化妝只上右臉的妝、左臉留素顏，這些症狀描述最可能的腦傷在下列何處？",
+      "stem": "被診斷成 unilaterally left visual neglect，但視網膜和視神經皆健全正常的病人，模仿繪圖時將左邊畫紙留白，對鏡中自己化妝只上右臉的妝、左臉留素顏，這些症狀描述最可能的腦傷在下列何處？",
       "options": [
         "右側頂葉",
         "左側頂葉",
@@ -1219,12 +1219,12 @@
       "number": 51,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "下列有關分布於梭內肌纖維（intrafusal muscle fiber）的Ia 型感覺神經元的描述，何項最不適當？",
+      "stem": "下列有關分布於梭內肌纖維（intrafusal muscle fiber）的 Ia 型感覺神經元的描述，何項最不適當？",
       "options": [
         "不能向中樞傳送梭外肌纖維（extrafusal muscle fiber）被拉長之速度或張力的訊息",
         "該型感覺神經元的感受器分布在每一種型態的梭內肌纖維的中央部位",
-        "當dynamic gamma motor neuron 被刺激的情況下，能使分布於同一梭內肌纖維的Ia 型感覺神經元對該肌纖維被拉長的速度會更加敏感",
-        "當gamma motor neuron 被刺激的情況下，可使分布於同一梭內肌纖維的Ia 型感覺神經元對該肌纖維被拉長的刺激會更加敏感"
+        "當 dynamic gamma motor neuron 被刺激的情況下，能使分布於同一梭內肌纖維的 Ia 型感覺神經元對該肌纖維被拉長的速度會更加敏感",
+        "當 gamma motor neuron 被刺激的情況下，可使分布於同一梭內肌纖維的 Ia 型感覺神經元對該肌纖維被拉長的刺激會更加敏感"
       ],
       "answers": [
         "A"
@@ -1339,7 +1339,7 @@
       "number": 56,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "下列何者能直接促使骨骼肌細胞中結合的actin 與myosin 分離？",
+      "stem": "下列何者能直接促使骨骼肌細胞中結合的 actin 與 myosin 分離？",
       "options": [
         "ATP",
         "Ca²⁺",
@@ -1387,7 +1387,7 @@
       "number": 58,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "增加baroreceptor discharges 會導致下列何種生理變化？",
+      "stem": "增加 baroreceptor discharges 會導致下列何種生理變化？",
       "options": [
         "心跳速率減緩（bradycardia）",
         "心搏量（stroke volume）增加",
@@ -1411,12 +1411,12 @@
       "number": 59,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "健康檢查時測量得檢測者血壓之舒張壓（diastolic pressure）為50 mmHg，收縮壓（systolic pressure）為120mmHg，下列敘述何者正確？",
+      "stem": "健康檢查時測量得檢測者血壓之舒張壓（diastolic pressure）為 50 mmHg，收縮壓（systolic pressure）為 120mmHg，下列敘述何者正確？",
       "options": [
-        "脈搏壓（pulse pressure）為170 mmHg",
-        "脈搏壓（pulse pressure）為70 mmHg",
-        "平均動脈壓（mean arterial pressure）約為85 mmHg",
-        "平均動脈壓（mean arterial pressure）約為97 mmHg"
+        "脈搏壓（pulse pressure）為 170 mmHg",
+        "脈搏壓（pulse pressure）為 70 mmHg",
+        "平均動脈壓（mean arterial pressure）約為 85 mmHg",
+        "平均動脈壓（mean arterial pressure）約為 97 mmHg"
       ],
       "answers": [
         "B"
@@ -1483,7 +1483,7 @@
       "number": 62,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "下列何者最可能會造成明顯的長吸氣（apneusis）現象？ ①破壞呼吸調節區（pneumotaxic center） ②破壞延髓（medullary oblongata）背側呼吸群（dorsal respiratory group, DRG） ③破壞pre-Bötzinger complex ④切斷迷走神經（vagus nerve）",
+      "stem": "下列何者最可能會造成明顯的長吸氣（apneusis）現象？ ①破壞呼吸調節區（pneumotaxic center） ②破壞延髓（medullary oblongata）背側呼吸群（dorsal respiratory group, DRG） ③破壞 pre-Bötzinger complex ④切斷迷走神經（vagus nerve）",
       "options": [
         "僅①",
         "②③",
@@ -1604,7 +1604,7 @@
       "number": 67,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "在短時間內喝下2000 ml 白開水，血液與尿液滲透壓較大量喝水前的基礎值有何變化？",
+      "stem": "在短時間內喝下 2000 ml 白開水，血液與尿液滲透壓較大量喝水前的基礎值有何變化？",
       "options": [
         "血液滲透壓增加，尿液滲透壓降低",
         "血液滲透壓降低，尿液滲透壓增加",
@@ -1652,12 +1652,12 @@
       "number": 69,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "有關維生素D₃（vitamin D₃）的敘述，下列何者最為適當？",
+      "stem": "有關維生素 D₃（vitamin D₃）的敘述，下列何者最為適當？",
       "options": [
-        "又稱為25-hydroxycholecalciferol",
+        "又稱為 25-hydroxycholecalciferol",
         "在肝臟製造合成",
-        "維生素D₃經1α-hydroxylase 作用，形成有活性的代謝產物",
-        "維生素D₃可由食物中攝取補充"
+        "維生素 D₃經 1α-hydroxylase 作用，形成有活性的代謝產物",
+        "維生素 D₃可由食物中攝取補充"
       ],
       "answers": [
         "D"
@@ -1729,14 +1729,14 @@
         "血中酮體（ketone bodies）增加",
         "產生滲透壓性利尿（osmotic diuresis）作用",
         "呼吸性酸中毒（respiratory acidosis）",
-        "血中游離脂肪酸（free faty acid）濃度升高"
+        "血中游離脂肪酸（free fatty acid）濃度升高"
       ],
       "answers": [
         "C"
       ],
       "free_point": false,
       "answer_note": null,
-      "override_reason": null,
+      "override_reason": "原卷「fatty」的「tt」是連字（ligature），PDF 畫成一個特殊字形，抽文字時遺失，變成「faty」；依原始 PDF 補字",
       "images": [],
       "explanation": null,
       "explanation_status": "none",
@@ -1820,7 +1820,7 @@
       "number": 76,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "某酵素的K_m=10 mM， k_cat=1000 s⁻¹，當受質濃度為0.01 mM 時，該酵素催化反應所展現的反應速率常數（rate constant）最接近下列何者？",
+      "stem": "某酵素的 K_m=10 mM， k_cat=1000 s⁻¹，當受質濃度為 0.01 mM 時，該酵素催化反應所展現的反應速率常數（rate constant）最接近下列何者？",
       "options": [
         "1,000 s⁻¹",
         "10,000 mM s⁻¹",
@@ -1844,7 +1844,7 @@
       "number": 77,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "在人類肝細胞中提供甲基使phosphoethanolamine 轉換成phosphocholine 的是下列何者？",
+      "stem": "在人類肝細胞中提供甲基使 phosphoethanolamine 轉換成 phosphocholine 的是下列何者？",
       "options": [
         "methionine",
         "serine",
@@ -1871,7 +1871,7 @@
       "stem": "參與氮代謝（nitrogen metabolism）所需的輔酶（coenzyme），下列何者除外？",
       "options": [
         "磷酸吡哆醛（pyridoxal phosphate, PLP）",
-        "輔酶Q（coenzyme Q）",
+        "輔酶 Q（coenzyme Q）",
         "四氫葉酸輔酶（tetrahydrofolate coenzyme）",
         "B₁₂輔酶（B₁₂ coenzyme）"
       ],
@@ -1940,12 +1940,12 @@
       "number": 81,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列關於DNA 複製（DNA replication）的敘述，何者錯誤？",
+      "stem": "下列關於 DNA 複製（DNA replication）的敘述，何者錯誤？",
       "options": [
-        "大腸桿菌（E. coli）的DNA 複製，只會利用一個複製起始點（replication origin）",
-        "真核細胞的DNA 複製，會利用多個複製起始點（replication origin）",
-        "大腸桿菌（E. coli）染色體DNA 的複製以雙個複製叉（replication fork）進行",
-        "大腸桿菌（E. coli）的DNA 複製需要利用RNA 為引子（primer），真核生物的DNA 複製則利用 DNA 為引子"
+        "大腸桿菌（E. coli）的 DNA 複製，只會利用一個複製起始點（replication origin）",
+        "真核細胞的 DNA 複製，會利用多個複製起始點（replication origin）",
+        "大腸桿菌（E. coli）染色體 DNA 的複製以雙個複製叉（replication fork）進行",
+        "大腸桿菌（E. coli）的 DNA 複製需要利用 RNA 為引子（primer），真核生物的 DNA 複製則利用 DNA 為引子"
       ],
       "answers": [
         "D"
@@ -1966,10 +1966,10 @@
       "subject_status": "range",
       "stem": "反轉錄酶（reverse transcriptase）主要的作用為：",
       "options": [
-        "以DNA 為模板合成DNA",
-        "以DNA 為模板合成RNA",
-        "以RNA 為模板合成DNA",
-        "以RNA 為模板合成RNA"
+        "以 DNA 為模板合成 DNA",
+        "以 DNA 為模板合成 RNA",
+        "以 RNA 為模板合成 DNA",
+        "以 RNA 為模板合成 RNA"
       ],
       "answers": [
         "C"
@@ -2038,10 +2038,10 @@
       "subject_status": "range",
       "stem": "小分子物質在原核細胞中調節基因轉錄起始，通常不是藉由下列何種作用機轉？",
       "options": [
-        "直接結合到DNA",
-        "調控活化子（activator）與DNA 的結合",
+        "直接結合到 DNA",
+        "調控活化子（activator）與 DNA 的結合",
         "改變抑制子（repressor）的蛋白質構型（conformation）",
-        "調控抑制子（repressor）與DNA 的結合"
+        "調控抑制子（repressor）與 DNA 的結合"
       ],
       "answers": [
         "A"
@@ -2060,11 +2060,11 @@
       "number": 86,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列關於真核細胞中，mRNA 在5' 端會經過加帽（capping）修飾的敘述，何者錯誤？",
+      "stem": "下列關於真核細胞中，mRNA 在 5' 端會經過加帽（capping）修飾的敘述，何者錯誤？",
       "options": [
-        "可保護mRNA 不被核酸外切酶（exonuclease）所水解",
-        "可被eIF4E 辨識",
-        "可幫助mRNA 之轉譯（translation）",
+        "可保護 mRNA 不被核酸外切酶（exonuclease）所水解",
+        "可被 eIF4E 辨識",
+        "可幫助 mRNA 之轉譯（translation）",
         "修飾反應主要發生於內質網（ER）及高基氏體（Golgi apparatus）內"
       ],
       "answers": [
@@ -2086,9 +2086,9 @@
       "subject_status": "range",
       "stem": "下列何者是胺醯-tRNA 合成酶（aminoacyl-tRNA synthetases）的錯誤詮釋？",
       "options": [
-        "可將胺基酸接到tRNA 的3'端",
-        "反應中可將ATP 分解，並釋出焦磷酸根（PPi）",
-        "對每一種胺基酸的特異性很高，但可接受任何一種tRNA 作為受質（substrate）",
+        "可將胺基酸接到 tRNA 的 3'端",
+        "反應中可將 ATP 分解，並釋出焦磷酸根（PPi）",
+        "對每一種胺基酸的特異性很高，但可接受任何一種 tRNA 作為受質（substrate）",
         "多數生物體中，對每一種胺基酸皆有其專一的胺醯-tRNA 合成酶"
       ],
       "answers": [
@@ -2108,7 +2108,7 @@
       "number": 88,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列那一個酵素所催化的反應為糖解作用（glycolysis）中唯一將電子轉移給NAD⁺之氧化還原反應？",
+      "stem": "下列那一個酵素所催化的反應為糖解作用（glycolysis）中唯一將電子轉移給 NAD⁺之氧化還原反應？",
       "options": [
         "enolase",
         "glyceraldehyde-3-phosphate dehydrogenase",
@@ -2132,7 +2132,7 @@
       "number": 89,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "醣基化是蛋白質上常見的一種轉譯後修飾，有N-linked 與O-linked 兩種主要的鍵結方式，其中N-linked 主要是透過與蛋白質上的何種胺基酸結合？",
+      "stem": "醣基化是蛋白質上常見的一種轉譯後修飾，有 N-linked 與 O-linked 兩種主要的鍵結方式，其中 N-linked 主要是透過與蛋白質上的何種胺基酸結合？",
       "options": [
         "絲胺酸（serine）",
         "酪胺酸（tyrosine）",
@@ -2156,7 +2156,7 @@
       "number": 90,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "葡萄糖在細胞內代謝成acetyl-CoA 的過程中，不需要下列何者參與？",
+      "stem": "葡萄糖在細胞內代謝成 acetyl-CoA 的過程中，不需要下列何者參與？",
       "options": [
         "glyceraldehyde 3-phosphate dehydrogenase",
         "pyruvate kinase",
@@ -2180,7 +2180,7 @@
       "number": 91,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "在cerebroside 合成過程中，下列何者攜帶glucose 參與ceramide 轉成cerebroside 的反應？",
+      "stem": "在 cerebroside 合成過程中，下列何者攜帶 glucose 參與 ceramide 轉成 cerebroside 的反應？",
       "options": [
         "CDP",
         "UDP",
@@ -2228,12 +2228,12 @@
       "number": 93,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "Tay-Sachs disease 屬於一種sphingolipidoses，關於此疾病下列敘述何者錯誤？",
+      "stem": "Tay-Sachs disease 屬於一種 sphingolipidoses，關於此疾病下列敘述何者錯誤？",
       "options": [
-        "屬於lipid storage disease",
+        "屬於 lipid storage disease",
         "導致神經系統退化",
-        "致病機轉主要是由於ganglioside 無法在endoplasmic reticulum 中分解",
-        "由lysosomal N-acetylhexosaminidase A 功能缺失引起"
+        "致病機轉主要是由於 ganglioside 無法在 endoplasmic reticulum 中分解",
+        "由 lysosomal N-acetylhexosaminidase A 功能缺失引起"
       ],
       "answers": [
         "C"
@@ -2352,7 +2352,7 @@
       "options": [
         "激素會與受體形成複合體（hormone-receptor complexes）",
         "受體主要在細胞膜表面以磷酸化方式活化",
-        "受體具備與特殊DNA 序列結合之特性",
+        "受體具備與特殊 DNA 序列結合之特性",
         "受體與激素結合後可活化或抑制基因轉錄"
       ],
       "answers": [
@@ -2372,11 +2372,11 @@
       "number": 99,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列關於protein kinase A 的敘述，何者正確？",
+      "stem": "下列關於 protein kinase A 的敘述，何者正確？",
       "options": [
-        "結合cyclic GMP 而活化",
-        "結合AMP 而活化",
-        "結合cyclic AMP 而活化",
+        "結合 cyclic GMP 而活化",
+        "結合 AMP 而活化",
+        "結合 cyclic AMP 而活化",
         "其活化可促進細胞內脂肪酸的生合成（fatty acid biosynthesis）"
       ],
       "answers": [
@@ -2401,14 +2401,14 @@
         "西方墨點法（Western blotting）",
         "南方墨點法（Southern blotting）",
         "北方墨點法（Northern blotting）",
-        "長條墨點法（slot bloting）"
+        "長條墨點法（slot blotting）"
       ],
       "answers": [
         "B"
       ],
       "free_point": false,
       "answer_note": null,
-      "override_reason": null,
+      "override_reason": "原卷「blotting」的「tt」是連字（ligature），PDF 畫成一個特殊字形，抽文字時遺失，變成「bloting」；依原始 PDF 補字",
       "images": [],
       "explanation": null,
       "explanation_status": "none",

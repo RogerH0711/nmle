@@ -94,9 +94,9 @@
       "stem": "下列有關巴金森氏病（Parkinson's disease）之敘述，何者錯誤？",
       "options": [
         "病變部位主要在黑質網狀區（substantia nigra pars reticulata）",
-        "與dopamine 分泌不足有關",
+        "與 dopamine 分泌不足有關",
         "為一種神經退化性疾病",
-        "可同時影響基底核迴路中的direct loop 與indirect loop"
+        "可同時影響基底核迴路中的 direct loop 與 indirect loop"
       ],
       "answers": [
         "A"
@@ -407,8 +407,8 @@
       "options": [
         "氣管通常在胸骨角（sternal angle）水平面，分支為左、右主支氣管",
         "右支氣管通常比左支氣管寬且較為垂直（vertical）",
-        "正常之左、右支氣管夾角約在150 度",
-        "除氣管隆突（carina）之外，氣管的軟骨全為C 型軟骨"
+        "正常之左、右支氣管夾角約在 150 度",
+        "除氣管隆突（carina）之外，氣管的軟骨全為 C 型軟骨"
       ],
       "answers": [
         "C"
@@ -763,12 +763,12 @@
       "number": 32,
       "subject": "embryology",
       "subject_status": "range",
-      "stem": "若孕婦將著床出血誤認為月經出血，而估算出預產期為7 月1 日，正確的預產期為何？",
+      "stem": "若孕婦將著床出血誤認為月經出血，而估算出預產期為 7 月 1 日，正確的預產期為何？",
       "options": [
-        "比7 月1 日早一週",
-        "比7 月1 日晚一週",
-        "比7 月1 日晚兩週",
-        "比7 月1 日早兩週"
+        "比 7 月 1 日早一週",
+        "比 7 月 1 日晚一週",
+        "比 7 月 1 日晚兩週",
+        "比 7 月 1 日早兩週"
       ],
       "answers": [
         "D"
@@ -910,9 +910,9 @@
       "stem": "關於黏液細胞（mucous cell）的敘述，下列何者正確？",
       "options": [
         "黏液細胞的細胞核常位於細胞的中央",
-        "在H&E 染色下，黏液細胞的核周邊細胞質常有大量粗糙內質網（rough endoplasmic reticulum），呈現嗜鹼（basophilic）性",
-        "在H&E 染色下，黏液細胞的頂部細胞質常呈現嗜伊紅（eosinophilic）性",
-        "在PAS 染色下，黏液細胞之黏原顆粒（mucinogen granule）常呈現PAS 陽性"
+        "在 H&E 染色下，黏液細胞的核周邊細胞質常有大量粗糙內質網（rough endoplasmic reticulum），呈現嗜鹼（basophilic）性",
+        "在 H&E 染色下，黏液細胞的頂部細胞質常呈現嗜伊紅（eosinophilic）性",
+        "在 PAS 染色下，黏液細胞之黏原顆粒（mucinogen granule）常呈現 PAS 陽性"
       ],
       "answers": [
         "D"
@@ -957,8 +957,8 @@
       "subject_status": "range",
       "stem": "下列有關彈性纖維（elastic fibers）的敘述，何者正確？",
       "options": [
-        "由3 條彈力素原纖維（elastin fibrils）形成",
-        "皮膚切片用H&E 染色，即可分辨膠原纖維與彈性纖維",
+        "由 3 條彈力素原纖維（elastin fibrils）形成",
+        "皮膚切片用 H&E 染色，即可分辨膠原纖維與彈性纖維",
         "含有小纖維蛋白微纖維（fibrillin microfibrils）",
         "淋巴組織中有大量的彈性纖維"
       ],
@@ -1027,7 +1027,7 @@
       "number": 43,
       "subject": "histology",
       "subject_status": "range",
-      "stem": "胃腺（gastric gland）的細胞中，何者主要分泌胃蛋白酶原（pepsinogen），且在H&E 染色下呈現嗜鹼性（basophilic）？",
+      "stem": "胃腺（gastric gland）的細胞中，何者主要分泌胃蛋白酶原（pepsinogen），且在 H&E 染色下呈現嗜鹼性（basophilic）？",
       "options": [
         "主細胞（chief cell）",
         "黏液頸細胞（mucous neck cell）",
@@ -1127,8 +1127,8 @@
       "options": [
         "嗅球（olfactory bulbs）中有許多嗅覺小球（olfactory glomeruli），每一個嗅覺小球接收同一類嗅覺受器（olfactory receptors）傳導",
         "嗅覺刺激常與情緒反應相關，原因是來自嗅球（olfactory bulbs）的神經傳導路徑上行至中樞的海馬迴（hippocampus）",
-        "嗅球（olfactory bulbs）中之顆粒細胞（granule cells）以glutamate 為傳導物刺激僧帽細胞（mitral cells），而僧帽細胞以glycine 為傳導物抑制顆粒細胞",
-        "嗅覺接受器與氣味分子結合後，會藉由cGMP 為第二信使（second messenger）進而使嗅覺感受神經元產生興奮性電位"
+        "嗅球（olfactory bulbs）中之顆粒細胞（granule cells）以 glutamate 為傳導物刺激僧帽細胞（mitral cells），而僧帽細胞以 glycine 為傳導物抑制顆粒細胞",
+        "嗅覺接受器與氣味分子結合後，會藉由 cGMP 為第二信使（second messenger）進而使嗅覺感受神經元產生興奮性電位"
       ],
       "answers": [
         "A"
@@ -1175,7 +1175,7 @@
       "options": [
         "釋放正腎上腺素（norepinephrine），並作用在心臟竇房結（SA node） beta2 受器（β2 receptor），促使心跳加快",
         "釋放乙醯膽鹼（acetylcholine），並作用在皮膚小汗腺尼古丁型受器（nicotinic receptor），促使流汗增加",
-        "釋放正腎上腺素，並作用在支氣管平滑肌beta2 受器（β2 receptor），促使支氣管平滑肌收縮",
+        "釋放正腎上腺素，並作用在支氣管平滑肌 beta2 受器（β2 receptor），促使支氣管平滑肌收縮",
         "釋放正腎上腺素，並作用在眼睛虹膜（iris）的放射肌（radial muscle）alpha1 受器（α1 receptor），造成瞳孔（pupil）放大"
       ],
       "answers": [
@@ -1243,7 +1243,7 @@
       "number": 52,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "自celiac ganglion 出發的交感神經節後神經，最不可能影響下列何種器官之生理功能？",
+      "stem": "自 celiac ganglion 出發的交感神經節後神經，最不可能影響下列何種器官之生理功能？",
       "options": [
         "胃",
         "胰臟",
@@ -1320,7 +1320,7 @@
         "乳酸（lactic acid）累積",
         "骨骼肌細胞內缺乏鈣離子",
         "肝醣（glycogen）耗盡",
-        "骨骼肌細胞內缺乏ATP"
+        "骨骼肌細胞內缺乏 ATP"
       ],
       "answers": [
         "D"
@@ -1341,8 +1341,8 @@
       "subject_status": "range",
       "stem": "下列有關骨骼肌纖維長度與張力之間關係（length-tension relation）的敘述，何者最為適當？",
       "options": [
-        "當肌纖維的長度在放鬆長度的60％～175％範圍時，肌纖維拉得越長，收縮產生的張力就越大",
-        "肌纖維等長收縮產生最大張力的最佳長度（optimal length），大約是放鬆長度的175％",
+        "當肌纖維的長度在放鬆長度的 60％～175％範圍時，肌纖維拉得越長，收縮產生的張力就越大",
+        "肌纖維等長收縮產生最大張力的最佳長度（optimal length），大約是放鬆長度的 175％",
         "當肌纖維被拉得越長時，其被動張力（passive tension）不會有所改變",
         "粗肌絲橫橋與細肌絲可結合的數目越多，產生的張力就越大"
       ],
@@ -1461,10 +1461,10 @@
       "subject_status": "range",
       "stem": "許多情況可導致血壓升高。此時人體為因應此一血壓上升狀況，所啟動的下調血壓機制，最可能為下列何者？",
       "options": [
-        "活化可釋放一氧化氮之神經元，並減少endothelin-1 釋放",
-        "抑制可釋放一氧化氮之神經元，並增加endothelin-1 釋放",
-        "抑制可釋放一氧化氮之神經元，並減少endothelin-1 釋放",
-        "活化可釋放一氧化氮之神經元，並增加endothelin-1 釋放"
+        "活化可釋放一氧化氮之神經元，並減少 endothelin-1 釋放",
+        "抑制可釋放一氧化氮之神經元，並增加 endothelin-1 釋放",
+        "抑制可釋放一氧化氮之神經元，並減少 endothelin-1 釋放",
+        "活化可釋放一氧化氮之神經元，並增加 endothelin-1 釋放"
       ],
       "answers": [
         "A"
@@ -1579,7 +1579,7 @@
       "number": 66,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "某物質在血液中維持恆定濃度0.3 mg/L，可由腎絲球過濾。在收集整日尿液後，得知此物質在1500 mL 尿液中，濃度為10 mg/L。腎小管對此物質最可能進行何種作用？",
+      "stem": "某物質在血液中維持恆定濃度 0.3 mg/L，可由腎絲球過濾。在收集整日尿液後，得知此物質在 1500 mL 尿液中，濃度為 10 mg/L。腎小管對此物質最可能進行何種作用？",
       "options": [
         "reabsorption",
         "secretion",
@@ -1655,7 +1655,7 @@
       "options": [
         "接受兩側副甲狀腺切除手術的病人術後血漿中磷離子濃度降低",
         "缺乏副甲狀腺素的病人會造成其肌肉神經系統過度興奮（neuromuscular hyperexcitability）",
-        "副甲狀腺素會促進腎臟活化態維生素D 的生成作用",
+        "副甲狀腺素會促進腎臟活化態維生素 D 的生成作用",
         "副甲狀腺素會增加骨吸收作用（bone resorption）"
       ],
       "answers": [
@@ -1678,9 +1678,9 @@
       "stem": "有關甲狀腺荷爾蒙（thyroid hormone）的敘述，下列何者最不適當？",
       "options": [
         "促甲狀腺荷爾蒙（thyroid-stimulating hormone, TSH）會促進甲狀球蛋白（thyroglobulin）分解而釋放甲狀腺荷爾蒙",
-        "甲狀腺分泌的甲狀腺荷爾蒙主要是thyroxine（T₄）",
-        "在血液中thyroxine（T₄）主要會與血漿蛋白結合，triiodothyronine（T₃）則以游離型（free-form）居多",
-        "在目標細胞內與甲狀腺荷爾蒙受器（thyroid hormone receptor）結合的分子主要為triiodothyronine（T₃）"
+        "甲狀腺分泌的甲狀腺荷爾蒙主要是 thyroxine（T₄）",
+        "在血液中 thyroxine（T₄）主要會與血漿蛋白結合，triiodothyronine（T₃）則以游離型（free-form）居多",
+        "在目標細胞內與甲狀腺荷爾蒙受器（thyroid hormone receptor）結合的分子主要為 triiodothyronine（T₃）"
       ],
       "answers": [
         "C"
@@ -1747,7 +1747,7 @@
       "number": 73,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "下列何者在生殖週期中期誘發性促素（FSH 與LH）高峰分泌（surge），以促使卵細胞成熟與排卵？",
+      "stem": "下列何者在生殖週期中期誘發性促素（FSH 與 LH）高峰分泌（surge），以促使卵細胞成熟與排卵？",
       "options": [
         "雌二醇（estradiol）",
         "黃體素（progesterone）",
@@ -1878,7 +1878,7 @@
       "number": 78,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列何者可以通過改變DNA 的連接數（linking number），來調控DNA 的緊密度或纏繞狀態，並在DNA 的複製過程中扮演關鍵角色？",
+      "stem": "下列何者可以通過改變 DNA 的連接數（linking number），來調控 DNA 的緊密度或纏繞狀態，並在 DNA 的複製過程中扮演關鍵角色？",
       "options": [
         "DNA 解螺旋酶（DNA helicase）",
         "DNA 聚合酶（DNA polymerase）",
@@ -1926,7 +1926,7 @@
       "number": 80,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "真核細胞的DNA 聚合酶中，下列何者沒有參與細胞核內染色體的DNA 合成？",
+      "stem": "真核細胞的 DNA 聚合酶中，下列何者沒有參與細胞核內染色體的 DNA 合成？",
       "options": [
         "DNA 聚合酶α",
         "DNA 聚合酶ε",
@@ -1950,7 +1950,7 @@
       "number": 81,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "一般DNA 聚合酶（DNA polymerase）的聚合作用，反應中通常不需加：",
+      "stem": "一般 DNA 聚合酶（DNA polymerase）的聚合作用，反應中通常不需加：",
       "options": [
         "引子（primer）",
         "鎂離子（Mg²⁺）",
@@ -2024,10 +2024,10 @@
       "subject_status": "range",
       "stem": "DNA 足跡鑑定（DNA footprinting assay）最適用於下列何種分析？",
       "options": [
-        "一段基因編碼區的5'端以及3'端的位置",
-        "基因組中會與調控RNA 結合的位置",
+        "一段基因編碼區的 5'端以及 3'端的位置",
+        "基因組中會與調控 RNA 結合的位置",
         "DNA 與蛋白質發生專一性結合的位置",
-        "被剪接的內含子（intron）在前信使RNA（pro-mRNA）中的位置"
+        "被剪接的內含子（intron）在前信使 RNA（pro-mRNA）中的位置"
       ],
       "answers": [
         "C"
@@ -2046,7 +2046,7 @@
       "number": 85,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "在原核生物細胞的轉譯作用中，下列那一個蛋白質專責於結合並運送起始tRNA（initiator tRNA）？",
+      "stem": "在原核生物細胞的轉譯作用中，下列那一個蛋白質專責於結合並運送起始 tRNA（initiator tRNA）？",
       "options": [
         "IF1",
         "IF2",
@@ -2070,7 +2070,7 @@
       "number": 86,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "RNA 聚合酶執行轉錄作用時，首先結合的特定DNA 序列稱為：",
+      "stem": "RNA 聚合酶執行轉錄作用時，首先結合的特定 DNA 序列稱為：",
       "options": [
         "操作子（operator）",
         "抑制因子（repressor）",
@@ -2094,7 +2094,7 @@
       "number": 87,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "在五碳糖磷酸途徑中（pentose phosphate pathway），核酮糖5-磷酸（ribulose 5-phosphate）可經由何種酵素或代謝過程，轉換成glucose 6-phosphate？",
+      "stem": "在五碳糖磷酸途徑中（pentose phosphate pathway），核酮糖 5-磷酸（ribulose 5-phosphate）可經由何種酵素或代謝過程，轉換成 glucose 6-phosphate？",
       "options": [
         "單碳代謝作用（one carbon metabolism）",
         "轉酮酶和轉醛醇酶（transketolase and transaldolase）",
@@ -2190,7 +2190,7 @@
       "number": 91,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列何者可促進脂質合成速限步驟（rate-limiting step）酵素acetyl-CoA carboxylase 的活性？",
+      "stem": "下列何者可促進脂質合成速限步驟（rate-limiting step）酵素 acetyl-CoA carboxylase 的活性？",
       "options": [
         "citrate",
         "glucagon",
@@ -2262,12 +2262,12 @@
       "number": 94,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "一般而言，當電子從NADH 藉由電子傳遞鏈轉移到氧分子（O₂），會比電子從FADH₂藉由電子傳遞鏈轉移到氧分子產生更多的ATP，其主要原因為何？",
+      "stem": "一般而言，當電子從 NADH 藉由電子傳遞鏈轉移到氧分子（O₂），會比電子從 FADH₂藉由電子傳遞鏈轉移到氧分子產生更多的 ATP，其主要原因為何？",
       "options": [
         "FADH₂只能攜帶一個電子",
-        "粒線體中complexⅡ比complexⅠ少",
+        "粒線體中 complexⅡ比 complexⅠ少",
         "complexⅡ無法將氫離子轉移到粒線體內外膜間隙",
-        "細胞內NADH 濃度比FADH₂高"
+        "細胞內 NADH 濃度比 FADH₂高"
       ],
       "answers": [
         "C"
@@ -2334,12 +2334,12 @@
       "number": 97,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列何者為磷脂肌醇4,5-雙磷酸（phosphotidylinositol 4,5-bisphosphate）被磷酸肌醇3-激酶（phosphoinositide 3-kinase, PI3K）作用後的直接產物？",
+      "stem": "下列何者為磷脂肌醇 4,5-雙磷酸（phosphotidylinositol 4,5-bisphosphate）被磷酸肌醇 3-激酶（phosphoinositide 3-kinase, PI3K）作用後的直接產物？",
       "options": [
         "肌醇三磷酸（inositol trisphosphate）",
-        "磷脂肌醇1,4,5 三磷酸（phosphatidylinositol 1,4,5-triphosphate）",
+        "磷脂肌醇 1,4,5 三磷酸（phosphatidylinositol 1,4,5-triphosphate）",
         "二酸甘油酯（diacylglycerol）",
-        "磷脂肌醇3,4,5 三磷酸（phosphatidylinositol 3,4,5-triphosphate）"
+        "磷脂肌醇 3,4,5 三磷酸（phosphatidylinositol 3,4,5-triphosphate）"
       ],
       "answers": [
         "D"
@@ -2358,7 +2358,7 @@
       "number": 98,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "如果想要將一特定基因的單股多聚核苷酸（polynucleotide）製作成偵測此特定基因的探針（probe），通常會利用多聚核苷酸激酶（polynucleotide kinase）在其5'端標記具有放射性的³²P，進行該反應時，需加入下列何種³²P-dATP 材料來進行標記？",
+      "stem": "如果想要將一特定基因的單股多聚核苷酸（polynucleotide）製作成偵測此特定基因的探針（probe），通常會利用多聚核苷酸激酶（polynucleotide kinase）在其 5'端標記具有放射性的³²P，進行該反應時，需加入下列何種³²P-dATP 材料來進行標記？",
       "options": [
         "α-³²P-dATP",
         "β-³²P-dATP",
@@ -2382,12 +2382,12 @@
       "number": 99,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "在進行重組DNA 實驗時，常需使用可接入選殖DNA 片段的選殖質體（cloning plasmids），下列關於此選殖質體的敘述何者正確？",
+      "stem": "在進行重組 DNA 實驗時，常需使用可接入選殖 DNA 片段的選殖質體（cloning plasmids），下列關於此選殖質體的敘述何者正確？",
       "options": [
-        "在大腸桿菌內進行DNA 複製（replication）時，此環狀質體（circular plasmids）不需要複製起點（origin of replication）",
-        "經常可用來選殖超過50×10³ 鹼基對（base pairs）的外來DNA 片段",
+        "在大腸桿菌內進行 DNA 複製（replication）時，此環狀質體（circular plasmids）不需要複製起點（origin of replication）",
+        "經常可用來選殖超過 50×10³ 鹼基對（base pairs）的外來 DNA 片段",
         "通常需要具有抗生素抗藥性基因（antibiotic resistance gene）提供篩選的標記",
-        "需要環化重組酶（Cre recombinase）協助外來DNA 片段插入"
+        "需要環化重組酶（Cre recombinase）協助外來 DNA 片段插入"
       ],
       "answers": [
         "C"
@@ -2406,7 +2406,7 @@
       "number": 100,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列功能性DNA 序列在一個細菌質體（plasmid）上的排序，何者最能有效地表達出蛋白質？",
+      "stem": "下列功能性 DNA 序列在一個細菌質體（plasmid）上的排序，何者最能有效地表達出蛋白質？",
       "options": [
         "5'端-核糖體結合位點（ribosome-binding site） — 操作子（operator） — 啟動子（promoter） — 轉錄終止子（transcription terminator）-3'端",
         "5'端-啟動子（promoter） — 操作子（operator） — 核糖體結合位點（ribosome-binding site） — 轉錄終止子（transcription terminator）-3'端",

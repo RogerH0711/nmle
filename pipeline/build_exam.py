@@ -82,6 +82,14 @@ def script_text(text, table, marker):
 
 
 FAKE_BOLD_TOLERANCE = 1.5  # pt
+# 中文後面接英數字時，考卷排版會留約 2.8 pt 的空隙（「第 2 天」），但 PDF 裡沒有空白字元，只是把字往右挪；
+# 英數字後面接中文時才是真的空白字元。所以中文和英數字之間空隙超過這個值就補一個空白。
+# 量過 110–115 年全部考卷：正常相連的字空隙都是 0，中文接中文沒有一處超過 1.5 pt
+CJK_LATIN_GAP = 1.5  # pt
+
+
+def is_cjk(c):
+    return "\u4e00" <= c <= "\u9fff"
 
 
 def dedupe_fake_bold(blocks):
@@ -139,13 +147,25 @@ def iter_lines(doc):
         for block in blocks:
             for line in block.get("lines", []):
                 text = ""
+                prev = None  # 上一個不是空白的字（量空隙用）
                 for span in line["spans"]:
                     kind = scripts.get(id(span))
                     if kind:
                         text = text.rstrip()  # 「N ¹⁰」：本體字後面的空白屬於版面，不是內容
                         text += script_text(span["text"], *((SUP, "^") if kind == "sup" else (SUB, "_")))
                     else:
-                        text += span["text"]
+                        for ch in span["chars"]:
+                            c = ch["c"]
+                            if (prev and is_cjk(prev["c"]) and c.isascii() and c.isalnum() and not text[-1:].isspace()
+                                    and ch["bbox"][0] - prev["bbox"][2] > CJK_LATIN_GAP):
+                                text += " "
+                            text += c
+                            if not c.isspace():
+                                prev = ch
+                        continue
+                    chars = [ch for ch in span["chars"] if not ch["c"].isspace()]
+                    if chars:  # 上下標：記下最後一個字，後面接中文時才量得到空隙
+                        prev = chars[-1]
                 lines.append((pymupdf.Rect(line["bbox"]), text))
         for bbox, text in reading_order(lines):
             yield pno, text, bbox
@@ -638,6 +658,11 @@ if __name__ == "__main__":
         jobs = [(args.exam, args.subject)]
     else:
         ap.error("需要 --exam 加 --subject，或 --years")
+
+    # 先把所有 PDF 下載好再解析：英文斷行要不要補空白是查所有考卷的字彙（vocab），
+    # 邊下載邊解析的話，前面幾份查到的字彙不完整，第一次在新電腦上跑會和之後的結果不同
+    for exam, subject in jobs:
+        download(exam, subject)
 
     failed = []
     for exam, subject in jobs:

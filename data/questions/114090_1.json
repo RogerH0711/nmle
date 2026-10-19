@@ -913,7 +913,7 @@
       "options": [
         "相鄰的細胞之間藉由間隙接合（gap junction）傳遞訊息",
         "細胞膜（plasma membrane）內凹形成終池（terminal cisternae）",
-        "一個終池與兩條相鄰的T 小管（T tubules）共同組成三聯體（triad）",
+        "一個終池與兩條相鄰的 T 小管（T tubules）共同組成三聯體（triad）",
         "三聯體（triad）分布於肌節（sarcomere）的明帶與暗帶交接處（A-I junction）"
       ],
       "answers": [
@@ -1079,7 +1079,7 @@
       "subject_status": "range",
       "stem": "關於甲狀腺濾泡（thyroid follicle）構造和功能的敘述，下列何者正確？",
       "options": [
-        "甲狀腺是由許多大小相似（直徑約2 mm）之甲狀腺濾泡所組成",
+        "甲狀腺是由許多大小相似（直徑約 2 mm）之甲狀腺濾泡所組成",
         "甲狀腺濾泡細胞（follicular cell）環繞甲狀腺膠體（colloid）所構成的甲狀腺濾泡，是甲狀腺的基本構造單位",
         "甲狀腺球蛋白（thyroglobulin）在濾泡細胞內，經甲狀腺氧化酶（thyroid oxidase）進行碘化作用，再送至膠體（colloid）內",
         "濾泡細胞（follicular cell）的主要功能是分泌降鈣素（calcitonin）"
@@ -1151,10 +1151,10 @@
       "subject_status": "range",
       "stem": "有關骨骼肌纖維（skeletal muscle fiber）的終板電位（endplate potential, EPP），下列描述何者最為適當？",
       "options": [
-        "從運動神經纖維末梢釋放的乙醯膽鹼（acetylcholine）會與肌漿膜（sarcolemma）上的蕈毒型受器（muscarinic receptor）結合，因而產生EPP",
+        "從運動神經纖維末梢釋放的乙醯膽鹼（acetylcholine）會與肌漿膜（sarcolemma）上的蕈毒型受器（muscarinic receptor）結合，因而產生 EPP",
         "EPP 是因為大量鉀離子（K⁺）流入肌纖維內所造成的一種動作電位（action potential）",
         "EPP 會沿著橫小管（transverse tubule）傳遞到骨骼肌纖維內部，促使肌漿網（sarcoplasmic reticulum）釋放鈣離子",
-        "肉毒桿菌毒素（botulinum toxin）中毒會使運動神經纖維末梢不易釋放乙醯膽鹼，使得EPP 變小，最終導致肌肉無法收縮"
+        "肉毒桿菌毒素（botulinum toxin）中毒會使運動神經纖維末梢不易釋放乙醯膽鹼，使得 EPP 變小，最終導致肌肉無法收縮"
       ],
       "answers": [
         "D"
@@ -1318,7 +1318,7 @@
       "number": 55,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "在一般開始運動的最初幾秒鐘內，骨骼肌所需ATP 最可能之來源為何？",
+      "stem": "在一般開始運動的最初幾秒鐘內，骨骼肌所需 ATP 最可能之來源為何？",
       "options": [
         "脂肪酸（fatty acid）",
         "葡萄糖（glucose）",
@@ -1342,7 +1342,7 @@
       "number": 56,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "與第1 型骨骼肌纖維相比，2X 型骨骼肌纖維有何不同？",
+      "stem": "與第 1 型骨骼肌纖維相比，2X 型骨骼肌纖維有何不同？",
       "options": [
         "2X 型纖維有更多粒線體",
         "2X 型纖維更容易疲勞",
@@ -1392,10 +1392,10 @@
       "subject_status": "range",
       "stem": "下列有關心電圖（electrocardiogram, ECG）各導程波形所代表的生病理狀況描述，何者最適當？",
       "options": [
-        "血中鈣離子濃度正常情況下，高血鉀（hyperkalemia）病人的lead Ⅱ常見高T 波（tall T）",
-        "一級房室傳導阻斷（first-degree atrioventricular heart block）時，在lead Ⅱ中常見PR interval縮短",
-        "以aVR 單極導程記錄ECG，和lead Ⅱ有相似的QRS 波，均為向上偏斜（upward deflection）波形",
-        "T 波代表心室再極化，因此V1-V6（precordial leads）的T 波，均為向下偏斜（downward deflection）波形"
+        "血中鈣離子濃度正常情況下，高血鉀（hyperkalemia）病人的 lead Ⅱ常見高 T 波（tall T）",
+        "一級房室傳導阻斷（first-degree atrioventricular heart block）時，在 lead Ⅱ中常見 PR interval縮短",
+        "以 aVR 單極導程記錄 ECG，和 lead Ⅱ有相似的 QRS 波，均為向上偏斜（upward deflection）波形",
+        "T 波代表心室再極化，因此 V1-V6（precordial leads）的 T 波，均為向下偏斜（downward deflection）波形"
       ],
       "answers": [
         "A"
@@ -1418,8 +1418,8 @@
       "options": [
         "關閉鈉離子通道，打開鉀離子通道",
         "關閉鈉離子通道，打開氯離子通道",
-        "關閉L-type 鈣離子通道，打開T-type 鈣離子通道",
-        "關閉T-type 鈣離子通道，打開L-type 鈣離子通道"
+        "關閉 L-type 鈣離子通道，打開 T-type 鈣離子通道",
+        "關閉 T-type 鈣離子通道，打開 L-type 鈣離子通道"
       ],
       "answers": [
         "A"
@@ -1438,12 +1438,12 @@
       "number": 60,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "對於心室肌細胞和SA node 細胞電位的比較，下列那一敘述最為適當？",
+      "stem": "對於心室肌細胞和 SA node 細胞電位的比較，下列那一敘述最為適當？",
       "options": [
         "兩種細胞皆有穩定的靜止膜電位（steady resting membrane potential），均約為-90 mV",
-        "兩種細胞產生的動作電位皆有平原期（plateau phase），主要均是因為打開L-type Ca²⁺ channels",
-        "兩種細胞動作電位的去極化，主要都是因為打開Na⁺ channels，使得Na⁺流入細胞而造成",
-        "兩種細胞動作電位的再極化，主要都是因為打開K⁺ channels，使得K⁺流出細胞而造成"
+        "兩種細胞產生的動作電位皆有平原期（plateau phase），主要均是因為打開 L-type Ca²⁺ channels",
+        "兩種細胞動作電位的去極化，主要都是因為打開 Na⁺ channels，使得 Na⁺流入細胞而造成",
+        "兩種細胞動作電位的再極化，主要都是因為打開 K⁺ channels，使得 K⁺流出細胞而造成"
       ],
       "answers": [
         "D"
@@ -1486,7 +1486,7 @@
       "number": 62,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "一位成年女子，其體動脈血中氧氣濃度200 mL/L，全身氧氣消耗速率（oxygen consumption rate）為250 mL/min。已知她的心輸出量（cardiac output）為5 L/min，血紅素濃度16 g/dL，而且體動脈血中結合在血紅素上的氧氣量（O₂ bound to hemoglobin）占全部血中氧氣的98％。則她的體靜脈血中氧氣濃度最接近下列何者？",
+      "stem": "一位成年女子，其體動脈血中氧氣濃度 200 mL/L，全身氧氣消耗速率（oxygen consumption rate）為 250 mL/min。已知她的心輸出量（cardiac output）為 5 L/min，血紅素濃度 16 g/dL，而且體動脈血中結合在血紅素上的氧氣量（O₂ bound to hemoglobin）占全部血中氧氣的 98％。則她的體靜脈血中氧氣濃度最接近下列何者？",
       "options": [
         "150 mL/L",
         "146 mL/L",
@@ -1510,7 +1510,7 @@
       "number": 63,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "下列各種混合氣體，總壓力均為760 mmHg，除了以下所述成分以外，其餘皆為氮氣。當人體吸入何種混合氣體時，每分鐘總通氣量（minute ventilation）最大？",
+      "stem": "下列各種混合氣體，總壓力均為 760 mmHg，除了以下所述成分以外，其餘皆為氮氣。當人體吸入何種混合氣體時，每分鐘總通氣量（minute ventilation）最大？",
       "options": [
         "21％氧氣＋0.05％二氧化碳",
         "5％氧氣＋0.05％二氧化碳",
@@ -1562,8 +1562,8 @@
       "options": [
         "刺激膽囊收縮釋放膽汁和促進胰臟胰島素的分泌",
         "刺激肝臟分泌膽汁和促進膽囊收縮",
-        "刺激胰臟碳酸氫根離子分泌和抑制胃腺分泌gastrin",
-        "刺激腸道上皮細胞分泌離子和促進胃腺分泌HCl"
+        "刺激胰臟碳酸氫根離子分泌和抑制胃腺分泌 gastrin",
+        "刺激腸道上皮細胞分泌離子和促進胃腺分泌 HCl"
       ],
       "answers": [
         "C"
@@ -1584,10 +1584,10 @@
       "subject_status": "range",
       "stem": "有關正常生理情況下之腎臟滲透壓調節（renal osmolar regulation），下列敘述何者最為適當？",
       "options": [
-        "血漿滲透壓值小於280 mOsm/L 後會刺激抗利尿荷爾蒙（antidiuretic hormone, ADH）分泌",
+        "血漿滲透壓值小於 280 mOsm/L 後會刺激抗利尿荷爾蒙（antidiuretic hormone, ADH）分泌",
         "刺激口渴感覺的血漿滲透壓閾值（threshold），要比刺激抗利尿荷爾蒙（antidiuretic hormone, ADH）分泌之閾值為低",
         "抗利尿荷爾蒙（antidiuretic hormone, ADH）使近端腎小管對水分子容易重吸收",
-        "尿液濃縮與稀釋時之滲透壓範圍，可高至1200 mOsm/L，或低至50 mOsm/L"
+        "尿液濃縮與稀釋時之滲透壓範圍，可高至 1200 mOsm/L，或低至 50 mOsm/L"
       ],
       "answers": [
         "D"
@@ -1654,7 +1654,7 @@
       "number": 69,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "下列那兩個激素與甲促素（thyroid-stimulating hormone）具有相同的alpha 蛋白次單元（subunit）？",
+      "stem": "下列那兩個激素與甲促素（thyroid-stimulating hormone）具有相同的 alpha 蛋白次單元（subunit）？",
       "options": [
         "生長激素（growth hormone）與泌乳素（prolactin）",
         "腎皮促素（adrenocorticotropic hormone）與濾泡刺激素(follicle-stimulating hormone）",
@@ -1680,7 +1680,7 @@
       "subject_status": "range",
       "stem": "當身體內外環境改變時，下列有關荷爾蒙分泌之敘述何者最不適當？",
       "options": [
-        "當血糖下降至40 mg/dL 時，腎上腺素（epinephrine）會大量分泌",
+        "當血糖下降至 40 mg/dL 時，腎上腺素（epinephrine）會大量分泌",
         "受到壓力（stress）時，血漿中皮質素（cortisol）的分泌會增加",
         "受到壓力時，會刺激下視丘的神經細胞分泌促腎上腺皮質素（ACTH）",
         "晝夜節律（circadian rhythm）會參與調控促腎上腺皮質素（ACTH）的分泌"
@@ -1726,7 +1726,7 @@
       "number": 72,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "有關兩側副甲狀腺切除後2～3 天內所造成的影響，下列何種情況最不可能發生？",
+      "stem": "有關兩側副甲狀腺切除後 2～3 天內所造成的影響，下列何種情況最不可能發生？",
       "options": [
         "血漿中磷濃度升高",
         "神經肌肉興奮性下降",
@@ -1774,7 +1774,7 @@
       "number": 74,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "一條由12 個胺基酸形成的多肽（polypeptide）含有幾個胜肽鍵（peptide bond）？",
+      "stem": "一條由 12 個胺基酸形成的多肽（polypeptide）含有幾個胜肽鍵（peptide bond）？",
       "options": [
         "9",
         "10",
@@ -1822,7 +1822,7 @@
       "number": 76,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "當血紅蛋白（hemoglobin）與2,3-bisphosphoglycerate（2,3-BPG）結合時，會更易於形成下列何種四級結構？",
+      "stem": "當血紅蛋白（hemoglobin）與 2,3-bisphosphoglycerate（2,3-BPG）結合時，會更易於形成下列何種四級結構？",
       "options": [
         "R 狀態（R state）",
         "T 狀態（T state）",
@@ -1873,7 +1873,7 @@
       "stem": "關於人類基因組的描述，下列何者錯誤？",
       "options": [
         "人類基因組中，大部分基因被非編碼的內含子（intron）打斷，因而呈現不連續性",
-        "人類基因組中，超過40%的DNA 負責編碼蛋白質",
+        "人類基因組中，超過 40%的 DNA 負責編碼蛋白質",
         "人類基因組中約有一半由轉座子（transposon）組成",
         "真核生物染色體中的著絲粒（有絲分裂紡錘體的附著點）和端粒（位於染色體末端）是具有特殊功能的重複DNA 序列"
       ],
@@ -1894,7 +1894,7 @@
       "number": 79,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "化療藥物5-fluorouracil 經酵素作用轉化成5-fluoro-2'-deoxyuridine 5'-monophosphate（FdUMP），會與下列何種酵素結合抑制DNA 合成？",
+      "stem": "化療藥物 5-fluorouracil 經酵素作用轉化成 5-fluoro-2'-deoxyuridine 5'-monophosphate（FdUMP），會與下列何種酵素結合抑制 DNA 合成？",
       "options": [
         "黃嘌呤氧化酶（xanthine oxidase）",
         "胺基甲醯磷酸合成酶Ⅱ（carbamoyl phosphate synthase Ⅱ）",
@@ -1918,7 +1918,7 @@
       "number": 80,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "在抗體輕鏈（light chain）的生成過程中，V 區與J 區的重組以及J 區與C 區的重組分別是在那個層面上進行？",
+      "stem": "在抗體輕鏈（light chain）的生成過程中，V 區與 J 區的重組以及 J 區與 C 區的重組分別是在那個層面上進行？",
       "options": [
         "DNA；DNA",
         "DNA；RNA",
@@ -1945,8 +1945,8 @@
       "stem": "愛滋病毒的基因體能夠快速變異，主要是因為病毒的何種特性？",
       "options": [
         "隨機插入人類染色體",
-        "帶有特殊的DNA 水解酵素",
-        "反轉錄酶合成DNA 的精準度（fidelity）不佳",
+        "帶有特殊的 DNA 水解酵素",
+        "反轉錄酶合成 DNA 的精準度（fidelity）不佳",
         "蛋白質水解酶無法精準切割合成的病毒蛋白"
       ],
       "answers": [
@@ -1966,7 +1966,7 @@
       "number": 82,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "在錯誤配對修復（mismatch repair）過程中，大腸桿菌是利用何種機制來標記模板股DNA，以作為DNA 修復辨識？",
+      "stem": "在錯誤配對修復（mismatch repair）過程中，大腸桿菌是利用何種機制來標記模板股 DNA，以作為 DNA 修復辨識？",
       "options": [
         "將胸腺嘧啶（thymine）上的甲基移除",
         "在尿嘧啶（uracil）上進行甲基化，轉變成胸腺嘧啶（thymine）",
@@ -1990,12 +1990,12 @@
       "number": 83,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "假設在某種胺醯-tRNA 合成酶（aminoacyl-tRNA synthetase）基因發生突變時，雖不影響其催化活性，但對其識別tRNA 分子的專一性降低。這種突變最可能導致下列何種後果？",
+      "stem": "假設在某種胺醯-tRNA 合成酶（aminoacyl-tRNA synthetase）基因發生突變時，雖不影響其催化活性，但對其識別 tRNA 分子的專一性降低。這種突變最可能導致下列何種後果？",
       "options": [
-        "蛋白質合成效率增加，因為tRNA 分子可以攜帶多種胺基酸",
+        "蛋白質合成效率增加，因為 tRNA 分子可以攜帶多種胺基酸",
         "蛋白質合成解碼過程中錯誤增加，導致功能異常的蛋白質產生",
-        "蛋白質合成停止，因為胺醯-tRNA 合成酶無法連接任何胺基酸到tRNA",
-        "核糖體無法識別突變tRNA，導致tRNA 分子無法進入核糖體的A 位點，阻止轉譯進行"
+        "蛋白質合成停止，因為胺醯-tRNA 合成酶無法連接任何胺基酸到 tRNA",
+        "核糖體無法識別突變 tRNA，導致 tRNA 分子無法進入核糖體的 A 位點，阻止轉譯進行"
       ],
       "answers": [
         "B"
@@ -2014,7 +2014,7 @@
       "number": 84,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列何者不是真核細胞RNA 聚合酶Ⅱ之TFⅡH 次單元所具有的生理功能？",
+      "stem": "下列何者不是真核細胞 RNA 聚合酶Ⅱ之 TFⅡH 次單元所具有的生理功能？",
       "options": [
         "三磷酸腺苷的水解（ATP hydrolysis）",
         "轉錄前起始複合體的形成",
@@ -2067,7 +2067,7 @@
         "前導胜肽是一種催化轉錄衰減（transcription attenuation）的酵素",
         "當色胺酸（tryptophan）水平較低時，trp operon 之轉錄作用在其結構基因被轉錄之前便衰減（attenuation）",
         "前導胜肽在催化轉錄衰減（transcription attenuation）作用中，會直接和核糖核酸聚合酶結合並限制其移動",
-        "編碼前導胜肽的序列中包含的色胺酸密碼子會使得trp operon 的轉錄活性受到細胞中色胺酸（tryptophan）的含量所調控"
+        "編碼前導胜肽的序列中包含的色胺酸密碼子會使得 trp operon 的轉錄活性受到細胞中色胺酸（tryptophan）的含量所調控"
       ],
       "answers": [
         "D"
@@ -2086,11 +2086,11 @@
       "number": 87,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列何種代謝物其磷酸根，只經人體細胞一個代謝反應後，就可直接製造出ATP？",
+      "stem": "下列何種代謝物其磷酸根，只經人體細胞一個代謝反應後，就可直接製造出 ATP？",
       "options": [
         "甘油磷酸（glycerol-3-phosphate）",
         "6-磷酸葡萄糖酸內酯（6-phosphogluconolactone）",
-        "果糖1,6-雙磷酸（fructose 1,6-bisphosphate）",
+        "果糖 1,6-雙磷酸（fructose 1,6-bisphosphate）",
         "1,3-雙磷酸甘油酸（1,3-bisphosphoglycerate）"
       ],
       "answers": [
@@ -2158,7 +2158,7 @@
       "number": 90,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "NADPH 為脂質合成中提供還原能的重要來源，合成1 莫耳palmitate 需要幾莫耳的NADPH？",
+      "stem": "NADPH 為脂質合成中提供還原能的重要來源，合成 1 莫耳 palmitate 需要幾莫耳的 NADPH？",
       "options": [
         "7",
         "14",
@@ -2256,10 +2256,10 @@
       "subject_status": "range",
       "stem": "參與粒線體呼吸鏈（或稱電子傳遞鏈）的蛋白質複合體在傳遞電子的同時，也同時扮演氫離子幫浦（hydrogen pump）的角色。下列敘述何者正確？",
       "options": [
-        "complex Ⅰ會將4 個氫離子移轉到粒線體基質（matrix）",
-        "complex Ⅲ會將4 個氫離子移轉到粒線體基質（matrix）",
-        "complex Ⅲ會將4 個氫離子移轉到粒線體膜間腔（intermembrane space）",
-        "complex Ⅳ會將4 個氫離子移轉到粒線體膜間腔（intermembrane space）"
+        "complex Ⅰ會將 4 個氫離子移轉到粒線體基質（matrix）",
+        "complex Ⅲ會將 4 個氫離子移轉到粒線體基質（matrix）",
+        "complex Ⅲ會將 4 個氫離子移轉到粒線體膜間腔（intermembrane space）",
+        "complex Ⅳ會將 4 個氫離子移轉到粒線體膜間腔（intermembrane space）"
       ],
       "answers": [
         "C",
@@ -2281,10 +2281,10 @@
       "subject_status": "range",
       "stem": "關於胰島素（insulin）訊息如何活化肝臟細胞的肝醣合成酶（glycogen synthase, GS）的活性，下列描述何者最合理？",
       "options": [
-        "造成肝醣合成激酶3（glycogen synthase kinase 3, GSK3）去磷酸化，提高GSK3 激酶活性，活化GS",
-        "造成肝醣合成激酶3（glycogen synthase kinase 3, GSK3）磷酸化，提高GSK3 激酶活性，活化GS",
-        "造成肝醣合成激酶3（glycogen synthase kinase 3, GSK3）去磷酸化，抑制GSK3 激酶活性，活化GS",
-        "造成肝醣合成激酶3（glycogen synthase kinase 3, GSK3）磷酸化，抑制GSK3 激酶活性，活化GS"
+        "造成肝醣合成激酶 3（glycogen synthase kinase 3, GSK3）去磷酸化，提高 GSK3 激酶活性，活化 GS",
+        "造成肝醣合成激酶 3（glycogen synthase kinase 3, GSK3）磷酸化，提高 GSK3 激酶活性，活化 GS",
+        "造成肝醣合成激酶 3（glycogen synthase kinase 3, GSK3）去磷酸化，抑制 GSK3 激酶活性，活化 GS",
+        "造成肝醣合成激酶 3（glycogen synthase kinase 3, GSK3）磷酸化，抑制 GSK3 激酶活性，活化 GS"
       ],
       "answers": [
         "D"
@@ -2303,12 +2303,12 @@
       "number": 96,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列有關蛋白激酶A（protein kinase A）活化的描述，何者正確？",
+      "stem": "下列有關蛋白激酶 A（protein kinase A）活化的描述，何者正確？",
       "options": [
-        "需要cAMP 結合其R 次單元",
-        "需要cAMP 結合其C 次單元",
-        "需要鈣離子結合其R 次單元",
-        "需要鈣離子結合其C 次單元"
+        "需要 cAMP 結合其 R 次單元",
+        "需要 cAMP 結合其 C 次單元",
+        "需要鈣離子結合其 R 次單元",
+        "需要鈣離子結合其 C 次單元"
       ],
       "answers": [
         "A"
@@ -2351,7 +2351,7 @@
       "number": 98,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "研究人員需要選殖（cloning）大片段的DNA 進行相關研究時，下列載體（cloning vector）何者可以承載最大的DNA 片段？",
+      "stem": "研究人員需要選殖（cloning）大片段的 DNA 進行相關研究時，下列載體（cloning vector）何者可以承載最大的 DNA 片段？",
       "options": [
         "pBR322 質體（pBR322 plasmid）",
         "酵母菌人工染色體（yeast artificial chromosome, YAC）",
@@ -2375,7 +2375,7 @@
       "number": 99,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "在哺乳動物細胞中，RNA 干擾作用（RNA interference, RNAi）是由小干擾RNA（small interfering RNA,siRNA）所誘發，siRNA 一般由幾個核苷酸組成？",
+      "stem": "在哺乳動物細胞中，RNA 干擾作用（RNA interference, RNAi）是由小干擾 RNA（small interfering RNA,siRNA）所誘發，siRNA 一般由幾個核苷酸組成？",
       "options": [
         "11～13",
         "21～23",

@@ -1,6 +1,6 @@
 {
   "62": {
-    "stem": "三種血液樣本分別置於甲、乙、丙三支試管內，甲試管：血紅素（hemoglobin）濃度與成分皆正常、乙試管：血紅素濃度為正常值的50%、丙試管：血紅素總濃度正常，但是其中50%為一氧化碳血紅素（carboxyhemoglobin），三管血液其餘條件皆相同。若將氧分壓（Po₂）均為40 mmHg 之相同氣體分別灌入三支試管，達成反應平衡後，下列敘述何者正確？",
+    "stem": "三種血液樣本分別置於甲、乙、丙三支試管內，甲試管：血紅素（hemoglobin）濃度與成分皆正常、乙試管：血紅素濃度為正常值的 50%、丙試管：血紅素總濃度正常，但是其中 50%為一氧化碳血紅素（carboxyhemoglobin），三管血液其餘條件皆相同。若將氧分壓（Po₂）均為 40 mmHg 之相同氣體分別灌入三支試管，達成反應平衡後，下列敘述何者正確？",
     "reason": "原卷「Po₂」「Sao₂」為行內公式圖片，抽文字時遺失，依原始 PDF 人工補字",
     "options": {
       "B": "乙試管血液中的血氧飽和度百分比（oxygen saturation percentage, Sao₂）為甲試管的50%"
@@ -11,5 +11,15 @@
       "C": "屈拇長肌（flexor hallucis longus）"
     },
     "reason": "原卷「𧿹」（足字旁加母）為字型私用區字元，網頁無法顯示；以通用字「拇」代替"
+  },
+  "1": {
+    "options": {
+      "D": "上小腦腳交叉（superior cerebellar decussation）"
+    },
+    "reason": "原卷「cerebellar」的「ll」是連字（ligature），PDF 畫成一個特殊字形，抽文字時遺失，變成「cerebelar」；依原始 PDF 補字"
+  },
+  "40": {
+    "stem": "下列有關中樞神經膠細胞（neuroglial cell）的敘述，何者錯誤？",
+    "reason": "原卷「cell」的「ll」是連字（ligature），PDF 畫成一個特殊字形，抽文字時遺失，變成「cel」；依原始 PDF 補字"
   }
 }

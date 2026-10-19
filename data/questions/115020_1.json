@@ -549,7 +549,7 @@
       "subject_status": "range",
       "stem": "關於肛管（anal canal），下列敘述何者正確？",
       "options": [
-        "肛管的長度大約10 至15 公分",
+        "肛管的長度大約 10 至 15 公分",
         "肛門內括約肌（internal anal sphincter）由平滑肌構成，圍繞在肛管下端的肛門（anus）周圍",
         "交感神經纖維（sympathetic fibers）刺激肛門內括約肌（internal anal sphincter）收縮",
         "肛門外括約肌（external anal sphincter）只圍繞肛管的上段，不圍繞肛管的下段"
@@ -813,7 +813,7 @@
       "subject_status": "range",
       "stem": "下列關於染色體數目異常的敘述，何者正確？",
       "options": [
-        "孕婦的年齡不影響染色體21 三倍體（trisomy 21）的發生率",
+        "孕婦的年齡不影響染色體 21 三倍體（trisomy 21）的發生率",
         "性染色體三倍症（trisomy of sex chromosomes），常在青春期時才發現",
         "透納氏症（Turner syndrome）多為男性，且具有性腺及第二性徵的發育",
         "具有染色體四倍體（tetrasomy）的胎兒不易流產，仍可足月生產"
@@ -1101,7 +1101,7 @@
       "subject_status": "range",
       "stem": "下列關於內分泌腺體的細胞與其分泌的激素（hormone）之敘述，何者正確？",
       "options": [
-        "胰島（pancreatic islet）內的A 細胞（alpha cell）主要分泌胰島素（insulin）",
+        "胰島（pancreatic islet）內的 A 細胞（alpha cell）主要分泌胰島素（insulin）",
         "腎上腺髓質（adrenal medulla）內的嗜鉻細胞（chromaffin cell）主要分泌雄性激素（androgen）",
         "松果腺（pineal gland）的膠細胞（glial cell）主要分泌褪黑激素（melatonin）",
         "副甲狀腺（parathyroid gland）中的主細胞（chief cell）主要分泌副甲狀腺激素（parathyroid hormone）"
@@ -1221,10 +1221,10 @@
       "subject_status": "range",
       "stem": "下列那一個是把正腎上腺素（norepinephrine）轉換成腎上腺素（epinephrine）最重要的酶？",
       "options": [
-        "組織胺N-甲基轉移酶（histamine N-methyltransferase）",
-        "菸鹼醯胺N-甲基轉移酶（nicotinamide N-methyltransferase）",
-        "胍基乙酸N-甲基轉移酶（guanidinoacetate N-methyltransferase）",
-        "苯基乙醇胺N-甲基轉移酶（phenylethanolamine N-methyltransferase）"
+        "組織胺 N-甲基轉移酶（histamine N-methyltransferase）",
+        "菸鹼醯胺 N-甲基轉移酶（nicotinamide N-methyltransferase）",
+        "胍基乙酸 N-甲基轉移酶（guanidinoacetate N-methyltransferase）",
+        "苯基乙醇胺 N-甲基轉移酶（phenylethanolamine N-methyltransferase）"
       ],
       "answers": [
         "D"
@@ -1248,7 +1248,7 @@
         "忘記小學畢業成績為全校第一",
         "仍可以學會騎腳踏車",
         "記得昨天中午去聚餐的朋友",
-        "記得30 分鐘前進行過的對話"
+        "記得 30 分鐘前進行過的對話"
       ],
       "answers": [
         "B"
@@ -1363,7 +1363,7 @@
       "number": 57,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "下列有關心電圖（electrocardiogram, ECG）中P 波的敘述，何者最不適當？",
+      "stem": "下列有關心電圖（electrocardiogram, ECG）中 P 波的敘述，何者最不適當？",
       "options": [
         "P 波代表心房去極化，心房開始收縮",
         "P 波出現後心室容積會顯著升高",
@@ -1392,7 +1392,7 @@
         "產生第三心音",
         "心房收縮",
         "房室瓣（A-V valve）打開",
-        "心電圖的T 波開始發生"
+        "心電圖的 T 波開始發生"
       ],
       "answers": [
         "D"
@@ -1411,7 +1411,7 @@
       "number": 59,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "某段微血管內靠近動脈端之微血管流體靜壓為36 毫米汞柱，血漿蛋白質造成之滲透壓為26 毫米汞柱，微血管外組織間液流體靜壓為0 毫米汞柱，組織間液蛋白質造成之滲透壓為3 毫米汞柱，該微血管之淨過濾壓值為何？",
+      "stem": "某段微血管內靠近動脈端之微血管流體靜壓為 36 毫米汞柱，血漿蛋白質造成之滲透壓為 26 毫米汞柱，微血管外組織間液流體靜壓為 0 毫米汞柱，組織間液蛋白質造成之滲透壓為 3 毫米汞柱，該微血管之淨過濾壓值為何？",
       "options": [
         "7 毫米汞柱",
         "13 毫米汞柱",
@@ -1559,7 +1559,7 @@
       "options": [
         "腎素（renin）的分泌增加",
         "緻密斑（macula densa）管腔內的鈉離子濃度減低",
-        "入球小動脈收縮GFR 下降",
+        "入球小動脈收縮 GFR 下降",
         "前列腺素分泌量增加"
       ],
       "answers": [
@@ -1748,7 +1748,7 @@
       "number": 73,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "下列何者的主要作用是抑制anterior pituitary 的follicle-stimulating hormone（FSH）分泌，但對luteinizing hormone（LH）的分泌則相對較無影響 ？",
+      "stem": "下列何者的主要作用是抑制 anterior pituitary 的 follicle-stimulating hormone（FSH）分泌，但對luteinizing hormone（LH）的分泌則相對較無影響 ？",
       "options": [
         "progesterone",
         "estrogen",
@@ -1796,7 +1796,7 @@
       "number": 75,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "某酵素催化反應的k_cat=600（單位 1/s），K_M=10 μM。當受質濃度是50 μM，酵素濃度是20 nM，此時測得之反應初速度（Ｖ₀）約為多少μM/s？",
+      "stem": "某酵素催化反應的 k_cat=600（單位 1/s），K_M=10 μM。當受質濃度是 50 μM，酵素濃度是 20 nM，此時測得之反應初速度（Ｖ₀）約為多少μM/s？",
       "options": [
         "1",
         "10",
@@ -1825,7 +1825,7 @@
         "呈現酸性及鹼性的功能",
         "轉換為不帶電荷的分子及離子的狀態",
         "轉換為極性及非極性的狀態",
-        "轉換為在260nm 及280nm 的吸光化合物"
+        "轉換為在 260nm 及 280nm 的吸光化合物"
       ],
       "answers": [
         "A"
@@ -1844,12 +1844,12 @@
       "number": 77,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "有關vitamin D₃代謝和功能，下列敘述何者最適切？",
+      "stem": "有關 vitamin D₃代謝和功能，下列敘述何者最適切？",
       "options": [
-        "1α,25-二羥基維生素D₃（1α,25-dihydroxyvitamin D₃）可經由陽光紫外線在皮膚中形成膽鈣化醇（cholecalciferol）",
-        "1α,25-二羥基維生素D₃（1α,25-dihydroxyvitamin D₃）與特定核受體蛋白相互作用來調節基因表現",
+        "1α,25-二羥基維生素 D₃（1α,25-dihydroxyvitamin D₃）可經由陽光紫外線在皮膚中形成膽鈣化醇（cholecalciferol）",
+        "1α,25-二羥基維生素 D₃（1α,25-dihydroxyvitamin D₃）與特定核受體蛋白相互作用來調節基因表現",
         "7-脫氫膽固醇（7-dehydrocholesterol）調節腸道鈣吸收",
-        "calcitriol 在肝和腎臟中形成vitamin D₃"
+        "calcitriol 在肝和腎臟中形成 vitamin D₃"
       ],
       "answers": [
         "B"
@@ -1868,7 +1868,7 @@
       "number": 78,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "所謂的ABO 血型，是指血球細胞膜上具有不同的抗原來決定其血型。在分子層次上，ABO 血型之抗原的主要差異為何？",
+      "stem": "所謂的 ABO 血型，是指血球細胞膜上具有不同的抗原來決定其血型。在分子層次上，ABO 血型之抗原的主要差異為何？",
       "options": [
         "細胞膜的脂肪組成不同",
         "細胞膜上的葡萄糖載體蛋白（glucose transporter）種類不同",
@@ -1919,9 +1919,9 @@
       "stem": "粒線體呼吸鏈（或稱電子傳遞鏈）是一連串的氧化還原反應，下列有關呼吸鏈相關之氧化還原反應的敘述，何者正確？",
       "options": [
         "NADH 為最終的電子接受者",
-        "complex Ⅱ將FAD 還原成FADH₂",
-        "coenzyme Q 的還原發生在complex Ⅲ",
-        "cytochrome c 的氧化發生在complex Ⅳ"
+        "complex Ⅱ將 FAD 還原成 FADH₂",
+        "coenzyme Q 的還原發生在 complex Ⅲ",
+        "cytochrome c 的氧化發生在 complex Ⅳ"
       ],
       "answers": [
         "D"
@@ -1940,12 +1940,12 @@
       "number": 81,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "在肝醣合成酶（glycogen synthase, GS）被肝醣合成激酶3（glycogen synthase kinase 3）磷酸化之前，GS 須先經下列何種酵素進行引導式（priming）磷酸化修飾？",
+      "stem": "在肝醣合成酶（glycogen synthase, GS）被肝醣合成激酶 3（glycogen synthase kinase 3）磷酸化之前，GS 須先經下列何種酵素進行引導式（priming）磷酸化修飾？",
       "options": [
         "酪蛋白激酶Ⅱ（casein kinase Ⅱ）",
         "磷酸化酶激酶（phosphorylase kinase）",
-        "蛋白質激酶A（protein kinase A）",
-        "蛋白質激酶B（protein kinase B）"
+        "蛋白質激酶 A（protein kinase A）",
+        "蛋白質激酶 B（protein kinase B）"
       ],
       "answers": [
         "A"
@@ -1964,12 +1964,12 @@
       "number": 82,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "若欲使用Ni²⁺親和層析法來純化某特定蛋白，則應以重組DNA 技術（recombinant DNA technology）在此蛋白加入下列何種親和性標籤（affinity tag）？",
+      "stem": "若欲使用 Ni²⁺親和層析法來純化某特定蛋白，則應以重組 DNA 技術（recombinant DNA technology）在此蛋白加入下列何種親和性標籤（affinity tag）？",
       "options": [
         "β-半乳糖苷酶（β-Galactosidase）",
         "穀胱甘肽-S-轉移酶（Glutathione-S-transferase, GST）",
         "六個連續組胺酸（His）₆",
-        "蛋白質A（Protein A）"
+        "蛋白質 A（Protein A）"
       ],
       "answers": [
         "C"
@@ -1990,10 +1990,10 @@
       "subject_status": "range",
       "stem": "下列有關核苷酸（nucleotide）的敘述，何者錯誤？",
       "options": [
-        "尿苷（uridine）是屬於RNA 的核苷（nucleoside）之一",
-        "磷酸根（phosphate）主要連接在五碳糖的5 號碳上",
-        "DNA 結構中的五碳糖之2 號碳上的官能基為OH 基團",
-        "RNA 結構中的五碳糖是屬於D-核糖（D-ribose）"
+        "尿苷（uridine）是屬於 RNA 的核苷（nucleoside）之一",
+        "磷酸根（phosphate）主要連接在五碳糖的 5 號碳上",
+        "DNA 結構中的五碳糖之 2 號碳上的官能基為 OH 基團",
+        "RNA 結構中的五碳糖是屬於 D-核糖（D-ribose）"
       ],
       "answers": [
         "C"
@@ -2012,7 +2012,7 @@
       "number": 84,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "核糖核苷酸（ribonucleotide）需要何種酵素將其催化成為去氧核糖核苷酸（deoxyribonucleotide），使其能被用於DNA 之複製及修復？",
+      "stem": "核糖核苷酸（ribonucleotide）需要何種酵素將其催化成為去氧核糖核苷酸（deoxyribonucleotide），使其能被用於 DNA 之複製及修復？",
       "options": [
         "胸苷酸合成酶（thymidylate synthase）",
         "核苷單磷酸激酶（nucleoside monophosphate kinase）",
@@ -2036,7 +2036,7 @@
       "number": 85,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "在大腸桿菌DNA 複製過程中，下列何種酶的功能是去除RNA 引子，並用DNA 替換？",
+      "stem": "在大腸桿菌 DNA 複製過程中，下列何種酶的功能是去除 RNA 引子，並用 DNA 替換？",
       "options": [
         "解旋酶（helicase）",
         "引子酶（primase）",
@@ -2060,7 +2060,7 @@
       "number": 86,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "移除DNA 上錯誤的脲嘧啶（uracil）鹼基，主要由何種DNA 修復機制來執行？",
+      "stem": "移除 DNA 上錯誤的脲嘧啶（uracil）鹼基，主要由何種 DNA 修復機制來執行？",
       "options": [
         "直接修復機制（direct repair）",
         "鹼基切除修復（base excision repair）",
@@ -2084,12 +2084,12 @@
       "number": 87,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "下列關於DNA 複製（DNA replication）的敘述，何者錯誤？",
+      "stem": "下列關於 DNA 複製（DNA replication）的敘述，何者錯誤？",
       "options": [
-        "雙股DNA 的複製，是利用一股DNA 為模板，合成新股DNA",
-        "真核細胞DNA 複製時，可以在染色體DNA 上多個不同的複製起始點同時進行",
-        "DNA 聚合酶合成DNA 時，除了可利用RNA 為引子（primer），也可以利用DNA 為引子",
-        "DNA 聚合反應（polymerization）的方向可以是5'端→3'端，也可以是3'端→5'端"
+        "雙股 DNA 的複製，是利用一股 DNA 為模板，合成新股 DNA",
+        "真核細胞 DNA 複製時，可以在染色體 DNA 上多個不同的複製起始點同時進行",
+        "DNA 聚合酶合成 DNA 時，除了可利用 RNA 為引子（primer），也可以利用 DNA 為引子",
+        "DNA 聚合反應（polymerization）的方向可以是 5'端→3'端，也可以是 3'端→5'端"
       ],
       "answers": [
         "D"
@@ -2156,7 +2156,7 @@
       "number": 90,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "真核細胞RNA 聚合酶Ⅱ（RNA polymerase Ⅱ）會辨認位於轉錄起始位置（transcription start site）上游約30 base pairs 的啟動子（promoter），下列何者為最常出現於啟動子的DNA 序列？",
+      "stem": "真核細胞 RNA 聚合酶Ⅱ（RNA polymerase Ⅱ）會辨認位於轉錄起始位置（transcription start site）上游約 30 base pairs 的啟動子（promoter），下列何者為最常出現於啟動子的 DNA 序列？",
       "options": [
         "TRE（GAGGGACGTACCGCA）",
         "GC box（GGGCGG）",
@@ -2180,7 +2180,7 @@
       "number": 91,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "主要用於解碼mRNA 上起始密碼子（initiation codon）的胺醯-tRNA（aminoacyl-tRNA），在原核生物及真核生物中分別為下列何者？",
+      "stem": "主要用於解碼 mRNA 上起始密碼子（initiation codon）的胺醯-tRNA（aminoacyl-tRNA），在原核生物及真核生物中分別為下列何者？",
       "options": [
         "Met-tRNA；N-formyl-Met-tRNA",
         "N-formyl-Pro-tRNA；Pro-tRNA",
@@ -2204,7 +2204,7 @@
       "number": 92,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "一單元葡萄糖進入糖解分解作用，當全部分解至acetyl-CoA 時，共可生成多少單元的NADH？",
+      "stem": "一單元葡萄糖進入糖解分解作用，當全部分解至 acetyl-CoA 時，共可生成多少單元的 NADH？",
       "options": [
         "2",
         "3",
@@ -2228,7 +2228,7 @@
       "number": 93,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "使葡萄糖經糖解作用（glycolysis）後的產物直接進入克氏循環（Krebs cycle，亦稱citric acid cycle 或TCA cycle）的關鍵酵素為何？",
+      "stem": "使葡萄糖經糖解作用（glycolysis）後的產物直接進入克氏循環（Krebs cycle，亦稱 citric acid cycle 或TCA cycle）的關鍵酵素為何？",
       "options": [
         "succinate dehydrogenase complex",
         "isocitrate dehydrogenase complex",
@@ -2303,12 +2303,12 @@
       "number": 96,
       "subject": "biochemistry",
       "subject_status": "range",
-      "stem": "肝臟以外組織中的胺基酸經代謝分解後產生NH₄⁺（ammonia），其會藉由形成何種物質進入肝臟粒線體，隨後再經肝臟代謝轉化成尿素（urea）？",
+      "stem": "肝臟以外組織中的胺基酸經代謝分解後產生 NH₄⁺（ammonia），其會藉由形成何種物質進入肝臟粒線體，隨後再經肝臟代謝轉化成尿素（urea）？",
       "options": [
-        "葡萄糖6-磷酸（glucose 6-phosphate）",
+        "葡萄糖 6-磷酸（glucose 6-phosphate）",
         "腺苷三磷酸（ATP）",
         "麩醯胺酸（glutamine）",
-        "乙醯輔酶A（acetyl-CoA）"
+        "乙醯輔酶 A（acetyl-CoA）"
       ],
       "answers": [
         "C"

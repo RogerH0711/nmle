@@ -104,7 +104,7 @@ interface Props {
 
 /**
  * 角色模式的首頁：校園地圖。每位學姊待在自己的地點，點她就一起讀書；圖書館是錯題複習。
- * 參考 galgame 的「地圖型」選擇（見 plan.md「遊戲介面方向」）。
+ * 參考 galgame 的「地圖型」選擇（見 docs/design.md「遊戲介面方向」）。
  * 有校園俯視圖（data/map.json）時，地點是圖上的標記；圖還沒做好時，地點排成格子。
  */
 export function CampusMap(props: Props) {

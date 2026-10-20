@@ -2,7 +2,7 @@ import type { AnswerRecord } from './answers'
 import type { SubjectMap } from './affection'
 import { localDate } from './review.ts'
 
-// 學姊傳訊息：打開網站時依作答紀錄判斷，用聊天訊息的樣子提醒（見 plan.md「遊戲介面方向」第 4 點）。
+// 學姊傳訊息：打開網站時依作答紀錄判斷，用聊天訊息的樣子提醒（見 docs/design.md「遊戲介面方向」第 4 點）。
 // 網站做不到手機推播，所以只在打開網站時「收到」。訊息內容存在這台裝置，不同步。
 // - review：今天有到期的錯題，由到期題數最多的學科的負責學姊傳
 // - comeback：超過 COMEBACK_DAYS 天沒作答，由最後寫的那題的學科的負責學姊傳

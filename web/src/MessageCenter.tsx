@@ -3,7 +3,7 @@ import type { Character } from './characters'
 import { Portrait } from './CharacterStage'
 import type { Message } from './messages'
 
-// 學姊傳的訊息：聊天室樣式（見 plan.md「遊戲介面方向」第 4 點）
+// 學姊傳的訊息：聊天室樣式（見 docs/design.md「遊戲介面方向」第 4 點）
 
 const timeLabel = (iso: string) => {
   const d = new Date(iso)

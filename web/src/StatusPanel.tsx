@@ -29,7 +29,7 @@ interface Props {
 }
 
 /**
- * 狀態面板：各科最近的正確率當成「能力值」，像模擬經營型 galgame 的能力畫面（見 plan.md「遊戲介面方向」）。
+ * 狀態面板：各科最近的正確率當成「能力值」，像模擬經營型 galgame 的能力畫面（見 docs/design.md「遊戲介面方向」）。
  * 雷達圖看整體，下面依負責的學姊分組列出各科。最弱的一科建議找負責的學姊一起讀書。
  */
 export function StatusPanel({ characters, subjectNames, records, map, onStudy, onClose }: Props) {

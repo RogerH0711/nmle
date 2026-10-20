@@ -1,6 +1,12 @@
 # 考選部原始 PDF：可隨時用 pipeline 重新下載
 raw/
 .venv/
+# 學生編寫的國考詳解（只在本機拿來比對結論，未經授權不能公開，絕對不能進 repo）
+NMLE_DE/
+# 詳解試跑的產出（品質還不能上線）
+pipeline/explain/out/
+# GPU 用的 Python 環境（PyTorch CUDA 版，只在家裡的 3070 筆電）
+.venv-gpu/
 __pycache__/
 node_modules/
 web/dist/

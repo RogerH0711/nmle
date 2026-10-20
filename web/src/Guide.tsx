@@ -5,6 +5,7 @@ import { GOALS } from './affection'
 import { INTERVALS } from './review'
 import { MIN_ANSWERS, RECENT } from './abilities'
 import { STREAK_MILESTONES, STREAK_MIN_DAILY } from './messages'
+import { EARN, GIFT_BONUS } from './shop'
 
 const SEEN_KEY = 'nmle.guide.seen.v1'
 
@@ -133,6 +134,17 @@ export function Guide({
           <p>
             地圖右上角的「訊息」是學姊傳來的訊息：錯題到期、超過 {COMEBACK_DAYS} 天沒來、有新劇情、連續作答天數（一天至少{' '}
             {STREAK_MIN_DAILY} 題）達到 {STREAK_MILESTONES.slice(0, 3).join('、')} 天等時候。打開網站時才會收到，不會推播到手機。
+          </p>
+        </section>
+
+        <section>
+          <h3>禮物</h3>
+          <p>
+            地圖右上角的「禮物」可以用書籤買禮物送學姊。書籤這樣賺：每題第一次答對 +{EARN.firstCorrect}、錯題按時複習答對 +
+            {EARN.reviewPass}、一天寫滿 {STREAK_MIN_DAILY} 題 +{EARN.studyDay}。同一位學姊一天送一次。
+          </p>
+          <p>
+            「熟識」和「在意」這兩階，送禮可以幫忙加一點進度，最多抵 {Math.round(GIFT_BONUS.cap * 100)}%，她喜歡的禮物加倍；剩下的還是要靠讀書。之後的階段送禮不加進度，但每位學姊收到禮物都有不同的反應。
           </p>
         </section>
 

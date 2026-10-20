@@ -57,6 +57,13 @@
 
     { "id": "ying-msg_comeback-001", "situation": "msg_comeback", "affection_min": 0, "expression": "yandere", "text": "{days} 天沒有看到你了呢。……我不生氣喔。只是一直在等。" },
     { "id": "ying-msg_comeback-002", "situation": "msg_comeback", "affection_min": 0, "expression": "sad", "text": "你今天會來嗎？我把你的位子擦好了。每天都擦。" },
-    { "id": "ying-msg_comeback-003", "situation": "msg_comeback", "affection_min": 0, "expression": "normal", "text": "最近好安靜呢。……你的錯題本，我都幫你看著喔。" }
+    { "id": "ying-msg_comeback-003", "situation": "msg_comeback", "affection_min": 0, "expression": "normal", "text": "最近好安靜呢。……你的錯題本，我都幫你看著喔。" },
+
+    { "id": "ying-gift-001", "situation": "gift", "affection_min": 0, "expression": "happy", "text": "{gift}……是給我的嗎？我會好好收著喔。連包裝紙也是。" },
+    { "id": "ying-gift-002", "situation": "gift", "affection_min": 0, "expression": "normal", "text": "謝謝你呢。我會記下來：今天，你送了我{gift}。……記在第三十八本裡。" },
+    { "id": "ying-gift-003", "situation": "gift", "affection_min": 2, "expression": "yandere", "text": "你送了我禮物，那……別的學姊也有收到嗎？沒有吧？嗯，我相信你喔。" },
+    { "id": "ying-gift-004", "situation": "gift", "affection_min": 3, "expression": "shy", "text": "每次收到你的東西，心裡都滿滿的。……就像長滿菌落的培養皿，再也放不下別的了呢。" },
+    { "id": "ying-gift_liked-001", "situation": "gift_liked", "affection_min": 0, "expression": "shy", "gift": "ribbon", "text": "緞帶……你注意到我每天都綁頭髮嗎？我明天就綁這條。以後每天都綁，好嗎？" },
+    { "id": "ying-gift_liked-002", "situation": "gift_liked", "affection_min": 0, "expression": "happy", "gift": "microbe_plush", "text": "是球菌！圓圓的……我要叫它葡萄球菌。晚上要抱著睡呢。" }
   ]
 }

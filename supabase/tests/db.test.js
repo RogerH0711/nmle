@@ -455,3 +455,68 @@ describe('匿名使用統計', () => {
     }
   })
 })
+
+describe('送禮', () => {
+  let giftSeq = 0
+  const give = (userId, extra = {}) => {
+    const g = { character: 'fei', gift: 'strawberry_cake', price: 60, stage: 0, line: 'fei-gift-001', ...extra }
+    return tryAs(
+      db,
+      userId,
+      `insert into public.gifts (id, character_id, gift_id, price, stage, line_id, given_at)
+       values ($1, $2, $3, $4, $5, $6, now())`,
+      [`fafafafa-0000-4000-8000-${String(++giftSeq).padStart(12, '0')}`, g.character, g.gift, g.price, g.stage, g.line],
+    )
+  }
+
+  test('登入後可以送禮，user_id 自動帶入', async () => {
+    assert.equal((await give(A)).ok, true)
+    const r = await as(db, A, `select user_id, gift_id from public.gifts`)
+    assert.deepEqual(r.rows, [{ user_id: A, gift_id: 'strawberry_cake' }])
+  })
+
+  test('同一個 id 重送不會重複', async () => {
+    const id = 'fafafafa-1111-4000-8000-000000000001'
+    const sql = `insert into public.gifts (id, character_id, gift_id, price, stage, given_at)
+                 values ($1, 'yiqing', 'latte', 20, 0, now()) on conflict (id) do nothing`
+    await as(db, A, sql, [id])
+    await as(db, A, sql, [id])
+    const r = await as(db, A, `select count(*)::int as n from public.gifts where id = $1`, [id])
+    assert.equal(r.rows[0].n, 1)
+  })
+
+  test('看不到別人送的禮物，也不能替別人送', async () => {
+    const r = await as(db, B, `select count(*)::int as n from public.gifts`)
+    assert.equal(r.rows[0].n, 0)
+    const t = await tryAs(
+      db,
+      B,
+      `insert into public.gifts (id, user_id, character_id, gift_id, price, stage, given_at)
+       values ('fafafafa-2222-4000-8000-000000000001', $1, 'fei', 'latte', 20, 0, now())`,
+      [A],
+    )
+    assert.equal(t.ok, false)
+  })
+
+  test('欄位格式與範圍有檢查', async () => {
+    assert.equal((await give(A, { character: 'Fei!' })).ok, false)
+    assert.equal((await give(A, { gift: 'x'.repeat(41) })).ok, false)
+    assert.equal((await give(A, { price: -1 })).ok, false)
+    assert.equal((await give(A, { price: 1001 })).ok, false)
+    assert.equal((await give(A, { stage: 6 })).ok, false)
+    assert.equal((await give(A, { line: 'x'.repeat(61) })).ok, false)
+  })
+
+  test('送出去就不能修改或刪除', async () => {
+    for (const sql of [`update public.gifts set price = 0`, `delete from public.gifts`]) {
+      const t = await tryAs(db, A, sql)
+      assert.ok(!t.ok || t.res.affectedRows === 0, sql)
+    }
+  })
+
+  test('未登入不能讀寫', async () => {
+    const r = await tryAs(db, null, `select * from public.gifts`)
+    assert.ok(!r.ok || r.res.rows.length === 0)
+    assert.equal((await give(null)).ok, false)
+  })
+})

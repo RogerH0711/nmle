@@ -29,3 +29,28 @@ test('每位學姊都有四種訊息的台詞（學姊傳訊息用，見 message
     for (const k of kinds) assert.ok(situations.has(k), `${f.name} 沒有 ${k}`)
   }
 })
+
+test('禮物：每位學姊都有收禮台詞，她喜歡的每一樣禮物都有專屬的一句（shop.ts）', () => {
+  const catalog = JSON.parse(readFileSync(new URL('gifts.json', data), 'utf-8')) as {
+    gifts: { id: string; name: string; price: number }[]
+    likes: Record<string, string[]>
+  }
+  assert.ok(!/學弟|學妹/.test(JSON.stringify(catalog)), 'gifts.json 有寫死的稱呼')
+  const ids = new Set(catalog.gifts.map((g) => g.id))
+  assert.equal(ids.size, catalog.gifts.length, '禮物 id 重複')
+  for (const g of catalog.gifts) assert.ok(g.price > 0 && g.price <= 1000, `${g.id} 的價格`) // 資料庫 gifts.price 的範圍
+  const characters = (JSON.parse(readFileSync(new URL('characters.json', data), 'utf-8')) as { characters: { id: string }[] }).characters
+  for (const c of characters) {
+    const lines = (JSON.parse(readFileSync(new URL(`lines/${c.id}.json`, data), 'utf-8')) as {
+      lines: { situation: string; affection_min: number; gift?: string }[]
+    }).lines
+    assert.ok(lines.some((l) => l.situation === 'gift' && l.affection_min === 0), `${c.id} 沒有初識就能用的 gift 台詞`)
+    const likes = catalog.likes[c.id] ?? []
+    assert.ok(likes.length > 0, `${c.id} 沒有喜歡的禮物`)
+    for (const g of likes) {
+      assert.ok(ids.has(g), `${c.id} 喜歡的 ${g} 不在禮物清單裡`)
+      assert.ok(lines.some((l) => l.situation === 'gift_liked' && l.gift === g && l.affection_min === 0), `${c.id} 沒有 ${g} 的專屬台詞`)
+    }
+    for (const l of lines.filter((l) => l.situation === 'gift_liked')) assert.ok(likes.includes(l.gift ?? ''), `${c.id} 的 gift_liked 對應到她不喜歡的 ${l.gift}`)
+  }
+})

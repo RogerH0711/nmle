@@ -366,6 +366,7 @@ red hair, medium hair, side braid, red eyes, tsurime, red scrubs, scrub top, scr
 **欄位說明**
 - `situation`：`start`（回合開始）、`finish`（回合結束）、`correct`、`wrong`、`streak`（連對 10 題）、`comeback`（超過 3 天沒作答後第一次開始回合）、`mock_high`、`jealous`、`story`
 - 學姊傳的訊息（`web/src/messages.ts`）：`msg_review`（錯題到期，`{n}` 是到期題數）、`msg_comeback`（久沒上線，`{days}` 是幾天沒來）、`msg_story`（有新劇情，不要寫地點）、`msg_streak`（連續作答，`{days}` 是天數）。寫成傳訊息的口吻，不是當面說的話；每位角色四種都要有（`content.test.ts` 會檢查）。
+- 收到禮物（`web/src/shop.ts`）：`gift`（一般禮物，`{gift}` 代入禮物名稱）、`gift_liked`（她喜歡的禮物，加 `gift` 欄位寫禮物 id，每樣一句）。她喜歡哪些禮物寫在 `data/gifts.json` 的 `likes`；每位學姊都要有初識就能用的 `gift`，喜歡的每一樣都要有 `gift_liked`（`content.test.ts` 會檢查）。
 - `affection_min`：達到這個好感度階段（0–5）才會出現。同一情境有多句時，從符合條件的台詞中隨機挑一句。
 - `expression`：對應表情差分 ID。
 - `text`：台詞內容，玩家的稱呼用 `{player}` 代入（學弟或學妹，玩家自己選；寫死的話測試會失敗）。`jealous` 台詞可以用 `{rival}`，代入讓她吃醋的那位（「藥理那位」，由學科名稱去掉「學」字）。

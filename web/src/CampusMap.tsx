@@ -96,6 +96,8 @@ interface Props {
   onReview: () => void
   onFree: () => void
   onStatus: () => void
+  balance: number | null // 書籤餘額；禮物清單還沒載入時是 null，不顯示按鈕
+  onShop: () => void
   unreadMessages: number
   onMessages: () => void
   player: string // 學姊們怎麼叫你
@@ -142,6 +144,11 @@ export function CampusMap(props: Props) {
           <button className="ghost small" onClick={props.onStatus}>
             能力值
           </button>
+          {props.balance !== null && (
+            <button className="ghost small" onClick={props.onShop} aria-label={`禮物（${props.balance} 書籤）`}>
+              禮物 <span className="shop-wallet">🔖 {props.balance}</span>
+            </button>
+          )}
         </div>
       </header>
 

@@ -53,6 +53,13 @@
 
     { "id": "fei-msg_comeback-001", "situation": "msg_comeback", "affection_min": 0, "expression": "pout", "text": "……你這幾天都沒上線。我才沒有在數。只是錯題本積灰塵了。" },
     { "id": "fei-msg_comeback-002", "situation": "msg_comeback", "affection_min": 0, "expression": "normal", "text": "喂，還活著就回個訊息。……不回也沒關係，來讀書就好。" },
-    { "id": "fei-msg_comeback-003", "situation": "msg_comeback", "affection_min": 0, "expression": "pout", "text": "失聯 {days} 天。……下次要消失，至少先說一聲。" }
+    { "id": "fei-msg_comeback-003", "situation": "msg_comeback", "affection_min": 0, "expression": "pout", "text": "失聯 {days} 天。……下次要消失，至少先說一聲。" },
+
+    { "id": "fei-gift-001", "situation": "gift", "affection_min": 0, "expression": "pout", "text": "這、這是什麼？{gift}？……我才沒有很高興！只是丟掉很浪費而已！" },
+    { "id": "fei-gift-002", "situation": "gift", "affection_min": 0, "expression": "surprised", "text": "送我東西？你、你有什麼目的？……哼，收下就是了。不准跟別人說。" },
+    { "id": "fei-gift-003", "situation": "gift", "affection_min": 2, "expression": "shy", "text": "又送……你真的很笨耶。……謝謝。只說一次喔。" },
+    { "id": "fei-gift-004", "situation": "gift", "affection_min": 3, "expression": "shy", "text": "{gift}……我會好好收著的。不、不是因為是你送的！……好啦，是因為是你送的。" },
+    { "id": "fei-gift_liked-001", "situation": "gift_liked", "affection_min": 0, "expression": "happy", "gift": "strawberry_cake", "text": "草、草莓蛋糕！那家限量的！……咳。我只是值班沒吃飯，才不是喜歡甜食！" },
+    { "id": "fei-gift_liked-002", "situation": "gift_liked", "affection_min": 0, "expression": "shy", "gift": "eye_mask", "text": "蒸氣眼罩……值完班眼睛真的很酸。你怎麼知道的？……我、我才沒有感動！" }
   ]
 }

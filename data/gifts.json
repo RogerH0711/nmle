@@ -1,0 +1,27 @@
+{
+  "_說明": "禮物商店的商品（web/src/shop.ts）。price 是書籤數，買了直接送給一位學姊。likes 是每位學姊喜歡的禮物：送了加成加倍，台詞用 gift_liked 裡 gift 欄位對應的那句（data/lines/<角色>.json）。icon 先用 emoji，之後可以換成圖片。",
+  "gifts": [
+    { "id": "latte", "name": "夜燈的拿鐵", "icon": "☕", "price": 20, "description": "校門口咖啡廳的招牌，讀書會的標準配備。" },
+    { "id": "sticky_notes", "name": "便利貼", "icon": "🗒️", "price": 20, "description": "貼滿課本的必需品。" },
+    { "id": "pudding", "name": "超商布丁", "icon": "🍮", "price": 30, "description": "讀到半夜的小確幸。" },
+    { "id": "highlighter", "name": "螢光筆組", "icon": "🖍️", "price": 40, "description": "五種顏色，剛好畫五種重點。" },
+    { "id": "sports_drink", "name": "運動飲料", "icon": "🥤", "price": 25, "description": "流了汗就要補充電解質。" },
+    { "id": "wristband", "name": "運動護腕", "icon": "🎽", "price": 70, "description": "跑步時擦汗用，吸汗又耐洗。" },
+    { "id": "glasses_cloth", "name": "拭鏡布", "icon": "👓", "price": 30, "description": "超細纖維，擦眼鏡不留痕。" },
+    { "id": "sketchbook", "name": "素描本", "icon": "📓", "price": 80, "description": "紙質厚，用針筆畫也不會透到背面。" },
+    { "id": "ribbon", "name": "緞帶髮飾", "icon": "🎀", "price": 60, "description": "細細的一條，綁頭髮剛好。" },
+    { "id": "microbe_plush", "name": "細菌造型玩偶", "icon": "🦠", "price": 90, "description": "圓滾滾的球菌，抱起來很軟。" },
+    { "id": "chamomile", "name": "洋甘菊茶包", "icon": "🍵", "price": 40, "description": "不含咖啡因，值完夜班也能喝。" },
+    { "id": "hand_cream", "name": "護手霜", "icon": "🧴", "price": 70, "description": "常洗手的人最需要。" },
+    { "id": "strawberry_cake", "name": "草莓蛋糕", "icon": "🍰", "price": 60, "description": "附近甜點店限量的那一款。" },
+    { "id": "eye_mask", "name": "蒸氣眼罩", "icon": "😴", "price": 50, "description": "值班後閉眼十分鐘也好。" },
+    { "id": "bouquet", "name": "小花束", "icon": "💐", "price": 120, "description": "不是什麼特別的日子，只是想送。" }
+  ],
+  "likes": {
+    "jingcheng": ["sketchbook", "glasses_cloth"],
+    "yiqing": ["sports_drink", "wristband"],
+    "ying": ["ribbon", "microbe_plush"],
+    "zhixun": ["chamomile", "hand_cream"],
+    "fei": ["strawberry_cake", "eye_mask"]
+  }
+}

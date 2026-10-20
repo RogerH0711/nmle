@@ -53,6 +53,13 @@
 
     { "id": "jingcheng-msg_comeback-001", "situation": "msg_comeback", "affection_min": 0, "expression": "sad", "text": "……好幾天沒看到你。" },
     { "id": "jingcheng-msg_comeback-002", "situation": "msg_comeback", "affection_min": 0, "expression": "sad", "text": "{days} 天沒來。……位子還留著。" },
-    { "id": "jingcheng-msg_comeback-003", "situation": "msg_comeback", "affection_min": 0, "expression": "normal", "text": "還好嗎。……不用回。來就好。" }
+    { "id": "jingcheng-msg_comeback-003", "situation": "msg_comeback", "affection_min": 0, "expression": "normal", "text": "還好嗎。……不用回。來就好。" },
+
+    { "id": "jingcheng-gift-001", "situation": "gift", "affection_min": 0, "expression": "normal", "text": "……{gift}？給我的。……謝謝。我會用。" },
+    { "id": "jingcheng-gift-002", "situation": "gift", "affection_min": 0, "expression": "surprised", "text": "……送我東西做什麼。我又沒有幫你什麼。……收下了。" },
+    { "id": "jingcheng-gift-003", "situation": "gift", "affection_min": 2, "expression": "shy", "text": "……你記得我在這裡待到很晚。{gift}，剛好。……不要一直看我。" },
+    { "id": "jingcheng-gift-004", "situation": "gift", "affection_min": 3, "expression": "shy", "text": "又送我東西。……我也想回禮。下次讀書會，我把筆記多畫一份給你。只給你。" },
+    { "id": "jingcheng-gift_liked-001", "situation": "gift_liked", "affection_min": 0, "expression": "happy", "gift": "sketchbook", "text": "……紙很厚。用針筆畫也不會透到背面。……第一頁，我想畫臂神經叢給你看。" },
+    { "id": "jingcheng-gift_liked-002", "situation": "gift_liked", "affection_min": 0, "expression": "shy", "gift": "glasses_cloth", "text": "……你一直在注意我的眼鏡嗎。……擦乾淨了。現在看你，很清楚。" }
   ]
 }

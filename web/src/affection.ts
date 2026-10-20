@@ -2,11 +2,13 @@ import type { AnswerRecord } from './answers'
 import type { MockRecord } from './mock'
 import type { PaperInfo } from './types'
 import { localDate, reviewPasses } from './review.ts'
+import { GIFT_BONUS, giftBonus } from './shop.ts'
 
 // 好感度：和錯題複習一樣，完全由作答紀錄與模擬考紀錄推算，不另外存。
 // - 只看她負責學科的題目，不論是在「一起讀書」、依考卷刷題還是模擬考裡寫的。
 // - 各階條件依序達成；達成過一次就算數，之後正確率掉下來也不會降階。
 // - 主要看答對、複習和正確率，不看刷了幾題（docs/design.md「避免只追求量」）。
+// - 送禮可以稍微推進「熟識」「在意」（看題數的兩階），最多抵目標的 20%；規則見 shop.ts。
 
 export const STAGE_NAMES = ['初識', '熟識', '在意', '心動', '告白前夕', '結局']
 export const MAX_STAGE = 4 // 5 結局在玩家考完一階後才解鎖，還沒做
@@ -49,7 +51,12 @@ export interface Goal {
   current: number
   target: number
   unit: string
+  bonus?: number // current 裡有幾題（次）是禮物抵的
 }
+
+/** 例：「答對她負責學科的題目 27 / 30 題（含禮物 3）」 */
+export const goalText = (g: Goal) =>
+  `${g.label} ${g.current} / ${g.target} ${g.unit}${g.bonus ? `（含禮物 ${g.bonus}）` : ''}`
 
 export interface Affection {
   stage: number
@@ -74,6 +81,7 @@ export function affection(
   records: AnswerRecord[],
   mocks: Pick<MockRecord, 'paper_id' | 'submitted_at'>[],
   map: SubjectMap,
+  gifts: { stage: number; points: number }[] = [], // 送給她的禮物：送的時候的階段、心意點數（shop.ts 的 giftPoints）
 ): Affection {
   const mine = records
     .filter((r) => subjects.includes(map.of(r.question_id) ?? ''))
@@ -111,9 +119,14 @@ export function affection(
     mockRate = Math.max(mockRate, (right / total) * 100)
   }
 
+  // 禮物：送的時候在第 s 階，就抵第 s + 1 階的目標
+  const pointsAt = (s: number) => (GIFT_BONUS.stages.includes(s) ? gifts.filter((g) => g.stage === s).reduce((n, g) => n + g.points, 0) : 0)
+  const bonus1 = giftBonus(pointsAt(0), GOALS.correct)
+  const bonus2 = giftBonus(pointsAt(1), GOALS.passes)
+
   const reached = [
-    correct >= GOALS.correct,
-    passes >= GOALS.passes,
+    correct + bonus1 >= GOALS.correct,
+    passes + bonus2 >= GOALS.passes,
     bestRate >= GOALS.rate,
     mockRate >= GOALS.mockRate,
   ]
@@ -121,8 +134,8 @@ export function affection(
   const stage = firstMissing === -1 ? MAX_STAGE : firstMissing
 
   const goals: (Goal | null)[] = [
-    { label: '答對她負責學科的題目', current: correct, target: GOALS.correct, unit: '題' },
-    { label: '錯題複習到期後答對', current: passes, target: GOALS.passes, unit: '次' },
+    { label: '答對她負責學科的題目', current: correct + bonus1, target: GOALS.correct, unit: '題', bonus: bonus1 },
+    { label: '錯題複習到期後答對', current: passes + bonus2, target: GOALS.passes, unit: '次', bonus: bonus2 },
     firsts.length < GOALS.window
       ? { label: '她的學科累積作答', current: firsts.length, target: GOALS.window, unit: '題' }
       : { label: `她的學科最近 ${GOALS.window} 題正確率`, current: Math.round(lastRate), target: GOALS.rate, unit: '%' },

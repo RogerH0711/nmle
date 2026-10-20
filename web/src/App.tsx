@@ -27,6 +27,9 @@ import { PlayerChoice } from './PlayerChoice'
 import { fillVars, loadMessages, MESSAGE_SITUATION, messageEvents, saveMessages, type Message } from './messages'
 import { MessageCenter, MessageToast } from './MessageCenter'
 import { reportUsage } from './usage'
+import { balance as balanceOf, earnings as earningsOf, giftPoints, isLiked, pickGiftLine, type Gift, type GiftCatalog } from './shop'
+import { addGift, loadGifts, switchGiftUser, useGifts } from './giftStore'
+import { fillGiftLine, GiftShop } from './GiftShop'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
 
@@ -148,6 +151,9 @@ export default function App() {
   const [messages, setMessages] = useState<Message[]>(() => loadMessages()) // 學姊傳的訊息（存在這台裝置）
   const [messagesOpen, setMessagesOpen] = useState<string | null | false>(false) // false：關著；null：訊息列表；字串：那位學姊的對話
   const [toast, setToast] = useState<Message | null>(null) // 剛收到的訊息，在畫面下方通知
+  const gifts = useGifts() // 送給學姊的禮物（giftStore.ts）
+  const [catalog, setCatalog] = useState<GiftCatalog | null>(null) // 禮物清單（data/gifts.json）
+  const [shopOpen, setShopOpen] = useState(false)
 
   // 登入後讀自己的暱稱（排行榜上顯示的名字）
   useEffect(() => {
@@ -172,6 +178,7 @@ export default function App() {
         setStories(Object.fromEntries(list.map((c, i) => [c.id, scenes[i]])))
       })
       .catch(() => setCharacters([]))
+    void loadGifts().then(setCatalog)
   }, [])
 
   const toggleCharacterMode = () => {
@@ -183,14 +190,17 @@ export default function App() {
   }
 
   // ---------- 好感度 ----------
-  // 由作答紀錄和模擬考紀錄推算（見 affection.ts），只在角色模式算
+  // 由作答紀錄、模擬考紀錄和送禮紀錄推算（見 affection.ts、shop.ts），只在角色模式算
   const subjects = useMemo(() => (index ? subjectMap(index.papers) : null), [index])
   const affections = useMemo(() => {
     const m = new Map<string, Affection>()
     if (!characterMode || !subjects) return m
-    for (const c of characters) m.set(c.id, affectionOf(c.subjects, answers.records, mocks.records, subjects))
+    for (const c of characters) {
+      const points = catalog ? giftPoints(catalog, gifts.records, c.id) : []
+      m.set(c.id, affectionOf(c.subjects, answers.records, mocks.records, subjects, points))
+    }
     return m
-  }, [characterMode, subjects, characters, answers.records, mocks.records])
+  }, [characterMode, subjects, characters, answers.records, mocks.records, catalog, gifts.records])
   const stageOf = (c: Character) => affections.get(c.id)?.stage ?? 0
 
   const react = (character: Character, situation: Situation, key: string, rival?: string): StageReaction => {
@@ -223,6 +233,7 @@ export default function App() {
       setTimeout(() => {
         void switchUser(session?.user.id ?? null)
         void switchMockUser(session?.user.id ?? null)
+        void switchGiftUser(session?.user.id ?? null)
       }, 0)
       if (event === 'SIGNED_IN' && window.location.search.includes('code=')) {
         window.history.replaceState(null, '', window.location.pathname) // 拿掉 OAuth 回傳的 ?code=
@@ -274,6 +285,21 @@ export default function App() {
   }, [run])
 
   const review = useMemo(() => reviewSummary(reviewStates(answers.records)), [answers.records])
+
+  // ---------- 禮物 ----------
+  // 書籤由作答紀錄推算，減掉送出去的禮物就是餘額（shop.ts）
+  const earned = useMemo(() => earningsOf(answers.records), [answers.records])
+  const wallet = useMemo(() => balanceOf(answers.records, gifts.records), [answers.records, gifts.records])
+
+  const giveGift = (c: Character, g: Gift) => {
+    const stage = stageOf(c)
+    const line = catalog ? pickGiftLine(lines[c.id] ?? [], g.id, isLiked(catalog, c.id, g.id), stage) : null
+    addGift({
+      id: crypto.randomUUID(), character_id: c.id, gift_id: g.id, price: g.price, stage,
+      line_id: line?.id ?? null, given_at: new Date().toISOString(),
+    })
+    return { expression: line?.expression ?? 'happy', text: line ? fillGiftLine(line.text, g, PLAYER) : null }
+  }
 
   // 匿名使用統計（usage.ts）：打開網站、切換角色模式或登入時送一次
   useEffect(() => {
@@ -551,7 +577,7 @@ export default function App() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       // 看排行榜、考模擬考、看劇情、看能力值、在校園地圖上時，不要對藏起來的題目作答
-      if (view !== 'quiz' || session || story || storyList || statusOpen || guideOpen || messagesOpen !== false || (characterMode && onMap && characters.length > 0)) return
+      if (view !== 'quiz' || session || story || storyList || statusOpen || shopOpen || guideOpen || messagesOpen !== false || (characterMode && onMap && characters.length > 0)) return
       if (e.ctrlKey || e.metaKey || e.altKey) return
       if (e.target instanceof Element && e.target.closest('select, input, textarea')) return
       const k = e.key.toUpperCase()
@@ -565,7 +591,7 @@ export default function App() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [pick, go, picked, view, session, story, storyList, statusOpen, guideOpen, messagesOpen, characterMode, onMap, characters])
+  }, [pick, go, picked, view, session, story, storyList, statusOpen, shopOpen, guideOpen, messagesOpen, characterMode, onMap, characters])
 
   if (error) return <div className="center">{error}</div>
   if (!index || !run) return <div className="center">載入中…</div>
@@ -719,6 +745,8 @@ export default function App() {
           onReview={startReview}
           onFree={() => setOnMap(false)}
           onStatus={() => setStatusOpen(true)}
+          balance={catalog?.gifts.length ? Math.max(0, wallet) : null}
+          onShop={() => setShopOpen(true)}
           unreadMessages={messages.filter((m) => !m.read).length}
           onMessages={() => setMessagesOpen(null)}
           player={PLAYER}
@@ -875,6 +903,27 @@ export default function App() {
           onClose={() => setStatusOpen(false)}
         />
       )}
+      {shopOpen && catalog && (
+        <GiftShop
+          characters={characters}
+          catalog={catalog}
+          lines={lines}
+          affections={affections}
+          gifts={gifts.records}
+          balance={wallet}
+          earnings={earned}
+          player={PLAYER}
+          onGive={giveGift}
+          hasNewScene={(c) => !!newScene(c)}
+          onStory={(c) => {
+            const scene = newScene(c)
+            if (!scene) return
+            setShopOpen(false)
+            setStory({ character: c, scene })
+          }}
+          onClose={() => setShopOpen(false)}
+        />
+      )}
       {messagesOpen !== false && (
         <MessageCenter
           messages={messages}
@@ -891,7 +940,7 @@ export default function App() {
         />
       )}
       {/* 新訊息的通知：只在地圖上、沒有其他視窗時跳出 */}
-      {toast && showMap && !story && !storyList && !guideOpen && !statusOpen && messagesOpen === false && player && (() => {
+      {toast && showMap && !story && !storyList && !guideOpen && !statusOpen && !shopOpen && messagesOpen === false && player && (() => {
         const c = characters.find((x) => x.id === toast.character)
         return c ? (
           <MessageToast

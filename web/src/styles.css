@@ -2176,9 +2176,10 @@ button.link:hover {
 .status-detail .up { color: #7bdcb5; }
 .status-detail .down { color: #ff9a9a; }
 
-/* 地圖標題列的「能力值」按鈕 */
+/* 地圖標題列的「訊息」「能力值」「禮物」按鈕；手機寬度放不下時換行 */
 .campus-actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
 }
@@ -2622,5 +2623,284 @@ button.link:hover {
 @media (prefers-reduced-motion: reduce) {
   .toast {
     animation: none;
+  }
+}
+
+/* ---------- 禮物商店 ---------- */
+
+/* 和能力值一樣是深色的遊戲畫面 */
+.shop {
+  width: min(760px, 100%);
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  padding: 16px;
+  border-radius: 18px;
+  background: linear-gradient(160deg, #2a2438, #15131c);
+  color: #fff;
+  box-shadow: 0 10px 40px rgb(0 0 0 / 0.5);
+}
+
+.shop-balance,
+.shop-wallet {
+  margin-left: 4px;
+  padding: 1px 10px;
+  border-radius: 999px;
+  background: rgb(255 209 102 / 0.18);
+  color: #ffd166;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.shop-wallet {
+  margin-left: 2px;
+  padding: 0 8px;
+  font-size: 0.75rem;
+}
+
+.shop-tabs {
+  display: flex;
+  gap: 6px;
+  margin: 12px 0 10px;
+  overflow-x: auto;
+}
+
+.shop-tab {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px 4px 4px;
+  border: 1px solid rgb(255 255 255 / 0.2);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.05);
+  color: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.shop-tab.active {
+  border-color: var(--char);
+  background: color-mix(in srgb, var(--char) 35%, transparent);
+  font-weight: 700;
+}
+
+.shop-tab .status-avatar {
+  width: 28px;
+  height: 28px;
+}
+
+.shop-her {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgb(255 255 255 / 0.06);
+  border-left: 4px solid var(--char);
+}
+
+.shop-portrait .portrait {
+  flex: none;
+  width: 96px;
+  height: 132px;
+  border-radius: 10px;
+  background: #f4f0ea;
+}
+
+.shop-her-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.shop-her-info .affection {
+  color: rgb(255 255 255 / 0.75);
+}
+
+.shop-her-info .affection-bar {
+  background: rgb(255 255 255 / 0.15);
+}
+
+.shop-hint,
+.shop-note {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.shop-note {
+  margin: 10px 0 0;
+  color: #ffd166;
+  opacity: 1;
+}
+
+.shop-speech {
+  margin: 2px 0 0;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgb(255 255 255 / 0.92);
+  color: #22201d;
+  border-left: 4px solid var(--char);
+}
+
+.shop-unlock {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #ffd166;
+  font-weight: 700;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.shop-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+  padding: 10px 6px 8px;
+  border: 1px solid rgb(255 255 255 / 0.15);
+  border-radius: 12px;
+  background: rgb(255 255 255 / 0.06);
+  color: #fff;
+  cursor: pointer;
+}
+
+.shop-item:hover:not(:disabled) {
+  background: rgb(255 255 255 / 0.12);
+}
+
+.shop-item.picked {
+  border-color: #ffd166;
+  background: rgb(255 209 102 / 0.15);
+}
+
+.shop-item:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.shop-icon {
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.shop-name {
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.shop-price {
+  font-size: 0.75rem;
+  color: #ffd166;
+}
+
+.shop-liked {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #e8344a;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+/* 點了禮物之後的確認列：貼在面板底部，捲到哪都看得到 */
+.shop-confirm {
+  position: sticky;
+  bottom: -16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 12px -16px -16px;
+  padding: 12px 16px;
+  background: #2a2438;
+  border-top: 1px solid rgb(255 255 255 / 0.15);
+}
+
+.shop-confirm small {
+  display: block;
+  opacity: 0.7;
+}
+
+.shop-confirm-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.shop-confirm .ghost {
+  color: #fff;
+  border-color: rgb(255 255 255 / 0.35);
+}
+
+.shop-album {
+  margin-top: 16px;
+}
+
+.shop-album h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.shop-album ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.shop-album li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px 0;
+  border-top: 1px solid rgb(255 255 255 / 0.08);
+  font-size: 0.85rem;
+}
+
+.shop-album small {
+  margin-left: 8px;
+  opacity: 0.6;
+}
+
+.shop-album-line {
+  opacity: 0.8;
+}
+
+@media (max-width: 599px) {
+  .shop {
+    padding: 12px;
+  }
+
+  .shop-confirm {
+    bottom: -12px;
+    margin: 12px -12px -12px;
+    padding: 10px 12px;
+  }
+
+  .shop-portrait .portrait {
+    width: 72px;
+    height: 99px;
+  }
+
+  .shop-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

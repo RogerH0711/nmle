@@ -53,6 +53,13 @@
 
     { "id": "zhixun-msg_comeback-001", "situation": "msg_comeback", "affection_min": 0, "expression": "sad", "text": "小{player}，好幾天沒見了呢。是不是太累了？休息夠了再回來就好，姊姊等你。" },
     { "id": "zhixun-msg_comeback-002", "situation": "msg_comeback", "affection_min": 0, "expression": "sad", "text": "{days} 天沒見了……姊姊有點擔心。今天能來一下嗎？" },
-    { "id": "zhixun-msg_comeback-003", "situation": "msg_comeback", "affection_min": 0, "expression": "shy", "text": "停藥太久會沒效喔。……開玩笑的，只是想你了。" }
+    { "id": "zhixun-msg_comeback-003", "situation": "msg_comeback", "affection_min": 0, "expression": "shy", "text": "停藥太久會沒效喔。……開玩笑的，只是想你了。" },
+
+    { "id": "zhixun-gift-001", "situation": "gift", "affection_min": 0, "expression": "happy", "text": "哎呀，{gift}？小{player}送姊姊東西呀。……姊姊收下了，謝謝你。" },
+    { "id": "zhixun-gift-002", "situation": "gift", "affection_min": 0, "expression": "normal", "text": "謝謝。不過小{player}，錢要留著自己用喔。……這次就算了，姊姊很開心。" },
+    { "id": "zhixun-gift-003", "situation": "gift", "affection_min": 2, "expression": "shy", "text": "收到你的禮物，姊姊的心情好像起效了呢。……是半衰期很長的那種。" },
+    { "id": "zhixun-gift-004", "situation": "gift", "affection_min": 3, "expression": "shy", "text": "又送我東西……小{player}，這樣下去姊姊會產生依賴性的喔。……我是說真的。" },
+    { "id": "zhixun-gift_liked-001", "situation": "gift_liked", "affection_min": 0, "expression": "happy", "gift": "chamomile", "text": "洋甘菊茶！不含咖啡因，值完大夜班喝剛好。……你記得姊姊值夜班呀。" },
+    { "id": "zhixun-gift_liked-002", "situation": "gift_liked", "affection_min": 0, "expression": "shy", "gift": "hand_cream", "text": "護手霜……藥局一天要洗好多次手，手都乾裂了。你連這個都注意到了呢。" }
   ]
 }

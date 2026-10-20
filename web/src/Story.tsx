@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { fillPlayer, type Character } from './characters'
 import { Portrait } from './CharacterStage'
-import { STAGE_NAMES, type Affection } from './affection'
+import { goalText, STAGE_NAMES, type Affection } from './affection'
 import { backgroundUrl, sceneId, storyTimeline, type Scene, type StoryLine } from './stories'
 
 // 背景圖還沒做好時改用漸層色，載入失敗的不要每次重抓
@@ -259,7 +259,7 @@ export function StoryList(props: {
                 ) : (
                   <span className="story-lock">
                     {stage === affection.stage + 1 && affection.next
-                      ? `${affection.next.label} ${affection.next.current} / ${affection.next.target} ${affection.next.unit}`
+                      ? goalText(affection.next)
                       : stage === STAGE_NAMES.length - 1
                         ? '考完一階後解鎖'
                         : '尚未解鎖'}
@@ -282,7 +282,7 @@ export function AffectionMeter({ affection }: { affection: Affection }) {
   const { stage, next } = affection
   const ratio = next ? Math.min(1, next.current / next.target) : 1
   return (
-    <span className="affection" title={next ? `下一階：${next.label} ${next.current} / ${next.target} ${next.unit}` : undefined}>
+    <span className="affection" title={next ? `下一階：${goalText(next)}` : undefined}>
       <span className="hearts" aria-label={`好感度：${STAGE_NAMES[stage]}`}>
         {Array.from({ length: STAGE_NAMES.length - 1 }, (_, i) => (i < stage ? '♥' : '♡')).join('')}
       </span>

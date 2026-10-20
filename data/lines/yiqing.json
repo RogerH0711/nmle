@@ -53,6 +53,13 @@
 
     { "id": "yiqing-msg_comeback-001", "situation": "msg_comeback", "affection_min": 0, "expression": "sad", "text": "{player}，最近都沒看到你耶……還好嗎？休息夠了就回來跑吧，我等你！" },
     { "id": "yiqing-msg_comeback-002", "situation": "msg_comeback", "affection_min": 0, "expression": "sad", "text": "好幾天沒一起讀書了！我的配速都亂掉了啦，快回來！" },
-    { "id": "yiqing-msg_comeback-003", "situation": "msg_comeback", "affection_min": 0, "expression": "normal", "text": "欸，你還好嗎？今天來操場露個臉就好，寫一題也算數！" }
+    { "id": "yiqing-msg_comeback-003", "situation": "msg_comeback", "affection_min": 0, "expression": "normal", "text": "欸，你還好嗎？今天來操場露個臉就好，寫一題也算數！" },
+
+    { "id": "yiqing-gift-001", "situation": "gift", "affection_min": 0, "expression": "happy", "text": "哇！{gift}！給我的嗎？{player}最棒了！補給收到！" },
+    { "id": "yiqing-gift-002", "situation": "gift", "affection_min": 0, "expression": "surprised", "text": "欸欸？突然送東西，我會不好意思耶！……好啦謝謝，我會好好珍惜的！" },
+    { "id": "yiqing-gift-003", "situation": "gift", "affection_min": 2, "expression": "shy", "text": "每次都送我東西……我也要回禮才行。下一場比賽，我跑第一名給你看！" },
+    { "id": "yiqing-gift-004", "situation": "gift", "affection_min": 3, "expression": "shy", "text": "{gift}……謝謝。那個，我現在心跳有點快，不是因為剛跑完步喔。" },
+    { "id": "yiqing-gift_liked-001", "situation": "gift_liked", "affection_min": 0, "expression": "happy", "gift": "sports_drink", "text": "運動飲料！你懂我！流汗會流失鈉和鉀，補水也要補電解質——這就是生理學！" },
+    { "id": "yiqing-gift_liked-002", "situation": "gift_liked", "affection_min": 0, "expression": "happy", "gift": "wristband", "text": "新護腕！我這條都洗到鬆了……你有在注意我的手腕喔？下一場比賽就戴這條！" }
   ]
 }

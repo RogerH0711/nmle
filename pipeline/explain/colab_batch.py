@@ -39,6 +39,10 @@ def prepare(args):
             gen, ref = generated.get(key), reference.get(key)
             if not gen or "text" not in gen or not ref or not ref["matched"]:
                 continue
+            # 生成時被截斷的只有推理草稿、沒有詳解（例如卡在「1+1+1…」），比對沒有意義，要先重新生成
+            if gen.get("done_reason") == "length":
+                print(f"略過 {exam_id}/{key}：生成被截斷")
+                continue
             messages, n_sents = build_messages(q, gen["text"], ref["text"])
             messages[-1]["content"] += FORMAT_NOTE
             rows.append({"id": f"{exam_id}/{key}", "attempt": gen["attempt"], "n_sents": n_sents,

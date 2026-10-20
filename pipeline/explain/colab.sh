@@ -3,6 +3,7 @@
 # 讓 Roger 可以即時看到正在做什麼（nmle-colab-log）。在 WSL 裡執行：
 #   bash pipeline/explain/colab.sh usage
 #   bash pipeline/explain/colab.sh exec -s nmle -f 某個.py      # .py 開頭的 BOM 會自動拿掉
+# NMLE_QUIET=1：不把 -f 檔案的內容記進 log（colab_run.py 每幾分鐘查一次狀態，內容都一樣）
 source ~/.local/bin/env
 LOG="$(dirname "$0")/out/colab/commands.log"
 mkdir -p "$(dirname "$LOG")"
@@ -21,7 +22,7 @@ done
 {
   echo ""
   echo "===== $(date '+%m-%d %H:%M:%S')  colab $*"
-  if [[ -n "$shown" ]]; then echo "----- $shown 的內容："; sed '1s/^\xEF\xBB\xBF//' "$shown"; echo "-----"; fi
+  if [[ -n "$shown" && -z "$NMLE_QUIET" ]]; then echo "----- $shown 的內容："; sed '1s/^\xEF\xBB\xBF//' "$shown"; echo "-----"; fi
 } >> "$LOG"
 COLUMNS=150 colab "${args[@]}" 2>&1 | tee -a "$LOG"
 status=${PIPESTATUS[0]}

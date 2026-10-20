@@ -47,28 +47,22 @@ Colab CLI 只支援 Linux／macOS，這台電腦上裝在 WSL（`uv tool install
 nmle-colab-log                         # 即時看 Claude 下了哪些 Colab 指令（Windows）
 ```
 
-### 用 vLLM 跑一批（固定流程）
+### 用 vLLM 跑一整批（總控，10/21 起）
 
-模型 `Qwen/Qwen3.6-27B-FP8`，設定寫在 `colab_setup.sh`（安裝）和 `colab_vllm.py`（記憶體與取樣），由來見 `docs/design.md`。在 WSL、專案根目錄：
+模型 `Qwen/Qwen3.6-27B-FP8`，安裝寫在 `colab_setup.sh`，記憶體與取樣設定在 `colab_vllm.py`，由來見 `docs/design.md`。
+開一次 A100、模型只載入一次，依序跑完 `colab_run.py` 裡 `STAGES` 列的階段（目前：名詞判斷測試 → 全部生成 → 比對＋名詞判斷）：
 
-```bash
-# 1. 本機產生請求檔（生成用；比對用 prepare）
-.venv-gpu/Scripts/python.exe pipeline/explain/colab_batch.py prepare-gen 110020_1     # Windows PowerShell 執行
-
-# 2. 排 A100 並開始跑（排不到每 5 分鐘再試；最後一個數字是保險時限，分鐘）
-bash pipeline/explain/colab_start.sh pipeline/explain/out/colab/gen_requests.jsonl gen_vllm.jsonl 150
-
-# 3. 看進度（Ctrl+C 離開不影響 Colab）
-bash pipeline/explain/colab_watch.sh
-
-# 4. 跑完：下載、關機、確認沒有還在計費的機器（下載失敗就不會關機）
-bash pipeline/explain/colab_finish.sh gen_vllm.jsonl pipeline/explain/out/colab/gen_results.jsonl
-
-# 5. 本機整理結果
-.venv-gpu/Scripts/python.exe pipeline/explain/colab_batch.py collect-gen --model qwen3.6:27b-fp8-vllm --think
+```powershell
+Start-ScheduledTask -TaskName "NMLE Colab 總控"     # 開始；Mac：ssh rog 'schtasks /run /tn "NMLE Colab 總控"'
+nmle-run-log                                        # 看進度；Mac：ssh rog "powershell -NoProfile -File C:\Users\USER\NMLE\pipeline\explain\watch-run.ps1"
+& .venv-gpu\Scripts\python.exe pipeline\explain\colab_run.py --dry   # 各階段狀態
 ```
 
-保險時限：開機滿這麼多分鐘 Colab 會自己關機，**還沒下載的結果會跟著消失**，要比預估的工作時間長。安裝加載入約 10 分鐘；99 題約 18 分鐘；全部 2,399 題約 7 小時（設 540）。中途斷掉重跑同樣的指令會接著做（`colab_vllm.py` 每 200 題存一次；但要在同一台機器上，關機就沒了）。
+- 分工：本機 `colab_run.py`（工作排程器啟動，關掉 VS Code 或 Claude 都不影響）產生請求、上傳、每 5 分鐘查一次狀態並下載新結果；Colab 上 `colab_job.py` 啟動佇列模式的 `colab_vllm.py`，`colab_status.py` 回報狀態。
+- 紀錄點：Colab 每 200 題寫檔，本機發現有新結果就下載到 `out/colab/run/<階段>.out.jsonl`，各階段進度記在 `out/colab/run/state.json`。總控中斷後重新啟動會接著做；Colab 執行環境不見了會重開一台，把已下載的結果放回去續跑。
+- 保險：Colab 上的程式佇列空了 30 分鐘會自己結束，結束後 20 分鐘沒人重新啟動就釋放執行環境；開機滿 22 小時也會釋放。
+- 要中途停：`Stop-ScheduledTask -TaskName "NMLE Colab 總控"`，再手動 `colab stop`（見下方）。只停總控的話，Colab 會照上面的保險自己關，但正在跑的階段會先跑完、結果沒人下載。
+- 要重跑某個階段：改 `state.json` 裡那個階段的欄位，或刪掉整個 `out/colab/run/` 從頭來。
 
 ### 手動操作
 

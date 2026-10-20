@@ -405,6 +405,7 @@ red hair, medium hair, side braid, red eyes, tsurime, red scrubs, scrub top, scr
 
 - `expression`：只有角色台詞需要；旁白和玩家說話時，立繪維持上一個表情。角色第一次說話前不顯示立繪。
 - `background`：背景 id，清單見 `docs/design.md`「美術與內容」。
+- `bgm`（選填）：這段劇情的曲目 id（`data/audio/manifest.json`），沒寫就用她的主題曲 `theme_<角色 id>`。
 - 劇情裡的醫學內容和台詞一樣要正確，寫完要核對。
 
 完整台詞庫（每位角色每種情境多句、依好感度分層）由 Claude 另外撰寫。

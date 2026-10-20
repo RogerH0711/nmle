@@ -40,6 +40,7 @@ export interface Scene {
   stage: number // 達到這個好感度階段解鎖
   title: string
   background: string // 背景 id，對應 data/backgrounds/<id>.webp；還沒有圖時用漸層色代替
+  bgm?: string // 曲目 id（data/audio/manifest.json）；沒寫就用她的主題曲 theme_<角色 id>
   lines: StoryLine[]
 }
 

@@ -1,0 +1,5 @@
+{
+  "_說明": "BGM 與語音的音檔清單（web/src/audio.ts）。沒列在這裡的不會播，所以音檔還沒做好時網站也不會一直抓不到檔案。bgm：曲目 id → { file（相對於 data/audio/）, loopStart, loopEnd（秒，選填，循環的起點和終點） }；曲目 id 見 web/src/audioRules.ts 的 chooseBgm：map、library、theme_<角色 id>，劇情可以用 bgm 欄位另外指定。voice：有語音的台詞 id，檔案是 data/audio/voice/<id>.mp3；有 {player} 的台詞錄兩個版本 <id>.m.mp3（學弟）、<id>.f.mp3（學妹）。",
+  "bgm": {},
+  "voice": []
+}

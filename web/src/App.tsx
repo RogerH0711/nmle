@@ -30,6 +30,9 @@ import { reportUsage } from './usage'
 import { balance as balanceOf, earnings as earningsOf, giftPoints, isLiked, pickGiftLine, type Gift, type GiftCatalog } from './shop'
 import { addGift, loadGifts, switchGiftUser, useGifts } from './giftStore'
 import { fillGiftLine, GiftShop } from './GiftShop'
+import { playVoice, setBgm, sfx } from './audio'
+import { chooseBgm } from './audioRules'
+import { SoundSettings } from './SoundSettings'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
 
@@ -298,6 +301,8 @@ export default function App() {
       id: crypto.randomUUID(), character_id: c.id, gift_id: g.id, price: g.price, stage,
       line_id: line?.id ?? null, given_at: new Date().toISOString(),
     })
+    sfx('gift')
+    void playVoice(line?.id ?? null, PLAYER)
     return { expression: line?.expression ?? 'happy', text: line ? fillGiftLine(line.text, g, PLAYER) : null }
   }
 
@@ -335,6 +340,7 @@ export default function App() {
     setMessages(next)
     saveMessages(next)
     setToast(fresh[fresh.length - 1])
+    sfx('message')
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [characterMode, characters, subjects, lines, stories, answers.status, answers.records, review.due, seen, affections, messages])
 
@@ -418,8 +424,9 @@ export default function App() {
       revealRef.current = true
       const nextStreak = ok ? streak + 1 : 0
       setStreak(nextStreak)
+      const situation = !ok ? 'wrong' : nextStreak % STREAK_EVERY === 0 ? 'streak' : 'correct'
+      sfx(situation)
       if (stageCharacter) {
-        const situation = !ok ? 'wrong' : nextStreak % STREAK_EVERY === 0 ? 'streak' : 'correct'
         setReaction(react(stageCharacter, situation, current.id))
       }
     },
@@ -573,6 +580,26 @@ export default function App() {
     }
   }
 
+  // ---------- 聲音（audio.ts） ----------
+  // BGM 依目前的畫面切換；學姊說話時播她那句的語音（有的話）
+  const bgm = chooseBgm({
+    characterMode: characterMode && characters.length > 0,
+    mockRunning: !!session,
+    story: story ? { character: story.character.id, bgm: story.scene.bgm } : null,
+    onMap: onMap || view !== 'quiz',
+    runKind: run?.kind ?? null,
+    runCharacter: run?.kind === 'character' ? run.subject : null,
+  })
+  useEffect(() => setBgm(bgm), [bgm])
+  useEffect(() => {
+    if (reaction?.lineId) void playVoice(reaction.lineId, PLAYER)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reaction])
+  useEffect(() => {
+    if (mockStage?.lineId) void playVoice(mockStage.lineId, PLAYER)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mockStage])
+
   // 鍵盤：1–4 或 A–D 作答，Enter／→ 下一題，← 上一題
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -709,6 +736,7 @@ export default function App() {
           >
             排行榜
           </button>
+          <SoundSettings />
           <button className="ghost small" onClick={() => setGuideOpen(true)}>
             說明
           </button>
@@ -1175,6 +1203,10 @@ function Summary(props: {
   unlock?: { text: string; onPlay?: () => void } // 這回合好感度升階
 }) {
   const { run, questions, subjects, onRestart, restartLabel, onRetryWrong, unlock } = props
+  const unlocked = !!unlock
+  useEffect(() => {
+    if (unlocked) sfx('unlock')
+  }, [unlocked])
   const rows = new Map<string, { total: number; correct: number }>()
   let wrong = 0
   for (const id of run.queue) {

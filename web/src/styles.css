@@ -906,9 +906,16 @@ button.link:hover {
     padding-top: 8px;
   }
 
-  /* 標題列兩行：第一行標題、模擬考、排行榜；第二行角色模式、登入狀態 */
+  /* 標題列兩行：第一行標題、模擬考、排行榜、聲音、說明；第二行角色模式、登入狀態。
+     第一行在 375 px 寬剛好放得下，按鈕間距和左右留白都縮小一點 */
   .bar {
+    column-gap: 8px;
     margin-bottom: 8px;
+  }
+
+  .bar > .bar-right > button.small,
+  .bar .sound > button.small {
+    padding: 0 9px;
   }
 
   .bar h1 {
@@ -2903,4 +2910,54 @@ button.link:hover {
   .shop-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* ---------- 聲音設定（標題列） ---------- */
+
+.sound {
+  position: relative;
+}
+
+.sound-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 25;
+  width: min(260px, calc(100vw - 32px));
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.18);
+}
+
+.sound-row {
+  display: grid;
+  grid-template-columns: 3em 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 0.85rem;
+}
+
+.sound-row input[type='range'] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.sound-row small {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.sound-master {
+  display: flex;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.sound-note {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
 }

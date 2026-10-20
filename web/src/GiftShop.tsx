@@ -5,6 +5,7 @@ import { STAGE_NAMES, type Affection } from './affection'
 import { AffectionMeter } from './Story'
 import { EARN, GIFT_BONUS, givenToday, isLiked, type Earnings, type Gift, type GiftCatalog, type GiftRecord } from './shop'
 import { STREAK_MIN_DAILY } from './messages'
+import { sfx } from './audio'
 
 interface Props {
   characters: Character[]
@@ -54,6 +55,12 @@ export function GiftShop(props: Props) {
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [props.onClose])
+
+  // 送禮後升階：放升階音效
+  const leveled = !!given && (affections.get(given.character)?.stage ?? 0) > given.stageBefore
+  useEffect(() => {
+    if (leveled) sfx('unlock')
+  }, [leveled])
 
   const c = characters.find((x) => x.id === selected)
   const a = c && affections.get(c.id)

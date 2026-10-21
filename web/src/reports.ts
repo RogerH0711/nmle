@@ -7,13 +7,14 @@ import type { Letter } from './types'
 // 回報疑義：送到 Supabase 的 reports 表，Roger 在 Dashboard 處理。沒登入也能回報。
 // 先存進瀏覽器再上傳，離線或失敗會留著，連上網路後重送；已回報的題目會記住，按鈕顯示「已回報」。
 
-export type ReportReason = 'answer' | 'typo' | 'image' | 'subject' | 'other'
+export type ReportReason = 'answer' | 'typo' | 'image' | 'subject' | 'explanation' | 'other'
 
 export const REASONS: { id: ReportReason; label: string }[] = [
   { id: 'answer', label: '答案有誤' },
   { id: 'typo', label: '題目或選項有錯字、缺字' },
   { id: 'image', label: '圖片有問題' },
   { id: 'subject', label: '學科分類錯誤' },
+  { id: 'explanation', label: '詳解有誤' },
   { id: 'other', label: '其他' },
 ]
 

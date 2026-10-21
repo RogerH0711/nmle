@@ -91,4 +91,10 @@ $py = ".venv-gpu\Scripts\python.exe"
 & $py pipeline\explain\check.py all --model qwen3.5:35b-a3b --judge qwen3.5:35b-a3b  # 比對
 ```
 
+總控跑完後匯出到網站（`data/explanations/`，依比對與名詞檢查分級，截斷的題目不匯出）：
+
+```powershell
+& $py pipeline\explain\export_web.py all
+```
+
 `--limit N` 只跑前 N 題；`--think` 開 thinking（生成的產出放在 `out/<模型>-think/`，比對時要加 `--gen-think`）。

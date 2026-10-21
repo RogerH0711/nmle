@@ -18,6 +18,23 @@ export function signOut() {
   return supabase.auth.signOut()
 }
 
+/**
+ * 刪除帳號：資料庫刪掉帳號與所有紀錄（supabase/migrations/20261021120000_delete_account.sql），
+ * 再清掉這台裝置上屬於這個帳號的紀錄（鍵名含 user id 的那些）。不可復原，呼叫前要先讓使用者確認。
+ */
+export async function deleteAccount(userId: string) {
+  const { error } = await supabase.rpc('delete_my_account')
+  if (error) throw new Error(error.message)
+  try {
+    for (const key of Object.keys(localStorage)) {
+      if (key.startsWith('nmle.') && key.includes(userId)) localStorage.removeItem(key)
+    }
+  } catch {
+    // 讀不到瀏覽器儲存空間就算了，雲端已經刪掉
+  }
+  await supabase.auth.signOut({ scope: 'local' }) // 帳號已經不存在，只清這台裝置的登入狀態
+}
+
 export const NAME_MAX = 30
 
 export async function getDisplayName(userId: string): Promise<string | null> {

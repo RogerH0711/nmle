@@ -366,6 +366,10 @@ describe('回報疑義', () => {
     assert.ok(new Date(r.created_at).getFullYear() > 2000)
   })
 
+  test('可以回報詳解有誤', async () => {
+    assert.equal((await report(null, { reason: 'explanation' })).ok, true)
+  })
+
   test('原因、題目 id、答案、補充說明長度都有檢查', async () => {
     assert.equal((await report(null, { reason: 'spam' })).ok, false)
     assert.equal((await report(null, { question_id: 'x' })).ok, false)
@@ -518,5 +522,51 @@ describe('送禮', () => {
     const r = await tryAs(db, null, `select * from public.gifts`)
     assert.ok(!r.ok || r.res.rows.length === 0)
     assert.equal((await give(null)).ok, false)
+  })
+})
+
+describe('刪除帳號', () => {
+  const C = '55555555-5555-4555-8555-555555555555'
+  const count = async (table, col = 'user_id') =>
+    (await db.query(`select count(*)::int as n from public.${table} where ${col} = $1`, [C])).rows[0].n
+
+  before(async () => {
+    await createUser(db, C, '真名丙')
+    await answer(db, C, keys[0].question_id, keys[0].a)
+    await as(
+      db,
+      C,
+      `insert into public.mock_exams (id, paper_id, started_at, submitted_at, picks)
+       values ('cccccccc-0000-4000-8000-000000000001', '115090_1', now() - interval '3 hours', now() - interval '1 hour', '{}')`,
+    )
+    await as(
+      db,
+      C,
+      `insert into public.gifts (id, character_id, gift_id, price, stage, given_at)
+       values ('cccccccc-1111-4000-8000-000000000001', 'fei', 'latte', 20, 0, now())`,
+    )
+    await as(
+      db,
+      C,
+      `insert into public.reports (id, device_id, question_id, reason)
+       values ('cccccccc-2222-4000-8000-000000000001', 'cccccccc-3333-4000-8000-000000000001', '115090_1_001', 'typo')`,
+    )
+  })
+
+  test('沒登入不能呼叫', async () => {
+    assert.equal((await tryAs(db, null, `select public.delete_my_account()`)).ok, false)
+  })
+
+  test('刪掉自己的帳號與所有資料；回報留著但連不回是誰；別人的資料不受影響', async () => {
+    const othersBefore = (await db.query(`select count(*)::int as n from public.answers where user_id <> $1`, [C])).rows[0].n
+    assert.equal(await count('answers'), 1)
+    assert.equal((await tryAs(db, C, `select public.delete_my_account()`)).ok, true)
+    assert.equal((await db.query(`select count(*)::int as n from auth.users where id = $1`, [C])).rows[0].n, 0)
+    assert.equal(await count('profiles', 'id'), 0)
+    for (const table of ['answers', 'mock_exams', 'gifts', 'reports']) assert.equal(await count(table), 0, table)
+    const r = await db.query(`select user_id from public.reports where id = 'cccccccc-2222-4000-8000-000000000001'`)
+    assert.deepEqual(r.rows, [{ user_id: null }])
+    const othersAfter = (await db.query(`select count(*)::int as n from public.answers where user_id <> $1`, [C])).rows[0].n
+    assert.equal(othersAfter, othersBefore)
   })
 })

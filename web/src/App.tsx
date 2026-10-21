@@ -4,7 +4,7 @@ import type { ExamFile, Index, Letter, Question } from './types'
 import { imageUrl, loadIndex, loadPaper, loadQuestions, paperLabel, paperOf } from './bank'
 import { recordAnswer, recordAnswers, switchUser, syncNow, useAnswers, type SyncStatus } from './answers'
 import { localDate, reviewStates, reviewSummary } from './review'
-import { getDisplayName, NAME_MAX, setDisplayName, signInWithGoogle, signOut, supabase } from './supabase'
+import { deleteAccount, getDisplayName, NAME_MAX, setDisplayName, signInWithGoogle, signOut, supabase } from './supabase'
 import { Leaderboard } from './Leaderboard'
 import {
   characterForSubject, COMEBACK_DAYS, fillPlayer, loadCharacters, loadLines, pickLine as pickCharacterLine,
@@ -16,6 +16,7 @@ import { addMock, loadSession, saveSession, switchMockUser, useMocks } from './m
 import { MockHome, MockResult, MockRunner } from './MockExam'
 import { ReportButton } from './Report'
 import { AskAi } from './AskAi'
+import { ExplanationPanel } from './ExplanationPanel'
 import { affection as affectionOf, rival as rivalOf, STAGE_NAMES, subjectMap, type Affection } from './affection'
 import { loadSeen, loadStory, saveSeen, sceneId, unseenScene, type Scene } from './stories'
 import { StoryList, StoryPlayer } from './Story'
@@ -995,7 +996,12 @@ function Disclaimer() {
         非官方題庫。試題與答案取自考選部公開的歷屆試題，正解以考選部公告（含更正答案）為準。題目由程式從 PDF
         解析，可能有誤，發現問題請按題目下方的「回報疑義」。
       </p>
-      <p>角色立繪為 AI 生成。網站會記錄匿名的使用統計（隨機的裝置代碼和每天作答題數，不含個人資料）。</p>
+      <p>
+        角色立繪為 AI 生成（Animagine XL 4.0，去背使用 BRIA RMBG-2.0，CC BY-NC 4.0）。網站會記錄匿名的使用統計（隨機的裝置代碼和每天作答題數，不含個人資料）。
+      </p>
+      <p>
+        <a href={`${import.meta.env.BASE_URL}privacy.html`}>隱私權政策與使用條款</a>
+      </p>
     </footer>
   )
 }
@@ -1020,6 +1026,23 @@ function Account(props: {
   const [draft, setDraft] = useState('')
   const [saving, setSaving] = useState(false)
   const [renameError, setRenameError] = useState<string | null>(null)
+
+  const remove = async () => {
+    if (!user) return
+    const typed = window.prompt(
+      '刪除帳號會永久刪除雲端上的作答紀錄、模擬考、禮物和暱稱，也會清掉這台裝置上這個帳號的紀錄，無法復原。\n\n確定要刪除，請輸入「刪除」：',
+    )
+    if (typed?.trim() !== '刪除') return
+    setSaving(true)
+    try {
+      await deleteAccount(user.id)
+      window.alert('帳號已刪除。')
+      window.location.reload() // 重新載入，清掉記憶體裡的紀錄
+    } catch {
+      setRenameError('刪除失敗，請確認網路連線後再試一次')
+      setSaving(false)
+    }
+  }
 
   const save = async () => {
     const name = draft.trim()
@@ -1072,6 +1095,9 @@ function Account(props: {
         </button>
         <button className="ghost small" type="button" onClick={() => setEditing(false)}>
           取消
+        </button>
+        <button className="link delete-account" type="button" disabled={saving} onClick={() => void remove()}>
+          刪除帳號
         </button>
         {renameError && <span className="sync error">{renameError}</span>}
       </form>
@@ -1173,6 +1199,7 @@ function QuestionCard(props: {
             {q.free_point ? '本題官方一律給分。' : `正解：${q.answers.join('、')}`}
             {q.answer_note && !q.free_point && <span className="note">（{q.answer_note}）</span>}
           </p>
+          <ExplanationPanel key={`exp-${q.id}`} questionId={q.id} number={q.number} />
           <AskAi key={q.id} q={q} paper={paper} subject={q.subject ? (index.subjects[q.subject] ?? q.subject) : null} picked={picked} />
         </div>
       )}

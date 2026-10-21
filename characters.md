@@ -99,6 +99,17 @@ lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer
 
 `FACE_BOX` 的範圍是框內切的橢圓，只重畫橢圓裡面的部分。範圍只要包含眉毛到下巴；編髮、髮夾這類每張表情都要一樣的特徵要留在橢圓外，否則每換一個表情就會被重畫一次。淚痣這種一定在臉上、又要固定位置的小點，用 `KEEP_DARK` 保留，不要寫進臉部 tag。
 
+**劇情服裝**（10/21）：在本機 3070 用 `art/outfits.py` 生成，流程、模型、參數和 notebook 步驟 2–4 相同，各服裝的 tag 與下表的值都寫在檔案的 `OUTFITS`。本機用 CPU 的亂數產生器，同一個 seed 和 Colab 畫出來的圖不同。候選圖與輸出在 `art/bakeoff/outfits/`（不進 repo）。
+
+| 服裝 | 劇情 | 基本立繪 seed | `FACE_BOX` | `STRENGTH` | `PICKS` | 狀態 |
+| --- | --- | --- | --- | --- | --- | --- |
+| `zhixun_yukata` 浴衣 | 溫芷薰 3「心動」 | 113 | (378, 114, 104, 102) | 0.6 | 五種表情都是 1 | 已接到劇情；`KEEP_DARK = [(453, 163, 3)]` |
+| `yiqing_track` 田徑服 | 夏以晴「告白前夕」 | 109 | (365, 140, 106, 100) | 0.6 | 五種表情都是 3 | 已接到劇情（只有比賽那段；「在意」是平常練習，維持基本服裝） |
+
+- 田徑服只寫 `track shorts` 時，16 張裡有 2 張畫成長褲（seed 102、103），也有幾張是透視很強的跑步動作，不能當立繪。
+- 號碼布上的字是模型亂畫的假文字，遠看不明顯，先不處理。
+- 輸出的 webp 放在 `data/characters/<角色 id>/<服裝>/<表情>.webp`，劇情的 `outfit` 欄位指定服裝。浴衣的旁白配合立繪改成「頭髮側綁起來、別著一朵紅花，手上拿著團扇」（原本寫盤髮、提袋）。
+
 ### 劇情背景
 
 用 `art/backgrounds.ipynb` 生成，模型與參數和立繪相同（Animagine XL 4.0 Opt、CFG 5、28 steps、Euler a），畫風才會統一。輸出到 `data/backgrounds/<背景 id>.webp`，沒有圖的背景網站會用漸層色代替。
@@ -405,6 +416,7 @@ red hair, medium hair, side braid, red eyes, tsurime, red scrubs, scrub top, scr
 
 - `expression`：只有角色台詞需要；旁白和玩家說話時，立繪維持上一個表情。角色第一次說話前不顯示立繪。
 - `background`：背景 id，清單見 `docs/design.md`「美術與內容」。
+- `outfit`（選填）：劇情服裝，立繪改讀 `data/characters/<角色 id>/<服裝>/<表情>.webp`，那套服裝缺圖時退回基本服裝。前端測試會檢查用到的表情都有圖。
 - `bgm`（選填）：這段劇情的曲目 id（`data/audio/manifest.json`），沒寫就用她的主題曲 `theme_<角色 id>`。
 - 劇情裡的醫學內容和台詞一樣要正確，寫完要核對。
 

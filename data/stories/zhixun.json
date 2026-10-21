@@ -62,9 +62,10 @@
       "stage": 3,
       "title": "心動",
       "background": "festival",
+      "outfit": "yukata",
       "lines": [
         { "speaker": "narration", "text": "夏日祭典。約好的鳥居下，你差點認不出她。" },
-        { "speaker": "narration", "text": "淡紫色的浴衣，頭髮盤起來，手上提著一個小小的提袋。沒有白袍，也沒有識別證。" },
+        { "speaker": "narration", "text": "淡紫色的浴衣，頭髮側綁起來、別著一朵紅花，手上拿著團扇。沒有白袍，也沒有識別證。" },
         { "speaker": "zhixun", "expression": "shy", "text": "……怎麼一直盯著看？不適合嗎？" },
         { "speaker": "player", "text": "不是！很、很適合……" },
         { "speaker": "zhixun", "expression": "happy", "text": "呵呵，小{player}的臉比蘋果糖還紅呢。" },

@@ -14,10 +14,16 @@ function bustStyle(bust: Character['bust']) {
   } as React.CSSProperties
 }
 
-export function Portrait({ character, expression }: { character: Character; expression: string }) {
+// outfit：劇情服裝；那套服裝缺圖時退回基本服裝
+export function Portrait(props: { character: Character; expression: string; outfit?: string }) {
+  const { character, expression, outfit } = props
   const [, rerender] = useState(0)
   const { id, name, color, bust } = character
-  const candidates = [portraitUrl(id, expression), portraitUrl(id, 'normal')]
+  const candidates = [
+    ...(outfit ? [portraitUrl(id, expression, outfit), portraitUrl(id, 'normal', outfit)] : []),
+    portraitUrl(id, expression),
+    portraitUrl(id, 'normal'),
+  ]
   const src = candidates.find((u) => !missing.has(u))
 
   if (!src) {

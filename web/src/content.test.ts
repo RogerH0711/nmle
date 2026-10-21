@@ -54,3 +54,21 @@ test('禮物：每位學姊都有收禮台詞，她喜歡的每一樣禮物都�
     for (const l of lines.filter((l) => l.situation === 'gift_liked')) assert.ok(likes.includes(l.gift ?? ''), `${c.id} 的 gift_liked 對應到她不喜歡的 ${l.gift}`)
   }
 })
+
+test('劇情服裝：有寫 outfit 的劇情，用到的每個表情都有那套服裝的立繪', () => {
+  type Line = { speaker: string; expression?: string; options?: { lines: Line[] }[] }
+  const flat = (lines: Line[]): Line[] => lines.flatMap((l) => [l, ...flat(l.options?.flatMap((o) => o.lines) ?? [])])
+  let checked = 0
+  for (const f of files.filter((f) => f.name.startsWith('stories/'))) {
+    const story = JSON.parse(f.text) as { character: string; scenes: { title: string; outfit?: string; lines: Line[] }[] }
+    for (const scene of story.scenes.filter((s) => s.outfit)) {
+      const used = new Set(['normal', ...flat(scene.lines).flatMap((l) => (l.speaker === story.character && l.expression ? [l.expression] : []))])
+      for (const e of used) {
+        const path = `characters/${story.character}/${scene.outfit}/${e}.webp`
+        assert.doesNotThrow(() => readFileSync(new URL(path, data)), `${f.name}「${scene.title}」缺 ${path}`)
+      }
+      checked++
+    }
+  }
+  assert.ok(checked >= 2)
+})

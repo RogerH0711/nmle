@@ -81,6 +81,7 @@
       "stage": 4,
       "title": "告白前夕",
       "background": "track",
+      "outfit": "track",
       "lines": [
         { "speaker": "narration", "text": "大專盃女子組一萬公尺決賽。這是她在學校的最後一場比賽。" },
         { "speaker": "narration", "text": "最後一圈的鐘聲響起。她落後第一名半圈，卻還在加速。" },

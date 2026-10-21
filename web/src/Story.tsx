@@ -156,7 +156,7 @@ export function StoryPlayer(props: {
         )}
       </div>
       <div className={shown ? 'story-figure' : 'story-figure hidden'}>
-        <Portrait character={character} expression={expression} />
+        <Portrait character={character} expression={expression} outfit={scene.outfit} />
       </div>
 
       {choosing && (

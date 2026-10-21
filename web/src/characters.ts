@@ -78,5 +78,6 @@ export function fillPlayer(text: string, player: string) {
   return text.replaceAll('{player}', player || '學弟')
 }
 
-export const portraitUrl = (characterId: string, expression: string) =>
-  dataUrl(`characters/${characterId}/${expression}.webp`)
+// outfit：劇情服裝（data/characters/<角色 id>/<服裝>/），沒寫就是基本服裝
+export const portraitUrl = (characterId: string, expression: string, outfit?: string) =>
+  dataUrl(`characters/${characterId}/${outfit ? `${outfit}/` : ''}${expression}.webp`)

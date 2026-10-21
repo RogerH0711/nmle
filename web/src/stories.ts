@@ -41,6 +41,7 @@ export interface Scene {
   title: string
   background: string // 背景 id，對應 data/backgrounds/<id>.webp；還沒有圖時用漸層色代替
   bgm?: string // 曲目 id（data/audio/manifest.json）；沒寫就用她的主題曲 theme_<角色 id>
+  outfit?: string // 劇情服裝，對應 data/characters/<角色 id>/<服裝>/<表情>.webp；沒寫就是基本服裝
   lines: StoryLine[]
 }
 

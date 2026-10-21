@@ -45,6 +45,7 @@
 
 - **可以**：臉紅、牽手、摸頭、靠肩、擊掌、曖昧雙關、吃醋、泳裝／睡衣／浴衣等劇情服裝。
 - **不可以**：裸露、性行為描寫、刻意聚焦敏感部位的構圖或描述。
+- **不用過度保守**（10/21 Roger）：遊戲性完整比政治正確重要，成年人該是什麼樣子就什麼樣子。身材豐滿、晚禮服的 V 領和開衩都算正常，不當成要排除的東西；看起來奇怪、不自然才要避免。生圖的負向 tag 只放安全相關的（`nsfw, nude, explicit, child, loli, aged down`），不放 `large breasts`、`cleavage` 這類身材或服裝的 tag。
 - **病嬌**：走「愛很重」的喜劇路線，可以查勤、黏人、吃醋；不寫刀子、威脅、傷害他人或自傷。
 - **醫學梗**：台詞裡的醫學知識必須正確。
 
@@ -110,6 +111,26 @@ lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer
 - 號碼布上的字是模型亂畫的假文字，遠看不明顯，先不處理。
 - 沈靜澄「心動」眼鏡掉了的三句，用 `noglasses_squint`（瞇眼找路）和 `noglasses_shy` 兩個表情（`VARIANTS`）。去背前的原圖只在 Colab 的 Drive，所以拿網站上已去背的 `normal`、`shy` 鋪白底重畫臉部，臉部範圍外的像素和透明度沿用原檔。`FACE_BOX` 往左包到左耳的鏡腳 (322, 100, 128, 108)，`STRENGTH` 0.7，兩個都選 seed 1。
 - 輸出的 webp 放在 `data/characters/<角色 id>/<服裝>/<表情>.webp`，劇情的 `outfit` 欄位指定服裝。浴衣的旁白配合立繪改成「頭髮側綁起來、別著一朵紅花，手上拿著團扇」（原本寫盤髮、提袋）。
+
+**服裝商店的造型**（10/22，還沒接到商店）：每位一套私服、一套依個性的造型（Roger 同意的提案），tag 在 `art/outfits.py` 的 `SHOP`（外觀 tag 沿用定稿，只換服裝），選定值在 `SHOP_FINAL`。表情照 notebook 的角色專屬設定（`EXTRA_EXPRESSIONS`）：顏緋多 `pout`、葉縈多 `yandere`、沈靜澄的 `normal` 是面無表情、`happy` 只是淡淡一笑。每套都有那位學姊台詞用到的所有表情（前端測試會檢查）。`STRENGTH` 都是 0.6，表情都選 seed 1（葉縈的 `yandere` 例外）。
+
+| 服裝 | 造型 | 基本立繪 seed | `FACE_BOX` | 備註 |
+| --- | --- | --- | --- | --- |
+| `yiqing/casual` | 帽 T、牛仔短褲、棒球帽 | 114 | (360, 128, 100, 90) | 帽簷下看得到髮夾，兩手都有護腕 |
+| `yiqing/winter` | 長大衣、橘色圍巾、耳罩 | 108 | (362, 128, 92, 80) | 右邊的耳罩留在橢圓外 |
+| `fei/casual` | 黑色高領、長大衣 | 105 | (372, 148, 82, 76) | 編髮在右耳後，和定稿同一邊 |
+| `fei/dress` | 謝師宴的紅色晚禮服 | 100 | (368, 116, 86, 84) | 右耳的耳環留在橢圓外；尺度見下 |
+| `jingcheng/casual` | 海軍藍洋裝、針織外套、捧書 | 100 | (360, 98, 92, 86) | 灰色細框眼鏡在橢圓內，每個表情重畫 |
+| `jingcheng/pajamas` | 條紋睡衣、抱枕 | 115 | (330, 125, 120, 90) | |
+| `zhixun/summer` | 白襯衫、長裙、草帽 | 104 | (392, 145, 96, 82) | 候選圖的淚痣不是沒畫就是畫錯邊，在基本立繪上點一顆（`add_dark`，顏色大小同浴衣），`KEEP_DARK = [(454, 178, 3)]` |
+| `zhixun/winter` | 高領毛衣、圍巾、長大衣 | 106 | (355, 130, 90, 68) | 原本就有淚痣，`KEEP_DARK = [(425, 172, 3)]`；橢圓下緣停在圍巾上方 |
+| `ying/casual` | 綠色洋裝、針織外套 | 112 | (372, 128, 104, 92) | `yandere` 用 `STRENGTH` 0.7 的 seed 6 |
+| `ying/pajamas` | 青蛙帽 T 睡衣、袖子蓋過手指 | 108 | (370, 132, 90, 84) | 兩側停在帽緣內；`yandere` 同上 |
+
+- 顏緋的晚禮服第一版（`cocktail dress`）幾乎都是深 V、高開衩，Claude 一度判成超出輔導級、改成長袖保守版重跑；Roger 和朋友看過認為第一版在輔導級內也比較好看，採用第一版（保守版的候選留在 `art/bakeoff/outfits/fei_dress_v2/`）。尺度的原則見上面「尺度規範」。
+- 葉縈的 `yandere` 用 0.6 時只是溫和地笑，眼睛上沒有陰影，不像定稿的眼神死；調到 0.7 才出來。
+- 沈靜澄兩套第一次用了共用的 `normal`、`happy`（會笑、張嘴），不像她，照專屬設定重跑（舊的留在 `expr/normal_common/`、`happy_common/`）。
+- 重現用：溫芷薰兩套、葉縈兩套的候選圖是 10/21 放寬尺度之前畫的，負向 tag 有 `large breasts, cleavage`（`SHOP` 裡照當時的寫）。表情差分只有臉部，其中 `zhixun/summer` 五個表情和另外三套的 `surprised` 是放寬前跑的（有這兩個 tag），`zhixun/winter`、`ying/casual`、`ying/pajamas` 的其他表情是放寬後跑的（沒有）。每張的完整參數在本機的 `art/bakeoff/outfits/<服裝>/log.jsonl`（不進 repo）。
 
 ### 劇情背景
 
@@ -248,7 +269,7 @@ dark green hair, long hair, low twintails, hair ribbon, green eyes, bags under e
 原本的 tag 有 40 個 token。刪掉 `gentle smile`（表情會重畫）、`head tilt`（身體姿勢）、`breast pocket`（容易讓構圖往胸部靠），`test tube` 改成 `holding test tube`，補上白袍底下的 `green sweater`、`long skirt`，共 38 個。只寫過大的白袍、不寫裡面穿什麼，容易被畫成只穿一件白袍、露出腿，和輔導級的規範衝突。
 
 - **臉部 tag**（表情差分用）：`dark green hair, long hair, green eyes, bags under eyes`。黑眼圈左右對稱，寫進 tag 沒有淚痣那種換邊的問題。
-- **角色專屬負向 tag**：`bare legs, large breasts, cleavage`。
+- **角色專屬負向 tag**：`bare legs, large breasts, cleavage`（定稿立繪用的）。10/21 起新的造型只留 `bare legs`（理由見「尺度規範」）。
 
 **專屬表情**：`yandere` → `smile, shaded face, empty eyes`（喜劇式的「眼神死」，用在吃醋台詞）。原本還有 `head tilt`，但只重畫臉部時頭部動作沒有作用，所以拿掉。
 
@@ -296,7 +317,7 @@ light purple hair, long hair, wavy hair, side ponytail, purple eyes, droopy eyes
 第一次的版本只寫 `open labcoat`、針織衫寫 `lavender cardigan`，結果 24 張全部沒有白袍：開襟針織衫本身也是外套，被畫成一件紫色長外套；`lavender` 還被當成薰衣草，畫出花叢背景。所以 `labcoat` 要和 `open labcoat` 一起寫（以晴、顏緋也是這樣），針織衫改成穿在白袍裡面的 `purple sweater`。
 
 - **臉部 tag**（表情差分用）：`light purple hair, long hair, wavy hair, purple eyes, droopy eyes`。不寫 `mole under eye`：這個 tag 不分左右，試過 `STRENGTH` 0.6 和 0.5，重畫時淚痣都會換邊或變成兩顆。淚痣改用 notebook 的 `KEEP_DARK` 從基本立繪搬回來（只在痣周圍的小圓內取比較深的顏色），每個表情的位置都一樣，周圍的臉紅、膚色仍是新表情的。
-- **角色專屬負向 tag**：`large breasts, cleavage`。大姊姊類型容易被畫成刻意強調胸部，和輔導級的尺度規範衝突。只加在她身上，不影響其他角色的定稿參數。
+- **角色專屬負向 tag**：定稿立繪和浴衣用了 `large breasts, cleavage`，當時擔心大姊姊類型被畫成刻意強調胸部。10/21 起新的造型不加（理由見「尺度規範」），已定稿的立繪不重畫。
 
 **好感度劇情大綱**
 - 0 初識：她把藥理講義遞給你，順手幫你把亂掉的領子整理好。

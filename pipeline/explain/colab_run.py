@@ -30,6 +30,8 @@ POLL_SEC = 300          # 查狀態的間隔；也讓 Colab 知道執行環境�
 DEADLINE_MIN = 1320     # Colab 上的保險時限（22 小時；Colab Pro 的單次上限約 24 小時，不保證）
 GEN_MODEL = "qwen3.6:27b-fp8-v2"   # v2：10/21 改過提示詞（每個專有名詞都附英文）
 OLD_MODEL = "qwen3.6:27b-fp8-vllm"
+# 10/22：和參考詳解衝突、被截斷的題目換 seed 重新生成，結果先放在另一個資料夾，比對通過的再用 merge-regen 換進去
+REGEN_MODEL = "qwen3.6:27b-fp8-v2-regen"
 
 
 def batch(*args):
@@ -60,6 +62,19 @@ STAGES = [
                  terms("prepare", "all", "--model", GEN_MODEL, "--think")],
      "request": WORK / "terms_requests.jsonl", "result": WORK / "terms_results.jsonl",
      "collect": [terms("collect", "--model", GEN_MODEL, "--think")]},
+    {"name": "5_regen", "needs": ["3_check"],
+     "prepare": [batch("prepare-regen", "--model", GEN_MODEL, "--label", "vllm-27b-think", "--seed", "2")],
+     "request": WORK / "gen_requests.jsonl", "result": WORK / "gen_results.jsonl",
+     "collect": [batch("collect-gen", "--model", REGEN_MODEL, "--think")]},
+    {"name": "6_recheck", "needs": ["5_regen"],
+     "prepare": [batch("prepare", "all", "--model", REGEN_MODEL, "--gen-think")],
+     "request": WORK / "requests.jsonl", "result": WORK / "results.jsonl",
+     "collect": [batch("collect", "--label", "vllm-27b-think")]},
+    {"name": "7_reterms", "needs": ["5_regen"],
+     "prepare": [terms("scan", "all", "--model", REGEN_MODEL, "--think"),
+                 terms("prepare", "all", "--model", REGEN_MODEL, "--think")],
+     "request": WORK / "terms_requests.jsonl", "result": WORK / "terms_results.jsonl",
+     "collect": [terms("collect", "--model", REGEN_MODEL, "--think")]},
 ]
 
 

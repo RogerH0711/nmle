@@ -72,3 +72,19 @@ test('劇情用到的每個表情都有立繪（有寫 outfit 的劇情看那套
   }
   assert.ok(checked >= 25)
 })
+
+test('每套服裝都有那位學姊台詞用到的所有表情（換上服裝後刷題畫面也會用到）', () => {
+  let checked = 0
+  for (const c of readdirSync(new URL('characters/', data), { withFileTypes: true }).filter((d) => d.isDirectory())) {
+    const lines = (JSON.parse(readFileSync(new URL(`lines/${c.name}.json`, data), 'utf-8')) as { lines: { expression?: string }[] }).lines
+    const used = new Set(['normal', ...lines.flatMap((l) => (l.expression ? [l.expression] : []))])
+    for (const outfit of readdirSync(new URL(`characters/${c.name}/`, data), { withFileTypes: true }).filter((d) => d.isDirectory())) {
+      for (const e of used) {
+        const path = `characters/${c.name}/${outfit.name}/${e}.webp`
+        assert.doesNotThrow(() => readFileSync(new URL(path, data)), `缺 ${path}`)
+      }
+      checked++
+    }
+  }
+  assert.ok(checked >= 2)
+})

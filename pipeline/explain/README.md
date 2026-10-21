@@ -50,7 +50,7 @@ nmle-colab-log                         # 即時看 Claude 下了哪些 Colab 指
 ### 用 vLLM 跑一整批（總控，10/21 起）
 
 模型 `Qwen/Qwen3.6-27B-FP8`，安裝寫在 `colab_setup.sh`，記憶體與取樣設定在 `colab_vllm.py`，由來見 `docs/design.md`。
-開一次 A100、模型只載入一次，依序跑完 `colab_run.py` 裡 `STAGES` 列的階段（目前：名詞判斷測試 → 全部生成 → 比對＋名詞判斷）：
+開一次 A100、模型只載入一次，依序跑完 `colab_run.py` 裡 `STAGES` 列的階段（目前：名詞判斷測試 → 全部生成 → 比對＋名詞判斷 → 衝突與截斷的題目重新生成 → 重新比對＋名詞判斷）：
 
 ```powershell
 Start-ScheduledTask -TaskName "NMLE Colab 總控"     # 開始；Mac：ssh rog 'schtasks /run /tn "NMLE Colab 總控"'
@@ -96,5 +96,14 @@ $py = ".venv-gpu\Scripts\python.exe"
 ```powershell
 & $py pipeline\explain\export_web.py all
 ```
+
+重新生成（總控的 `5_regen` 到 `7_reterms`，10/22）：衝突和截斷的題目換 seed 再生成一次，結果放在 `out/qwen3.6_27b-fp8-v2-regen-think/`，不會動到原本的。跑完後先看結果，再合併、匯出：
+
+```powershell
+& $py pipeline\explain\colab_batch.py merge-regen --model qwen3.6:27b-fp8-v2 --regen-model qwen3.6:27b-fp8-v2-regen --label vllm-27b-think
+& $py pipeline\explain\export_web.py all
+```
+
+比對通過的才換進去（原本截斷的只要新的沒截斷就換），被換掉的原版備份在 regen 資料夾的 `<考卷>.replaced.json`；重複執行不會重複換。
 
 `--limit N` 只跑前 N 題；`--think` 開 thinking（生成的產出放在 `out/<模型>-think/`，比對時要加 `--gen-think`）。

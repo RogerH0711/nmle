@@ -8,6 +8,7 @@
 
 - 分批跑、每批寫檔：本機每批下載一次當紀錄點。換一台 VM 時本機會把已下載的結果放回 results/，這裡會跳過已完成的題目
 - 輸出到上限被截斷的題目（例如推理卡在重複的「1+1+1…」），整個檔做完後換 seed 重跑一次
+- 請求可以帶 seed（預設 0，截斷重跑用 seed + 1）：同一題重新生成時換 seed，才不會得到一樣的結果
 - 佇列空著超過 --idle-min 分鐘就結束（印 QUEUE_IDLE_EXIT），colab_job.py 看到後會釋放執行環境，避免本機掛掉時一直扣運算單元
 - 安裝與啟動由 colab_job.py 負責，設定的由來見 docs/design.md「詳解與題目正確率」
 """
@@ -60,7 +61,7 @@ def process(llm, args, name, make_params):
     start, total = time.time(), 0
     for i in range(0, len(todo), args.chunk):
         chunk = todo[i:i + args.chunk]
-        total += run(llm, chunk, [make_params(r, args.temperature, 0) for r in chunk], out)
+        total += run(llm, chunk, [make_params(r, args.temperature, r.get("seed", 0)) for r in chunk], out)
         elapsed = time.time() - start
         n = i + len(chunk)
         log(f"{name} 已完成 {len(done) + n}/{len(rows)} 題，{elapsed / 60:.0f} 分，{total / elapsed:.0f} tok/s，"
@@ -70,7 +71,7 @@ def process(llm, args, name, make_params):
     truncated = [r for r in rows if load(out).get(r["id"], {}).get("finish_reason") == "length"]
     if truncated:
         log(f"{name} 重跑被截斷的 {len(truncated)} 題：{[r['id'] for r in truncated][:20]}")
-        retry = [make_params(r, max(args.temperature, 0.6), 1) for r in truncated]
+        retry = [make_params(r, max(args.temperature, 0.6), r.get("seed", 0) + 1) for r in truncated]
         total += run(llm, truncated, retry, out)
     still = [k for k, v in load(out).items() if v["finish_reason"] == "length"]
     open(os.path.join(args.results, name + ".done"), "w").write(json.dumps({"truncated": still}))

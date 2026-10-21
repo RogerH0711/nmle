@@ -37,12 +37,21 @@ EXPRESSIONS = {
     "sad": "frown, sad, looking down",
     "surprised": "surprised, wide-eyed, open mouth",
 }
+# 角色專屬表情，同名的蓋掉上面的共用表情（同 notebook 的 EXTRA_EXPRESSIONS）。
+# 換了造型的學姊在刷題畫面也會用到這些表情，每套造型都要有
+EXTRA_EXPRESSIONS = {
+    "fei": {"pout": "pout, blush, looking away"},
+    # 酷系：平常面無表情，開心也只是淡淡一笑
+    "jingcheng": {"normal": "closed mouth, expressionless", "happy": "light smile, closed mouth"},
+    "ying": {"yandere": "smile, shaded face, empty eyes"},
+}
 
 # 角色 tag 最多 39 個 token（共用 tag 加品質 tag 佔 36 個），超過時 check_tokens 會報錯。
 # face 是表情差分用的臉部 tag，同 notebook 的 CHARACTERS；base_seed 以後的值要記進 characters.md 的定稿紀錄
 OUTFITS = {
     # 溫芷薰「心動」：夏日祭典的浴衣。外觀 tag 同定稿，白袍、毛衣、長裙換成浴衣
     "zhixun_yukata": {
+        "char": "zhixun",
         "tags": "light purple hair, long hair, wavy hair, side ponytail, purple eyes, droopy eyes, mole under eye, "
                 "purple yukata, floral print, obi, hair flower, holding uchiwa",
         "negative": "large breasts, cleavage",
@@ -55,6 +64,7 @@ OUTFITS = {
     },
     # 夏以晴「告白前夕」：田徑比賽中。髮型、髮夾、護腕同定稿，外套和運動褲換成比賽服與號碼布
     "yiqing_track": {
+        "char": "yiqing",
         "tags": "orange hair, short hair, bob cut, hairclip, amber eyes, athletic female, orange sports tank top, "
                 "track shorts, race bib, running shoes, wristband, smile",
         "negative": "",
@@ -67,7 +77,8 @@ OUTFITS = {
 }
 
 # 服裝商店的造型（10/21 提案、Roger 同意）：每位一套私服、一套依個性的造型。
-# 外觀 tag 沿用定稿（characters.md），只換服裝；基本立繪選好後再填 base_seed、face_box 等
+# 外觀 tag 沿用定稿（characters.md），只換服裝；基本立繪選好後再填 base_seed、face_box 等。
+# 負向 tag 不排除身材（10/21 Roger：成年人該是什麼樣子就什麼樣子），葉縈的 bare legs 是防止只穿一件外衣、露出腿
 LOOKS = {
     "yiqing": ("orange hair, short hair, bob cut, hairclip, amber eyes, athletic female",
                "orange hair, short hair, bob cut, hairclip, amber eyes", ""),
@@ -77,26 +88,56 @@ LOOKS = {
     "jingcheng": ("black hair, very long hair, straight hair, blue eyes, glasses, grey-framed eyewear, tall female",
                   "black hair, long hair, straight hair, side part, blue eyes, glasses, grey-framed eyewear", ""),
     "zhixun": ("light purple hair, long hair, wavy hair, side ponytail, purple eyes, droopy eyes, mole under eye",
-               "light purple hair, long hair, wavy hair, purple eyes, droopy eyes", "large breasts, cleavage"),
+               "light purple hair, long hair, wavy hair, purple eyes, droopy eyes", ""),
     "ying": ("dark green hair, long hair, low twintails, hair ribbon, green eyes, bags under eyes",
-             "dark green hair, long hair, green eyes, bags under eyes", "bare legs, large breasts, cleavage"),
+             "dark green hair, long hair, green eyes, bags under eyes", "bare legs"),
 }
 SHOP = {
     "yiqing_casual": ("yiqing", "orange hoodie, denim shorts, baseball cap, sneakers, wristband, smile"),
     "yiqing_winter": ("yiqing", "long coat, orange scarf, earmuffs, track pants, sneakers, wristband, smile"),
     "fei_casual": ("fei", "black turtleneck, beige coat, long coat, black pants, ankle boots, crossed arms"),
+    # 謝師宴的晚禮服。畫出來多半是深 V、高開衩的長禮服，10/21 Roger 和朋友看過，認為在輔導級內、也比較好看，採用這版。
+    # 試過的保守版（候選在 art/bakeoff/outfits/fei_dress_v2/）：
+    # "red dress, long sleeves, knee-length skirt, pantyhose, high heels, crossed arms"，負向加 "cleavage, side slit, evening gown"
     "fei_dress": ("fei", "red dress, cocktail dress, knee-length dress, high heels, crossed arms"),
     "jingcheng_casual": ("jingcheng", "navy blue dress, long dress, open cardigan, holding book, expressionless"),
     "jingcheng_pajamas": ("jingcheng", "pajamas, striped pajamas, long sleeves, slippers, hugging pillow, expressionless"),
-    "zhixun_summer": ("zhixun", "white shirt, long skirt, sun hat, sandals, light smile"),
-    "zhixun_winter": ("zhixun", "turtleneck sweater, scarf, long coat, long skirt, boots"),
-    "ying_casual": ("ying", "green dress, long dress, open cardigan, sleeves past fingers, light smile"),
-    "ying_pajamas": ("ying", "animal hood, oversized hoodie, pajamas, sleeves past fingers, pajama pants, light smile"),
+    # 下面四套的候選圖是 10/21 放寬尺度之前畫的，負向 tag 照當時的寫，才能重現同一張基本立繪；
+    # 表情差分有的在放寬之後跑（沒有這兩個 tag），哪幾張記在 characters.md
+    "zhixun_summer": ("zhixun", "white shirt, long skirt, sun hat, sandals, light smile", "large breasts, cleavage"),
+    "zhixun_winter": ("zhixun", "turtleneck sweater, scarf, long coat, long skirt, boots", "large breasts, cleavage"),
+    "ying_casual": ("ying", "green dress, long dress, open cardigan, sleeves past fingers, light smile",
+                    "large breasts, cleavage"),
+    "ying_pajamas": ("ying", "animal hood, oversized hoodie, pajamas, sleeves past fingers, pajama pants, light smile",
+                     "large breasts, cleavage"),
 }
-for _key, (_char, _clothes) in SHOP.items():
+for _key, (_char, _clothes, *_extra) in SHOP.items():  # 第三項（選填）是這套造型另外加的負向 tag
     _tags, _face, _negative = LOOKS[_char]
-    OUTFITS[_key] = {"tags": f"{_tags}, {_clothes}", "negative": _negative, "face": _face,
+    _negative = ", ".join(n for n in [_negative, *_extra] if n)
+    OUTFITS[_key] = {"char": _char, "tags": f"{_tags}, {_clothes}", "negative": _negative, "face": _face,
                      "base_seed": None, "face_box": None, "keep_dark": [], "picks": {}}
+
+# 選定的基本立繪與臉部範圍。add_dark 是要點上去的淚痣（候選圖沒畫），keep_dark 保留基本立繪上原有的痣
+SHOP_FINAL = {
+    "yiqing_casual": {"base_seed": 114, "face_box": (360, 128, 100, 90)},  # 髮夾在帽簷下看得到
+    "yiqing_winter": {"base_seed": 108, "face_box": (362, 128, 92, 80)},  # 右邊的耳罩留在橢圓外
+    "fei_casual": {"base_seed": 105, "face_box": (372, 148, 82, 76)},  # 編髮在右耳後，和定稿同一邊
+    "fei_dress": {"base_seed": 100, "face_box": (368, 116, 86, 84)},  # 正面、編髮同一邊；右耳的耳環留在橢圓外
+    "jingcheng_casual": {"base_seed": 100, "face_box": (360, 98, 92, 86)},  # 灰色細框眼鏡在橢圓內，每個表情重畫
+    "jingcheng_pajamas": {"base_seed": 115, "face_box": (330, 125, 120, 90)},
+    "zhixun_summer": {"base_seed": 104, "face_box": (392, 145, 96, 82), "add_dark": [(454, 178)],
+                      "keep_dark": [(454, 178, 3)]},  # 候選圖的痣不是沒畫就是畫錯邊，選臉最清楚的再點上去
+    "zhixun_winter": {"base_seed": 106, "face_box": (355, 130, 90, 68), "keep_dark": [(425, 172, 3)]},  # 下緣停在圍巾上方
+    "ying_casual": {"base_seed": 112, "face_box": (372, 128, 104, 92)},
+    "ying_pajamas": {"base_seed": 108, "face_box": (370, 132, 90, 84)},  # 兩側停在帽緣內
+}
+for _key, _final in SHOP_FINAL.items():
+    OUTFITS[_key].update(_final)
+    # 各表情選用的差分 seed（10/22）：十套都是 seed 1，臉型和基本立繪最一致
+    OUTFITS[_key]["picks"] = {name: 1 for name in {**EXPRESSIONS, **EXTRA_EXPRESSIONS.get(OUTFITS[_key]["char"], {})}}
+# 葉縈的 yandere 用 STRENGTH 0.6 時眼睛上的陰影出不來（不像定稿的眼神死），改用 --strength 0.7 跑的 seed 6
+OUTFITS["ying_casual"]["picks"]["yandere"] = 6
+OUTFITS["ying_pajamas"]["picks"]["yandere"] = 6
 
 # 表情變體：不畫新的全身圖，拿網站上已經去背的立繪（data/characters/<角色>/<表情>.webp）重畫臉部。
 # 去背前的原圖只存在 Colab 的 Google Drive，本機用同一個 seed 也畫不出同一張（亂數產生器不同）。
@@ -180,18 +221,38 @@ def config(key):
 
 def expressions_of(key):
     """{表情 id: (當底的表情, 表情 tag)}；劇情服裝的底都是基本立繪（None）。"""
-    return VARIANTS[key]["expressions"] if key in VARIANTS else {n: (None, t) for n, t in EXPRESSIONS.items()}
+    if key in VARIANTS:
+        return VARIANTS[key]["expressions"]
+    tags = {**EXPRESSIONS, **EXTRA_EXPRESSIONS.get(OUTFITS[key]["char"], {})}
+    return {n: (None, t) for n, t in tags.items()}
 
 
 def source_rgba(key, source):
     return Image.open(DATA / VARIANTS[key]["char"] / f"{source}.webp").convert("RGBA")
 
 
+MOLE = (122, 27, 43)  # 浴衣基本立繪（seed 113）淚痣中心的顏色
+
+
+def add_dark(image, points):
+    """在基本立繪上點淚痣（候選圖沒畫或畫錯邊時用）：放大 8 倍畫圓再縮回來，邊緣才柔和，大小同浴衣那顆。"""
+    for x, y in points:
+        sc, r = 8, 1.1
+        box = (x - 3, y - 3, x + 4, y + 4)
+        mask = Image.new("L", ((box[2] - box[0]) * sc, (box[3] - box[1]) * sc), 0)
+        c = (x - box[0] + 0.5) * sc
+        ImageDraw.Draw(mask).ellipse((c - r * sc, c - r * sc, c + r * sc, c + r * sc), fill=255)
+        mask = mask.resize((box[2] - box[0], box[3] - box[1]), Image.LANCZOS)
+        image.paste(Image.composite(Image.new("RGB", mask.size, MOLE), image.crop(box), mask), box[:2])
+    return image
+
+
 def base_image(key, source=None):
     if key in VARIANTS:
         rgba = source_rgba(key, source or "normal")
         return Image.alpha_composite(Image.new("RGBA", rgba.size, "white"), rgba).convert("RGB")
-    return Image.open(OUT / key / f"{OUTFITS[key]['base_seed']}.png").convert("RGB")
+    image = Image.open(OUT / key / f"{OUTFITS[key]['base_seed']}.png").convert("RGB")
+    return add_dark(image, OUTFITS[key].get("add_dark", []))
 
 
 # ---- 步驟 2：候選圖 ----
@@ -302,7 +363,7 @@ def cmd_expr(key, args):
                 image.save(path)
                 log(folder, {"kind": "expression", "outfit": key, "base_seed": o.get("base_seed", source), "expression": name,
                              "seed": seed, "strength": args.strength, "face_box": o["face_box"],
-                             "keep_dark": o["keep_dark"], "prompt": prompt})
+                             "keep_dark": o["keep_dark"], "prompt": prompt, "negative": negative_for(o)})
                 print(f"{key} {name} seed {seed}：{time.time() - t:.0f} 秒", flush=True)
             crops.append(Image.open(path).crop((max(0, x - 120), max(0, y - 120), x + w + 120, y + h + 160)))
             labels.append(f"{name} seed {seed}")

@@ -6,7 +6,7 @@
 
 分級（網站依此標示，做法見 docs/design.md「詳解與題目正確率」）：
 - checked：和參考詳解比對沒有衝突，名詞檢查也沒有判定譯錯
-- terms：比對沒有衝突，但有名詞被判定譯錯（附上建議的譯名）
+- terms：比對沒有衝突，但有名詞被判定譯錯，而且建議的譯名在國教院或題庫的對照表裡（附上建議的譯名）
 - conflict：和參考詳解的結論衝突
 - unchecked：沒有參考詳解可以比對，或比對失敗
 生成被截斷的題目不匯出，網站上那題維持只有「問 AI」。
@@ -62,8 +62,10 @@ def export(exam_id, args):
         if g.get("done_reason") == "length" or not g.get("text"):
             skipped += 1
             continue
+        # 只放建議譯名查得到出處的（known 是國教院和題庫的譯名）。10/22 抽樣：模型自己想的譯名約 12% 比原文還差
+        # （毛地黃→地高辛、利福平→利福黴素），查得到出處的約 7 成正確，而且沒有誤導的建議（docs/design.md）
         wrong = [{"en": t["en"], "correct": t["correct"]} for t in terms.get(key, {}).get("flagged", [])
-                 if t.get("judge") == "wrong" and t.get("correct")]
+                 if t.get("judge") == "wrong" and t.get("correct") in (t.get("known") or [])]
         item = {"text": drop_repeated_english(g["text"]), "level": level_of(checks.get(key), wrong)}
         if wrong:
             item["terms"] = wrong

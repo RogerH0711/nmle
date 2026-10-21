@@ -10,6 +10,8 @@
     python pipeline/explain/colab_batch.py collect --label colab-qwen3.5-35b-think
     python pipeline/explain/colab_batch.py prepare-gen 110020_1 --limit 20        # 生成用
     python pipeline/explain/colab_batch.py collect-gen --model qwen3.6:27b --think
+    python pipeline/explain/colab_batch.py prepare-regen --model qwen3.6:27b-fp8-v2 --label vllm-27b-think --seed 2
+    python pipeline/explain/colab_batch.py merge-regen --model qwen3.6:27b-fp8-v2 --regen-model qwen3.6:27b-fp8-v2-regen --label vllm-27b-think
 流程與 Colab CLI 指令見 pipeline/explain/README.md。
 """
 import argparse
@@ -109,6 +111,76 @@ def collect_gen(args):
         print(exam_id, len(generated), "題 →", path.relative_to(OUT))
 
 
+def prepare_regen(args):
+    """重新生成的請求：和參考詳解衝突（verdict fail）或被截斷的題目，提示詞相同、換 seed。
+
+    結果另外存（collect-gen 用另一個 --model 名稱），比對、名詞檢查之後再用 merge-regen 決定要不要換掉原本的。
+    """
+    folder = out_dir(args.model, True)
+    rows, counts = [], {"fail": 0, "length": 0}
+    for exam_id in all_exam_ids():
+        generated = read_json(folder / f"{exam_id}.json", {"questions": {}})["questions"]
+        checks = read_json(folder / f"{exam_id}.check.{args.label}.json", {})
+        for q in load_exam(exam_id)["questions"]:
+            key = str(q["number"])
+            if key not in generated:
+                continue
+            why = ("length" if generated[key].get("done_reason") == "length"
+                   else "fail" if (checks.get(key) or {}).get("verdict") == "fail" else None)
+            if not why:
+                continue
+            counts[why] += 1
+            rows.append({"id": f"{exam_id}/{key}", "seed": args.seed, "messages": [
+                {"role": "system", "content": GEN_SYSTEM}, {"role": "user", "content": prompt_for(q)}]})
+    WORK.mkdir(parents=True, exist_ok=True)
+    path = WORK / "gen_requests.jsonl"
+    path.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8")
+    print(f"{len(rows)} 題（衝突 {counts['fail']}、截斷 {counts['length']}），seed {args.seed} → {path}")
+
+
+def merge_regen(args):
+    """重新生成的題目：比對通過就換掉原本的生成、比對、名詞結果；原本被截斷的，新的沒被截斷就換。
+
+    其他（還是衝突、沒有比對結果）維持原本的。被換掉的原版備份在 regen 資料夾的 <考卷>.replaced.json，
+    已經備份過的題目不再覆蓋備份，所以重跑這個指令也安全。
+    """
+    main_dir, regen_dir = out_dir(args.model, True), out_dir(args.regen_model, True)
+    totals = {"換成新的": 0, "維持原本": 0}
+    for exam_id in all_exam_ids():
+        new_gen = read_json(regen_dir / f"{exam_id}.json", {"questions": {}})["questions"]
+        if not new_gen:
+            continue
+        new_check = read_json(regen_dir / f"{exam_id}.check.{args.label}.json", {})
+        new_terms = read_json(regen_dir / f"{exam_id}.terms.json", {})
+        paths = {"gen": main_dir / f"{exam_id}.json", "check": main_dir / f"{exam_id}.check.{args.label}.json",
+                 "terms": main_dir / f"{exam_id}.terms.json"}
+        gen, check, terms = read_json(paths["gen"], None), read_json(paths["check"], {}), read_json(paths["terms"], {})
+        backup_path = regen_dir / f"{exam_id}.replaced.json"
+        backup = read_json(backup_path, {})
+        for key, g in new_gen.items():
+            old = gen["questions"].get(key, {})
+            if old == g:
+                continue  # 已經換過了
+            new_ok = g.get("done_reason") != "length"
+            passed = (new_check.get(key) or {}).get("verdict") == "pass"
+            if not (new_ok and (passed or old.get("done_reason") == "length")):
+                totals["維持原本"] += 1
+                continue
+            backup.setdefault(key, {"gen": old, "check": check.get(key), "terms": terms.get(key)})
+            gen["questions"][key] = g
+            for table, new in ((check, new_check), (terms, new_terms)):
+                if key in new:
+                    table[key] = new[key]
+                else:
+                    table.pop(key, None)
+            totals["換成新的"] += 1
+        write_json(paths["gen"], gen)
+        write_json(paths["check"], check)
+        write_json(paths["terms"], terms)
+        write_json(backup_path, backup)
+    print(totals)
+
+
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser()
@@ -126,8 +198,17 @@ def main():
     cg = sub.add_parser("collect-gen")
     cg.add_argument("--model", required=True, help="Colab 上用的模型，決定存到哪個資料夾")
     cg.add_argument("--think", action="store_true")
+    pr = sub.add_parser("prepare-regen")
+    pr.add_argument("--model", required=True, help="原本生成的模型（開 thinking 的資料夾）")
+    pr.add_argument("--label", required=True, help="比對結果的標籤，用來找出衝突的題目")
+    pr.add_argument("--seed", type=int, default=2, help="第一次生成用 seed 0、截斷重跑用 1，重新生成要換別的")
+    mr = sub.add_parser("merge-regen")
+    mr.add_argument("--model", required=True)
+    mr.add_argument("--regen-model", required=True, help="重新生成的結果放在哪個模型名稱的資料夾")
+    mr.add_argument("--label", required=True)
     args = ap.parse_args()
-    {"prepare": prepare, "collect": collect, "prepare-gen": prepare_gen, "collect-gen": collect_gen}[args.cmd](args)
+    {"prepare": prepare, "collect": collect, "prepare-gen": prepare_gen, "collect-gen": collect_gen,
+     "prepare-regen": prepare_regen, "merge-regen": merge_regen}[args.cmd](args)
 
 
 if __name__ == "__main__":

@@ -108,6 +108,7 @@ lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer
 
 - 田徑服只寫 `track shorts` 時，16 張裡有 2 張畫成長褲（seed 102、103），也有幾張是透視很強的跑步動作，不能當立繪。
 - 號碼布上的字是模型亂畫的假文字，遠看不明顯，先不處理。
+- 沈靜澄「心動」眼鏡掉了的三句，用 `noglasses_squint`（瞇眼找路）和 `noglasses_shy` 兩個表情（`VARIANTS`）。去背前的原圖只在 Colab 的 Drive，所以拿網站上已去背的 `normal`、`shy` 鋪白底重畫臉部，臉部範圍外的像素和透明度沿用原檔。`FACE_BOX` 往左包到左耳的鏡腳 (322, 100, 128, 108)，`STRENGTH` 0.7，兩個都選 seed 1。
 - 輸出的 webp 放在 `data/characters/<角色 id>/<服裝>/<表情>.webp`，劇情的 `outfit` 欄位指定服裝。浴衣的旁白配合立繪改成「頭髮側綁起來、別著一朵紅花，手上拿著團扇」（原本寫盤髮、提袋）。
 
 ### 劇情背景

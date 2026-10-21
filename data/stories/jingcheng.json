@@ -68,12 +68,12 @@
       "background": "library",
       "lines": [
         { "speaker": "narration", "text": "閉館前的書架間，你在地上撿到一副灰色細框眼鏡。" },
-        { "speaker": "jingcheng", "expression": "surprised", "text": "……{player}？你有沒有看到——" },
+        { "speaker": "jingcheng", "expression": "noglasses_squint", "text": "……{player}？你有沒有看到——" },
         { "speaker": "narration", "text": "她從書架另一頭走出來，瞇著眼睛，伸手扶著書架找路。和平常那個什麼都看得清清楚楚的學姊，完全不一樣。" },
         { "speaker": "player", "text": "學姊，眼鏡在這裡。" },
-        { "speaker": "jingcheng", "expression": "shy", "text": "……給我。不、不要看我。" },
+        { "speaker": "jingcheng", "expression": "noglasses_shy", "text": "……給我。不、不要看我。" },
         { "speaker": "narration", "text": "你把眼鏡放進她手心。她的指尖碰到你的手，停了一下，沒有馬上收回去。" },
-        { "speaker": "jingcheng", "expression": "shy", "text": "手很冷。……你又沒吃晚餐。" },
+        { "speaker": "jingcheng", "expression": "noglasses_shy", "text": "手很冷。……你又沒吃晚餐。" },
         { "speaker": "player", "text": "學姊連這個都看得出來？" },
         { "speaker": "jingcheng", "expression": "shy", "text": "眼鏡戴回去了。看得很清楚。" },
         { "speaker": "jingcheng", "expression": "happy", "text": "……剛才的樣子，不准告訴別人。這是交換條件——我請你吃晚餐。" }

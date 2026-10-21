@@ -66,6 +66,60 @@ OUTFITS = {
     },
 }
 
+# 服裝商店的造型（10/21 提案、Roger 同意）：每位一套私服、一套依個性的造型。
+# 外觀 tag 沿用定稿（characters.md），只換服裝；基本立繪選好後再填 base_seed、face_box 等
+LOOKS = {
+    "yiqing": ("orange hair, short hair, bob cut, hairclip, amber eyes, athletic female",
+               "orange hair, short hair, bob cut, hairclip, amber eyes", ""),
+    "fei": ("red hair, medium hair, side braid, red eyes, tsurime, slender",
+            "red hair, medium hair, side braid, red eyes, tsurime", ""),
+    # 眼鏡要寫顏色：定稿是灰色細框，只寫 glasses 會被畫成金框（見 notebook）
+    "jingcheng": ("black hair, very long hair, straight hair, blue eyes, glasses, grey-framed eyewear, tall female",
+                  "black hair, long hair, straight hair, side part, blue eyes, glasses, grey-framed eyewear", ""),
+    "zhixun": ("light purple hair, long hair, wavy hair, side ponytail, purple eyes, droopy eyes, mole under eye",
+               "light purple hair, long hair, wavy hair, purple eyes, droopy eyes", "large breasts, cleavage"),
+    "ying": ("dark green hair, long hair, low twintails, hair ribbon, green eyes, bags under eyes",
+             "dark green hair, long hair, green eyes, bags under eyes", "bare legs, large breasts, cleavage"),
+}
+SHOP = {
+    "yiqing_casual": ("yiqing", "orange hoodie, denim shorts, baseball cap, sneakers, wristband, smile"),
+    "yiqing_winter": ("yiqing", "long coat, orange scarf, earmuffs, track pants, sneakers, wristband, smile"),
+    "fei_casual": ("fei", "black turtleneck, beige coat, long coat, black pants, ankle boots, crossed arms"),
+    "fei_dress": ("fei", "red dress, cocktail dress, knee-length dress, high heels, crossed arms"),
+    "jingcheng_casual": ("jingcheng", "navy blue dress, long dress, open cardigan, holding book, expressionless"),
+    "jingcheng_pajamas": ("jingcheng", "pajamas, striped pajamas, long sleeves, slippers, hugging pillow, expressionless"),
+    "zhixun_summer": ("zhixun", "white shirt, long skirt, sun hat, sandals, light smile"),
+    "zhixun_winter": ("zhixun", "turtleneck sweater, scarf, long coat, long skirt, boots"),
+    "ying_casual": ("ying", "green dress, long dress, open cardigan, sleeves past fingers, light smile"),
+    "ying_pajamas": ("ying", "animal hood, oversized hoodie, pajamas, sleeves past fingers, pajama pants, light smile"),
+}
+for _key, (_char, _clothes) in SHOP.items():
+    _tags, _face, _negative = LOOKS[_char]
+    OUTFITS[_key] = {"tags": f"{_tags}, {_clothes}", "negative": _negative, "face": _face,
+                     "base_seed": None, "face_box": None, "keep_dark": [], "picks": {}}
+
+# 表情變體：不畫新的全身圖，拿網站上已經去背的立繪（data/characters/<角色>/<表情>.webp）重畫臉部。
+# 去背前的原圖只存在 Colab 的 Google Drive，本機用同一個 seed 也畫不出同一張（亂數產生器不同）。
+# 臉部完全不透明，所以鋪在白底上重畫，輸出時臉部範圍外的像素和透明度都沿用原檔，不用重新去背。
+# expressions：{輸出的表情 id: (拿哪個表情當底, 表情 tag)}
+VARIANTS = {
+    # 沈靜澄「心動」：眼鏡掉了、戴回去之前的三句。鏡腳延伸到左耳，FACE_BOX 比定稿的 (338, 102, 106, 102) 往左多包到耳朵
+    "jingcheng_noglasses": {
+        "char": "jingcheng",
+        "face": "black hair, long hair, straight hair, side part, blue eyes",
+        "negative": "glasses, eyewear",
+        "face_box": (322, 100, 128, 108),
+        "keep_dark": [],
+        "expressions": {
+            "noglasses_squint": ("normal", "squinting, closed mouth"),  # 瞇著眼睛找路
+            "noglasses_shy": ("shy", "blush, looking away, embarrassed"),
+        },
+        # STRENGTH 0.7：整副眼鏡要重畫掉，比換表情需要更大的改動（沒試過 0.6）。seed 2 瀏海上多一塊膚色，seed 1 最接近原本的臉
+        "picks": {"noglasses_squint": 1, "noglasses_shy": 1},
+    },
+}
+DATA = Path(__file__).resolve().parent.parent / "data" / "characters"
+
 pipe = inpaint_pipe = None
 
 
@@ -120,7 +174,23 @@ def parse_seeds(text):
     return list(range(int(a), int(b or a) + 1))
 
 
-def base_image(key):
+def config(key):
+    return OUTFITS.get(key) or VARIANTS[key]
+
+
+def expressions_of(key):
+    """{表情 id: (當底的表情, 表情 tag)}；劇情服裝的底都是基本立繪（None）。"""
+    return VARIANTS[key]["expressions"] if key in VARIANTS else {n: (None, t) for n, t in EXPRESSIONS.items()}
+
+
+def source_rgba(key, source):
+    return Image.open(DATA / VARIANTS[key]["char"] / f"{source}.webp").convert("RGBA")
+
+
+def base_image(key, source=None):
+    if key in VARIANTS:
+        rgba = source_rgba(key, source or "normal")
+        return Image.alpha_composite(Image.new("RGBA", rgba.size, "white"), rgba).convert("RGB")
     return Image.open(OUT / key / f"{OUTFITS[key]['base_seed']}.png").convert("RGB")
 
 
@@ -154,7 +224,7 @@ def cmd_base(key, args):
 
 # ---- 步驟 3 前：預覽臉部範圍 ----
 def cmd_box(key, args):
-    o = OUTFITS[key]
+    o = config(key)
     preview = base_image(key)
     x, y, w, h = o["face_box"]
     draw = ImageDraw.Draw(preview)
@@ -163,6 +233,7 @@ def cmd_box(key, args):
     for kx, ky, kr in o["keep_dark"]:  # 綠色小圈：要保留的淚痣，圈的中心要對準痣
         draw.ellipse((kx - kr - 3, ky - kr - 3, kx + kr + 3, ky + kr + 3), outline="lime", width=1)
     crop = preview.crop((max(0, x - 80), max(0, y - 80), x + w + 80, y + h + 80))
+    (OUT / key).mkdir(parents=True, exist_ok=True)
     crop.resize((crop.width * 3, crop.height * 3), Image.LANCZOS).save(OUT / key / "box.png")
     print(f"{key}：預覽在 {OUT / key / 'box.png'}", flush=True)
 
@@ -212,22 +283,24 @@ def inpaint_face(o, base, expression_tags, seed, strength, pad=96):
 
 
 def cmd_expr(key, args):
-    o = OUTFITS[key]
+    o = config(key)
     load_pipe(inpaint=True)
-    base = base_image(key)
-    names = [args.only] if args.only else list(EXPRESSIONS)
+    exprs = expressions_of(key)
+    names = [args.only] if args.only else list(exprs)
     folder = OUT / key
     x, y, w, h = o["face_box"]
     for name in names:
+        source, tags = exprs[name]
+        base = base_image(key, source)
         crops, labels = [], []
         for seed in parse_seeds(args.seeds):
             path = folder / "expr" / name / f"{seed}.png"
             if not path.exists():
                 t = time.time()
-                image, prompt = inpaint_face(o, base, EXPRESSIONS[name], seed, args.strength)
+                image, prompt = inpaint_face(o, base, tags, seed, args.strength)
                 path.parent.mkdir(parents=True, exist_ok=True)
                 image.save(path)
-                log(folder, {"kind": "expression", "outfit": key, "base_seed": o["base_seed"], "expression": name,
+                log(folder, {"kind": "expression", "outfit": key, "base_seed": o.get("base_seed", source), "expression": name,
                              "seed": seed, "strength": args.strength, "face_box": o["face_box"],
                              "keep_dark": o["keep_dark"], "prompt": prompt})
                 print(f"{key} {name} seed {seed}：{time.time() - t:.0f} 秒", flush=True)
@@ -239,10 +312,12 @@ def cmd_expr(key, args):
 
 # ---- 步驟 4：去背、去白邊、輸出 ----
 def cmd_export(key, args):
-    o = OUTFITS[key]
-    missing = set(EXPRESSIONS) - set(o["picks"])
+    o = config(key)
+    missing = set(expressions_of(key)) - set(o["picks"])
     if missing:
         raise SystemExit(f"{key} 的 picks 少了這些表情：{sorted(missing)}")
+    if key in VARIANTS:
+        return export_variant(key, o)
     from rembg import new_session, remove
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from defringe import defringe
@@ -268,6 +343,22 @@ def cmd_export(key, args):
     print(f"{key}：輸出在 {export}", flush=True)
 
 
+def export_variant(key, o):
+    """表情變體：只換臉部範圍內的顏色，透明度和範圍外的像素都沿用原檔。直接輸出到 data/characters/<角色>/。"""
+    folder = OUT / key
+    mask = face_mask((WIDTH, HEIGHT), o["face_box"], 6)
+    for name, seed in o["picks"].items():
+        source, _ = expressions_of(key)[name]
+        original = source_rgba(key, source)
+        redrawn = Image.open(folder / "expr" / name / f"{seed}.png").convert("RGBA")
+        redrawn.putalpha(original.getchannel("A"))
+        out = Image.composite(redrawn, original, mask)
+        path = DATA / o["char"] / f"{name}.webp"
+        out.save(path, "WEBP", quality=90, method=6)
+        print(name, path.stat().st_size // 1024, "KB", flush=True)
+    print(f"{key}：輸出在 {DATA / o['char']}", flush=True)
+
+
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser()
@@ -278,11 +369,11 @@ def main():
         if seeds:
             p.add_argument("--seeds", default=seeds, help="例如 " + seeds)
         if name == "expr":
-            p.add_argument("--only", choices=list(EXPRESSIONS), help="只跑一個表情（先用 surprised 確認範圍）")
+            p.add_argument("--only", help="只跑一個表情（先用 surprised 確認範圍）")
             p.add_argument("--strength", type=float, default=0.6, help="表情變化太小就調高，臉不像同一個人就調低")
     args = ap.parse_args()
     run = {"base": cmd_base, "box": cmd_box, "expr": cmd_expr, "export": cmd_export}[args.cmd]
-    for key in (list(OUTFITS) if args.outfit == "all" else [args.outfit]):
+    for key in (list(OUTFITS) + list(VARIANTS) if args.outfit == "all" else [args.outfit]):
         run(key, args)
 
 

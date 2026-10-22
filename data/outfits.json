@@ -1,0 +1,206 @@
+{
+  "_說明": "服裝清單（web/src/outfits.ts，設計見 docs/design.md「獎勵與商店」）。folder 是 data/characters/<角色 id>/<folder>/ 的立繪，null 是原本的衣服。商店的服裝有 price（書籤）和 stage（好感度到這一階才能買：熟識 1、在意 2）；劇情服裝有 story（看完那一階的劇情後免費解鎖，不能買）。bust 是這套立繪在小框顯示的胸像範圍（同 characters.json）。買了就是送給她，存在送禮紀錄（gift_id 是服裝 id），不加好感度；她的反應是 data/lines 裡 situation 為 outfit 的台詞。換上的服裝用在刷題等平常的畫面，劇情維持劇本寫的服裝。",
+  "outfits": [
+    {
+      "id": "yiqing_default",
+      "character": "yiqing",
+      "name": "運動外套",
+      "description": "敞開的橘色運動外套和護腕，跑完步直接來讀書會的樣子。",
+      "folder": null
+    },
+    {
+      "id": "yiqing_casual",
+      "character": "yiqing",
+      "name": "假日帽T",
+      "description": "棒球帽配牛仔短褲，週末晨跑完直接去吃早午餐的打扮。",
+      "folder": "casual",
+      "price": 300,
+      "stage": 1,
+      "bust": {
+        "x": 285,
+        "y": 48,
+        "w": 250
+      }
+    },
+    {
+      "id": "yiqing_winter",
+      "character": "yiqing",
+      "name": "冬日長大衣",
+      "description": "長大衣、橘色圍巾和耳罩。冬天在場邊等比賽也不怕冷。",
+      "folder": "winter",
+      "price": 600,
+      "stage": 2,
+      "bust": {
+        "x": 283,
+        "y": 43,
+        "w": 250
+      }
+    },
+    {
+      "id": "yiqing_track",
+      "character": "yiqing",
+      "name": "比賽服",
+      "description": "大專盃決賽穿的比賽服和號碼布。",
+      "folder": "track",
+      "story": 4,
+      "bust": {
+        "x": 293,
+        "y": 65,
+        "w": 250
+      }
+    },
+    {
+      "id": "fei_default",
+      "character": "fei",
+      "name": "刷手服與白袍",
+      "description": "酒紅色刷手服外罩白袍，耳後夾著一支筆。",
+      "folder": null
+    },
+    {
+      "id": "fei_casual",
+      "character": "fei",
+      "name": "黑色高領大衣",
+      "description": "黑色高領配長版大衣，下班之後的她。",
+      "folder": "casual",
+      "price": 300,
+      "stage": 1,
+      "bust": {
+        "x": 288,
+        "y": 61,
+        "w": 250
+      }
+    },
+    {
+      "id": "fei_dress",
+      "character": "fei",
+      "name": "謝師宴禮服",
+      "description": "紅色晚禮服。她說是被同學硬拉去買的。",
+      "folder": "dress",
+      "price": 600,
+      "stage": 2,
+      "bust": {
+        "x": 286,
+        "y": 33,
+        "w": 250
+      }
+    },
+    {
+      "id": "jingcheng_default",
+      "character": "jingcheng",
+      "name": "白袍與高領",
+      "description": "白袍裡是藍色高領，手上總是拿著書。",
+      "folder": null
+    },
+    {
+      "id": "jingcheng_casual",
+      "character": "jingcheng",
+      "name": "藍色長洋裝",
+      "description": "海軍藍長洋裝配針織外套，假日待在圖書館的樣子。",
+      "folder": "casual",
+      "price": 300,
+      "stage": 1,
+      "bust": {
+        "x": 281,
+        "y": 16,
+        "w": 250
+      }
+    },
+    {
+      "id": "jingcheng_pajamas",
+      "character": "jingcheng",
+      "name": "條紋睡衣",
+      "description": "抱著枕頭、還戴著眼鏡。……不准拍照。",
+      "folder": "pajamas",
+      "price": 600,
+      "stage": 2,
+      "bust": {
+        "x": 265,
+        "y": 45,
+        "w": 250
+      }
+    },
+    {
+      "id": "zhixun_default",
+      "character": "zhixun",
+      "name": "白袍與毛衣",
+      "description": "白袍搭淡紫色毛衣和長裙，胸前掛著識別證。",
+      "folder": null
+    },
+    {
+      "id": "zhixun_summer",
+      "character": "zhixun",
+      "name": "草帽與長裙",
+      "description": "白襯衫、長裙和草帽，休假日去海邊散步的打扮。",
+      "folder": "summer",
+      "price": 300,
+      "stage": 1,
+      "bust": {
+        "x": 315,
+        "y": 61,
+        "w": 250
+      }
+    },
+    {
+      "id": "zhixun_winter",
+      "character": "zhixun",
+      "name": "冬日大衣",
+      "description": "高領毛衣、圍巾和長大衣。值完大夜班的清晨很冷。",
+      "folder": "winter",
+      "price": 600,
+      "stage": 2,
+      "bust": {
+        "x": 275,
+        "y": 39,
+        "w": 250
+      }
+    },
+    {
+      "id": "zhixun_yukata",
+      "character": "zhixun",
+      "name": "祭典浴衣",
+      "description": "夏日祭典那天的紫色浴衣，別著一朵紅花。",
+      "folder": "yukata",
+      "story": 3,
+      "bust": {
+        "x": 305,
+        "y": 40,
+        "w": 250
+      }
+    },
+    {
+      "id": "ying_default",
+      "character": "ying",
+      "name": "過大的白袍",
+      "description": "袖子蓋過手指的白袍，口袋裡和手上都是試管。",
+      "folder": null
+    },
+    {
+      "id": "ying_casual",
+      "character": "ying",
+      "name": "綠色長洋裝",
+      "description": "淺綠長洋裝配寬鬆的針織外套，袖子一樣蓋過手指。",
+      "folder": "casual",
+      "price": 300,
+      "stage": 1,
+      "bust": {
+        "x": 299,
+        "y": 49,
+        "w": 250
+      }
+    },
+    {
+      "id": "ying_pajamas",
+      "character": "ying",
+      "name": "青蛙睡衣",
+      "description": "連帽的青蛙睡衣，帽子上有兩隻圓圓的眼睛。",
+      "folder": "pajamas",
+      "price": 600,
+      "stage": 2,
+      "bust": {
+        "x": 290,
+        "y": 49,
+        "w": 250
+      }
+    }
+  ]
+}

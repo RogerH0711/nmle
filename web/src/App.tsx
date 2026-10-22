@@ -31,6 +31,7 @@ import { reportUsage } from './usage'
 import { balance as balanceOf, earnings as earningsOf, giftPoints, isLiked, pickGiftLine, type Gift, type GiftCatalog } from './shop'
 import { addGift, loadGifts, switchGiftUser, useGifts } from './giftStore'
 import { fillGiftLine, GiftShop } from './GiftShop'
+import { loadOutfits, pickOutfitLine, switchOutfitUser, useOutfits, wear, type Outfit } from './outfits'
 import { playVoice, setBgm, sfx } from './audio'
 import { chooseBgm } from './audioRules'
 import { SoundSettings } from './SoundSettings'
@@ -157,6 +158,7 @@ export default function App() {
   const [toast, setToast] = useState<Message | null>(null) // 剛收到的訊息，在畫面下方通知
   const gifts = useGifts() // 送給學姊的禮物（giftStore.ts）
   const [catalog, setCatalog] = useState<GiftCatalog | null>(null) // 禮物清單（data/gifts.json）
+  const outfits = useOutfits() // 服裝清單與換上的服裝（outfits.ts）
   const [shopOpen, setShopOpen] = useState(false)
 
   // 登入後讀自己的暱稱（排行榜上顯示的名字）
@@ -183,6 +185,7 @@ export default function App() {
       })
       .catch(() => setCharacters([]))
     void loadGifts().then(setCatalog)
+    void loadOutfits()
   }, [])
 
   const toggleCharacterMode = () => {
@@ -238,6 +241,7 @@ export default function App() {
         void switchUser(session?.user.id ?? null)
         void switchMockUser(session?.user.id ?? null)
         void switchGiftUser(session?.user.id ?? null)
+        switchOutfitUser(session?.user.id ?? null)
       }, 0)
       if (event === 'SIGNED_IN' && window.location.search.includes('code=')) {
         window.history.replaceState(null, '', window.location.pathname) // 拿掉 OAuth 回傳的 ?code=
@@ -305,6 +309,20 @@ export default function App() {
     sfx('gift')
     void playVoice(line?.id ?? null, PLAYER)
     return { expression: line?.expression ?? 'happy', text: line ? fillGiftLine(line.text, g, PLAYER) : null }
+  }
+
+  // 買服裝送她：記在送禮紀錄（書籤照扣，不加好感度），並馬上換上
+  const buyOutfit = (c: Character, o: Outfit) => {
+    const stage = stageOf(c)
+    const line = pickOutfitLine(lines[c.id] ?? [], o.id, stage)
+    addGift({
+      id: crypto.randomUUID(), character_id: c.id, gift_id: o.id, price: o.price ?? 0, stage,
+      line_id: line?.id ?? null, given_at: new Date().toISOString(),
+    })
+    wear(c.id, o.id)
+    sfx('gift')
+    void playVoice(line?.id ?? null, PLAYER)
+    return { expression: line?.expression ?? 'happy', text: line ? fillPlayer(line.text, PLAYER) : null }
   }
 
   // 匿名使用統計（usage.ts）：打開網站、切換角色模式或登入時送一次
@@ -936,13 +954,16 @@ export default function App() {
         <GiftShop
           characters={characters}
           catalog={catalog}
+          outfits={outfits.catalog}
           lines={lines}
           affections={affections}
           gifts={gifts.records}
+          seen={seen}
           balance={wallet}
           earnings={earned}
           player={PLAYER}
           onGive={giveGift}
+          onBuyOutfit={buyOutfit}
           hasNewScene={(c) => !!newScene(c)}
           onStory={(c) => {
             const scene = newScene(c)

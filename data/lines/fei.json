@@ -83,6 +83,8 @@
     { "id": "fei-gift-003", "situation": "gift", "affection_min": 2, "expression": "shy", "text": "又送……你真的很笨耶。……謝謝。只說一次喔。" },
     { "id": "fei-gift-004", "situation": "gift", "affection_min": 3, "expression": "shy", "text": "{gift}……我會好好收著的。不、不是因為是你送的！……好啦，是因為是你送的。" },
     { "id": "fei-gift_liked-001", "situation": "gift_liked", "affection_min": 0, "expression": "happy", "gift": "strawberry_cake", "text": "草、草莓蛋糕！那家限量的！……咳。我只是值班沒吃飯，才不是喜歡甜食！" },
-    { "id": "fei-gift_liked-002", "situation": "gift_liked", "affection_min": 0, "expression": "shy", "gift": "eye_mask", "text": "蒸氣眼罩……值完班眼睛真的很酸。你怎麼知道的？……我、我才沒有感動！" }
+    { "id": "fei-gift_liked-002", "situation": "gift_liked", "affection_min": 0, "expression": "shy", "gift": "eye_mask", "text": "蒸氣眼罩……值完班眼睛真的很酸。你怎麼知道的？……我、我才沒有感動！" },
+    { "id": "fei-outfit-001", "situation": "outfit", "affection_min": 1, "expression": "pout", "outfit": "fei_casual", "text": "下班穿的衣服？……你怎麼知道我喜歡黑色高領。不、不准說是因為常看我穿！我只是剛好缺一件而已！" },
+    { "id": "fei-outfit-002", "situation": "outfit", "affection_min": 2, "expression": "shy", "outfit": "fei_dress", "text": "謝師宴的禮服……這麼紅，你是故意的吧。……我會穿去的。才、才不是為了給你看！……那天你也要來，聽到沒？" }
   ]
 }

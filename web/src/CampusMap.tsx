@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { dataUrl } from './bank'
 import type { Character } from './characters'
-import { Portrait } from './CharacterStage'
+import { WornPortrait } from './CharacterStage'
 import type { Affection } from './affection'
 import { AffectionMeter } from './Story'
 import { backgroundUrl } from './stories'
@@ -145,8 +145,8 @@ export function CampusMap(props: Props) {
             能力值
           </button>
           {props.balance !== null && (
-            <button className="ghost small" onClick={props.onShop} aria-label={`禮物（${props.balance} 書籤）`}>
-              禮物 <span className="shop-wallet">🔖 {props.balance}</span>
+            <button className="ghost small" onClick={props.onShop} aria-label={`商店（${props.balance} 書籤）`}>
+              商店 <span className="shop-wallet">🔖 {props.balance}</span>
             </button>
           )}
         </div>
@@ -187,7 +187,7 @@ function SpotGrid(props: Props) {
             <SpotBackground id={loc} />
             <button className="spot-main" onClick={() => props.onStudy(c)} aria-label={`到${LOCATION_NAMES[loc] ?? loc}找${c.name}一起讀書`}>
               <span className="spot-place">{LOCATION_NAMES[loc] ?? loc}</span>
-              <Portrait character={c} expression={hasNewScene(c) ? 'happy' : 'normal'} />
+              <WornPortrait character={c} expression={hasNewScene(c) ? 'happy' : 'normal'} />
               <span className="spot-info">
                 <strong>
                   {c.name}
@@ -241,7 +241,7 @@ function MapView(props: Props & { layout: Layout; config: MapLayout; onFail: () 
             aria-label={`到${LOCATION_NAMES[loc] ?? loc}找${c.name}一起讀書`}
           >
             <span className="pin-avatar">
-              <Portrait character={c} expression={hasNewScene(c) ? 'happy' : 'normal'} />
+              <WornPortrait character={c} expression={hasNewScene(c) ? 'happy' : 'normal'} />
               {hasNewScene(c) && <span className="pin-new" title="有新劇情" />}
             </span>
             <span className="pin-label">

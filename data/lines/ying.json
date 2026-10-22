@@ -87,6 +87,8 @@
     { "id": "ying-gift-003", "situation": "gift", "affection_min": 2, "expression": "yandere", "text": "你送了我禮物，那……別的學姊也有收到嗎？沒有吧？嗯，我相信你喔。" },
     { "id": "ying-gift-004", "situation": "gift", "affection_min": 3, "expression": "shy", "text": "每次收到你的東西，心裡都滿滿的。……就像長滿菌落的培養皿，再也放不下別的了呢。" },
     { "id": "ying-gift_liked-001", "situation": "gift_liked", "affection_min": 0, "expression": "shy", "gift": "ribbon", "text": "緞帶……你注意到我每天都綁頭髮嗎？我明天就綁這條。以後每天都綁，好嗎？" },
-    { "id": "ying-gift_liked-002", "situation": "gift_liked", "affection_min": 0, "expression": "happy", "gift": "microbe_plush", "text": "是球菌！圓圓的……我要叫它葡萄球菌。晚上要抱著睡呢。" }
+    { "id": "ying-gift_liked-002", "situation": "gift_liked", "affection_min": 0, "expression": "happy", "gift": "microbe_plush", "text": "是球菌！圓圓的……我要叫它葡萄球菌。晚上要抱著睡呢。" },
+    { "id": "ying-outfit-001", "situation": "outfit", "affection_min": 1, "expression": "happy", "outfit": "ying_casual", "text": "綠色的洋裝……是我的顏色呢。袖子一樣長長的，剛好可以拉住你的衣角。……這樣就不會走散了喔。" },
+    { "id": "ying-outfit-002", "situation": "outfit", "affection_min": 2, "expression": "yandere", "outfit": "ying_pajamas", "text": "青蛙睡衣……青蛙是兩棲類，水裡、陸上都能活呢。……就像我一樣，你去哪裡，我都能跟著你喔。" }
   ]
 }

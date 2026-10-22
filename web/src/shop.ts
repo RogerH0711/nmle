@@ -9,6 +9,7 @@ import { STREAK_MIN_DAILY } from './messages.ts'
 // - 買了直接送給一位學姊，同一位學姊一天只能送一次。
 // - 送禮可以稍微推進好感度：只有「熟識」「在意」這兩階（看題數的條件），
 //   每 1 點心意抵目標的 GIFT_BONUS.step，最多抵 GIFT_BONUS.cap。心動、告白前夕看正確率和模擬考，送禮不影響。
+// - 買服裝（outfits.ts）也記在送禮紀錄，書籤照扣，但不加好感度、不算進一天一次：只有 gifts.json 裡的禮物才算。
 
 export const EARN = {
   firstCorrect: 1, // 每一題第一次答對（不同題目，所有學科）
@@ -79,10 +80,13 @@ export function balance(records: AnswerRecord[], gifts: Pick<GiftRecord, 'price'
 export const isLiked = (catalog: GiftCatalog, characterId: string, giftId: string) =>
   (catalog.likes[characterId] ?? []).includes(giftId)
 
-/** 每份禮物的心意點數，給 affection() 算加成 */
+/** 這筆送禮紀錄是 gifts.json 裡的禮物（不是服裝） */
+export const isGiftRecord = (catalog: GiftCatalog, r: Pick<GiftRecord, 'gift_id'>) => catalog.gifts.some((g) => g.id === r.gift_id)
+
+/** 每份禮物的心意點數，給 affection() 算加成。服裝不算 */
 export function giftPoints(catalog: GiftCatalog, gifts: Pick<GiftRecord, 'character_id' | 'gift_id' | 'stage'>[], characterId: string) {
   return gifts
-    .filter((g) => g.character_id === characterId)
+    .filter((g) => g.character_id === characterId && isGiftRecord(catalog, g))
     .map((g) => ({ stage: g.stage, points: isLiked(catalog, characterId, g.gift_id) ? GIFT_BONUS.liked : 1 }))
 }
 
@@ -91,7 +95,7 @@ export function giftBonus(points: number, target: number) {
   return Math.min(Math.round(target * GIFT_BONUS.cap), Math.round(points * GIFT_BONUS.step * target))
 }
 
-/** 今天已經送過她了嗎（一天一次） */
+/** 今天已經送過她了嗎（一天一次）。gifts 只傳禮物的紀錄（isGiftRecord），買服裝不算 */
 export function givenToday(gifts: Pick<GiftRecord, 'character_id' | 'given_at'>[], characterId: string, today = localDate()) {
   return gifts.some((g) => g.character_id === characterId && localDate(new Date(g.given_at)) === today)
 }

@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react'
 import type { AnswerRecord } from './answers'
 import type { Character } from './characters'
-import { Portrait } from './CharacterStage'
+import { WornPortrait } from './CharacterStage'
 import type { SubjectMap } from './affection'
 import { abilities, grade, MIN_ANSWERS, PASS_RATE, RECENT, weakest, type Ability } from './abilities'
 
@@ -115,7 +115,7 @@ export function StatusPanel({ characters, subjectNames, records, map, onStudy, o
           <section key={c.id} className="status-group" style={{ '--char': c.color } as React.CSSProperties}>
             <h3>
               <span className="status-avatar">
-                <Portrait character={c} expression="normal" />
+                <WornPortrait character={c} expression="normal" />
               </span>
               {c.name}
               <small>{c.title}</small>

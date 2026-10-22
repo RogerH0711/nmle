@@ -141,13 +141,16 @@ export function Guide({
         </section>
 
         <section>
-          <h3>禮物</h3>
+          <h3>商店</h3>
           <p>
-            地圖右上角的「禮物」可以用書籤買禮物送學姊。書籤這樣賺：每題第一次答對 +{EARN.firstCorrect}、錯題按時複習答對 +
-            {EARN.reviewPass}、一天寫滿 {STREAK_MIN_DAILY} 題 +{EARN.studyDay}。同一位學姊一天送一次。
+            地圖右上角的「商店」可以用書籤買禮物和服裝送學姊。書籤這樣賺：每題第一次答對 +{EARN.firstCorrect}、錯題按時複習答對 +
+            {EARN.reviewPass}、一天寫滿 {STREAK_MIN_DAILY} 題 +{EARN.studyDay}。禮物同一位學姊一天送一次。
           </p>
           <p>
             「熟識」和「在意」這兩階，送禮可以幫忙加一點進度，最多抵 {Math.round(GIFT_BONUS.cap * 100)}%，她喜歡的禮物加倍；剩下的還是要靠讀書。之後的階段送禮不加進度，但每位學姊收到禮物都有不同的反應。
+          </p>
+          <p>
+            服裝要好感度到了才買得到，送了她就會換上；買過的可以在「服裝」隨時換回來。有幾套是看完劇情就收到的。服裝不加好感度，劇情裡還是穿劇本寫的衣服；換上哪一套只記在這台裝置。
           </p>
         </section>
 

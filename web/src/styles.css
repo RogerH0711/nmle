@@ -2192,7 +2192,7 @@ button.link:hover {
 .status-detail .up { color: #7bdcb5; }
 .status-detail .down { color: #ff9a9a; }
 
-/* 地圖標題列的「訊息」「能力值」「禮物」按鈕；手機寬度放不下時換行 */
+/* 地圖標題列的「訊息」「能力值」「商店」按鈕；手機寬度放不下時換行 */
 .campus-actions {
   display: flex;
   flex-wrap: wrap;
@@ -2921,6 +2921,68 @@ button.link:hover {
   border-radius: 999px;
   background: #e8344a;
   font-size: 0.65rem;
+  font-weight: 700;
+}
+
+/* 禮物／服裝切換 */
+.shop-modes {
+  display: flex;
+  gap: 4px;
+  margin: 12px 0 0;
+  padding: 3px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.08);
+  width: fit-content;
+}
+
+.shop-modes button {
+  padding: 4px 16px;
+  border: none;
+  border-radius: 999px;
+  background: none;
+  color: rgb(255 255 255 / 0.75);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.shop-modes button.active {
+  background: #ffd166;
+  color: #22201d;
+  font-weight: 700;
+}
+
+/* 服裝：格子上方是那套服裝的胸像 */
+.outfit-grid {
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+
+.outfit-thumb {
+  width: 84px;
+  height: 84px;
+  margin-bottom: 4px;
+  border-radius: 50%;
+  background: #f4f0ea;
+  overflow: hidden;
+}
+
+.outfit-thumb .portrait {
+  width: 100%;
+  height: 100%;
+}
+
+.outfit-state {
+  font-size: 0.75rem;
+  opacity: 0.85;
+  word-break: keep-all; /* 手機三欄放不下時在「」前後換行，不要把「熟識」拆開 */
+}
+
+.shop-item.wearing {
+  border-color: #ffd166;
+  opacity: 1;
+}
+
+.shop-item.wearing .outfit-state {
+  color: #ffd166;
   font-weight: 700;
 }
 

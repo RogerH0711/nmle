@@ -1,23 +1,33 @@
 import { useEffect, useState } from 'react'
 import { fillPlayer, type Character, type Line } from './characters'
-import { Portrait } from './CharacterStage'
+import { Portrait, WornPortrait } from './CharacterStage'
 import { STAGE_NAMES, type Affection } from './affection'
 import { AffectionMeter } from './Story'
-import { EARN, GIFT_BONUS, givenToday, isLiked, type Earnings, type Gift, type GiftCatalog, type GiftRecord } from './shop'
+import {
+  EARN, GIFT_BONUS, givenToday, isGiftRecord, isLiked, type Earnings, type Gift, type GiftCatalog, type GiftRecord,
+} from './shop'
+import {
+  boughtOutfits, outfitsOf, outfitStatus, useOutfits, wear, worn, type Outfit, type OutfitCatalog, type OutfitStatus,
+} from './outfits'
 import { STREAK_MIN_DAILY } from './messages'
 import { sfx } from './audio'
+import { sceneId } from './stories'
 
 interface Props {
   characters: Character[]
   catalog: GiftCatalog
+  outfits: OutfitCatalog
   lines: Record<string, Line[]>
   affections: Map<string, Affection>
-  gifts: GiftRecord[]
+  gifts: GiftRecord[] // 送禮紀錄（含買服裝）
+  seen: Set<string> // 這台裝置看過的劇情：劇情服裝看完那段才解鎖
   balance: number
   earnings: Earnings
   player: string
   /** 送出禮物：寫進送禮紀錄，回傳她的反應 */
   onGive: (c: Character, g: Gift) => { expression: string; text: string | null }
+  /** 買服裝送她：寫進送禮紀錄並換上，回傳她的反應 */
+  onBuyOutfit: (c: Character, o: Outfit) => { expression: string; text: string | null }
   hasNewScene: (c: Character) => boolean
   onStory: (c: Character) => void
   onClose: () => void
@@ -25,11 +35,13 @@ interface Props {
 
 interface Given {
   character: string
-  gift: Gift
+  name: string // 送了什麼
   expression: string
   text: string | null
   stageBefore: number
 }
+
+type Picking = { kind: 'gift'; gift: Gift } | { kind: 'outfit'; outfit: Outfit }
 
 /** 台詞裡的 {gift}、{player} 換成實際的禮物名稱和稱呼 */
 export function fillGiftLine(text: string, gift: Gift | undefined, player: string) {
@@ -37,14 +49,17 @@ export function fillGiftLine(text: string, gift: Gift | undefined, player: strin
 }
 
 /**
- * 禮物商店：用書籤買禮物送給學姊。書籤由作答紀錄推算（shop.ts），同一位學姊一天送一次。
- * 送禮可以稍微推進「熟識」「在意」，最多抵目標的 20%；之後的階段只會換到她的反應。
+ * 商店：用書籤買禮物或服裝送給學姊。書籤由作答紀錄推算（shop.ts）。
+ * - 禮物：同一位學姊一天送一次；可以稍微推進「熟識」「在意」，最多抵目標的 20%，之後的階段只會換到她的反應。
+ * - 服裝（outfits.ts）：好感度到了才能買，買了就換上，可以隨時換回來；不加好感度、不佔一天一次。
  */
 export function GiftShop(props: Props) {
   const { characters, catalog, lines, affections, gifts, balance, earnings, player } = props
   const [selected, setSelected] = useState(characters[0]?.id ?? '')
-  const [picking, setPicking] = useState<Gift | null>(null) // 點了禮物、還沒按送出
-  const [given, setGiven] = useState<Given | null>(null) // 剛送出的禮物和她的反應
+  const [mode, setMode] = useState<'gift' | 'outfit'>('gift')
+  const [picking, setPicking] = useState<Picking | null>(null) // 點了商品、還沒按送出
+  const [given, setGiven] = useState<Given | null>(null) // 剛送出的東西和她的反應
+  const outfitState = useOutfits()
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -66,12 +81,20 @@ export function GiftShop(props: Props) {
   const a = c && affections.get(c.id)
   if (!c || !a) return null
 
-  const mine = gifts.filter((g) => g.character_id === c.id)
-  const today = givenToday(gifts, c.id)
+  const giftRecords = gifts.filter((g) => isGiftRecord(catalog, g)) // 買服裝不算一天一次、不列在「送過的禮物」
+  const mine = giftRecords.filter((g) => g.character_id === c.id)
+  const today = givenToday(giftRecords, c.id)
   const giftOf = (id: string) => catalog.gifts.find((g) => g.id === id)
   const known = (g: Gift) => isLiked(catalog, c.id, g.id) && mine.some((x) => x.gift_id === g.id) // 送過才知道她喜歡
   const shown = given?.character === c.id ? given : null
   const shownBalance = Math.max(0, balance)
+
+  const bought = boughtOutfits(props.outfits, gifts)
+  const wearing = worn(c.id, outfitState)?.id ?? null
+  const outfitList = outfitsOf(props.outfits, c.id)
+  const seenScene = (characterId: string, stage: number) => props.seen.has(sceneId(characterId, stage))
+  const statusOf = (o: Outfit) => outfitStatus(o, { stage: a.stage, bought, seenScene })
+  const isWearing = (o: Outfit) => (o.folder === null ? wearing === null : wearing === o.id)
 
   const choose = (id: string) => {
     setSelected(id)
@@ -79,20 +102,37 @@ export function GiftShop(props: Props) {
     setGiven(null)
   }
 
-  const send = () => {
-    if (!picking) return
-    const r = props.onGive(c, picking)
-    setGiven({ character: c.id, gift: picking, ...r, stageBefore: a.stage })
+  const switchMode = (m: 'gift' | 'outfit') => {
+    setMode(m)
     setPicking(null)
   }
 
+  const send = () => {
+    if (!picking) return
+    const r = picking.kind === 'gift' ? props.onGive(c, picking.gift) : props.onBuyOutfit(c, picking.outfit)
+    const name = picking.kind === 'gift' ? picking.gift.name : picking.outfit.name
+    setGiven({ character: c.id, name, ...r, stageBefore: a.stage })
+    setPicking(null)
+  }
+
+  const clickOutfit = (o: Outfit, s: OutfitStatus) => {
+    if (s.kind === 'owned') {
+      setPicking(null)
+      setGiven(null)
+      wear(c.id, o.folder === null ? null : o.id)
+    } else if (s.kind === 'buy') setPicking({ kind: 'outfit', outfit: o })
+  }
+
+  // 正在看的服裝先換上給你看；送出前不算數
+  const preview = picking?.kind === 'outfit' ? picking.outfit : null
+
   return (
     <div className="modal-backdrop" onClick={props.onClose}>
-      <div className="shop" role="dialog" aria-label="禮物" onClick={(e) => e.stopPropagation()}>
+      <div className="shop" role="dialog" aria-label="商店" onClick={(e) => e.stopPropagation()}>
         <header className="status-head">
           <div>
             <h2>
-              禮物 <span className="shop-balance">🔖 {shownBalance} 書籤</span>
+              商店 <span className="shop-balance">🔖 {shownBalance} 書籤</span>
             </h2>
             <p>
               書籤怎麼來：每題第一次答對 +{EARN.firstCorrect}、錯題按時複習答對 +{EARN.reviewPass}、一天寫滿 {STREAK_MIN_DAILY} 題 +
@@ -116,7 +156,7 @@ export function GiftShop(props: Props) {
               onClick={() => choose(x.id)}
             >
               <span className="status-avatar">
-                <Portrait character={x} expression="normal" />
+                <WornPortrait character={x} expression="normal" />
               </span>
               {x.name}
             </button>
@@ -125,7 +165,11 @@ export function GiftShop(props: Props) {
 
         <section className="shop-her" style={{ '--char': c.color } as React.CSSProperties}>
           <div className="shop-portrait">
-            <Portrait character={c} expression={shown?.expression ?? 'normal'} />
+            {preview ? (
+              <Portrait character={c} expression="normal" outfit={preview.folder ?? undefined} bust={preview.bust} />
+            ) : (
+              <WornPortrait character={c} expression={shown?.expression ?? 'normal'} />
+            )}
           </div>
           <div className="shop-her-info">
             <strong>{c.name}</strong>
@@ -145,44 +189,89 @@ export function GiftShop(props: Props) {
                 )}
               </>
             ) : (
-              <p className="shop-hint">{bonusHint(a)}</p>
+              <p className="shop-hint">
+                {mode === 'gift'
+                  ? bonusHint(a)
+                  : '服裝買了就是送給她，會馬上換上，之後可以隨時換回來；不會加好感度。換上的服裝用在刷題、地圖和訊息，劇情照劇本穿。'}
+              </p>
             )}
           </div>
         </section>
 
-        {today && <p className="shop-note">今天已經送過{c.name}了，明天再來吧。</p>}
+        <div className="shop-modes" role="tablist" aria-label="商品種類">
+          {(['gift', 'outfit'] as const).map((m) => (
+            <button key={m} role="tab" aria-selected={mode === m} className={mode === m ? 'active' : ''} onClick={() => switchMode(m)}>
+              {m === 'gift' ? '禮物' : '服裝'}
+            </button>
+          ))}
+        </div>
 
-        <ul className="shop-grid">
-          {[...catalog.gifts]
-            .sort((x, y) => x.price - y.price)
-            .map((g) => {
-              const short = shownBalance < g.price
+        {mode === 'gift' && today && <p className="shop-note">今天已經送過{c.name}了，明天再來吧。</p>}
+
+        {mode === 'gift' ? (
+          <ul className="shop-grid">
+            {[...catalog.gifts]
+              .sort((x, y) => x.price - y.price)
+              .map((g) => {
+                const short = shownBalance < g.price
+                return (
+                  <li key={g.id}>
+                    <button
+                      className={picking?.kind === 'gift' && picking.gift.id === g.id ? 'shop-item picked' : 'shop-item'}
+                      disabled={today || short}
+                      onClick={() => setPicking({ kind: 'gift', gift: g })}
+                      title={g.description}
+                    >
+                      <span className="shop-icon" aria-hidden>
+                        {g.icon}
+                      </span>
+                      <span className="shop-name">{g.name}</span>
+                      <span className="shop-price">🔖 {g.price}</span>
+                      {known(g) && <span className="shop-liked">她喜歡</span>}
+                    </button>
+                  </li>
+                )
+              })}
+          </ul>
+        ) : (
+          <ul className="shop-grid outfit-grid">
+            {outfitList.map((o) => {
+              const s = statusOf(o)
+              const on = s.kind === 'owned' && isWearing(o)
+              const short = s.kind === 'buy' && shownBalance < s.price
               return (
-                <li key={g.id}>
+                <li key={o.id}>
                   <button
-                    className={picking?.id === g.id ? 'shop-item picked' : 'shop-item'}
-                    disabled={today || short}
-                    onClick={() => setPicking(g)}
-                    title={g.description}
+                    className={`shop-item outfit-item${preview?.id === o.id ? ' picked' : ''}${on ? ' wearing' : ''}`}
+                    disabled={on || s.kind === 'stage' || s.kind === 'story' || short}
+                    onClick={() => clickOutfit(o, s)}
+                    title={o.description}
                   >
-                    <span className="shop-icon" aria-hidden>
-                      {g.icon}
+                    <span className="outfit-thumb">
+                      <Portrait character={c} expression="normal" outfit={o.folder ?? undefined} bust={o.bust} />
                     </span>
-                    <span className="shop-name">{g.name}</span>
-                    <span className="shop-price">🔖 {g.price}</span>
-                    {known(g) && <span className="shop-liked">她喜歡</span>}
+                    <span className="shop-name">{o.name}</span>
+                    <span className={s.kind === 'buy' ? 'shop-price' : 'outfit-state'}>{outfitLabel(s, on)}</span>
                   </button>
                 </li>
               )
             })}
-        </ul>
+          </ul>
+        )}
 
         {picking && (
           <div className="shop-confirm">
-            <span>
-              把{picking.name}送給{c.name}？（{picking.price} 書籤）
-              <small>{picking.description}</small>
-            </span>
+            {picking.kind === 'gift' ? (
+              <span>
+                把{picking.gift.name}送給{c.name}？（{picking.gift.price} 書籤）
+                <small>{picking.gift.description}</small>
+              </span>
+            ) : (
+              <span>
+                把「{picking.outfit.name}」送給{c.name}？（{picking.outfit.price} 書籤）
+                <small>{picking.outfit.description}</small>
+              </span>
+            )}
             <span className="shop-confirm-actions">
               <button className="ghost small" onClick={() => setPicking(null)}>
                 再想想
@@ -194,7 +283,7 @@ export function GiftShop(props: Props) {
           </div>
         )}
 
-        {mine.length > 0 && (
+        {mode === 'gift' && mine.length > 0 && (
           <section className="shop-album">
             <h3>送過的禮物</h3>
             <ol>
@@ -217,6 +306,20 @@ export function GiftShop(props: Props) {
       </div>
     </div>
   )
+}
+
+/** 服裝格子下方的狀態 */
+function outfitLabel(s: OutfitStatus, wearing: boolean) {
+  switch (s.kind) {
+    case 'owned':
+      return wearing ? '穿著中' : '換上'
+    case 'buy':
+      return `🔖 ${s.price}`
+    case 'stage':
+      return `🔒 好感度「${STAGE_NAMES[s.stage]}」`
+    case 'story':
+      return `🔒「${STAGE_NAMES[s.stage]}」劇情`
+  }
 }
 
 /** 現在送禮對好感度有沒有幫助 */

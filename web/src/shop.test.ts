@@ -4,7 +4,7 @@ import assert from 'node:assert/strict'
 import { affection, GOALS, subjectMap } from './affection.ts'
 import type { AnswerRecord } from './answers.ts'
 import type { Line } from './characters.ts'
-import { balance, EARN, earnings, giftBonus, giftPoints, givenToday, pickGiftLine, type GiftCatalog } from './shop.ts'
+import { balance, EARN, earnings, giftBonus, giftPoints, givenToday, isGiftRecord, pickGiftLine, type GiftCatalog } from './shop.ts'
 
 const map = subjectMap([{ id: 'p_1', subject_runs: [[1, 50, 'pathology'], [51, 100, 'pharmacology']] }])
 const FEI = ['pathology']
@@ -54,6 +54,17 @@ test('一天只能送同一位學姊一次，別的學姊不受影響', () => {
   assert.equal(givenToday(gifts, 'fei', '2026-10-14'), true)
   assert.equal(givenToday(gifts, 'fei', '2026-10-15'), false)
   assert.equal(givenToday(gifts, 'yiqing', '2026-10-14'), false)
+})
+
+test('買服裝：書籤照扣，但不加心意點數（好感度只靠讀書和禮物）', () => {
+  const records = Array.from({ length: 30 }, (_, i) => rec(i + 1, true, at('2026-10-14', i)))
+  const gifts = [
+    { character_id: 'fei', gift_id: 'cake', stage: 0, price: 60 },
+    { character_id: 'fei', gift_id: 'fei_dress', stage: 0, price: 600 }, // 服裝 id 不在 gifts.json
+  ]
+  assert.equal(balance(records, gifts), earnings(records).total - 660)
+  assert.deepEqual(giftPoints(catalog, gifts, 'fei'), [{ stage: 0, points: 2 }])
+  assert.deepEqual(gifts.filter((g) => isGiftRecord(catalog, g)).map((g) => g.gift_id), ['cake'])
 })
 
 test('心意點數：她喜歡的禮物算 2 點，別人收到的不算', () => {

@@ -83,6 +83,8 @@
     { "id": "yiqing-gift-003", "situation": "gift", "affection_min": 2, "expression": "shy", "text": "每次都送我東西……我也要回禮才行。下一場比賽，我跑第一名給你看！" },
     { "id": "yiqing-gift-004", "situation": "gift", "affection_min": 3, "expression": "shy", "text": "{gift}……謝謝。那個，我現在心跳有點快，不是因為剛跑完步喔。" },
     { "id": "yiqing-gift_liked-001", "situation": "gift_liked", "affection_min": 0, "expression": "happy", "gift": "sports_drink", "text": "運動飲料！你懂我！流汗會流失鈉和鉀，補水也要補電解質——這就是生理學！" },
-    { "id": "yiqing-gift_liked-002", "situation": "gift_liked", "affection_min": 0, "expression": "happy", "gift": "wristband", "text": "新護腕！我這條都洗到鬆了……你有在注意我的手腕喔？下一場比賽就戴這條！" }
+    { "id": "yiqing-gift_liked-002", "situation": "gift_liked", "affection_min": 0, "expression": "happy", "gift": "wristband", "text": "新護腕！我這條都洗到鬆了……你有在注意我的手腕喔？下一場比賽就戴這條！" },
+    { "id": "yiqing-outfit-001", "situation": "outfit", "affection_min": 1, "expression": "happy", "outfit": "yiqing_casual", "text": "新衣服！帽T配短褲，週末晨跑完直接去吃早午餐剛好！……欸，{player}，下次要不要一起跑？我配速放慢一點等你！" },
+    { "id": "yiqing-outfit-002", "situation": "outfit", "affection_min": 2, "expression": "shy", "outfit": "yiqing_winter", "text": "圍巾和耳罩……你怕我冷喔？冬天在場邊等比賽，手腳的血管都縮起來了，真的很冷——……好啦，其實是因為是你送的，我才覺得暖。" }
   ]
 }

@@ -112,7 +112,7 @@ lowres, bad anatomy, bad hands, text, error, missing finger, extra digits, fewer
 - 沈靜澄「心動」眼鏡掉了的三句，用 `noglasses_squint`（瞇眼找路）和 `noglasses_shy` 兩個表情（`VARIANTS`）。去背前的原圖只在 Colab 的 Drive，所以拿網站上已去背的 `normal`、`shy` 鋪白底重畫臉部，臉部範圍外的像素和透明度沿用原檔。`FACE_BOX` 往左包到左耳的鏡腳 (322, 100, 128, 108)，`STRENGTH` 0.7，兩個都選 seed 1。
 - 輸出的 webp 放在 `data/characters/<角色 id>/<服裝>/<表情>.webp`，劇情的 `outfit` 欄位指定服裝。浴衣的旁白配合立繪改成「頭髮側綁起來、別著一朵紅花，手上拿著團扇」（原本寫盤髮、提袋）。
 
-**服裝商店的造型**（10/22，還沒接到商店）：每位一套私服、一套依個性的造型（Roger 同意的提案），tag 在 `art/outfits.py` 的 `SHOP`（外觀 tag 沿用定稿，只換服裝），選定值在 `SHOP_FINAL`。表情照 notebook 的角色專屬設定（`EXTRA_EXPRESSIONS`）：顏緋多 `pout`、葉縈多 `yandere`、沈靜澄的 `normal` 是面無表情、`happy` 只是淡淡一笑。每套都有那位學姊台詞用到的所有表情（前端測試會檢查）。`STRENGTH` 都是 0.6，表情都選 seed 1（葉縈的 `yandere` 例外）。
+**服裝商店的造型**（10/22，已接到商店：名稱、說明、價格、解鎖條件在 `data/outfits.json`）：每位一套私服、一套依個性的造型（Roger 同意的提案），tag 在 `art/outfits.py` 的 `SHOP`（外觀 tag 沿用定稿，只換服裝），選定值在 `SHOP_FINAL`。表情照 notebook 的角色專屬設定（`EXTRA_EXPRESSIONS`）：顏緋多 `pout`、葉縈多 `yandere`、沈靜澄的 `normal` 是面無表情、`happy` 只是淡淡一笑。每套都有那位學姊台詞用到的所有表情（前端測試會檢查）。`STRENGTH` 都是 0.6，表情都選 seed 1（葉縈的 `yandere` 例外）。
 
 | 服裝 | 造型 | 基本立繪 seed | `FACE_BOX` | 備註 |
 | --- | --- | --- | --- | --- |
@@ -400,6 +400,7 @@ red hair, medium hair, side braid, red eyes, tsurime, red scrubs, scrub top, scr
 - `situation`：`start`（回合開始）、`finish`（回合結束）、`correct`、`wrong`、`streak`（連對 10 題）、`comeback`（超過 3 天沒作答後第一次開始回合）、`mock_high`、`jealous`、`story`
 - 學姊傳的訊息（`web/src/messages.ts`）：`msg_review`（錯題到期，`{n}` 是到期題數）、`msg_comeback`（久沒上線，`{days}` 是幾天沒來）、`msg_story`（有新劇情，不要寫地點）、`msg_streak`（連續作答，`{days}` 是天數）。寫成傳訊息的口吻，不是當面說的話；每位角色四種都要有（`content.test.ts` 會檢查）。
 - 收到禮物（`web/src/shop.ts`）：`gift`（一般禮物，`{gift}` 代入禮物名稱）、`gift_liked`（她喜歡的禮物，加 `gift` 欄位寫禮物 id，每樣一句）。她喜歡哪些禮物寫在 `data/gifts.json` 的 `likes`；每位學姊都要有初識就能用的 `gift`，喜歡的每一樣都要有 `gift_liked`（`content.test.ts` 會檢查）。
+- 收到服裝（`web/src/outfits.ts`）：`outfit`，加 `outfit` 欄位寫服裝 id（`data/outfits.json`），商店的每套服裝一句，`affection_min` 寫那套解鎖的階段（熟識 1、在意 2）。說的時候她已經換上那套，表情要在那套的資料夾裡（`content.test.ts` 會檢查）。劇情服裝不用買，不寫。
 - `affection_min`：達到這個好感度階段（0–5）才會出現。同一情境有多句時，從符合條件的台詞中隨機挑一句。
 - `expression`：對應表情差分 ID。
 - `text`：台詞內容，玩家的稱呼用 `{player}` 代入（學弟或學妹，玩家自己選；寫死的話測試會失敗）。`jealous` 台詞可以用 `{rival}`，代入讓她吃醋的那位（「藥理那位」，由學科名稱去掉「學」字）。

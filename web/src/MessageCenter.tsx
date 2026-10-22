@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { Character } from './characters'
-import { Portrait } from './CharacterStage'
+import { WornPortrait } from './CharacterStage'
 import type { Message } from './messages'
 
 // 學姊傳的訊息：聊天室樣式（見 docs/design.md「遊戲介面方向」第 4 點）
@@ -81,7 +81,7 @@ export function MessageCenter({ messages, characters, initial, onRead, onAction,
                       onClick={() => setOpen(c.id)}
                     >
                       <span className="thread-avatar">
-                        <Portrait character={c} expression="normal" />
+                        <WornPortrait character={c} expression="normal" />
                       </span>
                       <span className="thread-text">
                         <strong>{c.name}</strong>
@@ -103,7 +103,7 @@ export function MessageCenter({ messages, characters, initial, onRead, onAction,
                   return (
                     <li key={m.key} className="bubble-row">
                       <span className="bubble-avatar">
-                        <Portrait character={thread.c} expression={m.expression} />
+                        <WornPortrait character={thread.c} expression={m.expression} />
                       </span>
                       <div>
                         <p className="bubble">{m.text}</p>
@@ -142,7 +142,7 @@ export function MessageToast({ message, character, onOpen, onDismiss }: {
     <div className="toast" role="status" style={{ '--char': character.color } as React.CSSProperties}>
       <button className="toast-main" onClick={onOpen}>
         <span className="thread-avatar">
-          <Portrait character={character} expression={message.expression} />
+          <WornPortrait character={character} expression={message.expression} />
         </span>
         <span className="thread-text">
           <strong>{character.name} 傳來訊息</strong>

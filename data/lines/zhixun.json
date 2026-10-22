@@ -83,6 +83,8 @@
     { "id": "zhixun-gift-003", "situation": "gift", "affection_min": 2, "expression": "shy", "text": "收到你的禮物，姊姊的心情好像起效了呢。……是半衰期很長的那種。" },
     { "id": "zhixun-gift-004", "situation": "gift", "affection_min": 3, "expression": "shy", "text": "又送我東西……小{player}，這樣下去姊姊會產生依賴性的喔。……我是說真的。" },
     { "id": "zhixun-gift_liked-001", "situation": "gift_liked", "affection_min": 0, "expression": "happy", "gift": "chamomile", "text": "洋甘菊茶！不含咖啡因，值完大夜班喝剛好。……你記得姊姊值夜班呀。" },
-    { "id": "zhixun-gift_liked-002", "situation": "gift_liked", "affection_min": 0, "expression": "shy", "gift": "hand_cream", "text": "護手霜……藥局一天要洗好多次手，手都乾裂了。你連這個都注意到了呢。" }
+    { "id": "zhixun-gift_liked-002", "situation": "gift_liked", "affection_min": 0, "expression": "shy", "gift": "hand_cream", "text": "護手霜……藥局一天要洗好多次手，手都乾裂了。你連這個都注意到了呢。" },
+    { "id": "zhixun-outfit-001", "situation": "outfit", "affection_min": 1, "expression": "happy", "outfit": "zhixun_summer", "text": "草帽和長裙？小{player}想看姊姊休假的樣子呀。……出門前姊姊會記得擦防曬，UVB 曬傷可不是開玩笑的喔。" },
+    { "id": "zhixun-outfit-002", "situation": "outfit", "affection_min": 2, "expression": "shy", "outfit": "zhixun_winter", "text": "圍巾好暖……值完大夜班走出醫院，清晨的風最冷了。……小{player}，以後每天早上姊姊都會想到你喔。這個副作用，你要負責。" }
   ]
 }

@@ -83,6 +83,8 @@
     { "id": "jingcheng-gift-003", "situation": "gift", "affection_min": 2, "expression": "shy", "text": "……你記得我在這裡待到很晚。{gift}，剛好。……不要一直看我。" },
     { "id": "jingcheng-gift-004", "situation": "gift", "affection_min": 3, "expression": "shy", "text": "又送我東西。……我也想回禮。下次讀書會，我把筆記多畫一份給你。只給你。" },
     { "id": "jingcheng-gift_liked-001", "situation": "gift_liked", "affection_min": 0, "expression": "happy", "gift": "sketchbook", "text": "……紙很厚。用針筆畫也不會透到背面。……第一頁，我想畫臂神經叢給你看。" },
-    { "id": "jingcheng-gift_liked-002", "situation": "gift_liked", "affection_min": 0, "expression": "shy", "gift": "glasses_cloth", "text": "……你一直在注意我的眼鏡嗎。……擦乾淨了。現在看你，很清楚。" }
+    { "id": "jingcheng-gift_liked-002", "situation": "gift_liked", "affection_min": 0, "expression": "shy", "gift": "glasses_cloth", "text": "……你一直在注意我的眼鏡嗎。……擦乾淨了。現在看你，很清楚。" },
+    { "id": "jingcheng-outfit-001", "situation": "outfit", "affection_min": 1, "expression": "normal", "outfit": "jingcheng_casual", "text": "……洋裝。我平常只穿白袍。……假日去圖書館的時候，穿這件。你也會在嗎。" },
+    { "id": "jingcheng-outfit-002", "situation": "outfit", "affection_min": 2, "expression": "shy", "outfit": "jingcheng_pajamas", "text": "……睡衣。送這個是什麼意思。……我睡前會讀一小時解剖，穿這件讀。……不准想像。" }
   ]
 }

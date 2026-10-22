@@ -7,6 +7,8 @@ export type Situation =
   | 'msg_review' | 'msg_comeback' | 'msg_story' | 'msg_streak'
   // 收到禮物（shop.ts）：gift 是一般禮物，gift_liked 是她喜歡的那幾樣（每樣一句，用 gift 欄位對應）
   | 'gift' | 'gift_liked'
+  // 收到服裝（outfits.ts）：每套一句，用 outfit 欄位對應
+  | 'outfit'
 
 export interface Character {
   id: string
@@ -30,6 +32,7 @@ export interface Line {
   expression: string
   text: string
   gift?: string // 只有 gift_liked：對應哪一樣禮物（data/gifts.json 的 id）
+  outfit?: string // 只有 outfit：對應哪一套服裝（data/outfits.json 的 id）
 }
 
 export interface Reaction {

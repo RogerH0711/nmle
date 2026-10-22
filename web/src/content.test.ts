@@ -88,3 +88,41 @@ test('每套服裝都有那位學姊台詞用到的所有表情（換上服裝�
   }
   assert.ok(checked >= 2)
 })
+
+test('服裝清單：資料夾、價格、解鎖條件、收到時的台詞都對得上（outfits.ts）', () => {
+  type O = { id: string; character: string; folder: string | null; price?: number; stage?: number; story?: number; bust?: { x: number; y: number; w: number } }
+  const { outfits } = JSON.parse(readFileSync(new URL('outfits.json', data), 'utf-8')) as { outfits: O[] }
+  const characters = (JSON.parse(readFileSync(new URL('characters.json', data), 'utf-8')) as { characters: { id: string }[] }).characters
+  const giftIds = new Set((JSON.parse(readFileSync(new URL('gifts.json', data), 'utf-8')) as { gifts: { id: string }[] }).gifts.map((g) => g.id))
+  assert.equal(new Set(outfits.map((o) => o.id)).size, outfits.length, '服裝 id 重複')
+  for (const c of characters) {
+    assert.equal(outfits.filter((o) => o.character === c.id && o.folder === null).length, 1, `${c.id} 要有一套原本的衣服`)
+    const lines = (JSON.parse(readFileSync(new URL(`lines/${c.id}.json`, data), 'utf-8')) as {
+      lines: { id: string; situation: string; affection_min: number; outfit?: string }[]
+    }).lines
+    for (const l of lines.filter((l) => l.situation === 'outfit')) {
+      assert.ok(outfits.some((o) => o.id === l.outfit && o.character === c.id), `${l.id} 對應的服裝 ${l.outfit} 不在清單裡`)
+    }
+    for (const o of outfits.filter((o) => o.character === c.id && o.folder !== null)) {
+      // 買服裝記在送禮紀錄：id 要符合 supabase gifts 表的 gift_id 格式，也不能和禮物撞名
+      assert.match(o.id, /^[a-z_]{1,40}$/, `${o.id} 的格式`)
+      assert.ok(!giftIds.has(o.id), `${o.id} 和禮物撞名`)
+      assert.doesNotThrow(() => readdirSync(new URL(`characters/${c.id}/${o.folder}/`, data)), `${o.id} 的資料夾不存在`)
+      const b = o.bust
+      assert.ok(b && b.x >= 0 && b.y >= 0 && b.x + b.w <= 832 && b.y + b.w / 0.73 <= 1216, `${o.id} 的胸像範圍`)
+      if (o.story !== undefined) {
+        assert.equal(o.price, undefined, `${o.id} 是劇情服裝，不能買`)
+        const story = JSON.parse(readFileSync(new URL(`stories/${c.id}.json`, data), 'utf-8')) as { scenes: { stage: number; outfit?: string }[] }
+        assert.ok(story.scenes.some((s) => s.stage === o.story && s.outfit === o.folder), `${o.id} 對應的劇情沒有穿這套`)
+      } else {
+        assert.ok(Number.isInteger(o.price) && o.price! > 0 && o.price! <= 1000, `${o.id} 的價格`) // gifts.price 的範圍
+        assert.ok(Number.isInteger(o.stage) && o.stage! >= 1 && o.stage! <= 4, `${o.id} 的解鎖階段`)
+        assert.ok(lines.some((l) => l.situation === 'outfit' && l.outfit === o.id && l.affection_min <= o.stage!), `${o.id} 沒有收到時的台詞`)
+      }
+    }
+    // 做好的立繪資料夾都要放進清單，不然買不到
+    for (const d of readdirSync(new URL(`characters/${c.id}/`, data), { withFileTypes: true }).filter((d) => d.isDirectory())) {
+      assert.ok(outfits.some((o) => o.character === c.id && o.folder === d.name), `characters/${c.id}/${d.name}/ 不在服裝清單裡`)
+    }
+  }
+})

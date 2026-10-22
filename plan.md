@@ -61,7 +61,7 @@
 - [x] 標示去背模型出處：頁尾與 `privacy.html` 的「出處與授權」（10/21）
 - [x] 隱私權政策和使用條款頁：`data/privacy.html`（獨立網址，給 Google 發布應用程式填；10/21 草稿，等 Roger 看過）。聯絡方式暫用 GitHub Issues，有專案 Gmail 後補上
 - [x] 使用者自己刪除帳號（10/21，migration 要 Roger `npm run db:push`）
-- [ ] README：架構圖、技術重點與取捨已寫（10/21）；LICENSE 用 MIT（只涵蓋程式碼）；剩截圖（`docs/screenshots/`，功能做完整後補）
+- [x] README：架構圖、技術重點與取捨（10/21）；LICENSE 用 MIT（只涵蓋程式碼）；遊戲畫面截圖（10/22，`docs/screenshots/`：本機網站塞示範作答紀錄、攔下所有 Supabase 請求，排行榜是虛構暱稱；介面大改時重拍）
 - [x] commit 作者 email（學校信箱）：10/21 Roger 決定維持不改，也不改寫歷史
 - [ ] 題庫抽檢進 CI（資料庫測試與前端單元測試已在 CI）
 - [ ] 確認 Dcard 醫師版板規

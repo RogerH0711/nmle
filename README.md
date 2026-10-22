@@ -4,7 +4,39 @@
 
 **網站**：https://rogerh0711.github.io/nmle/
 
-<!-- 截圖：手機版作答畫面、校園地圖、詳解展開、排行榜（放在 docs/screenshots/） -->
+![沈靜澄的劇情「心動」：閉館前的書架間，她的眼鏡掉了](docs/screenshots/story.webp)
+
+## 遊戲畫面
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/map.webp" alt="校園地圖">
+      <p><b>校園地圖</b>：五位學姊各在自己的地點，點誰就和誰一起讀書，20 題一回合。愛心是好感度，「新」表示有還沒看的劇情。</p>
+    </td>
+    <td width="50%" valign="top">
+      <img src="docs/screenshots/quiz.webp" alt="和學姊一起刷題">
+      <p><b>一起讀書</b>：答對答錯學姊都有反應，好感度越高話越多。作答後可以展開 AI 詳解，依比對結果分級標示。</p>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <img src="docs/screenshots/shop.webp" alt="服裝商店">
+      <p><b>商店</b>：答對新題目、按時複習錯題就能賺書籤，買禮物或服裝送學姊。換上的服裝在地圖和刷題時都看得到。</p>
+    </td>
+    <td valign="top">
+      <img src="docs/screenshots/leaderboard.webp" alt="排行榜">
+      <p><b>排行榜</b>：本週正確率、連續作答天數、模擬考成績，只顯示暱稱。（截圖的暱稱是示範資料）</p>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <img src="docs/screenshots/mobile_map.webp" width="260" alt="手機版校園地圖與學姊傳來的訊息">
+  &nbsp;
+  <img src="docs/screenshots/mobile_quiz.webp" width="260" alt="手機版刷題">
+</p>
+<p align="center">手機也能用。學姊會傳訊息：錯題到期、連續作答幾天、有新劇情。</p>
 
 ## 功能
 
@@ -12,7 +44,7 @@
 - **錯題複習**：Leitner 間隔複習，答錯的題目在 1、3、7、14 天後回來。
 - **模擬考**：一份考卷 100 題限時 2 小時，交卷才看答案，成績進排行榜。
 - **排行榜**：本週正確率、連續作答天數、模擬考成績，只顯示暱稱。
-- **角色**：五位學姊的立繪、台詞、好感度與各五段劇情、傳訊息、送禮；可以關掉角色模式，只留刷題功能。
+- **角色**：五位學姊的立繪、台詞、好感度與各五段劇情、傳訊息、送禮物和服裝；可以關掉角色模式，只留刷題功能。
 - **詳解**：AI 生成，和學生編寫的參考詳解比對結論、檢查名詞，依結果分級標示。
 - **回報疑義**：不登入也能回報題目、答案、圖片或詳解的問題。
 - **離線可用**：作答紀錄先存在瀏覽器，登入後跨裝置同步。

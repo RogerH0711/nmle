@@ -5,8 +5,9 @@ raw/
 NMLE_DE/
 # 詳解試跑的產出（品質還不能上線）
 pipeline/explain/out/
-# GPU 用的 Python 環境（PyTorch CUDA 版，只在家裡的 3070 筆電）
+# GPU 用的 Python 環境（PyTorch CUDA 版，只在家裡的 3070 筆電）；.venv-tts 是配音用的（qwen-tts 固定 transformers 4.57）
 .venv-gpu/
+.venv-tts/
 __pycache__/
 node_modules/
 web/dist/

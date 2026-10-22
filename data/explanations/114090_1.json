@@ -1,0 +1,481 @@
+{
+  "model": "Qwen3.6-27B",
+  "questions": {
+    "1": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n前庭神經核（vestibular nucleus）位於腦幹（brainstem）的橋腦（pons）與延髓（medulla oblongata）交界處。該神經核接收前庭神經（vestibular nerve）的平衡訊號。它會發出大量纖維直接投射至小腦（cerebellum）。此路徑主要參與姿勢控制與眼球運動協調。\n\n**選項解析**\n- (A) 動眼神經核（oculomotor nucleus）位於中腦（midbrain）。它主要支配眼外肌（extraocular muscles）。該核與小腦無直接大量纖維連結。\n- (B) 三叉神經脊髓核（spinal trigeminal nucleus）主要處理臉部痛溫覺（pain and temperature sensation）。其纖維主要投射至丘腦（thalamus）。它不直接與小腦大量連結。\n- (C) 三叉神經橋腦核（pontine trigeminal nucleus）主要處理臉部觸覺（touch sensation）。其傳導路徑同樣朝向丘腦發展。該核與小腦缺乏直接大量連結。\n- (D) 前庭神經核接收內耳（inner ear）前庭器官訊號。它透過前庭小腦束（vestibulocerebellar tract）直接投射至小腦。此連結對維持平衡至關重要。",
+      "level": "checked"
+    },
+    "2": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n視覺皮質（primary visual cortex）位於枕葉（occipital lobe）距狀裂（calcarine sulcus）周圍。該區域血液供應主要來自後大腦動脈（posterior cerebral artery）。此動脈分出距狀裂支（calcarine branches）供應視路（visual pathway）終端。掌握腦部動脈（cerebral arteries）供應範圍是解剖學重點。\n\n**選項解析**\n- (A) 上小腦動脈（superior cerebellar artery）供應小腦（cerebellum）上半部與中腦（midbrain），不負責大腦皮質血供。\n- (B) 前大腦動脈（anterior cerebral artery）供應大腦半球（cerebral hemisphere）內側面前部與額葉（frontal lobe），未延伸至枕葉。\n- (C) 中大腦動脈（middle cerebral artery）供應大腦半球外側面與基底核（basal ganglia），與枕葉血供無關。\n- (D) 後大腦動脈繞行大腦腳（cerebral peduncle）後方，其皮質支直接供應枕葉與顳葉（temporal lobe）內側面，為正確答案。",
+      "level": "terms",
+      "terms": [
+        {
+          "en": "calcarine sulcus",
+          "correct": "距狀溝"
+        },
+        {
+          "en": "cerebral arteries",
+          "correct": "大腦動脈"
+        }
+      ]
+    },
+    "3": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n基底核（basal ganglia）的傳出路徑主要調節運動計畫。最終輸出訊號由內側蒼白球（globus pallidus internus）發出。這些神經元會投射至丘腦（thalamus）的腹前側核（ventral anterior nuclei）。丘腦接收訊號後，會將資訊傳回大腦皮質（cerebral cortex）。此迴路負責啟動隨意運動。\n\n**選項解析**\n- (A) 正確。基底核傳出纖維主要終止於此核區。此路徑負責整合運動指令。\n- (B) 錯誤。前側核（anterior nuclei）主要與邊緣系統（limbic system）相關。此核區參與記憶處理。\n- (C) 錯誤。腹後外側核（ventral posterior lateral nuclei）主要接收軀幹感覺傳入。此核區處理本體感覺。\n- (D) 錯誤。腹後內側核（ventral posterior medial nuclei）主要接收面部感覺傳入。此核區處理三叉神經（trigeminal nerve）訊號。",
+      "level": "checked"
+    },
+    "4": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n大腦皮質脊髓徑（corticospinal tract）為主要下行運動路徑。纖維起始於大腦皮質（cerebral cortex）。下行必經內囊後肢（posterior limb of internal capsule）。路徑隨後穿過中腦（midbrain）、橋腦（pons）與延腦（medulla oblongata）。多數纖維於延腦交叉至對側。\n\n**選項解析**\n- (A) 延腦的錐體（pyramid of medulla oblongata）為正確路徑。此處為纖維束隆起處。\n- (B) 中腦的基底腳（basis pedunculi of midbrain）為正確路徑。纖維位於其內側三分之一。\n- (C) 橋腦的基部（basilar pons）為正確路徑。纖維在此分散穿過橋腦核。\n- (D) 內囊的前肢（anterior limb of internal capsule）為錯誤路徑。本徑實際走行至內囊後肢。前肢主要通過額葉橋腦徑（frontopontine tract）與丘腦前核（anterior nucleus of thalamus）纖維。",
+      "level": "checked"
+    },
+    "5": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n牽張反射（muscle stretch reflex）依賴本體感覺受器（proprioceptor）偵測肌肉（muscle）狀態。高基氏肌腱受器（Golgi tendon organ）主要監測收縮時的張力變化。該受器活化後，會透過 Group Ib 纖維（group Ib fiber）將訊號傳入脊髓（spinal cord），並啟動逆牽張反射（inverse stretch reflex）以保護組織。\n\n**選項解析**\n- (A) Group Ia 纖維（group Ia fiber）主要連接肌梭（muscle spindle）。它負責傳遞長度變化的訊號，而非張力訊號。\n- (B) Group Ib 纖維專司高基氏肌腱受器的傳入路徑。它將張力資訊傳至脊髓前角，符合題意。\n- (C) Aδ 纖維（Aδ fiber）屬於有髓鞘感覺神經纖維。它主要傳遞快痛與冷覺，不參與本體感覺反射。\n- (D) C 纖維（C fiber）屬於無髓鞘感覺神經纖維。它主要傳遞慢痛與溫覺，與此反射無關。",
+      "level": "checked"
+    },
+    "6": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n大腦皮質功能區依腦葉分佈。大腦額葉（frontal lobe）負責運動計畫與語言表達。頂葉（parietal lobe）處理感覺整合。顳葉（temporal lobe）主司聽覺與語言理解。枕葉（occipital lobe）專責視覺處理。\n\n**選項解析**\n- (A) 角回（angular gyrus）位於頂葉與顳葉交界處。此區負責閱讀與書寫整合。故不位於額葉。\n- (B) 布洛卡氏區（Broca's area）位於優勢半球額下回（inferior frontal gyrus）後部。此區控制語言運動計畫。受損會導致運動性失語症（motor aphasia）。故正確。\n- (C) 赫氏橫迴（transverse gyri of Heschl）位於顳葉顳上回深部。此區為初級聽覺皮質（primary auditory cortex）。故不位於額葉。\n- (D) 楔葉（cuneus）位於枕葉內側面上半部。此區處理下半視野視覺訊息。故不位於額葉。",
+      "level": "checked"
+    },
+    "7": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n內耳（inner ear）的膜迷路（membranous labyrinth）內部充滿內淋巴液（endolymph）。骨迷路（bony labyrinth）與膜迷路之間的間隙則充滿外淋巴液（perilymph）。內淋巴液富含鉀離子，外淋巴液富含鈉離子。膜迷路包含前庭器官與耳蝸管（cochlear duct）。聽覺與平衡感受器皆依賴此液體環境運作。此題考查內耳液體分佈的解剖學原則。\n\n**選項解析**\n- (A) 球囊（saccule）屬於膜迷路構造，內部充滿內淋巴液。\n- (B) 橢圓囊（utricle）同樣位於膜迷路內，亦含有內淋巴液。\n- (C) 耳蝸管為膜迷路延伸結構，內部充滿內淋巴液。\n- (D) 鼓室階（scala tympani）位於骨迷路內，屬於外淋巴液分佈區域，不含內淋巴液。前庭階（scala vestibuli）亦充滿外淋巴液。",
+      "level": "checked"
+    },
+    "8": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n眼外肌（extraocular muscles）的神經支配遵循固定原則。動眼神經（oculomotor nerve）負責多數眼外肌與提上眼瞼肌（levator palpebrae superioris）。滑車神經（trochlear nerve）僅支配上斜肌（superior oblique）。外直肌（lateral rectus）由外展神經（abducens nerve）支配。此題考查腦神經（cranial nerves）的支配分佈。動眼神經同時負責瞳孔（pupil）縮小與晶狀體（lens）調節。\n\n**選項解析**\n- (A) 滑車神經確實支配上斜肌。此選項正確。\n- (B) 動眼神經確實支配下斜肌（inferior oblique）。此選項正確。\n- (C) 外直肌由外展神經支配。動眼神經並不支配此肌肉。此選項錯誤。\n- (D) 動眼神經確實支配提上眼瞼肌。此選項正確。",
+      "level": "checked"
+    },
+    "9": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n本題考查表情肌（muscles of facial expression）的神經支配。頰肌（buccinator）屬表情肌，由面神經（facial nerve）支配。面神經主要控制臉部肌肉收縮。口輪匝肌（orbicularis oris）同為表情肌，故神經支配來源相同。\n\n**選項解析**\n- (A) 上直肌（superior rectus）受動眼神經（oculomotor nerve）支配，負責眼球上轉，與本題無關。\n- (B) 上斜肌（superior oblique）受滑車神經（trochlear nerve）支配，負責眼球下內轉，非面神經支配。\n- (C) 外直肌（lateral rectus）受外展神經（abducens nerve）支配，負責眼球外展，支配神經不同。\n- (D) 口輪匝肌為口周表情肌，由面神經支配，與頰肌一致，為正確選項。",
+      "level": "checked"
+    },
+    "10": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n骨傳導（bone conduction）的聲波傳遞路徑與空氣傳導不同。震動直接透過顱骨（skull）傳導至內耳（inner ear）。此過程會繞過外耳（external ear）與中耳（middle ear）的結構。聽覺感受器與傳導神經仍會正常運作。\n\n**選項解析**\n- (A) 前庭耳蝸神經（vestibulocochlear nerve）負責將聽覺訊號傳入中樞。骨傳導仍需此神經傳遞訊號，故未省去。\n- (B) 柯蒂氏器（organ of Corti）位於耳蝸（cochlea）內，是聽覺感受器。骨傳導的震動最終仍需刺激此結構，故未省去。\n- (C) 耳蝸負責將機械震動轉換為神經訊號。骨傳導震動仍會直接引起耳蝸液波動，故未省去。\n- (D) 外聽道（external acoustic meatus）屬於外耳通道。骨傳導耳機將震動直接施加於顱骨，完全繞過此通道，故為正確答案。",
+      "level": "checked"
+    },
+    "11": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n舌神經（lingual nerve）負責傳遞舌頭前三分之二區域的一般感覺。該神經受損時，前段舌黏膜的觸覺與痛溫覺會喪失。輪廓狀乳突（vallate papillae）位於舌後三分之一區域。此區域的一般感覺由舌咽神經（glossopharyngeal nerve）支配。因此舌神經病變不會影響輪廓狀乳突的一般感覺傳導。臨床檢查可藉此區分神經病變位置。\n\n**選項解析**\n- (A) 輪廓狀乳突位於舌後三分之一，其一般感覺由舌咽神經負責，故不受舌神經損傷影響。\n- (B) 葉狀乳突（foliate papillae）位於舌側緣後段，屬於前三分之二範圍，一般感覺依賴舌神經傳導。\n- (C) 絲狀乳突（filiform papillae）廣泛分佈於舌背前段，其一般感覺同樣由舌神經支配。\n- (D) 蕈狀乳突（fungiform papillae）散佈於舌前段表面，一般感覺訊息亦經由舌神經傳遞。",
+      "level": "checked"
+    },
+    "12": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n下頷骨角（angle of mandible）區域的皮膚感覺由頸叢（cervical plexus）分支支配。耳大神經（great auricular nerve）主要負責該處及腮腺（parotid gland）表面的感覺傳導。此神經源自第二頸神經（second cervical nerve）與第三頸神經（third cervical nerve）前支。受損時會導致局部痛覺喪失。\n\n**選項解析**\n- (A) 頰神經（buccal nerve）為三叉神經（trigeminal nerve）分支。它僅支配頰部黏膜與皮膚。不經過下頷骨角區域。\n- (B) 耳大神經為正確選項。它沿胸鎖乳突肌（sternocleidomastoid muscle）表面上行。其皮支廣泛覆蓋下頷骨角與耳廓（auricle）周圍皮膚。\n- (C) 枕小神經（lesser occipital nerve）同樣源自頸叢。它主要支配枕部（occipital region）與耳後上方皮膚。支配範圍偏後上方。\n- (D) 頦神經（mental nerve）為下齒槽神經（inferior alveolar nerve）終支。它穿出頦孔（mental foramen）後支配下唇與頦部（chin）皮膚。位置位於下頷骨體部前方。",
+      "level": "conflict"
+    },
+    "13": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n翼腭窩（pterygopalatine fossa）是位於顱底（skull base）中線兩側的狹長凹陷。此凹陷由上頷骨（maxilla bone）、蝶骨（sphenoid bone）與腭骨（palatine bone）共同圍成。顳骨（temporal bone）位於顱側壁，完全不參與此凹陷的結構。\n\n**選項解析**\n- (A) 蝶骨構成翼腭窩後壁與頂部，為正確參與骨塊。\n- (B) 顳骨位於顱骨側面，主要圍成外耳道（external auditory meatus）與顳下窩（infratemporal fossa）外側，不參與翼腭窩形成。\n- (C) 腭骨構成翼腭窩內側壁與底部，為正確參與骨塊。\n- (D) 上頷骨構成翼腭窩前壁，為正確參與骨塊。",
+      "level": "checked"
+    },
+    "14": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n頸部前區以胸鎖乳突肌（sternocleidomastoid muscle）為界。前三角再依肩胛舌骨肌（omohyoid muscle）下腹與二腹肌（digastric muscle）後腹劃分。肌三角（muscular triangle）位於前三角下方。其底邊為舌骨（hyoid bone）。外側界為胸鎖乳突肌前緣。內側界為頸部中線。此區域主要包含甲狀腺（thyroid gland）與氣管（trachea）。內部亦含有舌骨下肌群（infrahyoid muscles）。\n\n**選項解析**\n- (A) 胸骨甲狀肌（sternothyroid muscle）屬於舌骨下肌群。該肌肉位於肌三角深層。故在此區域內。\n- (B) 甲狀腺附著於氣管前方。該器官完全位於肌三角範圍內。\n- (C) 氣管上段位於頸部正中。該構造被肌三角的肌肉所包圍。\n- (D) 外頸動脈（external carotid artery）走行於頸動脈三角（carotid triangle）內。該血管不經過肌三角。為正確答案。",
+      "level": "checked"
+    },
+    "15": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n肋骨（rib）與胸椎（thoracic vertebra）的關節構造隨序數而異。典型肋骨（typical rib）的頭端（head of rib）會與上下兩節胸椎相接。其結節部（tubercle of rib）則與同序數胸椎的橫肋關節面（transverse costal facet）相接。第十一肋骨（eleventh rib）屬於不典型肋骨（atypical rib）。該肋骨僅有單一關節面，且對應胸椎缺乏橫肋關節面。\n\n**選項解析**\n- (A) 第一肋骨（first rib）的頭端僅與第一胸椎（first thoracic vertebra）相接。它不會與第七頸椎（seventh cervical vertebra）形成關節。此敘述錯誤。\n- (B) 第九肋骨（ninth rib）屬於假肋骨（false rib）。其肋軟骨（costal cartilage）會連至第八肋軟骨。它不會直接連至胸骨（sternum）。此敘述錯誤。\n- (C) 第六肋骨（sixth rib）的頭端會與第五胸椎（fifth thoracic vertebra）的下肋關節面（inferior costal facet）相接。它同時會與第六胸椎（sixth thoracic vertebra）的上肋關節面（superior costal facet）相接。選項所述關節面位置錯誤。此敘述錯誤。\n- (D) 第十一胸椎（eleventh thoracic vertebra）確實缺乏橫肋關節面。第十一肋骨僅以頭端與該胸椎體相接。此敘述正確。",
+      "level": "checked"
+    },
+    "16": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n心臟反射（cardiac reflex）依賴壓力感受器（baroreceptor）與化學感受器（chemoreceptor）的傳入訊號。這些感受器主要位於頸動脈竇（carotid sinus）與主動脈弓（aortic arch）。傳入纖維主要經由迷走神經（vagus nerve）進入延髓（medulla oblongata）。中樞整合後會調節心輸出量與血管阻力。\n\n**選項解析**\n- (A) 迷走神經含有主動脈弓壓力感受器的傳入纖維。它能將血壓與血液化學變化傳至延髓孤束核（nucleus tractus solitarius）。此選項正確。\n- (B) 頸部交感神經（cervical sympathetic nerve）主要負責頸部與頭部血管的傳出支配。它不參與血壓感受器的傳入路徑。此選項錯誤。\n- (C) 胸部交感神經（thoracic sympathetic nerve）主要支配心臟與胸部血管的傳出訊號。它屬於交感神經系統的效應器路徑。此選項錯誤。\n- (D) 胸部內臟神經（thoracic splanchnic nerve）主要傳導腹腔臟器的感覺與交感傳出。它與心血管反射的傳入無關。此選項錯誤。",
+      "level": "checked"
+    },
+    "17": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n心包膜橫竇（transverse pericardial sinus）是心包腔（pericardial cavity）內的潛在通道。此竇道位於升主動脈（ascending aorta）與肺動脈幹（pulmonary trunk）的後方。同時它位於上腔靜脈（superior vena cava）與左心房（left atrium）的前方。此空間分隔心臟的動脈與靜脈側。\n\n**選項解析**\n- (A) 正確。心包膜橫竇確實位於上腔靜脈的前方。此位置關係符合標準解剖學描述。\n- (B) 錯誤。肺靜脈（pulmonary vein）開口於左心房後壁。心包膜橫竇位於肺靜脈的前方而非後方。\n- (C) 錯誤。心包膜橫竇位於左心房的前上方。它並非位於左心房的下方。\n- (D) 錯誤。心包膜橫竇位於肺動脈幹與主動脈（aorta）的後方。它並非夾在兩者之間。",
+      "level": "checked"
+    },
+    "18": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n冠狀動脈（coronary artery）分支具有明確的心肌支配範圍。左心房（left atrium）、左心室（left ventricle）前壁與側壁、心尖（apex）及心室中隔（interventricular septum）主要依賴左側冠狀動脈供血。右邊緣支（right marginal branch）的血液供應範圍僅限於右心室（right ventricle）側壁。血管栓塞造成的缺血區域必須與該血管的解剖支配區一致。判斷缺血範圍需對照冠狀動脈分佈。此為解剖學基礎重點。\n\n**選項解析**\n- (A) 前室間支（anterior interventricular branch）位於心臟前面。此支供應左心室前壁與心室中隔前三分之二。栓塞會直接導致題述區域缺氧。\n- (B) 後室間支（posterior interventricular branch）位於心臟後面。此支主要供應中隔後部與心室後壁。部分解剖變異會參與左心室後側壁供血。\n- (C) 右邊緣支沿右心室邊緣行走。此支僅供應右心室側壁心肌。栓塞不會影響左心系統與中隔結構。\n- (D) 左迴旋支（left circumflex branch）位於心臟左側。此支供應左心房與左心室側壁。栓塞會造成題述區域缺血。",
+      "level": "terms",
+      "terms": [
+        {
+          "en": "interventricular septum",
+          "correct": "室間隔"
+        }
+      ]
+    },
+    "19": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n腸繫膜（mesentery）是雙層腹膜（peritoneum）構造。此構造將腸管懸吊於腹後壁。具備腸繫膜的器官屬於腹腔內臟器（intraperitoneal organ）。十二指腸（duodenum）大部分屬於腹膜後臟器（retroperitoneal organ）。腹膜後臟器直接貼附後腹壁。此類器官不具備腸繫膜。\n\n**選項解析**\n- (A) 十二指腸下降段（descending part of duodenum）位於腹膜後腔。該段腸管無腸繫膜附著。此為正確選項。\n- (B) 闌尾（appendix）由闌尾繫膜（mesoappendix）懸吊。該構造屬於腸繫膜的變異。此選項錯誤。\n- (C) 乙狀結腸（sigmoid colon）由乙狀結腸繫膜（mesosigmoid）固定。該構造屬於腸繫膜的延伸。此選項錯誤。\n- (D) 橫結腸（transverse colon）由橫結腸繫膜（transverse mesocolon）連接。該構造屬於腸繫膜的一部分。此選項錯誤。",
+      "level": "checked"
+    },
+    "20": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n腹腔動脈（celiac trunk）分出三大分支。脾動脈（splenic artery）沿胰臟上緣走行。該動脈終末支分出左胃網膜動脈（left gastroepiploic artery）。此血管供應胃大彎（greater curvature of the stomach）左側。\n\n**選項解析**\n- (A) 總肝動脈（common hepatic artery）分出肝固有動脈（proper hepatic artery）與胃十二指腸動脈（gastroduodenal artery）。不供應胃大彎。\n- (B) 左胃動脈（left gastric artery）源自腹腔動脈。主要供應胃小彎（lesser curvature of the stomach）。\n- (C) 後胃動脈（posterior gastric artery）非標準命名。胃後壁由胃短動脈（short gastric arteries）供應。\n- (D) 脾動脈於脾門附近分出左胃網膜動脈。符合解剖學事實。",
+      "level": "conflict"
+    },
+    "21": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n前腹壁（anterior abdominal wall）內面的腹膜（peritoneum）會因深層結構隆起而產生皺襞。臍內側韌帶（medial umbilical fold）位於臍中線（linea alba）外側。此結構由閉鎖的臍動脈（umbilical artery）殘跡形成。胚胎期臍動脈負責將胎兒靜脈血輸送至胎盤。出生後該血管萎縮閉合，成為纖維性索條。\n\n**選項解析**\n- (A) 輸精管（vas deferens）走行於精索（spermatic cord）內，與前腹壁皺襞無關。\n- (B) 臍動脈殘跡被腹膜包覆，即形成臍內側韌帶。\n- (C) 上腹壁動脈（superior epigastric artery）為胸廓內動脈（internal thoracic artery）的終支，不形成此皺襞。\n- (D) 肝靜脈（hepatic vein）引流肝臟（liver）血液至下腔靜脈（inferior vena cava），位於腹腔後側，與前腹壁皺襞無關。",
+      "level": "terms",
+      "terms": [
+        {
+          "en": "linea alba",
+          "correct": "白線"
+        }
+      ]
+    },
+    "22": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n前下腹壁（lower anterior abdominal wall）的淺筋膜（superficial fascia）明確分為兩層。表層為卡佩筋膜（Camper's fascia），主要成分為脂肪與鬆結締組織（loose connective tissue）。深層為斯卡帕筋膜（Scarpa's fascia），屬於緻密膜狀構造。皮下脂肪主要堆積於表層。\n\n**選項解析**\n- (A) 卡佩筋膜為淺筋膜表層。此層含有大量脂肪細胞（adipocyte）。符合題幹所述之皮下脂肪主要位置。\n- (B) 斯卡帕筋膜為淺筋膜深層。此層呈連續膜狀。脂肪含量極少。\n- (C) 腹橫筋膜（transversalis fascia）位於腹橫肌（transversus abdominis muscle）深面。此層屬於深筋膜（deep fascia）。不屬於皮下組織（subcutaneous tissue）。\n- (D) 闊筋膜（fascia lata）為大腿（thigh）的深筋膜。此構造位於下肢。與前下腹壁解剖無關。",
+      "level": "checked"
+    },
+    "23": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n本題考查前列腺（prostate）的組織構造、解剖位置與血管供應。前列腺由腺體組織（glandular tissue）與纖維肌肉組織（fibromuscular tissue）構成。其後方緊鄰直腸（rectum），可供直腸指診使用。前列腺主要血供來自下膀胱動脈（inferior vesical artery）。\n\n**選項解析**\n- (A) 敘述正確。前列腺確實含有腺體組織與纖維肌肉組織。\n- (B) 敘述正確。前列腺後表面緊貼直腸前壁，中間僅隔直膀胱隔（rectovesical septum）。\n- (C) 敘述錯誤。前列腺主要血供來自下膀胱動脈。上膀胱動脈（superior vesical artery）主要供應膀胱（bladder）上部。\n- (D) 敘述正確。前列腺靜脈叢（prostatic venous plexus）與膀胱靜脈叢（vesical venous plexus）相互交通，最終匯入內髂靜脈（internal iliac vein）。",
+      "level": "terms",
+      "terms": [
+        {
+          "en": "internal iliac vein",
+          "correct": "髂內靜脈"
+        }
+      ]
+    },
+    "24": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n陰莖深背靜脈（deep dorsal vein of penis）主要負責引流陰莖海綿體（corpora cavernosa）的靜脈血。該靜脈走行於陰莖背面正中線。其解剖位置位於巴克氏筋膜（Buck's fascia）深面。靜脈向上延伸會進入骨盆腔（pelvic cavity）。最終血液會匯入前列腺靜脈叢（prostatic venous plexus）。此靜脈與陰莖動脈（artery of penis）及陰莖背神經（dorsal nerve of penis）伴行。\n\n**選項解析**\n- (A) 錯誤。陰莖皮膚的靜脈血主要由陰莖淺背靜脈（superficial dorsal vein of penis）負責收集。\n- (B) 錯誤。該靜脈實際位於巴克氏筋膜深層，並非淺層。\n- (C) 錯誤。靜脈是經過陰莖懸韌帶（suspensory ligament of penis）深面進入骨盆腔，而非陰莖襻狀韌帶（fundiform ligament of penis）。\n- (D) 正確。靜脈進入骨盆腔後，確實會將血液注入前列腺靜脈叢。此為標準解剖學描述。",
+      "level": "checked"
+    },
+    "25": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n本題考查會陰淺袋（superficial perineal pouch）肌肉功能。球海綿體肌（bulbospongiosus）包覆陰莖球（bulb of penis）。該肌收縮可擠壓尿道（urethra）。此動作能排出排尿末期殘留尿液。坐骨海綿體肌（ischiocavernosus）包覆陰莖腳（crura of penis）。其收縮可壓迫靜脈以維持勃起。\n\n**選項解析**\n- (A) 坐骨海綿體肌附著於坐骨結節（ischial tuberosity）。該肌壓迫陰莖腳而非陰莖球。此選項錯誤。\n- (B) 球海綿體肌收縮可擠壓尿道。此機轉有助於排出殘留尿液。此選項正確。\n- (C) 坐骨海綿體肌起自坐骨結節。該肌止於陰莖腳而非會陰體（perineal body）。此選項錯誤。\n- (D) 會陰淺橫肌（superficial transverse perineal muscle）起自坐骨結節。該肌止於會陰體。坐骨棘（ischial spine）為骶棘韌帶（sacrospinous ligament）附著處。此選項錯誤。",
+      "level": "terms",
+      "terms": [
+        {
+          "en": "sacrospinous ligament",
+          "correct": "薦棘韌帶"
+        }
+      ]
+    },
+    "26": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n膀胱（urinary bladder）的神經支配分為兩大系統。副交感神經纖維（parasympathetic fibers）源自薦髓第二至第四節。這些纖維會組成盆內臟神經（pelvic splanchnic nerves）。薦內臟神經（sacral splanchnic nerves）實際上是交感神經纖維（sympathetic fibers）的來源。\n\n**選項解析**\n- (A) 正確。下腹神經（hypogastric nerves）確實攜帶交感神經纖維。\n- (B) 錯誤。支配膀胱的副交感神經纖維走行於盆內臟神經。薦內臟神經屬於交感神經纖維系統。\n- (C) 正確。交感神經纖維興奮時會促使尿道內括約肌（internal urethral sphincter）收縮。\n- (D) 正確。副交感神經纖維興奮時會促使逼尿肌（detrusor muscle）收縮。",
+      "level": "checked"
+    },
+    "27": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n鎖骨下動脈（subclavian artery）的直接分支包含內胸動脈（internal thoracic artery）、椎骨動脈（vertebral artery）、甲狀頸動脈幹（thyrocervical trunk）與肋頸動脈幹（costocervical trunk）。這些血管負責供應頭頸部與前胸壁的血液。國考常考腋窩動脈（axillary artery）與鎖骨下動脈的分支區分。考生必須熟記兩者的直接分支清單。臨床解剖學極重視此區分。\n\n**選項解析**\n- (A) 上胸動脈（superior thoracic artery）是腋窩動脈第一段的分支。它不直接發自鎖骨下動脈。\n- (B) 外胸動脈（lateral thoracic artery）是腋窩動脈第二段的分支。它主要供應胸大肌（pectoralis major muscle）與胸小肌（pectoralis minor muscle）。\n- (C) 內胸動脈是鎖骨下動脈的直接分支。它沿胸骨旁下行供應前胸壁。\n- (D) 胸肩峰動脈（thoraco-acromial artery）是腋窩動脈第二段的分支。它負責供應肩部與胸上部區域。",
+      "level": "checked"
+    },
+    "28": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n大腿前肌群（anterior thigh muscles）主要包含股四頭肌（quadriceps femoris）與縫匠肌（sartorius）。此肌群跨越髖關節（hip joint）與膝關節（knee joint）。其核心功能為彎曲髖關節與伸直膝關節。部分肌肉收縮時可產生外旋大腿（laterally rotate thigh）的力矩。伸直髖關節（extend hip joint）則屬於大腿後肌群（posterior thigh muscles）的動作。解剖學教材明確指出前群肌肉不負責髖關節伸展。此題測驗下肢肌群的基本生物力學分類。\n\n**選項解析**\n- (A) 股直肌（rectus femoris）與縫匠肌收縮可彎曲髖關節。此選項正確。\n- (B) 縫匠肌收縮可協助外旋大腿。此選項正確。\n- (C) 股四頭肌收縮可伸直膝關節。此選項正確。\n- (D) 伸直髖關節主要由大腿後肌群負責。大腿前肌群無此作用。此選項錯誤。",
+      "level": "checked"
+    },
+    "30": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n內收結節（adductor tubercle）是股骨（femur）遠端內側的骨性突起。此結構位於內上髁（medial epicondyle）的上方。內收大肌（adductor magnus）的肌腱會附著於此處。該突起主要協助穩定膝關節（knee joint）的內側結構。臨床觸診可於膝關節內側上方摸到此突起。\n\n**選項解析**\n- (A) 大轉子（greater trochanter）位於股骨近端外側。內收結節位於遠端。\n- (B) 內收結節確實位於內上髁上方。此為正確描述。\n- (C) 外上髁（lateral epicondyle）位於股骨遠端外側。內收結節位於內側。\n- (D) 小轉子（lesser trochanter）位於股骨近端後內側。內收結節位於遠端。",
+      "level": "checked"
+    },
+    "31": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n膕動脈（popliteal artery）位於膝關節（knee joint）後方。\n其主要分支負責供應膝關節囊與周邊肌肉。\n這些分支包含上膝動脈（superior genicular artery）、中膝動脈（middle genicular artery）與下膝動脈（inferior genicular artery）。\n它們共同形成膝關節的動脈網，以確保關節活動時的血液供應。\n\n**選項解析**\n- (A) 降膝動脈（descending genicular artery）並非膕動脈分支。它實際上是股動脈（femoral artery）的分支。此動脈沿股骨內側髁下行。\n- (B) 上膝動脈屬於膕動脈分支。它分為內側與外側支。\n- (C) 中膝動脈屬於膕動脈分支。它穿過膝關節囊後側。\n- (D) 下膝動脈屬於膕動脈分支。它分為內側與外側支。",
+      "level": "checked"
+    },
+    "32": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n神經嵴細胞（neural crest cell）屬於外胚層（ectoderm）衍生物。這些細胞會發生上皮間質轉化。它們會遷移至全身多個部位。神經嵴細胞主要分化為周邊神經系統（peripheral nervous system）與部分內分泌細胞。胚胎學考試常考此細胞的衍生範圍。\n\n**選項解析**\n- (A) 黑色素細胞（melanocyte）由神經嵴細胞遷移至表皮（epidermis）分化而成。此選項符合神經嵴衍生特性。\n- (B) 交感節後神經元（postganglionic sympathetic neuron）源自神經嵴細胞。它們會形成交感神經節（sympathetic ganglion）。此選項符合神經嵴衍生特性。\n- (C) 甲狀腺之濾泡細胞（follicular cell of thyroid gland）源自內胚層（endoderm）。它們由咽部內胚層（pharyngeal endoderm）下陷形成。此細胞不具神經嵴（neural crest）起源。故為正確答案。\n- (D) 腎上腺髓質之嗜鉻細胞（chromaffin cell of adrenal medulla）由神經嵴細胞分化而來。它們負責分泌腎上腺素（epinephrine）。此選項符合神經嵴衍生特性。",
+      "level": "checked"
+    },
+    "33": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n舌（tongue）的發育源自第一至第四咽弓（pharyngeal arch）。第二咽弓（second pharyngeal arch）會向上增生形成聯合部（copula）。此結構初期覆蓋第三咽弓（third pharyngeal arch）。隨後第三咽弓快速生長並將其擠壓。聯合部最終退化消失。\n\n**選項解析**\n- (A) 第一咽弓（first pharyngeal arch）形成舌前三分之二。它產生側舌隆起（lateral lingual swelling）與奇結節（tuberculum impar）。此區域由三叉神經（trigeminal nerve）支配。\n- (B) 第二咽弓發育為聯合部。它會被後方增生的第三咽弓覆蓋。該結構隨後受壓而退化消失。\n- (C) 第三咽弓形成舌後三分之一。它會向上生長並覆蓋聯合部。此區域由舌咽神經（glossopharyngeal nerve）支配。\n- (D) 第四咽弓（fourth pharyngeal arch）僅參與舌根（root of tongue）的發育。它位於最後方且不會形成聯合部。",
+      "level": "checked"
+    },
+    "34": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n女性陰道（vagina）的發育來源可分為上下兩段。上段三分之一由副中腎管（paramesonephric duct）融合後端形成。下段三分之二由尿殖竇（urogenital sinus）內側長出的竇陰道球泡（sinovaginal bulb）發育而成。兩者在胚胎期融合並形成陰道板（vaginal plate），隨後中央細胞退化形成管腔。\n\n**選項解析**\n- (A) 中腎管（mesonephric duct）在女性會退化，不會參與陰道形成。\n- (B) 中腎管僅在男性發育為附睪（epididymis）與輸精管（vas deferens），與女性陰道無關。\n- (C) 副中腎管構成陰道上段，竇陰道球泡構成陰道下段，兩者共同發育為完整陰道。\n- (D) 生殖結節（genital tubercle）主要發育為陰蒂（clitoris）或陰莖（penis），不參與陰道形成。",
+      "level": "checked"
+    },
+    "35": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n胎兒循環（fetal circulation）在出生後會發生結構改變。臍帶（umbilical cord）斷離後，輸送缺氧血的血管會閉鎖並纖維化。這些閉鎖的血管會轉化為腹前壁（anterior abdominal wall）的韌帶構造。掌握胎兒血管的成體遺跡是胚胎學核心考點。\n\n**選項解析**\n- (A) 臍動脈（umbilical artery）出生後遠端閉鎖，近端保留供應膀胱（urinary bladder）。閉鎖的遠端會纖維化，形成內側臍韌帶（medial umbilical ligament）。此選項正確。\n- (B) 臍靜脈（umbilical vein）負責輸送氧合血至胎兒肝臟（liver）。出生後閉鎖會形成肝圓韌帶（ligamentum teres hepatis）。此選項錯誤。\n- (C) 靜脈導管（ductus venosus）為胎兒肝臟內的分流通道。出生後閉鎖會形成靜脈韌帶（ligamentum venosum）。此選項錯誤。\n- (D) 動脈導管（ductus arteriosus）連接肺動脈（pulmonary artery）與主動脈弓（aortic arch）。出生後閉鎖會形成動脈韌帶（ligamentum arteriosum）。此選項錯誤。",
+      "level": "checked"
+    },
+    "36": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n神經垂體部（neurohypophysis）屬於中樞神經系統（central nervous system）的延伸構造。胚胎發育時，它由間腦（diencephalon）底部向下突出形成漏鬥（infundibulum）。此構造後續會與口腔頂部的拉特克囊（Rathke pouch）結合。兩者共同發育成完整的腦下垂體（pituitary gland）。神經垂體部主要負責儲存與釋放下視丘（hypothalamus）合成的激素。\n\n**選項解析**\n- (A) 端腦（telencephalon）主要發育為大腦半球（cerebral hemispheres）與側腦室（lateral ventricles）。此選項錯誤。\n- (B) 間腦底部向下延伸形成神經垂體部。此選項正確。\n- (C) 中腦（mesencephalon）主要發育為大腦腳（cerebral peduncles）與四疊體（corpora quadrigemina）。此選項錯誤。\n- (D) 髓腦（myelencephalon）主要發育為延髓（medulla oblongata）與第四腦室（fourth ventricle）。此選項錯誤。",
+      "level": "terms",
+      "terms": [
+        {
+          "en": "infundibulum",
+          "correct": "漏斗"
+        }
+      ]
+    },
+    "37": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n上皮細胞（epithelial cell）的細胞膜可分為頂面、側面與基底面。側面主要負責相鄰細胞間的黏著與通訊。緊密接合（tight junction）、黏連接合（adhering junction）、橋粒（desmosome）與間隙接合（gap junction）均位於側面。半橋粒（hemidesmosome）則位於基底面，負責將細胞錨定於基底膜（basement membrane）。\n\n**選項解析**\n- (A) 間隙接合位於側面。它允許離子與小分子在相鄰細胞間直接通過。此選項錯誤。\n- (B) 黏連接合位於側面。它透過肌動蛋白絲（actin filament）連接相鄰細胞。此選項錯誤。\n- (C) 半橋粒位於基底面。它將角蛋白中間絲（keratin intermediate filament）錨定於基底膜。此選項正確。\n- (D) 緊密接合位於側面最頂端。它封閉細胞間隙並防止物質旁路運輸。此選項錯誤。",
+      "level": "checked"
+    },
+    "38": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n成熟骨骼肌細胞（skeletal muscle cell）的收縮依賴鈣離子（calcium ion）釋放。細胞膜（plasma membrane）內陷形成橫小管（transverse tubule）。橫小管與兩側的終池（terminal cisternae）組成三聯體（triad）。三聯體精確分布於肌節（sarcomere）的暗帶（A band）與明帶（I band）交接處。此結構確保動作電位（action potential）快速觸發收縮。\n\n**選項解析**\n- (A) 錯誤。骨骼肌細胞之間無間隙接合（gap junction）。心肌細胞（cardiac muscle cell）才具此結構。\n- (B) 錯誤。細胞膜內凹形成的是橫小管。終池由肌漿網（sarcoplasmic reticulum）特化而成。\n- (C) 錯誤。三聯體由一條橫小管夾在兩條終池之間組成。選項敘述比例反轉。\n- (D) 正確。三聯體確實位於肌節的暗帶與明帶交接處。此位置對應肌絲（myofilament）滑動的關鍵區域。",
+      "level": "checked"
+    },
+    "39": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n關節軟骨（articular cartilage）屬於透明軟骨（hyaline cartilage）。其表面直接與關節腔相鄰。因此缺乏軟骨膜（perichondrium）覆蓋。軟骨細胞（chondrocyte）必須依靠基質（matrix）擴散獲取營養。此結構特徵適應關節滑動與負重功能。\n\n**選項解析**\n- (A) 軟骨膜為致密結締組織層。它包圍大多數軟骨以提供營養與生長細胞。關節軟骨表面直接接觸關節滑液。故不存在此結構。\n- (B) 玻尿酸（hyaluronan）為細胞外基質主要成分。它能結合大量水分形成凝膠。此特性提供關節緩衝與潤滑作用。\n- (C) 透明軟骨為關節面主要組織。其基質富含第二型膠原纖維（type II collagen fibers）。此構造具備良好彈性與抗壓性。\n- (D) 同源細胞群（isogenous group）由單一軟骨細胞分裂形成。它們包埋於共同基質中。此現象常見於透明軟骨間質生長區。",
+      "level": "checked"
+    },
+    "40": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n骨生成（bone formation）主要分為膜內骨化（intramembranous ossification）與軟骨內骨化（endochondral ossification）兩種途徑。長骨（long bone）的發育依賴軟骨內骨化。此過程會先於骨幹（diaphysis）形成初級骨化中心（primary ossification center）。隨後在骨骺（epiphysis）處出現次級骨化中心（secondary ossification center），兩中心之間保留生長板（growth plate）以延長骨骼。\n\n**選項解析**\n- (A) 扁平骨（flat bone）主要依賴膜內骨化生成。此選項敘述錯誤。\n- (B) 膜內骨化時骨針（spicule）融合形成骨小樑網絡（trabecular network）。骨骼增厚屬於附著性生長（appositional growth）。間質性生長（interstitial growth）僅見於軟骨（cartilage）。此選項敘述錯誤。\n- (C) 長骨進行軟骨內骨化時確實會出現初級及次級骨化中心（primary and secondary ossification centers）。此選項敘述正確。\n- (D) 蝕骨細胞（osteoclast）主要在骨化中心（ossification center）分解軟骨基質（cartilage matrix）與新生骨質。肥大區（zone of hypertrophy）的軟骨細胞（chondrocyte）主要進行鈣化與凋亡。此選項敘述錯誤。",
+      "level": "checked"
+    },
+    "41": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n周邊神經系統（peripheral nervous system）的神經節（ganglion）依功能分類。交感神經節（sympathetic ganglion）屬於自主神經節（autonomic ganglion）。此節內的神經元（neuron）主要負責傳遞運動指令。其胞體（cell body）延伸出多個樹突（dendrite）與單一軸突（axon）。此結構屬於多極型（multipolar）神經元。此形態有利於整合多重訊號。\n\n**選項解析**\n- (A) 正確。交感神經節內的節後神經元（postganglionic neuron）胞體呈橢圓形。其表面具多個短樹突與一條長軸突。此特徵符合多極型神經元的定義。\n- (B) 錯誤。雙極型（bipolar）神經元僅具單一樹突與單一軸突。此形態主要分布於嗅黏膜（olfactory mucosa）與視網膜（retina）。\n- (C) 錯誤。偽單極（pseudounipolar）神經元的突起（process）在發育期融合。此形態為脊神經節（spinal ganglion）等感覺神經節（sensory ganglion）的特徵。\n- (D) 錯誤。交感神經節內全為多極型神經元。該節內不存在其他形態的混合族群。",
+      "level": "checked"
+    },
+    "42": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n嗅覺上皮（olfactory epithelium）為特化假復層柱狀上皮（pseudostratified columnar epithelium）。該組織功能為偵測氣味分子（odorant molecules）。其組成包含嗅覺感受細胞（olfactory receptor cell）、支持細胞（supporting cell）與基底細胞（basal cell）。杯狀細胞（goblet cell）分佈於呼吸道與消化道上皮。該細胞負責分泌黏液（mucus）。嗅覺上皮不含此細胞。\n\n**選項解析**\n- (A) 支持細胞存在於嗅覺上皮。該細胞具營養與隔離功能。\n- (B) 基底細胞存在於嗅覺上皮。該細胞屬幹細胞（stem cell）。其功能為補充受損細胞。\n- (C) 刷狀細胞（brush cell）存在於嗅覺上皮。該細胞具化學感受特性。\n- (D) 杯狀細胞分佈於氣管（trachea）與腸道（intestine）黏膜。嗅覺上皮黏液由嗅腺（olfactory gland）分泌。故該組織無此細胞。",
+      "level": "checked"
+    },
+    "43": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n本題考查消化道各段組織學特徵的分布位置。小腸（small intestine）黏膜層（mucosa）具有增加吸收面積的特殊構造。這些構造包含環狀摺疊、指狀突起與內部淋巴管（lymphatic vessel）。大腸（large intestine）則缺乏這些構造，並擁有獨特的縱行肌束。\n\n**選項解析**\n- (A) 絨毛（villi）為小腸黏膜上皮向腸腔突出的指狀構造。其主要功能是增加營養吸收面積。\n- (B) 乳糜管（lacteal）位於絨毛中央的固有層（lamina propria）內。此結構屬於盲端淋巴管。其主要功能為吸收膳食脂肪。\n- (C) 環皺襞（plicae circulares）是小腸黏膜層與黏膜下層（submucosa）共同形成的環狀摺疊。此構造主要分布於空腸（jejunum）與迴腸（ileum）。\n- (D) 結腸帶（teniae coli）為大腸外膜下三條縱行平滑肌（smooth muscle）增厚所形成的條帶。此構造主要見於盲腸（cecum）與結腸（colon）。",
+      "level": "checked"
+    },
+    "44": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n蘭氏細胞（Langerhans cell）屬樹突狀細胞（dendritic cell）。它們負責捕捉外來抗原。這些細胞會將抗原呈現給T細胞（T cell）。此機制啟動皮膚免疫反應。\n\n**選項解析**\n- (A) 錯誤。蘭氏細胞主要位於棘層（stratum spinosum）。它們未均勻分佈於表皮（epidermis）各層。\n- (B) 錯誤。基底層（stratum basale）主要含角質形成細胞（keratinocyte）。蘭氏細胞在此層極少見。\n- (C) 正確。蘭氏細胞具抗原呈現細胞（antigen-presenting cell）功能。它們能活化T細胞引發免疫反應。\n- (D) 錯誤。機械性受器（mechanoreceptor）包含觸覺小體（Meissner corpuscle）。蘭氏細胞無感覺傳導功能。",
+      "level": "checked"
+    },
+    "45": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n甲狀腺（thyroid gland）的基本構造單位為甲狀腺濾泡（thyroid follicle）。濾泡中央充滿甲狀腺膠體（colloid）。濾泡外圍由單層立方狀的甲狀腺濾泡細胞（follicular cell）環繞。這些細胞負責合成甲狀腺激素（thyroid hormone）。\n\n**選項解析**\n- (A) 甲狀腺濾泡大小差異顯著。直徑通常小於兩毫米。選項所述過大且忽略變異。\n- (B) 甲狀腺濾泡細胞確實環繞中央的甲狀腺膠體。此結構構成甲狀腺的基本功能單位。敘述正確。\n- (C) 甲狀腺球蛋白（thyroglobulin）在濾泡細胞內合成。碘化作用發生於濾泡腔內的膠體中。催化酵素為甲狀腺過氧化物酶（thyroid peroxidase）。選項機轉與位置皆錯誤。\n- (D) 甲狀腺濾泡細胞主要分泌甲狀腺素（thyroxine）與三碘甲狀腺素（triiodothyronine）。降鈣素（calcitonin）由濾泡旁細胞（parafollicular cell）分泌。選項混淆細胞類型。",
+      "level": "checked"
+    },
+    "46": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n前列腺（prostate gland）屬複合管泡腺（compound tubuloalveolar gland）。腺泡（acini）內襯假復層柱狀上皮（pseudostratified columnar epithelium）。腺腔內常見前列腺凝結體（prostatic concretions）。前列腺實質分為外周區（peripheral zone）、中央區（central zone）與過渡區（transitional zone）。\n\n**選項解析**\n- (A) 前列腺凝結體為鈣化沉積物。此構造僅見於中老年男性。男嬰的前列腺未受雄性激素（androgen）刺激。腺體未發育，故無凝結體。\n- (B) 前列腺癌（prostatic carcinoma）好發於外周區。過渡區主要發生良性前列腺肥大（benign prostatic hyperplasia）。\n- (C) 外周區佔腺體體積約百分之七十。中央區僅佔約百分之二十五。中央區並非最大區域。\n- (D) 前列腺屬複合管泡腺。腺泡負責分泌液體。此分類符合組織學定義。",
+      "level": "checked"
+    },
+    "47": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n細胞體積變化取決於溶液的張力（tonicity）。張力由不可穿透溶質（non-penetrating solute）決定。尿素（urea）屬可穿透溶質（penetrating solute）。尿素能自由通過紅血球（red blood cell）細胞膜。尿素入胞後提高細胞內滲透壓（osmotic pressure）。水分順梯度入胞。細胞因而脹大。\n\n**選項解析**\n- (A) 氯化鈉（sodium chloride）與氯化鉀（potassium chloride）皆為不可穿透溶質。總滲透壓約六百毫滲透濃度。此為高張溶液（hypertonic solution）。細胞失水皺縮。\n- (B) 尿素可自由穿透細胞膜。有效張力僅由氯化鈉貢獻。有效張力約二百毫滲透濃度。此為低張溶液（hypotonic solution）。水分大量入胞。細胞最易脹大。\n- (C) 葡萄糖（glucose）短期視為不可穿透溶質。總滲透壓約四百毫滲透濃度。此為高張溶液。細胞失水皺縮。\n- (D) 葡萄糖與氯化鈉皆為不可穿透溶質。總滲透壓約三百毫滲透濃度。此為等張溶液（isotonic solution）。細胞體積不變。",
+      "level": "checked"
+    },
+    "48": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n終板電位（endplate potential, EPP）屬於局部電位（local potential）。運動神經纖維末梢（motor nerve terminal）釋放乙醯膽鹼（acetylcholine）。乙醯膽鹼結合菸鹼型受器（nicotinic receptor）。此受器為配體閘控離子通道（ligand-gated ion channel）。通道開啟後鈉離子（Na⁺）大量內流。膜電位去極化（depolarization）形成 EPP。EPP 達到閾值（threshold）後會引發動作電位（action potential）。\n\n**選項解析**\n- (A) 乙醯膽鹼結合的是菸鹼型受器。蕈毒型受器（muscarinic receptor）主要位於心臟（heart）與平滑肌（smooth muscle）。此選項錯誤。\n- (B) EPP 主要因鈉離子（Na⁺）內流造成。鉀離子（K⁺）外流會使膜電位超極化（hyperpolarization）。EPP 本身並非動作電位。此選項錯誤。\n- (C) EPP 僅存在於終板區（endplate region）。動作電位才會沿橫小管（transverse tubule）傳導。傳導後會開啟電壓閘控鈣離子通道（voltage-gated calcium channel）。此選項錯誤。\n- (D) 肉毒桿菌毒素（botulinum toxin）會抑制乙醯膽鹼釋放。EPP 幅度因此降低。膜電位無法達到閾值。肌肉（muscle）無法產生收縮。此選項正確。",
+      "level": "checked"
+    },
+    "49": {
+      "text": "**答案：A、C**\n\n**關鍵觀念**\n語言理解與閱讀功能主要依賴大腦皮質（cerebral cortex）的特定區域。威尼克氏區（Wernicke's area）負責處理聽覺語言與語意理解。角迴（angular gyrus）負責將視覺文字資訊轉換為語言代碼。此兩處病變會導致患者說話流利但出現失讀症（alexia）。\n\n**選項解析**\n- (A) 正確。威尼克氏區病變會破壞語意理解，患者說話流利但無法理解文字。\n- (B) 錯誤。布洛卡氏區（Broca's area）病變會導致運動性失語症（Broca's aphasia），患者說話不流利且斷續。\n- (C) 正確。角迴病變會中斷視覺與語言區的連結，造成單純性失讀症。\n- (D) 錯誤。弓狀束（arcuate fasciculus）病變會導致傳導性失語症（conduction aphasia），患者主要表現為複誦能力受損。",
+      "level": "checked"
+    },
+    "50": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n杏仁核（amygdaloid nucleus）位於邊緣系統（limbic system）深部。此腦區負責處理情緒記憶。恐懼條件反射（fear conditioning）的學習與表現皆依賴此結構。臨床損傷此區域會導致恐懼反應顯著減弱。\n\n**選項解析**\n- (A) 視上核（supraoptic nucleus）主要分泌抗利尿激素（antidiuretic hormone）。此核團調節體液滲透壓。此選項為錯誤答案。\n- (B) 視叉上核（suprachiasmatic nucleus）接收視網膜（retina）光線訊號。此核團控制生物晝夜節律（circadian rhythm）。此選項為錯誤答案。\n- (C) 杏仁核接收感覺皮質（sensory cortex）輸入。此結構整合外界威脅訊號。此選項為正確答案。\n- (D) 海馬迴（hippocampus）主要負責空間記憶（spatial memory）。此腦區參與長期記憶（long-term memory）形成。此選項為錯誤答案。",
+      "level": "checked"
+    },
+    "51": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n自主神經系統（Autonomic Nervous System）分為交感神經（Sympathetic Nervous System）與副交感神經（Parasympathetic Nervous System）。交感神經的節前神經元（Preganglionic Neuron）位於脊髓（Spinal Cord）胸腰段，故稱胸腰部門（Thoracolumbar Division）。副交感神經的節前神經元位於腦幹（Brainstem）與薦髓（Sacral Spinal Cord），故稱頭薦部門（Craniosacral Division）。兩者解剖起源不同。\n\n**選項解析**\n- (A) 交感神經系統的起源位於脊髓胸腰段。該部門正確名稱為胸腰部門。頭薦部門專指副交感神經系統。此選項名稱混淆，故最不適當。\n- (B) 交感神經系統的節前神經元位於脊髓。其軸突（Axon）終末釋放乙醯膽鹼（Acetylcholine）。該分子作用於節後神經元的菸鹼型受體（Nicotinic Receptor）。敘述正確。\n- (C) 副交感神經系統的節後神經元（Postganglionic Neuron）支配標的器官（Target Organ）。其軸突終末主要釋放乙醯膽鹼。該分子作用於標的組織（Target Tissue）的毒蕈鹼型受體（Muscarinic Receptor）。敘述正確。\n- (D) 副交感神經系統的自主神經節（Autonomic Ganglion）靠近標的器官。交感神經系統的自主神經節多位於椎旁神經節（Paravertebral Ganglion）或椎前神經節（Prevertebral Ganglion）。兩者位置差異明確。敘述正確。",
+      "level": "checked"
+    },
+    "52": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n代謝型受體（metabotropic receptor）屬於G蛋白偶聯受體（G-protein coupled receptor）。此類受體活化後會啟動細胞內第二信使系統。配體門控離子通道（ligand-gated ion channel）屬於電導型受體（ionotropic receptor）。兩者機轉與結構完全不同。\n\n**選項解析**\n- (A) 去甲腎上腺素（norepinephrine）結合α₁受體（α₁ receptor）。此受體為Gq蛋白（Gq protein）偶聯受體。活化後會促進磷脂酶C（phospholipase C）作用。屬於代謝型受體。配對正確。\n- (B) 組織胺（histamine）的受體為H₁至H₄受體（H₁ to H₄ receptor）。5-HT₁受體（5-HT₁ receptor）的配體是血清素（serotonin）。兩者配對錯誤。\n- (C) 乙醯膽鹼（acetylcholine）結合菸鹼型受體（nicotinic receptor）。此受體為配體門控離子通道。屬於電導型受體。非代謝型受體。\n- (D) 麩胺酸（glutamate）結合AMPA受體（AMPA receptor）。此受體為配體門控鈉離子通道（sodium ion channel）。屬於電導型受體。非代謝型受體。",
+      "level": "checked"
+    },
+    "53": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n前庭系統（vestibular system）負責偵測頭部位置與運動。耳石器官包含橢圓囊（utricle）與球囊（saccule）。球囊的毛細胞（hair cell）靜毛（stereocilia）被耳石膜（otolithic membrane）覆蓋。耳石膜含有碳酸鈣結晶。當人體產生垂直方向的線性加速度時，耳石膜會因慣性產生位移。此位移會彎曲毛細胞的靜毛。彎曲動作會觸發神經訊號傳入中樞。大腦藉此感知垂直方向的移動。\n\n**選項解析**\n- (A) 半規管（semicircular canal）主要偵測頭部的角加速度。它負責感知旋轉運動，而非直線移動。\n- (B) 橢圓囊的耳石膜呈水平排列。它主要負責偵測水平方向的線性加速度。\n- (C) 球囊的耳石膜呈垂直排列。它專門負責偵測垂直方向的線性加速度。此選項符合題意。\n- (D) 柯蒂氏器（organ of Corti）位於耳蝸（cochlea）內。它是聽覺感受器，與平衡覺無關。",
+      "level": "checked"
+    },
+    "54": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n副交感神經（parasympathetic nerve）興奮會啟動調節反射（accommodation reflex）。睫狀肌（ciliary muscle）收縮會牽拉睫狀體（ciliary body）。懸繫小帶（zonule）因此鬆弛且張力下降。水晶體（lens）因彈性回縮而變圓變厚。瞳孔括約肌（sphincter pupillae muscle）同時收縮使瞳孔縮小。\n\n**選項解析**\n- (A) 正確。副交感神經興奮會使睫狀肌環狀纖維收縮。\n- (B) 正確。睫狀肌收縮會降低懸繫小帶張力。\n- (C) 錯誤。懸繫小帶鬆弛後，水晶體會變圓變厚。變薄變長屬交感神經（sympathetic nerve）興奮之遠物調節。\n- (D) 正確。副交感神經會使瞳孔括約肌收縮。",
+      "level": "checked"
+    },
+    "55": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n骨骼肌（skeletal muscle）在開始運動的最初幾秒鐘內，能量需求會瞬間上升。此時細胞內的三磷酸腺苷（adenosine triphosphate）存量極少。肌肉會立即利用磷酸肌胺酸（creatine phosphate）進行快速磷酸化反應。此反應能瞬間再生三磷酸腺苷，以維持收縮功能。\n\n**選項解析**\n- (A) 脂肪酸（fatty acid）氧化需經β氧化（beta-oxidation）與三羧酸循環（tricarboxylic acid cycle）。此過程耗時較長，主要供應長時間低強度運動。\n- (B) 葡萄糖（glucose）分解需經糖解作用（glycolysis）與細胞呼吸（cellular respiration）。此路徑啟動速度較慢，無法滿足最初幾秒鐘的需求。\n- (C) 蛋白質（protein）分解主要用於長期飢餓或極度耐力運動。肌肉收縮初期幾乎不依賴此途徑。\n- (D) 磷酸肌胺酸儲存於肌細胞質中。其高能磷酸鍵可迅速轉移給二磷酸腺苷（adenosine diphosphate）。此機轉能在數秒內快速補充能量，為正確答案。",
+      "level": "checked"
+    },
+    "56": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n骨骼肌纖維（skeletal muscle fiber）依代謝特性分為慢縮與快縮型。第 1 型骨骼肌纖維（Type I skeletal muscle fiber）屬慢縮氧化型，依賴有氧代謝。第 2X 型骨骼肌纖維（Type 2X skeletal muscle fiber）屬快縮糖解型，主要依賴無氧代謝。快縮型能量耗損迅速，故抗疲勞能力較差。\n\n**選項解析**\n- (A) 錯誤。該型纖維主要進行無氧代謝，其粒線體（mitochondria）數量較少。\n- (B) 正確。該型纖維依賴糖解作用產生三磷酸腺苷（adenosine triphosphate），乳酸（lactic acid）累積快，故更容易疲勞。\n- (C) 錯誤。該型纖維的肌紅蛋白（myoglobin）含量較低，外觀偏白。\n- (D) 錯誤。該型纖維氧氣需求較低，其微血管（capillary）供應密度較少。",
+      "level": "checked"
+    },
+    "57": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n血栓（thrombus）溶解依賴纖維蛋白溶解系統（fibrinolytic system）。內皮細胞（endothelial cell）會分泌組織血漿素原活化劑（tissue plasminogen activator）。此酵素（enzyme）能將無活性的血漿素原（plasminogen）轉化為血漿素（plasmin）。血漿素會切割纖維蛋白（fibrin）網狀結構。此過程可恢復血管（blood vessel）通透性。\n\n**選項解析**\n- (A) 內皮細胞確實分泌組織血漿素原活化劑。此敘述正確。\n- (B) 血漿素原必須經活化才能轉為血漿素。此敘述正確。\n- (C) 可溶性纖維蛋白片段（soluble fibrin fragments）是降解產物。它們不會重新聚集成纖維蛋白。此敘述錯誤。\n- (D) 纖維蛋白與組織血漿素原活化劑結合後可大幅提升酵素活性。此敘述正確。",
+      "level": "checked"
+    },
+    "58": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n心電圖（electrocardiogram, ECG）波形變化可反映離子濃度異常。高血鉀（hyperkalemia）會加速心室肌細胞（ventricular myocyte）的再極化過程。此機轉會使 T 波（T wave）振幅增高且基底變窄。臨床常以肢體導程（limb leads）觀察此典型變化。\n\n**選項解析**\n- (A) 正確。血鉀升高會改變細胞膜靜止電位。離子通道特性改變會加速再極化。此變化在 lead Ⅱ 呈現高聳且尖銳的 T 波（tall T wave）。\n- (B) 錯誤。一級房室傳導阻斷（first-degree atrioventricular heart block）定義為傳導延遲。PR 間期（PR interval）會延長而非縮短。正常 PR 間期介於零點一六至零點二秒。\n- (C) 錯誤。aVR 導程（aVR lead）的探針位於右肩。其記錄向量與 lead Ⅱ 方向相反。因此 QRS 波（QRS complex）主要呈現向下偏斜波形。\n- (D) 錯誤。T 波確實代表心室再極化（ventricular repolarization）。但正常心電圖的 V1 至 V6 導程（precordial leads）T 波多為向上偏斜。僅 V1 導程可能出現向下或雙向波形。",
+      "level": "checked"
+    },
+    "59": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n心肌細胞動作電位（cardiac myocyte action potential）分為五期。去極化期（depolarization phase）由快速電壓閥控鈉離子通道（fast voltage-gated sodium channel）開啟引發。初期快速再極化期（initial rapid repolarization phase）主要依賴鈉離子通道（sodium channel）關閉。同時瞬態外向鉀離子通道（transient outward potassium channel）開啟。鉀離子（potassium ion）外流使膜電位（membrane potential）下降。此階段銜接平原期（plateau phase）。\n\n**選項解析**\n- (A) 正確。鈉離子通道關閉停止去極化。鉀離子通道（potassium channel）開啟引發離子外流。此機制直接造成初期快速再極化。\n- (B) 錯誤。氯離子通道（chloride channel）非此階段主要參與者。初期再極化不依賴氯離子（chloride ion）流動。\n- (C) 錯誤。L型鈣離子通道（L-type calcium channel）於平原期開啟。T型鈣離子通道（T-type calcium channel）參與節律細胞（pacemaker cell）去極化。兩者與本題無關。\n- (D) 錯誤。鈣離子通道（calcium channel）切換不負責初期再極化。此描述不符合心肌細胞電生理特性。",
+      "level": "checked"
+    },
+    "60": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n心室肌細胞（ventricular myocyte）與SA節細胞（SA node cell）的動作電位（action potential）機轉不同。心室肌細胞具穩定靜止膜電位（resting membrane potential）。SA節細胞具自動去極化（automatic depolarization）特性。兩者再極化（repolarization）皆依賴鉀離子通道（potassium channel）開啟。鉀離子（potassium ion）外流使膜電位恢復負值。\n\n**選項解析**\n- (A) 錯誤。SA節細胞無穩定靜止膜電位。其最大舒張期電位（maximum diastolic potential）會持續上升。\n- (B) 錯誤。SA節細胞無明顯平原期（plateau phase）。平原期僅見於心室肌細胞。\n- (C) 錯誤。SA節細胞去極化（depolarization）主要依賴鈣離子通道（calcium channel）。心室肌細胞去極化才依賴鈉離子通道（sodium channel）。\n- (D) 正確。兩者再極化皆因鉀離子通道開啟。鉀離子順濃度梯度外流。膜電位因此下降至負值。",
+      "level": "checked"
+    },
+    "61": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n顱內壓（Intracranial pressure）上升會壓迫腦部血管並引發缺血。缺血會刺激延髓（Medulla oblongata）心血管中樞（Cardiovascular center），使交感神經（Sympathetic nerve）活性增加與血壓上升。高血壓會活化頸動脈竇（Carotid sinus）壓力感受器（Baroreceptor），並透過迷走神經（Vagus nerve）增強副交感神經（Parasympathetic nerve）對心臟的抑制。此庫欣氏反射（Cushing reflex）最終導致心跳速率下降。此機制旨在維持腦部血液灌流。\n\n**選項解析**\n- (A) 血壓與心跳同時下降不符合此反射機轉。此選項錯誤。\n- (B) 血壓上升伴隨心跳下降為庫欣氏反射的典型表現。此選項正確。\n- (C) 心跳速率上升常見於血容量不足或失血狀態。此選項錯誤。\n- (D) 血壓下降伴隨心跳上升屬於低血壓的代償反應。此選項錯誤。",
+      "level": "checked"
+    },
+    "62": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n此題考查費克原理（Fick principle）在氧氣代謝的應用。全身氧氣消耗速率（oxygen consumption rate）等於心輸出量（cardiac output）乘以動靜脈氧差（arteriovenous oxygen difference）。題目已知體動脈血氧濃度（arterial oxygen concentration）與氧耗量。可直接代入公式求解體靜脈血氧濃度（venous oxygen concentration）。血紅素（hemoglobin）濃度與結合比例為干擾資訊。計算時無需使用。\n\n**選項解析**\n- (A) 正確。根據費克原理，氧耗量等於心輸出量乘以動靜脈氧差。將數值代入公式。250 mL/min 等於 5 L/min 乘以動靜脈氧差。解得動靜脈氧差為 50 mL/L。體靜脈血氧濃度等於 200 mL/L 減去 50 mL/L。結果為 150 mL/L。\n- (B) 錯誤。此數值未正確套用費克原理公式。若誤將心輸出量單位換算錯誤，可能得出此結果。\n- (C) 錯誤。此數值計算過程有誤。題目提供的血紅素數據不影響本題直接計算。\n- (D) 錯誤。此數值遠低於正常生理範圍。體靜脈血仍保留大部分氧氣供組織使用。",
+      "level": "checked"
+    },
+    "63": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n每分鐘總通氣量（minute ventilation）主要受動脈血二氧化碳分壓（arterial PCO2）與動脈血氧分壓（arterial PO2）調節。中樞化學感受器（central chemoreceptors）對二氧化碳（carbon dioxide）變化極為敏感。周邊化學感受器（peripheral chemoreceptors）則在嚴重低氧血症（hypoxemia）時被活化。高濃度二氧化碳與低濃度氧氣（oxygen）合併吸入時，會產生最強烈的呼吸驅動作用。\n\n**選項解析**\n- (A) 氧氣濃度正常，二氧化碳濃度接近大氣。呼吸驅動作用最弱。\n- (B) 氧氣濃度降低會刺激周邊化學感受器。但二氧化碳濃度仍低，總通氣量增加有限。\n- (C) 二氧化碳濃度升高會強烈刺激中樞化學感受器。但氧氣濃度正常，缺乏周邊化學感受器的額外驅動。\n- (D) 低氧氣與高二氧化碳同時存在。周邊化學感受器與中樞化學感受器同時被強烈活化。兩者作用疊加，使每分鐘總通氣量達到最大。",
+      "level": "checked"
+    },
+    "64": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n游離態的膽固醇（cholesterol）在小腸上皮細胞（small intestinal epithelial cells）的吸收主要依賴被動機制。膽鹽（bile salts）會與游離脂肪酸（free fatty acids）及脂質形成混合微膠粒（mixed micelles）。此結構能將疏水性分子帶至腸腔刷狀緣（brush border）。脂質分子隨後順濃度梯度穿過頂側細胞膜（cell membrane）。此過程完全不消耗細胞內三磷酸腺苷（adenosine triphosphate）。\n\n**選項解析**\n- (A) 初級主動運輸（primary active transport）需直接消耗能量。膽固醇吸收不依賴此機制。\n- (B) 次級主動運輸（secondary active transport）需依賴離子梯度驅動。膽固醇吸收無共運輸蛋白（cotransporter）參與。\n- (C) 擴散作用（diffusion）為順濃度梯度的被動過程。混合微膠粒提高脂質溶解度。游離態膽固醇藉此方式進入細胞。此為正確答案。\n- (D) 內吞作用（endocytosis）用於大分子或顆粒物質。游離態膽固醇分子較小。不以此方式為主。",
+      "level": "checked"
+    },
+    "65": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n胰泌素（secretin）主要由十二指腸（duodenum）的S細胞（S cell）分泌。其核心功能是調節腸腔酸鹼平衡。該激素直接作用於胰管細胞（pancreatic ductal cell）。此作用會大量促進碳酸氫根離子（bicarbonate ion）的分泌。同時會負回饋抑制胃泌素（gastrin）的釋放。此機制可中和進入腸道的胃酸（gastric acid）。\n\n**選項解析**\n- (A) 膽囊收縮（gallbladder contraction）主要由膽囊收縮素（cholecystokinin）介導。胰島素（insulin）分泌主要受葡萄糖（glucose）濃度調節。此選項描述不符。\n- (B) 肝臟分泌膽汁（bile）主要受膽鹽（bile salt）循環驅動。膽囊收縮亦非胰泌素主效。此選項錯誤。\n- (C) 胰泌素直接刺激胰臟分泌碳酸氫根離子。同時會抑制胃腺分泌胃泌素。此為標準生理學機制。此選項正確。\n- (D) 腸道上皮細胞（intestinal epithelial cell）離子分泌非此激素主要目標。促進胃酸分泌與實際抑制作用相反。此選項錯誤。",
+      "level": "checked"
+    },
+    "66": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n腎臟（kidney）透過調節水分重吸收來維持體液滲透壓（osmolarity）穩定。抗利尿荷爾蒙（antidiuretic hormone, ADH）主要作用於集合管（collecting duct）以改變其對水的通透性。尿液（urine）滲透壓可隨身體水分狀態大幅波動。此範圍反映腎臟極佳的濃縮與稀釋能力。\n\n**選項解析**\n- (A) 血漿滲透壓（plasma osmolarity）低於正常值會抑制抗利尿荷爾蒙分泌。此選項敘述相反。\n- (B) 刺激口渴（thirst）的滲透壓閾值較高。刺激抗利尿荷爾蒙分泌的閾值較低。此選項敘述相反。\n- (C) 抗利尿荷爾蒙主要作用於集合管。近端腎小管（proximal tubule）對水的重吸收不受抗利尿荷爾蒙調節。此選項敘述錯誤。\n- (D) 正常腎臟可將尿液濃縮至約一千二百毫滲透濃度每公升。尿液亦可稀釋至約五十毫滲透濃度每公升。此選項符合生理學數據。",
+      "level": "checked"
+    },
+    "67": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n亨氏管（loop of Henle）上升段粗枝（thick ascending limb of loop of Henle）對水分完全不具通透性。該段僅主動再吸收離子。水分無法隨之透出。管腔內液滲透壓因此下降。\n\n**選項解析**\n- (A) 亨氏管下降枝（descending limb of loop of Henle）富含第一型水通道（aquaporin-1）。水分可順梯度自由透出。此敘述正確。\n- (B) 該段管壁缺乏水通道（aquaporin）。水分絕對無法再吸收。鈉－氯協同運輸蛋白（Na⁺-Cl⁻ cotransporter）僅運輸離子。此敘述錯誤。\n- (C) 基底外側膜（basolateral membrane）具鈉－鉀腺苷三磷酸酶（Na⁺-K⁺ ATPase）。此酵素維持細胞內低鈉。離子再吸收會建立滲透梯度。但水分仍無法進入。此敘述正確。\n- (D) 內液離開該段時滲透壓已降低。進入遠端小管（distal tubule）時呈低張（hypotonic）狀態。此敘述正確。",
+      "level": "terms",
+      "terms": [
+        {
+          "en": "distal tubule",
+          "correct": "遠側小管"
+        }
+      ]
+    },
+    "68": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n胰島素（insulin）是體內主要的合成代謝荷爾蒙。它會降低血液葡萄糖（blood glucose）濃度並促進能量儲存。胰島素能活化脂肪組織（adipose tissue）中的脂蛋白脂肪酶（lipoprotein lipase）。此酵素會加速游離脂肪酸進入細胞並轉化為三酸甘油酯（triglyceride）。\n\n**選項解析**\n- (A) 錯誤。血鉀（potassium）升高才會促進胰島素分泌。低血鉀會抑制β細胞（beta cell）去極化並減少分泌。\n- (B) 錯誤。胰島素會抑制肝臟的糖質新生（gluconeogenesis）與肝糖分解（glycogenolysis）。因此會降低葡萄糖（glucose）產生速率。\n- (C) 正確。胰島素會促進脂肪組織的脂肪合成（lipogenesis）速率。此選項符合生理學原則。\n- (D) 錯誤。胰島素會抑制肝臟的酮體生成（ketogenesis）作用。缺乏胰島素時才會促進酮體（ketone bodies）產生。",
+      "level": "terms",
+      "terms": [
+        {
+          "en": "blood glucose",
+          "correct": "血糖"
+        },
+        {
+          "en": "lipoprotein lipase",
+          "correct": "脂蛋白脂酶"
+        }
+      ]
+    },
+    "69": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n甲促素（thyroid-stimulating hormone）屬於糖蛋白激素（glycoprotein hormone）家族。此家族成員皆由共同的α次單元（alpha subunit）與特異性的β次單元（beta subunit）組成。β次單元負責決定激素的受體（receptor）結合特異性。黃體生成素（luteinizing hormone）與人類絨毛性腺刺激素（human chorionic gonadotropin）皆與甲促素共享相同的α次單元。\n\n**選項解析**\n- (A) 生長激素（growth hormone）與泌乳素（prolactin）屬於單鏈多肽激素。兩者結構獨立，且不含α次單元。\n- (B) 腎皮促素（adrenocorticotropic hormone）為單鏈多肽。濾泡刺激素（follicle-stimulating hormone）雖含共同α次單元，但與腎皮促素配對錯誤。\n- (C) 抗利尿激素（antidiuretic hormone）與催產素（oxytocin）為九肽激素。兩者由下視丘（hypothalamus）合成，結構與糖蛋白激素無關。\n- (D) 黃體生成素與人類絨毛性腺刺激素皆屬糖蛋白激素。兩者皆與甲促素具有相同的α次單元。",
+      "level": "checked"
+    },
+    "70": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n壓力反應主要依賴下視丘（hypothalamus）與腦下垂體前葉（anterior pituitary）調節。下視丘神經細胞會分泌促腎上腺皮質素釋放激素（corticotropin-releasing hormone）。此激素會刺激腦下垂體前葉釋放促腎上腺皮質素（adrenocorticotropic hormone）。該激素再作用於腎上腺皮質（adrenal cortex）以促進皮質素（cortisol）分泌。\n\n**選項解析**\n- (A) 血糖（blood glucose）顯著下降會活化交感神經（sympathetic nervous system）。腎上腺髓質（adrenal medulla）會因此大量分泌腎上腺素（epinephrine）。此敘述正確。\n- (B) 身體遭遇壓力（stress）時，下視丘腦下垂體腎上腺軸會活化。血漿皮質素濃度確實會上升。此敘述正確。\n- (C) 壓力刺激下視丘時，分泌的是促腎上腺皮質素釋放激素。促腎上腺皮質素實際由腦下垂體前葉分泌。此敘述混淆部位，為正確答案。\n- (D) 促腎上腺皮質素分泌受晝夜節律（circadian rhythm）調控。其血中濃度通常於清晨達高峰。此敘述正確。",
+      "level": "checked"
+    },
+    "71": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n胰臟（pancreas）beta 細胞（beta cell）依賴葡萄糖運輸蛋白（glucose transporter-2, GLUT-2）將細胞外葡萄糖（glucose）運入細胞內。此步驟是血糖（blood glucose）感應的起始關鍵。葡萄糖進入後會經糖酵解（glycolysis）產生三磷酸腺苷（adenosine triphosphate, ATP）。ATP 濃度上升會關閉鉀離子（potassium ion）通道（ATP-sensitive potassium channel）。細胞膜（cell membrane）去極化後會開啟電壓門控鈣離子通道（voltage-gated calcium channel）。鈣離子（calcium ion）內流最終觸發胰島素（insulin）分泌。此機轉為標準教科書內容。\n\n**選項解析**\n- (A) 正確。GLUT-2 負責將葡萄糖運入 beta 細胞。功能缺失會使細胞無法感知血糖上升。後續分泌途徑因此中斷。\n- (B) 錯誤。生理學上不存在葡萄糖與鈣離子反向運輸蛋白。鈣離子主要透過電壓門控通道進入細胞。\n- (C) 錯誤。生理學上不存在葡萄糖與氯離子（chloride ion）反向運輸蛋白。氯離子通道主要參與膜電位調節。\n- (D) 錯誤。生理學上不存在葡萄糖與胺基酸（amino acid）共同運輸蛋白。胺基酸吸收主要依賴鈉離子（sodium ion）依賴型運輸體。",
+      "level": "checked"
+    },
+    "72": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n副甲狀腺（Parathyroid gland）分泌副甲狀腺素（Parathyroid hormone）以調節血漿（Plasma）鈣離子（Calcium ion）與磷離子（Phosphate ion）。切除兩側副甲狀腺後，體內缺乏副甲狀腺素會導致血鈣下降與血磷上升。低血鈣狀態會使神經肌肉興奮性（Neuromuscular excitability）顯著升高。\n\n**選項解析**\n- (A) 符合生理。副甲狀腺素缺乏會減少腎臟（Kidney）排磷。血磷濃度因此升高。\n- (B) 不符合生理。低血鈣會降低神經細胞（Neuron）膜閾值。神經肌肉興奮性會顯著上升。此選項與事實相反。\n- (C) 符合生理。副甲狀腺素促進腎臟活化維生素D（Vitamin D）。缺乏時腸道（Intestine）鈣離子吸收減少。\n- (D) 符合生理。副甲狀腺素維持血鈣。切除後血漿鈣離子濃度下降。",
+      "level": "terms",
+      "terms": [
+        {
+          "en": "Phosphate ion",
+          "correct": "磷酸離子"
+        }
+      ]
+    },
+    "73": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n卵巢濾泡（ovarian follicle）的發育始於胎兒期。原始濾泡（primordial follicle）在出生前已大量形成。這些濾泡會持續且隨機地啟動發育。此過程並非依賴青春期荷爾蒙。月經週期（menstrual cycle）的濾泡選擇與成熟，則受腦下垂體（pituitary gland）分泌的促濾泡激素（follicle-stimulating hormone）調節。\n\n**選項解析**\n- (A) 敘述錯誤。原始濾泡在胎兒期已形成。它們會持續進入初級濾泡（primary follicle）階段。此過程在兒童期即已發生。並非等到青春期才開始。\n- (B) 敘述正確。初級濾泡發育時，卵母細胞（oocyte）與顆粒細胞（granulosa cell）之間會分泌糖蛋白。此結構即為透明帶（zona pellucida）。\n- (C) 敘述正確。月經週期濾泡期（follicular phase）初期會有一批濾泡同步生長。後續僅有一個會成為優勢濾泡（dominant follicle）。該濾泡會最終成熟並排卵。\n- (D) 敘述正確。濾泡凋零萎縮（follicular atresia）是自然淘汰機制。此現象在各發育階段皆可能發生。",
+      "level": "checked"
+    },
+    "74": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n胺基酸（amino acid）透過脫水縮合反應形成多肽（polypeptide）。每兩個相鄰胺基酸之間會形成一個胜肽鍵（peptide bond）。因此胜肽鍵數量等於胺基酸總數減一。此為蛋白質（protein）一級結構（primary structure）的基本計算原則。\n\n**選項解析**\n- (A) 錯誤。此數值不符合胺基酸縮合的數學關係。\n- (B) 錯誤。此數值少算了一個胜肽鍵。\n- (C) 正確。十二個胺基酸連接時會形成十一個胜肽鍵。\n- (D) 錯誤。此數值等於胺基酸總數，未扣除末端未參與成鍵的胺基酸。",
+      "level": "checked"
+    },
+    "75": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n固有無序蛋白（intrinsically disordered proteins）在生理條件下缺乏穩定的三維結構（three-dimensional structure）。這類蛋白質（protein）依靠動態的構象（conformation）變化來執行功能。它們常見於細胞訊號傳導（cell signaling）與轉錄調控（transcriptional regulation）過程。其結構彈性有助於結合多種配體（ligand）。\n\n**選項解析**\n- (A) 錯誤。固有無序蛋白在細胞（cell）內具有多重生理功能。它們參與重要的代謝調控（metabolic regulation）。\n- (B) 正確。此類蛋白質在天然狀態下無法摺疊成固定構型。它們呈現高度動態的無序狀態。\n- (C) 錯誤。這類蛋白質通常富含極性胺基酸（polar amino acids）與帶電胺基酸（charged amino acids）。芳香族胺基酸（aromatic amino acids）比例較低。\n- (D) 錯誤。固有無序蛋白能與多種蛋白質或核酸（nucleic acids）發生交互作用。其無序區域常作為結合界面（binding interface）。",
+      "level": "checked"
+    },
+    "76": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n血紅蛋白（hemoglobin）具別構調節特性。2,3-二磷酸甘油酸（2,3-bisphosphoglycerate）結合於脫氧血紅蛋白（deoxyhemoglobin）中央空腔。此結合穩定低親和力構造。該構造稱為 T 狀態（T state）。此機轉促進氧氣（oxygen）於周邊組織釋放。\n\n**選項解析**\n- (A) 錯誤。R 狀態（R state）為高親和力構造。氧氣結合時才會轉變。2,3-二磷酸甘油酸（2,3-bisphosphoglycerate）會抑制此狀態。\n- (B) 正確。2,3-二磷酸甘油酸（2,3-bisphosphoglycerate）帶負電。它與脫氧血紅蛋白正電胺基酸（amino acid）交互作用。此作用強化鹽橋（salt bridge）鍵結。血紅蛋白因此穩定於 T 狀態。\n- (C) 錯誤。A 形態（A form）為核酸（nucleic acid）構型。此選項與血紅蛋白無關。\n- (D) 錯誤。Z 形態（Z form）為去氧核糖核酸（deoxyribonucleic acid）構型。此選項與血紅蛋白無關。",
+      "level": "terms",
+      "terms": [
+        {
+          "en": "deoxyribonucleic acid",
+          "correct": "去氧核醣核酸"
+        }
+      ]
+    },
+    "77": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n脂溶性維生素（Fat-soluble vitamins）必須依賴膽汁（Bile）乳化膳食脂肪。膽汁酸（Bile acids）會與脂肪形成混合微膠粒（Mixed micelles）。此結構能促進脂溶性營養素跨過腸黏膜（Intestinal mucosa）。維生素A（Vitamin A）屬於脂溶性維生素。水溶性維生素（Water-soluble vitamins）則可直接溶解於水相中吸收。脂溶性維生素包含維生素A、D、E與K。臨床常見膽道阻塞患者出現脂溶性維生素缺乏症。\n\n**選項解析**\n- (A) 維生素A（Vitamin A）為脂溶性維生素。其腸道吸收確實需要膽汁協助。此選項正確。\n- (B) 維生素B₆（Vitamin B₆）為水溶性維生素。它不依賴膽汁即可吸收。此選項錯誤。\n- (C) 維生素B₁₂（Vitamin B₁₂）為水溶性維生素。它需要內因子（Intrinsic factor）結合才能吸收。此選項錯誤。\n- (D) 維生素C（Vitamin C）為水溶性維生素。它透過主動運輸進入腸細胞（Intestinal cells）。此選項錯誤。",
+      "level": "checked"
+    },
+    "78": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n人類基因組（human genome）的蛋白質（protein）編碼區佔比極低。大部分DNA（deoxyribonucleic acid）序列屬於非編碼區。這些序列包含調節元件（regulatory element）與重複序列（repetitive sequence）。掌握基因組組成比例即可解題。\n\n**選項解析**\n- (A) 人類基因（gene）屬於分裂基因（split gene）。編碼區被非編碼的內含子（intron）打斷。此敘述符合真核生物（eukaryote）特徵。\n- (B) 人類基因組僅約一至兩百分比的DNA負責編碼蛋白質。超過百分之四十的數據嚴重高估。此選項為錯誤敘述。\n- (C) 轉座子（transposon）與重複序列佔據人類基因組約一半比例。此數據符合現代基因體學（genomics）共識。\n- (D) 著絲粒（centromere）與端粒（telomere）皆由特殊重複DNA序列構成。它們分別負責有絲分裂（mitosis）紡錘體（spindle）附著與染色體（chromosome）末端保護。此敘述正確。",
+      "level": "checked"
+    },
+    "79": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n氟尿嘧啶（5-fluorouracil）為臨床上常用的抗代謝化療藥物。該藥物進入細胞後，會經酵素作用轉化為氟去氧尿苷單磷酸（5-fluoro-2'-deoxyuridine 5'-monophosphate）。此活性代謝物會與胸苷酸合成酶（thymidylate synthase）緊密結合。酵素活性受阻後，脫氧胸苷酸（deoxythymidylic acid）便無法生成。細胞因此缺乏合成去氧核糖核酸（deoxyribonucleic acid）的關鍵原料。\n\n**選項解析**\n- (A) 黃嘌呤氧化酶（xanthine oxidase）參與嘌呤（purine）分解代謝。該酵素與氟尿嘧啶（5-fluorouracil）的作用機轉無關。\n- (B) 胺基甲醯磷酸合成酶Ⅱ（carbamoyl phosphate synthase Ⅱ）負責嘧啶（pyrimidine）合成路徑的起始步驟。此酵素並非氟尿嘧啶（5-fluorouracil）的抑制標的。\n- (C) 腺苷脫胺酶（adenosine deaminase）主要催化腺苷（adenosine）轉化為肌苷（inosine）。該酵素缺陷會導致嚴重聯合免疫缺陷症（severe combined immunodeficiency），與本題無關。\n- (D) 胸苷酸合成酶催化脫氧尿苷酸（deoxyuridylic acid）甲基化。氟去氧尿苷單磷酸（5-fluoro-2'-deoxyuridine 5'-monophosphate）會與此酵素形成穩定複合物。酵素功能被抑制後，去氧核糖核酸合成中斷。",
+      "level": "terms",
+      "terms": [
+        {
+          "en": "deoxyribonucleic acid",
+          "correct": "去氧核醣核酸"
+        },
+        {
+          "en": "deoxyribonucleic acid",
+          "correct": "去氧核醣核酸"
+        }
+      ]
+    },
+    "80": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n抗體輕鏈（antibody light chain）的基因表現涉及兩個獨立層面。V 區（variable region）與 J 區（joining region）的結合發生在 DNA（deoxyribonucleic acid）層面。此步驟稱為 VJ 重組（VJ recombination）。該過程由 RAG 酵素（RAG enzyme）催化完成。J 區與 C 區（constant region）的結合發生在 RNA（ribonucleic acid）層面。此步驟依賴轉錄後之剪接（splicing）機制。細胞可透過選擇不同 C 區外顯子（exon）來決定抗體類型。\n\n**選項解析**\n- (A) J 區與 C 區之間存在多個外顯子。兩者不會在 DNA 層面直接刪除或重組。\n- (B) V 區與 J 區於 DNA 層面完成重組。J 區與 C 區於 RNA 層面完成剪接。此描述完全符合免疫學教科書標準。\n- (C) 基因重組與剪接均發生於核酸層面。蛋白質層面僅負責後續的摺疊與糖基化。\n- (D) V 區與 J 區的重組屬於體細胞重組（somatic recombination）。該過程明確發生於 DNA 層面。",
+      "level": "checked"
+    },
+    "81": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n人類免疫缺乏病毒（Human Immunodeficiency Virus, HIV）屬於反轉錄病毒（Retrovirus）。該病毒依賴反轉錄酶（Reverse Transcriptase）合成去氧核糖核酸（Deoxyribonucleic Acid, DNA）。此酵素缺乏校對功能（Proofreading activity）。因此合成過程容易發生鹼基錯誤。基因體變異率因而顯著升高。\n\n**選項解析**\n- (A) 病毒整合酶（Integrase）負責將病毒去氧核糖核酸插入宿主染色體（Host Chromosome）。此過程與基因體快速變異無直接關聯。\n- (B) 病毒並未攜帶特殊的去氧核糖核酸水解酵素（Deoxyribonuclease）。此酵素主要參與細胞內核酸降解，非變異主因。\n- (C) 反轉錄酶缺乏外切酶活性（Exonuclease activity）。複製時無法修正錯配鹼基。導致合成去氧核糖核酸的精準度極低。此為病毒快速變異的核心機轉。\n- (D) 病毒蛋白酶（Protease）負責切割前驅蛋白（Precursor Protein）。其功能異常會影響病毒成熟，但不直接導致基因體變異。",
+      "level": "checked"
+    },
+    "82": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n錯誤配對修復（mismatch repair）系統必須區分新合成股（newly synthesized strand）與模板股（template strand）。大腸桿菌（Escherichia coli）利用甲基化（methylation）狀態作為辨識標記。Dam 甲基轉移酶（Dam methyltransferase）會特異性甲基化腺嘌呤（adenine）。DNA 複製後，新合成股暫時未甲基化。修復複合體（repair complex）會針對未甲基化的新股進行切除。此機制確保遺傳資訊正確還原。\n\n**選項解析**\n- (A) 錯誤。修復途徑不涉及移除胸腺嘧啶（thymine）的甲基。\n- (B) 錯誤。尿嘧啶（uracil）甲基化轉為胸腺嘧啶屬於核苷酸（nucleotide）合成途徑。此反應與修復辨識無關。\n- (C) 正確。該菌種透過甲基化腺嘌呤來標記模板股。該機制確保修復酵素能正確鎖定新合成股。\n- (D) 錯誤。胞嘧啶（cytosine）甲基化主要見於真核生物（eukaryotes）基因體。該菌種不以此機制進行修復辨識。",
+      "level": "checked"
+    },
+    "83": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n胺醯-tRNA 合成酶（aminoacyl-tRNA synthetase）負責將胺基酸（amino acid）正確連接至對應的轉移核醣核酸（transfer RNA）。此酵素的高度專一性是維持轉譯（translation）準確度的核心機制。若識別專一性下降，錯誤的胺基酸會被載入，直接導致多肽鏈（polypeptide chain）序列異常。\n\n**選項解析**\n- (A) 錯誤。單一轉移核醣核酸只能攜帶一種胺基酸。專一性降低不會增加合成效率。\n- (B) 正確。酵素無法精準辨識正確的轉移核醣核酸。錯誤配對會進入轉譯流程。核糖體（ribosome）會讀取錯誤的密碼子（codon）。最終產生功能異常的蛋白質。\n- (C) 錯誤。題目已說明催化活性正常。酵素仍可完成胺基酸與轉移核醣核酸的結合。\n- (D) 錯誤。核糖體主要依賴密碼子與反密碼子（anticodon）配對。突變位於合成酶，不影響轉移核醣核酸進入核糖體。",
+      "level": "checked"
+    },
+    "84": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n真核細胞（Eukaryotic cell）的 RNA 聚合酶Ⅱ（RNA polymerase II）轉錄起始需通用轉錄因子（General transcription factor）。TFⅡH（Transcription factor II H）參與轉錄前起始複合體（Pre-initiation complex）裝配。該因子具備三磷酸腺苷（Adenosine triphosphate）水解能力。其含有去氧核糖核酸解旋酶（DNA helicase）與激酶（Kinase）活性。解旋酶負責打開啟動子（Promoter）雙股螺旋。激酶負責磷酸化 RNA 聚合酶Ⅱ（RNA polymerase II）的羧基末端結構域（C-terminal domain）。轉錄作用的終止（Termination）由其他機制負責，與 TFⅡH（Transcription factor II H）無關。\n\n**選項解析**\n- (A) 正確。該因子利用三磷酸腺苷水解能量驅動構型改變。\n- (B) 正確。TFⅡH 為轉錄前起始複合體必要組件。\n- (C) 正確。其次單元確實具備去氧核糖核酸解旋酶與激酶活性。\n- (D) 錯誤。轉錄作用的終止依賴下游訊號，非此因子功能。",
+      "level": "checked"
+    },
+    "85": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n原核生物（prokaryote）的基因表現調控主要依賴操縱組（operon）系統。操作子（operator）位於啟動子（promoter）下游。該DNA序列會與阻斷蛋白（repressor）特異性結合。結合後會阻礙RNA聚合酶（RNA polymerase）前進，進而抑制轉錄（transcription）過程。\n\n**選項解析**\n- (A) 抑制型轉移核糖核酸（suppressor tRNA）參與翻譯（translation）階段，不與DNA結合。\n- (B) 微小核糖核酸（miRNA）為真核生物（eukaryote）轉錄後調控分子，作用於細胞質（cytoplasm）。\n- (C) 誘導物（inducer）會與阻斷蛋白結合，使其脫離操作子序列。\n- (D) 阻斷蛋白由調控基因（regulator gene）產出，直接結合操作子序列，為正確答案。",
+      "level": "terms",
+      "terms": [
+        {
+          "en": "translation",
+          "correct": "轉譯"
+        }
+      ]
+    },
+    "86": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n細菌色胺酸操縱組（trp operon）依賴轉錄衰減（transcription attenuation）機制調控。前導胜肽（leader peptide）序列含有連續色胺酸（tryptophan）密碼子（codon）。細胞內色胺酸濃度會改變核糖體（ribosome）翻譯速度。速度差異會引發前導區（leader region）RNA形成不同摺疊結構。特定結構會決定轉錄是否提前終止。\n\n**選項解析**\n- (A) 前導胜肽僅為短肽鏈，並非酵素。它無法催化轉錄衰減。\n- (B) 色胺酸濃度低時，核糖體會在密碼子處停滯。此現象會形成抗終止結構。轉錄作用會持續進行，不會提前衰減。\n- (C) 前導胜肽不會直接結合核糖核酸聚合酶（RNA polymerase）。轉錄衰減是由RNA摺疊結構阻擋聚合酶。\n- (D) 前導區序列包含色胺酸密碼子。細胞內色胺酸含量會改變核糖體翻譯進度。此機制確實能調控操縱組的轉錄活性。",
+      "level": "checked"
+    },
+    "87": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n此題考查底物級磷酸化（substrate-level phosphorylation）機轉。糖解作用（glycolysis）後段會生成高能中間物。該中間物可將磷酸根（phosphate group）直接轉移至二磷酸腺苷（adenosine diphosphate）。此過程僅需單一酵素（enzyme）催化即可完成。\n\n**選項解析**\n- (A) 甘油磷酸（glycerol-3-phosphate）主要參與穿梭系統（shuttle system）。它無法直接提供磷酸根生成三磷酸腺苷（adenosine triphosphate）。\n- (B) 6-磷酸葡萄糖酸內酯（6-phosphogluconolactone）屬磷酸戊糖途徑（pentose phosphate pathway）代謝物。其水解反應不產生三磷酸腺苷。\n- (C) 果糖 1,6-雙磷酸（fructose 1,6-bisphosphate）經醛縮酶（aldolase）裂解為三碳糖（triose）。此反應不直接生成三磷酸腺苷。\n- (D) 1,3-雙磷酸甘油酸（1,3-bisphosphoglycerate）的 C1 磷酸根具高轉移位能。磷酸甘油酸激酶（phosphoglycerate kinase）催化該磷酸根轉移至二磷酸腺苷。此單一反應即可直接合成三磷酸腺苷。",
+      "level": "checked"
+    },
+    "88": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n多醣（polysaccharide）依生理功能分為結構型多醣（structural polysaccharide）與儲存型多醣（storage polysaccharide）。結構型多醣主要提供組織機械支撐。儲存型多醣用於暫存化學能。區分關鍵在於單糖連結鍵型與立體構型。\n\n**選項解析**\n- (A) 纖維素（cellulose）由葡萄糖（glucose）以β-1,4-糖苷鍵（β-1,4-glycosidic bond）連結。此構型使分子呈直線狀並易形成氫鍵。它能構成植物細胞壁（plant cell wall）骨架。屬於結構型多醣。\n- (B) 直鏈澱粉（amylose）由葡萄糖以α-1,4-糖苷鍵（α-1,4-glycosidic bond）連結。主要存在於植物種子（plant seeds）中。功能為能量儲存（energy storage）。屬於儲存型多醣。\n- (C) 支鏈澱粉（amylopectin）含有α-1,4-糖苷鍵（α-1,4-glycosidic bond）與α-1,6-糖苷鍵（α-1,6-glycosidic bond）。分支結構利於快速水解。功能為植物能量儲存。屬於儲存型多醣。\n- (D) 肝醣（glycogen）結構類似支鏈澱粉但分支更密集。主要儲存於動物肝臟（animal liver）與骨骼肌（skeletal muscle）。功能為動物能量儲存。屬於儲存型多醣。",
+      "level": "checked"
+    },
+    "89": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n細胞膜（cell membrane）的主要脂質分為甘油磷脂（glycerophospholipids）與鞘脂類（sphingolipids）。甘油磷脂的骨架由甘油（glycerol）構成。鞘脂類的骨架則由鞘氨醇（sphingosine）構成。此題考查脂質分子的核心骨架差異。\n\n**選項解析**\n- (A) 錯誤。膽固醇（cholesterol）屬於類固醇（steroid）衍生物，具有四環結構，不含甘油骨架。\n- (B) 正確。磷脂膽鹼（phosphatidylcholine）屬於甘油磷脂，其分子結構以甘油為骨架，並連接兩個脂肪酸（fatty acid）與磷酸膽鹼（phosphocholine）基團。\n- (C) 錯誤。神經醯胺（ceramide）為鞘脂類的前驅分子，其骨架為鞘氨醇，不含甘油。\n- (D) 錯誤。神經鞘磷脂（sphingomyelin）亦屬鞘脂類，由神經醯胺與磷酸膽鹼結合而成，骨架同樣為鞘氨醇。",
+      "level": "checked"
+    },
+    "90": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n脂肪酸合成（fatty acid synthesis）發生在細胞質（cytosol）中。合成棕櫚酸（palmitate）需以乙醯輔酶A（acetyl-CoA）為起始單位。後續每次延長反應皆消耗兩莫耳菸醯胺腺嘌呤二核苷酸磷酸還原型（NADPH）。棕櫚酸共含十六個碳原子，需進行七次延長循環。總計消耗十四莫耳菸醯胺腺嘌呤二核苷酸磷酸還原型。\n\n**選項解析**\n- (A) 七莫耳僅為延長循環次數，未乘以每次循環所需的還原力數量。\n- (B) 正確。七次循環每次消耗兩莫耳菸醯胺腺嘌呤二核苷酸磷酸還原型，總計十四莫耳。\n- (C) 十六為棕櫚酸的碳原子數，與還原力需求無關。\n- (D) 二十一莫耳不符合脂肪酸合成的化學計量關係。",
+      "level": "checked"
+    },
+    "91": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n血糖（blood glucose）高低會調控脂質代謝。血糖高時，胰島素（insulin）分泌增加。胰島素會活化乙醯輔酶A羧化酶（acetyl-CoA carboxylase）。此酵素會生成丙二醯輔酶A（malonyl-CoA）。丙二醯輔酶A會抑制肉鹼棕櫚酸轉移酶I（carnitine palmitoyltransferase I）。脂肪酸（fatty acid）便無法進入粒線體（mitochondria）進行β-氧化（beta-oxidation）。\n\n**選項解析**\n- (A) 血糖低時，升糖素（glucagon）濃度上升。升糖素會促進脂肪分解。脂肪酸進入粒線體的量會增加。此選項敘述錯誤。\n- (B) 血糖高時，胰島素濃度上升。升糖素濃度會下降。此選項荷爾蒙變化錯誤。\n- (C) 血糖高時，胰島素濃度上升。胰島素會提升丙二醯輔酶A濃度。脂肪酸進入粒線體的過程受抑制。此選項敘述正確。\n- (D) 血糖低時，胰島素濃度會下降。升糖素濃度會上升。脂肪酸進入粒線體的量會增加。此選項荷爾蒙變化錯誤。",
+      "level": "checked"
+    },
+    "92": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n尿素代謝循環（urea cycle）主要發生於肝臟（liver）。該循環起始於粒線體（mitochondria），後續步驟轉移至細胞質（cytosol）完成。麩胺酸（glutamate）去胺基釋放氨離子（ammonium ion）的反應位於粒線體內。生成的尿素（urea）屬水溶性小分子，直接透過膜運輸蛋白排出細胞。\n\n**選項解析**\n- (A) 正確。麩胺酸去胺基作用在粒線體進行，尿素合成後段位於細胞質，符合生理區位。\n- (B) 錯誤。麩胺酸代謝不在過氧化體（peroxisome）發生。尿素合成亦非全在粒線體完成。\n- (C) 錯誤。尿素循環需跨越粒線體與細胞質。尿素直接經運輸蛋白排出，不依賴囊泡（vesicle）機制。\n- (D) 錯誤。尿素代謝與過氧化體無關。尿素分泌無需內質網（endoplasmic reticulum）與囊泡參與。",
+      "level": "checked"
+    },
+    "93": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n生酮胺基酸（ketogenic amino acid）分解後會生成乙醯輔酶A（acetyl-CoA）或乙醯乙酸（acetoacetate）。這些分子能進入酮體生成途徑（ketogenesis）。糖尿病患者或飢餓狀態時，細胞會依賴酮體（ketone bodies）作為替代能源。白胺酸（leucine）屬於純生酮胺基酸。其碳骨架最終會完全轉化為生酮產物。\n\n**選項解析**\n- (A) 白胺酸代謝會生成異戊醯輔酶A（isovaleryl-CoA）。該中間物會進一步轉化為乙醯乙酸。此產物可直接用於生成酮體。因此能於飢餓時提供能量。\n- (B) 精胺酸（arginine）屬於生糖胺基酸（glucogenic amino acid）。其分解產物為α-酮戊二酸（α-ketoglutarate）。該物質主要進入三羧酸循環（tricarboxylic acid cycle）以生成葡萄糖（glucose）。\n- (C) 脯胺酸（proline）亦為生糖胺基酸。其碳骨架會轉化為麩胺酸（glutamate）。後續代謝主要用於糖質新生（gluconeogenesis）。\n- (D) 麩胺酸屬於生糖胺基酸。其分解會生成α-酮戊二酸。此途徑無法直接產生酮體。",
+      "level": "checked"
+    },
+    "94": {
+      "text": "**答案：C、D**\n\n**關鍵觀念**\n粒線體呼吸鏈（mitochondrial respiratory chain）亦稱電子傳遞鏈（electron transport chain）。其運作會驅動氫離子（hydrogen ion）跨膜運輸。複合體一（complex I）、複合體三（complex III）與複合體四（complex IV）皆具備氫離子幫浦（hydrogen pump）功能。這些蛋白質複合體會將氫離子從粒線體基質（mitochondrial matrix）主動泵入粒線體膜間腔（intermembrane space）。此過程建立跨膜電化學梯度。該梯度最終驅動三磷酸腺苷（adenosine triphosphate）合成酶（ATP synthase）運作。\n\n**選項解析**\n- (A) 複合體一會將四氫離子泵入膜間腔。此選項方向寫反。\n- (B) 複合體三的泵離子方向同樣朝向膜間腔。此選項方向寫反。\n- (C) 複合體三在傳遞電子時，確實會將四氫離子移轉至膜間腔。此敘述符合標準生化機轉。\n- (D) 複合體四在將電子交給氧分子（oxygen molecule）時，亦會將四氫離子泵入膜間腔。此敘述符合試題設定。",
+      "level": "checked"
+    },
+    "95": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n胰島素（insulin）結合受體後會活化蛋白激酶 B（protein kinase B, Akt）。活化之 Akt 會使肝醣合成激酶 3（glycogen synthase kinase 3, GSK3）發生磷酸化。此磷酸化修飾會抑制 GSK3 的激酶活性。GSK3 失活後便無法磷酸化肝醣合成酶（glycogen synthase, GS）。GS 因此維持去磷酸化狀態而活化。\n\n**選項解析**\n- (A) GSK3 去磷酸化會增強其活性。活性增強會磷酸化並抑制 GS。此選項機轉與結果皆錯誤。\n- (B) GSK3 磷酸化會抑制其活性。此選項稱提高活性，描述錯誤。\n- (C) GSK3 去磷酸化會增強其活性。增強之 GSK3 會抑制 GS。此選項結果錯誤。\n- (D) 胰島素訊號經 Akt 使 GSK3 磷酸化。此修飾會抑制 GSK3 活性。GSK3 失活後無法抑制 GS。最終達成活化 GS 之效果。此描述正確。",
+      "level": "checked"
+    },
+    "96": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n蛋白激酶 A（protein kinase A）屬依賴環磷酸腺苷（cyclic adenosine monophosphate）的酵素。靜息時由調節次單元（regulatory subunit）與催化次單元（catalytic subunit）結合。環磷酸腺苷會特異性結合調節次單元。此結合引發構型改變，促使催化次單元解離活化。\n\n**選項解析**\n- (A) 正確。環磷酸腺苷結合調節次單元後，會釋放具活性的催化次單元。\n- (B) 錯誤。催化次單元無環磷酸腺苷結合位點，僅執行磷酸化反應。\n- (C) 錯誤。鈣離子（calcium ion）不參與此酵素活化，主要調控蛋白激酶 C（protein kinase C）。\n- (D) 錯誤。鈣離子不結合催化次單元，此路徑與鈣離子無關。",
+      "level": "checked"
+    },
+    "97": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n磷脂醯肌醇三磷酸激酶（Phosphoinositide 3-kinase）屬於脂質激酶（Lipid kinase）。此酵素作用於細胞膜（Cell membrane）內側。它會將磷脂醯肌醇二磷酸（Phosphatidylinositol 4,5-bisphosphate）磷酸化。反應後生成磷脂醯肌醇三磷酸（Phosphatidylinositol 3,4,5-trisphosphate）。此脂質會招募下游訊號蛋白。\n\n**選項解析**\n- (A) 鼠肉瘤病毒癌基因同源物（Ras）屬於小型GTP酶（Small GTPase）。它受鳥苷酸交換因子（Guanine nucleotide exchange factor）活化。磷脂醯肌醇三磷酸激酶不直接磷酸化此蛋白。\n- (B) 蛋白質激酶C（Protein kinase C）屬於絲胺酸／蘇胺酸激酶（Serine/threonine kinase）。它受二酸甘油酯（Diacylglycerol）活化。磷脂醯肌醇三磷酸激酶不直接作用於此酵素。\n- (C) 磷脂醯肌醇二磷酸位於細胞膜內側。磷脂醯肌醇三磷酸激酶會將其磷酸化為磷脂醯肌醇三磷酸。此為該路徑核心步驟。\n- (D) 蛋白質激酶B（Protein kinase B）屬於下游絲胺酸／蘇胺酸激酶（Serine/threonine kinase）。它會結合新生成的脂質。磷脂醯肌醇三磷酸激酶不直接磷酸化此激酶。",
+      "level": "checked"
+    },
+    "98": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n載體（cloning vector）容量取決於複製機轉。酵母菌人工染色體（yeast artificial chromosome, YAC）模擬真核染色體結構。它含有端粒（telomere）、著絲粒（centromere）與自主複製序列（autonomously replicating sequence, ARS）。此設計能穩定維持極大片段的外源脫氧核糖核酸（deoxyribonucleic acid, DNA）。\n\n**選項解析**\n- (A) 質體（plasmid）為環狀雙股核酸分子。承載上限約十千鹼基對（kilobase pair, kb）。容量較小，不適合大片段選殖。\n- (B) 酵母菌人工染色體可承載一百至兩百萬鹼基對。它是常規實驗中承載容量最大的載體。此選項正確。\n- (C) 噬菌體載體（phage vector）利用病毒顆粒進行轉導。承載範圍約二十至二十五千鹼基對。容量介於質體與人工染色體之間。\n- (D) 細菌人工染色體（bacterial artificial chromosome, BAC）源自細菌質體。承載上限約三百千鹼基對。容量雖大，仍小於酵母菌人工染色體。",
+      "level": "checked"
+    },
+    "99": {
+      "text": "**答案：B**\n\n**關鍵觀念**\nRNA 干擾作用（RNA interference, RNAi）是一種轉譯後基因沉默（post-transcriptional gene silencing）機制。長雙股 RNA（double-stranded RNA, dsRNA）會被 Dicer 酵素（Dicer enzyme）切割成小干擾 RNA（small interfering RNA, siRNA）。siRNA 通常由二十一至二十三個核苷酸（nucleotide）組成。此分子會與 RNA 誘導沉默複合體（RNA-induced silencing complex, RISC）結合，並引導其降解互補的訊息 RNA（messenger RNA, mRNA）。\n\n**選項解析**\n- (A) 錯誤。十一至十三個核苷酸過短，無法穩定結合 RISC 並發揮特異性沉默功能。\n- (B) 正確。siRNA 的標準長度為二十一至二十三個核苷酸，此尺寸最適合被 Dicer 酵素切割並載入 RISC。\n- (C) 錯誤。三十一至三十三個核苷酸已超出 siRNA 的生理範圍，接近微小 RNA（microRNA）前驅物或其他長片段 RNA 的長度。\n- (D) 錯誤。四十一至四十三個核苷酸過長，屬於未完全切割的雙股 RNA 片段，無法直接參與 RNAi 途徑。",
+      "level": "checked"
+    }
+  }
+}

@@ -360,6 +360,8 @@ red hair, medium hair, side braid, red eyes, tsurime, red scrubs, scrub top, scr
 
 **專屬表情**：`pout` → `pout, blush, looking away, crossed arms`
 
+**立繪調色**（10/23）：五個人放在一起時（封面、校園地圖），她的紅明顯比其他人鮮豔（頭髮飽和度 0.86，其他四人 0.25–0.63），單獨看立繪時看不出來。Roger 比較過五個等級（`art/bakeoff/cover/fei_color/`）後選定：紅色系像素的飽和度 ×0.82、亮度 −12%，變成偏深的緋紅；只降飽和度會偏粉紅，所以亮度一起降。`data/characters/fei/` 底下 18 張都已用 `art/recolor.py fei` 調過，**之後新增的顏緋立繪也要跑一次**（調過的檔案會跳過）。調色前的原圖在 git（commit 9ddbc82）。
+
 **好感度劇情大綱**
 - 0 初識：她當著大家的面說你的病理「爛到可以切片研究」。
 - 1 熟識：你發現桌上那份整理得很完整的考古題，署名被她撕掉了。

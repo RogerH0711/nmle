@@ -382,6 +382,7 @@ def cmd_export(key, args):
     from rembg import new_session, remove
     sys.path.insert(0, str(Path(__file__).resolve().parent))
     from defringe import defringe
+    from recolor import save_portrait
 
     folder = OUT / key
     base = base_image(key)
@@ -394,7 +395,7 @@ def cmd_export(key, args):
         rgba = src.copy()
         rgba.putalpha(alpha)
         rgba = defringe(rgba)  # 要在還有原本背景色的時候做
-        rgba.save(export / f"{name}.webp", "WEBP", quality=90, method=6)
+        save_portrait(rgba, export / f"{name}.webp", o["char"])  # 顏緋會自動調色（art/recolor.py）
         print(name, (export / f"{name}.webp").stat().st_size // 1024, "KB", flush=True)
     # 放在深色底上檢查去背邊緣（網站深色模式的背景色）
     paths = [export / f"{name}.webp" for name in o["picks"]]
@@ -415,7 +416,9 @@ def export_variant(key, o):
         redrawn.putalpha(original.getchannel("A"))
         out = Image.composite(redrawn, original, mask)
         path = DATA / o["char"] / f"{name}.webp"
-        out.save(path, "WEBP", quality=90, method=6)
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from recolor import save_portrait
+        save_portrait(out, path, o["char"], adjusted=True)  # 底圖是 data/ 裡已經調過色的檔案，不再調一次
         print(name, path.stat().st_size // 1024, "KB", flush=True)
     print(f"{key}：輸出在 {DATA / o['char']}", flush=True)
 

@@ -18,6 +18,7 @@ from pathlib import Path
 from PIL import Image
 
 from defringe import defringe, whitish_edges
+from recolor import save_portrait
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -39,7 +40,7 @@ def main(char, base_seed, picks, mask_path=None):
         rgba = Image.open(path).convert('RGB')
         rgba.putalpha(alpha)
         fixed = defringe(rgba)
-        fixed.save(out_dir / f'{name}.webp', 'WEBP', quality=90, method=6)
+        save_portrait(fixed, out_dir / f'{name}.webp', char)  # 顏緋會自動調色（art/recolor.py）
         print(f'{name}：白邊像素 {whitish_edges(rgba)} → {whitish_edges(fixed)}')
 
 

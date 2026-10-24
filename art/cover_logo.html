@@ -1,0 +1,131 @@
+<!doctype html>
+<!--
+  遊戲封面的 Logo「醫師一階攻略～五位學姊陪你考過～」。用無頭 Chrome 截 #logo（透明背景）再疊到封面上（art/cover.py 的 logo 步驟）。
+  字型都是 Google Fonts 的 OFL 授權：標題 Noto Serif TC、副標 Huninn（jf open 粉圓）、英文 Cinzel。
+  五顆愛心是五位學姊的代表色（data/characters.json），由左到右同封面的站位：沈靜澄、葉縈、夏以晴、顏緋、溫芷薰
+  （10/25 封面改成方向 2 的站位，順序跟著改）。
+-->
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Huninn&family=Noto+Serif+TC:wght@900&display=block" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1b2244;
+    --pink: #ff8fb1;
+    --deep-pink: #e85d8a;
+  }
+  body {
+    margin: 0;
+    background: transparent;
+  }
+  #logo {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 48px 32px;
+  }
+  /* 英文：10/22 Roger 決定用通用的描述性說法，階段用考選部的 Stage（不是美國的 Step）；
+     官方全名太長，論文裡的 SPTEMD、TMLE 是作者自創的縮寫，都不用 */
+  .kicker {
+    font-family: "Cinzel", serif;
+    font-size: 28px;
+    line-height: 1.35;
+    letter-spacing: 0.22em;
+    text-align: center;
+    color: #fff;
+    /* 10/23：原本只有細陰影，壓在白袍上幾乎看不見，改成和標題、副標一樣的深藍描邊 */
+    -webkit-text-stroke: 6px var(--navy);
+    paint-order: stroke fill;
+    text-shadow: 0 3px 0 rgba(27, 34, 68, 0.55);
+    margin-bottom: 6px;
+  }
+  h1 {
+    display: flex;
+    gap: 0.06em;
+    margin: 0;
+    font-family: "Noto Serif TC", serif;
+    font-weight: 900;
+    font-size: 176px;
+    line-height: 1.1;
+    filter: drop-shadow(0 6px 0 rgba(27, 34, 68, 0.55)) drop-shadow(0 0 18px rgba(255, 143, 177, 0.55));
+  }
+  /* 每個字兩層：本體是加粗的深藍描邊，::after 疊上漸層填色（background-clip 遇到傾斜的字會錯位，所以逐字做） */
+  h1 .ch {
+    position: relative;
+    display: inline-block;
+    color: var(--navy);
+    -webkit-text-stroke: 18px var(--navy);
+  }
+  h1 .ch::after {
+    content: attr(data-t);
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #ffffff 30%, #ffe0ea 62%, #ffc2d4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 0;
+  }
+  /* 「攻」字稍微放大、傾斜，做出重點 */
+  h1 .accent {
+    font-size: 1.12em;
+    transform: rotate(-6deg) translateY(4px);
+  }
+  /* 10/25 Roger：愛心不明顯。原本是 36px 的 ♥ 字元，封面上只有約 9 px；改成 SVG（不受字型影響），
+     放大到 66px、加和標題一樣的深藍描邊（比較過 54px、66px、拿掉，Roger 選 66px） */
+  .hearts {
+    display: flex;
+    gap: 21px;
+    margin: 6px 0 10px;
+    line-height: 0;
+    filter: drop-shadow(0 0 4px #fff) drop-shadow(0 3px 0 rgba(27, 34, 68, 0.45));
+  }
+  .hearts svg {
+    width: 66px;
+    height: 66px;
+  }
+  .hearts path {
+    stroke: var(--navy);
+    stroke-width: 2.6;
+    stroke-linejoin: round;
+  }
+  /* 副標：10/23 Roger 從六種字型和樣式裡選了粉圓雙層描邊（原本的霞鶩文楷＋粉紅緞帶筆畫太細）。
+     和標題一樣分兩層：本體是粗的深藍描邊，::after 疊白字和細的粉紅描邊 */
+  .sub {
+    position: relative;
+    display: inline-block;
+    font-family: "Huninn", sans-serif;
+    font-size: 60px;
+    letter-spacing: 0.1em;
+    line-height: 1.25;
+    color: var(--navy);
+    -webkit-text-stroke: 14px var(--navy);
+    filter: drop-shadow(0 4px 0 rgba(27, 34, 68, 0.45));
+  }
+  .sub::after {
+    content: attr(data-t);
+    position: absolute;
+    inset: 0;
+    color: #fff;
+    -webkit-text-stroke: 5px var(--deep-pink);
+    paint-order: stroke fill;
+  }
+</style>
+</head>
+<body>
+  <div id="logo">
+    <div class="kicker">Medical Licensing Examination · Stage 1</div>
+    <h1><span class="ch" data-t="醫">醫</span><span class="ch" data-t="師">師</span><span class="ch" data-t="一">一</span><span class="ch" data-t="階">階</span><span class="ch accent" data-t="攻">攻</span><span class="ch" data-t="略">略</span></h1>
+    <div class="hearts">
+      <svg viewBox="-2 -2 28 28"><path fill="#3b6fd4" d="M12 21.5s-7.8-4.7-10.3-9.6C0 8.4 2.1 3.8 6.3 3.8c2.4 0 4.1 1.4 5.7 3.5 1.6-2.1 3.3-3.5 5.7-3.5 4.2 0 6.3 4.6 4.6 8.1C19.8 16.8 12 21.5 12 21.5z"/></svg>
+      <svg viewBox="-2 -2 28 28"><path fill="#3d9a5b" d="M12 21.5s-7.8-4.7-10.3-9.6C0 8.4 2.1 3.8 6.3 3.8c2.4 0 4.1 1.4 5.7 3.5 1.6-2.1 3.3-3.5 5.7-3.5 4.2 0 6.3 4.6 4.6 8.1C19.8 16.8 12 21.5 12 21.5z"/></svg>
+      <svg viewBox="-2 -2 28 28"><path fill="#e8772e" d="M12 21.5s-7.8-4.7-10.3-9.6C0 8.4 2.1 3.8 6.3 3.8c2.4 0 4.1 1.4 5.7 3.5 1.6-2.1 3.3-3.5 5.7-3.5 4.2 0 6.3 4.6 4.6 8.1C19.8 16.8 12 21.5 12 21.5z"/></svg>
+      <svg viewBox="-2 -2 28 28"><path fill="#d23c4a" d="M12 21.5s-7.8-4.7-10.3-9.6C0 8.4 2.1 3.8 6.3 3.8c2.4 0 4.1 1.4 5.7 3.5 1.6-2.1 3.3-3.5 5.7-3.5 4.2 0 6.3 4.6 4.6 8.1C19.8 16.8 12 21.5 12 21.5z"/></svg>
+      <svg viewBox="-2 -2 28 28"><path fill="#8a63c9" d="M12 21.5s-7.8-4.7-10.3-9.6C0 8.4 2.1 3.8 6.3 3.8c2.4 0 4.1 1.4 5.7 3.5 1.6-2.1 3.3-3.5 5.7-3.5 4.2 0 6.3 4.6 4.6 8.1C19.8 16.8 12 21.5 12 21.5z"/></svg>
+    </div>
+    <div class="sub" data-t="～五位學姊陪你考過～">～五位學姊陪你考過～</div>
+  </div>
+</body>
+</html>

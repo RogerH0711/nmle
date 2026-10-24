@@ -23,6 +23,7 @@ import { StoryList, StoryPlayer } from './Story'
 import { CampusMap } from './CampusMap'
 import { StatusPanel } from './StatusPanel'
 import { Guide, guideSeen } from './Guide'
+import { TitleScreen, titleSeen } from './TitleScreen'
 import { DEFAULT_PLAYER, loadPlayer, savePlayer, type PlayerTitle } from './player'
 import { PlayerChoice } from './PlayerChoice'
 import { fillVars, loadMessages, MESSAGE_SITUATION, messageEvents, saveMessages, type Message } from './messages'
@@ -148,6 +149,8 @@ export default function App() {
   const [story, setStory] = useState<{ character: Character; scene: Scene; then?: () => void } | null>(null)
   const [storyList, setStoryList] = useState<Character | null>(null)
   const [statusOpen, setStatusOpen] = useState(false) // 狀態面板（能力值）
+  const [titleOpen, setTitleOpen] = useState(() => !titleSeen()) // 開頭畫面（封面）：每次打開網站先顯示
+  const closeTitle = useCallback(() => setTitleOpen(false), [])
   const [guideOpen, setGuideOpen] = useState(() => !guideSeen()) // 使用說明：第一次打開網站時自動顯示
   const [player, setPlayer] = useState<PlayerTitle | null>(loadPlayer) // 學姊們叫你學弟還是學妹；null 是還沒選
   const [playerOpen, setPlayerOpen] = useState(false) // 從地圖下方打開「稱呼」
@@ -623,7 +626,7 @@ export default function App() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       // 看排行榜、考模擬考、看劇情、看能力值、在校園地圖上時，不要對藏起來的題目作答
-      if (view !== 'quiz' || session || story || storyList || statusOpen || shopOpen || guideOpen || messagesOpen !== false || (characterMode && onMap && characters.length > 0)) return
+      if (titleOpen || view !== 'quiz' || session || story || storyList || statusOpen || shopOpen || guideOpen || messagesOpen !== false || (characterMode && onMap && characters.length > 0)) return
       if (e.ctrlKey || e.metaKey || e.altKey) return
       if (e.target instanceof Element && e.target.closest('select, input, textarea')) return
       const k = e.key.toUpperCase()
@@ -637,8 +640,10 @@ export default function App() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [pick, go, picked, view, session, story, storyList, statusOpen, shopOpen, guideOpen, messagesOpen, characterMode, onMap, characters])
+  }, [pick, go, picked, view, session, story, storyList, statusOpen, shopOpen, guideOpen, messagesOpen, characterMode, onMap, characters, titleOpen])
 
+  // 開頭畫面蓋在最前面，題庫在後面照常載入（點開始時通常已經載好）
+  if (titleOpen) return <TitleScreen onStart={closeTitle} />
   if (error) return <div className="center">{error}</div>
   if (!index || !run) return <div className="center">載入中…</div>
 
@@ -680,7 +685,7 @@ export default function App() {
     return (
       <div className="app">
         <header className="bar">
-          <h1>一階刷題</h1>
+          <h1>醫師一階攻略</h1>
           <span className="tag warn">模擬考進行中</span>
         </header>
         {qs.length ? (
@@ -732,7 +737,7 @@ export default function App() {
   return (
     <div className={stage ? 'app wide' : 'app'}>
       <header className="bar">
-        <h1>一階刷題</h1>
+        <h1>醫師一階攻略</h1>
         <div className="bar-right">
           {characters.length > 0 && (
             <label className="toggle">

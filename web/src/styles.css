@@ -3119,3 +3119,126 @@ button.link:hover {
   color: var(--muted);
   font-size: 0.75rem;
 }
+
+/* 開頭畫面（TitleScreen），整個畫面都可以點。10/25 Roger：封面縮小、按鈕放在外面很奇怪；手機要專門做一個版本。
+   電腦（橫式）：16:9 的封面盡量放大、完整顯示（Logo 在圖的下方，不能裁），比例不合時旁邊用同一張圖放大模糊接著；
+   「開始」疊在封面右下角（芷薰右邊的背景），大小跟著封面縮放。
+   平板直放：換直式的封面，完整顯示，兩側用模糊接著。
+   手機：直式的封面滿版、靠上對齊（比較寬的手機裁掉下面的腿）。直式的「開始」都在下方中間的腿上，不擋到臉 */
+.title-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #1b2244;
+  cursor: pointer;
+}
+
+.title-backdrop {
+  position: absolute;
+  inset: -40px;
+  background: center / cover no-repeat; /* 圖在 TitleScreen 用相對路徑設定（網站在 /nmle/ 底下） */
+  filter: blur(28px) brightness(0.8);
+}
+
+.title-backdrop.portrait {
+  display: none;
+}
+
+.title-frame {
+  --frame-w: min(100vw, calc(100dvh * 16 / 9));
+  position: relative;
+  width: var(--frame-w);
+  aspect-ratio: 16 / 9;
+}
+
+.title-cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.title-start {
+  position: absolute;
+  right: 3%;
+  bottom: 5%;
+  min-width: 8.5em;
+  padding: 0.55em 1.8em;
+  border: 3px solid #1b2244;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffffff 0%, #ffe0ea 100%);
+  color: #1b2244;
+  font-size: clamp(1.05rem, calc(var(--frame-w) * 0.0125), 1.6rem);
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  box-shadow: 0 4px 0 #1b2244, 0 0 18px rgb(255 143 177 / 0.6);
+  cursor: pointer;
+  animation: title-pulse 2.4s ease-in-out infinite;
+}
+
+.title-start:hover,
+.title-start:focus-visible {
+  background: linear-gradient(180deg, #ffffff 0%, #ffc2d4 100%);
+}
+
+@keyframes title-pulse {
+  50% {
+    box-shadow: 0 4px 0 #1b2244, 0 0 28px rgb(255 143 177 / 0.95);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title-start {
+    animation: none;
+  }
+}
+
+/* 直式（和 TitleScreen.tsx 的 PORTRAIT_MEDIA 同一個條件）：直式的封面 1080×2340 */
+@media (max-aspect-ratio: 1/1) {
+  .title-backdrop.landscape {
+    display: none;
+  }
+
+  .title-backdrop.portrait {
+    display: block;
+  }
+
+  .title-frame {
+    --frame-w: min(100vw, calc(100dvh * 1080 / 2340));
+    aspect-ratio: 1080 / 2340;
+  }
+
+  .title-start {
+    right: 50%;
+    bottom: 7%;
+    transform: translateX(50%);
+    font-size: clamp(1.15rem, calc(var(--frame-w) * 0.05), 1.6rem);
+  }
+}
+
+/* 手機：滿版 */
+@media (max-aspect-ratio: 13/20) {
+  .title-backdrop.portrait {
+    display: none;
+  }
+
+  .title-frame {
+    position: absolute;
+    inset: 0;
+    width: auto;
+    aspect-ratio: auto;
+  }
+
+  .title-cover {
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .title-start {
+    bottom: max(7%, calc(env(safe-area-inset-bottom) + 16px));
+    font-size: 1.25rem;
+  }
+}

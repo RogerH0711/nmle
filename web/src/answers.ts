@@ -73,9 +73,11 @@ interface State {
   status: SyncStatus
   error: string | null
   storageFull: boolean // 最近一次存進瀏覽器失敗：重新整理後，沒同步到雲端的紀錄會不見
+  // 登入時併進帳號的「這台裝置上沒登入時的作答」有幾題，畫面上提醒一次（共用電腦上可能是別人寫的）
+  mergedFromAnon: number
 }
 
-let state: State = { owner: ANON, records: load(ANON), status: 'local', error: null, storageFull: false }
+let state: State = { owner: ANON, records: load(ANON), status: 'local', error: null, storageFull: false, mergedFromAnon: 0 }
 const listeners = new Set<() => void>()
 let pushTimer: ReturnType<typeof setTimeout> | undefined
 
@@ -125,16 +127,22 @@ export async function switchUser(userId: string | null) {
   clearTimeout(pushTimer)
 
   let records = load(owner)
+  let merged = 0
   if (owner !== ANON) {
     const anon = load(ANON)
     if (anon.length) {
       const ids = new Set(records.map((r) => r.id))
-      records = [...records, ...anon.filter((r) => !ids.has(r.id)).map((r) => ({ ...r, synced: false }))]
+      const added = anon.filter((r) => !ids.has(r.id))
+      merged = added.length
+      records = [...records, ...added.map((r) => ({ ...r, synced: false }))]
       save(owner, records)
       save(ANON, [])
     }
   }
-  state = { owner, records, status: owner === ANON ? 'local' : 'syncing', error: null, storageFull: !save(owner, records) }
+  state = {
+    owner, records, status: owner === ANON ? 'local' : 'syncing', error: null,
+    storageFull: !save(owner, records), mergedFromAnon: merged,
+  }
   listeners.forEach((l) => l())
   if (owner !== ANON) await syncNow()
 }
@@ -196,6 +204,11 @@ async function pushPending() {
     const done = new Set(batch.map((r) => r.id))
     setState({ records: state.records.map((r) => (done.has(r.id) ? { ...r, synced: true } : r)) })
   }
+}
+
+/** 看過「已併入幾題」的提醒 */
+export function dismissMerged() {
+  setState({ mergedFromAnon: 0 })
 }
 
 /**

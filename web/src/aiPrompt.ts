@@ -1,6 +1,6 @@
 import type { Letter, PaperInfo, Question } from './types'
 
-// 「問 AI」：網站沒有詳解，作答後把題目整理成提問，讓使用者帶去自己慣用的 AI 問。
+// 「問 AI」：作答後把題目整理成提問，讓使用者帶去自己慣用的 AI 問（網站的 AI 詳解之外，想追問或換個說法時用）。
 // 網站本身不呼叫任何 AI，也不送出作答紀錄以外的資料。
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']

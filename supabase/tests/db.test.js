@@ -484,6 +484,12 @@ describe('回報疑義', () => {
     assert.equal((await report(null, { user_id: B })).ok, false)
   })
 
+  test('登入的人也可以送匿名回報（換帳號後才送出的回報）', async () => {
+    const id = 'ffffffff-3333-4000-8000-000000000004'
+    assert.equal((await report(A, { id, user_id: null })).ok, true)
+    assert.equal((await stored(id)).user_id, null)
+  })
+
   test('處理狀態、備註、建立時間由資料庫決定', async () => {
     const id = 'ffffffff-3333-4000-8000-000000000003'
     const t = await report(null, { id, status: 'fixed', admin_note: '已處理', created_at: '2000-01-01T00:00:00Z' })

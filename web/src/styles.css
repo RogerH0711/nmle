@@ -108,6 +108,12 @@ select {
   color: var(--wrong);
 }
 
+/* 「已併入幾題」提醒的關閉按鈕 */
+.sync .dismiss {
+  margin-left: 6px;
+  padding: 0 4px;
+}
+
 .review {
   display: flex;
   flex-wrap: wrap;

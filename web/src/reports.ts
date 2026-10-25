@@ -28,6 +28,14 @@ interface PendingReport {
   note: string | null
   picked: Letter | null
   build: string
+  // 回報時登入的帳號（沒登入是 null；舊版存的沒有這個欄位）。送出時登入的不是他，就改成匿名送出，不會算到別人頭上
+  owner?: string | null
+}
+
+/** 現在登入的帳號；讀的是瀏覽器裡的登入狀態，不用連網路 */
+async function currentUserId(): Promise<string | null> {
+  const { data } = await supabase.auth.getSession()
+  return data.session?.user.id ?? null
 }
 
 const PENDING_KEY = 'nmle.reports.pending.v1'
@@ -76,6 +84,7 @@ export function useReports() {
 
 /** 送出回報。回傳 true 代表已經上傳；false 代表先存著，之後會自動重送。 */
 export async function submitReport(questionId: string, reason: ReportReason, note: string, picked: Letter | null) {
+  const owner = await currentUserId()
   pending = [
     ...pending,
     {
@@ -86,6 +95,7 @@ export async function submitReport(questionId: string, reason: ReportReason, not
       note: note.trim().slice(0, NOTE_MAX) || null,
       picked,
       build: BUILD,
+      owner,
     },
   ]
   reported = new Set([...reported, questionId])
@@ -101,8 +111,9 @@ export function flushReports(): Promise<boolean> {
     try {
       while (pending.length) {
         if (!navigator.onLine) return false
-        const r = pending[0]
-        const { error } = await supabase.from('reports').insert(r)
+        const { owner, ...r } = pending[0]
+        const user = await currentUserId()
+        const { error } = await supabase.from('reports').insert({ ...r, user_id: owner && owner === user ? user : null })
         // 23xxx：同一個 id 已經送過（重送），或資料不合法；42501：權限不符。這些重送也沒用，從佇列拿掉，
         // 免得卡住後面的回報。回報太頻繁（觸發器擋下）或網路錯誤就留著，之後再送
         if (error && !error.code?.startsWith('23') && error.code !== '42501') return false

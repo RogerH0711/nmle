@@ -46,3 +46,4 @@ push 到 main 會由 GitHub Actions 跑測試，通過才部署。
 - **語言**：介面、文件、註解都用繁體中文（台灣用語）。
 - **台詞**：台詞中的醫學內容要正確，寫完要核對。角色都是成年人。
 - **考題資料**：正解以考選部答案與更正答案為準。疑似解析錯誤的題目寫 override，並寫明原因。
+- **CSP**：網站連到新的外部服務（script、API、iframe）要加進 `web/src/csp.ts`，否則上線後會被瀏覽器擋下（開發伺服器沒有 CSP，本機測不出來，要 `npm run build --prefix web` 後用 `vite preview` 測）。

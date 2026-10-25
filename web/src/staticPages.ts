@@ -3,6 +3,7 @@
 // 讓搜「某藥名 醫師國考」的人找得到，再點進網站刷題。做法見 docs/design.md「公開與作品集」的 SEO。
 import type { ExamFile, Index, PaperInfo, Question } from './types.ts'
 import { LEVELS, parseExplanation, type ExplanationLevel } from './explanationText.ts'
+import { STATIC_PAGE_CSP } from './csp.ts'
 
 export const SITE = 'https://rogerh0711.github.io/nmle/'
 const NAME = '醫師一階攻略'
@@ -103,6 +104,7 @@ function page(opts: { title: string; description: string; path: string; body: st
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="${STATIC_PAGE_CSP}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(opts.title)}</title>
 <meta name="description" content="${esc(opts.description)}">

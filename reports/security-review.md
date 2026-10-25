@@ -32,7 +32,7 @@
 | M5 | 中 | 登入相關設定只在 Dashboard，repo 裡的 `config.toml` 與文件不一致（密碼長度 6 vs 8） | 密碼長度、CAPTCHA 已確認（10/25），其餘待確認 |
 | L1 | 低 | 暱稱沒有伺服器端的內容檢查：純空白、RTL 控制字元、冒用別人的暱稱 | 已修（`20261025220000_display_name_rules.sql`，待 db:push）；同名沒擋，改用 `hidden` 處理 |
 | L2 | 低 | 排行榜函式的門檻參數由前端決定，`min_daily = 1` 可以看到所有人的活躍狀況 | 已修（同上） |
-| L3 | 低 | `rogerh0711.github.io` 是共用 origin，登入權杖存在 localStorage；沒有 CSP | 事實 |
+| L3 | 低 | `rogerh0711.github.io` 是共用 origin，登入權杖存在 localStorage；沒有 CSP | CSP 已加；共用 origin 等 Roger 決定 |
 | L4 | 低 | `answers.synced_at`、`profiles.created_at` 可以由前端指定或修改 | 已修（synced_at 在 `20261025180000`，created_at 在 `20261025220000`） |
 | L5 | 低 | 刪除帳號與登出後，這台裝置上還留有資料；刪除時有 race | 已修（`web/src/account.ts`） |
 | L6 | 低 | 帳號名稱可以被列舉（註冊時回「已經有人用了」） | 推論 |
@@ -52,6 +52,10 @@ Bug 與效能（B1–B7）在後半段。
 **10/25 修正（五）**：B2、B3。B2：作答改成增量同步，只拉 `synced_at` 比上次新的紀錄（往前多拉 5 分鐘），每天一次完整同步，正解更正後重新判分的結果才拉得到；游標存在 localStorage，登出、紀錄存不進瀏覽器時清掉；模擬考和送禮補上分頁（原本超過 1,000 筆會被截斷）。B3（`20261025230000_sync_and_leaderboard_perf.sql`）：加 `answers (user_id, synced_at)` 索引；連續天數改讀每人每天的題數表 `answer_days`（作答寫入、重新判分時由 trigger 維護，既有資料在 migration 時補算），不再掃全部作答；`question_keys` 加由題號算出來的 `paper_id` 與索引，模擬考算分不再掃整張正解表。`prepare_report` 的匿名計數已在修正（二）解決。週榜維持現算（只掃本週，有索引）；排行榜快取（materialized view）沒做，等人數多了再看。
 
 **10/25 修正（六）**：B4–B7。B4（`20261025240000_report_owner.sql`、`web/src/reports.ts`）：回報時記下登入的帳號，送出時登入的不是他（或舊版沒記錄）就改成匿名送出；資料庫放寬成登入的人也能送匿名回報（`user_id` 還是不能填別人）。B5：沒有改掉自動併入（說明與邀請訊息都是這樣講的），登入時併進帳號後在帳號旁邊提示「已把這台裝置上沒登入時寫的 N 題併進帳號」，可以關掉。B6：在修正（四）的 L5 一起修了。B7：註解改掉。
+
+**10/25 修正（七）**：L3。CSP 加在 build 出來的 `index.html`（`web/src/csp.ts`，由 `web/vite.config.ts` 加進去；開發伺服器不加）、SEO 靜態頁（不允許任何 script）和 `privacy.html`。script 只能來自自己和 Turnstile，連線只能到自己和 Supabase。用 Playwright 走過角色模式地圖與劇情、作答、聲音、題庫搜尋、排行榜、登入對話框（真的載入 Turnstile）、靜態頁，網站本身沒有違規；故意插入外部 script 會被擋下。`style-src` 保留 `'unsafe-inline'`：試過拿掉也正常，但沙盒連不到 Cloudflare 的驗證主機，Turnstile 互動驗證的流程沒辦法完整測。
+`frame-ancestors` 不能用 `<meta>` 設定，GitHub Pages 又不能加 header，所以擋不了被別的網站用 iframe 嵌入（clickjacking）；刪除帳號要自己輸入「刪除」，影響有限。
+共用 origin 沒辦法用程式解決：10/25 查過 `rogerh0711.github.io` 底下還有 `K-Map-Practice`、`Serenity_Tracker` 兩個網站，都是單一 HTML 檔、script 全部內嵌，沒有載入第三方 script，目前風險低。要徹底分開得換 origin（例如開一個 GitHub organization，網址變成 `<組織名>.github.io/nmle`，免費），但網址會變（Search Console、OAuth 的 Redirect URL、Turnstile 的主機名稱、朋友手上的連結都要改），等 Roger 決定；在那之前，同一個帳號底下的網站不要載入第三方 script、不要顯示別人提供的內容。
 
 ---
 
@@ -249,7 +253,7 @@ React 會把暱稱當文字輸出，**沒有 XSS**（排行榜 `web/src/Leaderbo
 
 **建議修法**：函式不收參數，門檻寫死在 SQL（前端的 `WEEKLY_MIN_ANSWERS`、`STREAK_MIN_DAILY` 改成只用來顯示說明）；或在函式裡 `greatest(min_daily, 10)`。
 
-### L3　共用 origin、沒有 CSP
+### L3　共用 origin、沒有 CSP（CSP 已加，共用 origin 待決定）
 
 **事實**：
 

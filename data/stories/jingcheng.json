@@ -59,7 +59,7 @@
         { "speaker": "jingcheng", "expression": "normal", "text": "所有人都會。只是我那時候，沒有人陪。" },
         { "speaker": "narration", "text": "她說得很平靜，你卻聽出那句話底下壓著很多個像今晚一樣的夜。" },
         { "speaker": "jingcheng", "expression": "shy", "text": "……所以你錯的題目，我都有記著。不是因為你特別笨。是因為，我不想讓你也一個人。" },
-        { "speaker": "jingcheng", "expression": "normal", "text": "剛才那句，忘掉。……再一次。下一題。" }
+        { "speaker": "jingcheng", "expression": "normal", "text": "……好了。下一題。" }
       ]
     },
     {
@@ -93,7 +93,7 @@
         { "speaker": "jingcheng", "expression": "shy", "text": "謝謝你陪我。這半年，陪我讀書，陪我待在這間很冷的教室。" },
         { "speaker": "player", "text": "學姊……" },
         { "speaker": "jingcheng", "expression": "normal", "text": "剩下的話，等你考完一階再說。……現在說，你會分心。" },
-        { "speaker": "jingcheng", "expression": "happy", "text": "所以，考好。我在終點等你。" }
+        { "speaker": "jingcheng", "expression": "happy", "text": "所以，考好。……我會在這裡等你。" }
       ]
     }
   ]

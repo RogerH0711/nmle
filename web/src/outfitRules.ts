@@ -1,4 +1,5 @@
 import type { Line } from './characters'
+import { eligible } from './lineRules.ts'
 import type { GiftRecord } from './shop'
 
 // 服裝的規則（不碰瀏覽器 API，可以單獨測試）；清單載入與「換上哪一套」在 outfits.ts。
@@ -57,7 +58,7 @@ export function outfitStatus(
 
 /** 買服裝時她說的話：outfit 欄位對應這套服裝 */
 export function pickOutfitLine(lines: Line[], outfitId: string, affection: number) {
-  const pool = lines.filter((l) => l.situation === 'outfit' && l.outfit === outfitId && l.affection_min <= affection)
+  const pool = lines.filter((l) => l.situation === 'outfit' && l.outfit === outfitId && eligible(l, affection))
   return pool.length ? pool[Math.floor(Math.random() * pool.length)] : null
 }
 

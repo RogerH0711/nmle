@@ -22,7 +22,7 @@
         { "speaker": "fei", "expression": "normal", "text": "我是顏緋，病理科住院醫師。病理和公衛歸我。" },
         { "speaker": "fei", "expression": "pout", "text": "……既然被分到我這裡，就別想混過去。考成這樣，丟臉的是我。" },
         { "speaker": "narration", "text": "她把考卷甩回你桌上，轉身就走。走到門口，又停下來。" },
-        { "speaker": "fei", "expression": "shy", "text": "第 82 題，發炎的四大徵象再加上功能喪失，是五個，不是四個。……回去自己查清楚！" },
+        { "speaker": "fei", "expression": "normal", "text": "對了，第 82 題。發炎的徵象是紅、熱、腫、痛，再加上功能喪失，五個。……回去自己查清楚。" },
         { "speaker": "narration", "text": "門關上了。你低頭看考卷，第 82 題旁邊，有一行很小、很整齊的紅字訂正。" }
       ]
     },
@@ -31,17 +31,32 @@
       "title": "熟識",
       "background": "library",
       "lines": [
-        { "speaker": "narration", "text": "讀書會的桌上放著一疊裝訂好的講義：近六年病理考古題，按器官系統分類，每題都有重點整理。" },
+        { "speaker": "narration", "text": "讀書會的桌上放著一疊裝訂好的講義：近六年的病理考古題，按器官系統分類，每題旁邊都有手寫的重點。" },
         { "speaker": "player", "text": "這是誰整理的？好厲害……" },
         { "speaker": "narration", "text": "封面右下角被撕掉了一小塊，像是原本寫著名字。" },
-        { "speaker": "fei", "expression": "surprised", "text": "——！那個、那是……" },
+        { "speaker": "narration", "text": "剛走進來的學姊停在門口，手上的咖啡差點打翻。" },
         { "speaker": "player", "text": "學姊知道是誰做的嗎？" },
-        { "speaker": "fei", "expression": "pout", "text": "不、不知道！大概是哪個學長留下來的吧！" },
-        { "speaker": "narration", "text": "你翻開第一頁。旁邊的紅字訂正，和小考卷上的字一模一樣。" },
-        { "speaker": "player", "text": "……學姊，這個字跡。" },
-        { "speaker": "fei", "expression": "shy", "text": "才、才不是為了你！是我自己複習的時候順便整理的！剛好多印一份而已！" },
-        { "speaker": "fei", "expression": "pout", "text": "要用就好好用！敢弄皺一頁，我就把你切片！" },
-        { "speaker": "narration", "text": "她頭也不回地走了。耳朵紅得跟頭髮一樣。" }
+        { "speaker": "fei", "expression": "normal", "text": "……不知道。大概是之前的學長姊留下來的吧。" },
+        { "speaker": "narration", "text": "你翻開第一頁。紅筆寫的訂正，字很小、很整齊，跟小考卷上第 82 題旁邊的字一模一樣。" },
+        { "speaker": "player", "text": "……學姊，這個字。" },
+        { "speaker": "fei", "expression": "pout", "text": "…………" },
+        { "speaker": "narration", "text": "她沉默了很久，最後像是放棄了，在你對面坐下。" },
+        { "speaker": "fei", "expression": "pout", "text": "我當年準備一階的時候做的。這幾年每次考完，就把新的題目補進去。" },
+        { "speaker": "fei", "expression": "normal", "text": "本來只是給自己複習用的。……反正放著也是放著，你拿去用。" },
+        { "speaker": "player", "text": "那為什麼要把名字撕掉？" },
+        { "speaker": "fei", "expression": "shy", "text": "因為……被知道我做這種東西，很丟臉啊。" },
+        { "speaker": "fei", "expression": "shy", "text": "整理到半夜，一題一題對答案。好像很想被誰稱讚一樣。" },
+        { "speaker": "choice", "options": [
+          { "text": "我覺得很厲害。", "lines": [
+            { "speaker": "fei", "expression": "shy", "text": "……你講話都不先想一下的嗎。" },
+            { "speaker": "fei", "expression": "normal", "text": "……謝謝。" }
+          ] },
+          { "text": "那我會好好用，不跟別人說。", "lines": [
+            { "speaker": "fei", "expression": "normal", "text": "……嗯。那就好。" }
+          ] }
+        ] },
+        { "speaker": "narration", "text": "她把講義推到你面前，手指在封面撕掉的那一角停了一下。" },
+        { "speaker": "fei", "expression": "normal", "text": "第三章的血管炎我寫得比較亂，看不懂就來問我。不要自己亂猜。" }
       ]
     },
     {
@@ -49,16 +64,19 @@
       "title": "在意",
       "background": "hospital",
       "lines": [
-        { "speaker": "narration", "text": "病理科的閱片室。她值班的空檔，傳訊息叫你過來，只寫了兩個字：「過來」。" },
-        { "speaker": "fei", "expression": "normal", "text": "考試的圖片題你都在用猜的吧。看這張。" },
+        { "speaker": "narration", "text": "病理科的閱片室。她值班的空檔傳訊息給你，只有兩個字：「過來」。" },
+        { "speaker": "fei", "expression": "normal", "text": "考試的圖片題，你都是用猜的吧。來，看這張。" },
         { "speaker": "narration", "text": "你湊到顯微鏡前。她就站在你旁邊，近到頭髮擦過你的肩膀。" },
         { "speaker": "fei", "expression": "normal", "text": "H&E 染色。蘇木紫把細胞核染成藍紫色，伊紅把細胞質染成粉紅色。先認顏色。" },
-        { "speaker": "fei", "expression": "normal", "text": "中間那片粉紅色、沒有細胞結構的，是乾酪樣壞死。周圍那個很大的細胞，細胞核排成馬蹄形——" },
+        { "speaker": "fei", "expression": "normal", "text": "中間那片粉紅色、看不出細胞結構的，是乾酪樣壞死。周圍那個很大的細胞，細胞核排成馬蹄形——" },
         { "speaker": "player", "text": "Langhans 巨細胞……所以這是結核的肉芽腫？" },
-        { "speaker": "fei", "expression": "happy", "text": "……答對了。哼，還算有點長進。" },
-        { "speaker": "narration", "text": "你轉頭想說話，才發現她的臉近在眼前。她也愣住了，卻假裝沒發現，繼續盯著目鏡。" },
-        { "speaker": "fei", "expression": "shy", "text": "看、看玻片，不要看我。……我臉上又沒有乾酪樣壞死。" },
-        { "speaker": "fei", "expression": "shy", "text": "下次值班……也可以過來。不是邀請！是教學！" }
+        { "speaker": "fei", "expression": "happy", "text": "對！……你看，認得出來嘛。" },
+        { "speaker": "narration", "text": "你轉頭想說話，才發現她的臉就在眼前。兩個人都愣了一下。她先移開視線，假裝繼續盯著目鏡。" },
+        { "speaker": "fei", "expression": "shy", "text": "……下一張。" },
+        { "speaker": "narration", "text": "後來她又換了十幾張玻片。講到第三張的時候，她的手已經很自然地搭在你的椅背上。" },
+        { "speaker": "narration", "text": "回過神來，窗外的天已經黑了。" },
+        { "speaker": "fei", "expression": "normal", "text": "都這個時間了……你晚餐還沒吃吧。" },
+        { "speaker": "fei", "expression": "normal", "text": "地下室的便利商店，我請你。下次值班你也可以過來，我教你看別的。" }
       ]
     },
     {
@@ -73,10 +91,14 @@
         { "speaker": "narration", "text": "你沒有走。只是在她旁邊坐下，隔著一個台階。" },
         { "speaker": "fei", "expression": "sad", "text": "……今天的報告被主治退回來三次。他說我判讀太慢，不適合這一科。" },
         { "speaker": "fei", "expression": "sad", "text": "我每天看玻片看到最晚。結果還是不夠。……很蠢吧，被罵一下就躲起來哭。" },
-        { "speaker": "player", "text": "我看到的學姊，是會花好幾個晚上幫別人整理考古題的人。慢一點，是因為仔細。" },
+        { "speaker": "player", "text": "我不覺得蠢。學姊會花好幾個晚上整理考古題，也會陪我看玻片看到天黑。慢一點，是因為仔細。" },
         { "speaker": "fei", "expression": "surprised", "text": "…………" },
         { "speaker": "narration", "text": "她把頭靠上你的肩膀，很輕，像怕被誰看見。" },
-        { "speaker": "fei", "expression": "shy", "text": "……五分鐘。只借五分鐘。這、這件事要是說出去，你就死定了。" }
+        { "speaker": "fei", "expression": "shy", "text": "……五分鐘就好。" },
+        { "speaker": "narration", "text": "逃生梯的燈暗了一次，又亮起來。她沒有再說話，你也沒有。" },
+        { "speaker": "narration", "text": "過了不只五分鐘，她才站起來，把白袍拉平。" },
+        { "speaker": "fei", "expression": "normal", "text": "……謝謝。我回去把報告改完。" },
+        { "speaker": "fei", "expression": "shy", "text": "你也早點回去。……還有，今天的事，只有你知道就好。" }
       ]
     },
     {
@@ -85,15 +107,16 @@
       "background": "cafe",
       "lines": [
         { "speaker": "narration", "text": "讀書會結束後，她把一張紙拍在你桌上。上面是一張長條圖。" },
-        { "speaker": "fei", "expression": "normal", "text": "這是我們認識前四週，跟最近四週，每週一起讀書的時數。" },
+        { "speaker": "fei", "expression": "normal", "text": "這是我們剛認識的前四週，跟最近四週，每週一起讀書的時數。" },
         { "speaker": "fei", "expression": "normal", "text": "雙樣本 t 檢定，p 值小於 0.05。拒絕虛無假說——我們的相處時間，顯著增加。" },
         { "speaker": "player", "text": "……學姊，所以結論是？" },
-        { "speaker": "fei", "expression": "pout", "text": "結、結論就是統計上顯著！" },
+        { "speaker": "fei", "expression": "pout", "text": "結論就是……統計上顯著。" },
         { "speaker": "player", "text": "可是學姊上次教過，統計上顯著，不代表臨床上有意義。" },
-        { "speaker": "fei", "expression": "shy", "text": "…………你這種時候記得那麼清楚做什麼！" },
+        { "speaker": "fei", "expression": "shy", "text": "…………你這種時候記得那麼清楚做什麼。" },
         { "speaker": "narration", "text": "她抓起那張紙擋住臉。紙的邊緣在發抖。" },
-        { "speaker": "fei", "expression": "shy", "text": "臨床上有沒有意義……要、要看你怎麼想。" },
-        { "speaker": "fei", "expression": "pout", "text": "不准現在回答！等你一階考完再說！考不好的話，這份資料我就銷毀！" }
+        { "speaker": "fei", "expression": "shy", "text": "臨床上有沒有意義……要看你怎麼想。" },
+        { "speaker": "fei", "expression": "normal", "text": "……不要現在回答。等你一階考完再說。" },
+        { "speaker": "fei", "expression": "shy", "text": "所以，給我好好考。我想聽的是你考完以後的答案。" }
       ]
     }
   ]

@@ -9,7 +9,7 @@ import { LoginDialog } from './LoginDialog'
 import { usernameOf } from './login'
 import { Leaderboard } from './Leaderboard'
 import {
-  characterForSubject, COMEBACK_DAYS, fillPlayer, loadCharacters, loadLines, pickLine as pickCharacterLine,
+  characterForSubject, COMEBACK_DAYS, fillAway, fillPlayer, loadCharacters, loadLines, pickLine as pickCharacterLine,
   STREAK_EVERY, type Character, type Line, type Reaction, type Situation,
 } from './characters'
 import { CharacterStage, Portrait } from './CharacterStage'
@@ -216,13 +216,17 @@ export default function App() {
   }, [characterMode, subjects, characters, answers.records, mocks.records, catalog, gifts.records])
   const stageOf = (c: Character) => affections.get(c.id)?.stage ?? 0
 
-  const react = (character: Character, situation: Situation, key: string, rival?: string): StageReaction => {
-    const line = pickCharacterLine(lines[character.id] ?? [], situation, stageOf(character), reaction?.lineId ?? null)
+  // rival：吃醋時代入的那位；question：剛作答那題的題幹加選項，知識台詞看它有沒有對到關鍵字；
+  // awayMs：離上次作答多久，久沒上線的台詞代入 {hours}、{minutes}（lineRules.ts）
+  const react = (character: Character, situation: Situation, key: string,
+    { rival, question, awayMs }: { rival?: string; question?: string; awayMs?: number } = {}): StageReaction => {
+    const line = pickCharacterLine(lines[character.id] ?? [], situation, stageOf(character), reaction?.lineId ?? null, question)
+    const text = line ? fillPlayer(line.text, PLAYER).replaceAll('{rival}', rival ?? '別的學姊') : null
     return {
       key,
       character,
       expression: line?.expression ?? 'normal',
-      text: line ? fillPlayer(line.text, PLAYER).replaceAll('{rival}', rival ?? '別的學姊') : null,
+      text: text && awayMs !== undefined ? fillAway(text, awayMs) : text,
       lineId: line?.id ?? null,
     }
   }
@@ -452,7 +456,7 @@ export default function App() {
       const situation = !ok ? 'wrong' : nextStreak % STREAK_EVERY === 0 ? 'streak' : 'correct'
       sfx(situation)
       if (stageCharacter) {
-        setReaction(react(stageCharacter, situation, current.id))
+        setReaction(react(stageCharacter, situation, current.id, { question: [current.stem, ...current.options].join('\n') }))
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -516,7 +520,8 @@ export default function App() {
         .slice(0, ROUND_SIZE)
         .map((q) => q.id)
       const last = answers.records.reduce((max, r) => (r.answered_at > max ? r.answered_at : max), '')
-      const away = last && Date.now() - new Date(last).getTime() > COMEBACK_DAYS * 86_400_000
+      const awayMs = last ? Date.now() - new Date(last).getTime() : 0
+      const away = awayMs > COMEBACK_DAYS * 86_400_000
       // 吃醋：有吃醋台詞的角色，熟識之後，上次跟她讀書之後跑去讀別人的學科
       const jealous =
         !away && subjects && stageOf(c) >= 1 && (lines[c.id] ?? []).some((l) => l.situation === 'jealous')
@@ -524,7 +529,7 @@ export default function App() {
           : undefined
       const rivalName = jealous && `${(index.subjects[jealous.subjects[0]] ?? '').replace(/學$/, '')}那位`
       setStreak(0)
-      setReaction(react(c, away ? 'comeback' : jealous ? 'jealous' : 'start', 'start', rivalName || undefined))
+      setReaction(react(c, away ? 'comeback' : jealous ? 'jealous' : 'start', 'start', { rival: rivalName || undefined, awayMs }))
       await startRun(index, {
         kind: 'character', paperId: null, subject: c.id, order: 'random', queue, pos: 0, picks: {}, affection: stageOf(c),
       })

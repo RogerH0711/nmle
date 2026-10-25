@@ -2,6 +2,9 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { readdirSync, readFileSync } from 'node:fs'
+import type { Line } from './characters.ts'
+import { eligible, matchesTopic } from './lineRules.ts'
+import type { ExamFile } from './types.ts'
 
 const data = new URL('../../data/', import.meta.url)
 const files = ['lines', 'stories'].flatMap((dir) =>
@@ -123,6 +126,40 @@ test('服裝清單：資料夾、價格、解鎖條件、收到時的台詞都�
     // 做好的立繪資料夾都要放進清單，不然買不到
     for (const d of readdirSync(new URL(`characters/${c.id}/`, data), { withFileTypes: true }).filter((d) => d.isDirectory())) {
       assert.ok(outfits.some((o) => o.character === c.id && o.folder === d.name), `characters/${c.id}/${d.name}/ 不在服裝清單裡`)
+    }
+  }
+})
+
+test('台詞的好感度欄位：每種情境在每一階都還有一般台詞可以抽（affection_max 不會把某一階抽空）', () => {
+  const always = ['start', 'comeback', 'correct', 'wrong', 'streak', 'finish', 'mock_high', 'gift',
+    'msg_review', 'msg_comeback', 'msg_story', 'msg_streak']
+  for (const f of files.filter((f) => f.name.startsWith('lines/'))) {
+    const lines = (JSON.parse(f.text) as { lines: Line[] }).lines
+    for (const l of lines) {
+      if (l.affection_max !== undefined) assert.ok(l.affection_max >= l.affection_min, `${l.id} 的 affection_max 比 affection_min 小`)
+      if (l.keywords) assert.ok(['correct', 'wrong', 'streak'].includes(l.situation), `${l.id} 有 keywords，但 ${l.situation} 沒有題目可以對`)
+      if (/\{(hours|minutes)\}/.test(l.text)) assert.equal(l.situation, 'comeback', `${l.id} 用了 {hours}／{minutes}，只有 comeback 有代入`)
+    }
+    for (const s of always) {
+      for (let stage = 0; stage <= 5; stage++) {
+        assert.ok(lines.some((l) => l.situation === s && !l.keywords && !l.night && eligible(l, stage)), `${f.name} 的 ${s} 在第 ${stage} 階沒有台詞`)
+      }
+    }
+  }
+})
+
+test('知識台詞的關鍵字，至少對得到她負責學科的一題（不然永遠不會出現）', () => {
+  const characters = (JSON.parse(readFileSync(new URL('characters.json', data), 'utf-8')) as { characters: { id: string; subjects: string[] }[] }).characters
+  const questions = readdirSync(new URL('questions/', data))
+    .filter((f) => f.endsWith('.json'))
+    .flatMap((f) => (JSON.parse(readFileSync(new URL(`questions/${f}`, data), 'utf-8')) as ExamFile).questions)
+    .filter((q) => q.valid)
+  for (const c of characters) {
+    const mine = questions.filter((q) => q.subject && c.subjects.includes(q.subject)).map((q) => [q.stem, ...q.options].join('\n'))
+    const lines = (JSON.parse(readFileSync(new URL(`lines/${c.id}.json`, data), 'utf-8')) as { lines: Line[] }).lines
+    for (const l of lines.filter((l) => l.keywords)) {
+      assert.ok(l.keywords!.length > 0, `${l.id} 的 keywords 是空的`)
+      assert.ok(mine.some((q) => matchesTopic(l, q)), `${l.id} 的關鍵字 ${l.keywords!.join('、')} 一題都對不到`)
     }
   }
 })

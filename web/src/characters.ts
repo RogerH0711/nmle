@@ -29,6 +29,10 @@ export interface Line {
   id: string
   situation: Situation
   affection_min: number
+  affection_max?: number // 到這一階以後就不再出現（初識的冷淡語氣），沒寫就是不設上限
+  rare?: boolean // 抽中機率是一般的三分之一：感情很明確的台詞、嘲諷
+  keywords?: (string | string[])[] // 知識台詞：題目或選項出現這些字才會說；陣列是一組字，要全部出現（lineRules.ts）
+  night?: boolean // 只在晚上說（「很晚了」「晚安」）
   expression: string
   text: string
   gift?: string // 只有 gift_liked：對應哪一樣禮物（data/gifts.json 的 id）
@@ -70,12 +74,7 @@ export function characterForSubject(characters: Character[], subject: string | n
   return subject ? characters.find((c) => c.subjects.includes(subject)) : undefined
 }
 
-/** 從符合情境和好感度的台詞裡隨機挑一句，盡量不和上一句重複。好感度系統還沒做，先固定 0。 */
-export function pickLine(lines: Line[], situation: Situation, affection = 0, avoidId: string | null = null) {
-  const pool = lines.filter((l) => l.situation === situation && l.affection_min <= affection)
-  const fresh = pool.length > 1 ? pool.filter((l) => l.id !== avoidId) : pool
-  return fresh.length ? fresh[Math.floor(Math.random() * fresh.length)] : null
-}
+export { fillAway, pickLine } from './lineRules'
 
 export function fillPlayer(text: string, player: string) {
   return text.replaceAll('{player}', player || '學弟')

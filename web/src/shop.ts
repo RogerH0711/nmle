@@ -1,5 +1,6 @@
 import type { AnswerRecord } from './answers'
 import type { Line } from './characters'
+import { eligible } from './lineRules.ts'
 import { localDate, reviewPasses } from './review.ts'
 import { STREAK_MIN_DAILY } from './messages.ts'
 
@@ -103,9 +104,9 @@ export function givenToday(gifts: Pick<GiftRecord, 'character_id' | 'given_at'>[
 /** 收到禮物的台詞：她喜歡的禮物有專屬的一句（gift_liked，gift 欄位對應），其他從 gift 隨機挑 */
 export function pickGiftLine(lines: Line[], giftId: string, liked: boolean, affection: number) {
   if (liked) {
-    const own = lines.filter((l) => l.situation === 'gift_liked' && l.gift === giftId && l.affection_min <= affection)
+    const own = lines.filter((l) => l.situation === 'gift_liked' && l.gift === giftId && eligible(l, affection))
     if (own.length) return own[Math.floor(Math.random() * own.length)]
   }
-  const pool = lines.filter((l) => l.situation === 'gift' && l.affection_min <= affection)
+  const pool = lines.filter((l) => l.situation === 'gift' && eligible(l, affection))
   return pool.length ? pool[Math.floor(Math.random() * pool.length)] : null
 }

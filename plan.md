@@ -33,7 +33,7 @@
 3. 題庫瀏覽、搜尋、選項打亂、SEO（做法見 `docs/design.md`「題庫瀏覽與搜尋」）：
    1. ~~瀏覽頁與關鍵字搜尋~~（10/25 完成，`web/src/QuestionBank.tsx`，網址 `#/bank/...`）。10/25 使用說明加了「題庫」一節和打亂選項的說明（`Guide.tsx`）；還沒給朋友試用。
    2. ~~選項打亂~~（10/25 完成，`web/src/options.ts`；不打亂的只有一題多解等 43 題）。
-   3. ~~SEO 靜態頁~~（10/25 完成，build 時產生 `q/` 底下 2,424 頁與 `sitemap.xml`）。10/25 Roger 已在 Search Console 驗證（`data/google329b5f494802031d.html`，不能刪）、提交 sitemap、要求總覽頁建立索引，等收錄；幾天後 sitemap 還是「無法擷取」再查。之後可以加 Education Q&A 結構化資料。
+   3. ~~SEO 靜態頁~~（10/25 完成，build 時產生 `q/` 底下 2,424 頁與 `sitemap.xml`）。10/25 Roger 已在 Search Console 驗證（`data/google329b5f494802031d.html`，不能刪）、提交 sitemap、要求總覽頁建立索引，等收錄；幾天後 sitemap 還是「無法擷取」再查。10/25 每題頁加了 schema.org JSON-LD（`Quiz` + 選擇題 `Question`，含正解）；Google 的 Education Q&A 只收 Flashcard、不支援中文，目前不會有複合式搜尋結果（理由見 `docs/design.md`「公開與作品集」的 SEO）。
    4. 之後再看：主題標籤與同義詞（搜「抗生素」找得到 gentamicin），用本機 LLM 產生再抽查；先看上線後大家實際搜什麼。
 4. 依朋友回饋調整好感度門檻（`web/src/affection.ts` 的 `GOALS`，等有實際升階速度的資料；10/25 Roger：之後再說）；書籤賺法與禮物價格也一起看（`shop.ts` 的 `EARN`、`data/gifts.json`）。
 5. 劇情 CG：要先用定稿立繪訓練每位學姊的 LoRA（10/22 Roger：之後再做，A100 的運算單元剩不多）。

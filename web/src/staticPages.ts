@@ -56,7 +56,48 @@ ul.list li{padding:8px 0;border-bottom:1px solid var(--line)}
 footer{margin-top:24px;font-size:.8rem;color:var(--muted)}
 `
 
-function page(opts: { title: string; description: string; path: string; body: string }) {
+/**
+ * 每題頁的 schema.org JSON-LD：Quiz 包一題 Question（eduQuestionType 是 Multiple choice），
+ * 正解放 acceptedAnswer、其他選項放 suggestedAnswer；送分題沒有 acceptedAnswer。
+ * 為什麼用這個型別、為什麼放正解，見 docs/design.md「公開與作品集」的 SEO。
+ */
+export function questionJsonLd(q: Question, p: PaperInfo, index: Index) {
+  const subject = q.subject ? index.subjects[q.subject] : null
+  const answer = (i: number) => ({ '@type': 'Answer', position: i + 1, name: LETTERS[i], text: q.options[i] })
+  const accepted = q.free_point ? [] : q.options.map((_, i) => i).filter((i) => (q.answers as string[]).includes(LETTERS[i]))
+  const question: Record<string, unknown> = {
+    '@type': 'Question',
+    eduQuestionType: 'Multiple choice',
+    name: `${paperLabel(p)} 第 ${q.number} 題`,
+    text: q.stem,
+    ...(q.images.length ? { image: q.images.map((src) => SITE + src) } : {}),
+    suggestedAnswer: q.options.map((_, i) => i).filter((i) => !accepted.includes(i)).map(answer),
+    ...(accepted.length ? { acceptedAnswer: accepted.map(answer) } : {}),
+    ...(q.answer_note ? { comment: { '@type': 'Comment', text: q.answer_note } } : {}),
+  }
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Quiz',
+    name: `醫師一階 ${paperLabel(p)} 第 ${q.number} 題`,
+    url: SITE + questionPath(q),
+    inLanguage: 'zh-Hant',
+    educationalLevel: '醫師第一階段考試',
+    ...(subject
+      ? {
+          about: { '@type': 'Thing', name: subject },
+          educationalAlignment: { '@type': 'AlignmentObject', alignmentType: 'educationalSubject', targetName: subject },
+        }
+      : {}),
+    isPartOf: { '@type': 'Quiz', name: `醫師一階 ${paperLabel(p)} 歷屆試題`, url: SITE + paperPath(p.id) },
+    hasPart: [question],
+  }
+}
+
+/** 放進 <script type="application/ld+json">：跳脫 <，題幹裡的 </script> 才不會提早結束標籤 */
+export const jsonLdScript = (data: unknown) =>
+  `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`
+
+function page(opts: { title: string; description: string; path: string; body: string; jsonLd?: unknown }) {
   const root = '../'.repeat(opts.path.split('/').length - 1) // 回到網站根目錄的相對路徑
   return `<!doctype html>
 <html lang="zh-Hant">
@@ -72,7 +113,7 @@ function page(opts: { title: string; description: string; path: string; body: st
 <meta property="og:description" content="${esc(opts.description)}">
 <meta property="og:image" content="${SITE}cover-og.jpg">
 <link rel="stylesheet" href="{root}q/style.css">
-</head>
+${opts.jsonLd ? jsonLdScript(opts.jsonLd) + '\n' : ''}</head>
 <body>
 <div class="wrap">
 ${opts.body}
@@ -134,6 +175,7 @@ ${explanationHtml(exp, q)}
     description: clip(`${heading}${subject ? `（${subject}）` : ''}：${q.stem} ${q.options.map((o, i) => `(${LETTERS[i]}) ${o}`).join(' ')}`, 150),
     path: questionPath(q),
     body,
+    jsonLd: questionJsonLd(q, p, index),
   })
 }
 

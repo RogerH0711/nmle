@@ -70,6 +70,7 @@
 - [x] commit 作者 email（學校信箱）：10/21 Roger 決定維持不改，也不改寫歷史
 - [x] 登入對話框說明 Google 登入拿到什麼，另外提供不用 Email 的帳號密碼（10/25 上線，Roger 實測註冊、登入、登出、刪除帳號都正常）
 - [x] 帳號密碼登入加 CAPTCHA（Cloudflare Turnstile，10/25）
+- [ ] 處理 security review 的發現（10/25，`reports/security-review.md`）：至少修好「公開前一定要做」的 H1、H2、H3-1、M1、M2，並照 Dashboard 檢查清單確認登入設定
 - [ ] 題庫抽檢進 CI（資料庫測試與前端單元測試已在 CI）
 - [ ] 確認 Dcard 醫師版板規
 - [ ] 寄信給陽明醫國考詳解的作者群，說明我們拿詳解來比對（見「詳解與題目正確率」）

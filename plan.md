@@ -31,9 +31,9 @@
 1. 台詞與劇情改寫（10/25 同學回報「AI 感很重」）：規則在 `characters.md`「台詞寫法」。挑台詞的程式已改（好感度上限、`rare`、知識台詞對題目關鍵字，`web/src/lineRules.ts`）；10/25 五位的台詞都改完、知識台詞都加了 `keywords`；劇情改了顏緋五段，其他四位只修了幾句（寫法本來就由情境觸發）。等 Roger 和同學看過，再決定要不要繼續調整。
 2. 聲音的音檔（等台詞定稿再念）：顏緋的聲音定為 B_s6（Qwen3-TTS VoiceDesign 候選）；BreezyVoice 在 WSL 可以跑（`art/voice_breezy.py`，速度問題已解決）、每句念幾次用語音辨識挑最好的。BGM 用 ACE-Step 1.5 還沒開始；做完在網站標出處（「美術與內容」的「聲音」）。
 3. 題庫瀏覽、搜尋、選項打亂、SEO（做法見 `docs/design.md`「題庫瀏覽與搜尋」）：
-   1. ~~瀏覽頁與關鍵字搜尋~~（10/25 完成，`web/src/QuestionBank.tsx`，網址 `#/bank/...`）。還沒寫進使用說明（`Guide.tsx`），也還沒給朋友試用。
+   1. ~~瀏覽頁與關鍵字搜尋~~（10/25 完成，`web/src/QuestionBank.tsx`，網址 `#/bank/...`）。10/25 使用說明加了「題庫」一節和打亂選項的說明（`Guide.tsx`）；還沒給朋友試用。
    2. ~~選項打亂~~（10/25 完成，`web/src/options.ts`；不打亂的只有一題多解等 43 題）。
-   3. ~~SEO 靜態頁~~（10/25 完成，build 時產生 `q/` 底下 2,424 頁與 `sitemap.xml`）。等 Roger 在 Search Console 提交 sitemap；之後可以加 Education Q&A 結構化資料。
+   3. ~~SEO 靜態頁~~（10/25 完成，build 時產生 `q/` 底下 2,424 頁與 `sitemap.xml`）。10/25 Roger 已在 Search Console 驗證（`data/google329b5f494802031d.html`，不能刪）、提交 sitemap、要求總覽頁建立索引，等收錄；幾天後 sitemap 還是「無法擷取」再查。之後可以加 Education Q&A 結構化資料。
    4. 之後再看：主題標籤與同義詞（搜「抗生素」找得到 gentamicin），用本機 LLM 產生再抽查；先看上線後大家實際搜什麼。
 4. 依朋友回饋調整好感度門檻（`web/src/affection.ts` 的 `GOALS`，等有實際升階速度的資料；10/25 Roger：之後再說）；書籤賺法與禮物價格也一起看（`shop.ts` 的 `EARN`、`data/gifts.json`）。
 5. 劇情 CG：要先用定稿立繪訓練每位學姊的 LoRA（10/22 Roger：之後再做，A100 的運算單元剩不多）。
@@ -41,7 +41,6 @@
 
 **Roger**
 
-- Google Search Console：新增網址前置字元資源 `https://rogerh0711.github.io/nmle/`，驗證擁有權（HTML 檔放進 `data/`，或 meta 標記加進 `web/index.html`），再提交 `sitemap.xml`（部署後才有）。
 - 10/25 改版通知已發；台詞改版、音檔做完再發一次。
 - 看過五位學姊的劇本、調整語氣（10/25：之後再說）。
 

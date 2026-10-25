@@ -2,9 +2,11 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { User } from '@supabase/supabase-js'
 import type { ExamFile, Index, Letter, Question } from './types'
 import { imageUrl, loadIndex, loadPaper, loadQuestions, paperLabel, paperOf } from './bank'
-import { recordAnswer, recordAnswers, switchUser, syncNow, useAnswers, type SyncStatus } from './answers'
+import { dismissMerged, recordAnswer, recordAnswers, switchUser, syncNow, useAnswers, type SyncStatus } from './answers'
 import { localDate, reviewStates, reviewSummary } from './review'
-import { deleteAccount, getDisplayName, NAME_MAX, setDisplayName, signOut, supabase } from './supabase'
+import { getDisplayName, setDisplayName, supabase } from './supabase'
+import { deleteAccount, signOut } from './account'
+import { displayNameError, NAME_MAX } from './displayName'
 import { LoginDialog } from './LoginDialog'
 import { usernameOf } from './login'
 import { Leaderboard } from './Leaderboard'
@@ -841,6 +843,8 @@ export default function App() {
             onLogin={() => setLoginOpen(true)}
             status={answers.status}
             pending={answers.records.filter((r) => !r.synced).length}
+            storageFull={answers.storageFull}
+            mergedFromAnon={answers.mergedFromAnon}
           />
         </div>
       </header>
@@ -1144,8 +1148,10 @@ function Account(props: {
   onLogin: () => void
   status: SyncStatus
   pending: number
+  storageFull: boolean // 瀏覽器儲存空間滿了，作答紀錄存不進去
+  mergedFromAnon: number // 登入時併進帳號的、這台裝置上沒登入時的作答
 }) {
-  const { user, displayName, onRename, onLogin, status, pending } = props
+  const { user, displayName, onRename, onLogin, status, pending, storageFull, mergedFromAnon } = props
   const [editing, setEditing] = useState(false)
   const [draft, setDraft] = useState('')
   const [saving, setSaving] = useState(false)
@@ -1171,8 +1177,9 @@ function Account(props: {
 
   const save = async () => {
     const name = draft.trim()
-    if (!name || name.length > NAME_MAX) {
-      setRenameError(`暱稱要 1–${NAME_MAX} 個字`)
+    const invalid = displayNameError(name)
+    if (invalid) {
+      setRenameError(invalid)
       return
     }
     setSaving(true)
@@ -1191,6 +1198,7 @@ function Account(props: {
     return (
       <div className="account">
         <span className="sync">{STATUS_TEXT.local}</span>
+        {storageFull && <span className="sync error">瀏覽器空間滿了，新的作答重新整理後會不見，登入才能存到雲端</span>}
         <button className="ghost small" onClick={onLogin}>
           登入
         </button>
@@ -1251,7 +1259,16 @@ function Account(props: {
       >
         {displayName ?? '…'} ✎
       </button>
-      <button className="ghost small" onClick={() => void signOut()}>
+      {storageFull && <span className="sync error">瀏覽器空間滿了，離線時的作答重新整理後會不見</span>}
+      {mergedFromAnon > 0 && (
+        <span className="sync">
+          已把這台裝置上沒登入時寫的 {mergedFromAnon} 題併進帳號
+          <button className="link dismiss" aria-label="知道了" onClick={dismissMerged}>
+            ✕
+          </button>
+        </span>
+      )}
+      <button className="ghost small" onClick={() => void signOut(user.id).catch(() => window.alert('登出失敗，請再試一次'))}>
         登出
       </button>
     </div>

@@ -7,6 +7,7 @@ import type { Letter, Question } from './types'
 export const MOCK_MINUTES = 120
 export const PASS_SCORE = 60 // 正式考試是兩科平均 60 分及格，單科只當參考
 export const MOCK_HIGH = 70 // 達到這個分數，角色說 mock_high 台詞
+export const MIN_RANKED_MINUTES = 10 // 作答不到這麼久就交卷的不列入排行榜（資料庫的 prepare_mock_exam 同一個數字）
 
 /** 作答中的模擬考（只存在這台裝置） */
 export interface MockSession {
@@ -81,6 +82,11 @@ export function formatClock(ms: number) {
   const m = Math.floor((s % 3600) / 60)
   const sec = String(s % 60).padStart(2, '0')
   return h ? `${h}:${String(m).padStart(2, '0')}:${sec}` : `${m}:${sec}`
+}
+
+/** 作答不到 MIN_RANKED_MINUTES 分鐘就交卷：不列入排行榜 */
+export function tooQuick(r: { started_at: string; submitted_at: string }) {
+  return new Date(r.submitted_at).getTime() - new Date(r.started_at).getTime() < MIN_RANKED_MINUTES * 60_000
 }
 
 /** 每份考卷第一次模擬考的紀錄 id（排行榜只採計這些） */

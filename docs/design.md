@@ -201,7 +201,7 @@ Roger 10/20 選的方向：先做禮物；禮物「稍微」加好感度；貨�
 - 以考選部答案與更正答案為準；送分題和一題多解照官方處理，並在題目上標示。
 - 每份考卷自動檢查題數是否為 100 題、每題選項是否齊全、答案是否存在，有問題的題目先不出題。
 - 解析完隨機抽題，和原始 PDF 逐題比對題幹與選項。
-- 每題有「回報疑義」按鈕，回報累積成清單，由 Roger 處理（已完成：`reports` 表，沒登入也能回報，只有 Dashboard 看得到，處理流程見 `supabase/README.md`）。
+- 每題有「回報疑義」按鈕，回報累積成清單，由 Roger 處理（已完成：`reports` 表，沒登入也能回報，只有 Dashboard 看得到，處理流程見 `supabase/README.md`）。防濫用（10/25 改，`20261025200000_rate_limits.sql`）：同一台裝置每分鐘 5 筆；沒登入的同一題每小時 10 筆、全站每天 1,000 筆；登入的人每天 100 筆。被擋下的回報留在瀏覽器，下次打開網站或連上網路時重送。回報時記下登入的帳號，送出時登入的不是他就改成匿名送出，不會算到別人頭上（10/25，`20261025240000_report_owner.sql`）。
 
 之後如果要加詳解，可以用 LLM 產生，但畫面上要標示「未審核」，不能看起來和官方答案一樣可信。
 
@@ -307,13 +307,26 @@ Supabase（登入、進度、排行榜）← GitHub Pages 做不到的部分
 
 - Vite + React + TypeScript 靜態 SPA，push 到 `main` 後由 GitHub Actions 建置並部署到 GitHub Pages。
 - 題庫 JSON 和圖片跟網站一起部署，作答不需要等後端。
-- 作答紀錄先寫進瀏覽器，登入後和 Supabase 雙向同步，網路斷掉也能繼續刷；登入前在同一台裝置刷的題目會併進帳號。
+- 作答紀錄先寫進瀏覽器，登入後和 Supabase 雙向同步，網路斷掉也能繼續刷；登入前在同一台裝置刷的題目會併進帳號。共用電腦上可能是別人寫的，所以併入後帳號旁邊提示併了幾題（10/25；沒改成先問再併，第一次登入的人多一步）。
+- 作答紀錄的 localStorage 格式（10/25，`web/src/answerStorage.ts`）：一筆一行、逗號分欄、時間存 36 進位毫秒數，一筆約 65 字（原本 JSON 158 字），約 7.5 萬筆才會滿；舊的 `nmle.answers.v1.*` 讀到時轉成 `v2`。存不進去時帳號旁邊顯示提示（沒登入：新的作答重新整理後會不見；登入：離線時的作答會不見）。
+- 增量同步（10/25，`answerStorage.ts` 的 `syncPlan`）：只拉 `synced_at`（資料庫收到的時間）比上次新的作答，往前多拉 5 分鐘（`synced_at` 是交易開始的時間，晚 commit 的紀錄可能比游標早），重複的用 id 去掉。每天一次完整同步：更正正解後資料庫會重新判分已有的作答，只拉新的拿不到。游標存在 `nmle.answers.cursor.v1.<user id>`，登出、紀錄存不進瀏覽器時清掉（否則下次會以為已經拉過）。模擬考、送禮紀錄少，每次全部拉，但會分頁（PostgREST 一次最多 1,000 列）。
+- 登出與刪除帳號（10/25，`web/src/account.ts`）：先把紀錄的擁有者換成 anon（同步中的請求就不會再寫回去），再整理 localStorage。登出時這個帳號在這台裝置上只留還沒同步的紀錄（共用電腦的下一個人看不到，下次登入再從雲端拉）；連不上伺服器時改成只登出這台裝置。刪除帳號另外清掉裝置上的作答進度（`web/src/localData.ts` 的清單），設定留著。
 - 資料檔（題庫、角色、台詞、立繪）網址後面加上部署時的 commit（`?v=`）。GitHub Pages 讓瀏覽器快取每個檔案 10 分鐘，不加的話剛部署完可能新程式配到舊資料（例如顏緋的胸像設定還沒更新，角色卡顯示成全身）。
+- CSP（10/25，`web/src/csp.ts`）：GitHub Pages 不能設 HTTP header，用 `<meta>`。網站本體只在 build 時加（`vite.config.ts` 的 plugin；開發伺服器會插入 inline script 和 HMR 的 websocket）；script 只允許自己和 Turnstile，連線只允許自己和 Supabase，`style-src` 留著 `'unsafe-inline'`（Turnstile 的互動驗證沒辦法在沙盒裡完整測）。SEO 靜態頁和 `privacy.html` 不允許任何 script。新增外部服務要加進 `csp.ts`，`csp.test.ts` 會檢查 Supabase、Turnstile 的網址和程式一致。`frame-ancestors` 用 `<meta>` 設不了，擋不了被嵌進 iframe。
+- 共用網域（10/25）：`rogerh0711.github.io` 底下還有 `K-Map-Practice`、`Serenity_Tracker`，同一個 origin 的頁面讀得到這個網站的 localStorage（含 Supabase 的登入權杖）。那兩個目前沒有第三方 script，風險低；要徹底分開得換 origin（例如 GitHub organization），網址會變，等 Roger 決定（見 plan.md）。
 - 載入速度（10/19）：JS 壓縮前 510 KB，其中網站程式只有 77 KB，其餘是 React（219 KB）和 Supabase（214 KB），所以把排行榜、模擬考拆成用到才載入幫助不大。改成把兩個套件分開打包（`vite.config.ts`），部署新版時瀏覽器沿用套件的快取。首頁實際載入約 1.4 MB，最大的浪費是橫式、直式兩張校園地圖都下載（CSS 只是藏起其中一張），改成依螢幕寬度只渲染一種（`CampusMap.tsx` 的 `useLayout`），省約 240 KB。首頁的 `happy` 立繪是「有新劇情」的表情，不是浪費。
 
 **對錯由資料庫判斷（已完成，`supabase/migrations/20261015000000_leaderboard.sql`）**：各題正解放在 `question_keys` 表，前端讀不到；作答寫入時由 trigger 算出對錯，蓋掉瀏覽器送來的值。正解由 `pipeline/export_keys.py` 匯出成 `supabase/seed/question_keys.sql`，題庫有更新就重新匯出並執行，執行時也會重新判斷已有的作答紀錄。
 
-這只能擋「答錯卻送答對」。正解必須送到瀏覽器才能在作答後顯示，有心人仍可以先讀正解再作答。公開前如果要真正防刷分，得改成「送出作答後才向伺服器拿正解」，代價是不能離線作答。
+這只能擋「答錯卻送答對」。正解本來就公開（題庫 JSON、SEO 靜態頁 `q/`、repo 的 `question_keys.sql`），有心人可以照正解作答，所以「送出作答後才向伺服器拿正解」也擋不住，不做。
+
+**排行榜防偽造（10/25，`20261025180000_leaderboard_integrity.sql`，見 `reports/security-review.md`）**：擋「一次請求就能做到」的偽造，照正解慢慢答擋不住，公開後靠 Dashboard 處理。
+
+- 作答與模擬考的 `synced_at` 一律由資料庫決定。作答時間在收到時的 3 天前以前或未來的作答照收（錯題複習、好感度照用），但 `ranked = false`，不列入排行榜。3 天是離線作答後才同步的寬限；沒登入刷了很久才登入的人，之前的作答也不會算進連續天數。這個 migration 之前的紀錄都算。
+- 模擬考的「第一次」用資料庫收到的順序決定；開始時間太舊、交卷時間在未來、作答不到 10 分鐘的不列入排行榜，第一次不列入的話這份考卷就沒有成績（不改採第二次）。前端判斷「這次有沒有列入」仍用開始時間（`mock.ts` 的 `firstAttempts`），正常使用時兩者一致。
+- `profiles` 只能讀自己的；排行榜函式是 security definer，不受影響。
+- 寫入數量限制（`20261025200000_rate_limits.sql`）：每人每天（台灣時間）作答 10,000 筆、模擬考 100 次、送禮 300 次、回報 100 筆，超過整批拒絕，前端的紀錄留在瀏覽器隔天再同步（沒登入刷了很多題才登入的人，第一次同步可能要分幾天）；用 after insert 計數，upsert 重送已存在的紀錄不算。使用統計每天最多記 5,000 台新裝置，超過的不記也不報錯。計數存在 `rate_limits`（沒有 policy），由 `take_quota()` 讀寫，兩天前的計數偶爾清掉。
+- `auth.users` 的 Email 一律不能改，只有改成這個使用者 Google 身分上的 Email 可以（Google 帳號換 Email 時 GoTrue 同步過來；如果 GoTrue 是先改使用者再改身分，那個人會登入失敗，要在 Dashboard 手動處理）。
 
 **手機與電腦（RWD）**
 
@@ -337,22 +350,24 @@ Supabase（登入、進度、排行榜）← GitHub Pages 做不到的部分
 
 排行榜不另外存，直接由作答紀錄和模擬考成績算出來（資料庫函式 `leaderboard_weekly`、`leaderboard_streaks`，只回傳暱稱與統計數字）：
 
-- 週榜正確率：週一 00:00（台灣時間）起；同一題同一天只算第一次作答，避免重做錯題刷正確率；至少 50 題才排名。
-- 連續作答天數：一天至少 10 題才算一天；今天或昨天有作答才算還在連續中。
-- 模擬考成績（`leaderboard_mock`）：每份考卷只採計第一次模擬考；不指定考卷時取每人最好的一份，也可以選一份考卷比。同分時用時短的排前面。
+- 週榜正確率：週一 00:00（台灣時間）起；同一題只算本週第一次作答（10/25 前是每天第一次，隔天重做可以刷），送分題和四個選項都對的題目不算；至少 50 題才排名。
+- 連續作答天數：一天至少 10 題才算一天；今天或昨天有作答才算還在連續中。10/25 起讀每人每天的題數表 `answer_days`（作答寫入、匯入正解重新判分時由 trigger 維護），不再每次掃全部作答。
+- 模擬考成績（`leaderboard_mock`）：每份考卷只採計第一次模擬考（資料庫收到的順序），作答不到 10 分鐘的不算；不指定考卷時取每人最好的一份，也可以選一份考卷比。同分時用時短的排前面。
 
 **刪除帳號（10/21，`20261021120000_delete_account.sql`）**：點暱稱進入修改時有「刪除帳號」，要輸入「刪除」確認。資料庫函式刪掉 `auth.users` 那一筆，其他表靠外鍵處理（作答、模擬考、送禮、暱稱 cascade；回報 set null，留著修題目但連不回是誰）；前端再清掉 localStorage 裡鍵名含 user id 的紀錄。隱私權政策與使用條款在 `data/privacy.html`（獨立網址，給 Google 發布應用程式用）。
 
 **登入（10/25，`web/src/LoginDialog.tsx`、`login.ts`、`20261025120000_username_login.sql`）**：朋友擔心 Google 登入的個資（見「開發紀錄」），右上角和排行榜的「登入」改成打開登入對話框：先說明不登入也能用，Google 登入按鈕下寫明網站只拿到 Email、名稱、大頭貼網址；下方是不用 Email 的帳號密碼。
 
 - 帳號名稱 3–20 個小寫英數或底線，前端轉成 `名稱@users.invalid` 用 Supabase 的 Email 方式註冊。`.invalid` 是保留網域，寄不出信，所以線上要關掉「Confirm email」；忘記密碼無法重設，註冊畫面和修改暱稱的畫面都提醒帳號名稱。Supabase 的 Email 格式檢查只在寄信時才做（`internal/mailer/validateclient`），註冊不寄信就不會被擋。
-- 密碼至少 8 個字元（前端檢查，線上也要設最短 8 碼），bcrypt 只看前 72 bytes 所以設上限。
+- 密碼至少 8 個字元（前端檢查；線上也設了最短 8 碼，10/25 確認），bcrypt 只看前 72 bytes 所以設上限。
 - 資料庫 trigger 擋下 `provider = 'email'` 但不是這個格式的註冊與改 Email：Email 方式一打開，任何人都能直接呼叫 API 用別人的真實 Email 註冊。Google 登入在建立使用者前就寫好 `provider = 'google'`（GoTrue `signup.go` 的 `ToUserModel`），不受影響。
 - 帳號名稱不是暱稱：註冊後暱稱一樣是「同學」加四碼，排行榜看不到帳號名稱。
-- CAPTCHA（10/25，`web/src/turnstile.ts`）：Cloudflare Turnstile，打開登入對話框才載入 script；帳號密碼登入、註冊時把 token 送給 Supabase 核對（Google 登入不經過）。secret key 只在 Supabase Dashboard，site key 寫在程式裡。site key 綁網域，本機 localhost 要在 Cloudflare 的主機名稱加上 localhost 才能測。
+- CAPTCHA（10/25，`web/src/turnstile.ts`）：Cloudflare Turnstile，打開登入對話框才載入 script；帳號密碼登入、註冊時把 token 送給 Supabase 核對（Google 登入不經過）。secret key 只在 Supabase Dashboard，site key 寫在程式裡。site key 綁網域，本機 localhost 要在 Cloudflare 的主機名稱加上 localhost 才能測。10/25 確認伺服器端有驗證：不帶 token 直接呼叫 `POST /auth/v1/token?grant_type=password` 會回 `400 captcha_failed`。
 - 還沒做：登入中改密碼。
 
 **暱稱不用真名（已完成）**：新使用者的預設暱稱是「同學」加 4 碼，右上角可以自己改。改版前就登入的使用者，暱稱仍是 Google 名稱，要自己改。
+
+**暱稱規則與排行榜隱藏（10/25，`20261025220000_display_name_rules.sql`）**：暱稱 1–30 字，不能有控制字元、零寬字元、方向控制字元（會讓文字反向顯示），頭尾不能是空白；資料庫 constraint 和前端 `web/src/displayName.ts` 同一套規則。不擋同名（要唯一得處理預設暱稱撞名）。灌分或不雅暱稱由 Roger 把 `profiles.hidden` 設成 true（做法見 `supabase/README.md`）：別人的排行榜看不到他，他自己看得到，不會發現被隱藏而換帳號。使用者只能更新 `display_name`。排行榜函式的門檻參數（週榜 50 題、連續天數一天 10 題）不能傳更小的值，參數保留是為了舊版前端還能呼叫。
 
 ## 美術與內容
 

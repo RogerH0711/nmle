@@ -12,7 +12,7 @@ async function copy(text: string): Promise<boolean> {
 }
 
 /**
- * 作答後的「問 AI」：網站沒有詳解，把題目、選項、正解和你選的答案整理成提問，
+ * 作答後的「問 AI」：把題目、選項、正解和你選的答案整理成提問，
  * 複製起來並打開 AI 網站。ChatGPT、Claude 會自動帶入；Gemini 和太長的題目要自己貼上。
  */
 export function AskAi(props: { q: Question; paper: PaperInfo | undefined; subject: string | null; picked: Letter }) {

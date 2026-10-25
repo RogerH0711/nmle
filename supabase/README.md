@@ -43,6 +43,14 @@ npx supabase migration repair --status applied 20261014000000 20261015000000
 3. 確認有錯：在 `pipeline/overrides/` 寫修正並寫明原因，重跑 pipeline（正解有變就重跑 `export_keys.py` 再 `npm run db:push`）。
 4. 在 Dashboard 把 `status` 改成 `fixed`（已修正）或 `rejected`（題目沒錯），`admin_note` 寫處理方式。
 
+## 處理排行榜灌分或不雅暱稱
+
+不刪帳號，只讓別人在排行榜上看不到他（他自己看得到，不會發現被隱藏）：
+
+1. 在排行榜看到的是暱稱，先在 Table Editor → `profiles` 用 `display_name` 找到那一筆（暱稱可能重複，對照註冊時間 `created_at`）。
+2. 把 `hidden` 改成 `true`。不雅暱稱也可以順便把 `display_name` 改回「同學」加四碼。
+3. 誤判的話改回 `false`。
+
 ## 查使用統計
 
 `usage_daily` 是匿名的使用統計：每台裝置每天一筆（隨機的裝置代碼、當天在這台裝置作答幾題、有沒有開角色模式、有沒有登入）。沒登入的人也會記到，所以比 `profiles` 準。一台裝置不等於一個人：同一人用手機和電腦算兩台，清掉瀏覽器資料會換新代碼。

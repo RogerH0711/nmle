@@ -3,7 +3,7 @@ import type { User } from '@supabase/supabase-js'
 import type { ExamFile, Index, Letter, Question } from './types'
 import { imageUrl, loadPaper, paperLabel } from './bank'
 import {
-  deadline, firstAttempts, formatClock, isMockCorrect, MOCK_MINUTES, PASS_SCORE, scoreMock,
+  deadline, firstAttempts, formatClock, isMockCorrect, MIN_RANKED_MINUTES, MOCK_MINUTES, PASS_SCORE, scoreMock, tooQuick,
   type MockRecord, type MockSession,
 } from './mock'
 import { CharacterStage } from './CharacterStage'
@@ -314,9 +314,11 @@ export function MockResult(props: {
         <p className="board-note">
           {!counted
             ? '這份考卷之前考過，這次不列入排行榜。'
-            : user
-              ? `${dateTime(record.started_at)} 開始，成績列入排行榜。`
-              : '登入後這次成績會列入排行榜。'}
+            : tooQuick(record)
+              ? `作答不到 ${MIN_RANKED_MINUTES} 分鐘就交卷，這份考卷不列入排行榜。`
+              : user
+                ? `${dateTime(record.started_at)} 開始，成績列入排行榜。`
+                : '登入後這次成績會列入排行榜。'}
         </p>
         <table>
           <thead>

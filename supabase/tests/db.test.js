@@ -2,7 +2,7 @@
 // 執行：npm run test:db
 import { before, describe, test } from 'node:test'
 import assert from 'node:assert/strict'
-import { answer, applyMigration, applySeed, as, createDb, createUser, migrations, tryAs } from './helpers.js'
+import { answer, applyMigration, applySeed, as, createDb, createUser, migrations, syncedOnTime, tryAs } from './helpers.js'
 
 const ROGER = '11111111-1111-4111-8111-111111111111' // 排行榜上線前就登入過的使用者
 const A = '22222222-2222-4222-8222-222222222222'
@@ -10,6 +10,16 @@ const B = '33333333-3333-4333-8333-333333333333'
 
 let db
 let keys // 只有單一正解、非送分的題目，用來造作答資料
+
+/** 直接設定寫入額度用掉多少（per：'hour' 或 'day'），不用真的寫幾千筆 */
+const setUsed = (name, per, used) =>
+  db.query(
+    `insert into public.rate_limits (name, window_start, used)
+     values ($1, case $2 when 'hour' then date_trunc('hour', now())
+                 else date_trunc('day', now() at time zone 'Asia/Taipei') at time zone 'Asia/Taipei' end, $3)
+     on conflict (name, window_start) do update set used = excluded.used`,
+    [name, per, used],
+  )
 
 before(async () => {
   db = await createDb()
@@ -140,6 +150,27 @@ describe('暱稱', () => {
     assert.ok(!other.ok || other.res.affectedRows === 0)
   })
 
+  test('看不到別人的暱稱，只看得到自己的', async () => {
+    const r = await as(db, A, `select id from public.profiles`)
+    assert.deepEqual(r.rows.map((x) => x.id), [A])
+  })
+
+  test('暱稱不能有控制字元、零寬字元、方向控制字元，頭尾不能是空白', async () => {
+    for (const name of ['\u202Eabc', '小\u200B甲', '\uFEFF小甲', '小甲\u2066', '   ', ' 小甲', '小甲 ', '\u3000小甲', '小\n甲', '\u3164']) {
+      const t = await tryAs(db, A, `update public.profiles set display_name = $1 where id = $2`, [name, A])
+      assert.equal(t.ok, false, JSON.stringify(name))
+    }
+    const ok = await as(db, A, `update public.profiles set display_name = '小 甲' where id = $1 returning display_name`, [A])
+    assert.equal(ok.rows[0].display_name, '小 甲')
+  })
+
+  test('只能改暱稱，不能改 hidden、建立時間、id', async () => {
+    for (const set of [`hidden = true`, `created_at = '1999-01-01'`, `id = '${B}'`]) {
+      const t = await tryAs(db, A, `update public.profiles set ${set} where id = $1`, [A])
+      assert.equal(t.ok, false, set)
+    }
+  })
+
   test('暱稱長度限制 1–30 字', async () => {
     assert.equal((await tryAs(db, A, `update public.profiles set display_name = '' where id = $1`, [A])).ok, false)
     assert.equal((await tryAs(db, A, `update public.profiles set display_name = repeat('長', 31) where id = $1`, [A])).ok, false)
@@ -166,11 +197,11 @@ describe('排行榜', () => {
     assert.ok(weekly[0].is_me && weekly[0].qualified)
   })
 
-  test('週榜：同一題同一天只算第一次，重做錯題不會刷高正確率', () => {
+  test('週榜：同一題只算本週第一次，重做錯題不會刷高正確率；送分題不算', () => {
     const me = weekly.find((r) => r.is_me)
-    // A 的不重複（題目, 天）：前面判分測試的 4 題（001 對、002 錯、063 對、066 對）＋ 60 題（45 對）
-    assert.equal(me.answered, 64)
-    assert.equal(me.correct, 48)
+    // A 的題目：前面判分測試的 001 對、002 錯、063 對（066 是送分題不算）＋ 60 題（45 對）
+    assert.equal(me.answered, 63)
+    assert.equal(me.correct, 47)
   })
 
   test('週榜：未達 50 題不排名', () => {
@@ -187,6 +218,7 @@ describe('排行榜', () => {
     for (const day of [1, 2, 3, 5, 6]) {
       for (let i = 0; i < 10; i++) await answer(db, B, keys[i].question_id, keys[i].a, true, `${day} days`)
     }
+    await syncedOnTime(db, B) // 當成每天都有連上網路、當天就同步
     const rows = (await as(db, B, `select * from public.leaderboard_streaks(10)`)).rows
     assert.equal(rows.find((r) => r.is_me)?.streak, 4)
     assert.ok(rows.some((r) => !r.is_me && r.streak === 1), 'A 今天有作答，應該是連續 1 天')
@@ -198,6 +230,77 @@ describe('排行榜', () => {
     for (let i = 0; i < 9; i++) await answer(db, C, keys[i].question_id, keys[i].a, true, `${i} seconds`)
     const rows = (await as(db, C, `select * from public.leaderboard_streaks(10)`)).rows
     assert.ok(!rows.some((r) => r.is_me))
+  })
+})
+
+describe('排行榜防偽造', () => {
+  const D = '77777777-7777-4777-8777-000000000001'
+  const E = '77777777-7777-4777-8777-000000000002'
+  let seq = 0
+  const id = () => `77777777-0000-4000-8000-${String(++seq).padStart(12, '0')}`
+
+  before(async () => {
+    await createUser(db, D, '真名丁')
+    await createUser(db, E, '真名戊')
+  })
+
+  test('同步時間由資料庫決定，前端送的會被蓋掉', async () => {
+    const r = await as(
+      db,
+      D,
+      `insert into public.answers (id, question_id, picked, correct, answered_at, synced_at)
+       values ($1, '115090_1_001', 'C', true, now(), '1990-01-01') returning synced_at > now() - interval '1 minute' as fresh`,
+      [id()],
+    )
+    assert.equal(r.rows[0].fresh, true)
+  })
+
+  test('回填 3 天前以前的作答：收下，但不列入連續天數', async () => {
+    // 一次請求寫入過去 30 天、每天 10 題（今天沒有作答）
+    const rows = []
+    for (let d = 4; d <= 30; d++) for (let i = 0; i < 10; i++) rows.push(`('${id()}', '${keys[i].question_id}', '${keys[i].a}', true, now() - interval '${d} days')`)
+    await as(db, D, `insert into public.answers (id, question_id, picked, correct, answered_at) values ${rows.join(',')}`)
+    const stored = await db.query(`select count(*)::int as n, count(*) filter (where ranked)::int as ranked from public.answers where user_id = $1 and answered_at < now() - interval '3 days'`, [D])
+    assert.deepEqual(stored.rows[0], { n: 270, ranked: 0 })
+    const rows2 = (await as(db, D, `select * from public.leaderboard_streaks(10)`)).rows
+    assert.ok(!rows2.some((r) => r.is_me))
+  })
+
+  test('預先寫入未來的作答：不列入排行榜，時間到了也不算', async () => {
+    const r = await as(
+      db,
+      D,
+      `insert into public.answers (id, question_id, picked, correct, answered_at)
+       values ($1, '115090_1_002', 'B', true, now() + interval '2 days') returning ranked`,
+      [id()],
+    )
+    assert.equal(r.rows[0].ranked, false)
+  })
+
+  test('3 天內的離線作答之後才同步，照常列入連續天數', async () => {
+    for (const d of [0, 1, 2]) for (let i = 0; i < 10; i++) await answer(db, E, keys[i].question_id, keys[i].a, true, `${d} days`)
+    const rows = (await as(db, E, `select * from public.leaderboard_streaks(10)`)).rows
+    assert.equal(rows.find((r) => r.is_me)?.streak, 3)
+  })
+
+  test('週榜：本週先答錯、之後重做答對，只算第一次（隔天重做也一樣）', async () => {
+    const F = '77777777-7777-4777-8777-000000000003'
+    await createUser(db, F, '真名己')
+    // 本週一開始時答錯 keys[79]，現在重做答對；其餘 50 題答對；再做一題送分題
+    const wrong = keys[79].a === 'A' ? 'B' : 'A'
+    await as(
+      db,
+      F,
+      `insert into public.answers (id, question_id, picked, correct, answered_at)
+       values ($1, $2, $3, false, date_trunc('week', now() at time zone 'Asia/Taipei') at time zone 'Asia/Taipei' + interval '1 minute')`,
+      [id(), keys[79].question_id, wrong],
+    )
+    await syncedOnTime(db, F)
+    await answer(db, F, keys[79].question_id, keys[79].a)
+    for (let i = 0; i < 50; i++) await answer(db, F, keys[i].question_id, keys[i].a)
+    await answer(db, F, '115090_1_066', 'A')
+    const me = (await as(db, F, `select * from public.leaderboard_weekly(50)`)).rows.find((r) => r.is_me)
+    assert.deepEqual([me.answered, me.correct], [51, 50])
   })
 })
 
@@ -279,6 +382,31 @@ describe('模擬考', () => {
     assert.ok(!('user_id' in row) && !('picks' in row))
   })
 
+  test('補一筆開始時間更早的模擬考，不會取代第一次', async () => {
+    const G = '88888888-8888-4888-8888-000000000001'
+    await createUser(db, G, '真名庚')
+    assert.equal((await submit(G, P, attempt(10).picks, '1 hour', 30)).ok, true)
+    // 開始、交卷都填 2000 年，滿分、0 秒
+    const t = await tryAs(
+      db,
+      G,
+      `insert into public.mock_exams (id, paper_id, started_at, submitted_at, picks) values ($1, $2, '2000-01-01', '2000-01-01', $3)`,
+      [`dddddddd-0000-4000-8000-${String(++mockSeq).padStart(12, '0')}`, P, JSON.stringify(attempt(95).picks)],
+    )
+    assert.equal(t.ok, true)
+    const me = (await board(G, P)).find((r) => r.is_me)
+    assert.deepEqual([me.score, me.seconds], [attempt(10).score, 1800])
+  })
+
+  test('第一次的時間不合理（開始時間太舊、不到 10 分鐘交卷）就沒有成績，也不會改採第二次', async () => {
+    const H = '88888888-8888-4888-8888-000000000002'
+    await createUser(db, H, '真名辛')
+    assert.equal((await submit(H, P, attempt(95).picks, '5 days', 100)).ok, true) // 5 天前開始
+    assert.equal((await submit(H, P, attempt(95).picks, '1 hour', 30)).ok, true)
+    assert.equal((await submit(H, '113020_1', {}, '1 hour', 5)).ok, true) // 5 分鐘就交卷
+    assert.ok(!(await board(H)).some((r) => r.is_me))
+  })
+
   test('超過 2 小時交卷會被拒絕', async () => {
     assert.equal((await submit(A, '113020_1', {}, '5 hours', 125)).ok, false)
   })
@@ -326,7 +454,7 @@ describe('回報疑義', () => {
     const row = {
       id: `ffffffff-1111-4000-8000-${String(++reportSeq).padStart(12, '0')}`,
       device_id: `ffffffff-2222-4000-8000-${String(reportSeq).padStart(12, '0')}`, // 預設每筆不同裝置，不會撞到頻率限制
-      question_id: '115090_1_001',
+      question_id: `115090_1_${String((reportSeq % 100) + 1).padStart(3, '0')}`, // 預設輪流不同題目，不會撞到同一題的匿名上限
       reason: 'answer',
       note: '正解應該是 B',
       ...extra,
@@ -354,6 +482,12 @@ describe('回報疑義', () => {
   test('不能冒用別人的 user_id；沒登入也不能填 user_id', async () => {
     assert.equal((await report(A, { user_id: B })).ok, false)
     assert.equal((await report(null, { user_id: B })).ok, false)
+  })
+
+  test('登入的人也可以送匿名回報（換帳號後才送出的回報）', async () => {
+    const id = 'ffffffff-3333-4000-8000-000000000004'
+    assert.equal((await report(A, { id, user_id: null })).ok, true)
+    assert.equal((await stored(id)).user_id, null)
   })
 
   test('處理狀態、備註、建立時間由資料庫決定', async () => {
@@ -395,13 +529,34 @@ describe('回報疑義', () => {
     }
   })
 
-  test('匿名回報合計每小時最多 200 筆，登入的人不受影響', async () => {
-    const before = (await db.query(`select count(*)::int as n from public.reports where user_id is null`)).rows[0].n
-    for (let i = before; i < 200; i++) assert.equal((await report(null)).ok, true, `第 ${i + 1} 筆`)
+  test('匿名回報同一題每小時最多 10 筆，其他題目和登入的人不受影響', async () => {
+    const Q = '113020_1_050'
+    for (let i = 0; i < 10; i++) assert.equal((await report(null, { question_id: Q })).ok, true, `第 ${i + 1} 筆`)
+    const blocked = await report(null, { question_id: Q })
+    assert.equal(blocked.ok, false)
+    assert.match(blocked.error, /這題目前匿名回報太多/)
+    assert.equal((await report(null, { question_id: '113020_1_051' })).ok, true)
+    assert.equal((await report(B, { question_id: Q })).ok, true)
+  })
+
+  test('匿名回報全站每天最多 1,000 筆，登入的人不受影響', async () => {
+    const used = (await db.query(`select used from public.rate_limits where name = 'reports_anon'`)).rows[0].used
+    await setUsed('reports_anon', 'day', 999)
+    assert.equal((await report(null)).ok, true)
     const blocked = await report(null)
     assert.equal(blocked.ok, false)
-    assert.match(blocked.error, /匿名回報太多/)
+    assert.match(blocked.error, /目前匿名回報太多/)
     assert.equal((await report(B)).ok, true)
+    assert.ok(used > 0 && used < 999, '前面的匿名回報有計數')
+    await setUsed('reports_anon', 'day', used) // 還原，後面的測試還要回報
+  })
+
+  test('登入的人每天最多回報 100 筆', async () => {
+    await setUsed(`reports:${A}`, 'day', 99)
+    assert.equal((await report(A)).ok, true)
+    const blocked = await report(A)
+    assert.equal(blocked.ok, false)
+    assert.match(blocked.error, /今天回報太多/)
   })
 })
 
@@ -444,6 +599,22 @@ describe('匿名使用統計', () => {
     assert.equal((await ping(null, -1)).ok, false)
     assert.equal((await ping(null, 5001)).ok, false)
     assert.equal((await ping(null, 1, null)).ok, false)
+  })
+
+  test('每天最多記 5,000 台新裝置：超過的不記也不報錯，已經記過的裝置照常更新', async () => {
+    await setUsed('usage_new_devices', 'day', 5000)
+    const NEW = 'abababab-0000-4000-8000-000000000099'
+    assert.equal((await ping(null, 3, NEW)).ok, true)
+    assert.equal((await row(NEW)).length, 0)
+    assert.equal((await ping(null, 20)).ok, true)
+    assert.equal((await row())[0].answered, 20)
+    await setUsed('usage_new_devices', 'day', 0)
+    assert.equal((await ping(null, 3, NEW)).ok, true)
+    assert.equal((await row(NEW)).length, 1)
+    // 已經記過的裝置再送一次，不會再用掉額度
+    assert.equal((await ping(null, 4, NEW)).ok, true)
+    const used = await db.query(`select used from public.rate_limits where name = 'usage_new_devices'`)
+    assert.equal(used.rows[0].used, 1)
   })
 
   test('沒有人能直接讀寫這張表', async () => {
@@ -610,4 +781,206 @@ describe('帳號密碼註冊', () => {
   test('Google 登入不受影響', async () => {
     assert.equal(await signUp('66666666-6666-4666-8666-000000000006', 'someone@gmail.com', 'google'), true)
   })
+
+  test('Google 帳號也不能把 Email 改成別人的 Email 或帳號名稱', async () => {
+    const G = '66666666-6666-4666-8666-000000000006'
+    await db.query(`insert into auth.identities (user_id, provider, identity_data) values ($1, 'google', '{"email": "someone@gmail.com"}')`, [G])
+    for (const email of ['victim@gmail.com', 'taken_name@users.invalid']) {
+      const ok = await db.query(`update auth.users set email = $2 where id = $1`, [G, email]).then(() => true, () => false)
+      assert.equal(ok, false, email)
+    }
+  })
+
+  test('Google 帳號的 Email 換了（Google 身分上的 Email 先更新），可以同步過來', async () => {
+    const G = '66666666-6666-4666-8666-000000000006'
+    await db.query(`update auth.identities set identity_data = '{"email": "new@gmail.com"}' where user_id = $1`, [G])
+    await db.query(`update auth.users set email = 'new@gmail.com' where id = $1`, [G])
+    // Email 沒變的更新（GoTrue 登入時會整筆更新）不受影響
+    await db.query(`update auth.users set email = 'new@gmail.com' where id = $1`, [G])
+  })
 })
+
+describe('寫入數量限制', () => {
+  const Q = '99999999-9999-4999-8999-000000000001'
+  let seq = 0
+  const id = () => `99999999-0000-4000-8000-${String(++seq).padStart(12, '0')}`
+  const insertAnswers = (n, ids = Array.from({ length: n }, id)) =>
+    tryAs(
+      db,
+      Q,
+      `insert into public.answers (id, question_id, picked, correct, answered_at)
+       select x::uuid, '115090_1_001', 'C', true, now() from unnest($1::text[]) as x
+       on conflict (id) do nothing`,
+      [ids],
+    )
+
+  before(async () => {
+    await createUser(db, Q, '真名壬')
+  })
+
+  test('作答每人每天最多 10,000 筆，超過的整批拒絕', async () => {
+    assert.equal((await insertAnswers(500)).ok, true) // 前端一批 500 筆
+    await setUsed(`answers:${Q}`, 'day', 9998)
+    const blocked = await insertAnswers(3)
+    assert.equal(blocked.ok, false)
+    assert.match(blocked.error, /今天寫入的紀錄太多了/)
+    const n = (await db.query(`select count(*)::int as n from public.answers where user_id = $1`, [Q])).rows[0].n
+    assert.equal(n, 500, '被拒絕的那批一筆都沒寫進去')
+    assert.equal((await insertAnswers(2)).ok, true)
+    assert.equal((await insertAnswers(1)).ok, false)
+  })
+
+  test('重送已經存在的作答（upsert）不算額度', async () => {
+    const ids = [id(), id()]
+    await setUsed(`answers:${Q}`, 'day', 9000)
+    assert.equal((await insertAnswers(2, ids)).ok, true)
+    await setUsed(`answers:${Q}`, 'day', 10000)
+    assert.equal((await insertAnswers(2, ids)).ok, true)
+  })
+
+  test('別人的額度不受影響', async () => {
+    assert.equal((await answer(db, B, '115090_1_001', 'C')).correct, true)
+  })
+
+  test('模擬考每人每天最多 100 次、送禮最多 300 次', async () => {
+    await setUsed(`mock_exams:${Q}`, 'day', 100)
+    const mock = await tryAs(
+      db,
+      Q,
+      `insert into public.mock_exams (id, paper_id, started_at, submitted_at, picks) values ($1, '115090_1', now() - interval '1 hour', now(), '{}')`,
+      [id()],
+    )
+    assert.equal(mock.ok, false)
+    await setUsed(`gifts:${Q}`, 'day', 299)
+    const gift = (gid) =>
+      tryAs(db, Q, `insert into public.gifts (id, character_id, gift_id, price, stage, given_at) values ($1, 'fei', 'latte', 20, 0, now())`, [gid])
+    assert.equal((await gift(id())).ok, true)
+    assert.equal((await gift(id())).ok, false)
+  })
+
+  test('沒有人讀得到計數，也不能自己呼叫 take_quota', async () => {
+    for (const user of [Q, null]) {
+      const r = await tryAs(db, user, `select * from public.rate_limits`)
+      assert.ok(!r.ok || r.res.rows.length === 0)
+      const t = await tryAs(db, user, `select public.take_quota('x', 'day', 1)`)
+      assert.equal(t.ok, false)
+      for (const sql of [`update public.rate_limits set used = 0`, `delete from public.rate_limits`]) {
+        const u = await tryAs(db, user, sql)
+        assert.ok(!u.ok || u.res.affectedRows === 0, sql)
+      }
+    }
+  })
+})
+
+describe('排行榜隱藏與門檻', () => {
+  test('hidden 的人別人看不到，自己看得到', async () => {
+    await db.query(`update public.profiles set hidden = true where id = $1`, [A])
+    try {
+      for (const fn of ['leaderboard_weekly()', 'leaderboard_mock()']) {
+        const others = (await as(db, B, `select * from public.${fn}`)).rows
+        const self = (await as(db, A, `select * from public.${fn}`)).rows
+        assert.ok(!others.some((r) => !r.is_me && r.display_name === self.find((x) => x.is_me)?.display_name), fn)
+        assert.ok(self.some((r) => r.is_me), `${fn}：自己還看得到`)
+      }
+      // 連續天數：E 有連續 3 天（排行榜防偽造的測試），隱藏後 B 看不到
+      const E = '77777777-7777-4777-8777-000000000002'
+      await db.query(`update public.profiles set hidden = true where id = $1`, [E])
+      const streakOthers = (await as(db, B, `select count(*)::int as n from public.leaderboard_streaks() where streak = 3`)).rows[0].n
+      const streakSelf = (await as(db, E, `select * from public.leaderboard_streaks()`)).rows
+      assert.equal(streakOthers, 0)
+      assert.equal(streakSelf.find((r) => r.is_me)?.streak, 3)
+    } finally {
+      await db.query(`update public.profiles set hidden = false`)
+    }
+  })
+
+  test('門檻參數不能調低：連續天數傳 1 也要一天 10 題，週榜傳 0 也要 50 題才排名', async () => {
+    const C = '44444444-4444-4444-8444-444444444444' // 今天只做了 9 題
+    assert.ok(!(await as(db, C, `select * from public.leaderboard_streaks(1)`)).rows.some((r) => r.is_me))
+    const b = (await as(db, B, `select * from public.leaderboard_weekly(0)`)).rows.find((r) => r.is_me)
+    assert.ok(b.answered < 50 && !b.qualified)
+  })
+})
+
+describe('同步與排行榜效能', () => {
+  const R = 'abcdabcd-0000-4000-8000-000000000001'
+  let seq = 0
+  const id = () => `abcdabcd-1111-4000-8000-${String(++seq).padStart(12, '0')}`
+  const days = async () =>
+    (await db.query(`select day::text, answered from public.answer_days where user_id = $1 order by day`, [R])).rows
+
+  before(async () => {
+    await createUser(db, R, '真名癸')
+  })
+
+  test('每天題數：作答寫入時加一，不列入排行榜的（回填、沒有正解）不算', async () => {
+    await answer(db, R, '115090_1_001', 'C')
+    await answer(db, R, '115090_1_002', 'A', true, '10 days') // 回填
+    await answer(db, R, '999999_1_001', 'A') // 沒有正解
+    const rows = await days()
+    assert.equal(rows.length, 1)
+    assert.equal(rows[0].answered, 1)
+  })
+
+  test('每天題數：upsert 重送已存在的作答不會重複計算', async () => {
+    const same = id()
+    for (let i = 0; i < 2; i++) {
+      await as(
+        db,
+        R,
+        `insert into public.answers (id, question_id, picked, correct, answered_at) values ($1, '115090_1_003', 'A', true, now())
+         on conflict (id) do nothing`,
+        [same],
+      )
+    }
+    assert.equal((await days())[0].answered, 2)
+  })
+
+  test('每天題數：沒有人讀得到，刪除帳號時一起刪掉', async () => {
+    for (const user of [R, null]) {
+      const r = await tryAs(db, user, `select * from public.answer_days`)
+      assert.ok(!r.ok || r.res.rows.length === 0)
+    }
+    const T = 'abcdabcd-0000-4000-8000-000000000002'
+    await createUser(db, T, '真名子')
+    await answer(db, T, '115090_1_001', 'C')
+    assert.equal((await tryAs(db, T, `select public.delete_my_account()`)).ok, true)
+    assert.equal((await db.query(`select count(*)::int as n from public.answer_days where user_id = $1`, [T])).rows[0].n, 0)
+  })
+
+  test('先作答、之後才匯入正解：重新判分時補算每天題數', async () => {
+    // ROGER 那筆作答是套用第一個 migration 後就寫入的（那時還沒有 trigger、也還沒有正解），
+    // 匯入正解重新判分時 graded 才變成 true，靠的是 recount_answer_day
+    const rows = (await db.query(`select answered from public.answer_days where user_id = $1`, [ROGER])).rows
+    assert.deepEqual(rows, [{ answered: 1 }])
+  })
+
+  test('既有的作答在 migration 時補算每天題數', async () => {
+    // 套用前的資料：一筆已判分的作答
+    const fresh = await createDb()
+    const at = migrations.indexOf('20261025230000_sync_and_leaderboard_perf.sql')
+    for (const m of migrations.slice(0, at)) await applyMigration(fresh, m)
+    await applySeed(fresh)
+    await createUser(fresh, R, '真名癸')
+    await answer(fresh, R, '115090_1_001', 'C')
+    await answer(fresh, R, '115090_1_002', 'A')
+    for (const m of migrations.slice(at)) await applyMigration(fresh, m)
+    const rows = (await fresh.query(`select answered from public.answer_days where user_id = $1`, [R])).rows
+    assert.deepEqual(rows, [{ answered: 2 }])
+  })
+
+  test('正解表的 paper_id 由題目 id 算出來', async () => {
+    const r = await db.query(`select paper_id from public.question_keys where question_id = '115090_1_062'`)
+    assert.equal(r.rows[0].paper_id, '115090_1')
+    const n = await db.query(`select count(*)::int as n from public.question_keys where paper_id = '115090_2'`)
+    assert.equal(n.rows[0].n, 100)
+  })
+
+  test('增量同步：只拉 synced_at 比較新的作答，用得到索引', async () => {
+    const r = await as(db, R, `select count(*)::int as n from public.answers where synced_at > now() - interval '1 hour'`)
+    assert.ok(r.rows[0].n >= 3)
+    const idx = await db.query(`select indexdef from pg_indexes where indexname = 'answers_user_synced_at'`)
+    assert.match(idx.rows[0].indexdef, /\(user_id, synced_at\)/)
+  })
+})
+

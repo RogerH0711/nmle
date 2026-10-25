@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from 'react'
-import { supabase } from './supabase'
+import { fetchAllPages, supabase } from './supabase'
 import type { MockRecord, MockSession } from './mock'
 
 // 模擬考的本機儲存與同步，做法同 answers.ts：
@@ -84,21 +84,25 @@ export async function switchMockUser(userId: string | null) {
   if (owner !== ANON) await syncMocks()
 }
 
+/** 登出後呼叫（擁有者已經換成 anon）：這個帳號在這台裝置上只留還沒同步的模擬考，做法同 answers.ts */
+export function keepUnsyncedMocks(userId: string) {
+  const unsynced = read<MockRecord[]>(recordsKey(userId), []).filter((r) => !r.synced)
+  write(recordsKey(userId), unsynced.length ? unsynced : null)
+}
+
 /** 先拉雲端的紀錄合併，再把還沒上傳的推上去。 */
 export async function syncMocks() {
   const owner = state.owner
   if (owner === ANON || !navigator.onLine) return
   try {
-    const { data, error } = await supabase
-      .from('mock_exams')
-      .select('id, paper_id, started_at, submitted_at, picks')
-      .order('started_at')
-    if (error) throw new Error(error.message)
+    const data = await fetchAllPages<Omit<MockRecord, 'synced'>>((from, to) =>
+      supabase.from('mock_exams').select('id, paper_id, started_at, submitted_at, picks').order('started_at').order('id').range(from, to),
+    )
     if (state.owner !== owner) return
     const known = new Map(state.records.map((r) => [r.id, r]))
     // 資料庫回傳的時間格式是 +00:00，統一成前端的 ISO 格式，才能直接比較字串
     const iso = (t: string) => new Date(t).toISOString()
-    for (const r of data as Omit<MockRecord, 'synced'>[]) {
+    for (const r of data) {
       known.set(r.id, { ...r, started_at: iso(r.started_at), submitted_at: iso(r.submitted_at), synced: true })
     }
     setState({ records: [...known.values()].sort((a, b) => a.started_at.localeCompare(b.started_at)), error: null })

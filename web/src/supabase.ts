@@ -29,28 +29,20 @@ export async function signUpWithUsername(name: string, password: string, captcha
   if (!data.session) throw { code: 'no_session', message: 'email confirmation required' }
 }
 
-export function signOut() {
-  return supabase.auth.signOut()
-}
+const PAGE_SIZE = 1000 // PostgREST 一次最多回 1,000 列（supabase/config.toml 的 max_rows），超過的會被默默截斷
 
-/**
- * 刪除帳號：資料庫刪掉帳號與所有紀錄（supabase/migrations/20261021120000_delete_account.sql），
- * 再清掉這台裝置上屬於這個帳號的紀錄（鍵名含 user id 的那些）。不可復原，呼叫前要先讓使用者確認。
- */
-export async function deleteAccount(userId: string) {
-  const { error } = await supabase.rpc('delete_my_account')
-  if (error) throw new Error(error.message)
-  try {
-    for (const key of Object.keys(localStorage)) {
-      if (key.startsWith('nmle.') && key.includes(userId)) localStorage.removeItem(key)
-    }
-  } catch {
-    // 讀不到瀏覽器儲存空間就算了，雲端已經刪掉
+/** 分頁把資料全部拉下來。page 要用固定的排序，否則分頁之間會漏或重複 */
+export async function fetchAllPages<T>(
+  page: (from: number, to: number) => PromiseLike<{ data: T[] | null; error: { message: string } | null }>,
+): Promise<T[]> {
+  const rows: T[] = []
+  for (let from = 0; ; from += PAGE_SIZE) {
+    const { data, error } = await page(from, from + PAGE_SIZE - 1)
+    if (error) throw new Error(error.message)
+    rows.push(...(data ?? []))
+    if (!data || data.length < PAGE_SIZE) return rows
   }
-  await supabase.auth.signOut({ scope: 'local' }) // 帳號已經不存在，只清這台裝置的登入狀態
 }
-
-export const NAME_MAX = 30
 
 export async function getDisplayName(userId: string): Promise<string | null> {
   const { data } = await supabase.from('profiles').select('display_name').eq('id', userId).maybeSingle()

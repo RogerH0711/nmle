@@ -11,7 +11,7 @@ export function ReportButton({ questionId, picked }: { questionId: string; picke
   const [sending, setSending] = useState(false)
 
   if (reported.has(questionId) && !open) {
-    return <p className="report-done">已回報這題，謝謝！{pending > 0 && '（還沒送出，連上網路後會自動送出）'}</p>
+    return <p className="report-done">已回報這題，謝謝！{pending > 0 && '（還沒送出，之後會自動重送）'}</p>
   }
   if (!open) {
     return (

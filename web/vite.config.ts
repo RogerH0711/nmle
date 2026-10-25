@@ -1,9 +1,17 @@
-import { defineConfig } from 'vite'
+import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
+import { APP_CSP } from './src/csp'
+
+// 只在 build 時把 CSP 加進 index.html（理由見 src/csp.ts）；放在 <head> 最前面，才會套用到後面所有的 script
+const csp: Plugin = {
+  name: 'csp',
+  apply: 'build',
+  transformIndexHtml: () => [{ tag: 'meta', attrs: { 'http-equiv': 'Content-Security-Policy', content: APP_CSP }, injectTo: 'head-prepend' }],
+}
 
 // 題庫 JSON 和圖片放在 repo 根目錄的 data/，直接當成靜態檔案一起部署
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), csp],
   publicDir: '../data',
   base: './',
   build: {

@@ -1,6 +1,6 @@
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
-import { APP_CSP } from './src/csp'
+import { APP_CSP } from './src/csp.ts'
 
 // 只在 build 時把 CSP 加進 index.html（理由見 src/csp.ts）；放在 <head> 最前面，才會套用到後面所有的 script
 const csp: Plugin = {

@@ -73,7 +73,7 @@
 - [x] 登入對話框說明 Google 登入拿到什麼，另外提供不用 Email 的帳號密碼（10/25 上線，Roger 實測註冊、登入、登出、刪除帳號都正常）
 - [x] 帳號密碼登入加 CAPTCHA（Cloudflare Turnstile，10/25）
 - [x] security review 的發現（10/25 修正並上線，`reports/security-review.md`）；L6（帳號名稱可以被試出來）只記錄不修
-- [ ] security review 的 Dashboard 檢查清單其餘項目（Roger，報告最後）：Confirm email 關閉、Secure email change 開啟、Anonymous sign-ins 關閉、Redirect URLs 只留自己的網址、設定用量告警（Settings → Usage）
+- [x] security review 的 Dashboard 檢查清單（10/26 Roger 確認完成，報告最後）：Confirm email 關閉、Secure email change 開啟、Anonymous sign-ins 關閉、Redirect URLs 只留自己的網址、設定用量告警（Settings → Usage）
 - [x] 題庫抽檢進 CI（10/25，`web/src/questionBank.test.ts`，跟著 `npm test` 跑；第一次跑抓到 2 題 override 混進看不見的控制字元，已修正）
 - [ ] 確認 Dcard 醫師版板規
 - [ ] 寄信給陽明醫國考詳解的作者群，說明我們拿詳解來比對（見「詳解與題目正確率」）

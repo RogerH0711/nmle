@@ -41,7 +41,7 @@ push 到 main 會由 GitHub Actions 跑測試，通過才部署。
 
 - **金鑰**：OAuth Client Secret、Supabase service_role key、資料庫密碼、HF token 都不能交給 Claude、不能進 repo。前端只用 publishable key。
 - **Supabase**：`npx supabase login`、`link`、`npm run db:push` 由 Roger 自己在終端機執行。**不要執行 `supabase config push`**，它會覆蓋線上的登入設定。
-- **資料庫變更**：新增 migration 要同時在 `supabase/tests/` 加測試；每張表都要開 RLS。正解只放在 `question_keys`，前端讀不到。
+- **資料庫變更**：新增 migration 要同時在 `supabase/tests/` 加測試；每張表都要開 RLS。判斷對錯用的正解放在 `question_keys`，前端讀不到這張表，對錯由資料庫算；正解本身是公開的（題庫 JSON、SEO 靜態頁），排行榜防偽造靠伺服器端規則（見 `docs/design.md`「技術架構」）。
 - **git**：Roger 說了才 commit、push。commit 訊息用中文寫，說明做了什麼。
 - **語言**：介面、文件、註解都用繁體中文（台灣用語）。
 - **台詞**：台詞中的醫學內容要正確，寫完要核對。角色都是成年人。

@@ -366,19 +366,19 @@ React 會把暱稱當文字輸出，**沒有 XSS**（排行榜 `web/src/Leaderbo
 
 Authentication：
 
-- [ ] Sign In / Providers → Email：「Confirm email」關閉（帳號密碼註冊要用）。
+- [x] Sign In / Providers → Email：「Confirm email」關閉（帳號密碼註冊要用）。
 - [x] **Minimum password length = 8**（10/25 確認；`config.toml` 是本機用的 6，不影響線上）。
-- [ ] Sign In / Providers → Email：「Secure email change」開啟（M2 的補強，不能取代 trigger）。
+- [x] Sign In / Providers → Email：「Secure email change」開啟（M2 的補強，不能取代 trigger）。
 - [x] Attack Protection：「Enable Captcha protection」開啟、provider 是 Turnstile、secret key 已填。驗證：不帶 `captchaToken` 呼叫 `signInWithPassword` 要回 `captcha_failed`（10/25 確認通過）。
-- [ ] Anonymous sign-ins 關閉；Phone、Magic link 等沒用到的 provider 關閉。
-- [ ] URL Configuration：Site URL 是 `https://rogerh0711.github.io/nmle/`；Redirect URLs 只有這個網址與本機開發用的 localhost，沒有 `https://*.github.io/**` 這類萬用字元。
-- [ ] Rate Limits：登入／註冊的每 IP 限制維持預設或更嚴。
+- [x] Anonymous sign-ins 關閉；Phone、Magic link 等沒用到的 provider 關閉。
+- [x] URL Configuration：Site URL 是 `https://rogerh0711.github.io/nmle/`；Redirect URLs 只有這個網址與本機開發用的 localhost，沒有 `https://*.github.io/**` 這類萬用字元。
+- [x] Rate Limits：登入／註冊的每 IP 限制維持預設或更嚴（10/26 Roger 確認都是預設值）。
 
 其他：
 
-- [ ] Supabase 帳號與 Google Cloud 帳號都開兩步驟驗證（design.md 有提到）。
-- [ ] Settings → Usage：設定資料庫空間告警（M3）。
-- [ ] Database → Roles／Data API：確認 `pg_graphql` 沒有額外開放（目前也受 RLS 保護，只是減少攻擊面）。
+- [x] Supabase 帳號與 Google Cloud 帳號都開兩步驟驗證（design.md 有提到；10/26 Roger 確認，Google Cloud 用的是開了兩步驟驗證的個人 Google 帳號）。
+- [x] Settings → Usage：設定資料庫空間告警（M3）。
+- [x] Database → Roles／Data API：確認 `pg_graphql` 沒有額外開放（目前也受 RLS 保護，只是減少攻擊面；10/26 Roger 確認 extension 本來就是關閉的）。
 
 ---
 

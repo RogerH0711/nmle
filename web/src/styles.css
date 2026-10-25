@@ -906,7 +906,7 @@ button.link:hover {
     padding-top: 8px;
   }
 
-  /* 標題列兩行：第一行標題、模擬考、排行榜、聲音、說明；第二行角色模式、登入狀態。
+  /* 標題列兩行：第一行標題、模擬考、排行榜、聲音、說明；第二行角色模式、題庫、登入狀態。
      第一行在 375 px 寬剛好放得下，按鈕間距和左右留白都縮小一點 */
   .bar {
     column-gap: 8px;
@@ -943,6 +943,11 @@ button.link:hover {
 
   .bar .account {
     order: 3;
+  }
+
+  /* 題庫按鈕放第二行，第一行放不下 */
+  .bar .bank-button {
+    order: 2;
   }
 
   /* 錯題複習：文字和按鈕放同一行 */
@@ -3309,4 +3314,126 @@ ul.login-note {
 
 .login-captcha:empty {
   display: none;
+}
+
+/* ---------- 題庫瀏覽與搜尋（QuestionBank.tsx） ---------- */
+
+.bank-filters {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.bank-search {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  color: inherit;
+  font: inherit;
+}
+
+.bank-filters .controls {
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.bank-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 12px;
+  min-height: 36px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.bank-list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.bank-item .qnum {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.bank-item .stem {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.bank-options {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.bank-options li {
+  display: flex;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: 8px;
+}
+
+.bank-options .key {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--line);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.bank-options li.is-answer {
+  background: var(--right-bg);
+}
+
+.bank-options li.is-answer .key {
+  background: var(--right);
+  color: #fff;
+}
+
+.bank-answer .answer {
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+
+.bank-answer .note {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.bank-item mark {
+  background: var(--warn-bg);
+  color: inherit;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px var(--warn-bg);
+}
+
+.bank-more {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  min-height: 44px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.center-note {
+  margin: 24px 0;
+  text-align: center;
+  color: var(--muted);
 }

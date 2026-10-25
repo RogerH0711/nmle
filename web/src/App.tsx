@@ -38,16 +38,18 @@ import { loadOutfits, pickOutfitLine, switchOutfitUser, useOutfits, wear, type O
 import { playVoice, setBgm, sfx } from './audio'
 import { chooseBgm } from './audioRules'
 import { SoundSettings } from './SoundSettings'
+import { QuestionBank } from './QuestionBank'
+import { parseBankHash, type BankRoute } from './search'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
 
 type Order = 'seq' | 'random'
 
-// 一回合：依考卷刷題（paper）、錯題複習（review）、跟角色讀書（character，subject 存角色 id）
-// 或檢討模擬考（mock，picks 預先填入交卷時的答案）。
+// 一回合：依考卷刷題（paper）、錯題複習（review）、跟角色讀書（character，subject 存角色 id）、
+// 檢討模擬考（mock，picks 預先填入交卷時的答案）或刷題庫搜尋找到的題目（bank，subject 存搜尋條件的說明）。
 // 題目可以跨考卷，用題目 id 串起來。存在 localStorage，重新整理不會不見。
 interface Run {
-  kind: 'paper' | 'review' | 'character' | 'mock'
+  kind: 'paper' | 'review' | 'character' | 'mock' | 'bank'
   paperId: string | null
   subject: string
   order: Order
@@ -140,7 +142,9 @@ export default function App() {
   const [characterMode, setCharacterMode] = useState(() => loadFlag(CHARACTER_MODE_KEY, true)) // 角色模式為主：第一次打開就是校園地圖
   const [reaction, setReaction] = useState<StageReaction | null>(null)
   const [streak, setStreak] = useState(0)
-  const [view, setView] = useState<'quiz' | 'leaderboard' | 'mock'>('quiz')
+  // 題庫畫面的起始條件：網址是 #/bank/... 就直接打開題庫（分享出去的搜尋結果、某一題）
+  const [bankStart, setBankStart] = useState<BankRoute | null>(() => parseBankHash(window.location.hash))
+  const [view, setView] = useState<'quiz' | 'leaderboard' | 'mock' | 'bank'>(() => (bankStart ? 'bank' : 'quiz'))
   const [displayName, setDisplayNameState] = useState<string | null>(null)
   const mocks = useMocks()
   const [session, setSession] = useState<MockSession | null>(() => loadSession())
@@ -151,9 +155,9 @@ export default function App() {
   const [story, setStory] = useState<{ character: Character; scene: Scene; then?: () => void } | null>(null)
   const [storyList, setStoryList] = useState<Character | null>(null)
   const [statusOpen, setStatusOpen] = useState(false) // 狀態面板（能力值）
-  const [titleOpen, setTitleOpen] = useState(() => !titleSeen()) // 開頭畫面（封面）：每次打開網站先顯示
+  const [titleOpen, setTitleOpen] = useState(() => !titleSeen() && !bankStart) // 開頭畫面（封面）：每次打開網站先顯示；從題庫網址進來的不擋
   const closeTitle = useCallback(() => setTitleOpen(false), [])
-  const [guideOpen, setGuideOpen] = useState(() => !guideSeen()) // 使用說明：第一次打開網站時自動顯示
+  const [guideOpen, setGuideOpen] = useState(() => !guideSeen() && !bankStart) // 使用說明：第一次打開網站時自動顯示
   const [loginOpen, setLoginOpen] = useState(false)
   const [player, setPlayer] = useState<PlayerTitle | null>(loadPlayer) // 學姊們叫你學弟還是學妹；null 是還沒選
   const [playerOpen, setPlayerOpen] = useState(false) // 從地圖下方打開「稱呼」
@@ -301,6 +305,32 @@ export default function App() {
   useEffect(() => {
     if (run) saveRun(run)
   }, [run])
+
+  // 題庫的網址：網址列貼上新的 #/bank/... 就打開；離開題庫畫面時拿掉
+  useEffect(() => {
+    const onHash = () => {
+      const r = parseBankHash(window.location.hash)
+      if (!r) return
+      setBankStart(r)
+      setView('bank')
+    }
+    window.addEventListener('hashchange', onHash)
+    return () => window.removeEventListener('hashchange', onHash)
+  }, [])
+  useEffect(() => {
+    if (view !== 'bank' && window.location.hash.startsWith('#/bank')) {
+      window.history.replaceState(null, '', window.location.pathname + window.location.search)
+    }
+  }, [view])
+
+  // 題庫找到的題目拿來刷：照列出來的順序
+  const practiceBank = (ids: string[], label: string) => {
+    if (!index) return
+    setStreak(0)
+    setOnMap(false)
+    setView('quiz')
+    void startRun(index, { kind: 'bank', paperId: null, subject: label, order: 'seq', queue: ids, pos: 0, picks: {} })
+  }
 
   const review = useMemo(() => reviewSummary(reviewStates(answers.records)), [answers.records])
 
@@ -673,7 +703,8 @@ export default function App() {
     run.kind === 'character' && run.subject === c.id && !done && run.pos > 0 ? setOnMap(false) : startCharacterRun(c)
 
   // 角色模式的首頁：校園地圖
-  const showMap = characterMode && characters.length > 0 && onMap
+  // 看排行榜、模擬考、題庫時不算在地圖上（稱呼對話框和訊息通知只在地圖上跳出）
+  const showMap = characterMode && characters.length > 0 && onMap && view === 'quiz'
   const today = localDate()
   const answeredToday = answers.records.filter((r) => localDate(new Date(r.answered_at)) === today).length
   // 地圖下方的「繼續」：上次寫到一半的回合
@@ -682,6 +713,7 @@ export default function App() {
     run.kind === 'character' ? `和${runCharacter?.name ?? '角色'}讀書`
     : run.kind === 'review' ? '錯題複習'
     : run.kind === 'mock' ? '檢討模擬考'
+    : run.kind === 'bank' ? `題庫：${run.subject}`
     : runPaper ? paperLabel(runPaper) : '刷題'
   const resumeLabel = !done && run.pos > 0 ? `${runLabel} ${run.pos + 1} / ${run.queue.length}` : null
 
@@ -754,6 +786,15 @@ export default function App() {
             </label>
           )}
           <button
+            className={view === 'bank' ? 'primary small bank-button' : 'ghost small bank-button'}
+            onClick={() => {
+              setBankStart(null)
+              setView(view === 'bank' ? 'quiz' : 'bank')
+            }}
+          >
+            題庫
+          </button>
+          <button
             className={view === 'mock' ? 'primary small' : 'ghost small'}
             onClick={() => {
               setView(view === 'mock' ? 'quiz' : 'mock')
@@ -787,6 +828,13 @@ export default function App() {
         <Leaderboard user={user} index={index} onLogin={() => setLoginOpen(true)} onClose={() => setView('quiz')} />
       ) : view === 'mock' ? (
         mockView
+      ) : view === 'bank' ? (
+        <QuestionBank
+          key={bankStart ? JSON.stringify(bankStart) : 'bank'}
+          index={index}
+          initial={bankStart ?? { scope: 'all', number: null, query: '', subject: 'all' }}
+          onPractice={practiceBank}
+        />
       ) : (
         <>
 
@@ -845,6 +893,7 @@ export default function App() {
           {run.kind === 'review' && <option value="">（錯題複習）</option>}
           {run.kind === 'character' && <option value="">（和{runCharacter?.name ?? '角色'}讀書）</option>}
           {run.kind === 'mock' && <option value="">（檢討模擬考）</option>}
+          {run.kind === 'bank' && <option value="">（題庫：{run.subject}）</option>}
           {index.papers.map((p) => (
             <option key={p.id} value={p.id}>
               {paperLabel(p)}

@@ -39,6 +39,13 @@ export async function loadExplanation(questionId: string, number: number): Promi
   return file && item ? { model: file.model, item } : null
 }
 
+/** 題庫搜尋用：一份考卷的詳解全文，題目 id → 文字（沒有詳解的考卷回傳空的） */
+export async function loadExplanationTexts(paperId: string): Promise<Map<string, string>> {
+  const file = await loadFile(paperId)
+  const pad = (n: string) => n.padStart(3, '0')
+  return new Map(Object.entries(file?.questions ?? {}).map(([n, e]) => [`${paperId}_${pad(n)}`, e.text]))
+}
+
 export const LEVELS: Record<ExplanationLevel, { label: string; note: string }> = {
   checked: { label: '已比對', note: '和參考詳解的結論一致，名詞也檢查過。仍可能有參考詳解沒涵蓋的錯誤。' },
   terms: { label: '名詞可能有誤', note: '結論和參考詳解一致，但有名詞的中文譯名可能不對，見下方。' },

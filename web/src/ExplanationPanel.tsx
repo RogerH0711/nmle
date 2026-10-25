@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
 import { parseExplanation } from './explanationText'
 import { LEVELS, loadExplanation, type Explanation } from './explanations'
+import { relabelExplanation, type Order } from './options'
 
 /**
  * 作答後的「看詳解」：AI 生成，預設收合，按了才展開。
  * 依比對結果標示分級；這份考卷或這題沒有詳解時不顯示任何東西。
  */
-export function ExplanationPanel({ questionId, number }: { questionId: string; number: number }) {
+// order：選項打亂時畫面上的順序，詳解的字母跟著換（options.ts）
+export function ExplanationPanel({ questionId, number, order }: { questionId: string; number: number; order?: Order }) {
   const [data, setData] = useState<{ model: string; item: Explanation } | null>(null)
   const [open, setOpen] = useState(false)
 
@@ -45,7 +47,7 @@ export function ExplanationPanel({ questionId, number }: { questionId: string; n
               ))}
             </ul>
           )}
-          {parseExplanation(item.text).map((b, i) => {
+          {parseExplanation(order ? relabelExplanation(item.text, order) : item.text).map((b, i) => {
             const parts = b.parts.map((p, j) => (p.bold ? <strong key={j}>{p.text}</strong> : p.text))
             if (b.kind === 'heading') return <h4 key={i}>{parts}</h4>
             return b.kind === 'item' ? (

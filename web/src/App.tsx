@@ -40,6 +40,7 @@ import { chooseBgm } from './audioRules'
 import { SoundSettings } from './SoundSettings'
 import { QuestionBank } from './QuestionBank'
 import { parseBankHash, type BankRoute } from './search'
+import { makeOrder, shownQuestion, toOriginal, toShown, type Order as OptionOrder } from './options'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
 
@@ -55,12 +56,15 @@ interface Run {
   order: Order
   queue: string[]
   pos: number
-  picks: Record<string, Letter>
+  picks: Record<string, Letter> // 原本的字母（選項打亂時也是）
   affection?: number // 角色回合開始時的好感度階段，回合結束時比較有沒有升階
+  orders?: Record<string, OptionOrder> // 每題畫面上的選項順序（options.ts），回合開始時決定，重新整理不會變
 }
 
 const RUN_KEY = 'nmle.run.v2'
 const CHARACTER_MODE_KEY = 'nmle.characterMode'
+const SHUFFLE_KEY = 'nmle.shuffleOptions'
+const IDENTITY: OptionOrder = [0, 1, 2, 3]
 const ROUND_SIZE = 20 // 跟角色讀書一回合的題數
 
 // 角色反應對應到哪個時間點：題目 id、回合開始（start）或回合結束（finish）
@@ -110,6 +114,17 @@ function shuffle<T>(items: T[]): T[] {
   return a
 }
 
+// 替還沒決定選項順序的題目打亂選項。檢討模擬考維持考卷原本的順序，跟交卷時看到的一樣。
+function withOrders(run: Run, questions: Map<string, Question>): Run {
+  if (run.kind === 'mock') return run
+  const orders = { ...run.orders }
+  for (const id of run.queue) {
+    const q = questions.get(id)
+    if (q && !orders[id]) orders[id] = makeOrder(q)
+  }
+  return { ...run, orders }
+}
+
 function isCorrect(q: Question, pick: Letter) {
   return q.free_point || q.answers.includes(pick)
 }
@@ -140,6 +155,7 @@ export default function App() {
   const [characters, setCharacters] = useState<Character[]>([])
   const [lines, setLines] = useState<Record<string, Line[]>>({})
   const [characterMode, setCharacterMode] = useState(() => loadFlag(CHARACTER_MODE_KEY, true)) // 角色模式為主：第一次打開就是校園地圖
+  const [shuffleOptions, setShuffleOptions] = useState(() => loadFlag(SHUFFLE_KEY, true)) // 選項打亂，預設開
   const [reaction, setReaction] = useState<StageReaction | null>(null)
   const [streak, setStreak] = useState(0)
   // 題庫畫面的起始條件：網址是 #/bank/... 就直接打開題庫（分享出去的搜尋結果、某一題）
@@ -269,7 +285,7 @@ export default function App() {
     try {
       const map = await loadQuestions(idx, next.queue)
       setQuestions((prev) => new Map([...prev, ...map]))
-      setRun({ ...next, queue: next.queue.filter((id) => map.get(id)?.valid) })
+      setRun(withOrders({ ...next, queue: next.queue.filter((id) => map.get(id)?.valid) }, map))
     } catch {
       setError('題庫載入失敗')
     }
@@ -412,6 +428,8 @@ export default function App() {
   const done = run ? run.pos >= run.queue.length : false
   const current = run && !done ? questions.get(run.queue[run.pos]) : undefined
   const picked = current && run ? run.picks[current.id] : undefined
+  // 這題畫面上的選項順序：關掉打亂、或回合裡沒有這題的順序（檢討模擬考）就是原順序
+  const optionOrder = (current && shuffleOptions && run?.orders?.[current.id]) || IDENTITY
 
   // 重新整理後恢復角色回合時，補一句台詞，不然角色會一直是「……」直到作答
   useEffect(() => {
@@ -474,9 +492,11 @@ export default function App() {
     }
   }, [runQueue, runPos])
 
+  // shown：畫面上按的字母（鍵盤 1–4、A–D 也是），換回原本的字母再記錄
   const pick = useCallback(
-    (letter: Letter) => {
+    (shown: Letter) => {
       if (!run || !current || picked) return
+      const letter = toOriginal(optionOrder, shown)
       const ok = isCorrect(current, letter)
       setRun({ ...run, picks: { ...run.picks, [current.id]: letter } })
       recordAnswer(current.id, letter, ok)
@@ -490,7 +510,7 @@ export default function App() {
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [run, current, picked, streak, stageCharacter, lines, reaction],
+    [run, current, picked, optionOrder, streak, stageCharacter, lines, reaction],
   )
 
   const go = useCallback(
@@ -514,7 +534,8 @@ export default function App() {
         const p = run.picks[id]
         return q && p && !isCorrect(q, p)
       })
-      setRun({ ...run, subject, order, queue: order === 'random' ? shuffle(wrong) : wrong, pos: 0, picks: {} })
+      const queue = order === 'random' ? shuffle(wrong) : wrong
+      setRun(withOrders({ ...run, subject, order, queue, pos: 0, picks: {}, orders: undefined }, questions)) // 重做時選項重新打亂
     } else if (run.kind === 'review') {
       startReview()
     } else if (run.kind === 'character') {
@@ -916,6 +937,19 @@ export default function App() {
             </select>
           </>
         )}
+        {run.kind !== 'mock' && (
+          <label className="toggle" title="每次出題時選項順序不同，避免記住答案的位置。一題多解的題目維持原順序。">
+            <input
+              type="checkbox"
+              checked={shuffleOptions}
+              onChange={() => {
+                saveFlag(SHUFFLE_KEY, !shuffleOptions)
+                setShuffleOptions(!shuffleOptions)
+              }}
+            />
+            打亂選項
+          </label>
+        )}
       </div>
 
       <div className="progress" aria-hidden>
@@ -955,6 +989,7 @@ export default function App() {
           ) : current ? (
             <QuestionCard
               q={current}
+              order={optionOrder}
               index={index}
               picked={picked}
               onPick={pick}
@@ -1222,6 +1257,7 @@ function Account(props: {
 
 function QuestionCard(props: {
   q: Question
+  order: OptionOrder // 畫面上的選項順序；picked 是原本的字母，onPick 傳畫面上的字母
   index: Index
   picked: Letter | undefined
   onPick: (l: Letter) => void
@@ -1232,8 +1268,11 @@ function QuestionCard(props: {
   speech: { name: string; color: string; text: string } | null // 手機版把角色台詞放在選項下方，作答後一眼看得到
   navRef: React.RefObject<HTMLElement | null> // 作答後捲到這裡，回饋和「下一題」才看得到
 }) {
-  const { q, index, picked, onPick, onNext, onPrev, seed, showLine, speech, navRef } = props
-  const correct = picked ? isCorrect(q, picked) : null
+  const { order, index, onPick, onNext, onPrev, seed, showLine, speech, navRef } = props
+  const correct = props.picked ? isCorrect(props.q, props.picked) : null
+  // 以下都用畫面上的順序和字母；回報疑義用原本的字母
+  const q = shownQuestion(props.q, order)
+  const picked = props.picked && toShown(order, props.picked)
   const paper = index.papers.find((p) => q.id.startsWith(p.id + '_'))
 
   return (
@@ -1287,7 +1326,7 @@ function QuestionCard(props: {
             {q.free_point ? '本題官方一律給分。' : `正解：${q.answers.join('、')}`}
             {q.answer_note && !q.free_point && <span className="note">（{q.answer_note}）</span>}
           </p>
-          <ExplanationPanel key={`exp-${q.id}`} questionId={q.id} number={q.number} />
+          <ExplanationPanel key={`exp-${q.id}`} questionId={q.id} number={q.number} order={order} />
           <AskAi key={q.id} q={q} paper={paper} subject={q.subject ? (index.subjects[q.subject] ?? q.subject) : null} picked={picked} />
         </div>
       )}
@@ -1301,7 +1340,7 @@ function QuestionCard(props: {
         </button>
       </nav>
       <div className="card-foot">
-        <ReportButton key={q.id} questionId={q.id} picked={picked} />
+        <ReportButton key={q.id} questionId={q.id} picked={props.picked} />
         <p className="hint">鍵盤：1–4 作答，Enter 下一題</p>
       </div>
     </main>

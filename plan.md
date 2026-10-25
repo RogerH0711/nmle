@@ -32,7 +32,7 @@
 2. 聲音的音檔（等台詞定稿再念）：顏緋的聲音定為 B_s6（Qwen3-TTS VoiceDesign 候選）；BreezyVoice 在 WSL 可以跑（`art/voice_breezy.py`，速度問題已解決）、每句念幾次用語音辨識挑最好的。BGM 用 ACE-Step 1.5 還沒開始；做完在網站標出處（「美術與內容」的「聲音」）。
 3. 題庫瀏覽、搜尋、選項打亂、SEO（做法見 `docs/design.md`「題庫瀏覽與搜尋」）：
    1. ~~瀏覽頁與關鍵字搜尋~~（10/25 完成，`web/src/QuestionBank.tsx`，網址 `#/bank/...`）。還沒寫進使用說明（`Guide.tsx`），也還沒給朋友試用。
-   2. 選項打亂：刷題與複習時打亂，模擬考維持原順序；選項互相參照的約 280 題不打亂；送出前換回原字母，詳解的 (A)–(D) 跟著換。約一天。
+   2. ~~選項打亂~~（10/25 完成，`web/src/options.ts`；不打亂的只有一題多解等 43 題）。
    3. SEO：build 後替每份考卷產生靜態 HTML 與 sitemap，讓 Google 收錄得到題目。約一到兩天。
    4. 之後再看：主題標籤與同義詞（搜「抗生素」找得到 gentamicin），用本機 LLM 產生再抽查；先看上線後大家實際搜什麼。
 4. 依朋友回饋調整好感度門檻（`web/src/affection.ts` 的 `GOALS`，等有實際升階速度的資料；10/25 Roger：之後再說）；書籤賺法與禮物價格也一起看（`shop.ts` 的 `EARN`、`data/gifts.json`）。

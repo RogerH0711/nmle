@@ -11,6 +11,16 @@ const B = '33333333-3333-4333-8333-333333333333'
 let db
 let keys // 只有單一正解、非送分的題目，用來造作答資料
 
+/** 直接設定寫入額度用掉多少（per：'hour' 或 'day'），不用真的寫幾千筆 */
+const setUsed = (name, per, used) =>
+  db.query(
+    `insert into public.rate_limits (name, window_start, used)
+     values ($1, case $2 when 'hour' then date_trunc('hour', now())
+                 else date_trunc('day', now() at time zone 'Asia/Taipei') at time zone 'Asia/Taipei' end, $3)
+     on conflict (name, window_start) do update set used = excluded.used`,
+    [name, per, used],
+  )
+
 before(async () => {
   db = await createDb()
   // 先套第一個 migration，造一筆「舊版就存在」的使用者與作答，再套其餘的 migration 和正解
@@ -428,7 +438,7 @@ describe('回報疑義', () => {
     const row = {
       id: `ffffffff-1111-4000-8000-${String(++reportSeq).padStart(12, '0')}`,
       device_id: `ffffffff-2222-4000-8000-${String(reportSeq).padStart(12, '0')}`, // 預設每筆不同裝置，不會撞到頻率限制
-      question_id: '115090_1_001',
+      question_id: `115090_1_${String((reportSeq % 100) + 1).padStart(3, '0')}`, // 預設輪流不同題目，不會撞到同一題的匿名上限
       reason: 'answer',
       note: '正解應該是 B',
       ...extra,
@@ -497,13 +507,34 @@ describe('回報疑義', () => {
     }
   })
 
-  test('匿名回報合計每小時最多 200 筆，登入的人不受影響', async () => {
-    const before = (await db.query(`select count(*)::int as n from public.reports where user_id is null`)).rows[0].n
-    for (let i = before; i < 200; i++) assert.equal((await report(null)).ok, true, `第 ${i + 1} 筆`)
+  test('匿名回報同一題每小時最多 10 筆，其他題目和登入的人不受影響', async () => {
+    const Q = '113020_1_050'
+    for (let i = 0; i < 10; i++) assert.equal((await report(null, { question_id: Q })).ok, true, `第 ${i + 1} 筆`)
+    const blocked = await report(null, { question_id: Q })
+    assert.equal(blocked.ok, false)
+    assert.match(blocked.error, /這題目前匿名回報太多/)
+    assert.equal((await report(null, { question_id: '113020_1_051' })).ok, true)
+    assert.equal((await report(B, { question_id: Q })).ok, true)
+  })
+
+  test('匿名回報全站每天最多 1,000 筆，登入的人不受影響', async () => {
+    const used = (await db.query(`select used from public.rate_limits where name = 'reports_anon'`)).rows[0].used
+    await setUsed('reports_anon', 'day', 999)
+    assert.equal((await report(null)).ok, true)
     const blocked = await report(null)
     assert.equal(blocked.ok, false)
-    assert.match(blocked.error, /匿名回報太多/)
+    assert.match(blocked.error, /目前匿名回報太多/)
     assert.equal((await report(B)).ok, true)
+    assert.ok(used > 0 && used < 999, '前面的匿名回報有計數')
+    await setUsed('reports_anon', 'day', used) // 還原，後面的測試還要回報
+  })
+
+  test('登入的人每天最多回報 100 筆', async () => {
+    await setUsed(`reports:${A}`, 'day', 99)
+    assert.equal((await report(A)).ok, true)
+    const blocked = await report(A)
+    assert.equal(blocked.ok, false)
+    assert.match(blocked.error, /今天回報太多/)
   })
 })
 
@@ -546,6 +577,22 @@ describe('匿名使用統計', () => {
     assert.equal((await ping(null, -1)).ok, false)
     assert.equal((await ping(null, 5001)).ok, false)
     assert.equal((await ping(null, 1, null)).ok, false)
+  })
+
+  test('每天最多記 5,000 台新裝置：超過的不記也不報錯，已經記過的裝置照常更新', async () => {
+    await setUsed('usage_new_devices', 'day', 5000)
+    const NEW = 'abababab-0000-4000-8000-000000000099'
+    assert.equal((await ping(null, 3, NEW)).ok, true)
+    assert.equal((await row(NEW)).length, 0)
+    assert.equal((await ping(null, 20)).ok, true)
+    assert.equal((await row())[0].answered, 20)
+    await setUsed('usage_new_devices', 'day', 0)
+    assert.equal((await ping(null, 3, NEW)).ok, true)
+    assert.equal((await row(NEW)).length, 1)
+    // 已經記過的裝置再送一次，不會再用掉額度
+    assert.equal((await ping(null, 4, NEW)).ok, true)
+    const used = await db.query(`select used from public.rate_limits where name = 'usage_new_devices'`)
+    assert.equal(used.rows[0].used, 1)
   })
 
   test('沒有人能直接讀寫這張表', async () => {
@@ -728,5 +775,77 @@ describe('帳號密碼註冊', () => {
     await db.query(`update auth.users set email = 'new@gmail.com' where id = $1`, [G])
     // Email 沒變的更新（GoTrue 登入時會整筆更新）不受影響
     await db.query(`update auth.users set email = 'new@gmail.com' where id = $1`, [G])
+  })
+})
+
+describe('寫入數量限制', () => {
+  const Q = '99999999-9999-4999-8999-000000000001'
+  let seq = 0
+  const id = () => `99999999-0000-4000-8000-${String(++seq).padStart(12, '0')}`
+  const insertAnswers = (n, ids = Array.from({ length: n }, id)) =>
+    tryAs(
+      db,
+      Q,
+      `insert into public.answers (id, question_id, picked, correct, answered_at)
+       select x::uuid, '115090_1_001', 'C', true, now() from unnest($1::text[]) as x
+       on conflict (id) do nothing`,
+      [ids],
+    )
+
+  before(async () => {
+    await createUser(db, Q, '真名壬')
+  })
+
+  test('作答每人每天最多 10,000 筆，超過的整批拒絕', async () => {
+    assert.equal((await insertAnswers(500)).ok, true) // 前端一批 500 筆
+    await setUsed(`answers:${Q}`, 'day', 9998)
+    const blocked = await insertAnswers(3)
+    assert.equal(blocked.ok, false)
+    assert.match(blocked.error, /今天寫入的紀錄太多了/)
+    const n = (await db.query(`select count(*)::int as n from public.answers where user_id = $1`, [Q])).rows[0].n
+    assert.equal(n, 500, '被拒絕的那批一筆都沒寫進去')
+    assert.equal((await insertAnswers(2)).ok, true)
+    assert.equal((await insertAnswers(1)).ok, false)
+  })
+
+  test('重送已經存在的作答（upsert）不算額度', async () => {
+    const ids = [id(), id()]
+    await setUsed(`answers:${Q}`, 'day', 9000)
+    assert.equal((await insertAnswers(2, ids)).ok, true)
+    await setUsed(`answers:${Q}`, 'day', 10000)
+    assert.equal((await insertAnswers(2, ids)).ok, true)
+  })
+
+  test('別人的額度不受影響', async () => {
+    assert.equal((await answer(db, B, '115090_1_001', 'C')).correct, true)
+  })
+
+  test('模擬考每人每天最多 100 次、送禮最多 300 次', async () => {
+    await setUsed(`mock_exams:${Q}`, 'day', 100)
+    const mock = await tryAs(
+      db,
+      Q,
+      `insert into public.mock_exams (id, paper_id, started_at, submitted_at, picks) values ($1, '115090_1', now() - interval '1 hour', now(), '{}')`,
+      [id()],
+    )
+    assert.equal(mock.ok, false)
+    await setUsed(`gifts:${Q}`, 'day', 299)
+    const gift = (gid) =>
+      tryAs(db, Q, `insert into public.gifts (id, character_id, gift_id, price, stage, given_at) values ($1, 'fei', 'latte', 20, 0, now())`, [gid])
+    assert.equal((await gift(id())).ok, true)
+    assert.equal((await gift(id())).ok, false)
+  })
+
+  test('沒有人讀得到計數，也不能自己呼叫 take_quota', async () => {
+    for (const user of [Q, null]) {
+      const r = await tryAs(db, user, `select * from public.rate_limits`)
+      assert.ok(!r.ok || r.res.rows.length === 0)
+      const t = await tryAs(db, user, `select public.take_quota('x', 'day', 1)`)
+      assert.equal(t.ok, false)
+      for (const sql of [`update public.rate_limits set used = 0`, `delete from public.rate_limits`]) {
+        const u = await tryAs(db, user, sql)
+        assert.ok(!u.ok || u.res.affectedRows === 0, sql)
+      }
+    }
   })
 })

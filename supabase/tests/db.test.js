@@ -155,6 +155,22 @@ describe('暱稱', () => {
     assert.deepEqual(r.rows.map((x) => x.id), [A])
   })
 
+  test('暱稱不能有控制字元、零寬字元、方向控制字元，頭尾不能是空白', async () => {
+    for (const name of ['\u202Eabc', '小\u200B甲', '\uFEFF小甲', '小甲\u2066', '   ', ' 小甲', '小甲 ', '\u3000小甲', '小\n甲', '\u3164']) {
+      const t = await tryAs(db, A, `update public.profiles set display_name = $1 where id = $2`, [name, A])
+      assert.equal(t.ok, false, JSON.stringify(name))
+    }
+    const ok = await as(db, A, `update public.profiles set display_name = '小 甲' where id = $1 returning display_name`, [A])
+    assert.equal(ok.rows[0].display_name, '小 甲')
+  })
+
+  test('只能改暱稱，不能改 hidden、建立時間、id', async () => {
+    for (const set of [`hidden = true`, `created_at = '1999-01-01'`, `id = '${B}'`]) {
+      const t = await tryAs(db, A, `update public.profiles set ${set} where id = $1`, [A])
+      assert.equal(t.ok, false, set)
+    }
+  })
+
   test('暱稱長度限制 1–30 字', async () => {
     assert.equal((await tryAs(db, A, `update public.profiles set display_name = '' where id = $1`, [A])).ok, false)
     assert.equal((await tryAs(db, A, `update public.profiles set display_name = repeat('長', 31) where id = $1`, [A])).ok, false)
@@ -847,5 +863,35 @@ describe('寫入數量限制', () => {
         assert.ok(!u.ok || u.res.affectedRows === 0, sql)
       }
     }
+  })
+})
+
+describe('排行榜隱藏與門檻', () => {
+  test('hidden 的人別人看不到，自己看得到', async () => {
+    await db.query(`update public.profiles set hidden = true where id = $1`, [A])
+    try {
+      for (const fn of ['leaderboard_weekly()', 'leaderboard_mock()']) {
+        const others = (await as(db, B, `select * from public.${fn}`)).rows
+        const self = (await as(db, A, `select * from public.${fn}`)).rows
+        assert.ok(!others.some((r) => !r.is_me && r.display_name === self.find((x) => x.is_me)?.display_name), fn)
+        assert.ok(self.some((r) => r.is_me), `${fn}：自己還看得到`)
+      }
+      // 連續天數：E 有連續 3 天（排行榜防偽造的測試），隱藏後 B 看不到
+      const E = '77777777-7777-4777-8777-000000000002'
+      await db.query(`update public.profiles set hidden = true where id = $1`, [E])
+      const streakOthers = (await as(db, B, `select count(*)::int as n from public.leaderboard_streaks() where streak = 3`)).rows[0].n
+      const streakSelf = (await as(db, E, `select * from public.leaderboard_streaks()`)).rows
+      assert.equal(streakOthers, 0)
+      assert.equal(streakSelf.find((r) => r.is_me)?.streak, 3)
+    } finally {
+      await db.query(`update public.profiles set hidden = false`)
+    }
+  })
+
+  test('門檻參數不能調低：連續天數傳 1 也要一天 10 題，週榜傳 0 也要 50 題才排名', async () => {
+    const C = '44444444-4444-4444-8444-444444444444' // 今天只做了 9 題
+    assert.ok(!(await as(db, C, `select * from public.leaderboard_streaks(1)`)).rows.some((r) => r.is_me))
+    const b = (await as(db, B, `select * from public.leaderboard_weekly(0)`)).rows.find((r) => r.is_me)
+    assert.ok(b.answered < 50 && !b.qualified)
   })
 })

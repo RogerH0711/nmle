@@ -30,10 +30,10 @@
 | M3 | 中 | 寫入沒有數量限制：作答、模擬考、送禮、回報、使用統計可以灌爆免費方案的空間 | 已修（`20261025200000_rate_limits.sql`，待 db:push）；用量告警待 Roger 設定 |
 | M4 | 中 | 匿名回報的「每小時 200 筆」是全站共用額度，任何人都能讓所有匿名回報失效 | 減輕（同上）；要完全擋住得加 CAPTCHA |
 | M5 | 中 | 登入相關設定只在 Dashboard，repo 裡的 `config.toml` 與文件不一致（密碼長度 6 vs 8） | 密碼長度、CAPTCHA 已確認（10/25），其餘待確認 |
-| L1 | 低 | 暱稱沒有伺服器端的內容檢查：純空白、RTL 控制字元、冒用別人的暱稱 | 已重現 |
-| L2 | 低 | 排行榜函式的門檻參數由前端決定，`min_daily = 1` 可以看到所有人的活躍狀況 | 事實 |
+| L1 | 低 | 暱稱沒有伺服器端的內容檢查：純空白、RTL 控制字元、冒用別人的暱稱 | 已修（`20261025220000_display_name_rules.sql`，待 db:push）；同名沒擋，改用 `hidden` 處理 |
+| L2 | 低 | 排行榜函式的門檻參數由前端決定，`min_daily = 1` 可以看到所有人的活躍狀況 | 已修（同上） |
 | L3 | 低 | `rogerh0711.github.io` 是共用 origin，登入權杖存在 localStorage；沒有 CSP | 事實 |
-| L4 | 低 | `answers.synced_at`、`profiles.created_at` 可以由前端指定或修改 | 已重現 |
+| L4 | 低 | `answers.synced_at`、`profiles.created_at` 可以由前端指定或修改 | 已修（synced_at 在 `20261025180000`，created_at 在 `20261025220000`） |
 | L5 | 低 | 刪除帳號與登出後，這台裝置上還留有資料；刪除時有 race | 事實 |
 | L6 | 低 | 帳號名稱可以被列舉（註冊時回「已經有人用了」） | 推論 |
 | I1 | 資訊 | repo 沒有發現金鑰；commit 作者 email 是學號信箱 | 事實 |
@@ -44,6 +44,8 @@ Bug 與效能（B1–B7）在後半段。
 **10/25 修正**：H1、H2、H3 第 1 點、M1、M2 由 `20261025180000_leaderboard_integrity.sql` 處理，並加了 PGlite 測試（`supabase/tests/db.test.js` 的「排行榜防偽造」等）。做法與取捨寫在 `docs/design.md`「技術架構」的「排行榜防偽造」。附錄的 PoC 在新的 schema 上重跑：回填 365 天最多只剩 3 天寬限內的 4 天、補一筆更早的模擬考不會取代第一次、改 Email 被擋。
 
 **10/25 修正（二）**：M3、M4 由 `20261025200000_rate_limits.sql` 處理：作答、模擬考、送禮、登入後回報有每人每天的上限（10,000／100／300／100），使用統計每天最多記 5,000 台新裝置；匿名回報改成同一題每小時 10 筆、全站每天 1,000 筆（取代每小時 200 筆）。M4 只是減輕：刻意的人還是能用完全站的匿名額度，但被擋下的回報會留在瀏覽器之後重送，登入後回報不受影響；要完全擋住得加 CAPTCHA（Edge Function 驗 Turnstile）。B3 提到 `prepare_report` 匿名計數沒有索引的問題，也因為改用計數表一起解決。
+
+**10/25 修正（三）**：L1、L2 由 `20261025220000_display_name_rules.sql` 處理：暱稱擋控制字元、零寬字元、方向控制字元、頭尾空白（前端 `web/src/displayName.ts` 同一套規則）；加 `profiles.hidden`，Roger 在 Dashboard 設成 true 後別人在排行榜看不到他，他自己看得到；使用者只能更新 `display_name`（順便修掉 L4 的 `created_at`）；排行榜門檻參數不能低於預設值。同名沒擋：預設暱稱只有 65,536 種，要唯一得處理撞名，等真的有人冒充再說。
 
 ---
 
@@ -228,12 +230,12 @@ Supabase 免費方案資料庫 500 MB，滿了會變唯讀；`answers` 一列約
 **事實（已重現）**：`profiles.display_name` 只檢查長度 1–30（`20261014000000_init.sql:13`）；前端會 `trim()`（`web/src/App.tsx:1173`），但直接呼叫 API 時 PoC 可以設成：
 
 - `'   '`（純空白，排行榜上看起來是空的）；
-- `'‮abc'`（RTL override，讓暱稱顯示成反向文字，可以偽裝成別的字）、零寬字元；
+- `'\u202Eabc'`（RTL override，讓暱稱顯示成反向文字，可以偽裝成別的字）、零寬字元；
 - 和別人完全相同的暱稱（冒充排行榜上的某人）。
 
 React 會把暱稱當文字輸出，**沒有 XSS**（排行榜 `web/src/Leaderboard.tsx:108`、`:146` 都是 `{r.display_name}`）。公開後主要的風險是不雅暱稱與冒充。
 
-**建議修法**：check constraint 改成 `btrim(display_name) <> '' and display_name !~ '[\u0000-\u001F\u007F​-‏‪-‮⁦-⁩]'`；要不要唯一（`unique (lower(display_name))`）看 Roger 的意思。不雅暱稱用 M1 提到的 `hidden` 欄位在 Dashboard 處理。
+**建議修法**：check constraint 改成 `btrim(display_name) <> '' and display_name !~ '[\u0000-\u001F\u007F\u200B-\u200F\u202A-\u202E\u2066-\u2069]'`；要不要唯一（`unique (lower(display_name))`）看 Roger 的意思。不雅暱稱用 M1 提到的 `hidden` 欄位在 Dashboard 處理。
 
 ### L2　排行榜門檻參數由前端決定
 
@@ -398,7 +400,7 @@ select id, display_name, created_at from public.profiles;   -- 所有使用者
 update auth.users set email = 'victim@gmail.com' where id = '<google 使用者>';  -- 沒有被 trigger 擋
 
 -- L1、L4
-update public.profiles set display_name = E'‮abc', created_at = '1999-01-01' where id = auth.uid();
+update public.profiles set display_name = E'\u202Eabc', created_at = '1999-01-01' where id = auth.uid();
 insert into public.answers (..., synced_at) values (..., '1990-01-01');           -- 照收
 ```
 

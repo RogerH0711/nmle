@@ -4,7 +4,8 @@ import type { ExamFile, Index, Letter, Question } from './types'
 import { imageUrl, loadIndex, loadPaper, loadQuestions, paperLabel, paperOf } from './bank'
 import { recordAnswer, recordAnswers, switchUser, syncNow, useAnswers, type SyncStatus } from './answers'
 import { localDate, reviewStates, reviewSummary } from './review'
-import { deleteAccount, getDisplayName, NAME_MAX, setDisplayName, signOut, supabase } from './supabase'
+import { deleteAccount, getDisplayName, setDisplayName, signOut, supabase } from './supabase'
+import { displayNameError, NAME_MAX } from './displayName'
 import { LoginDialog } from './LoginDialog'
 import { usernameOf } from './login'
 import { Leaderboard } from './Leaderboard'
@@ -1171,8 +1172,9 @@ function Account(props: {
 
   const save = async () => {
     const name = draft.trim()
-    if (!name || name.length > NAME_MAX) {
-      setRenameError(`暱稱要 1–${NAME_MAX} 個字`)
+    const invalid = displayNameError(name)
+    if (invalid) {
+      setRenameError(invalid)
       return
     }
     setSaving(true)

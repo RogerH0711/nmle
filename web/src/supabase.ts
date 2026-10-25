@@ -50,8 +50,6 @@ export async function deleteAccount(userId: string) {
   await supabase.auth.signOut({ scope: 'local' }) // 帳號已經不存在，只清這台裝置的登入狀態
 }
 
-export const NAME_MAX = 30
-
 export async function getDisplayName(userId: string): Promise<string | null> {
   const { data } = await supabase.from('profiles').select('display_name').eq('id', userId).maybeSingle()
   return (data?.display_name as string | undefined) ?? null

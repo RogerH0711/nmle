@@ -84,6 +84,12 @@ export async function switchMockUser(userId: string | null) {
   if (owner !== ANON) await syncMocks()
 }
 
+/** 登出後呼叫（擁有者已經換成 anon）：這個帳號在這台裝置上只留還沒同步的模擬考，做法同 answers.ts */
+export function keepUnsyncedMocks(userId: string) {
+  const unsynced = read<MockRecord[]>(recordsKey(userId), []).filter((r) => !r.synced)
+  write(recordsKey(userId), unsynced.length ? unsynced : null)
+}
+
 /** 先拉雲端的紀錄合併，再把還沒上傳的推上去。 */
 export async function syncMocks() {
   const owner = state.owner

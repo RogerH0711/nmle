@@ -4,7 +4,8 @@ import type { ExamFile, Index, Letter, Question } from './types'
 import { imageUrl, loadIndex, loadPaper, loadQuestions, paperLabel, paperOf } from './bank'
 import { recordAnswer, recordAnswers, switchUser, syncNow, useAnswers, type SyncStatus } from './answers'
 import { localDate, reviewStates, reviewSummary } from './review'
-import { deleteAccount, getDisplayName, setDisplayName, signOut, supabase } from './supabase'
+import { getDisplayName, setDisplayName, supabase } from './supabase'
+import { deleteAccount, signOut } from './account'
 import { displayNameError, NAME_MAX } from './displayName'
 import { LoginDialog } from './LoginDialog'
 import { usernameOf } from './login'
@@ -842,6 +843,7 @@ export default function App() {
             onLogin={() => setLoginOpen(true)}
             status={answers.status}
             pending={answers.records.filter((r) => !r.synced).length}
+            storageFull={answers.storageFull}
           />
         </div>
       </header>
@@ -1145,8 +1147,9 @@ function Account(props: {
   onLogin: () => void
   status: SyncStatus
   pending: number
+  storageFull: boolean // 瀏覽器儲存空間滿了，作答紀錄存不進去
 }) {
-  const { user, displayName, onRename, onLogin, status, pending } = props
+  const { user, displayName, onRename, onLogin, status, pending, storageFull } = props
   const [editing, setEditing] = useState(false)
   const [draft, setDraft] = useState('')
   const [saving, setSaving] = useState(false)
@@ -1193,6 +1196,7 @@ function Account(props: {
     return (
       <div className="account">
         <span className="sync">{STATUS_TEXT.local}</span>
+        {storageFull && <span className="sync error">瀏覽器空間滿了，新的作答重新整理後會不見，登入才能存到雲端</span>}
         <button className="ghost small" onClick={onLogin}>
           登入
         </button>
@@ -1253,7 +1257,8 @@ function Account(props: {
       >
         {displayName ?? '…'} ✎
       </button>
-      <button className="ghost small" onClick={() => void signOut()}>
+      {storageFull && <span className="sync error">瀏覽器空間滿了，離線時的作答重新整理後會不見</span>}
+      <button className="ghost small" onClick={() => void signOut(user.id).catch(() => window.alert('登出失敗，請再試一次'))}>
         登出
       </button>
     </div>

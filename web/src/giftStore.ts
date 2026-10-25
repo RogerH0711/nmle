@@ -83,6 +83,17 @@ export async function switchGiftUser(userId: string | null) {
   if (owner !== ANON) await syncGifts()
 }
 
+/** 登出後呼叫（擁有者已經換成 anon）：這個帳號在這台裝置上只留還沒同步的送禮紀錄，做法同 answers.ts */
+export function keepUnsyncedGifts(userId: string) {
+  const unsynced = read(userId).filter((r) => !r.synced)
+  try {
+    if (unsynced.length) write(userId, unsynced)
+    else localStorage.removeItem(recordsKey(userId))
+  } catch {
+    // 讀不到瀏覽器儲存空間就算了
+  }
+}
+
 /** 先拉雲端的紀錄合併，再把還沒上傳的推上去。 */
 export async function syncGifts() {
   const owner = state.owner

@@ -1,4 +1,4 @@
-// 資料庫測試：權限（Row Level Security）、作答判分、暱稱、排行榜。
+// 資料庫測試：權限（Row Level Security）、作答判分、暱稱、排行榜、帳號密碼註冊。
 // 執行：npm run test:db
 import { before, describe, test } from 'node:test'
 import assert from 'node:assert/strict'
@@ -568,5 +568,46 @@ describe('刪除帳號', () => {
     assert.deepEqual(r.rows, [{ user_id: null }])
     const othersAfter = (await db.query(`select count(*)::int as n from public.answers where user_id <> $1`, [C])).rows[0].n
     assert.equal(othersAfter, othersBefore)
+  })
+})
+
+describe('帳號密碼註冊', () => {
+  const signUp = (id, email, provider = 'email') =>
+    db
+      .query(`insert into auth.users (id, email, raw_app_meta_data) values ($1, $2, $3)`, [
+        id,
+        email,
+        JSON.stringify({ provider, providers: [provider] }),
+      ])
+      .then(
+        () => true,
+        () => false,
+      )
+
+  test('Email 方式只接受「帳號名稱@users.invalid」', async () => {
+    assert.equal(await signUp('66666666-6666-4666-8666-000000000001', 'roger_01@users.invalid'), true)
+    assert.equal(await signUp('66666666-6666-4666-8666-000000000002', 'someone@gmail.com'), false)
+    assert.equal(await signUp('66666666-6666-4666-8666-000000000003', 'ab@users.invalid'), false) // 太短
+    assert.equal(await signUp('66666666-6666-4666-8666-000000000004', 'Roger@users.invalid'), false) // 前端會轉小寫
+    assert.equal(await signUp('66666666-6666-4666-8666-000000000005', 'a.b_c@users.invalid'), false)
+  })
+
+  test('註冊後預設暱稱一樣是「同學」加四碼，不是帳號名稱', async () => {
+    const r = await db.query(`select display_name from public.profiles where id = '66666666-6666-4666-8666-000000000001'`)
+    assert.match(r.rows[0].display_name, /^同學[0-9A-F]{4}$/)
+  })
+
+  test('不能改成真實的 Email', async () => {
+    const r = await db
+      .query(`update auth.users set email = 'someone@gmail.com' where id = '66666666-6666-4666-8666-000000000001'`)
+      .then(
+        () => true,
+        () => false,
+      )
+    assert.equal(r, false)
+  })
+
+  test('Google 登入不受影響', async () => {
+    assert.equal(await signUp('66666666-6666-4666-8666-000000000006', 'someone@gmail.com', 'google'), true)
   })
 })

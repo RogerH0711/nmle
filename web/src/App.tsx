@@ -4,7 +4,9 @@ import type { ExamFile, Index, Letter, Question } from './types'
 import { imageUrl, loadIndex, loadPaper, loadQuestions, paperLabel, paperOf } from './bank'
 import { recordAnswer, recordAnswers, switchUser, syncNow, useAnswers, type SyncStatus } from './answers'
 import { localDate, reviewStates, reviewSummary } from './review'
-import { deleteAccount, getDisplayName, NAME_MAX, setDisplayName, signInWithGoogle, signOut, supabase } from './supabase'
+import { deleteAccount, getDisplayName, NAME_MAX, setDisplayName, signOut, supabase } from './supabase'
+import { LoginDialog } from './LoginDialog'
+import { usernameOf } from './login'
 import { Leaderboard } from './Leaderboard'
 import {
   characterForSubject, COMEBACK_DAYS, fillPlayer, loadCharacters, loadLines, pickLine as pickCharacterLine,
@@ -152,6 +154,7 @@ export default function App() {
   const [titleOpen, setTitleOpen] = useState(() => !titleSeen()) // 開頭畫面（封面）：每次打開網站先顯示
   const closeTitle = useCallback(() => setTitleOpen(false), [])
   const [guideOpen, setGuideOpen] = useState(() => !guideSeen()) // 使用說明：第一次打開網站時自動顯示
+  const [loginOpen, setLoginOpen] = useState(false)
   const [player, setPlayer] = useState<PlayerTitle | null>(loadPlayer) // 學姊們叫你學弟還是學妹；null 是還沒選
   const [playerOpen, setPlayerOpen] = useState(false) // 從地圖下方打開「稱呼」
   const PLAYER = player ?? DEFAULT_PLAYER
@@ -626,7 +629,7 @@ export default function App() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       // 看排行榜、考模擬考、看劇情、看能力值、在校園地圖上時，不要對藏起來的題目作答
-      if (titleOpen || view !== 'quiz' || session || story || storyList || statusOpen || shopOpen || guideOpen || messagesOpen !== false || (characterMode && onMap && characters.length > 0)) return
+      if (titleOpen || view !== 'quiz' || session || story || storyList || statusOpen || shopOpen || guideOpen || loginOpen || messagesOpen !== false || (characterMode && onMap && characters.length > 0)) return
       if (e.ctrlKey || e.metaKey || e.altKey) return
       if (e.target instanceof Element && e.target.closest('select, input, textarea')) return
       const k = e.key.toUpperCase()
@@ -640,7 +643,7 @@ export default function App() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [pick, go, picked, view, session, story, storyList, statusOpen, shopOpen, guideOpen, messagesOpen, characterMode, onMap, characters, titleOpen])
+  }, [pick, go, picked, view, session, story, storyList, statusOpen, shopOpen, guideOpen, loginOpen, messagesOpen, characterMode, onMap, characters, titleOpen])
 
   // 開頭畫面蓋在最前面，題庫在後面照常載入（點開始時通常已經載好）
   if (titleOpen) return <TitleScreen onStart={closeTitle} />
@@ -768,6 +771,7 @@ export default function App() {
             user={user}
             displayName={displayName}
             onRename={renameTo}
+            onLogin={() => setLoginOpen(true)}
             status={answers.status}
             pending={answers.records.filter((r) => !r.synced).length}
           />
@@ -775,7 +779,7 @@ export default function App() {
       </header>
 
       {view === 'leaderboard' ? (
-        <Leaderboard user={user} index={index} onClose={() => setView('quiz')} />
+        <Leaderboard user={user} index={index} onLogin={() => setLoginOpen(true)} onClose={() => setView('quiz')} />
       ) : view === 'mock' ? (
         mockView
       ) : (
@@ -942,6 +946,7 @@ export default function App() {
           onClose={player ? () => setPlayerOpen(false) : undefined}
         />
       )}
+      {loginOpen && <LoginDialog onClose={() => setLoginOpen(false)} />}
       {guideOpen && (
         <Guide characters={characters} subjects={index.subjects} roundSize={ROUND_SIZE} onClose={() => setGuideOpen(false)} />
       )}
@@ -1044,14 +1049,16 @@ function Account(props: {
   user: User | null
   displayName: string | null
   onRename: (name: string) => Promise<void>
+  onLogin: () => void
   status: SyncStatus
   pending: number
 }) {
-  const { user, displayName, onRename, status, pending } = props
+  const { user, displayName, onRename, onLogin, status, pending } = props
   const [editing, setEditing] = useState(false)
   const [draft, setDraft] = useState('')
   const [saving, setSaving] = useState(false)
   const [renameError, setRenameError] = useState<string | null>(null)
+  const loginName = usernameOf(user?.email) // 帳號密碼註冊的人沒有 Email 可以找回，提醒帳號名稱
 
   const remove = async () => {
     if (!user) return
@@ -1092,8 +1099,8 @@ function Account(props: {
     return (
       <div className="account">
         <span className="sync">{STATUS_TEXT.local}</span>
-        <button className="ghost small" onClick={() => void signInWithGoogle()}>
-          用 Google 登入
+        <button className="ghost small" onClick={onLogin}>
+          登入
         </button>
       </div>
     )
@@ -1125,6 +1132,7 @@ function Account(props: {
         <button className="link delete-account" type="button" disabled={saving} onClick={() => void remove()}>
           刪除帳號
         </button>
+        {loginName && <span className="sync">登入帳號：{loginName}</span>}
         {renameError && <span className="sync error">{renameError}</span>}
       </form>
     )

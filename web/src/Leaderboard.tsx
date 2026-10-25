@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { User } from '@supabase/supabase-js'
 import {
-  fetchMock, fetchStreaks, fetchWeekly, signInWithGoogle, STREAK_MIN_DAILY, WEEKLY_MIN_ANSWERS,
+  fetchMock, fetchStreaks, fetchWeekly, STREAK_MIN_DAILY, WEEKLY_MIN_ANSWERS,
   type MockRow, type StreakRow, type WeeklyRow,
 } from './supabase'
 import type { Index } from './types'
@@ -16,7 +16,8 @@ const TABS: { id: Tab; label: string }[] = [
   { id: 'mock', label: '模擬考' },
 ]
 
-export function Leaderboard({ user, index, onClose }: { user: User | null; index: Index; onClose: () => void }) {
+export function Leaderboard(props: { user: User | null; index: Index; onLogin: () => void; onClose: () => void }) {
+  const { user, index, onLogin, onClose } = props
   const [tab, setTab] = useState<Tab>('weekly')
   const [weekly, setWeekly] = useState<WeeklyRow[] | null>(null)
   const [streaks, setStreaks] = useState<StreakRow[] | null>(null)
@@ -62,8 +63,8 @@ export function Leaderboard({ user, index, onClose }: { user: User | null; index
       {!user ? (
         <div className="board-empty">
           <p>登入後才能看排行榜，你的成績也才會列進去。</p>
-          <button className="primary small" onClick={() => void signInWithGoogle()}>
-            用 Google 登入
+          <button className="primary small" onClick={onLogin}>
+            登入
           </button>
         </div>
       ) : error ? (

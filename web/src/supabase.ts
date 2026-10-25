@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
+import { usernameEmail } from './login'
 
 // publishable key 本來就是給前端用的公開金鑰；資料權限由資料庫的 Row Level Security 控管
 const SUPABASE_URL = 'https://gppcwxkhkzfogdfudebu.supabase.co'
@@ -12,6 +13,19 @@ export function signInWithGoogle() {
   // 登入完回到目前這一頁（本機開發是 localhost，上線是 GitHub Pages 的 /nmle/）
   const redirectTo = window.location.origin + window.location.pathname
   return supabase.auth.signInWithOAuth({ provider: 'google', options: { redirectTo } })
+}
+
+// 帳號密碼登入：帳號名稱轉成 名稱@users.invalid（login.ts）。錯誤直接丟出，由畫面轉成中文訊息
+export async function signInWithUsername(name: string, password: string) {
+  const { error } = await supabase.auth.signInWithPassword({ email: usernameEmail(name), password })
+  if (error) throw error
+}
+
+export async function signUpWithUsername(name: string, password: string) {
+  const { data, error } = await supabase.auth.signUp({ email: usernameEmail(name), password })
+  if (error) throw error
+  // 線上沒關掉「Confirm email」時，註冊會等一封寄不出去的確認信，不會直接登入
+  if (!data.session) throw { code: 'no_session', message: 'email confirmation required' }
 }
 
 export function signOut() {

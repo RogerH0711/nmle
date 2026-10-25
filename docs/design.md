@@ -324,6 +324,14 @@ Supabase（登入、進度、排行榜）← GitHub Pages 做不到的部分
 
 **刪除帳號（10/21，`20261021120000_delete_account.sql`）**：點暱稱進入修改時有「刪除帳號」，要輸入「刪除」確認。資料庫函式刪掉 `auth.users` 那一筆，其他表靠外鍵處理（作答、模擬考、送禮、暱稱 cascade；回報 set null，留著修題目但連不回是誰）；前端再清掉 localStorage 裡鍵名含 user id 的紀錄。隱私權政策與使用條款在 `data/privacy.html`（獨立網址，給 Google 發布應用程式用）。
 
+**登入（10/25，`web/src/LoginDialog.tsx`、`login.ts`、`20261025120000_username_login.sql`）**：朋友擔心 Google 登入的個資（見「開發紀錄」），右上角和排行榜的「登入」改成打開登入對話框：先說明不登入也能用，Google 登入按鈕下寫明網站只拿到 Email、名稱、大頭貼網址；下方是不用 Email 的帳號密碼。
+
+- 帳號名稱 3–20 個小寫英數或底線，前端轉成 `名稱@users.invalid` 用 Supabase 的 Email 方式註冊。`.invalid` 是保留網域，寄不出信，所以線上要關掉「Confirm email」；忘記密碼無法重設，註冊畫面和修改暱稱的畫面都提醒帳號名稱。Supabase 的 Email 格式檢查只在寄信時才做（`internal/mailer/validateclient`），註冊不寄信就不會被擋。
+- 密碼至少 8 個字元（前端檢查，線上也要設最短 8 碼），bcrypt 只看前 72 bytes 所以設上限。
+- 資料庫 trigger 擋下 `provider = 'email'` 但不是這個格式的註冊與改 Email：Email 方式一打開，任何人都能直接呼叫 API 用別人的真實 Email 註冊。Google 登入在建立使用者前就寫好 `provider = 'google'`（GoTrue `signup.go` 的 `ToUserModel`），不受影響。
+- 帳號名稱不是暱稱：註冊後暱稱一樣是「同學」加四碼，排行榜看不到帳號名稱。
+- 還沒做：CAPTCHA（Cloudflare Turnstile 要 Roger 開帳號、把 secret 填進 Dashboard；目前靠 Supabase 每個 IP 每 5 分鐘 30 次的登入限制）、登入中改密碼。
+
 **暱稱不用真名（已完成）**：新使用者的預設暱稱是「同學」加 4 碼，右上角可以自己改。改版前就登入的使用者，暱稱仍是 Google 名稱，要自己改。
 
 ## 美術與內容
@@ -342,7 +350,14 @@ Supabase（登入、進度、排行榜）← GitHub Pages 做不到的部分
 - **BGM**：只在角色模式；模擬考作答中不放，和考場一樣。曲目 id：`map`（地圖、排行榜、模擬考首頁、依考卷刷題）、`library`（錯題複習）、`theme_<角色 id>`（和她讀書、她的劇情），劇情可以用 `bgm` 欄位另外指定。換曲時淡入淡出，並等 0.4 秒再換：畫面切換常常短暫經過別的畫面（劇情播完、題目載入前會回到地圖一下），不等的話會來回切。用 AudioBufferSourceNode 循環，接縫比 `<audio loop>` 乾淨，可以指定 `loopStart`、`loopEnd`。
 - **語音**：當面的反應台詞（回合開始、答對、答錯等）、模擬考高分、收禮和收到服裝的台詞，用台詞 id 對應 `data/audio/voice/<id>.mp3`。有 `{player}` 的台詞錄兩個版本（`<id>.m.mp3` 學弟、`<id>.f.mp3` 學妹）。學姊傳的訊息是文字，不配音。劇情台詞還沒有 id，配音做出來時再加。語音播放時 BGM 降到四成。
 - **音檔清單** `data/audio/manifest.json`：沒列的曲目、語音不會去抓，所以音檔還沒做好時不會一直 404。現在是空的，聲音面板的音樂、語音顯示「製作中」。
-- **之後要做的**：在 3070 用 ACE-Step 1.5（MIT 授權）生成 BGM；配音用 BreezyVoice（台灣華語，10/22 查過是 Apache-2.0）。參考音檔可以先用 Qwen3-TTS 的 VoiceDesign（Apache-2.0，用文字描述生成聲音）做，再交給 BreezyVoice 念台詞。顯卡目前給另一個專案用，等空出來再做。每位學姊先生成幾個候選聲音，Roger 挑一個定案當公版參考音檔，之後的台詞都照它念；參考音檔可以依表情各一段（平常、害羞、嘴硬……），台詞是什麼表情就用哪一段。
+- **之後要做的**：在 3070 用 ACE-Step 1.5（MIT 授權）生成 BGM；配音用 BreezyVoice（台灣華語，10/22 查過是 Apache-2.0）。參考音檔可以先用 Qwen3-TTS 的 VoiceDesign（Apache-2.0，用文字描述生成聲音）做，再交給 BreezyVoice 念台詞。每位學姊先生成幾個候選聲音，Roger 挑一個定案當公版參考音檔，之後的台詞都照它念；參考音檔可以依表情各一段（平常、害羞、嘴硬……），台詞是什麼表情就用哪一段。
+- **候選聲音（10/25 開工）**：`art/voice_design.py` 生成，`art/voice_check.py` 用 Breeze-ASR-25（聯發科的台灣華語 Whisper，Apache-2.0）辨識、算錯字率，產生試聽頁 `art/bakeoff/voice/index.html`。
+  - 原版 qwen-tts 在 3070 上 2 秒的音要 91 秒；改用 faster-qwen3-tts（CUDA graph，MIT）後 7 秒的音 3 秒生成，環境是 `.venv-tts-fast`。transformers 要用 5.15.1，5.20 載入會出錯。
+  - Qwen3-TTS 照大陸讀音，「姊」念成 zǐ，送進模型前換成同音的「姐」；其他台灣、大陸讀音不同的字（星期、微、危）沒辦法靠換字解決，所以正式台詞還是交給 BreezyVoice。
+  - 葉縈第一版寫「語速慢」，念出來每秒不到 2 個字，一句台詞要 20 秒，改成「語速適中」。
+  - Roger 試聽顏緋的 12 個候選：普遍咬字不清、大部分有大陸口音，比較好的是 B_s1、B_s6（描述 B，把台灣腔寫成具體的發音特徵）。錯字率 0% 的 A_s6、B_s3 不在其中，所以錯字率只能篩掉明顯念錯的，口音和咬字要靠人聽。
+- **BreezyVoice 試念（10/25，顏緋）**：`art/voice_breezy.py`，裝在 WSL 的 `~/code/BreezyVoice`（官方的 batch_inference.py 和新版 datasets 不相容，改成自己逐句呼叫）。Roger 選 B_s6 當顏緋的聲音。BreezyVoice 念出來的錯字，語音辨識的錯字率抓得到（Roger 試聽確認），所以每句念好幾次（`--takes`），挑錯字率最低的。
+  - 一開始長句一句要 5 分鐘：語言模型每一步都把 attention cache 接長一點，PyTorch 的記憶體碎片越積越多，400 步左右 8 GB 用完，之後被 Windows 搬到系統記憶體。設 `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True` 後顯示記憶體穩定在 2.5 GB，同一句 18 秒（腳本啟動時自己設好）。
 
 **封面（10/22–25）**：遊戲名稱「醫師一階攻略～五位學姊陪你考過～」，封面是五位學姊在醫學院櫻花樹下的合照，1920×1080，Logo 直接疊在圖上（`data/cover.webp`）。用在三個地方：網站開頭畫面（`web/src/TitleScreen.tsx`，每次打開網站顯示，同一個分頁重新整理不再出現；點「開始」順便解鎖瀏覽器的聲音。電腦封面滿版、「開始」在右下角的背景上；直式螢幕換手機版封面 `data/cover-mobile.webp`，「開始」在下方的腿上，都不擋臉）、分享預覽（`web/index.html` 的 og:image，用 1200×675 的 `data/cover-og.jpg`，有些平台不支援 webp）、README 最上方。程式在 `art/cover_qwen.py`（方向 2），輸出和中間檔在 `art/bakeoff/cover/qwen/`（不進 repo）。
 
@@ -413,6 +428,20 @@ galgame 最常看的是臉，所以選 Animagine。兩位角色的 `scrubs` 常�
 
 - 朋友 A：立繪不能放大看細節（優點）。想要百合向或可以自訂性別：台詞與劇本寫死「學弟」約 31 處，改成代入變數後可以讓玩家選學弟或學妹，選學妹就是百合向，不用重畫立繪（10/19 已完成，見「遊戲設計」的「稱呼」）。看不懂為什麼是這個答案：做了「問 AI」按鈕，完整版詳解見「詳解與題目正確率」的成本估算。
 - 朋友 B：問有沒有關掉刷題的劇情模式。Roger 決定不處理。
+
+**朋友回饋：為什麼要用 Google 登入（10/25；Roger 決定先做 1 再做 3，兩者都已完成，做法見「技術架構」的「登入」）**
+
+有朋友問為什麼要用 Google 登入，擔心個資問題。Roger 想過改成網站自己的帳號密碼，但擔心後台被攻擊時資料外洩。
+
+- 現況：不登入也能刷題，登入只用在跨裝置同步和排行榜。Google 登入時 Supabase 會在 `auth.users` 存 Email、Google 名稱、大頭貼網址（`privacy.html` 有寫），其他使用者看不到，只有 Roger 在 Dashboard 看得到。網站拿不到 Gmail 信件，也拿不到 Google 密碼。
+- 外洩時流出什麼，看的是存了什麼，不是用哪種登入：
+  - Google 登入：Email、名稱、大頭貼網址，加上作答紀錄。
+  - 帳號密碼：用 Supabase Auth 內建的，不要自己做密碼表。Supabase 用 bcrypt 加鹽雜湊，只存雜湊（[Supabase 文件](https://supabase.com/docs/guides/auth/password-security)），外洩也拿不到原始密碼。帳號如果是使用者名稱而不是 Email，外洩時流出的個資反而比 Google 登入少。風險變成：使用者在別的網站用同一組密碼、密碼被暴力猜、忘記密碼沒辦法重設。洩漏密碼檢查（HaveIBeenPwned）要 Pro 方案。
+  - 不論哪種登入，最嚴重的是 service_role key 或 Roger 的 Supabase 帳號被盜，那時所有資料都會流出。這和登入方式無關，靠的是金鑰不外流、Supabase 帳號開兩步驟驗證。一般使用者只能透過 RLS 讀寫自己的資料（已測過）。
+- 可以怎麼做：
+  1. 不改登入、把話說清楚：登入按鈕旁寫「只會拿到 Email 和名稱，不會給別人看；不登入也能刷題」。成本最低，馬上能回朋友。
+  2. 匿名帳號：Supabase `signInAnonymously()`，完全不用個資就能同步、上排行榜。缺點是登出、清掉瀏覽器資料或換裝置就找不回來（[Supabase 文件](https://supabase.com/docs/guides/auth/auth-anonymous)），之後可以用 `linkIdentity()` 綁 Google。官方強烈建議開 CAPTCHA（例如 Cloudflare Turnstile），預設每個 IP 每小時 30 次；匿名使用者也是 `authenticated` 角色，要用 `is_anonymous` 判斷是否限制（例如不能上排行榜，免得灌帳號）。
+  3. 使用者名稱＋密碼（不填 Email）：Supabase Auth 一定要 Email 或手機號碼，只能用假 Email（例如 `名稱@users.invalid`）並關掉信箱確認，所以忘記密碼無法重設。要開 CAPTCHA 防暴力猜密碼，密碼至少 8 碼。
 
 **10/15 的決定**（階段 2 提前完成後）
 
@@ -498,7 +527,8 @@ Roger 想要的劇情畫面接近一般 galgame。參考的是三款遊戲的截
 | PDF 解析出錯（圖片題、表格、掃描檔） | 題目或答案對錯位 | 自動檢查題數與選項，問題題目列清單人工修；擴充到 105–109 年時重跑同一套檢查 |
 | Supabase 沒開 Row Level Security | 任何人都能改排行榜或別人的進度 | 每張表都開 RLS，只允許使用者寫自己的資料（已完成，並從外部測過未登入讀寫都被擋） |
 | 排行榜被刷分 | 公開後排行榜失去意義 | 對錯已改由資料庫判斷，同一題同一天只算第一次；正解仍在前端，公開前評估改成作答後才向伺服器拿正解 |
-| 公開後暴露個資 | 陌生人看到真名、Roger 的學號 | 自訂暱稱；支援信箱改用專案 Gmail（階段 4） |
+| 公開後暴露個資 | 陌生人看到真名、Roger 的學號 | 自訂暱稱。支援信箱維持學校信箱、不開專案 Gmail（10/25 Roger 決定：測試中的 Google 登入畫面只顯示 Supabase 網域，看不到支援信箱；commit 裡本來就是學校信箱；成大 Google Workspace 畢業後可以保留） |
+| 帳號密碼被暴力猜 | 別人登入朋友的帳號、改暱稱或刪帳號 | 密碼至少 8 碼、Supabase 依 IP 限制登入次數；公開前加 CAPTCHA |
 | Google 登入 100 人上限 | 公開後新使用者無法登入 | 發布 OAuth 應用程式並通過 Google 要求的驗證（階段 4） |
 | Supabase 免費方案用完 | 同步失敗或專案被暫停 | 公開前依當時方案上限估算人數，監看用量 |
 | galgame 內容影響觀感 | 部分使用者不想用，或影響履歷印象 | 角色模式可以一鍵關掉；履歷上同時寫題庫與學習設計的工程重點 |
@@ -508,7 +538,7 @@ Roger 想要的劇情畫面接近一般 galgame。參考的是三款遊戲的截
 **已決定事項**
 
 - 朋友要考哪一梯：116 年暑假或 117 年寒假。
-- 人數與登入：十幾人，用 Google 帳號登入。
+- 人數與登入：十幾人，用 Google 帳號登入；10/25 加上不用 Email 的帳號密碼（見「技術架構」的「登入」）。
 - 角色個性與外觀：五位已定案，見 `characters.md`。
 - 詳解審核：有疑義的題目由使用者回報再處理。
 - 第一版立繪：AI 生成（見「美術與內容」）。

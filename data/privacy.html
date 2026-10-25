@@ -49,12 +49,13 @@
       <li><strong>回報疑義</strong>：你按「回報疑義」送出時，會記錄題目編號、回報原因、你寫的補充說明、你選的答案、網站版本和裝置代碼。補充說明請不要寫個人資料。</li>
     </ul>
 
-    <h3>用 Google 登入時</h3>
+    <h3>登入時</h3>
     <ul>
-      <li>登入由 Google 與 Supabase（資料庫代管服務）處理。本站會收到 Google 提供的 Email、名稱與大頭貼網址，存在 Supabase 的帳號資料中，只用來辨識你的帳號，不會顯示給其他使用者。</li>
+      <li><strong>用 Google 登入</strong>：登入由 Google 與 Supabase（資料庫代管服務）處理。本站會收到 Google 提供的 Email、名稱與大頭貼網址，存在 Supabase 的帳號資料中，只用來辨識你的帳號，不會顯示給其他使用者。本站看不到你的信件，也拿不到你的 Google 密碼。</li>
+      <li><strong>用帳號密碼登入</strong>：不需要 Email。本站只存你取的帳號名稱，和由 Supabase 用 bcrypt 雜湊（單向轉換，無法還原）過的密碼，任何人（包括網站維護者）都看不到原本的密碼。帳號名稱不會顯示給其他使用者。因為沒有 Email，忘記密碼無法重設。</li>
       <li>登入後，作答紀錄、模擬考作答、送出的禮物和你的暱稱會存到資料庫，讓你在不同裝置之間同步。</li>
       <li>回報疑義會連到你的帳號，方便處理；匿名使用統計仍然不會連到你的帳號。</li>
-      <li><strong>排行榜</strong>只顯示暱稱和成績統計（正確率、連續天數、模擬考分數），其他使用者看不到你的 Email、名稱或每一題的作答。暱稱預設是「同學」加四個數字，請不要改成真名。</li>
+      <li><strong>排行榜</strong>只顯示暱稱和成績統計（正確率、連續天數、模擬考分數），其他使用者看不到你的 Email、名稱、帳號名稱或每一題的作答。暱稱預設是「同學」加四個數字，請不要改成真名。</li>
     </ul>
 
     <h3>誰看得到這些資料</h3>
@@ -67,7 +68,7 @@
     <ul>
       <li><strong>GitHub Pages</strong>：網站架在 GitHub Pages，GitHub 可能依其政策記錄連線紀錄（例如 IP 位址）。</li>
       <li><strong>Supabase</strong>：存放登入帳號與上述資料。</li>
-      <li><strong>Google</strong>：提供登入。</li>
+      <li><strong>Google</strong>：提供 Google 登入（選擇用 Google 登入時才會用到）。</li>
       <li><strong>問 AI</strong>：按下 ChatGPT、Claude 或 Gemini 按鈕時，會開啟該網站並帶入題目內容。之後的對話由該網站處理，適用它們的隱私權政策；本站不會把資料送給這些服務。</li>
     </ul>
     <p>本站沒有使用追蹤用的 Cookie 或廣告、分析工具。瀏覽器儲存空間只用來保存你的紀錄、設定和登入狀態。</p>

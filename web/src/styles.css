@@ -3242,3 +3242,67 @@ button.link:hover {
     font-size: 1.25rem;
   }
 }
+
+/* 登入對話框：Google 或帳號密碼 */
+.modal.login {
+  width: min(440px, 100%);
+  border-top-color: var(--accent);
+  line-height: 1.6;
+}
+
+.login-why {
+  margin: 0 0 12px;
+}
+
+.login-google {
+  width: 100%;
+}
+
+.login-note {
+  margin: 6px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+ul.login-note {
+  padding-left: 1.2em;
+}
+
+.login-divider {
+  margin: 18px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+.login-form {
+  display: grid;
+  gap: 10px;
+}
+
+.login-form label {
+  display: grid;
+  gap: 4px;
+  font-size: 0.9rem;
+}
+
+.login-form input {
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+}
+
+.login-error {
+  margin: 0;
+  color: var(--wrong);
+  font-size: 0.9rem;
+}
+
+.login-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}

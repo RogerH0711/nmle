@@ -895,3 +895,86 @@ describe('排行榜隱藏與門檻', () => {
     assert.ok(b.answered < 50 && !b.qualified)
   })
 })
+
+describe('同步與排行榜效能', () => {
+  const R = 'abcdabcd-0000-4000-8000-000000000001'
+  let seq = 0
+  const id = () => `abcdabcd-1111-4000-8000-${String(++seq).padStart(12, '0')}`
+  const days = async () =>
+    (await db.query(`select day::text, answered from public.answer_days where user_id = $1 order by day`, [R])).rows
+
+  before(async () => {
+    await createUser(db, R, '真名癸')
+  })
+
+  test('每天題數：作答寫入時加一，不列入排行榜的（回填、沒有正解）不算', async () => {
+    await answer(db, R, '115090_1_001', 'C')
+    await answer(db, R, '115090_1_002', 'A', true, '10 days') // 回填
+    await answer(db, R, '999999_1_001', 'A') // 沒有正解
+    const rows = await days()
+    assert.equal(rows.length, 1)
+    assert.equal(rows[0].answered, 1)
+  })
+
+  test('每天題數：upsert 重送已存在的作答不會重複計算', async () => {
+    const same = id()
+    for (let i = 0; i < 2; i++) {
+      await as(
+        db,
+        R,
+        `insert into public.answers (id, question_id, picked, correct, answered_at) values ($1, '115090_1_003', 'A', true, now())
+         on conflict (id) do nothing`,
+        [same],
+      )
+    }
+    assert.equal((await days())[0].answered, 2)
+  })
+
+  test('每天題數：沒有人讀得到，刪除帳號時一起刪掉', async () => {
+    for (const user of [R, null]) {
+      const r = await tryAs(db, user, `select * from public.answer_days`)
+      assert.ok(!r.ok || r.res.rows.length === 0)
+    }
+    const T = 'abcdabcd-0000-4000-8000-000000000002'
+    await createUser(db, T, '真名子')
+    await answer(db, T, '115090_1_001', 'C')
+    assert.equal((await tryAs(db, T, `select public.delete_my_account()`)).ok, true)
+    assert.equal((await db.query(`select count(*)::int as n from public.answer_days where user_id = $1`, [T])).rows[0].n, 0)
+  })
+
+  test('先作答、之後才匯入正解：重新判分時補算每天題數', async () => {
+    // ROGER 那筆作答是套用第一個 migration 後就寫入的（那時還沒有 trigger、也還沒有正解），
+    // 匯入正解重新判分時 graded 才變成 true，靠的是 recount_answer_day
+    const rows = (await db.query(`select answered from public.answer_days where user_id = $1`, [ROGER])).rows
+    assert.deepEqual(rows, [{ answered: 1 }])
+  })
+
+  test('既有的作答在 migration 時補算每天題數', async () => {
+    // 套用前的資料：一筆已判分的作答
+    const fresh = await createDb()
+    const at = migrations.indexOf('20261025230000_sync_and_leaderboard_perf.sql')
+    for (const m of migrations.slice(0, at)) await applyMigration(fresh, m)
+    await applySeed(fresh)
+    await createUser(fresh, R, '真名癸')
+    await answer(fresh, R, '115090_1_001', 'C')
+    await answer(fresh, R, '115090_1_002', 'A')
+    for (const m of migrations.slice(at)) await applyMigration(fresh, m)
+    const rows = (await fresh.query(`select answered from public.answer_days where user_id = $1`, [R])).rows
+    assert.deepEqual(rows, [{ answered: 2 }])
+  })
+
+  test('正解表的 paper_id 由題目 id 算出來', async () => {
+    const r = await db.query(`select paper_id from public.question_keys where question_id = '115090_1_062'`)
+    assert.equal(r.rows[0].paper_id, '115090_1')
+    const n = await db.query(`select count(*)::int as n from public.question_keys where paper_id = '115090_2'`)
+    assert.equal(n.rows[0].n, 100)
+  })
+
+  test('增量同步：只拉 synced_at 比較新的作答，用得到索引', async () => {
+    const r = await as(db, R, `select count(*)::int as n from public.answers where synced_at > now() - interval '1 hour'`)
+    assert.ok(r.rows[0].n >= 3)
+    const idx = await db.query(`select indexdef from pg_indexes where indexname = 'answers_user_synced_at'`)
+    assert.match(idx.rows[0].indexdef, /\(user_id, synced_at\)/)
+  })
+})
+

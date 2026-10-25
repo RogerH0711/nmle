@@ -89,4 +89,12 @@ export async function answer(db, userId, questionId, picked, claimed = true, ago
  */
 export async function syncedOnTime(db, userId) {
   await db.query(`update public.answers set synced_at = answered_at, ranked = true where user_id = $1`, [userId])
+  // 連續天數讀的是每天題數（answer_days），寫入時才計算，這裡跟著重算
+  await db.query(`delete from public.answer_days where user_id = $1`, [userId])
+  await db.query(
+    `insert into public.answer_days (user_id, day, answered)
+     select user_id, (answered_at at time zone 'Asia/Taipei')::date, count(*) from public.answers
+     where user_id = $1 and graded and ranked group by 1, 2`,
+    [userId],
+  )
 }

@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from 'react'
 import { dataUrl } from './bank'
-import { supabase } from './supabase'
+import { fetchAllPages, supabase } from './supabase'
 import type { GiftCatalog, GiftRecord } from './shop'
 
 // 送禮紀錄的本機儲存與同步，做法同 mockStore.ts：
@@ -99,15 +99,13 @@ export async function syncGifts() {
   const owner = state.owner
   if (owner === ANON || !navigator.onLine) return
   try {
-    const { data, error } = await supabase
-      .from('gifts')
-      .select('id, character_id, gift_id, price, stage, line_id, given_at')
-      .order('given_at')
-    if (error) throw new Error(error.message)
+    const data = await fetchAllPages<Omit<GiftRecord, 'synced'>>((from, to) =>
+      supabase.from('gifts').select('id, character_id, gift_id, price, stage, line_id, given_at').order('given_at').order('id').range(from, to),
+    )
     if (state.owner !== owner) return
     const known = new Map(state.records.map((r) => [r.id, r]))
     // 資料庫回傳的時間格式是 +00:00，統一成前端的 ISO 格式
-    for (const r of data as Omit<GiftRecord, 'synced'>[]) {
+    for (const r of data) {
       known.set(r.id, { ...r, given_at: new Date(r.given_at).toISOString(), synced: true })
     }
     setState({ records: [...known.values()].sort((a, b) => a.given_at.localeCompare(b.given_at)), error: null })

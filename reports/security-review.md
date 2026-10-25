@@ -49,6 +49,8 @@ Bug 與效能（B1–B7）在後半段。
 
 **10/25 修正（四）**：L5、B1 是前端的修正。L5：登出與刪除帳號移到 `web/src/account.ts`，先把各個紀錄的擁有者換成 anon 再整理 localStorage（解決 race）；登出時這個帳號在裝置上只留還沒同步的紀錄，連不上伺服器時改成只登出這台裝置（原本離線按登出沒有反應）；刪除帳號另外清掉裝置上的作答進度（目前這一回合、作答中的模擬考、看過的劇情、訊息、回報過的題目、學弟／學妹，清單在 `web/src/localData.ts`）。B1：作答紀錄改存精簡格式（`web/src/answerStorage.ts`，實測一筆從 158 字降到 65 字，可存約 7.5 萬筆），舊格式第一次讀到時自動轉換；存不進去時帳號旁邊顯示提示。資料庫拉下來的時間格式也統一了（原本混著 `Z` 和 `+00:00`，`messages.ts` 用字串比較時間會比錯）。以上用 Playwright 攔下所有 Supabase 請求實測過。
 
+**10/25 修正（五）**：B2、B3。B2：作答改成增量同步，只拉 `synced_at` 比上次新的紀錄（往前多拉 5 分鐘），每天一次完整同步，正解更正後重新判分的結果才拉得到；游標存在 localStorage，登出、紀錄存不進瀏覽器時清掉；模擬考和送禮補上分頁（原本超過 1,000 筆會被截斷）。B3（`20261025230000_sync_and_leaderboard_perf.sql`）：加 `answers (user_id, synced_at)` 索引；連續天數改讀每人每天的題數表 `answer_days`（作答寫入、重新判分時由 trigger 維護，既有資料在 migration 時補算），不再掃全部作答；`question_keys` 加由題號算出來的 `paper_id` 與索引，模擬考算分不再掃整張正解表。`prepare_report` 的匿名計數已在修正（二）解決。週榜維持現算（只掃本週，有索引）；排行榜快取（materialized view）沒做，等人數多了再看。
+
 ---
 
 ## 高
@@ -300,7 +302,7 @@ React 會把暱稱當文字輸出，**沒有 XSS**（排行榜 `web/src/Leaderbo
 
 ## Bug 與效能
 
-### B1　localStorage 容量：重度使用者的紀錄會默默存不進去（中）
+### B1　localStorage 容量：重度使用者的紀錄會默默存不進去（中）（已修）
 
 `web/src/answers.ts:36-42`：所有作答存成一個 JSON 陣列，每次作答都重新 `JSON.stringify` 整個陣列。一筆約 130 字元，瀏覽器的 localStorage 約 5M 字元，**大約 3.5–4 萬筆就存不進去**，`catch` 直接忽略。2,400 題刷 15 輪就到了（加上模擬考、送禮、訊息共用同一個額度會更早）。之後：
 
@@ -309,13 +311,13 @@ React 會把暱稱當文字輸出，**沒有 XSS**（排行榜 `web/src/Leaderbo
 
 另外每作答一題就序列化整個陣列，筆數多時手機上會卡。**建議**：容量滿時顯示提示（現在完全沒有），長期改用 IndexedDB 或只在本機保留未同步與近期的紀錄。
 
-### B2　每次同步都把全部作答紀錄重新下載（中）
+### B2　每次同步都把全部作答紀錄重新下載（中）（已修）
 
 `web/src/answers.ts:117-152`：登入、`online` 事件、按「重試」都會 `pullAll()`，每頁 1,000 筆依序抓。1 萬筆就是 10 個依序請求，每次換網路都重抓一次。**建議**：記住上次同步的 `synced_at`（先做 L4），只抓 `synced_at > 上次` 的紀錄。
 
 `web/src/mockStore.ts:93`、`web/src/giftStore.ts:92` 的 select 沒有分頁，PostgREST 預設最多回 1,000 列（`supabase/config.toml:18`），超過會被默默截斷。送禮一天五位、一年就超過 1,000 筆，換裝置後書籤餘額和好感度會算錯（**低**，要很久才會發生）。
 
-### B3　排行榜查詢會隨資料量變慢（中，公開後才會明顯）
+### B3　排行榜查詢會隨資料量變慢（中，公開後才會明顯）（已修，快取除外）
 
 - `leaderboard_streaks`（`20261015000000_leaderboard.sql:109-114`）每次都掃**所有人有史以來全部的作答**，再 group by。沒有時間下限，索引幫不上。建議只看最近 N 天（例如 `answered_at > now() - interval '400 days'`），或另外存每人每天的題數。
 - `leaderboard_mock`（`20261016000000_mock_exams.sql:69-74`）對每一筆模擬考用 `starts_with(k.question_id, ...)` 掃 `question_keys`，不能用主鍵索引，成本是「模擬考筆數 × 2,400」。建議 `question_keys` 加 `paper_id` 欄位與索引，或改成 `k.question_id like f.paper_id || '\_%'` 搭配 `text_pattern_ops` 索引。

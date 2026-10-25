@@ -1,7 +1,9 @@
 import { useSyncExternalStore } from 'react'
-import { supabase } from './supabase'
+import { fetchAllPages, supabase } from './supabase'
 import { countAnswers } from './usage'
-import { decodeAnswers, decodeLegacyAnswers, encodeAnswers, type StoredAnswer } from './answerStorage'
+import {
+  decodeAnswers, decodeLegacyAnswers, encodeAnswers, nextCursor, syncPlan, type StoredAnswer, type SyncCursor,
+} from './answerStorage'
 import type { Letter } from './types'
 
 // 作答紀錄：先寫進瀏覽器（離線也能刷），登入後再和 Supabase 雙向同步。
@@ -12,13 +14,31 @@ export type AnswerRecord = StoredAnswer
 export type SyncStatus = 'local' | 'syncing' | 'synced' | 'offline' | 'error'
 
 const ANON = 'anon'
-const PAGE_SIZE = 1000
 const PUSH_BATCH = 500
 const PUSH_DELAY_MS = 2000
 
 // v2 是精簡格式（answerStorage.ts）；v1 是舊版的 JSON，讀到就轉成 v2
 const storageKey = (owner: string) => `nmle.answers.v2.${owner}`
 const legacyKey = (owner: string) => `nmle.answers.v1.${owner}`
+// 增量同步的游標（answerStorage.ts 的 syncPlan）。紀錄存不進瀏覽器時要清掉，否則下次會以為已經拉過
+const cursorKey = (owner: string) => `nmle.answers.cursor.v1.${owner}`
+
+function readCursor(owner: string): SyncCursor | null {
+  try {
+    return JSON.parse(localStorage.getItem(cursorKey(owner)) ?? 'null') as SyncCursor | null
+  } catch {
+    return null
+  }
+}
+
+function writeCursor(owner: string, cursor: SyncCursor | null) {
+  try {
+    if (cursor) localStorage.setItem(cursorKey(owner), JSON.stringify(cursor))
+    else localStorage.removeItem(cursorKey(owner))
+  } catch {
+    // 存不了就每次都完整同步
+  }
+}
 
 function load(owner: string): AnswerRecord[] {
   try {
@@ -119,7 +139,7 @@ export async function switchUser(userId: string | null) {
   if (owner !== ANON) await syncNow()
 }
 
-/** 先把雲端的紀錄拉下來合併，再把本機還沒上傳的推上去。 */
+/** 先把雲端的紀錄拉下來合併（只拉上次之後的，每天一次全部），再把本機還沒上傳的推上去。 */
 export async function syncNow() {
   const owner = state.owner
   if (owner === ANON) return
@@ -129,13 +149,18 @@ export async function syncNow() {
   }
   setState({ status: 'syncing', error: null })
   try {
-    const remote = await pullAll()
+    const cursor = readCursor(owner)
+    const { since } = syncPlan(cursor)
+    const remote = await pull(since)
     if (state.owner !== owner) return // 同步途中換了帳號
     const known = new Map(state.records.map((r) => [r.id, r]))
     // 資料庫回傳的時間格式是 +00:00，統一成前端的 ISO 格式，才能直接比較字串
-    for (const r of remote) known.set(r.id, { ...r, answered_at: new Date(r.answered_at).toISOString(), synced: true })
+    for (const { synced_at: _, ...r } of remote) {
+      known.set(r.id, { ...r, answered_at: new Date(r.answered_at).toISOString(), synced: true })
+    }
     const merged = [...known.values()].sort((a, b) => a.answered_at.localeCompare(b.answered_at))
     setState({ records: merged })
+    writeCursor(owner, state.storageFull ? null : nextCursor(cursor, remote.map((r) => r.synced_at), since === null))
     await pushPending()
     if (state.owner === owner) setState({ status: 'synced' })
   } catch (e) {
@@ -143,19 +168,15 @@ export async function syncNow() {
   }
 }
 
-async function pullAll(): Promise<Omit<AnswerRecord, 'synced'>[]> {
-  const rows: Omit<AnswerRecord, 'synced'>[] = []
-  for (let from = 0; ; from += PAGE_SIZE) {
-    const { data, error } = await supabase
-      .from('answers')
-      .select('id, question_id, picked, correct, answered_at')
-      .order('answered_at')
-      .order('id')
-      .range(from, from + PAGE_SIZE - 1)
-    if (error) throw new Error(error.message)
-    rows.push(...(data as Omit<AnswerRecord, 'synced'>[]))
-    if (data.length < PAGE_SIZE) return rows
-  }
+type RemoteAnswer = Omit<AnswerRecord, 'synced'> & { synced_at: string }
+
+/** since 為 null：全部；否則只拉 synced_at 比它新的。用 synced_at 排序，分頁途中有新紀錄進來也只會排在最後 */
+function pull(since: string | null): Promise<RemoteAnswer[]> {
+  return fetchAllPages<RemoteAnswer>((from, to) => {
+    let q = supabase.from('answers').select('id, question_id, picked, correct, answered_at, synced_at')
+    if (since) q = q.gt('synced_at', since)
+    return q.order('synced_at').order('id').range(from, to)
+  })
 }
 
 async function pushPending() {
@@ -182,6 +203,7 @@ async function pushPending() {
  * 共用電腦的下一個人看不到；下次登入會再從雲端拉下來，沒同步的也會接著上傳。
  */
 export function keepUnsyncedAnswers(userId: string) {
+  writeCursor(userId, null) // 已同步的紀錄清掉了，下次登入要全部重拉
   const unsynced = load(userId).filter((r) => !r.synced)
   if (unsynced.length) save(userId, unsynced)
   else {

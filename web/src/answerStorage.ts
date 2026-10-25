@@ -40,3 +40,30 @@ export function decodeAnswers(text: string): StoredAnswer[] {
 export function decodeLegacyAnswers(json: string): StoredAnswer[] {
   return (JSON.parse(json) as StoredAnswer[]).map((r) => ({ ...r, answered_at: new Date(r.answered_at).toISOString() }))
 }
+
+// ---------- 增量同步的游標 ----------
+// 雲端的作答只拉 synced_at（資料庫收到的時間）比上次新的。每天做一次完整同步：
+// 正解更正後資料庫會重新判分已有的作答，只拉新的紀錄拿不到更正後的對錯。
+
+export interface SyncCursor {
+  syncedAt: string // 拉過的紀錄裡最新的 synced_at（ISO）
+  fullAt: number // 上次完整同步的時間（毫秒）
+}
+
+export const FULL_SYNC_MS = 24 * 60 * 60 * 1000
+// synced_at 是交易開始的時間，晚一點才 commit 的紀錄可能比游標早一點；往前多拉一段，重複的用 id 去掉
+export const SYNC_OVERLAP_MS = 5 * 60 * 1000
+
+/** 這次要拉哪些：since 為 null 是完整同步 */
+export function syncPlan(cursor: SyncCursor | null, now = Date.now()): { since: string | null } {
+  if (!cursor || now - cursor.fullAt > FULL_SYNC_MS) return { since: null }
+  return { since: new Date(Date.parse(cursor.syncedAt) - SYNC_OVERLAP_MS).toISOString() }
+}
+
+/** 拉完之後的游標 */
+export function nextCursor(prev: SyncCursor | null, pulledSyncedAt: string[], full: boolean, now = Date.now()): SyncCursor {
+  let latest = prev ? Date.parse(prev.syncedAt) : 0
+  for (const t of pulledSyncedAt) latest = Math.max(latest, Date.parse(t))
+  return { syncedAt: new Date(latest).toISOString(), fullAt: full || !prev ? now : prev.fullAt }
+}
+

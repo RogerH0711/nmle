@@ -29,6 +29,21 @@ export async function signUpWithUsername(name: string, password: string, captcha
   if (!data.session) throw { code: 'no_session', message: 'email confirmation required' }
 }
 
+const PAGE_SIZE = 1000 // PostgREST 一次最多回 1,000 列（supabase/config.toml 的 max_rows），超過的會被默默截斷
+
+/** 分頁把資料全部拉下來。page 要用固定的排序，否則分頁之間會漏或重複 */
+export async function fetchAllPages<T>(
+  page: (from: number, to: number) => PromiseLike<{ data: T[] | null; error: { message: string } | null }>,
+): Promise<T[]> {
+  const rows: T[] = []
+  for (let from = 0; ; from += PAGE_SIZE) {
+    const { data, error } = await page(from, from + PAGE_SIZE - 1)
+    if (error) throw new Error(error.message)
+    rows.push(...(data ?? []))
+    if (!data || data.length < PAGE_SIZE) return rows
+  }
+}
+
 export async function getDisplayName(userId: string): Promise<string | null> {
   const { data } = await supabase.from('profiles').select('display_name').eq('id', userId).maybeSingle()
   return (data?.display_name as string | undefined) ?? null

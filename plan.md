@@ -70,7 +70,7 @@
 - [x] commit 作者 email（學校信箱）：10/21 Roger 決定維持不改，也不改寫歷史
 - [x] 登入對話框說明 Google 登入拿到什麼，另外提供不用 Email 的帳號密碼（10/25 上線，Roger 實測註冊、登入、登出、刪除帳號都正常）
 - [x] 帳號密碼登入加 CAPTCHA（Cloudflare Turnstile，10/25）
-- [ ] 處理 security review 的發現（10/25，`reports/security-review.md`）：H1、H2、H3-1、M1–M4、L1、L2、L4 已寫好 migration `20261025180000_leaderboard_integrity.sql`、`20261025200000_rate_limits.sql`、`20261025220000_display_name_rules.sql`（還沒合併到 main，合併後要 Roger `npm run db:push`）；密碼長度、Turnstile 已確認；L5、B1 已修（前端）；Dashboard 檢查清單其餘項目（含用量告警）、L3、L6、B2–B7 還沒做
+- [ ] 處理 security review 的發現（10/25，`reports/security-review.md`）：H1、H2、H3-1、M1–M4、L1、L2、L4 已寫好 migration `20261025180000_leaderboard_integrity.sql`、`20261025200000_rate_limits.sql`、`20261025220000_display_name_rules.sql`、`20261025230000_sync_and_leaderboard_perf.sql`（還沒合併到 main，合併後要 Roger `npm run db:push`）；密碼長度、Turnstile 已確認；L5、B1、B2、B3 已修（B3 加了 migration `20261025230000_sync_and_leaderboard_perf.sql`）；Dashboard 檢查清單其餘項目（含用量告警）、L3、L6、B4–B7 還沒做
 - [x] 題庫抽檢進 CI（10/25，`web/src/questionBank.test.ts`，跟著 `npm test` 跑；第一次跑抓到 2 題 override 混進看不見的控制字元，已修正）
 - [ ] 確認 Dcard 醫師版板規
 - [ ] 寄信給陽明醫國考詳解的作者群，說明我們拿詳解來比對（見「詳解與題目正確率」）

@@ -29,7 +29,7 @@
 | M2 | 中 | Google 帳號可以把 Email 改成任意地址，`check_username_email` 擋不到 | DB 層已重現，GoTrue 行為待驗證 |
 | M3 | 中 | 寫入沒有數量限制：作答、模擬考、送禮、回報、使用統計可以灌爆免費方案的空間 | 已重現（回報） |
 | M4 | 中 | 匿名回報的「每小時 200 筆」是全站共用額度，任何人都能讓所有匿名回報失效 | 已重現 |
-| M5 | 中 | 登入相關設定只在 Dashboard，repo 裡的 `config.toml` 與文件不一致（密碼長度 6 vs 8） | 待 Roger 確認 |
+| M5 | 中 | 登入相關設定只在 Dashboard，repo 裡的 `config.toml` 與文件不一致（密碼長度 6 vs 8） | 密碼長度、CAPTCHA 已確認（10/25），其餘待確認 |
 | L1 | 低 | 暱稱沒有伺服器端的內容檢查：純空白、RTL 控制字元、冒用別人的暱稱 | 已重現 |
 | L2 | 低 | 排行榜函式的門檻參數由前端決定，`min_daily = 1` 可以看到所有人的活躍狀況 | 事實 |
 | L3 | 低 | `rogerh0711.github.io` 是共用 origin，登入權杖存在 localStorage；沒有 CSP | 事實 |
@@ -209,8 +209,8 @@ Supabase 免費方案資料庫 500 MB，滿了會變唯讀；`answers` 一列約
 
 **事實**：repo 裡只有 `supabase/config.toml`（本機用，CLAUDE.md 規定不能 `config push`），和線上設定可能不同：
 
-- `config.toml:183`：`minimum_password_length = 6`；design.md「登入」寫「線上也要設最短 8 碼」。密碼長度只有前端 `web/src/login.ts:24-27` 檢查，直接呼叫 `POST /auth/v1/signup` 可以用 6 碼註冊，如果線上沒改。
-- Turnstile 只有在 Dashboard 開啟「Enable Captcha protection」並填 secret key 時，GoTrue 才會在伺服器端驗證；前端送 token 本身不代表有驗證。如果沒開，直接打 API 就能繞過 Turnstile。
+- `config.toml:183`：`minimum_password_length = 6`；design.md「登入」寫「線上也要設最短 8 碼」。密碼長度只有前端 `web/src/login.ts:24-27` 檢查，直接呼叫 `POST /auth/v1/signup` 可以用 6 碼註冊，如果線上沒改。**10/25 Roger 確認線上已設 8 碼。**
+- Turnstile 只有在 Dashboard 開啟「Enable Captcha protection」並填 secret key 時，GoTrue 才會在伺服器端驗證；前端送 token 本身不代表有驗證。如果沒開，直接打 API 就能繞過 Turnstile。**10/25 確認已開**：不帶 token 呼叫 `POST /auth/v1/token?grant_type=password`，回 `400 captcha_failed`（`request disallowed (no captcha_token found)`）。
 - `config.toml:179` 的 `enable_anonymous_sign_ins = false` 是本機值；線上若開著，任何人不用 CAPTCHA 就能拿到 `authenticated`。
 
 **建議**：照文末的「Dashboard 檢查清單」逐項確認，並把確認結果寫進 design.md「登入」。驗證 CAPTCHA 有開的方法：不帶 `captchaToken` 呼叫 `signInWithPassword`，應該回 `captcha_failed`。
@@ -348,9 +348,10 @@ React 會把暱稱當文字輸出，**沒有 XSS**（排行榜 `web/src/Leaderbo
 
 Authentication：
 
-- [ ] Sign In / Providers → Email：「Confirm email」關閉（帳號密碼註冊要用）；**Minimum password length = 8**（目前 `config.toml` 是 6）。
+- [ ] Sign In / Providers → Email：「Confirm email」關閉（帳號密碼註冊要用）。
+- [x] **Minimum password length = 8**（10/25 確認；`config.toml` 是本機用的 6，不影響線上）。
 - [ ] Sign In / Providers → Email：「Secure email change」開啟（M2 的補強，不能取代 trigger）。
-- [ ] Attack Protection：「Enable Captcha protection」開啟、provider 是 Turnstile、secret key 已填。驗證：不帶 `captchaToken` 呼叫 `signInWithPassword` 要回 `captcha_failed`。
+- [x] Attack Protection：「Enable Captcha protection」開啟、provider 是 Turnstile、secret key 已填。驗證：不帶 `captchaToken` 呼叫 `signInWithPassword` 要回 `captcha_failed`（10/25 確認通過）。
 - [ ] Anonymous sign-ins 關閉；Phone、Magic link 等沒用到的 provider 關閉。
 - [ ] URL Configuration：Site URL 是 `https://rogerh0711.github.io/nmle/`；Redirect URLs 只有這個網址與本機開發用的 localhost，沒有 `https://*.github.io/**` 這類萬用字元。
 - [ ] Rate Limits：登入／註冊的每 IP 限制維持預設或更嚴。
@@ -365,7 +366,7 @@ Authentication：
 
 ## 修正建議的優先順序
 
-1. **公開前一定要做**：H1、H2（伺服器時間＋拒絕回填）、H3 的第 1 點（週榜每題只算一次、排除送分題）、M1（profiles 只讀自己）、M2（擋 Email 修改）、M5 清單。這些都是幾行 SQL 加 PGlite 測試，一個 migration 可以做完。
+1. **公開前一定要做**：H1、H2（伺服器時間＋拒絕回填）、H3 的第 1 點（週榜每題只算一次、排除送分題）、M1（profiles 只讀自己）、M2（擋 Email 修改）、M5 清單其餘項目。這些都是幾行 SQL 加 PGlite 測試，一個 migration 可以做完。
 2. **公開後一週內**：M3（速率限制＋用量告警）、L1（暱稱檢查＋`hidden` 欄位）、L2、L4。
 3. **有空再做**：B1–B3、L3 的 CSP、L5、M4。
 

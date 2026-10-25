@@ -344,10 +344,10 @@ Supabase（登入、進度、排行榜）← GitHub Pages 做不到的部分
 **登入（10/25，`web/src/LoginDialog.tsx`、`login.ts`、`20261025120000_username_login.sql`）**：朋友擔心 Google 登入的個資（見「開發紀錄」），右上角和排行榜的「登入」改成打開登入對話框：先說明不登入也能用，Google 登入按鈕下寫明網站只拿到 Email、名稱、大頭貼網址；下方是不用 Email 的帳號密碼。
 
 - 帳號名稱 3–20 個小寫英數或底線，前端轉成 `名稱@users.invalid` 用 Supabase 的 Email 方式註冊。`.invalid` 是保留網域，寄不出信，所以線上要關掉「Confirm email」；忘記密碼無法重設，註冊畫面和修改暱稱的畫面都提醒帳號名稱。Supabase 的 Email 格式檢查只在寄信時才做（`internal/mailer/validateclient`），註冊不寄信就不會被擋。
-- 密碼至少 8 個字元（前端檢查，線上也要設最短 8 碼），bcrypt 只看前 72 bytes 所以設上限。
+- 密碼至少 8 個字元（前端檢查；線上也設了最短 8 碼，10/25 確認），bcrypt 只看前 72 bytes 所以設上限。
 - 資料庫 trigger 擋下 `provider = 'email'` 但不是這個格式的註冊與改 Email：Email 方式一打開，任何人都能直接呼叫 API 用別人的真實 Email 註冊。Google 登入在建立使用者前就寫好 `provider = 'google'`（GoTrue `signup.go` 的 `ToUserModel`），不受影響。
 - 帳號名稱不是暱稱：註冊後暱稱一樣是「同學」加四碼，排行榜看不到帳號名稱。
-- CAPTCHA（10/25，`web/src/turnstile.ts`）：Cloudflare Turnstile，打開登入對話框才載入 script；帳號密碼登入、註冊時把 token 送給 Supabase 核對（Google 登入不經過）。secret key 只在 Supabase Dashboard，site key 寫在程式裡。site key 綁網域，本機 localhost 要在 Cloudflare 的主機名稱加上 localhost 才能測。
+- CAPTCHA（10/25，`web/src/turnstile.ts`）：Cloudflare Turnstile，打開登入對話框才載入 script；帳號密碼登入、註冊時把 token 送給 Supabase 核對（Google 登入不經過）。secret key 只在 Supabase Dashboard，site key 寫在程式裡。site key 綁網域，本機 localhost 要在 Cloudflare 的主機名稱加上 localhost 才能測。10/25 確認伺服器端有驗證：不帶 token 直接呼叫 `POST /auth/v1/token?grant_type=password` 會回 `400 captcha_failed`。
 - 還沒做：登入中改密碼。
 
 **暱稱不用真名（已完成）**：新使用者的預設暱稱是「同學」加 4 碼，右上角可以自己改。改版前就登入的使用者，暱稱仍是 Google 名稱，要自己改。

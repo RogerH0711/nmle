@@ -66,6 +66,9 @@ def export(exam_id, args):
         # （毛地黃→地高辛、利福平→利福黴素），查得到出處的約 7 成正確，而且沒有誤導的建議（docs/design.md）
         wrong = [{"en": t["en"], "correct": t["correct"]} for t in terms.get(key, {}).get("flagged", [])
                  if t.get("judge") == "wrong" and t.get("correct") in (t.get("known") or [])]
+        # 名詞檢查是逐處標記，同一個名詞出現幾次就有幾筆；網站只需要列一次
+        seen = set()
+        wrong = [w for w in wrong if not ((k := (w["en"].lower(), w["correct"])) in seen or seen.add(k))]
         item = {"text": drop_repeated_english(g["text"]), "level": level_of(checks.get(key), wrong)}
         if wrong:
             item["terms"] = wrong

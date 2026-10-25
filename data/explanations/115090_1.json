@@ -252,10 +252,6 @@
         {
           "en": "absolute refractory period",
           "correct": "絕對不應期"
-        },
-        {
-          "en": "absolute refractory period",
-          "correct": "絕對不應期"
         }
       ]
     },
@@ -332,14 +328,6 @@
         {
           "en": "antidiuretic hormone, ADH",
           "correct": "抗利尿荷爾蒙"
-        },
-        {
-          "en": "antidiuretic hormone, ADH",
-          "correct": "抗利尿荷爾蒙"
-        },
-        {
-          "en": "antidiuretic hormone, ADH",
-          "correct": "抗利尿荷爾蒙"
         }
       ]
     },
@@ -347,10 +335,6 @@
       "text": "**答案：A**\n\n**關鍵觀念**\n甲狀腺素（thyroid hormone）合成包含碘離子（iodide ion）攝取、氧化、有機化、耦合與分解等步驟。碘離子進入甲狀腺囊泡細胞（thyroid follicle cell）依賴基底側膜上的鈉碘共運蛋白（sodium-iodide symporter）。頂側膜的彭氏蛋白（pendrin）負責將碘離子被動運送至濾泡腔（colloid）。甲狀腺過氧化酶（thyroid peroxidase）催化碘離子氧化並結合於甲狀球蛋白（thyroglobulin）。\n\n**選項解析**\n- (A) 敘述錯誤。碘離子進入細胞是透過鈉碘共運蛋白進行次級主動運輸。彭氏蛋白位於頂側膜。該蛋白負責將碘離子被動運出至濾泡腔。其功能並非主動送入細胞內。\n- (B) 敘述正確。甲狀腺過氧化酶催化碘離子氧化。氧化後的碘會接在甲狀球蛋白的酪胺酸殘基（tyrosine residue）上。此過程會生成單碘酪胺酸（monoiodotyrosine）或雙碘酪胺酸（diiodotyrosine）。\n- (C) 敘述正確。兩個雙碘酪胺酸在酵素催化下結合。此耦合反應會生成四碘甲狀腺素（thyroxine）。\n- (D) 敘述正確。甲狀球蛋白需經內吞作用（endocytosis）進入細胞。溶小體（lysosome）與內吞體融合後釋放水解酵素（hydrolase）。酵素分解甲狀球蛋白才能釋放甲狀腺素。",
       "level": "unchecked",
       "terms": [
-        {
-          "en": "colloid",
-          "correct": "膠質"
-        },
         {
           "en": "colloid",
           "correct": "膠質"

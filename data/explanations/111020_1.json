@@ -66,10 +66,6 @@
         {
           "en": "Buccal mucosa",
           "correct": "頰黏膜"
-        },
-        {
-          "en": "Buccal mucosa",
-          "correct": "頰黏膜"
         }
       ]
     },
@@ -81,10 +77,6 @@
       "text": "**答案：C**\n\n**關鍵觀念**\n胸部交感神經節（thoracic sympathetic ganglion）排列於胸椎（thoracic vertebrae）兩側。上段神經節主要支配胸腔臟器（thoracic viscera）。下段神經節主要發出節前纖維（preganglionic fibers）前往腹腔（abdominal cavity）。各節皆同時連接白交通支（white rami communicantes）與灰交通支（gray rami communicantes）。\n\n**選項解析**\n- (A) 錯誤。交感神經節除支配臟器外，亦支配胸腹壁血管（blood vessels）與汗腺（sweat glands）。\n- (B) 錯誤。胸部交感神經節同時以白交通支與灰交通支連接脊神經（spinal nerve）。\n- (C) 正確。上五個交感神經節（T1至T5）會發出節後神經纖維（postganglionic sympathetic fibers）。這些纖維主要組成心叢（cardiac plexus）與肺叢（pulmonary plexus）。它們直接支配心臟（heart）與肺臟（lungs）。\n- (D) 錯誤。下七個交感神經節（T6至T12）主要發出節前纖維。這些纖維組成內臟神經（splanchnic nerves）。纖維進入腹腔後，才於椎前神經節（prevertebral ganglia）換元。",
       "level": "terms",
       "terms": [
-        {
-          "en": "preganglionic fibers",
-          "correct": "結前纖維"
-        },
         {
           "en": "preganglionic fibers",
           "correct": "結前纖維"
@@ -294,18 +286,6 @@
         {
           "en": "heart rate",
           "correct": "心跳率"
-        },
-        {
-          "en": "heart rate",
-          "correct": "心跳率"
-        },
-        {
-          "en": "heart rate",
-          "correct": "心跳率"
-        },
-        {
-          "en": "heart rate",
-          "correct": "心跳率"
         }
       ]
     },
@@ -365,10 +345,6 @@
       "text": "**答案：C**\n\n**關鍵觀念**\n胰島素（insulin）主要促進合成代謝並抑制分解代謝。當胰島素分泌或作用不足時，體內會轉向分解代謝狀態。脂肪組織（adipose tissue）的脂解作用會顯著增強。游離脂肪酸（free fatty acid）大量進入肝臟（liver）並進行β-氧化（beta-oxidation）。此代謝途徑會促使酮體（ketone body）合成增加。\n\n**選項解析**\n- (A) 胰島素缺乏會抑制肝醣（glycogen）合成酵素（enzyme）活性。肝臟儲存肝醣的量會減少。此選項錯誤。\n- (B) 胰島素缺乏會使葡萄糖（glucose）轉運蛋白移位受阻。骨骼肌（skeletal muscle）細胞吸收葡萄糖的速率會下降。此選項錯誤。\n- (C) 胰島素不足會解除對脂解的抑制。肝臟接收大量脂肪酸（fatty acid）後會加速生成酮體。此選項正確。\n- (D) 胰島素缺乏會抑制脂肪（lipid）合成相關酵素活性。脂肪組織儲存脂肪的速率會降低。此選項錯誤。",
       "level": "terms",
       "terms": [
-        {
-          "en": "lipid",
-          "correct": "脂質"
-        },
         {
           "en": "lipid",
           "correct": "脂質"

@@ -170,18 +170,6 @@
           "correct": "腸套"
         },
         {
-          "en": "intestinal loop",
-          "correct": "腸套"
-        },
-        {
-          "en": "intestinal loop",
-          "correct": "腸套"
-        },
-        {
-          "en": "intestinal loop",
-          "correct": "腸套"
-        },
-        {
           "en": "umbilical ring",
           "correct": "臍環"
         }
@@ -428,10 +416,6 @@
         {
           "en": "deoxyribonucleic acid",
           "correct": "去氧核醣核酸"
-        },
-        {
-          "en": "deoxyribonucleic acid",
-          "correct": "去氧核醣核酸"
         }
       ]
     },
@@ -523,10 +507,6 @@
       "text": "**答案：B**\n\n**關鍵觀念**\n限制性片段長度多態性（restriction fragment length polymorphisms）利用限制性內切酶（restriction endonuclease）切割去氧核糖核酸（deoxyribonucleic acid）。序列差異使片段長度不同。片段需經凝膠電泳（gel electrophoresis）分離。去氧核糖核酸轉印至固相膜。標記探針（probe）與目標序列雜交（hybridization）。此技術稱為南方墨點法（Southern blotting）。\n\n**選項解析**\n- (A) 西方墨點法（Western blotting）用於檢測蛋白質（protein）。此法不適用於去氧核糖核酸分析。\n- (B) 南方墨點法專用於去氧核糖核酸檢測。該法可確認限制性片段長度多態性的片段大小。此為正確答案。\n- (C) 北方墨點法（Northern blotting）用於檢測核糖核酸（ribonucleic acid）。此法不適用於去氧核糖核酸指紋鑑定（DNA fingerprinting）。\n- (D) 長條墨點法（slot blotting）用於定量檢測。該法無法提供片段長度資訊。此法不適合用於指紋鑑定。",
       "level": "terms",
       "terms": [
-        {
-          "en": "deoxyribonucleic acid",
-          "correct": "去氧核醣核酸"
-        },
         {
           "en": "deoxyribonucleic acid",
           "correct": "去氧核醣核酸"

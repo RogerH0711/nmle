@@ -28,10 +28,6 @@
         {
           "en": "superior orbital fissure",
           "correct": "眶上裂"
-        },
-        {
-          "en": "superior orbital fissure",
-          "correct": "眶上裂"
         }
       ]
     },
@@ -55,10 +51,6 @@
       "text": "**答案：B**\n\n**關鍵觀念**\n嘴唇（lips）的淋巴（lymph）引流具有明確的區域差異。中央區域主要引流至頦下淋巴結（submental lymph nodes）。兩側區域則同時引流至頦下淋巴結與顎下淋巴結（submandibular lymph nodes）。此雙向引流特性是臨床評估腫瘤轉移路徑的核心原則。\n\n**選項解析**\n- (A) 敘述正確。口輪匝肌（orbicularis oris）環繞口裂（oral fissure）。此肌肉負責閉合嘴唇與輔助發音。\n- (B) 敘述錯誤。唇部淋巴並非僅引流至頦下淋巴結。兩側區域會同時引流至顎下淋巴結。\n- (C) 敘述正確。上唇繫帶（superior labial frenulum）與下唇繫帶（inferior labial frenulum）分別連接黏膜（mucosa）與牙齦（gingiva）。\n- (D) 敘述正確。上唇動脈（superior labial artery）與下唇動脈（inferior labial artery）源自顏面動脈（facial artery）。它們在唇紅緣（vermilion border）形成豐富吻合網。",
       "level": "terms",
       "terms": [
-        {
-          "en": "submandibular lymph nodes",
-          "correct": "頜下淋巴結"
-        },
         {
           "en": "submandibular lymph nodes",
           "correct": "頜下淋巴結"
@@ -101,10 +93,6 @@
       "text": "**答案：B**\n\n**關鍵觀念**\n此題考查軀幹肌肉的神經支配來源。腰椎叢（lumbar plexus）的分支會直接支配部分腰部肌肉。股神經（femoral nerve）主要支配大腿前側肌肉。正確辨識神經與肌肉的配對是解題關鍵。神經損傷會導致對應肌肉無力。\n\n**選項解析**\n- (A) 橫膈（diaphragm）由膈神經（phrenic nerve）支配。此神經源自頸髓（cervical spinal cord）第三至第五前支。配對正確。\n- (B) 腰大肌（psoas major muscle）由腰椎叢直接分支支配。其神經來源為腰髓（lumbar spinal cord）第一至第三前支。並非由股神經支配。配對錯誤。\n- (C) 腹外斜肌（external oblique muscle）由下位肋間神經（intercostal nerves）支配。其來源為胸段脊神經（thoracic spinal nerves）第七至第十一前支。配對正確。\n- (D) 髂肌（iliacus）由股神經支配。此神經源自腰髓第二至第三前支。配對正確。",
       "level": "conflict",
       "terms": [
-        {
-          "en": "lumbar plexus",
-          "correct": "腰神經叢"
-        },
         {
           "en": "lumbar plexus",
           "correct": "腰神經叢"
@@ -360,10 +348,6 @@
           "correct": "腦"
         },
         {
-          "en": "brain",
-          "correct": "腦"
-        },
-        {
           "en": "glucagon",
           "correct": "升糖素"
         }
@@ -459,14 +443,6 @@
       "text": "**答案：D**\n\n**關鍵觀念**\n真核細胞（Eukaryotic cell）的轉錄後修飾（Post-transcriptional modification）包含聚腺苷酸化（Polyadenylation）。此過程作用於RNA聚合酶II（RNA polymerase II）轉錄的前體信使RNA（Pre-mRNA）。其核心識別序列為AAUAAA。該序列位於RNA切割位點上游十至三十個核苷酸（Nucleotide）處。細胞會在此處進行切割並加上多聚腺苷酸尾（Poly-A tail）。\n\n**選項解析**\n- (A) 序列末端為連續尿嘧啶（Uridine）。此為多聚腺苷酸尾的RNA表現形式。並非上游的切割訊號序列。\n- (B) 序列同樣以連續尿嘧啶結尾。缺乏AAUAAA保守序列。故不正確。\n- (C) 序列中間出現連續尿嘧啶。位置與典型訊號不符。亦無AAUAAA序列。\n- (D) 序列中段明確含有AAUAAA保守序列。此為真核生物（Eukaryote）標準的聚腺苷酸化訊號（Polyadenylation signal）。符合題目描述。",
       "level": "conflict",
       "terms": [
-        {
-          "en": "Uridine",
-          "correct": "尿苷"
-        },
-        {
-          "en": "Uridine",
-          "correct": "尿苷"
-        },
         {
           "en": "Uridine",
           "correct": "尿苷"

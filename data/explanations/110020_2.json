@@ -46,10 +46,6 @@
         {
           "en": "Reoviridae",
           "correct": "呼腸孤病毒科"
-        },
-        {
-          "en": "Reoviridae",
-          "correct": "呼腸孤病毒科"
         }
       ]
     },
@@ -523,14 +519,6 @@
       "text": "**答案：B**\n\n**關鍵觀念**\n睪丸腫瘤（testicular tumor）的發生年齡與組織學類型密切相關。三歲以下幼童的睪丸腫瘤以卵黃囊瘤（yolk sac tumor）最為常見。此腫瘤屬於非精原細胞性腫瘤（nonseminomatous germ cell tumor）。腫瘤細胞會分泌甲胎蛋白（alpha-fetoprotein）。臨床可藉此標記物追蹤療效。\n\n**選項解析**\n- (A) 精細胞瘤（seminoma）好發於二十至四十歲成人。此腫瘤不分泌甲胎蛋白。故不正確。\n- (B) 卵黃囊瘤是嬰幼兒期最常見的睪丸惡性腫瘤。腫瘤組織可見薛氏小體（Schiller-Duval body）。血清甲胎蛋白會顯著上升。故正確。\n- (C) 絨毛癌（choriocarcinoma）多見於青少年或成人。腫瘤細胞會分泌人類絨毛膜促性腺激素（human chorionic gonadotropin）。故不正確。\n- (D) 胚胎癌（embryonal carcinoma）好發於二十至三十歲青年。此腫瘤生長迅速且易早期轉移。故不正確。",
       "level": "terms",
       "terms": [
-        {
-          "en": "alpha-fetoprotein",
-          "correct": "甲型胎兒蛋白"
-        },
-        {
-          "en": "alpha-fetoprotein",
-          "correct": "甲型胎兒蛋白"
-        },
         {
           "en": "alpha-fetoprotein",
           "correct": "甲型胎兒蛋白"

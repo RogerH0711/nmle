@@ -8,10 +8,6 @@
         {
           "en": "thymidine",
           "correct": "胸腺核苷"
-        },
-        {
-          "en": "thymidine",
-          "correct": "胸腺核苷"
         }
       ]
     },
@@ -65,10 +61,6 @@
       "text": "**答案：（D）**\n\n**關鍵觀念**\n本題考查肝炎病毒（Hepatitis virus）的臨床特徵。戊型肝炎病毒（Hepatitis E virus）主要透過糞口途徑傳播。一般感染者的致死率約為百分之一至百分之二。孕婦感染後易發展為暴發性肝炎（Fulminant hepatitis）。此族群的致死率可高達百分之二十。\n\n**選項解析**\n- (A) 錯誤。甲型肝炎病毒（Hepatitis A virus）感染多為自限性。成人致死率極低。孕婦感染不會顯著增加死亡風險。\n- (B) 錯誤。丙型肝炎病毒（Hepatitis C virus）主要造成慢性肝炎。急性期致死率極低。與孕婦高致死率無關。\n- (C) 錯誤。丁型肝炎病毒（Hepatitis D virus）為缺陷病毒。必須依賴乙型肝炎病毒（Hepatitis B virus）才能複製。雖可加重肝損傷，但無孕婦特異性高致死率。\n- (D) 正確。戊型肝炎病毒符合題幹描述。孕婦感染後易引發暴發性肝炎。致死率顯著升高。為正確選項。",
       "level": "terms",
       "terms": [
-        {
-          "en": "Fulminant hepatitis",
-          "correct": "猛爆性肝炎"
-        },
         {
           "en": "Fulminant hepatitis",
           "correct": "猛爆性肝炎"
@@ -155,10 +147,6 @@
       "text": "**答案：D**\n\n**關鍵觀念**\n本題考查絲蟲（filarial worm）微絲蟲（microfilaria）的形態學鑑別特徵。不同種絲蟲的微絲蟲在尾端核的分布具有高度特異性。此特徵是實驗室區分病原種的重要依據。\n\n**選項解析**\n- (A) 錯誤。侵犯眼睛並導致失明的是蟯蟲（Onchocerca volvulus）。馬來絲蟲（Brugia malayi）主要寄生於淋巴系統（lymphatic system）。\n- (B) 錯誤。皮膚切片（skin snips）是診斷蟯蟲的標準方法。馬來絲蟲需採集夜間血液進行塗片檢查。\n- (C) 錯誤。鼠蹊懸垂（hanging groin）是班氏絲蟲（Wuchereria bancrofti）感染後的典型臨床表現。馬來絲蟲較少引起此症狀。\n- (D) 正確。馬來絲蟲的微絲蟲尾端具有兩個明顯的尾核（terminal nuclei）。此形態特徵可與無尾核的班氏絲蟲明確區分。",
       "level": "conflict",
       "terms": [
-        {
-          "en": "Onchocerca volvulus",
-          "correct": "蟠尾絲蟲"
-        },
         {
           "en": "Onchocerca volvulus",
           "correct": "蟠尾絲蟲"
@@ -293,10 +281,6 @@
       "text": "**答案：B**\n\n**關鍵觀念**\n本題考查抗癌藥物（anticancer drugs）的作用標靶。細胞毒藥物主要干擾核酸合成或微管蛋白（microtubule）動態。正確配對藥物與酵素是解題核心。\n\n**選項解析**\n- (A) 錯誤。依托泊苷（etoposide）標靶為DNA拓撲異構酶II（topoisomerase II）。該藥穩定酵素與DNA複合物，引發雙股斷裂。胸苷酸合成酶（thymidylate synthase）抑制劑為氟尿嘧啶（fluorouracil）。\n- (B) 正確。伊立替康（irinotecan）為半合成生物鹼。其代謝物特異性抑制DNA拓撲異構酶I（topoisomerase I）。此酵素負責解除DNA正超螺旋。抑制後造成單股斷裂，阻斷細胞週期。\n- (C) 錯誤。培美曲塞（pemetrexed）屬抗葉酸類藥物。它抑制多種葉酸代謝酵素。該藥不作用於DNA拓撲異構酶II（topoisomerase II）。\n- (D) 錯誤。長春瑞濱（vinorelbine）屬長春鹼類藥物。它結合微管蛋白並抑制聚合。二氫葉酸還原酶（dihydrofolate reductase）抑制劑為甲氨蝶呤（methotrexate）。",
       "level": "terms",
       "terms": [
-        {
-          "en": "microtubule",
-          "correct": "微管"
-        },
         {
           "en": "microtubule",
           "correct": "微管"

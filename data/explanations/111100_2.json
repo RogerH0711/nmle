@@ -10,10 +10,6 @@
           "correct": "膿性"
         },
         {
-          "en": "purulent",
-          "correct": "膿性"
-        },
-        {
           "en": "opportunistic infection",
           "correct": "伺機性感染"
         }
@@ -105,14 +101,6 @@
       "text": "**答案：A**\n\n**關鍵觀念**\n細胞凋亡（apoptosis）的內在徑路（intrinsic pathway）主要受線粒體（mitochondria）膜通透性調節。Bcl-2 家族（Bcl-2 family）包含抗凋亡蛋白（anti-apoptotic proteins）與促凋亡蛋白（pro-apoptotic proteins）。抗凋亡成員能維持膜完整性並阻斷細胞色素 c（cytochrome c）釋放。此機制為內在徑路的核心抑制節點。\n\n**選項解析**\n- (A) Bcl-2 家族為主要調節抑制分子。其抗凋亡成員可結合並中和促凋亡蛋白。此作用能防止線粒體膜穿孔。細胞因此維持存活狀態。\n- (B) Bax 家族（Bax family）屬於促凋亡蛋白。該分子會插入線粒體外膜。此動作會促進膜通透性增加。因此不具抑制功能。\n- (C) 半胱天冬酶-3（caspase-3）屬於執行期酵素。該酵素在細胞色素 c（cytochrome c）釋放後才被活化。其功能為降解細胞結構蛋白。此選項屬於下游效應分子。\n- (D) p53（p53）為腫瘤抑制蛋白（tumor suppressor protein）。該蛋白主要透過轉錄調節誘導促凋亡基因。其作用偏向啟動凋亡訊號。此選項非內在徑路之直接抑制分子。",
       "level": "unchecked",
       "terms": [
-        {
-          "en": "mitochondria",
-          "correct": "粒線體"
-        },
-        {
-          "en": "mitochondria",
-          "correct": "粒線體"
-        },
         {
           "en": "mitochondria",
           "correct": "粒線體"

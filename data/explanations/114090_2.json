@@ -22,10 +22,6 @@
           "correct": "胺基醣苷類"
         },
         {
-          "en": "aminoglycosides",
-          "correct": "胺基醣苷類"
-        },
-        {
           "en": "Mycoplasma",
           "correct": "黴漿菌"
         }
@@ -47,10 +43,6 @@
       "text": "**答案：C**\n\n**關鍵觀念**\n本題考查傳染病的媒介生物分類。蜱（tick）主要傳播立克次體（Rickettsia）與螺旋體（Borrelia）感染。恙蟲（chigger）屬於蟎類幼蟲，並非蜱。正確區分媒介生物是解答此題的關鍵。\n\n**選項解析**\n- (A) 洛磯山斑疹熱（Rocky Mountain spotted fever）由立克次體引起。此病確實經由蜱叮咬傳播。\n- (B) 地方性回歸熱（Endemic relapsing fever）由螺旋體引起。此病主要經由蜱媒介傳染。\n- (C) 斑疹傷寒（Scrub typhus）由恙蟲（Orientia tsutsugamushi）引起。此病媒介為恙蟲，屬於蟎類幼蟲。因此最不可能經由蜱傳播。\n- (D) 萊姆病（Lyme disease）由伯氏疏螺旋體（Borrelia burgdorferi）引起。此病明確經由蜱叮咬傳染。",
       "level": "terms",
       "terms": [
-        {
-          "en": "Borrelia",
-          "correct": "疏螺旋體屬"
-        },
         {
           "en": "Borrelia",
           "correct": "疏螺旋體屬"
@@ -81,10 +73,6 @@
       "text": "**答案：B**\n\n**關鍵觀念**\n輪狀病毒（Rotavirus）屬於呼腸孤病毒科（Reoviridae）。其基因體（genome）為分段（segmented）的雙股 RNA（double-stranded RNA）。病毒外層蛋白必須經腸胃道（gastrointestinal tract）內的蛋白酶（protease）切割，才能啟動感染程序。此結構特性使其對胃酸與膽鹽具備高度耐受性。\n\n**選項解析**\n- (A) 正確。該病毒基因體確實由雙股 RNA（double-stranded RNA）構成。\n- (B) 錯誤。病毒外層蛋白經蛋白酶切割後，反而會活化病毒並增強感染性（infectivity）。因此該敘述最不適當。\n- (C) 正確。其基因體由十一段 RNA 組成，屬於分段型病毒。\n- (D) 正確。病毒具有三層衣殼（triple-layered capsid）結構，能抵抗胃酸與消化酶，對腸胃道環境耐受性極高。",
       "level": "terms",
       "terms": [
-        {
-          "en": "gastrointestinal tract",
-          "correct": "胃腸道"
-        },
         {
           "en": "gastrointestinal tract",
           "correct": "胃腸道"
@@ -342,10 +330,6 @@
         {
           "en": "Bronchospasm",
           "correct": "支氣管痙攣"
-        },
-        {
-          "en": "Bronchospasm",
-          "correct": "支氣管痙攣"
         }
       ]
     },
@@ -405,10 +389,6 @@
       "text": "**答案：D**\n\n**關鍵觀念**\n馬凡氏症候群（Marfan syndrome）為體染色體顯性遺傳疾病。致病機轉為纖維蛋白（fibrillin）基因（gene）突變。此缺陷會導致結締組織（connective tissue）結構異常。患者常見心血管系統（cardiovascular system）與骨骼系統（skeletal system）病變。\n\n**選項解析**\n- (A) 錯誤。本病非膠原蛋白（collagen）異常所致。主要缺陷為纖維蛋白合成障礙。\n- (B) 錯誤。遺傳方式為體染色體顯性遺傳。非隱性遺傳模式。\n- (C) 錯誤。患者典型表現為身材高瘦。肢體比例呈現蜘蛛指（arachnodactyly）。非身材矮小。\n- (D) 正確。主動脈根部擴大（aortic root dilation）為最嚴重併發症。易引發主動脈剝離（aortic dissection）。為臨床監測重點。",
       "level": "terms",
       "terms": [
-        {
-          "en": "fibrillin",
-          "correct": "小纖維蛋白"
-        },
         {
           "en": "fibrillin",
           "correct": "小纖維蛋白"

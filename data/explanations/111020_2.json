@@ -36,14 +36,6 @@
         {
           "en": "protein synthesis",
           "correct": "蛋白質合成"
-        },
-        {
-          "en": "deoxyribonucleic acid",
-          "correct": "去氧核醣核酸"
-        },
-        {
-          "en": "protein synthesis",
-          "correct": "蛋白質合成"
         }
       ]
     },
@@ -79,10 +71,6 @@
       "text": "**答案：A**\n\n**關鍵觀念**\n無乳鏈球菌（Streptococcus agalactiae）依據蘭斯菲爾德分群（Lancefield grouping）屬於B群鏈球菌（Group B streptococcus）。該菌為人類腸胃道（gastrointestinal tract）與生殖泌尿道（genitourinary tract）的正常菌群（normal flora）。感染主要好發於新生兒（neonate）與孕婦（pregnant women）。\n\n**選項解析**\n- (A) 錯誤。該菌屬於B群鏈球菌，而非A群鏈球菌（Group A streptococcus）。A群鏈球菌主要指化膿性鏈球菌（Streptococcus pyogenes）。\n- (B) 正確。該菌能分泌CAMP因子（CAMP factor）。此因子與金黃色葡萄球菌（Staphylococcus aureus）的β-溶血素（beta-hemolysin）產生協同作用。因此CAMP測試（CAMP test）會呈陽性。\n- (C) 正確。該菌常無症狀地定植（colonization）於成人腸胃道或生殖泌尿道。\n- (D) 正確。該菌是新生兒敗血症（sepsis）、腦膜炎（meningitis）與肺炎（pneumonia）的主要病原菌之一。",
       "level": "terms",
       "terms": [
-        {
-          "en": "gastrointestinal tract",
-          "correct": "胃腸道"
-        },
         {
           "en": "gastrointestinal tract",
           "correct": "胃腸道"
@@ -332,10 +320,6 @@
         {
           "en": "vancomycin",
           "correct": "萬古黴素"
-        },
-        {
-          "en": "vancomycin",
-          "correct": "萬古黴素"
         }
       ]
     },
@@ -399,10 +383,6 @@
       "text": "**答案：B**\n\n**關鍵觀念**\n交感神經受體（adrenoceptor）拮抗劑可分為純beta受體（beta-receptor）阻斷劑與混合型阻斷劑。混合型藥物同時阻斷alpha受體（alpha-receptor）與beta受體。alpha受體阻斷會引起血管平滑肌（vascular smooth muscle）放鬆。此作用能有效降低周邊血管阻力。\n\n**選項解析**\n- (A) 阿替洛爾（atenolol）為選擇性beta-1受體（beta-1-receptor）阻斷劑。它缺乏alpha受體阻斷作用。\n- (B) 拉貝洛爾（labetalol）為混合型交感神經受體拮抗劑。它同時阻斷alpha受體與beta受體。其alpha受體阻斷效果最為顯著。\n- (C) 普萘洛爾（propranolol）為非選擇性beta受體阻斷劑。它不具alpha受體阻斷特性。\n- (D) 吲哚洛爾（pindolol）為非選擇性beta受體阻斷劑。它具備內在交感神經擬似活性（intrinsic sympathomimetic activity）。它不具alpha受體阻斷作用。",
       "level": "terms",
       "terms": [
-        {
-          "en": "adrenoceptor",
-          "correct": "腎上腺素受體"
-        },
         {
           "en": "adrenoceptor",
           "correct": "腎上腺素受體"

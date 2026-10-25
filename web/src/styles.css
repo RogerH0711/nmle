@@ -3306,3 +3306,7 @@ ul.login-note {
   justify-content: flex-end;
   gap: 8px;
 }
+
+.login-captcha:empty {
+  display: none;
+}

@@ -330,7 +330,8 @@ Supabase（登入、進度、排行榜）← GitHub Pages 做不到的部分
 - 密碼至少 8 個字元（前端檢查，線上也要設最短 8 碼），bcrypt 只看前 72 bytes 所以設上限。
 - 資料庫 trigger 擋下 `provider = 'email'` 但不是這個格式的註冊與改 Email：Email 方式一打開，任何人都能直接呼叫 API 用別人的真實 Email 註冊。Google 登入在建立使用者前就寫好 `provider = 'google'`（GoTrue `signup.go` 的 `ToUserModel`），不受影響。
 - 帳號名稱不是暱稱：註冊後暱稱一樣是「同學」加四碼，排行榜看不到帳號名稱。
-- 還沒做：CAPTCHA（Cloudflare Turnstile 要 Roger 開帳號、把 secret 填進 Dashboard；目前靠 Supabase 每個 IP 每 5 分鐘 30 次的登入限制）、登入中改密碼。
+- CAPTCHA（10/25，`web/src/turnstile.ts`）：Cloudflare Turnstile，打開登入對話框才載入 script；帳號密碼登入、註冊時把 token 送給 Supabase 核對（Google 登入不經過）。secret key 只在 Supabase Dashboard，site key 寫在程式裡。site key 綁網域，本機 localhost 要在 Cloudflare 的主機名稱加上 localhost 才能測。
+- 還沒做：登入中改密碼。
 
 **暱稱不用真名（已完成）**：新使用者的預設暱稱是「同學」加 4 碼，右上角可以自己改。改版前就登入的使用者，暱稱仍是 Google 名稱，要自己改。
 
@@ -528,7 +529,7 @@ Roger 想要的劇情畫面接近一般 galgame。參考的是三款遊戲的截
 | Supabase 沒開 Row Level Security | 任何人都能改排行榜或別人的進度 | 每張表都開 RLS，只允許使用者寫自己的資料（已完成，並從外部測過未登入讀寫都被擋） |
 | 排行榜被刷分 | 公開後排行榜失去意義 | 對錯已改由資料庫判斷，同一題同一天只算第一次；正解仍在前端，公開前評估改成作答後才向伺服器拿正解 |
 | 公開後暴露個資 | 陌生人看到真名、Roger 的學號 | 自訂暱稱。支援信箱維持學校信箱、不開專案 Gmail（10/25 Roger 決定：測試中的 Google 登入畫面只顯示 Supabase 網域，看不到支援信箱；commit 裡本來就是學校信箱；成大 Google Workspace 畢業後可以保留） |
-| 帳號密碼被暴力猜 | 別人登入朋友的帳號、改暱稱或刪帳號 | 密碼至少 8 碼、Supabase 依 IP 限制登入次數；公開前加 CAPTCHA |
+| 帳號密碼被暴力猜 | 別人登入朋友的帳號、改暱稱或刪帳號 | 密碼至少 8 碼、Supabase 依 IP 限制登入次數、Cloudflare Turnstile（10/25） |
 | Google 登入 100 人上限 | 公開後新使用者無法登入 | 發布 OAuth 應用程式並通過 Google 要求的驗證（階段 4） |
 | Supabase 免費方案用完 | 同步失敗或專案被暫停 | 公開前依當時方案上限估算人數，監看用量 |
 | galgame 內容影響觀感 | 部分使用者不想用，或影響履歷印象 | 角色模式可以一鍵關掉；履歷上同時寫題庫與學習設計的工程重點 |

@@ -50,6 +50,8 @@ export function authErrorText(error: { code?: string; message: string }, mode: '
     case 'over_request_rate_limit':
     case 'over_email_send_rate_limit':
       return '嘗試太多次了，請過幾分鐘再試'
+    case 'captcha_failed':
+      return '真人驗證沒有通過，請等下方驗證完成後再試一次'
     case 'signup_disabled':
     case 'email_provider_disabled':
     case 'no_session': // 線上還開著「Confirm email」

@@ -35,7 +35,6 @@
 
 **Roger**
 
-- 開放帳號密碼登入（10/25 做好，還沒上線）：依序：`npm run db:push`（`20261025120000_username_login.sql`，先有擋真實 Email 的 trigger）→ Supabase Dashboard 的 Authentication 打開 Email 登入方式與註冊、關掉「Confirm email」、密碼最短改成 8 → git push 部署前端。上線後註冊一個測試帳號試登入、登出、刪除帳號（「技術架構」的「登入」）。
 - 音檔做完後發改版通知給朋友，順便說登入不用給 Gmail，直接按「用 Google 登入」就好。
 - 看過五位學姊的劇本、調整語氣（10/25：之後再說）。
 
@@ -63,8 +62,8 @@
 - [x] 使用者自己刪除帳號（10/21，migration 要 Roger `npm run db:push`）
 - [x] README：架構圖、技術重點與取捨（10/21）；LICENSE 用 MIT（只涵蓋程式碼）；遊戲畫面截圖（10/22，`docs/screenshots/`：本機網站塞示範作答紀錄、攔下所有 Supabase 請求，排行榜是虛構暱稱；介面大改時重拍）
 - [x] commit 作者 email（學校信箱）：10/21 Roger 決定維持不改，也不改寫歷史
-- [x] 登入對話框說明 Google 登入拿到什麼，另外提供不用 Email 的帳號密碼（10/25，朋友擔心個資）
-- [ ] 帳號密碼登入加 CAPTCHA（Cloudflare Turnstile，要 Roger 開帳號）
+- [x] 登入對話框說明 Google 登入拿到什麼，另外提供不用 Email 的帳號密碼（10/25 上線，Roger 實測註冊、登入、登出、刪除帳號都正常）
+- [x] 帳號密碼登入加 CAPTCHA（Cloudflare Turnstile，10/25）
 - [ ] 題庫抽檢進 CI（資料庫測試與前端單元測試已在 CI）
 - [ ] 確認 Dcard 醫師版板規
 - [ ] 寄信給陽明醫國考詳解的作者群，說明我們拿詳解來比對（見「詳解與題目正確率」）

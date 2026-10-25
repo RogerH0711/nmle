@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { loadTurnstile, TURNSTILE_SITE_KEY } from './turnstile'
 import {
   authErrorText, normalizeUsername, PASSWORD_MAX, passwordError, USERNAME_MAX, usernameError,
 } from './login'
@@ -25,6 +26,32 @@ export function LoginDialog({ onClose }: { onClose: () => void }) {
     return () => window.removeEventListener('keydown', onKey)
   }, [onClose])
 
+  // 帳號密碼登入前的真人驗證（turnstile.ts）
+  const captchaRef = useRef<HTMLDivElement>(null)
+  const widgetId = useRef<string | null>(null)
+  const [captcha, setCaptcha] = useState<string | null>(null)
+  const [captchaFailed, setCaptchaFailed] = useState(false)
+
+  useEffect(() => {
+    let cancelled = false
+    loadTurnstile()
+      .then((t) => {
+        if (cancelled || !captchaRef.current) return
+        widgetId.current = t.render(captchaRef.current, {
+          sitekey: TURNSTILE_SITE_KEY,
+          language: 'zh-tw',
+          callback: (token: string) => setCaptcha(token),
+          'expired-callback': () => setCaptcha(null),
+          'error-callback': () => setCaptcha(null),
+        })
+      })
+      .catch(() => setCaptchaFailed(true))
+    return () => {
+      cancelled = true
+      if (widgetId.current) window.turnstile?.remove(widgetId.current)
+    }
+  }, [])
+
   const switchMode = (m: Mode) => {
     setMode(m)
     setError(null)
@@ -37,14 +64,18 @@ export function LoginDialog({ onClose }: { onClose: () => void }) {
     if (invalid) return setError(invalid)
     if (!password) return setError('請輸入密碼')
     if (mode === 'signup' && password !== confirm) return setError('兩次輸入的密碼不一樣')
+    if (!captcha) return setError(captchaFailed ? '真人驗證載入失敗，請確認網路連線後重新整理' : '請等下方的真人驗證完成')
     setBusy(true)
     setError(null)
     try {
-      await (mode === 'signup' ? signUpWithUsername(name, password) : signInWithUsername(name, password))
+      await (mode === 'signup' ? signUpWithUsername(name, password, captcha) : signInWithUsername(name, password, captcha))
       onClose() // 登入後的同步由 App 的 onAuthStateChange 處理
     } catch (e) {
       setError(authErrorText(e as { code?: string; message: string }, mode))
       setBusy(false)
+      // token 只能用一次，失敗後重新驗證
+      setCaptcha(null)
+      if (widgetId.current) window.turnstile?.reset(widgetId.current)
     }
   }
 
@@ -123,6 +154,7 @@ export function LoginDialog({ onClose }: { onClose: () => void }) {
               </ul>
             </>
           )}
+          <div ref={captchaRef} className="login-captcha" />
           {error && <p className="login-error">{error}</p>}
           <div className="login-actions">
             <button type="button" className="ghost small" onClick={onClose}>

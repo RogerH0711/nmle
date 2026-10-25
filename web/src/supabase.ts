@@ -16,13 +16,14 @@ export function signInWithGoogle() {
 }
 
 // 帳號密碼登入：帳號名稱轉成 名稱@users.invalid（login.ts）。錯誤直接丟出，由畫面轉成中文訊息
-export async function signInWithUsername(name: string, password: string) {
-  const { error } = await supabase.auth.signInWithPassword({ email: usernameEmail(name), password })
+// captchaToken 是 Cloudflare Turnstile 的驗證結果（turnstile.ts），Supabase 會向 Cloudflare 核對
+export async function signInWithUsername(name: string, password: string, captchaToken: string) {
+  const { error } = await supabase.auth.signInWithPassword({ email: usernameEmail(name), password, options: { captchaToken } })
   if (error) throw error
 }
 
-export async function signUpWithUsername(name: string, password: string) {
-  const { data, error } = await supabase.auth.signUp({ email: usernameEmail(name), password })
+export async function signUpWithUsername(name: string, password: string, captchaToken: string) {
+  const { data, error } = await supabase.auth.signUp({ email: usernameEmail(name), password, options: { captchaToken } })
   if (error) throw error
   // 線上沒關掉「Confirm email」時，註冊會等一封寄不出去的確認信，不會直接登入
   if (!data.session) throw { code: 'no_session', message: 'email confirmation required' }

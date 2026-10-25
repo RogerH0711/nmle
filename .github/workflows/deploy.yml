@@ -35,7 +35,8 @@ jobs:
       - name: 資料庫測試（權限、判分、排行榜）
         run: npm run test:db
 
-      - name: 錯題複習規則測試
+      # 含題庫抽檢（web/src/questionBank.test.ts）：data/ 的考卷、圖片、正解 seed、詳解要對得起來
+      - name: 前端單元測試與題庫抽檢
         run: npm test --prefix web
 
   build:

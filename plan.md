@@ -12,7 +12,7 @@
 
 已完成（細節見 `docs/design.md` 括號內的段落）：
 
-- 題庫：110–115 年 24 份考卷、2,399 題可出題，人工修正 21 題（「題庫處理流程」）。
+- 題庫：110–115 年 24 份考卷、2,399 題可出題，人工修正 21 題；CI 會抽檢題庫（「題庫處理流程」）。
 - 刷題、錯題複習（Leitner）、模擬考、排行榜三種、伺服器判斷對錯、Google 登入與離線同步（「遊戲設計」「技術架構」）。
 - 五位學姊的立繪與台詞、好感度與各五段劇情、吃醋、九張劇情背景、校園地圖首頁、能力值面板、學姊傳訊息、劇情畫面改版（「遊戲設計」「遊戲介面方向」）。
 - 使用說明、回報疑義、免責聲明、問 AI 按鈕、學弟／學妹稱呼、匿名使用統計（「詳解與題目正確率」「專案概要」）。
@@ -33,7 +33,7 @@
 3. 題庫瀏覽、搜尋、選項打亂、SEO（做法見 `docs/design.md`「題庫瀏覽與搜尋」）：
    1. ~~瀏覽頁與關鍵字搜尋~~（10/25 完成，`web/src/QuestionBank.tsx`，網址 `#/bank/...`）。10/25 使用說明加了「題庫」一節和打亂選項的說明（`Guide.tsx`）；還沒給朋友試用。
    2. ~~選項打亂~~（10/25 完成，`web/src/options.ts`；不打亂的只有一題多解等 43 題）。
-   3. ~~SEO 靜態頁~~（10/25 完成，build 時產生 `q/` 底下 2,424 頁與 `sitemap.xml`）。10/25 Roger 已在 Search Console 驗證（`data/google329b5f494802031d.html`，不能刪）、提交 sitemap、要求總覽頁建立索引，等收錄；幾天後 sitemap 還是「無法擷取」再查。之後可以加 Education Q&A 結構化資料。
+   3. ~~SEO 靜態頁~~（10/25 完成，build 時產生 `q/` 底下 2,424 頁與 `sitemap.xml`）。10/25 Roger 已在 Search Console 驗證（`data/google329b5f494802031d.html`，不能刪）、提交 sitemap、要求總覽頁建立索引，等收錄；幾天後 sitemap 還是「無法擷取」再查。10/25 每題頁加了 schema.org JSON-LD（`Quiz` + 選擇題 `Question`，含正解）；Google 的 Education Q&A 只收 Flashcard、不支援中文，目前不會有複合式搜尋結果（理由見 `docs/design.md`「公開與作品集」的 SEO）。
    4. 之後再看：主題標籤與同義詞（搜「抗生素」找得到 gentamicin），用本機 LLM 產生再抽查；先看上線後大家實際搜什麼。
 4. 依朋友回饋調整好感度門檻（`web/src/affection.ts` 的 `GOALS`，等有實際升階速度的資料；10/25 Roger：之後再說）；書籤賺法與禮物價格也一起看（`shop.ts` 的 `EARN`、`data/gifts.json`）。
 5. 劇情 CG：要先用定稿立繪訓練每位學姊的 LoRA（10/22 Roger：之後再做，A100 的運算單元剩不多）。
@@ -71,7 +71,7 @@
 - [x] 登入對話框說明 Google 登入拿到什麼，另外提供不用 Email 的帳號密碼（10/25 上線，Roger 實測註冊、登入、登出、刪除帳號都正常）
 - [x] 帳號密碼登入加 CAPTCHA（Cloudflare Turnstile，10/25）
 - [ ] 處理 security review 的發現（10/25，`reports/security-review.md`）：H1、H2、H3-1、M1、M2 已寫好 migration `20261025180000_leaderboard_integrity.sql`（還沒合併到 main，合併後要 Roger `npm run db:push`）；密碼長度、Turnstile 已確認；Dashboard 檢查清單其餘項目、M3–M4、L 系列還沒做
-- [ ] 題庫抽檢進 CI（資料庫測試與前端單元測試已在 CI）
+- [x] 題庫抽檢進 CI（10/25，`web/src/questionBank.test.ts`，跟著 `npm test` 跑；第一次跑抓到 2 題 override 混進看不見的控制字元，已修正）
 - [ ] 確認 Dcard 醫師版板規
 - [ ] 寄信給陽明醫國考詳解的作者群，說明我們拿詳解來比對（見「詳解與題目正確率」）
 

@@ -1,7 +1,7 @@
 // 模擬考的計分與計時規則（要和資料庫的 leaderboard_mock 一致）。執行：npm test
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { bestCharacter, firstAttempts, formatClock, mockQueue, scoreMock, submitTime, type MockRecord } from './mock.ts'
+import { bestCharacter, firstAttempts, formatClock, mockQueue, scoreMock, submitTime, tooQuick, type MockRecord } from './mock.ts'
 import type { Letter, Question } from './types.ts'
 
 const q = (number: number, subject: string, answers: Letter[], extra: Partial<Question> = {}): Question => ({
@@ -59,6 +59,11 @@ test('倒數顯示', () => {
   assert.equal(formatClock(3909_000), '1:05:09')
   assert.equal(formatClock(299_001), '5:00') // 不足一秒進位，倒數到 0 才是真的時間到
   assert.equal(formatClock(-5000), '0:00')
+})
+
+test('作答不到 10 分鐘就交卷不列入排行榜', () => {
+  assert.equal(tooQuick({ started_at: '2026-10-25T00:00:00Z', submitted_at: '2026-10-25T00:09:59Z' }), true)
+  assert.equal(tooQuick({ started_at: '2026-10-25T00:00:00Z', submitted_at: '2026-10-25T00:10:00Z' }), false)
 })
 
 test('每份考卷只有第一次模擬考列入排行榜', () => {

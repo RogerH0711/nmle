@@ -6,7 +6,7 @@ import {
 } from './supabase'
 import type { Index } from './types'
 import { paperLabel } from './bank'
-import { formatClock } from './mock'
+import { formatClock, MIN_RANKED_MINUTES } from './mock'
 
 type Tab = 'weekly' | 'streak' | 'mock'
 
@@ -86,7 +86,7 @@ function WeeklyTable({ rows }: { rows: WeeklyRow[] | null }) {
   return (
     <>
       <p className="board-note">
-        本週（週一 00:00 起）的作答。同一題同一天只算第一次，至少 {WEEKLY_MIN_ANSWERS} 題才排名。
+        本週（週一 00:00 起）的作答。同一題只算本週第一次作答，送分題不算，至少 {WEEKLY_MIN_ANSWERS} 題才排名。
       </p>
       {rows.length === 0 ? (
         <p className="board-empty">這週還沒有人作答。</p>
@@ -126,7 +126,7 @@ function StreakTable({ rows }: { rows: StreakRow[] | null }) {
   if (!rows) return <p className="board-empty">載入中…</p>
   return (
     <>
-      <p className="board-note">一天至少作答 {STREAK_MIN_DAILY} 題才算一天；今天或昨天有作答才算還在連續中。</p>
+      <p className="board-note">一天至少作答 {STREAK_MIN_DAILY} 題才算一天；今天或昨天有作答才算還在連續中。離線作答超過 3 天才同步的不算。</p>
       {rows.length === 0 ? (
         <p className="board-empty">目前沒有人在連續作答中。</p>
       ) : (
@@ -174,7 +174,7 @@ function MockTable(props: { rows: MockRow[] | null; index: Index; paper: string 
           ))}
         </select>
       </div>
-      <p className="board-note">每份考卷只採計第一次模擬考；同分時用時短的排前面。</p>
+      <p className="board-note">每份考卷只採計第一次模擬考，作答不到 {MIN_RANKED_MINUTES} 分鐘就交卷的不算；同分時用時短的排前面。</p>
       {!rows ? (
         <p className="board-empty">載入中…</p>
       ) : rows.length === 0 ? (

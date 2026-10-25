@@ -59,7 +59,7 @@
 確認朋友真的會用、題庫錯誤修得差不多之後才公開（Dcard）。理由見 `docs/design.md`「公開與作品集」。
 
 - [x] 自訂暱稱
-- [x] 伺服器判斷對錯（基本版；是否改成作答後才向伺服器拿正解，見「技術架構」）
+- [x] 伺服器判斷對錯（基本版）；10/25 決定不改成作答後才拿正解（正解本來就公開），改用排行榜防偽造規則（見「技術架構」）
 - [x] 回報疑義按鈕和免責聲明
 - [ ] Google 登入發布：OAuth 用戶端已在個人帳號（10/21 Roger 確認），剩「發布應用程式」（可能要驗證品牌和網域）
 - [x] 支援信箱：10/25 Roger 決定維持學校信箱，不開專案 Gmail（理由見「風險」表）
@@ -70,7 +70,7 @@
 - [x] commit 作者 email（學校信箱）：10/21 Roger 決定維持不改，也不改寫歷史
 - [x] 登入對話框說明 Google 登入拿到什麼，另外提供不用 Email 的帳號密碼（10/25 上線，Roger 實測註冊、登入、登出、刪除帳號都正常）
 - [x] 帳號密碼登入加 CAPTCHA（Cloudflare Turnstile，10/25）
-- [ ] 處理 security review 的發現（10/25，`reports/security-review.md`）：至少修好「公開前一定要做」的 H1、H2、H3-1、M1、M2，並照 Dashboard 檢查清單確認登入設定
+- [ ] 處理 security review 的發現（10/25，`reports/security-review.md`）：H1、H2、H3-1、M1、M2 已寫好 migration `20261025180000_leaderboard_integrity.sql`（還沒合併到 main，合併後要 Roger `npm run db:push`）；密碼長度、Turnstile 已確認；Dashboard 檢查清單其餘項目、M3–M4、L 系列還沒做
 - [ ] 題庫抽檢進 CI（資料庫測試與前端單元測試已在 CI）
 - [ ] 確認 Dcard 醫師版板規
 - [ ] 寄信給陽明醫國考詳解的作者群，說明我們拿詳解來比對（見「詳解與題目正確率」）

@@ -12,6 +12,8 @@ const SUPABASE_STUB = `
   create role authenticated nologin;
   create schema auth;
   create table auth.users (id uuid primary key, email text, raw_user_meta_data jsonb default '{}', raw_app_meta_data jsonb default '{}');
+  create table auth.identities (id uuid primary key default gen_random_uuid(), user_id uuid not null references auth.users (id) on delete cascade,
+    provider text not null, identity_data jsonb not null default '{}');
   create function auth.uid() returns uuid language sql stable as
     $$ select nullif(current_setting('request.jwt.claim.sub', true), '')::uuid $$;
   grant usage on schema public, auth to anon, authenticated;
@@ -79,4 +81,12 @@ export async function answer(db, userId, questionId, picked, claimed = true, ago
     [id, questionId, picked, claimed, ago],
   )
   return res.rows[0]
+}
+
+/**
+ * 把這位使用者目前的作答都當成「當時就同步上來」：synced_at 設成作答時間、列入排行榜。
+ * 用來造過去幾天的正常紀錄；直接用 API 寫入太舊的作答時間，資料庫會標成不列入排行榜。
+ */
+export async function syncedOnTime(db, userId) {
+  await db.query(`update public.answers set synced_at = answered_at, ranked = true where user_id = $1`, [userId])
 }

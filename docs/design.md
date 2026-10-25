@@ -155,6 +155,7 @@ Roger 10/20 選的方向：先做禮物；禮物「稍微」加好感度；貨�
 - 比對規則（`search.ts` 的 `fold`）：全形轉半形、英文不分大小寫、略過空白（考卷有的在中文和英數字之間留空格、有的沒有）；空白分開的幾個字要同時出現。符合的字用 `<mark>` 標出來。
 - 網址 `#/bank/<範圍>[/<題號>][?q=關鍵字&s=學科]`（範圍是 `all`、`y113` 或考卷 id），篩選條件變動時跟著更新，可以分享；單題網址直接展開正解。從題庫網址進來的不顯示封面和使用說明，離開題庫畫面時拿掉網址的 `#/bank`。之後的 SEO 靜態頁也連回這裡。
 - 資料：24 份考卷約 2,400 題，`index.json` 有年度、梯次、考卷、學科。
+- SEO 靜態頁與 JSON-LD 結構化資料寫在「公開與作品集」的 SEO 段落。
 - 字串比對找不到上位概念（搜「抗生素」找不到只寫 gentamicin 的題目），要靠每題的主題標籤和同義詞表，先不做，看上線後的搜尋需求再說。學科目前是依題號區段粗分（`subject_status: "range"`），學科篩選要準就得逐題確認。
 - 正解在瀏覽頁預設收合。試題和答案在網路上本來就查得到，瀏覽頁不會讓刷分變得更嚴重（見「技術架構」的正解說明）。
 - **選項打亂**（Roger 10/25 提，10/25 完成，`web/src/options.ts`）：目的不是防作弊，而是讓人沒辦法記「這題答案是 C」，刷第二遍時要真的重新想。
@@ -446,11 +447,20 @@ galgame 最常看的是臉，所以選 Animagine。兩位角色的 `scrubs` 常�
 
 **SEO（10/25 完成，`web/src/staticPages.ts`、`web/scripts/static-pages.ts`）**：網站是 React 單頁應用，Google 爬進來看到的幾乎是空白頁，題目搜不到。`npm run build` 在 vite build 之後產生靜態頁：
 
-- `q/index.html` 總覽、每份考卷一頁 `q/<考卷>.html`（題目列表）、每題一頁 `q/<考卷>/<題號>.html`，共 2,424 頁、約 10.7 MB，CSS 共用 `q/style.css`；另外產生 `sitemap.xml`。
+- `q/index.html` 總覽、每份考卷一頁 `q/<考卷>.html`（題目列表）、每題一頁 `q/<考卷>/<題號>.html`，共 2,424 頁、約 14 MB（含 JSON-LD），CSS 共用 `q/style.css`；另外產生 `sitemap.xml`。
 - 每題一頁是為了讓標題對到搜尋：標題用題幹開頭加「醫師一階 113 年第 1 次 醫學(一) 第 45 題」，描述放題幹和選項。正解和 AI 詳解放在收合的 `<details>` 裡（Google 讀得到，讀者要點開），跟題庫頁「正解預設收合」一致。
 - 每頁都有「在網站上看這題、刷整份考卷」連回 `#/bank/<考卷>/<題號>`；網站頁尾有「歷屆試題總覽」連到靜態頁，讓爬蟲從首頁找得到。
 - 網站在 `rogerh0711.github.io/nmle/` 底下，`robots.txt` 只能放在網域根目錄（不是這個 repo 管的），所以 sitemap 要在 Google Search Console 手動提交。
-- 還沒做：Google 的 Education Q&A 結構化資料（JSON-LD），欄位要求要先查官方文件再加。
+- **結構化資料（10/25，`questionJsonLd`）**：每題頁的 `<head>` 有一段 schema.org JSON-LD，考卷頁和總覽頁沒有。
+  - 查過的 Google 規範（2026-10-25 查，三份文件都是 2026-09 更新）：
+    - Education Q&A（`Quiz` + `Question`）：`eduQuestionType` 只接受 `Flashcard`，選擇題不符合資格；支援語言只有英文、葡萄牙文、越南文、西班牙文（墨西哥），**沒有中文**。
+    - Practice problems（原本給選擇題用的 `Quiz`，`eduQuestionType: Multiple choice`）：Google 已宣布停用，2026 年 1 月起 Search Console 不再支援。
+    - QAPage：給使用者提問、其他使用者回答的論壇；網站自己寫答案的頁面不能用。
+    - 結論：目前沒有任何一種能讓這些頁面在 Google 出現複合式搜尋結果。
+  - 所以不為了 Google 的格式硬套（把選擇題標成 `Flashcard` 是不實標記，可能讓整站被判不符資格），改成照 schema.org 如實描述：`Quiz` 包一題 `Question`，`eduQuestionType: "Multiple choice"`，正解放 `acceptedAnswer`、其他選項放 `suggestedAnswer`（`name` 是字母、`position` 是選項順序），附圖放 `image`，學科放 `about` 和 `educationalAlignment`，`isPartOf` 指向考卷頁。形狀和 Google 的 Education Q&A 一樣（`Quiz` → `hasPart` → `Question` → `acceptedAnswer`），之後 Google 開放中文或選擇題，只要對照新規範調整欄位。現在的效益是讓搜尋引擎（Google、Bing）明確知道頁面是一題選擇題、哪個是正解，不保證有畫面上的變化。
+  - 一題多解有多個 `acceptedAnswer`；送分題沒有 `acceptedAnswer`，四個選項都是 `suggestedAnswer`；官方註記（`answer_note`）放 `comment`。AI 詳解不放進去：沒有人工審核，不該用結構化資料標成答案說明。
+  - **正解放進結構化資料**：靜態頁的 HTML 本來就有正解（收在 `<details>` 裡），JSON-LD 只是同一份內容換個格式，沒有多公開任何東西；「正解只放在 `question_keys`」是指資料庫裡判斷對錯用的表，前端的題庫 JSON 和靜態頁本來就有正解（見「技術架構」的正解說明）。如果之後改成「送出作答後才向伺服器拿正解」，靜態頁和 JSON-LD 的正解要一起拿掉，否則擋不住；拿掉時刪 `acceptedAnswer`、四個選項都放 `suggestedAnswer`（像送分題那樣）。
+  - 每題頁約多 1.3 KB，`q/` 全部從 11.2 MB 變 14.3 MB。`<` 跳脫成 `\u003c`，題幹裡有 `</script>` 也不會提早結束標籤。`staticPages.test.ts` 會解析 JSON-LD 檢查欄位。上線後可以拿一頁到 [Schema Markup Validator](https://validator.schema.org/) 檢查（Google 的 Rich Results Test 不支援這個型別，會顯示沒有可用項目，是正常的）。
 
 ## 開發紀錄
 

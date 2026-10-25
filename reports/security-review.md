@@ -22,15 +22,15 @@
 
 | # | 嚴重度 | 項目 | 狀態 |
 | --- | --- | --- | --- |
-| H1 | 高 | 連續天數榜：`answered_at` 由前端決定，一次請求就能回填 365 天 | 已修（`20261025180000_leaderboard_integrity.sql`，待 db:push） |
+| H1 | 高 | 連續天數榜：`answered_at` 由前端決定，一次請求就能回填 365 天 | 已修（`20261025180000_leaderboard_integrity.sql`） |
 | H2 | 高 | 模擬考榜：`started_at` 由前端決定，可以補一筆「更早的第一次」，滿分、0 秒 | 已修（同上） |
 | H3 | 高 | 正解本來就公開（題庫 JSON、`q/` 靜態頁、repo 的 seed），週榜正確率可以直接刷到 100% | 第 1 點已修（同上）；照正解作答本身擋不住 |
 | M1 | 中 | 任何登入者都能列出所有使用者的 user id、暱稱、註冊時間；與隱私權政策的說法不一致 | 已修（同上） |
 | M2 | 中 | Google 帳號可以把 Email 改成任意地址，`check_username_email` 擋不到 | 已修（同上） |
-| M3 | 中 | 寫入沒有數量限制：作答、模擬考、送禮、回報、使用統計可以灌爆免費方案的空間 | 已修（`20261025200000_rate_limits.sql`，待 db:push）；用量告警待 Roger 設定 |
+| M3 | 中 | 寫入沒有數量限制：作答、模擬考、送禮、回報、使用統計可以灌爆免費方案的空間 | 已修（`20261025200000_rate_limits.sql`）；用量告警待 Roger 設定 |
 | M4 | 中 | 匿名回報的「每小時 200 筆」是全站共用額度，任何人都能讓所有匿名回報失效 | 減輕（同上）；要完全擋住得加 CAPTCHA |
 | M5 | 中 | 登入相關設定只在 Dashboard，repo 裡的 `config.toml` 與文件不一致（密碼長度 6 vs 8） | 密碼長度、CAPTCHA 已確認（10/25），其餘待確認 |
-| L1 | 低 | 暱稱沒有伺服器端的內容檢查：純空白、RTL 控制字元、冒用別人的暱稱 | 已修（`20261025220000_display_name_rules.sql`，待 db:push）；同名沒擋，改用 `hidden` 處理 |
+| L1 | 低 | 暱稱沒有伺服器端的內容檢查：純空白、RTL 控制字元、冒用別人的暱稱 | 已修（`20261025220000_display_name_rules.sql`）；同名沒擋，改用 `hidden` 處理 |
 | L2 | 低 | 排行榜函式的門檻參數由前端決定，`min_daily = 1` 可以看到所有人的活躍狀況 | 已修（同上） |
 | L3 | 低 | `rogerh0711.github.io` 是共用 origin，登入權杖存在 localStorage；沒有 CSP | CSP 已加；共用 origin 等 Roger 決定 |
 | L4 | 低 | `answers.synced_at`、`profiles.created_at` 可以由前端指定或修改 | 已修（synced_at 在 `20261025180000`，created_at 在 `20261025220000`） |
@@ -56,6 +56,8 @@ Bug 與效能（B1–B7）在後半段。
 **10/25 修正（七）**：L3。CSP 加在 build 出來的 `index.html`（`web/src/csp.ts`，由 `web/vite.config.ts` 加進去；開發伺服器不加）、SEO 靜態頁（不允許任何 script）和 `privacy.html`。script 只能來自自己和 Turnstile，連線只能到自己和 Supabase。用 Playwright 走過角色模式地圖與劇情、作答、聲音、題庫搜尋、排行榜、登入對話框（真的載入 Turnstile）、靜態頁，網站本身沒有違規；故意插入外部 script 會被擋下。`style-src` 保留 `'unsafe-inline'`：試過拿掉也正常，但沙盒連不到 Cloudflare 的驗證主機，Turnstile 互動驗證的流程沒辦法完整測。
 `frame-ancestors` 不能用 `<meta>` 設定，GitHub Pages 又不能加 header，所以擋不了被別的網站用 iframe 嵌入（clickjacking）；刪除帳號要自己輸入「刪除」，影響有限。
 共用 origin 沒辦法用程式解決：10/25 查過 `rogerh0711.github.io` 底下還有 `K-Map-Practice`、`Serenity_Tracker` 兩個網站，都是單一 HTML 檔、script 全部內嵌，沒有載入第三方 script，目前風險低。要徹底分開得換 origin（例如開一個 GitHub organization，網址變成 `<組織名>.github.io/nmle`，免費），但網址會變（Search Console、OAuth 的 Redirect URL、Turnstile 的主機名稱、朋友手上的連結都要改），等 Roger 決定；在那之前，同一個帳號底下的網站不要載入第三方 script、不要顯示別人提供的內容。
+
+**10/25 上線**：5 個 migration 由 Roger `npm run db:push` 套用，確認線上舊版前端正常後合併 [RogerH0711/nmle#9](https://github.com/RogerH0711/nmle/pull/9)，GitHub Actions 部署成功；線上首頁有 CSP，Roger 實測帳號密碼登入（含 Turnstile）正常。
 
 ---
 

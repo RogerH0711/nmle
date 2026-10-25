@@ -16,6 +16,7 @@
 - 刷題、錯題複習（Leitner）、模擬考、排行榜三種、伺服器判斷對錯、Google 登入與離線同步（「遊戲設計」「技術架構」）。
 - 五位學姊的立繪與台詞、好感度與各五段劇情、吃醋、九張劇情背景、校園地圖首頁、能力值面板、學姊傳訊息、劇情畫面改版（「遊戲設計」「遊戲介面方向」）。
 - 使用說明、回報疑義、免責聲明、問 AI 按鈕、學弟／學妹稱呼、匿名使用統計（「詳解與題目正確率」「專案概要」）。
+- 公開前的 security review（10/25，`reports/security-review.md`）：排行榜防偽造、寫入數量上限、暱稱規則與排行榜隱藏、登出與刪除帳號清理本機資料、作答紀錄精簡格式與增量同步、CSP 都已上線（5 個 migration 已 `db:push`，前端已部署，Roger 實測登入正常）（「技術架構」）。
 - 台詞擴充（10/20）：每位學姊加 23 句熟識以後才出現的當面台詞（回合開始、答對、答錯、結束、連對、久沒上線），每位約 72 句。
 - 聲音（10/20）：音效、BGM、語音的播放與設定，預設靜音；BGM 和配音的音檔還沒做（「美術與內容」的「聲音」）。
 - 禮物商店（10/20）：書籤由作答紀錄推算，送禮稍微推進熟識、在意（「獎勵與商店」）。
@@ -71,7 +72,8 @@
 - [x] commit 作者 email（學校信箱）：10/21 Roger 決定維持不改，也不改寫歷史
 - [x] 登入對話框說明 Google 登入拿到什麼，另外提供不用 Email 的帳號密碼（10/25 上線，Roger 實測註冊、登入、登出、刪除帳號都正常）
 - [x] 帳號密碼登入加 CAPTCHA（Cloudflare Turnstile，10/25）
-- [ ] 處理 security review 的發現（10/25，`reports/security-review.md`）：H1、H2、H3-1、M1–M4、L1、L2、L4 已寫好 migration `20261025180000_leaderboard_integrity.sql`、`20261025200000_rate_limits.sql`、`20261025220000_display_name_rules.sql`、`20261025230000_sync_and_leaderboard_perf.sql`、`20261025240000_report_owner.sql`（還沒合併到 main，合併後要 Roger `npm run db:push`）；密碼長度、Turnstile 已確認；L3 的 CSP、L5、B1–B7 已修（B3、B4 有 migration）；Dashboard 檢查清單其餘項目（含用量告警）還沒做；L6 只記錄不修
+- [x] security review 的發現（10/25 修正並上線，`reports/security-review.md`）；L6（帳號名稱可以被試出來）只記錄不修
+- [ ] security review 的 Dashboard 檢查清單其餘項目（Roger，報告最後）：Confirm email 關閉、Secure email change 開啟、Anonymous sign-ins 關閉、Redirect URLs 只留自己的網址、設定用量告警（Settings → Usage）
 - [x] 題庫抽檢進 CI（10/25，`web/src/questionBank.test.ts`，跟著 `npm test` 跑；第一次跑抓到 2 題 override 混進看不見的控制字元，已修正）
 - [ ] 確認 Dcard 醫師版板規
 - [ ] 寄信給陽明醫國考詳解的作者群，說明我們拿詳解來比對（見「詳解與題目正確率」）
@@ -93,3 +95,4 @@
 - 改 pipeline 後重跑 `pipeline/build_exam.py --years 110 115`，確認每份考卷的自動檢查都通過，並和改之前的輸出比對差異；正解有變動就重跑 `pipeline/export_keys.py`，再請 Roger 執行 `npm run db:push`。
 - 資料庫變更：`supabase/migrations/` 新檔案加 `supabase/tests/` 的測試（`npm run test:db`），每張新表開 RLS；推送後從外部測一次未登入的讀寫。流程見 `supabase/README.md`。
 - push 到 main 後 GitHub Actions 先跑測試，沒過不部署。
+- 有 migration 的 PR：合併前先在 branch 上 `npm run db:push`，確認線上舊版前端正常再合併（合併就會自動部署前端；新版前端如果依賴新的資料庫規則，順序反了會出錯）。所以 migration 要寫成和舊版前端相容。

@@ -33,7 +33,7 @@
 3. 題庫瀏覽、搜尋、選項打亂、SEO（做法見 `docs/design.md`「題庫瀏覽與搜尋」）：
    1. ~~瀏覽頁與關鍵字搜尋~~（10/25 完成，`web/src/QuestionBank.tsx`，網址 `#/bank/...`）。還沒寫進使用說明（`Guide.tsx`），也還沒給朋友試用。
    2. ~~選項打亂~~（10/25 完成，`web/src/options.ts`；不打亂的只有一題多解等 43 題）。
-   3. SEO：build 後替每份考卷產生靜態 HTML 與 sitemap，讓 Google 收錄得到題目。約一到兩天。
+   3. ~~SEO 靜態頁~~（10/25 完成，build 時產生 `q/` 底下 2,424 頁與 `sitemap.xml`）。等 Roger 在 Search Console 提交 sitemap；之後可以加 Education Q&A 結構化資料。
    4. 之後再看：主題標籤與同義詞（搜「抗生素」找得到 gentamicin），用本機 LLM 產生再抽查；先看上線後大家實際搜什麼。
 4. 依朋友回饋調整好感度門檻（`web/src/affection.ts` 的 `GOALS`，等有實際升階速度的資料；10/25 Roger：之後再說）；書籤賺法與禮物價格也一起看（`shop.ts` 的 `EARN`、`data/gifts.json`）。
 5. 劇情 CG：要先用定稿立繪訓練每位學姊的 LoRA（10/22 Roger：之後再做，A100 的運算單元剩不多）。
@@ -41,6 +41,7 @@
 
 **Roger**
 
+- Google Search Console：新增網址前置字元資源 `https://rogerh0711.github.io/nmle/`，驗證擁有權（HTML 檔放進 `data/`，或 meta 標記加進 `web/index.html`），再提交 `sitemap.xml`（部署後才有）。
 - 10/25 改版通知已發；台詞改版、音檔做完再發一次。
 - 看過五位學姊的劇本、調整語氣（10/25：之後再說）。
 

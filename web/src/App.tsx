@@ -1121,6 +1121,9 @@ function Disclaimer() {
       </p>
       <p>
         <a href={`${import.meta.env.BASE_URL}privacy.html`}>隱私權政策與使用條款</a>
+        {/* 靜態的歷屆試題頁（build 時產生，給搜尋引擎收錄；scripts/static-pages.ts） */}
+        {' ・ '}
+        <a href={`${import.meta.env.BASE_URL}q/index.html`}>歷屆試題總覽</a>
       </p>
     </footer>
   )

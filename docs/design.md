@@ -438,7 +438,13 @@ galgame 最常看的是臉，所以選 Animagine。兩位角色的 `scrubs` 常�
 
 公開前要完成的十項清單與進度在 `plan.md`「公開前要完成」。
 
-**SEO（10/25 規劃，還沒做）**：網站是 React 單頁應用，Google 爬進來看到的幾乎是空白頁，題目搜不到。build 後多跑一支腳本，替每份考卷（或每題）產生靜態 HTML（題目、選項、詳解直接寫在頁面裡，加標題、描述）和 sitemap，讓有人 Google「某藥名 醫師國考」時能找到網站、點進來刷題。網址和題庫瀏覽頁共用（見「遊戲設計」的「題庫瀏覽與搜尋」）。
+**SEO（10/25 完成，`web/src/staticPages.ts`、`web/scripts/static-pages.ts`）**：網站是 React 單頁應用，Google 爬進來看到的幾乎是空白頁，題目搜不到。`npm run build` 在 vite build 之後產生靜態頁：
+
+- `q/index.html` 總覽、每份考卷一頁 `q/<考卷>.html`（題目列表）、每題一頁 `q/<考卷>/<題號>.html`，共 2,424 頁、約 10.7 MB，CSS 共用 `q/style.css`；另外產生 `sitemap.xml`。
+- 每題一頁是為了讓標題對到搜尋：標題用題幹開頭加「醫師一階 113 年第 1 次 醫學(一) 第 45 題」，描述放題幹和選項。正解和 AI 詳解放在收合的 `<details>` 裡（Google 讀得到，讀者要點開），跟題庫頁「正解預設收合」一致。
+- 每頁都有「在網站上看這題、刷整份考卷」連回 `#/bank/<考卷>/<題號>`；網站頁尾有「歷屆試題總覽」連到靜態頁，讓爬蟲從首頁找得到。
+- 網站在 `rogerh0711.github.io/nmle/` 底下，`robots.txt` 只能放在網域根目錄（不是這個 repo 管的），所以 sitemap 要在 Google Search Console 手動提交。
+- 還沒做：Google 的 Education Q&A 結構化資料（JSON-LD），欄位要求要先查官方文件再加。
 
 ## 開發紀錄
 

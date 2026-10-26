@@ -34,9 +34,9 @@ ssh rog 'schtasks /run /tn "NMLE 詳解批次"'          # 從 Mac
 
 Windows 版 Ollama 程式（系統匣那個）在這台電腦上起不了伺服器，所以改用工作排程器直接跑 `ollama serve`：
 
-- 「NMLE Ollama」：登入時自動執行 `ollama.exe serve`。沒在跑時用 `Start-ScheduledTask -TaskName "NMLE Ollama"` 啟動。
+- 「NMLE Ollama」：登入時自動執行 `conhost.exe --headless "%LOCALAPPDATA%\Programs\Ollama\ollama.exe" serve`。用 `conhost --headless` 包起來才不會每次登入都開一個終端機視窗；要看 log 就先停掉這個工作，自己在終端機跑 `ollama serve`。沒在跑時用 `Start-ScheduledTask -TaskName "NMLE Ollama"` 啟動。
 - 「NMLE 詳解批次」：執行 `overnight.ps1`，只會手動啟動。
-- Ollama 程式的開機捷徑移到了 `shell:startup\已停用\`：它啟動時會關掉已經在跑的 Ollama，會和排程衝突。
+- Ollama 程式的開機捷徑移到了 `%LOCALAPPDATA%\已停用的開機捷徑\`：它啟動時會關掉已經在跑的 Ollama，會和排程衝突。不放在 `shell:startup` 的子資料夾，因為 Windows 登入時會把那個資料夾開成視窗。
 - 移除：`Unregister-ScheduledTask -TaskName "NMLE*" -Confirm:$false`，再把捷徑移回 `shell:startup`。
 
 ## Colab（A100）

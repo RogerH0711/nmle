@@ -16,10 +16,72 @@ export function parseQuery(query: string): string[] {
   return query.split(/\s+/).map(fold).filter(Boolean)
 }
 
+// ---------- 同義詞與上位概念 ----------
+// data/search/concepts.json（手整理的上位概念：抗生素 → gentamicin…）和 synonyms.json（pipeline/search_synonyms.py
+// 產生的中英對照：腎上腺素 ↔ epinephrine）。搜尋框的字和概念名稱、別名或同義詞相同時，也找整組的名稱。
+
+export interface Concept {
+  name: string
+  aliases?: string[]
+  includes?: string[] // 其他概念的 name：抗生素 includes 胺基醣苷
+  members?: string[]
+}
+
+export interface Expansions {
+  table: Map<string, string[]> // 比對形式（fold 過的字）→ 也要找的其他寫法（fold 過）
+  labels: Map<string, string> // fold 過的寫法 → 原本的寫法，畫面上列「也找了哪些」用
+}
+
+// 概念名稱比對時略過結尾的「類」「藥」「藥物」：抗生素類、抗瘧藥都對得到
+const keyForm = (folded: string) => folded.replace(/(藥物|藥|類)+$/u, '') || folded
+
+// 五個字以內的英數字（PPI、TCA、5-FU）只拿來觸發，不拿去比對內文：子字串比對又略過空白，
+// 「ppi」會中 happiness、「tca」會中 TCA cycle
+const tooShort = (folded: string) => /^[\x21-\x7e]{1,4}$/.test(folded)
+
+export function buildExpansions(concepts: Concept[], synonyms: string[][]): Expansions {
+  const byName = new Map(concepts.map((c) => [c.name, c]))
+  const names = (c: Concept, seen = new Set<string>()): string[] => {
+    if (seen.has(c.name)) return []
+    seen.add(c.name)
+    const sub = (c.includes ?? []).flatMap((n) => {
+      const child = byName.get(n)
+      return child ? names(child, seen) : []
+    })
+    return [c.name, ...(c.aliases ?? []), ...(c.members ?? []), ...sub]
+  }
+  const table = new Map<string, Set<string>>()
+  const labels = new Map<string, string>()
+  const add = (keys: string[], alternatives: string[]) => {
+    alternatives.forEach((a) => labels.has(fold(a)) || labels.set(fold(a), a))
+    const alts = alternatives.map(fold).filter((a) => !tooShort(a))
+    for (const k of keys) {
+      const key = keyForm(fold(k))
+      const set = table.get(key) ?? new Set<string>()
+      alts.forEach((a) => set.add(a))
+      table.set(key, set)
+    }
+  }
+  for (const c of concepts) add([c.name, ...(c.aliases ?? [])], names(c))
+  for (const group of synonyms) add(group, group)
+  return { table: new Map([...table].map(([k, v]) => [k, [...v]])), labels }
+}
+
+/**
+ * 每個關鍵字展開成一組可以互相取代的寫法（第一個是原本打的字）；沒有對照表就只有自己。
+ * 組和組之間還是 AND，組內是 OR。已經包含原字的寫法不用另外找（找原字就找得到）。
+ */
+export function expandTerms(terms: string[], expansions?: Expansions): string[][] {
+  return terms.map((t) => {
+    const alts = expansions?.table.get(keyForm(t)) ?? []
+    return [t, ...alts.filter((a) => a !== t && !a.includes(t))]
+  })
+}
+
 export interface BankFilter {
   scope: string // 'all'、'y113'（某年全部考卷）或考卷 id
   subject: string // 'all' 或學科 id
-  terms: string[]
+  groups: string[][] // expandTerms 的結果：每組至少要有一個出現
 }
 
 /** 考卷 id 是否在範圍內：115090_1 的年度是前三碼 */
@@ -52,19 +114,18 @@ export function searchBank(questions: Question[], filter: BankFilter, explanatio
     if (!q.valid) continue
     if (filter.subject !== 'all' && q.subject !== filter.subject) continue
     if (!inScope(q.id.slice(0, q.id.lastIndexOf('_')), filter.scope)) continue
-    if (!filter.terms.length) {
+    if (!filter.groups.length) {
       hits.push({ q, inExplanation: false })
       continue
     }
     const own = foldQuestion(q)
-    if (filter.terms.every((t) => own.includes(t))) {
+    const matches = (text: string) => filter.groups.every((g) => g.some((t) => text.includes(t)))
+    if (matches(own)) {
       hits.push({ q, inExplanation: false })
       continue
     }
     const exp = explanations?.get(q.id)
-    if (!exp) continue
-    const all = own + '\n' + exp
-    if (filter.terms.every((t) => all.includes(t))) hits.push({ q, inExplanation: true })
+    if (exp && matches(own + '\n' + exp)) hits.push({ q, inExplanation: true })
   }
   return hits
 }

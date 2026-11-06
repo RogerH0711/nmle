@@ -1,0 +1,456 @@
+{
+  "_說明": "題庫搜尋的上位概念（web/src/search.ts 的 expandTerms）：搜尋框的字和 name 或 aliases 相同（不分全半形大小寫、略過空白與結尾的「類」「藥」「藥物」）時，也找 members 和 includes 裡其他概念的全部名稱。11/06 Claude 依藥理學與微生物學分類整理，成員是題庫出現過的名稱加上同類常見的；11/06 Roger 看過。做法見 docs/design.md「題庫瀏覽與搜尋」。",
+  "concepts": [
+    {
+      "name": "抗生素",
+      "aliases": ["antibiotic", "antibiotics", "抗菌藥", "抗菌劑", "antibacterial"],
+      "includes": ["β-lactam", "胺基醣苷", "巨環類", "四環黴素類", "氟喹諾酮", "醣肽類", "磺胺類", "抗結核藥"],
+      "members": ["clindamycin", "克林黴素", "lincomycin", "linezolid", "tedizolid", "daptomycin", "metronidazole", "chloramphenicol", "氯黴素", "quinupristin-dalfopristin", "trimethoprim", "tmp-smz", "nitrofurantoin", "fosfomycin", "polymyxin", "colistin", "bacitracin", "mupirocin", "fidaxomicin", "rifaximin", "tigecycline", "puromycin", "嘌呤黴素"]
+    },
+    {
+      "name": "β-lactam",
+      "aliases": ["beta-lactam", "β-lactams", "beta-lactams", "β-內醯胺", "乙內醯胺", "β-內醯胺類抗生素"],
+      "includes": ["青黴素類", "頭孢菌素", "碳青黴烯"],
+      "members": ["aztreonam", "monobactam", "monobactams"]
+    },
+    {
+      "name": "青黴素類",
+      "aliases": ["penicillins", "青黴素", "盤尼西林"],
+      "members": ["penicillin", "amoxicillin", "ampicillin", "dicloxacillin", "nafcillin", "oxacillin", "methicillin", "piperacillin", "ticarcillin", "benzathine"]
+    },
+    {
+      "name": "頭孢菌素",
+      "aliases": ["cephalosporin", "cephalosporins", "頭芽孢菌素", "頭孢子菌素", "頭孢黴素"],
+      "members": ["cephalexin", "cefazolin", "cefuroxime", "cefoxitin", "cefotaxime", "ceftriaxone", "ceftazidime", "cefoperazone", "cefepime", "ceftaroline", "ceftolozane", "cefixime", "cefaclor"]
+    },
+    {
+      "name": "碳青黴烯",
+      "aliases": ["carbapenem", "carbapenems"],
+      "members": ["imipenem", "meropenem", "ertapenem", "doripenem"]
+    },
+    {
+      "name": "β-lactamase抑制劑",
+      "aliases": ["beta-lactamase inhibitor", "β-lactamase inhibitor", "β-內醯胺酶抑制劑"],
+      "members": ["clavulanic", "clavulanate", "sulbactam", "tazobactam", "avibactam", "vaborbactam"]
+    },
+    {
+      "name": "胺基醣苷",
+      "aliases": ["aminoglycoside", "aminoglycosides", "胺基糖苷", "胺基配醣體"],
+      "members": ["gentamicin", "amikacin", "kanamycin", "卡納黴素", "streptomycin", "鏈黴素", "tobramycin", "neomycin", "plazomicin"]
+    },
+    {
+      "name": "巨環類",
+      "aliases": ["macrolide", "macrolides", "巨環內酯", "大環內酯"],
+      "members": ["erythromycin", "紅黴素", "azithromycin", "clarithromycin", "telithromycin", "fidaxomicin"]
+    },
+    {
+      "name": "四環黴素類",
+      "aliases": ["tetracyclines"],
+      "members": ["tetracycline", "四環黴素", "doxycycline", "minocycline", "omadacycline", "tigecycline", "demeclocycline"]
+    },
+    {
+      "name": "氟喹諾酮",
+      "aliases": ["fluoroquinolone", "fluoroquinolones", "quinolone", "quinolones", "喹諾酮"],
+      "members": ["ciprofloxacin", "levofloxacin", "moxifloxacin", "norfloxacin", "ofloxacin", "gemifloxacin"]
+    },
+    {
+      "name": "醣肽類",
+      "aliases": ["glycopeptide", "glycopeptides", "糖肽類"],
+      "members": ["vancomycin", "telavancin", "dalbavancin", "oritavancin", "teicoplanin"]
+    },
+    {
+      "name": "磺胺類",
+      "aliases": ["sulfonamide", "sulfonamides", "磺胺"],
+      "members": ["sulfamethoxazole", "sulfadiazine", "sulfisoxazole", "tmp-smz", "dapsone"]
+    },
+    {
+      "name": "抗結核藥",
+      "aliases": ["antituberculosis", "anti-tuberculosis", "抗結核", "抗結核病藥"],
+      "members": ["isoniazid", "rifampin", "rifampicin", "立汎黴素", "rifamycin", "rifabutin", "rifapentine", "ethambutol", "pyrazinamide", "capreomycin", "bedaquiline"]
+    },
+    {
+      "name": "抗黴菌藥",
+      "aliases": ["antifungal", "antifungals", "anti-fungal", "抗真菌藥", "抗黴菌", "抗真菌"],
+      "includes": ["azole類抗黴菌藥", "polyene", "echinocandin"],
+      "members": ["terbinafine", "naftifine", "allylamine", "allylamines", "griseofulvin", "flucytosine", "nikkomycin"]
+    },
+    {
+      "name": "azole類抗黴菌藥",
+      "aliases": ["triazole", "triazoles", "imidazole類抗黴菌藥"],
+      "members": ["fluconazole", "itraconazole", "ketoconazole", "voriconazole", "posaconazole", "isavuconazole", "clotrimazole", "miconazole"]
+    },
+    {
+      "name": "polyene",
+      "aliases": ["polyenes", "多烯類"],
+      "members": ["amphotericin", "nystatin"]
+    },
+    {
+      "name": "echinocandin",
+      "aliases": ["echinocandins", "棘白菌素"],
+      "members": ["caspofungin", "micafungin", "anidulafungin"]
+    },
+    {
+      "name": "抗病毒藥",
+      "aliases": ["antiviral", "antivirals", "抗病毒藥物"],
+      "includes": ["抗HIV藥"],
+      "members": ["acyclovir", "valacyclovir", "famciclovir", "ganciclovir", "valganciclovir", "foscarnet", "cidofovir", "oseltamivir", "zanamivir", "peramivir", "baloxavir", "amantadine", "rimantadine", "ribavirin", "sofosbuvir", "boceprevir", "telaprevir", "ledipasvir", "entecavir", "trifluridine"]
+    },
+    {
+      "name": "抗HIV藥",
+      "aliases": ["antiretroviral", "anti-hiv", "抗反轉錄病毒藥", "haart"],
+      "members": ["zidovudine", "azidothymidine", "retrovir", "abacavir", "lamivudine", "tenofovir", "emtricitabine", "efavirenz", "nevirapine", "indinavir", "ritonavir", "darunavir", "lopinavir", "raltegravir", "dolutegravir", "maraviroc", "enfuvirtide"]
+    },
+    {
+      "name": "抗寄生蟲藥",
+      "aliases": ["antiparasitic", "抗寄生蟲"],
+      "includes": ["抗瘧藥"],
+      "members": ["metronidazole", "tinidazole", "melarsoprol", "suramin", "miltefosine", "pentamidine", "albendazole", "mebendazole", "praziquantel", "ivermectin", "pyrantel", "niclosamide", "nitazoxanide"]
+    },
+    {
+      "name": "抗瘧藥",
+      "aliases": ["antimalarial", "antimalarials", "抗瘧疾藥"],
+      "members": ["chloroquine", "hydroxychloroquine", "mefloquine", "quinine", "quinidine", "primaquine", "artemisinin", "artemether", "artesunate", "atovaquone", "pyrimethamine"]
+    },
+    {
+      "name": "β阻斷劑",
+      "aliases": ["beta blocker", "beta blockers", "β-blocker", "β-blockers", "β阻斷劑", "β-阻斷劑", "乙型阻斷劑", "β受體阻斷劑", "β-受體阻斷劑", "β交感受體拮抗劑", "β-adrenergic antagonist"],
+      "members": ["propranolol", "atenolol", "metoprolol", "esmolol", "labetalol", "carvedilol", "pindolol", "timolol", "betaxolol", "sotalol", "nadolol", "bisoprolol", "nebivolol", "acebutolol"]
+    },
+    {
+      "name": "α阻斷劑",
+      "aliases": ["alpha blocker", "alpha blockers", "α-blocker", "α-blockers", "α-阻斷劑", "甲型阻斷劑", "α受體阻斷劑", "α交感受體拮抗劑", "α-adrenergic antagonist"],
+      "members": ["prazosin", "doxazosin", "terazosin", "tamsulosin", "alfuzosin", "silodosin", "phentolamine", "phenoxybenzamine", "labetalol", "carvedilol"]
+    },
+    {
+      "name": "β2促效劑",
+      "aliases": ["β2 agonist", "beta-2 agonist", "β2-agonist", "β₂促效劑", "β2-促效劑", "支氣管擴張劑"],
+      "members": ["albuterol", "salbutamol", "salmeterol", "formoterol", "terbutaline", "metaproterenol", "ritodrine", "indacaterol"]
+    },
+    {
+      "name": "鈣離子通道阻斷劑",
+      "aliases": ["calcium channel blocker", "calcium channel blockers", "ccb", "鈣通道阻斷劑", "鈣離子阻斷劑"],
+      "members": ["amlodipine", "nifedipine", "nicardipine", "clevidipine", "felodipine", "nimodipine", "verapamil", "diltiazem", "flunarizine"]
+    },
+    {
+      "name": "ACE抑制劑",
+      "aliases": ["ace inhibitor", "ace inhibitors", "acei", "血管張力素轉化酶抑制劑", "angiotensin-converting enzyme inhibitor"],
+      "members": ["captopril", "enalapril", "lisinopril", "ramipril", "perindopril", "benazepril"]
+    },
+    {
+      "name": "ARB",
+      "aliases": ["angiotensin receptor blocker", "angiotensin ii receptor blocker", "血管張力素受體阻斷劑", "血管收縮素受體阻斷劑"],
+      "members": ["losartan", "valsartan", "candesartan", "irbesartan", "telmisartan", "olmesartan"]
+    },
+    {
+      "name": "利尿劑",
+      "aliases": ["diuretic", "diuretics"],
+      "includes": ["thiazide類利尿劑", "環利尿劑", "保鉀利尿劑"],
+      "members": ["acetazolamide", "mannitol", "tolvaptan", "conivaptan"]
+    },
+    {
+      "name": "thiazide類利尿劑",
+      "aliases": ["thiazide", "thiazides", "thiazide diuretic", "噻嗪類利尿劑"],
+      "members": ["hydrochlorothiazide", "chlorothiazide", "chlorthalidone", "indapamide", "metolazone"]
+    },
+    {
+      "name": "環利尿劑",
+      "aliases": ["loop diuretic", "loop diuretics", "亨利氏環利尿劑"],
+      "members": ["furosemide", "bumetanide", "torsemide", "ethacrynic"]
+    },
+    {
+      "name": "保鉀利尿劑",
+      "aliases": ["potassium-sparing diuretic", "potassium sparing diuretic"],
+      "members": ["spironolactone", "eplerenone", "amiloride", "triamterene"]
+    },
+    {
+      "name": "抗心律不整藥",
+      "aliases": ["antiarrhythmic", "antiarrhythmics", "抗心律不整", "抗心律不整劑"],
+      "members": ["amiodarone", "dronedarone", "dofetilide", "ibutilide", "sotalol", "flecainide", "propafenone", "lidocaine", "mexiletine", "disopyramide", "procainamide", "quinidine", "adenosine", "esmolol", "verapamil", "diltiazem", "digoxin", "ranolazine"]
+    },
+    {
+      "name": "抗凝血劑",
+      "aliases": ["anticoagulant", "anticoagulants", "抗凝血藥", "抗凝劑"],
+      "members": ["heparin", "enoxaparin", "dalteparin", "fondaparinux", "warfarin", "coumarin", "dabigatran", "rivaroxaban", "apixaban", "edoxaban", "argatroban", "bivalirudin", "lepirudin"]
+    },
+    {
+      "name": "抗血小板藥",
+      "aliases": ["antiplatelet", "antiplatelets", "抗血小板", "抗血小板劑"],
+      "members": ["aspirin", "clopidogrel", "prasugrel", "ticagrelor", "ticlopidine", "abciximab", "eptifibatide", "tirofiban", "dipyridamole", "cilostazol", "vorapaxar"]
+    },
+    {
+      "name": "血栓溶解劑",
+      "aliases": ["thrombolytic", "thrombolytics", "fibrinolytic", "溶栓劑", "纖維蛋白溶解劑"],
+      "members": ["alteplase", "tenecteplase", "reteplase", "streptokinase", "urokinase"]
+    },
+    {
+      "name": "降血脂藥",
+      "aliases": ["lipid-lowering", "hypolipidemic", "降膽固醇藥"],
+      "includes": ["statin類藥物"],
+      "members": ["fenofibrate", "gemfibrozil", "ezetimibe", "niacin", "cholestyramine", "colestipol", "colesevelam", "evolocumab", "alirocumab", "lomitapide", "mipomersen"]
+    },
+    {
+      "name": "statin類藥物",
+      "aliases": ["statins", "hmg-coa reductase inhibitor", "hmg-coa還原酶抑制劑", "史他汀"],
+      "members": ["simvastatin", "atorvastatin", "atrovastatin", "rosuvastatin", "pravastatin", "lovastatin", "pitavastatin", "fluvastatin"]
+    },
+    {
+      "name": "降血糖藥",
+      "aliases": ["antidiabetic", "antidiabetics", "hypoglycemic agent", "口服降血糖藥", "糖尿病用藥"],
+      "includes": ["sulfonylurea", "DPP-4抑制劑", "GLP-1促效劑", "SGLT2抑制劑"],
+      "members": ["metformin", "biguanides", "repaglinide", "nateglinide", "pioglitazone", "rosiglitazone", "acarbose", "miglitol", "pramlintide"]
+    },
+    {
+      "name": "sulfonylurea",
+      "aliases": ["sulfonylureas", "磺醯尿素"],
+      "members": ["glipizide", "glimepiride", "glyburide", "glibenclamide", "tolbutamide", "chlorpropamide"]
+    },
+    {
+      "name": "DPP-4抑制劑",
+      "aliases": ["dpp-4 inhibitor", "dpp4 inhibitor", "gliptin", "dipeptidyl peptidase-4"],
+      "members": ["sitagliptin", "saxagliptin", "linagliptin", "alogliptin", "vildagliptin"]
+    },
+    {
+      "name": "GLP-1促效劑",
+      "aliases": ["glp-1 agonist", "glp-1 receptor agonist", "glucagon-like peptide-1"],
+      "members": ["exenatide", "liraglutide", "semaglutide", "dulaglutide"]
+    },
+    {
+      "name": "SGLT2抑制劑",
+      "aliases": ["sglt2 inhibitor", "sglt-2 inhibitor", "sodium-glucose co-transporter"],
+      "members": ["empagliflozin", "dapagliflozin", "canagliflozin", "ertugliflozin"]
+    },
+    {
+      "name": "皮質類固醇",
+      "aliases": ["corticosteroid", "corticosteroids", "glucocorticoid", "glucocorticoids", "糖皮質素", "醣皮質類固醇", "腎上腺皮質類固醇", "類固醇"],
+      "members": ["prednisone", "prednisolone", "methylprednisolone", "dexamethasone", "hydrocortisone", "betamethasone", "triamcinolone", "budesonide", "fluticasone", "beclomethasone", "ciclesonide", "mometasone", "flunisolide", "fludrocortisone", "paramethasone"]
+    },
+    {
+      "name": "抗甲狀腺藥",
+      "aliases": ["antithyroid", "thioamides", "抗甲狀腺"],
+      "members": ["propylthiouracil", "methimazole", "carbimazole", "lugol", "iodide"]
+    },
+    {
+      "name": "抗憂鬱劑",
+      "aliases": ["antidepressant", "antidepressants", "抗憂鬱藥", "抗憂鬱藥物", "抗憂鬱"],
+      "includes": ["SSRI", "三環抗憂鬱劑", "單胺氧化酶抑制劑"],
+      "members": ["venlafaxine", "desvenlafaxine", "duloxetine", "bupropion", "mirtazapine", "trazodone", "nefazodone", "vortioxetine", "ketamine"]
+    },
+    {
+      "name": "SSRI",
+      "aliases": ["ssris", "selective serotonin reuptake inhibitor", "選擇性血清素回收抑制劑"],
+      "members": ["fluoxetine", "sertraline", "paroxetine", "citalopram", "escitalopram", "fluvoxamine"]
+    },
+    {
+      "name": "三環抗憂鬱劑",
+      "aliases": ["tricyclic", "tricyclics", "tca", "三環抗憂鬱藥"],
+      "members": ["imipramine", "amitriptyline", "nortriptyline", "desipramine", "clomipramine", "doxepin"]
+    },
+    {
+      "name": "單胺氧化酶抑制劑",
+      "aliases": ["maoi", "maois", "monoamine oxidase inhibitor"],
+      "members": ["phenelzine", "tranylcypromine", "isocarboxazid", "selegiline", "rasagiline"]
+    },
+    {
+      "name": "抗精神病藥",
+      "aliases": ["antipsychotic", "antipsychotics", "抗精神病藥物", "neuroleptic"],
+      "members": ["haloperidol", "chlorpromazine", "fluphenazine", "thioridazine", "clozapine", "olanzapine", "risperidone", "quetiapine", "aripiprazole", "ziprasidone", "paliperidone", "lurasidone", "sulpiride"]
+    },
+    {
+      "name": "苯二氮平",
+      "aliases": ["benzodiazepine", "benzodiazepines", "bzd", "苯二氮平類"],
+      "members": ["diazepam", "lorazepam", "alprazolam", "midazolam", "clonazepam", "flurazepam", "chlordiazepoxide", "triazolam", "temazepam", "oxazepam"]
+    },
+    {
+      "name": "安眠藥",
+      "aliases": ["hypnotic", "hypnotics", "sedative-hypnotic", "鎮靜安眠藥"],
+      "includes": ["苯二氮平"],
+      "members": ["zolpidem", "zaleplon", "eszopiclone", "suvorexant", "ramelteon", "tasimelteon", "phenobarbital", "flurazepam"]
+    },
+    {
+      "name": "抗癲癇藥",
+      "aliases": ["antiepileptic", "antiepileptics", "anticonvulsant", "anticonvulsants", "抗痙攣藥"],
+      "members": ["phenytoin", "fosphenytoin", "carbamazepine", "oxcarbazepine", "valproate", "valproic", "ethosuximide", "lamotrigine", "levetiracetam", "topiramate", "gabapentin", "pregabalin", "tiagabine", "vigabatrin", "phenobarbital", "clonazepam", "lacosamide", "zonisamide"]
+    },
+    {
+      "name": "鴉片類",
+      "aliases": ["opioid", "opioids", "opiate", "opiates", "鴉片類藥物", "類鴉片"],
+      "members": ["morphine", "codeine", "methadone", "fentanyl", "tramadol", "oxycodone", "hydromorphone", "hydrocodone", "meperidine", "buprenorphine", "heroin", "dextromethorphan", "loperamide", "diphenoxylate", "naloxone", "naltrexone", "nalbuphine", "butorphanol"]
+    },
+    {
+      "name": "局部麻醉劑",
+      "aliases": ["local anesthetic", "local anesthetics", "局部麻醉藥"],
+      "members": ["lidocaine", "bupivacaine", "procaine", "benzocaine", "ropivacaine", "tetracaine", "mepivacaine", "cocaine", "articaine"]
+    },
+    {
+      "name": "全身麻醉劑",
+      "aliases": ["general anesthetic", "general anesthetics", "全身麻醉藥", "吸入性麻醉劑", "inhalational anesthetic"],
+      "members": ["propofol", "ketamine", "etomidate", "thiopental", "methohexital", "isoflurane", "sevoflurane", "desflurane", "halothane", "nitrous"]
+    },
+    {
+      "name": "肌肉鬆弛劑",
+      "aliases": ["muscle relaxant", "muscle relaxants", "neuromuscular blocker", "神經肌肉阻斷劑", "肌肉鬆弛藥"],
+      "members": ["succinylcholine", "rocuronium", "vecuronium", "atracurium", "cisatracurium", "pancuronium", "tubocurarine", "dantrolene", "baclofen", "tizanidine", "cyclobenzaprine"]
+    },
+    {
+      "name": "抗巴金森藥",
+      "aliases": ["antiparkinson", "antiparkinsonian", "巴金森氏症用藥", "抗帕金森藥"],
+      "members": ["levodopa", "carbidopa", "ropinirole", "pramipexole", "rotigotine", "bromocriptine", "selegiline", "rasagiline", "entacapone", "tolcapone", "amantadine", "benztropine", "trihexyphenidyl"]
+    },
+    {
+      "name": "NSAID",
+      "aliases": ["nsaids", "非類固醇消炎藥", "非類固醇抗發炎藥", "非類固醇消炎止痛藥", "非類固醇抗炎藥"],
+      "members": ["aspirin", "ibuprofen", "naproxen", "indomethacin", "ketorolac", "celecoxib", "meloxicam", "piroxicam", "diclofenac", "etodolac", "ketoprofen", "meclofenamate", "sulindac", "mefenamic"]
+    },
+    {
+      "name": "抗痛風藥",
+      "aliases": ["antigout", "痛風用藥"],
+      "members": ["allopurinol", "febuxostat", "colchicine", "probenecid", "sulfinpyrazone", "pegloticase", "rasburicase", "lesinurad"]
+    },
+    {
+      "name": "膽鹼促效劑",
+      "aliases": ["cholinergic agonist", "muscarinic agonist", "擬副交感神經藥", "擬膽鹼藥", "parasympathomimetic"],
+      "members": ["bethanechol", "carbachol", "pilocarpine", "methacholine", "muscarine", "cevimeline"]
+    },
+    {
+      "name": "膽鹼酯酶抑制劑",
+      "aliases": ["cholinesterase inhibitor", "cholinesterase inhibitors", "acetylcholinesterase inhibitor", "anticholinesterase", "抗膽鹼酯酶"],
+      "members": ["neostigmine", "physostigmine", "pyridostigmine", "edrophonium", "ambenonium", "donepezil", "rivastigmine", "galantamine", "echothiophate", "organophosphate", "有機磷"]
+    },
+    {
+      "name": "抗膽鹼藥",
+      "aliases": ["antimuscarinic", "antimuscarinics", "anticholinergic", "anticholinergics", "muscarinic antagonist", "抗蕈毒鹼藥", "抗毒蕈鹼"],
+      "members": ["atropine", "scopolamine", "ipratropium", "tiotropium", "glycopyrrolate", "oxybutynin", "tolterodine", "darifenacin", "solifenacin", "trospium", "tropicamide", "cyclopentolate", "benztropine", "trihexyphenidyl"]
+    },
+    {
+      "name": "抗組織胺",
+      "aliases": ["antihistamine", "antihistamines", "h1拮抗劑", "h1 antagonist", "h1受體拮抗劑", "抗組織胺藥"],
+      "members": ["diphenhydramine", "chlorpheniramine", "hydroxyzine", "promethazine", "meclizine", "cyproheptadine", "cetirizine", "levocetirizine", "loratadine", "desloratadine", "fexofenadine"]
+    },
+    {
+      "name": "H2拮抗劑",
+      "aliases": ["h2 antagonist", "h2 blocker", "h2受體拮抗劑", "h₂受體拮抗劑", "h₂拮抗劑"],
+      "members": ["ranitidine", "famotidine", "cimetidine", "nizatidine"]
+    },
+    {
+      "name": "氫離子幫浦抑制劑",
+      "aliases": ["proton pump inhibitor", "proton pump inhibitors", "ppi", "質子幫浦抑制劑", "氫離子幫浦阻斷劑"],
+      "members": ["omeprazole", "esomeprazole", "lansoprazole", "pantoprazole", "rabeprazole"]
+    },
+    {
+      "name": "抗癌藥",
+      "aliases": ["anticancer", "antineoplastic", "chemotherapy", "化療藥", "化學治療藥物", "抗腫瘤藥"],
+      "includes": ["烷化劑", "抗代謝藥", "anthracycline", "長春花生物鹼", "taxane", "免疫檢查點抑制劑", "酪胺酸激酶抑制劑"],
+      "members": ["bleomycin", "etoposide", "irinotecan", "topotecan", "hydroxyurea", "tamoxifen", "toremifene", "raloxifene", "anastrozole", "letrozole", "exemestane", "fulvestrant", "flutamide", "leuprolide", "trastuzumab", "pertuzumab", "cetuximab", "panitumumab", "necitumumab", "bevacizumab", "ramucirumab", "rituximab", "alemtuzumab", "catumaxomab", "carfilzomib", "bortezomib", "tisagenlecleucel", "car-t"]
+    },
+    {
+      "name": "烷化劑",
+      "aliases": ["alkylating agent", "alkylating agents", "alkylating", "烷基化劑"],
+      "members": ["cyclophosphamide", "ifosfamide", "busulfan", "chlorambucil", "mechlorethamine", "melphalan", "dacarbazine", "temozolomide", "carmustine", "cisplatin", "carboplatin", "oxaliplatin"]
+    },
+    {
+      "name": "抗代謝藥",
+      "aliases": ["antimetabolite", "antimetabolites", "抗代謝物"],
+      "members": ["methotrexate", "pemetrexed", "fluorouracil", "5-fu", "capecitabine", "cytarabine", "ara-c", "gemcitabine", "mercaptopurine", "thioguanine", "cladribine", "fludarabine", "hydroxyurea", "trifluridine"]
+    },
+    {
+      "name": "anthracycline",
+      "aliases": ["anthracyclines", "蒽環類"],
+      "members": ["doxorubicin", "daunorubicin", "idarubicin", "epirubicin"]
+    },
+    {
+      "name": "長春花生物鹼",
+      "aliases": ["vinca alkaloid", "vinca alkaloids", "vinca"],
+      "members": ["vincristine", "vinblastine", "vinorelbine"]
+    },
+    {
+      "name": "taxane",
+      "aliases": ["taxanes", "紫杉醇類"],
+      "members": ["paclitaxel", "docetaxel", "cabazitaxel"]
+    },
+    {
+      "name": "免疫檢查點抑制劑",
+      "aliases": ["immune checkpoint inhibitor", "checkpoint inhibitor", "免疫檢查點"],
+      "members": ["pembrolizumab", "nivolumab", "atezolizumab", "avelumab", "durvalumab", "ipilimumab"]
+    },
+    {
+      "name": "酪胺酸激酶抑制劑",
+      "aliases": ["tyrosine kinase inhibitor", "tyrosine kinase inhibitors", "tki", "tkis"],
+      "members": ["imatinib", "dasatinib", "nilotinib", "erlotinib", "gefitinib", "afatinib", "osimertinib", "lapatinib", "sorafenib", "sunitinib", "ibrutinib"]
+    },
+    {
+      "name": "免疫抑制劑",
+      "aliases": ["immunosuppressant", "immunosuppressants", "immunosuppressive"],
+      "members": ["cyclosporine", "tacrolimus", "sirolimus", "rapamycin", "雷帕黴素", "everolimus", "mycophenolate", "mycophenolic", "azathioprine", "basiliximab", "daclizumab", "belatacept", "abatacept", "fingolimod", "siponimod", "teriflunomide", "methotrexate"]
+    },
+    {
+      "name": "單株抗體",
+      "aliases": ["monoclonal antibody", "monoclonal antibodies", "單株抗體藥物"],
+      "members": ["trastuzumab", "pertuzumab", "cetuximab", "panitumumab", "necitumumab", "bevacizumab", "ramucirumab", "rituximab", "alemtuzumab", "catumaxomab", "pembrolizumab", "nivolumab", "atezolizumab", "avelumab", "ipilimumab", "omalizumab", "mepolizumab", "reslizumab", "dupilumab", "adalimumab", "infliximab", "tocilizumab", "ustekinumab", "secukinumab", "natalizumab", "belimumab", "efalizumab", "basiliximab", "daclizumab", "canakinumab", "denosumab", "romosozumab", "evolocumab", "abciximab", "eculizumab", "palivizumab", "herceptin"]
+    },
+    {
+      "name": "革蘭氏陽性菌",
+      "aliases": ["gram-positive", "gram positive", "革蘭氏陽性", "格蘭氏陽性菌", "革蘭陽性菌", "革蘭氏陽性細菌"],
+      "members": ["staphylococcus", "staphylococci", "streptococcus", "streptococci", "pneumococcus", "enterococcus", "enterococci", "listeria", "bacillus", "clostridium", "clostridioides", "corynebacterium", "actinomyces", "propionibacterium", "cutibacterium", "erysipelothrix", "nocardia", "bifidobacterium", "peptostreptococcus", "葡萄球菌", "鏈球菌", "腸球菌", "李斯特菌", "梭菌", "白喉"]
+    },
+    {
+      "name": "革蘭氏陰性菌",
+      "aliases": ["gram-negative", "gram negative", "革蘭氏陰性", "格蘭氏陰性菌", "革蘭陰性菌", "革蘭氏陰性細菌"],
+      "members": ["escherichia", "e. coli", "salmonella", "shigella", "klebsiella", "enterobacter", "proteus", "serratia", "pseudomonas", "acinetobacter", "vibrio", "haemophilus", "neisseria", "bordetella", "legionella", "helicobacter", "campylobacter", "bacteroides", "fusobacterium", "porphyromonas", "yersinia", "brucella", "francisella", "pasteurella", "eikenella", "kingella", "elizabethkingia", "moraxella", "coxiella", "rickettsia", "orientia", "chlamydia", "大腸桿菌", "沙門氏菌", "志賀氏菌", "克雷伯氏菌", "綠膿桿菌", "弧菌", "嗜血桿菌", "奈瑟氏菌", "退伍軍人菌", "幽門桿菌"]
+    },
+    {
+      "name": "厭氧菌",
+      "aliases": ["anaerobe", "anaerobes", "anaerobic bacteria", "厭氧性細菌"],
+      "members": ["bacteroides", "clostridium", "clostridioides", "actinomyces", "propionibacterium", "cutibacterium", "porphyromonas", "fusobacterium", "peptostreptococcus", "bifidobacterium", "mobiluncus", "prevotella"]
+    },
+    {
+      "name": "螺旋體",
+      "aliases": ["spirochete", "spirochetes", "螺旋菌"],
+      "members": ["treponema", "borrelia", "leptospira", "梅毒", "萊姆病", "鉤端螺旋體"]
+    },
+    {
+      "name": "分枝桿菌",
+      "aliases": ["mycobacteria", "抗酸菌", "acid-fast", "耐酸性細菌"],
+      "members": ["mycobacterium", "tuberculosis", "leprae", "結核", "痲瘋", "nocardia"]
+    },
+    {
+      "name": "DNA病毒",
+      "aliases": ["dna virus", "dna viruses"],
+      "members": ["herpesvirus", "herpes", "cytomegalovirus", "epstein-barr", "varicella", "adenovirus", "adenoviridae", "papillomavirus", "polyomavirus", "poxvirus", "poxviruses", "molluscum", "monkeypox", "parvovirus", "hepatitis b", "hbv", "hbsag", "疱疹", "巨細胞病毒", "腺病毒", "乳突病毒", "痘病毒", "微小病毒", "b型肝炎"]
+    },
+    {
+      "name": "RNA病毒",
+      "aliases": ["rna virus", "rna viruses"],
+      "members": ["enterovirus", "poliovirus", "rhinovirus", "coxsackie", "echovirus", "picornaviridae", "influenza virus", "influenza a", "influenza b", "measles", "rubella", "mumps", "rabies", "rhabdoviridae", "dengue", "flaviviridae", "ebola", "filovirus", "hantavirus", "bunyavirus", "bunyaviridae", "arenavirus", "rotavirus", "rotaviruses", "reoviridae", "norovirus", "caliciviridae", "coronavirus", "sars-cov", "htlv", "retrovirus", "hiv", "paramyxovirus", "togaviridae", "hepatitis c", "hcv", "腸病毒", "流感", "麻疹", "德國麻疹", "狂犬病", "登革", "輪狀病毒", "諾羅病毒", "冠狀病毒", "c型肝炎"]
+    },
+    {
+      "name": "黴菌",
+      "aliases": ["fungus", "fungi", "真菌", "fungal"],
+      "members": ["candida", "cryptococcus", "aspergillus", "histoplasma", "blastomyces", "coccidioides", "paracoccidioides", "talaromyces", "malassezia", "trichophyton", "microsporum", "epidermophyton", "dermatophytes", "rhizopus", "mucor", "mucormycetes", "fusarium", "pneumocystis", "sporothrix", "trichosporon", "scedosporium", "emergomyces", "rhodotorula", "念珠菌", "隱球菌", "麴菌", "白色念珠菌"]
+    },
+    {
+      "name": "原蟲",
+      "aliases": ["protozoa", "protozoan", "原生動物"],
+      "members": ["plasmodium", "瘧原蟲", "toxoplasma", "弓漿蟲", "giardia", "梨形鞭毛蟲", "entamoeba", "阿米巴", "痢疾阿米巴", "cryptosporidium", "隱孢子蟲", "cyclospora", "isospora", "trichomonas", "陰道滴蟲", "leishmania", "利什曼原蟲", "trypanosoma", "trypanosomes", "錐蟲", "naegleria", "acanthamoeba", "babesia", "巴貝氏原蟲"]
+    },
+    {
+      "name": "線蟲",
+      "aliases": ["nematode", "nematodes", "圓蟲"],
+      "members": ["ascaris", "蛔蟲", "hookworm", "鉤蟲", "necator", "ancylostoma", "strongyloides", "糞小桿線蟲", "trichuris", "鞭蟲", "enterobius", "蟯蟲", "trichinella", "旋毛蟲", "brugia", "wuchereria", "絲蟲", "loa loa", "onchocerca", "angiostrongylus", "廣東住血線蟲", "anisakis", "海獸胃線蟲", "toxocara", "dirofilaria", "thelazia", "trichostrongylus", "gnathostoma", "有棘頜口線蟲", "capillaria", "毛線蟲", "dracunculus", "麥地那線蟲"]
+    },
+    {
+      "name": "絛蟲",
+      "aliases": ["cestode", "cestodes", "tapeworm", "tapeworms"],
+      "members": ["taenia", "豬肉絛蟲", "牛肉絛蟲", "echinococcus", "包生絛蟲", "hymenolepis", "包膜絛蟲", "diphyllobothrium", "裂頭絛蟲", "spirometra", "sparganum", "sparganosis", "dipylidium", "複殖器絛蟲", "neurocysticercosis"]
+    },
+    {
+      "name": "吸蟲",
+      "aliases": ["trematode", "trematodes", "fluke", "flukes"],
+      "members": ["schistosoma", "血吸蟲", "clonorchis", "中華肝吸蟲", "opisthorchis", "fasciola", "fasciolopsis", "paragonimus", "肺吸蟲", "metagonimus", "橫川氏吸蟲", "cercaria"]
+    },
+    {
+      "name": "病媒",
+      "aliases": ["vector", "vectors", "傳播病媒", "病媒昆蟲"],
+      "members": ["mosquito", "蚊", "anopheles", "瘧蚊", "aedes", "斑蚊", "culex", "家蚊", "ixodes", "dermacentor", "amblyomma", "haemaphysalis", "壁蝨", "蜱", "xenopsylla", "跳蚤", "sandfly", "白蛉", "triatoma", "錐蝽", "chigger", "恙蟲", "leptotrombidium", "simulium", "蚋", "culicoides", "louse", "蝨"]
+    }
+  ]
+}

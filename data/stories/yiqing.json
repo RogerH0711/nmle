@@ -6,22 +6,25 @@
       "title": "初識",
       "background": "cafe",
       "lines": [
-        { "speaker": "narration", "text": "晚上八點的自習咖啡廳「夜燈」。門被推開的聲音大到整間店都回頭。" },
-        { "speaker": "yiqing", "expression": "happy", "text": "抱歉抱歉！剛跑完間歇，衝過來的！讀書會還沒開始吧？" },
-        { "speaker": "narration", "text": "橘色運動外套、頭髮還有點濕。她一眼就在人群裡找到你，直直走過來。" },
-        { "speaker": "yiqing", "expression": "normal", "text": "你就是{player}？我是夏以晴，六年級。生理跟生化歸我管！" },
+        { "speaker": "narration", "text": "晚上八點的自習咖啡廳「夜燈」。門被用力推開，門口的風鈴響得特別大聲。" },
+        { "speaker": "yiqing", "expression": "happy", "text": "抱歉抱歉！練完間歇直接騎車過來的，還沒開始吧？" },
+        { "speaker": "narration", "text": "橘色運動外套，頭髮還有點濕。她掃了一圈，直接走到你這桌。" },
+        { "speaker": "yiqing", "expression": "normal", "text": "你是{player}對吧？我夏以晴，六年級，生理跟生化歸我。" },
         { "speaker": "player", "text": "學姊好……生理跟生化，加起來好像很多題？" },
-        { "speaker": "yiqing", "expression": "happy", "text": "五十幾題！醫學(一) 一半以上，是最大的一塊。所以——" },
-        { "speaker": "narration", "text": "她從包包裡拿出一張紙，上面用螢光筆畫滿了格子。標題寫著「一階選手訓練計畫」。" },
-        { "speaker": "yiqing", "expression": "happy", "text": "從今天開始，你就是我的選手！每天的量都排好了，有暖身、有主課表、有緩和！" },
+        { "speaker": "yiqing", "expression": "normal", "text": "醫學(一) 一百題裡面佔五十幾題，超過一半喔。所以要先排一下進度。" },
+        { "speaker": "narration", "text": "她從包包裡拿出一張折得皺皺的紙，上面用螢光筆畫滿了格子，標題寫著「一階訓練計畫」。" },
+        { "speaker": "yiqing", "expression": "happy", "text": "我照田徑隊的課表排的！暖身、主課表、緩和，一天一格。" },
         { "speaker": "choice", "options": [
-          { "text": "這、這是課表嗎……", "lines": [] },
+          { "text": "這、這是課表嗎……", "lines": [
+            { "speaker": "yiqing", "expression": "surprised", "text": "啊，你是不是覺得太多？" },
+            { "speaker": "yiqing", "expression": "normal", "text": "好啦，第一週先減半。跟不上的話不是你的問題，是課表排錯。" }
+          ] },
           { "text": "好！請學姊多指教！", "lines": [
-            { "speaker": "yiqing", "expression": "happy", "text": "喔喔，很有精神嘛！我喜歡！" }
+            { "speaker": "yiqing", "expression": "happy", "text": "喔，很有精神嘛！不過第一週還是先輕鬆跑。" }
           ] }
         ] },
-        { "speaker": "yiqing", "expression": "normal", "text": "讀書跟跑步一樣啦。一次衝太猛會受傷，每天固定跑，才會變快。" },
-        { "speaker": "yiqing", "expression": "happy", "text": "好！選手就位——衝了啦！" }
+        { "speaker": "yiqing", "expression": "normal", "text": "我比較想先知道你平常讀得了多久，再一點一點往上加。一開始就衝太猛，第二週就會想放棄了。" },
+        { "speaker": "yiqing", "expression": "happy", "text": "好，今天從心臟生理開始——衝了啦！" }
       ]
     },
     {
@@ -29,16 +32,17 @@
       "title": "熟識",
       "background": "library",
       "lines": [
-        { "speaker": "narration", "text": "你盯著克氏循環的圖已經半小時，八個步驟還是背不起來。" },
-        { "speaker": "yiqing", "expression": "normal", "text": "{player}，你的表情跟跑到第三十公里的人一樣耶。" },
-        { "speaker": "player", "text": "克氏循環太長了……" },
-        { "speaker": "yiqing", "expression": "happy", "text": "那就把它當成一場馬拉松！乙醯 CoA 是選手，跟草醯乙酸會合，變成檸檬酸——鳴槍起跑！" },
-        { "speaker": "yiqing", "expression": "normal", "text": "一圈八個補給站。異檸檬酸去氫酶是整場的配速員，它慢，整場就慢——所以它是速率限制步驟。" },
-        { "speaker": "yiqing", "expression": "happy", "text": "跑完一圈，選手拿到三個 NADH、一個 FADH₂、一個 GTP，排出兩個 CO₂。最後又變回草醯乙酸，等下一位選手！" },
+        { "speaker": "narration", "text": "你盯著克氏循環的圖半小時了，八個步驟還是接不起來。" },
+        { "speaker": "yiqing", "expression": "normal", "text": "{player}，你從剛剛就一直停在同一頁欸。卡在哪？" },
+        { "speaker": "player", "text": "克氏循環太長了，記到一半就亂掉……" },
+        { "speaker": "yiqing", "expression": "normal", "text": "你是不是從頭硬背？這種有順序的東西，我都當成在跑接力。" },
+        { "speaker": "yiqing", "expression": "happy", "text": "乙醯輔酶 A 拿著棒子進場，交給草醯乙酸，兩個合起來變成檸檬酸。這是第一棒。" },
+        { "speaker": "yiqing", "expression": "normal", "text": "中間有一棒特別慢，異檸檬酸去氫酶。它跑多快，整場就多快，所以它是速率限制步驟。" },
+        { "speaker": "yiqing", "expression": "normal", "text": "每進來一個乙醯輔酶 A，跑完一圈拿到三個 NADH、一個 FADH₂、一個 GTP，放出兩個 CO₂。最後草醯乙酸回到起點，等下一棒。" },
         { "speaker": "player", "text": "……奇怪，好像真的記住了。" },
-        { "speaker": "yiqing", "expression": "surprised", "text": "真的嗎！？" },
-        { "speaker": "yiqing", "expression": "shy", "text": "嘿嘿……其實這個比喻，我以前跟別人講，大家都笑我。你是第一個說有用的。" },
-        { "speaker": "yiqing", "expression": "happy", "text": "那、那下次電子傳遞鏈也用跑步講！你不准笑喔！" }
+        { "speaker": "yiqing", "expression": "surprised", "text": "真的假的！？" },
+        { "speaker": "yiqing", "expression": "shy", "text": "這個講法我以前講給同學聽，大家都笑我很像體育老師。你是第一個說有用的耶。" },
+        { "speaker": "yiqing", "expression": "happy", "text": "那電子傳遞鏈下次也這樣講。你不准笑喔。" }
       ]
     },
     {
@@ -46,17 +50,24 @@
       "title": "在意",
       "background": "track",
       "lines": [
-        { "speaker": "narration", "text": "傍晚的操場。你來找她拿講義，正好看到她在彎道上一個踉蹌，跌坐在跑道上。" },
+        { "speaker": "narration", "text": "傍晚的操場。你來找她拿講義，剛好看到她在彎道上腳一拐，跌坐在跑道上。" },
         { "speaker": "player", "text": "學姊！" },
-        { "speaker": "yiqing", "expression": "happy", "text": "沒事沒事！只是扭到一下，我自己走——嘶……" },
-        { "speaker": "narration", "text": "你扶著她走到保健室。她的腳踝外側已經開始腫起來。" },
-        { "speaker": "yiqing", "expression": "normal", "text": "內翻扭傷，最常傷到的是前距腓韌帶……你看，我連受傷都在幫你複習。" },
-        { "speaker": "narration", "text": "冰敷袋放上去之後，她忽然安靜了。平常停不下來的人，安靜起來特別明顯。" },
-        { "speaker": "yiqing", "expression": "sad", "text": "下個月有比賽。……我一直跑，是因為只有跑步的時候，不用想自己是不是夠好。" },
-        { "speaker": "player", "text": "學姊已經很好了。至少我的生化，是學姊救回來的。" },
-        { "speaker": "yiqing", "expression": "surprised", "text": "…………" },
-        { "speaker": "yiqing", "expression": "shy", "text": "笨蛋{player}。這種時候講這種話，很犯規耶。" },
-        { "speaker": "yiqing", "expression": "happy", "text": "腳抬高、冰敷——你也幫我記好喔。這次換你照顧我。" }
+        { "speaker": "yiqing", "expression": "happy", "text": "沒事沒事，扭一下而已，我自己走——嘶……" },
+        { "speaker": "narration", "text": "你扶她走到保健室。她的腳踝外側已經腫起來了。" },
+        { "speaker": "yiqing", "expression": "normal", "text": "腳往內翻扭到，最常傷到的是前距腓韌帶。考試會考喔，記一下。" },
+        { "speaker": "player", "text": "都這樣了還在出題……" },
+        { "speaker": "narration", "text": "冰敷袋放上去以後，她就沒再說話了。平常一刻都停不下來的人，安靜起來特別明顯。" },
+        { "speaker": "yiqing", "expression": "sad", "text": "下個月就要比賽了。隊上我年紀最大，那是我在學校最後一場。我不想最後一場用走的。" },
+        { "speaker": "choice", "options": [
+          { "text": "那這個月讀書也放慢一點，先把腳顧好。", "lines": [
+            { "speaker": "yiqing", "expression": "surprised", "text": "……你在幫我排課表喔？" },
+            { "speaker": "yiqing", "expression": "shy", "text": "好啦。這次換你當教練。" }
+          ] },
+          { "text": "學姊一定跑得完的。", "lines": [
+            { "speaker": "yiqing", "expression": "shy", "text": "你講得好篤定喔。……好啦，我信你。" }
+          ] }
+        ] },
+        { "speaker": "yiqing", "expression": "happy", "text": "那這幾天你幫我盯著：冰敷、腳抬高、不准偷跑。被你抓到的話，我請你喝飲料。" }
       ]
     },
     {
@@ -64,16 +75,18 @@
       "title": "心動",
       "background": "night_street",
       "lines": [
-        { "speaker": "narration", "text": "讀書會結束，外面下起大雨。她站在門口，看著自己空空的手。" },
+        { "speaker": "narration", "text": "讀書會結束，外面下起大雨。她站在門口，看著自己兩手空空。" },
         { "speaker": "yiqing", "expression": "sad", "text": "啊……傘放在社辦。" },
-        { "speaker": "player", "text": "一起撐吧。我送學姊回宿舍。" },
-        { "speaker": "narration", "text": "傘不大。為了不讓她淋到，你們只能靠得很近，近到肩膀一直碰在一起。" },
-        { "speaker": "yiqing", "expression": "shy", "text": "{player}，你走路的步頻跟我不一樣啦……一直撞到你。" },
-        { "speaker": "player", "text": "學姊的心跳好像很快？" },
-        { "speaker": "yiqing", "expression": "shy", "text": "那、那是交感神經！正腎上腺素作用在竇房結的 β1 受體，心跳本來就會變快！" },
-        { "speaker": "player", "text": "那為什麼交感神經會興奮？" },
+        { "speaker": "player", "text": "一起撐吧，我送學姊回宿舍。" },
+        { "speaker": "narration", "text": "傘不大。為了不讓她淋到，你們只能靠得很近，肩膀一直碰在一起。" },
+        { "speaker": "yiqing", "expression": "shy", "text": "你步伐跟我不一樣啦，一直撞到你。……我配合你好了。" },
+        { "speaker": "narration", "text": "她真的把腳步放慢，一步一步跟著你。走了一段路，她忽然按住自己的胸口。" },
+        { "speaker": "yiqing", "expression": "shy", "text": "欸，我心跳好快。一定是剛剛走太快。" },
+        { "speaker": "player", "text": "學姊剛剛才放慢耶。" },
+        { "speaker": "yiqing", "expression": "shy", "text": "那、那就是交感神經！正腎上腺素作用在竇房結的 β1 受體，心跳本來就會變快！" },
+        { "speaker": "player", "text": "那交感神經為什麼會興奮？" },
         { "speaker": "yiqing", "expression": "shy", "text": "…………因為在下雨啦！很冷！" },
-        { "speaker": "narration", "text": "走到宿舍門口，她跑上台階，又回頭。" },
+        { "speaker": "narration", "text": "走到宿舍門口，她跑上台階，又回過頭。" },
         { "speaker": "yiqing", "expression": "happy", "text": "{player}！下次……下次我也不帶傘了！" }
       ]
     },
@@ -83,17 +96,17 @@
       "background": "track",
       "outfit": "track",
       "lines": [
-        { "speaker": "narration", "text": "大專盃女子組一萬公尺決賽。這是她在學校的最後一場比賽。" },
-        { "speaker": "narration", "text": "最後一圈的鐘聲響起。她落後第一名半圈，卻還在加速。" },
+        { "speaker": "narration", "text": "大專盃女子組一萬公尺決賽，她在學校的最後一場比賽。腳踝貼著肌貼。" },
+        { "speaker": "narration", "text": "最後一圈的鐘聲響起。她跑在第三，和前面的人差了好一段，卻還在加速。" },
         { "speaker": "player", "text": "學姊——衝了啦！" },
-        { "speaker": "narration", "text": "她衝過終點，第三名。整個人倒在跑道上，大口喘氣，然後在人群裡找到你。" },
-        { "speaker": "yiqing", "expression": "happy", "text": "你……真的來了……" },
-        { "speaker": "yiqing", "expression": "sad", "text": "沒拿到第一。……最後一場耶，好不甘心。" },
-        { "speaker": "player", "text": "可是學姊最後一圈一直在加速。我都看到了。" },
-        { "speaker": "yiqing", "expression": "shy", "text": "……因為終點有人在等啊。" },
-        { "speaker": "narration", "text": "她站起來，把號碼布拆下來，塞進你手裡。" },
-        { "speaker": "yiqing", "expression": "shy", "text": "這個先給你保管。我還有一句話要說，可是要等你的一階考完。" },
-        { "speaker": "yiqing", "expression": "happy", "text": "換你上場了，選手。你的終點線，我會在那裡等！" }
+        { "speaker": "narration", "text": "她衝過終點，第三名。整個人躺在跑道上大口喘氣，然後轉頭，在看台上找你。" },
+        { "speaker": "yiqing", "expression": "happy", "text": "你真的來了……" },
+        { "speaker": "yiqing", "expression": "sad", "text": "沒拿到第一。最後一場耶，好不甘心。" },
+        { "speaker": "player", "text": "可是學姊最後一圈一直在加速，我都有看到。而且是用跑的跑完。" },
+        { "speaker": "yiqing", "expression": "shy", "text": "嗯。……因為我知道你在終點那邊。" },
+        { "speaker": "narration", "text": "她站起來，把別在胸前的號碼布拆下來，塞進你手裡。" },
+        { "speaker": "yiqing", "expression": "shy", "text": "這個先給你保管。我有一句話想講，等你一階考完再講。" },
+        { "speaker": "yiqing", "expression": "happy", "text": "接下來換你上場了。你跑的時候，我會在終點線等你。" }
       ]
     }
   ]

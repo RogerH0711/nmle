@@ -1,13 +1,27 @@
 import { useDeferredValue, useEffect, useMemo, useState } from 'react'
 import type { Index, Letter, Question } from './types'
-import { imageUrl, loadPaper, paperLabel } from './bank'
+import { dataUrl, imageUrl, loadPaper, paperLabel } from './bank'
 import { loadExplanationTexts } from './explanations'
 import { ExplanationPanel } from './ExplanationPanel'
 import { ReportButton } from './Report'
-import { bankHash, fold, highlight, inScope, parseQuery, searchBank, type BankRoute } from './search'
+import {
+  bankHash, buildExpansions, expandTerms, fold, highlight, inScope, parseQuery, searchBank,
+  type BankRoute, type Expansions,
+} from './search'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
 const PAGE = 30 // 一次列幾題，往下按「再顯示」
+const LISTED = 6 // 「也找了」先列幾個名稱
+
+// 同義詞與上位概念（約 60 KB），第一次開題庫時載入；載入失敗就只用原本的字搜
+let expansionsPromise: Promise<Expansions | null> | null = null
+function loadExpansions() {
+  const json = (path: string) => fetch(dataUrl(path)).then((r) => (r.ok ? r.json() : Promise.reject(new Error(path))))
+  expansionsPromise ??= Promise.all([json('search/concepts.json'), json('search/synonyms.json')])
+    .then(([c, s]) => buildExpansions(c.concepts, s.groups))
+    .catch(() => null)
+  return expansionsPromise
+}
 
 /**
  * 題庫：依年度、考卷、學科瀏覽題目，或用關鍵字搜尋（題幹、選項，可以加上詳解）。
@@ -25,6 +39,7 @@ export function QuestionBank(props: {
   const [explanations, setExplanations] = useState<Map<string, string> | null>(null)
   const [shown, setShown] = useState(PAGE)
   const [error, setError] = useState(false)
+  const [expansions, setExpansions] = useState<Expansions | null>(null)
   const query = useDeferredValue(route.query) // 打字時先更新輸入框，結果晚一點跟上
 
   const years = [...new Set(index.papers.map((p) => p.year))].sort((a, b) => b - a)
@@ -37,6 +52,14 @@ export function QuestionBank(props: {
   useEffect(() => {
     window.history.replaceState(null, '', bankHash(route))
   }, [route])
+
+  useEffect(() => {
+    let alive = true
+    void loadExpansions().then((e) => alive && setExpansions(e))
+    return () => {
+      alive = false
+    }
+  }, [])
 
   useEffect(() => {
     let alive = true
@@ -65,12 +88,17 @@ export function QuestionBank(props: {
     }
   }, [paperIds, withExplanations])
 
-  const terms = useMemo(() => parseQuery(query), [query])
+  const groups = useMemo(() => expandTerms(parseQuery(query), expansions ?? undefined), [query, expansions])
+  const terms = useMemo(() => groups.flat(), [groups]) // 標示用：原本的字和展開的寫法都標
   const hits = useMemo(() => {
     if (!questions) return []
-    const all = searchBank(questions, { scope: route.scope, subject: route.subject, terms }, explanations ?? undefined)
+    const all = searchBank(questions, { scope: route.scope, subject: route.subject, groups }, explanations ?? undefined)
     return route.number === null ? all : all.filter((h) => h.q.number === route.number)
-  }, [questions, route.scope, route.subject, route.number, terms, explanations])
+  }, [questions, route.scope, route.subject, route.number, groups, explanations])
+  // 「抗生素」也找了 gentamicin、vancomycin…：讓人知道為什麼會出現沒有這個字的題目
+  const expanded = groups
+    .filter((g) => g.length > 1)
+    .map(([t, ...alts]) => ({ term: t, alts: alts.map((a) => expansions?.labels.get(a) ?? a) }))
 
   const update = (patch: Partial<BankRoute>) => {
     setRoute((r) => ({ ...r, number: null, ...patch }))
@@ -95,8 +123,8 @@ export function QuestionBank(props: {
           type="search"
           className="bank-search"
           aria-label="搜尋題目"
-          placeholder="搜尋題目，例如 vancomycin、內側延腦"
-          title="搜題幹和選項，不分大小寫；空白分開的幾個字要同時出現"
+          placeholder="搜尋題目，例如 vancomycin、內側延腦、抗生素"
+          title="搜題幹和選項，不分大小寫；空白分開的幾個字要同時出現。藥物類別、菌種分類、中英名詞會一起找"
           value={route.query}
           onChange={(e) => update({ query: e.target.value })}
         />
@@ -153,6 +181,13 @@ export function QuestionBank(props: {
           </>
         )}
       </div>
+      {route.number === null &&
+        expanded.map(({ term, alts }) => (
+          <p className="hint" key={term} title={alts.join('、')}>
+            「{expansions?.labels.get(term) ?? term}」也找了 {alts.slice(0, LISTED).join('、')}
+            {alts.length > LISTED && ` 等 ${alts.length} 個名稱`}
+          </p>
+        ))}
       {route.subject !== 'all' && route.number === null && (
         <p className="hint">學科目前依題號區段粗分，還沒有逐題確認，可能有少數題目分錯。</p>
       )}

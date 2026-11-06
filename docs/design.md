@@ -314,6 +314,9 @@ Supabase（登入、進度、排行榜）← GitHub Pages 做不到的部分
 - 資料檔（題庫、角色、台詞、立繪）網址後面加上部署時的 commit（`?v=`）。GitHub Pages 讓瀏覽器快取每個檔案 10 分鐘，不加的話剛部署完可能新程式配到舊資料（例如顏緋的胸像設定還沒更新，角色卡顯示成全身）。
 - CSP（10/25，`web/src/csp.ts`）：GitHub Pages 不能設 HTTP header，用 `<meta>`。網站本體只在 build 時加（`vite.config.ts` 的 plugin；開發伺服器會插入 inline script 和 HMR 的 websocket）；script 只允許自己和 Turnstile，連線只允許自己和 Supabase，`style-src` 留著 `'unsafe-inline'`（Turnstile 的互動驗證沒辦法在沙盒裡完整測）。SEO 靜態頁和 `privacy.html` 不允許任何 script。新增外部服務要加進 `csp.ts`，`csp.test.ts` 會檢查 Supabase、Turnstile 的網址和程式一致。`frame-ancestors` 用 `<meta>` 設不了，擋不了被嵌進 iframe。
 - 共用網域（10/25）：`rogerh0711.github.io` 底下還有 `K-Map-Practice`、`Serenity_Tracker`，同一個 origin 的頁面讀得到這個網站的 localStorage（含 Supabase 的登入權杖）。那兩個目前沒有第三方 script，風險低；要徹底分開得換 origin（例如 GitHub organization），網址會變，等 Roger 決定（見 plan.md）。
+- 自訂網域 `nmle.me`（11/05 決定並註冊，Namecheap 學生方案）：網域設在 **`nmle` 這個 repo**，不是使用者網站 `RogerH0711.github.io`。設在使用者網站的話，帳號底下所有專案網站都會搬到 `nmle.me/<repo>/`，還是同一個 origin。
+  - **不要用 Namecheap 的「GitHub Pages」自動設定**：11/05 它自己建了 `RogerH0711.github.io` repo 和 `CNAME`，帳號底下的網站全部被 301 轉到還沒生效的 `nmle.me`，網站中斷約半小時。刪掉 repo 後，GitHub 的 CDN 還繼續送快取的 301（超過 20 分鐘都沒過期），重新部署該網站才清掉（`nmle` 用 Actions 的 Run workflow，從 branch 發布的 repo 推一個 commit）。DNS 記錄手動加，Namecheap 的 GitHub 授權用完就撤銷。
+  - 設了自訂網域，GitHub 會把舊的 `github.io` 網址整個 301 轉走，舊網站的程式不會再執行。所以「請先登入保存紀錄」的公告要在切換**之前**上線。301 沒有快取標頭，瀏覽器可能一直記著：切換後在 `nmle.me/nmle/` 放一頁轉回首頁，11/05 被轉過的人和舊連結都接得住。
 - 載入速度（10/19）：JS 壓縮前 510 KB，其中網站程式只有 77 KB，其餘是 React（219 KB）和 Supabase（214 KB），所以把排行榜、模擬考拆成用到才載入幫助不大。改成把兩個套件分開打包（`vite.config.ts`），部署新版時瀏覽器沿用套件的快取。首頁實際載入約 1.4 MB，最大的浪費是橫式、直式兩張校園地圖都下載（CSS 只是藏起其中一張），改成依螢幕寬度只渲染一種（`CampusMap.tsx` 的 `useLayout`），省約 240 KB。首頁的 `happy` 立繪是「有新劇情」的表情，不是浪費。
 
 **對錯由資料庫判斷（已完成，`supabase/migrations/20261015000000_leaderboard.sql`）**：各題正解放在 `question_keys` 表，前端讀不到；作答寫入時由 trigger 算出對錯，蓋掉瀏覽器送來的值。正解由 `pipeline/export_keys.py` 匯出成 `supabase/seed/question_keys.sql`，題庫有更新就重新匯出並執行，執行時也會重新判斷已有的作答紀錄。
@@ -384,8 +387,13 @@ Supabase（登入、進度、排行榜）← GitHub Pages 做不到的部分
 - **音效**：答對、答錯、連對、升階、收到訊息、送禮，用 Web Audio 的振盪器即時合成，不用音檔、沒有授權問題。一般模式也有。
 - **BGM**：只在角色模式；模擬考作答中不放，和考場一樣。曲目 id：`map`（地圖、排行榜、模擬考首頁、依考卷刷題）、`library`（錯題複習）、`theme_<角色 id>`（和她讀書、她的劇情），劇情可以用 `bgm` 欄位另外指定。換曲時淡入淡出，並等 0.4 秒再換：畫面切換常常短暫經過別的畫面（劇情播完、題目載入前會回到地圖一下），不等的話會來回切。用 AudioBufferSourceNode 循環，接縫比 `<audio loop>` 乾淨，可以指定 `loopStart`、`loopEnd`。
 - **語音**：當面的反應台詞（回合開始、答對、答錯等）、模擬考高分、收禮和收到服裝的台詞，用台詞 id 對應 `data/audio/voice/<id>.mp3`。有 `{player}` 的台詞錄兩個版本（`<id>.m.mp3` 學弟、`<id>.f.mp3` 學妹）。學姊傳的訊息是文字，不配音。劇情台詞還沒有 id，配音做出來時再加。語音播放時 BGM 降到四成。
-- **音檔清單** `data/audio/manifest.json`：沒列的曲目、語音不會去抓，所以音檔還沒做好時不會一直 404。現在是空的，聲音面板的音樂、語音顯示「製作中」。
+- **音檔清單** `data/audio/manifest.json`：沒列的曲目、語音不會去抓，所以音檔還沒做好時不會一直 404。BGM 七首 11/06 填入；語音還是空的，聲音面板的語音顯示「製作中」。
 - **之後要做的**：在 3070 用 ACE-Step 1.5（MIT 授權）生成 BGM；配音用 BreezyVoice（台灣華語，10/22 查過是 Apache-2.0）。參考音檔可以先用 Qwen3-TTS 的 VoiceDesign（Apache-2.0，用文字描述生成聲音）做，再交給 BreezyVoice 念台詞。每位學姊先生成幾個候選聲音，Roger 挑一個定案當公版參考音檔，之後的台詞都照它念；參考音檔可以依表情各一段（平常、害羞、嘴硬……），台詞是什麼表情就用哪一段。
+- **BGM 候選（10/31）**：`art/bgm.py` 用 ACE-Step 1.5 的 2B turbo（8GB 照官方建議：INT8 量化、CPU offload、不載 LM）生成，環境是 `art/ace-step/`（clone，`uv sync`，不進 repo）。七首各四個 seed、每首 100 秒，3070 上一首約 13 秒。模型權重和程式都是 MIT，model card 寫明生成的音樂可以商用。挑曲目時看三件事：沒有人聲、音量沒有突然變大、放著讀書不會分心。連續生成會累積記憶體，一次 10 首以內（見 `art/bgm.py` 開頭）。
+  - Roger 試聽評分（11/06，10 分滿分；其他五首還沒聽）：`map` s1 8、s2 7、s3 8、s4 5（有很不舒服的聲音，吉他和弦沒弄好）；`library` s1 6、s2 7、s3 5（有些連音很奇怪）、s4 6；`theme_jingcheng` s1 8、s2 8、s3 8、s4 5；`theme_yiqing` 四首都很難聽；`theme_ying` s1 6（後半段很奇怪）、s2 7、s3 7、s4 5（太刺耳）；`theme_zhixun` s1 7、s2 7、s3 6、s4 5；`theme_fei` s1 6、s2 5、s3 6、s4 4。
+  - 第二批（11/06）：`map`、`theme_jingcheng` 已有 8 分，不再生成。夏以晴、顏緋的最高分太低，改寫曲風描述，換新的一批（檔名 `v2_s<seed>`）；`library`、葉縈、溫芷薰的描述不變，多跑 seed 5–8。
+  - 第二批評分：`theme_yiqing` v2_s1 8、v2_s2 7、v2_s3 6、v2_s4 7；`theme_ying` s5 8、s6 7、s7 8、s8 8；`theme_zhixun` s5 8、s6 8、s7 6、s8 6；`theme_fei` v2_s1 7、v2_s2 8、v2_s3 7（40 多秒處好像斷訊）、v2_s4 8；`library` s5 7、s6 8、s7 7、s8 7。8 分的候選整理在 `art/bakeoff/bgm/finals.html`，Roger 再聽一遍定案。
+  - **定案（11/06）**：`map` s1、`library` s6、沈靜澄 s1、夏以晴 v2_s1、葉縈 s8、溫芷薰 s5、顏緋 v2_s2（v2_s4 也好聽，但有些尖銳的聲音）。`art/bgm_loop.py` 切循環點：循環長度取整數小節、至少 55 秒，前段找起點、後段找終點，選兩邊頻譜最像的一組，接縫 1 秒等功率交叉淡化；響度統一 -20 LUFS（`library` 受峰值限制是 -21.5），壓成 mp3 放 `data/audio/bgm/`（七首共 9.4MB）。libsndfile 讀回的 mp3 沒有編碼延遲位移；瀏覽器沒扣掉的話，兩個循環點一起偏約 23ms，循環長度不變。接縫試聽 `art/bakeoff/bgm/seams.html`。溫芷薰的整數小節接縫不行（推論：實際速度和設定的 BPM 有落差），改用不限小節、以起音對齊的候選（`--alts`），Roger 選 alt2（18.39–86.86 秒，記在 `PICK`）；其他六首照整數小節。
 - **候選聲音（10/25 開工）**：`art/voice_design.py` 生成，`art/voice_check.py` 用 Breeze-ASR-25（聯發科的台灣華語 Whisper，Apache-2.0）辨識、算錯字率，產生試聽頁 `art/bakeoff/voice/index.html`。
   - 原版 qwen-tts 在 3070 上 2 秒的音要 91 秒；改用 faster-qwen3-tts（CUDA graph，MIT）後 7 秒的音 3 秒生成，環境是 `.venv-tts-fast`。transformers 要用 5.15.1，5.20 載入會出錯。
   - Qwen3-TTS 照大陸讀音，「姊」念成 zǐ，送進模型前換成同音的「姐」；其他台灣、大陸讀音不同的字（星期、微、危）沒辦法靠換字解決，所以正式台詞還是交給 BreezyVoice。

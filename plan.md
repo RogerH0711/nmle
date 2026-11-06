@@ -1,6 +1,6 @@
 # 醫師一階刷題 galgame：目前狀態與待辦
 
-最後更新：2026-10-25
+最後更新：2026-11-06
 
 開工只讀這份。各功能怎麼做、為什麼這樣決定、過去的回饋都在 `docs/design.md`（需要時查對應段落）；角色與台詞在 `characters.md`。
 
@@ -30,7 +30,7 @@
 **Claude（依序）**
 
 1. 台詞與劇情改寫（10/25 同學回報「AI 感很重」）：規則在 `characters.md`「台詞寫法」。挑台詞的程式已改（好感度上限、`rare`、知識台詞對題目關鍵字，`web/src/lineRules.ts`）；10/25 五位的台詞都改完、知識台詞都加了 `keywords`；劇情改了顏緋五段，其他四位只修了幾句（寫法本來就由情境觸發）。等 Roger 和同學看過，再決定要不要繼續調整。
-2. 聲音的音檔（等台詞定稿再念）：顏緋的聲音定為 B_s6（Qwen3-TTS VoiceDesign 候選）；BreezyVoice 在 WSL 可以跑（`art/voice_breezy.py`，速度問題已解決）、每句念幾次用語音辨識挑最好的。BGM 用 ACE-Step 1.5 還沒開始；做完在網站標出處（「美術與內容」的「聲音」）。
+2. 聲音的音檔（等台詞定稿再念）：顏緋的聲音定為 B_s6（Qwen3-TTS VoiceDesign 候選）；BreezyVoice 在 WSL 可以跑（`art/voice_breezy.py`，速度問題已解決）、每句念幾次用語音辨識挑最好的。BGM：11/06 七首定案並接進網站（ACE-Step 1.5，`art/bgm.py` 生成、`art/bgm_loop.py` 切循環點與壓 mp3，出處已標在頁尾、`privacy.html`、README）；Roger 聽過接縫（溫芷薰改用另一組循環點），11/06 上線（「美術與內容」的「聲音」）。
 3. 題庫瀏覽、搜尋、選項打亂、SEO（做法見 `docs/design.md`「題庫瀏覽與搜尋」）：
    1. ~~瀏覽頁與關鍵字搜尋~~（10/25 完成，`web/src/QuestionBank.tsx`，網址 `#/bank/...`）。10/25 使用說明加了「題庫」一節和打亂選項的說明（`Guide.tsx`）；還沒給朋友試用。
    2. ~~選項打亂~~（10/25 完成，`web/src/options.ts`；不打亂的只有一題多解等 43 題）。
@@ -47,13 +47,13 @@
 
 **等 Roger 決定**
 
-- 網站要不要搬到獨立的 origin（security review L3）：`rogerh0711.github.io` 底下的 `K-Map-Practice`、`Serenity_Tracker` 讀得到這個網站的登入權杖。搬到 GitHub organization 免費，但網址會變（Search Console、OAuth Redirect URL、Turnstile 主機名稱、朋友的連結）。不搬的話，同帳號的網站不要載入第三方 script。
+- 什麼時候切換到 `nmle.me`（公告至少要先掛幾天，切換後舊網址會被 GitHub 直接轉走）。
 - 是否解析 105–109 年考卷（考試代碼已在 `pipeline/exams.json`；10/25：音檔做完再決定）。
 
 **10/20 已決定**
 
 - 3070 筆電的 GPU 環境：`.venv-gpu/`（Python 3.14、PyTorch 2.14.1 + CUDA 13.0，已測過 GPU 可用，不進 repo）；本地 LLM 用 Windows 版 Ollama 跑 `qwen3.5:9b`（WSL 裡的舊 Ollama 已停用）。
-- 網域：維持 `rogerh0711.github.io/nmle`，不買自訂網域。
+- 網域：~~維持 `rogerh0711.github.io/nmle`~~ 11/05 改為公開前搬到自訂網域（學生方案的免費網域），一次解決 security review L3（同帳號的 `K-Map-Practice`、`Serenity_Tracker` 讀得到登入權杖）。要長期續約，過期會被別人註冊走。朋友的資料：搬家前一週在舊網站公告「請先登入保存紀錄」，不做跨網域交接頁（有登入的人只會掉穿哪套服裝、看過的劇情、訊息、稱呼、設定）。
 - 去背模型 `bria-rmbg`（rembg 下載的是 RMBG-2.0，CC BY-NC 4.0）：在 README／網站標示出處，網站維持不收費；要商業化時再換模型或買授權。
 
 ## 公開前要完成
@@ -75,6 +75,7 @@
 - [x] security review 的發現（10/25 修正並上線，`reports/security-review.md`）；L6（帳號名稱可以被試出來）只記錄不修
 - [x] security review 的 Dashboard 檢查清單（10/26 Roger 確認完成，報告最後）：Confirm email 關閉、Secure email change 開啟、Anonymous sign-ins 關閉、Redirect URLs 只留自己的網址、設定用量告警（Settings → Usage）
 - [x] 題庫抽檢進 CI（10/25，`web/src/questionBank.test.ts`，跟著 `npm test` 跑；第一次跑抓到 2 題 override 混進看不見的控制字元，已修正）
+- [ ] 搬到自訂網域 `nmle.me`（security review L3；11/05 Roger 已註冊）：舊網站公告請先登入 → 改網址、手動設 DNS、GitHub 驗證網域、`nmle` repo 設自訂網域 → 更新 Supabase、Google OAuth、Turnstile、Search Console、朋友的連結。注意事項見 `docs/design.md`「技術架構」的自訂網域
 - [ ] 確認 Dcard 醫師版板規
 - [ ] 寄信給陽明醫國考詳解的作者群，說明我們拿詳解來比對（見「詳解與題目正確率」）
 

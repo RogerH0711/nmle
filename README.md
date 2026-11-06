@@ -132,3 +132,4 @@ python pipeline/export_keys.py      # 題庫變動後重新產生正解 seed
 - 名詞對照：國家教育研究院「樂詞網」學術名詞，依政府資料開放授權條款第 1 版使用。
 - 詳解：Qwen3.6-27B 生成，未經人工審核。
 - 角色立繪與背景：Animagine XL 4.0 生成；立繪去背使用 BRIA RMBG-2.0（CC BY-NC 4.0，限非商業使用）。
+- 背景音樂：[ACE-Step 1.5](https://github.com/ace-step/ACE-Step-1.5)（MIT 授權）生成。

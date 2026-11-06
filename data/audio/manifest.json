@@ -1,5 +1,41 @@
 {
   "_說明": "BGM 與語音的音檔清單（web/src/audio.ts）。沒列在這裡的不會播，所以音檔還沒做好時網站也不會一直抓不到檔案。bgm：曲目 id → { file（相對於 data/audio/）, loopStart, loopEnd（秒，選填，循環的起點和終點） }；曲目 id 見 web/src/audioRules.ts 的 chooseBgm：map、library、theme_<角色 id>，劇情可以用 bgm 欄位另外指定。voice：有語音的台詞 id，檔案是 data/audio/voice/<id>.mp3；有 {player} 的台詞錄兩個版本 <id>.m.mp3（學弟）、<id>.f.mp3（學妹）。",
-  "bgm": {},
+  "bgm": {
+    "map": {
+      "file": "bgm/map.mp3",
+      "loopStart": 21.5,
+      "loopEnd": 81.4774
+    },
+    "library": {
+      "file": "bgm/library.mp3",
+      "loopStart": 6.7,
+      "loopEnd": 66.691
+    },
+    "theme_jingcheng": {
+      "file": "bgm/theme_jingcheng.mp3",
+      "loopStart": 22.1,
+      "loopEnd": 91.2282
+    },
+    "theme_yiqing": {
+      "file": "bgm/theme_yiqing.mp3",
+      "loopStart": 10.35,
+      "loopEnd": 72.5406
+    },
+    "theme_ying": {
+      "file": "bgm/theme_ying.mp3",
+      "loopStart": 6.3,
+      "loopEnd": 78.2557
+    },
+    "theme_zhixun": {
+      "file": "bgm/theme_zhixun.mp3",
+      "loopStart": 18.3893,
+      "loopEnd": 86.8593
+    },
+    "theme_fei": {
+      "file": "bgm/theme_fei.mp3",
+      "loopStart": 9.35,
+      "loopEnd": 66.7168
+    }
+  },
   "voice": []
 }

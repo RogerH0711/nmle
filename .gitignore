@@ -21,3 +21,6 @@ art/*/
 
 # 個人遠端連線設定（含 Tailscale IP），不進 repo
 rog-remote-access.md
+
+# ACE-Step 執行時產生的進度估計
+.cache/

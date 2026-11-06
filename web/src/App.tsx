@@ -1121,7 +1121,7 @@ function Disclaimer() {
         解析，可能有誤，發現問題請按題目下方的「回報疑義」。
       </p>
       <p>
-        角色立繪為 AI 生成（Animagine XL 4.0，去背使用 BRIA RMBG-2.0，CC BY-NC 4.0）。網站會記錄匿名的使用統計（隨機的裝置代碼和每天作答題數，不含個人資料）。
+        角色立繪與背景音樂為 AI 生成（立繪 Animagine XL 4.0，去背使用 BRIA RMBG-2.0，CC BY-NC 4.0；音樂 ACE-Step 1.5）。網站會記錄匿名的使用統計（隨機的裝置代碼和每天作答題數，不含個人資料）。
       </p>
       <p>
         <a href={`${import.meta.env.BASE_URL}privacy.html`}>隱私權政策與使用條款</a>

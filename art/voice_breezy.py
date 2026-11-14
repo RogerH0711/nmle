@@ -2,9 +2,12 @@
 #
 # BreezyVoice 只支援 Linux，裝在 WSL 的 ~/code/BreezyVoice（Python 3.10，.venv）。在 WSL 裡用它的 python 執行：
 #   ~/code/BreezyVoice/.venv/bin/python art/voice_breezy.py fei B_s6 --takes 4
+#   ~/code/BreezyVoice/.venv/bin/python art/voice_breezy.py fei B_s1 --all --takes 6 --tag final   # 正式念全部台詞
+#   （正式量產用 art/voice_rounds.sh：念、辨識、還不完美的再多念幾次）
 # 參考音檔是 voice_design.py 的候選（art/bakeoff/voice/<角色>/<候選>.wav），原文預設是它該念的那句；
 # 參考音檔實際念的和原文不一樣時，用 --prompt-text 給實際念的內容，--tag 把結果放到另一個資料夾比較。
-# 輸出：art/bakeoff/voice/breezy/<角色>/<候選>[-<tag>]/<台詞 id>_t<k>.wav，已經有的不重做。
+# 輸出：art/bakeoff/voice/breezy/<角色>/<候選>[-<tag>]/<語音 key>_t<k>.wav，已經有的不重做。
+# 語音 key 是台詞 id；有 {player} 的台詞念兩次，key 是 <id>.m（學弟）、<id>.f（學妹），和 web/src/audioRules.ts 的 voiceKeys 一樣。
 #
 # BreezyVoice 每次念的結果都不一樣（語言模型是抽樣的），所以每句念 --takes 次，
 # 再用 voice_check.py breezy 挑錯字率最低的。第 k 次用 seed k，可以重現。
@@ -15,6 +18,7 @@ import argparse
 import json
 import os
 import random
+import re
 import sys
 from pathlib import Path
 
@@ -29,18 +33,65 @@ TEST_LINES = {
             'fei-streak-001', 'fei-gift_liked-001', 'fei-finish-006'],
 }
 
+# 要配音的情境（docs/design.md「聲音」）：當面的反應、模擬考高分、收禮、收到服裝。學姊傳的訊息（msg_*）是文字，不配音
+VOICED = {'start', 'correct', 'wrong', 'streak', 'finish', 'comeback', 'gift', 'gift_liked', 'mock_high', 'outfit'}
+PLAYER = {'m': '學弟', 'f': '學妹'}
 
-# 讀音修正：只改送進 BreezyVoice 的文字，畫面上的台詞不變。注音寫法是在字後面加 [:注音+聲調]（BreezyVoice 的格式）。
-# 每一條都是語音辨識在每次試念都聽錯、多念幾次也不會好的（10/25 顏緋試念）
+# 參考音檔實際念的內容（Breeze-ASR-25 辨識，10/25）。voice_design.py 的原文是「不是在誇你喔！你、你……」，
+# Qwen3-TTS 念成「我是在誇你喔」「你你」；用實際念的當提示，BreezyVoice 比較不會亂（試念 8 句：錯字率 5% 以下 4 句，用原文 2 句）
+# 11/12 Roger 改用 B_s1（「s6 蠻糟的，這個聲音不好聽」），B_s1 的辨識結果沒有「哼」和「你你」
+REF_TEXT = {
+    ('fei', 'B_s6'): '哼，算你還有點腦袋。我是在誇你喔！你你這幾天跑去哪了？我才沒有在等你！只是考古題印好了沒人拿而已！',
+    ('fei', 'B_s1'): '算你還有點腦袋。不是在誇你喔！你這幾天跑去哪了？我才沒有在等你！只是考古題印好了沒人拿而已！',
+}
+
+
+def voice_items(lines, ids=None):
+    """(語音 key, 要念的文字)：有 {player} 的分成學弟、學妹兩個；有其他代入欄位（{gift}、{hours}）的沒辦法事先錄，跳過"""
+    items = []
+    for l in lines:
+        if ids is not None and l['id'] not in ids:
+            continue
+        if ids is None and l.get('situation') not in VOICED:
+            continue
+        text = l['text']
+        if re.search(r'\{(?!player\})', text):
+            continue
+        if '{player}' in text:
+            items += [(f"{l['id']}.{k}", text.replace('{player}', v)) for k, v in PLAYER.items()]
+        else:
+            items.append((l['id'], text))
+    return items
+
+
+# 讀音修正：只改送進 BreezyVoice 的文字，畫面上的台詞不變。念之前先看注音：voice_breezy.py <角色> <候選> --all --show
+#（套用 SAY 後的結果，標錯的字在這裡補）。注音寫法是在字後面加 [:注音+聲調]（BreezyVoice 的格式）。
+# 每一條都是語音辨識在每次試念都聽錯、多念幾次也不會好的。BreezyVoice 先把文字轉成簡體再用 g2pW 標注音，
+# 錯的讀音多半是 g2pW 標的（11/12 實測：「坏」標成 ㄆㄟ2、「酪」標成 ㄌㄨㄛ4）
 SAY = [
-    ('壞死', '壞[:ㄏㄨㄞ4]死'),  # 8 次都被聽成「陪死」
+    ('壞', '壞[:ㄏㄨㄞ4]'),      # 「壞死」「考壞」都被念成「陪」（10/25、11/12 顏緋）
+    ('乾酪', '乾酪[:ㄌㄠ4]'),    # 6 次都念成 lù／luò（11/12 顏緋）
+    # 繁轉簡後變成多音字、g2pW 標錯的（11/12）：么 ㄧㄠ1（「這麼」聽成「這要」）、胜 ㄒㄧㄥ1（「勝算」聽成「心算」）、种 ㄔㄨㄥ2
+    ('麼', '麼[:ㄇㄜ5]'),
+    ('勝', '勝[:ㄕㄥ4]'),
+    ('種', '種[:ㄓㄨㄥ3]'),
+    ('咳', '咳[:ㄎㄜ2]'),        # 沒標注音，24 次都被聽成「可」
     ('爛到', '爛[:ㄌㄢ4]到'),    # 8 次都被聽成「煉到」「練到」
+    # BreezyVoice 在句號處切開、每句分開念；fei-wrong-008 長句後面的短句「跟分化不良不一樣」12 次都念壞，接成同一句。
+    # 接起來後（第 13–18 次）念得到「跟分化不良不一樣」，但最後的「不要搞混」還是沒念，這句目前沒上線
+    ('上皮。跟分化', '上皮，跟分化'),
     ('RR', 'R R'),               # 英文縮寫連在一起時念不出來，字母分開
     ('OR', 'O R'),
 ]
 
 
 def say(text):
+    # 「……」會原樣送進語言模型，那裡常多出不相干的音（11/12：「……對啦」念成「可惜對了」）；開頭的刪掉，中間的換成逗號。
+    # 這條在 11/12 才加，B_s6-final 的第 1–6 次是沒換的
+    text = re.sub(r'^(……)+', '', text)
+    text = re.sub(r'(……)+', '，', text)
+    text = re.sub(r'([，。？！])，', r'\1', text)
+    text = re.sub(r'，([。？！])', r'\1', text)  # 「排隊的……！」→「排隊的！」
     for a, b in SAY:
         text = text.replace(a, b)
     return text
@@ -54,6 +105,8 @@ def main():
     ap.add_argument('--prompt-text', help='參考音檔實際念的內容（預設是 voice_design.py 的原文）')
     ap.add_argument('--tag', help='輸出資料夾加上的後綴，用來比較不同設定')
     ap.add_argument('--lines', nargs='+', help='只念這幾句（預設是 TEST_LINES 全部）')
+    ap.add_argument('--all', action='store_true', help='念全部要配音的台詞（VOICED 的情境）')
+    ap.add_argument('--show', action='store_true', help='不念，只印每句前處理後的注音，用來找 g2pW 標錯的讀音')
     args = ap.parse_args()
     cid = args.character
 
@@ -81,6 +134,18 @@ def main():
     from g2pw import G2PWConverter
     from single_inference import CustomCosyVoice, single_inference
 
+    lines = json.loads((DATA / f'{cid}.json').read_text(encoding='utf-8'))['lines']
+    items = voice_items(lines, None if args.all else set(args.lines or TEST_LINES[cid]))
+    if args.show:
+        from single_inference import get_bopomofo_rare
+        from tn.chinese.normalizer import Normalizer
+        tn, g2p = Normalizer(), G2PWConverter(use_cuda=True)
+        for key, text in items:
+            # 和 single_inference 一樣，括號裡的注音不正規化（不然聲調數字會被轉成國字）
+            parts = re.split(r'(\[.*?\])', say(text))
+            print(key, ''.join(p if p.startswith('[') else get_bopomofo_rare(tn.normalize(p), g2p) if p else '' for p in parts))
+        return
+
     model = CustomCosyVoice('MediaTek-Research/BreezyVoice')
     # 手動標注音時，single_inference.py 會在括號處切開文字、每段分開正規化，非最後一段會刪掉最後一個字，
     # 因為它假設正規化工具（ttsfrd）會在沒有句號的文字後面補「。」。沒裝 ttsfrd 時用的 WeTextProcessing 不會補，
@@ -89,21 +154,20 @@ def main():
     normalize = tn.normalize
     tn.normalize = lambda text: (out := normalize(text)) + ('' if text.endswith('。') or out.endswith('。') else '。')
     g2p = G2PWConverter(use_cuda=True)  # onnxruntime-gpu 要明確指定 provider，不給 use_cuda 會建立失敗
-    lines = {l['id']: l['text'] for l in json.loads((DATA / f'{cid}.json').read_text(encoding='utf-8'))['lines']}
-    prompt = args.prompt_text or VOICES[cid]['text']
     for ref in args.refs:
+        prompt = args.prompt_text or REF_TEXT.get((cid, ref)) or VOICES[cid]['text']
         out = OUT / cid / (f'{ref}-{args.tag}' if args.tag else ref)
         out.mkdir(parents=True, exist_ok=True)
-        for lid in args.lines or TEST_LINES[cid]:
+        for n, (key, text) in enumerate(items, 1):
             for k in range(1, args.takes + 1):
-                path = out / f'{lid}_t{k}.wav'
+                path = out / f'{key}_t{k}.wav'
                 if path.exists():
                     continue
                 random.seed(k)
                 np.random.seed(k)
                 torch.manual_seed(k)
-                single_inference(str(ART / 'bakeoff' / 'voice' / cid / f'{ref}.wav'), say(lines[lid].replace('{player}', '學弟')),
-                                 str(path), model, g2p, prompt)
+                single_inference(str(ART / 'bakeoff' / 'voice' / cid / f'{ref}.wav'), say(text), str(path), model, g2p, prompt)
+            print(f'{n}/{len(items)} {key}', flush=True)
 
 
 if __name__ == '__main__':

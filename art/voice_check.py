@@ -48,6 +48,22 @@ def longest_pause(wav, sr, frame=0.02):
     return float(gaps.max() * frame) if len(gaps) else 0.0
 
 
+def gaps(wav, sr, floor_db=-35, min_secs=0.12):
+    """句子中間的停頓：音量低於最大音量 floor_db、至少 min_secs 秒的段落，回傳 [(開始秒數, 長度)]，頭尾的靜音不算。
+    11/12 Roger 指出「笨蛋｜學弟」「來了｜就坐好」中間多停了一下，這兩處分別是 0.42、0.56 秒"""
+    n = int(sr * 0.01)
+    frames = wav[: len(wav) // n * n].reshape(-1, n)
+    rms = np.sqrt((frames ** 2).mean(axis=1) + 1e-12)
+    loud = np.flatnonzero(rms > rms.max() * 10 ** (floor_db / 20))
+    if len(loud) == 0:
+        return []
+    out = []
+    for a, b in zip(loud[:-1], loud[1:]):
+        if (b - a - 1) * 0.01 >= min_secs:
+            out.append((round((a + 1) * 0.01, 2), round((b - a - 1) * 0.01, 2)))
+    return out
+
+
 def load_asr():
     return pipeline('automatic-speech-recognition', model='MediaTek-Research/Breeze-ASR-25',
                     torch_dtype=torch.float16, device='cuda:0')
@@ -98,19 +114,38 @@ def check_breezy(asr):
     """voice_breezy.py 念的台詞。每句念了好幾次（<台詞 id>_t<k>.wav），每次都辨識，結果寫進 results.json；
     每個設定（資料夾）印出每句最好的那次，和「最好的那次錯字率 5% 以下」的句數"""
     import json
-    from voice_breezy import DATA, OUT
+    from voice_breezy import DATA, OUT, PLAYER
 
+    # 已經辨識過的音檔沿用 results.json 的結果（voice_breezy.py 不會重念已經有的檔案，所以同一個檔名內容不變）
+    old_path = OUT / 'results.json'
+    old = json.loads(old_path.read_text(encoding='utf-8')) if old_path.exists() else {}
     results = {}
     for cdir in sorted(p for p in OUT.iterdir() if p.is_dir()):
-        texts = {l['id']: l['text'].replace('{player}', '學弟')
-                 for l in json.loads((DATA / f'{cdir.name}.json').read_text(encoding='utf-8'))['lines']}
+        texts = {}
+        for l in json.loads((DATA / f'{cdir.name}.json').read_text(encoding='utf-8'))['lines']:
+            texts[l['id']] = l['text'].replace('{player}', '學弟')  # 10/25 試念的檔名沒有 .m／.f，念的是學弟
+            for k, v in PLAYER.items():
+                texts[f"{l['id']}.{k}"] = l['text'].replace('{player}', v)
         for r in sorted(p for p in cdir.iterdir() if p.is_dir()):
             wavs = sorted(r.glob('*_t*.wav'))  # 沒有 _t 的是 10/25 第一次試念，沒有固定 seed，不算
+            done = {(lid, t['take']): t for lid, ts in old.get(cdir.name, {}).get(r.name, {}).get('takes', {}).items() for t in ts}
             takes = {}
-            for path, secs, pause, e, hyp in check(asr, [(w, texts[w.stem.rsplit('_t', 1)[0]]) for w in wavs]):
+            new = []
+            for w in wavs:
+                lid, k = w.stem.rsplit('_t', 1)
+                if (lid, int(k)) in done:
+                    takes.setdefault(lid, []).append(done[lid, int(k)])
+                else:
+                    new.append((w, texts[lid]))
+            for path, secs, pause, e, hyp in check(asr, new):
                 lid, k = path.stem.rsplit('_t', 1)
                 takes.setdefault(lid, []).append({'take': int(k), 'secs': round(secs, 1), 'pause': round(pause, 1),
                                                   'cer': round(e, 3), 'heard': hyp})
+            for lid, ts in takes.items():
+                for t in ts:
+                    if 'gaps' not in t:  # 11/12 以前的結果沒有，不用重新辨識，直接讀音檔算
+                        wav, sr = sf.read(r / f"{lid}_t{t['take']}.wav", dtype='float32')
+                        t['gaps'] = gaps(wav if wav.ndim == 1 else wav.mean(axis=1), sr)
             if not takes:
                 continue
             results.setdefault(cdir.name, {})[r.name] = {'text': {lid: texts[lid] for lid in takes}, 'takes': takes}

@@ -133,3 +133,4 @@ python pipeline/export_keys.py      # 題庫變動後重新產生正解 seed
 - 詳解：Qwen3.6-27B 生成，未經人工審核。
 - 角色立繪與背景：Animagine XL 4.0 生成；立繪去背使用 BRIA RMBG-2.0（CC BY-NC 4.0，限非商業使用）。
 - 背景音樂：[ACE-Step 1.5](https://github.com/ace-step/ACE-Step-1.5)（MIT 授權）生成。
+- 配音：[Breeze TTS 2](https://breezeblue.ai/breeze-tts-2)（BreezeBlue Research and Non-Commercial License，僅限非商業用途）生成。授權不允許收費、廣告或贊助；要商業化得換掉配音或另外取得授權。

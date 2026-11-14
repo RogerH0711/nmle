@@ -44,7 +44,7 @@
     { "id": "fei-wrong-010", "situation": "wrong", "affection_min": 0, "expression": "normal", "text": "再看一次正解。對了，發生率只算新病例，盛行率算現在所有的病例；疾病穩定的時候，盛行率大約是發生率乘以病程。", "keywords": ["發生率", "盛行率", "incidence", "prevalence"] },
     { "id": "fei-wrong-011", "situation": "wrong", "affection_min": 2, "expression": "sad", "text": "沒關係。你今天看起來很累，要不要先喝點水再寫？" },
     { "id": "fei-wrong-012", "situation": "wrong", "affection_min": 3, "expression": "shy", "text": "錯了就錯了嘛，有我在啊。……幹嘛那樣看我。", "rare": true },
-    { "id": "fei-wrong-013", "situation": "wrong", "affection_min": 0, "expression": "normal", "text": "錯了，看正解。對了，預防分三段：初段在發病前，像打疫苗；次段是早期發現、早期治療，像篩檢；三段是限制失能和復健。", "keywords": ["初段預防", "次段預防", "三段預防", "三段五級", "primary prevention", "secondary prevention", "tertiary prevention"] },
+    { "id": "fei-wrong-013", "situation": "wrong", "affection_min": 0, "expression": "normal", "text": "錯了，看正解。順便複習一下，預防分三段：初段在發病前，像打疫苗；次段是早期發現、早期治療，像篩檢；三段是限制失能和復健。", "keywords": ["初段預防", "次段預防", "三段預防", "三段五級", "primary prevention", "secondary prevention", "tertiary prevention"] },
 
     { "id": "fei-streak-001", "situation": "streak", "affection_min": 0, "expression": "normal", "text": "十題全對。下次讀書會你坐我旁邊，我要看你是怎麼寫的。", "affection_max": 1 },
     { "id": "fei-streak-002", "situation": "streak", "affection_min": 0, "expression": "surprised", "text": "十題全對？你該不會偷看答案吧。手機拿出來。", "affection_max": 1 },
@@ -61,7 +61,7 @@
     { "id": "fei-finish-006", "situation": "finish", "affection_min": 3, "expression": "shy", "text": "今天……謝謝你陪我。不是我陪你，是你陪我。……好了，不要回答，回去睡覺。", "rare": true },
 
     { "id": "fei-mock_high-001", "situation": "mock_high", "affection_min": 0, "expression": "happy", "text": "這分數是你考的？好，今天不挑你毛病了。考得很好。", "affection_max": 1 },
-    { "id": "fei-mock_high-002", "situation": "mock_high", "affection_min": 0, "expression": "surprised", "text": "……你真的是我帶出來的那個笨蛋{player}？" },
+    { "id": "fei-mock_high-002", "situation": "mock_high", "affection_min": 0, "expression": "surprised", "text": "……你真的是我帶出來的那個笨蛋{player}嗎？" },
     { "id": "fei-mock_high-003", "situation": "mock_high", "affection_min": 2, "expression": "happy", "text": "考得很好。今天我請客，想吃什麼都可以。" },
 
     { "id": "fei-msg_review-001", "situation": "msg_review", "affection_min": 0, "expression": "pout", "text": "錯題 {n} 題到期了。今天寫完，不要讓我明天再傳一次。" },

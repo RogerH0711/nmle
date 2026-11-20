@@ -80,10 +80,10 @@
     { "id": "fei-msg_comeback-002", "situation": "msg_comeback", "affection_min": 0, "expression": "normal", "text": "喂，還活著就回個訊息。不回也沒關係，來讀書就好。" },
     { "id": "fei-msg_comeback-003", "situation": "msg_comeback", "affection_min": 0, "expression": "pout", "text": "失聯 {days} 天。下次要消失，至少先說一聲。" },
 
-    { "id": "fei-gift-001", "situation": "gift", "affection_min": 0, "expression": "shy", "text": "{gift}？……喔，謝謝。我沒想到你會送東西。", "affection_max": 1 },
+    { "id": "fei-gift-001", "situation": "gift", "affection_min": 0, "expression": "shy", "text": "{gift}？……喔，謝謝。我沒想到你會送東西欸～", "affection_max": 1 },
     { "id": "fei-gift-002", "situation": "gift", "affection_min": 0, "expression": "surprised", "text": "送我的？你是考壞了想賄賂我喔？……好啦，收下了。", "affection_max": 1 },
     { "id": "fei-gift-003", "situation": "gift", "affection_min": 2, "expression": "shy", "text": "又送？你錢很多喔。……謝謝，我會好好用的。" },
-    { "id": "fei-gift-004", "situation": "gift", "affection_min": 3, "expression": "shy", "text": "{gift}……謝謝。你送的東西，我都放在值班室的抽屜裡，一樣都沒丟。" },
+    { "id": "fei-gift-004", "situation": "gift", "affection_min": 3, "expression": "shy", "text": "{gift}……謝謝。你送的東西，我都放在值班室的抽屜裡，一樣都沒丟喔～" },
     { "id": "fei-gift_liked-001", "situation": "gift_liked", "affection_min": 0, "expression": "happy", "gift": "strawberry_cake", "text": "這、這不是那家要排隊的……！咳。值班到現在都沒吃，剛好而已。叉子給我。" },
     { "id": "fei-gift_liked-002", "situation": "gift_liked", "affection_min": 0, "expression": "shy", "gift": "eye_mask", "text": "蒸氣眼罩……值完班眼睛真的超酸的。你怎麼知道？謝謝，今天晚上就用。" },
     { "id": "fei-outfit-001", "situation": "outfit", "affection_min": 1, "expression": "pout", "outfit": "fei_casual", "text": "黑色高領……你怎麼知道我喜歡這種？等一下，你是有在注意我穿什麼喔？" },

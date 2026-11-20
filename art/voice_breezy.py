@@ -34,7 +34,7 @@ TEST_LINES = {
 }
 
 # 要配音的情境（docs/design.md「聲音」）：當面的反應、模擬考高分、收禮、收到服裝。學姊傳的訊息（msg_*）是文字，不配音
-VOICED = {'start', 'correct', 'wrong', 'streak', 'finish', 'comeback', 'gift', 'gift_liked', 'mock_high', 'outfit'}
+VOICED = {'story', 'start', 'correct', 'wrong', 'streak', 'finish', 'comeback', 'gift', 'gift_liked', 'mock_high', 'outfit'}
 PLAYER = {'m': '學弟', 'f': '學妹'}
 
 # 參考音檔實際念的內容（Breeze-ASR-25 辨識，10/25）。voice_design.py 的原文是「不是在誇你喔！你、你……」，
@@ -46,8 +46,44 @@ REF_TEXT = {
 }
 
 
+def story_lines(cid):
+    """劇情（data/stories/<角色>.json）裡角色說的台詞，排成和 data/lines 一樣的格式（situation 是 story）。
+    旁白、玩家不配音（11/14 Roger：旁白不用有聲音）"""
+    path = DATA.parent / 'stories' / f'{cid}.json'
+    if not path.exists():
+        return []
+    out = []
+
+    def walk(ls):
+        for l in ls:
+            if l['speaker'] == 'choice':
+                for o in l['options']:
+                    walk(o['lines'])
+            elif l['speaker'] == cid and re.search(r'\w', l['text']):  # 只有「…………」的不念
+                out.append({'id': l['id'], 'situation': 'story', 'expression': l.get('expression', 'normal'), 'text': l['text']})
+    for scene in json.loads(path.read_text(encoding='utf-8'))['scenes']:
+        walk(scene['lines'])
+    return out
+
+
+def gift_names():
+    """{禮物 id: 名稱}（data/gifts.json）"""
+    return {g['id']: g['name'] for g in json.loads((DATA.parent / 'gifts.json').read_text(encoding='utf-8'))['gifts']}
+
+
+def expand(line_id, text):
+    """一句台詞要錄的 (語音 key, 文字)：{player} 分學弟（.m）、學妹（.f）；{gift} 每種禮物一版（.<禮物 id>，11/15 Roger 決定每種各錄）。
+    網站播的時候 key 的組法見 web/src/audioRules.ts 的 voiceKeys"""
+    out = [(line_id, text)]
+    if '{gift}' in text:
+        out = [(f'{k}.{gid}', t.replace('{gift}', name)) for k, t in out for gid, name in gift_names().items()]
+    if '{player}' in text:
+        out = [(f'{k}.{p}', t.replace('{player}', v)) for k, t in out for p, v in PLAYER.items()]
+    return out
+
+
 def voice_items(lines, ids=None):
-    """(語音 key, 要念的文字)：有 {player} 的分成學弟、學妹兩個；有其他代入欄位（{gift}、{hours}）的沒辦法事先錄，跳過"""
+    """(語音 key, 要念的文字)：有 {player}、{gift} 的展開（expand）；有其他代入欄位（{hours}）的沒辦法事先錄，跳過"""
     items = []
     for l in lines:
         if ids is not None and l['id'] not in ids:
@@ -55,12 +91,9 @@ def voice_items(lines, ids=None):
         if ids is None and l.get('situation') not in VOICED:
             continue
         text = l['text']
-        if re.search(r'\{(?!player\})', text):
+        if re.search(r'\{(?!player\}|gift\})', text):
             continue
-        if '{player}' in text:
-            items += [(f"{l['id']}.{k}", text.replace('{player}', v)) for k, v in PLAYER.items()]
-        else:
-            items.append((l['id'], text))
+        items += expand(l['id'], text)
     return items
 
 

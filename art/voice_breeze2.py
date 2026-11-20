@@ -22,7 +22,7 @@ REPO = Path.home() / 'code' / 'breeze-tts'
 CKPT = Path.home() / 'code' / 'breeze-tts-2'
 sys.path[:0] = [str(ART), str(REPO)]
 
-from voice_breezy import DATA, OUT, REF_TEXT, TEST_LINES, voice_items  # noqa: E402
+from voice_breezy import DATA, OUT, REF_TEXT, TEST_LINES, story_lines, voice_items  # noqa: E402
 
 # 試念的台詞：voice_breezy 的 TEST_LINES，加上 11/12 B_s1 念不好的（停頓、醫學名詞、語氣詞）
 EVAL_LINES = {
@@ -38,9 +38,41 @@ SAY = [('乾酪', '干酪')]
 LINE_SAY = {'fei-wrong-003': [('研究', '研就')], 'fei-correct-014': [('研究', '研舊')],
             # 11/14 Roger：「台灣人會把賄賂說成會洛」；wrong-004 的「腫脹」30 次都念成「腫孩」；wrong-006「下一題」語氣沒接上，併成同一段念（第 31 次以後）
             'fei-gift-002': [('賄賂', '會洛')], 'fei-wrong-004': [('腫脹', '腫帳')], 'fei-wrong-006': [('樣子。下一題', '樣子，下一題')], 'fei-streak-006': [('學姊', '學姐')],
-            'fei-correct-009': [('干酪', '干烙')], 'fei-streak-005': [('飲料', '引料')]}
+            'fei-correct-009': [('干酪', '干烙')],
+            # 劇情（11/14）：數字和英文縮寫照台灣的念法寫出來
+            'fei-story-0-07': [('第 82 題', '第八十二題')], 'fei-story-2-02': [('H&E', 'H and E'),
+                               # 11/15 Roger：「每一句都像不同人說的」（分段念，三段各自生成）。第 31 次以後併成一段
+                               ('染色。', '染色，'), ('粉紅色。先認', '粉紅色，先認')],
+            'fei-story-4-02': [('0.05', '零點零五')],
+            # 11/18 禮物（每種禮物各一版）：第 13 次以後。運動飲料的「飲」12 次都念成一聲（同 streak-005）；拭鏡布 12 次都聽成「試進步」，鏡改寫成同音的敬
+            'fei-gift-001': [('飲料', '引料'), ('拭鏡布', '拭敬布')], 'fei-gift-004': [('飲料', '引料'), ('拭鏡布', '拭敬布'), ('抽屜', '抽替')],
+            # 劇情第一輪辨識（第 13 次以後）：學長姊念成學長子、乾酪念成乾瘦（照 correct-009 換干烙）、一階念成一屆
+            'fei-story-1-01': [('學長姊', '學長姐')], 'fei-story-2-03': [('干酪', '干烙')],  # Roger 挑了第 20 次
+            # 2-01「圖片題」的片：原字、圖騙、圖篇各念 12–24 次都念錯，11/15 Roger 決定台詞改成「看圖題」，不用換字
+            # 4-06 的第 13–24 次用一街；第 25–30 次因為這行被誤併進上面的註解，沒換字（念的是原文「一階」）。第 31 次以後：意街、併成一段、加語氣指示
+            'fei-story-4-06': [('一階', '意街'), ('回答。等你', '回答，等你')],
+            # 11/15 Roger：1-03「一階的一是四聲，不是一聲」（一接一聲字要變四聲，模型念成一聲）。4-06 第 25 次以後也用意街
+            'fei-story-1-03': [('一階', '意階')],
+            # 11/15 收禮台詞每種禮物一版：gift-004 第 1–6 次 15 版裡「抽屜」都被念成「抽羊」，第 7 次以後換字
+            'fei-streak-005': [('飲料', '引料')]}
 # 11/13 Roger：「有咳或是有嗯的通常發音都發不好」。「咳」換成 Breeze 的語氣標記（官方列的中文標記：[笑] [咳嗽] [清嗓子] [叹气]）。--tags 才套用
 TAGS = [('咳。', '[清嗓子]'), ('咳', '[清嗓子]')]
+
+# 劇情裡情緒比較重的句子，逐句給語氣指示（英文、只講情緒，cfg 1.5；和 direct-emo 一樣不講口音）。
+# 11/15 Roger 聽劇情第一輪：第四幕「心動」（逃生梯、她剛哭過）的 3-03、3-06、3-07、3-08「情緒不對」，3-01 要再多試
+LINE_DIRECTION = {
+    'fei-story-3-01': 'She has been crying alone in a dark stairwell and hears someone coming. Quiet and wary, '
+                      'voice thick and a little shaky from tears.',
+    'fei-story-3-03': 'Her eyes are still red from crying. Speaking quietly and slowly, holding back tears, '
+                      'voice slightly hoarse and trembling.',
+    'fei-story-3-06': 'Leaning her head on his shoulder. Very soft and small, almost a whisper, vulnerable and a little embarrassed.',
+    'fei-story-3-07': 'She has just stopped crying and pulls herself together. Voice still soft and a little nasal, '
+                      'sincerely grateful, then quietly determined.',
+    # 11/15 Roger：4-06「語氣怪怪的」
+    'fei-story-4-06': 'Gentle and a little shy, but serious. She stops him from answering now and asks him to wait until '
+                      'after the exam. Soft, warm, unhurried.',
+    'fei-story-3-08': 'Gentle and shy, soft voice. The last sentence is quieter and embarrassed, asking him to keep it a secret.',
+}
 
 # 中文指示（cfg 4）11/12 試過，15 句裡很多念成別的句子（finish-006 平均念錯率 88%）；官方範例的指示都是英文
 ACCENT_EN = ('A young Taiwanese woman speaking Mandarin with a natural Taiwan accent: light retroflex sounds, no erhua. '
@@ -195,6 +227,7 @@ def main():
     ap.add_argument('--mode', choices=['clone', 'direct', 'seg'], default='clone')
     ap.add_argument('--takes', type=int, default=4)
     ap.add_argument('--lines', nargs='+')
+    ap.add_argument('--keys', nargs='+', help='只念這幾個展開後的 key（例如 fei-gift-001.latte），其他略過')
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--cfg-scale', type=float, default=None, help='預設 clone 1.0、direct 4（官方範例）')
     ap.add_argument('--tag', help='輸出資料夾再加的後綴')
@@ -217,9 +250,11 @@ def main():
     from breeze_infer.templates import get_template, prepare_inputs, select_template_name
     from models.fast_streaming import FastBreezeStreamingRuntime, FastStreamingConfig
 
-    lines = json.loads((DATA / f'{cid}.json').read_text(encoding='utf-8'))['lines']
+    lines = json.loads((DATA / f'{cid}.json').read_text(encoding='utf-8'))['lines'] + story_lines(cid)
     expression = {l['id']: l.get('expression', 'normal') for l in lines}
     items = voice_items(lines, None if args.all else set(args.lines or EVAL_LINES[cid]))
+    if args.keys:
+        items = [it for it in items if it[0] in args.keys]
 
     tokenizer, model, audio_tokenizer = load_runtime(CKPT, device='cuda:0', attn_implementation='eager')
     update_generation_config_for_breeze(model)
@@ -244,6 +279,8 @@ def main():
         request = {'id': key, 'text': text, 'speaker': 'S0', 'ref_audio_path': str(ref_wav), 'ref_text': REF_TEXT[(cid, args.ref)]}
         if args.instruct:
             request['instruction'] = args.instruct
+        elif key in LINE_DIRECTION:
+            request['instruction'] = LINE_DIRECTION[key]
         elif args.mode == 'direct' or args.emo:
             face = expression[key.split('.')[0]]
             request['instruction'] = (EMOTION_EN[face] if args.emo else ACCENT_EN + DIRECTION_EN[face] if args.en
@@ -256,7 +293,8 @@ def main():
                 set_all_seeds(k)
                 req = {**request, 'text': t, 'id': rid}
                 inputs = prepare_inputs(tokenizer, audio_tokenizer, model, [req], get_template(select_template_name(req)),
-                                        guidance_scale=cfg_scale, guidance_scale_ref=None, guidance_scale_ins=None)
+                                        guidance_scale=max(cfg_scale, 1.5) if 'instruction' in req else cfg_scale,
+                                        guidance_scale_ref=None, guidance_scale_ins=None)
                 return np.concatenate([c.audio for c in runtime.iter_audio_chunks(inputs, request_id=rid, seed=k)])
 
             sr = runtime.sample_rate

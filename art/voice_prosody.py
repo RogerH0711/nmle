@@ -16,6 +16,7 @@ import soundfile as sf
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from voice_breeze2 import level, loudness_db, split_pieces  # noqa: E402
+from voice_breezy import story_lines  # noqa: E402
 
 BREEZY = Path(__file__).resolve().parent / 'bakeoff' / 'voice' / 'breezy'
 ROOT = Path(__file__).resolve().parent.parent
@@ -55,7 +56,7 @@ def do_level(cid, src, dst):
     a, b = BREEZY / cid / src, BREEZY / cid / dst
     b.mkdir(exist_ok=True)
     shutil.copy(a / 'sent.json', b / 'sent.json')
-    lines = json.loads((ROOT / 'data' / 'lines' / f'{cid}.json').read_text(encoding='utf-8'))['lines']
+    lines = json.loads((ROOT / 'data' / 'lines' / f'{cid}.json').read_text(encoding='utf-8'))['lines'] + story_lines(cid)
     expression = {l['id']: l.get('expression', 'normal') for l in lines}
     for wav in sorted(a.glob('*.wav')):
         if (b / wav.name).exists():

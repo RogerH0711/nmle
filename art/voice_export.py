@@ -25,7 +25,7 @@ from pypinyin import Style, lazy_pinyin, load_phrases_dict, load_single_dict
 
 # pypinyin 預設是大陸讀音，原文要用台灣讀音比對，不然念成大陸讀音的也算對（11/13：「乾酪」念成 qián lào、「學姊」念成 zǐ 都是 0%）
 load_single_dict({ord('姊'): 'jiě'})
-load_phrases_dict({'乾酪': [['gān'], ['lào']]})
+load_phrases_dict({'乾酪': [['gān'], ['lào']], '一階': [['yì'], ['jiē']]})  # 一接一聲字念四聲
 
 ART = Path(__file__).parent
 ROOT = ART.parent
@@ -52,7 +52,7 @@ PICK = {
     ('fei', 'breeze2-seg-B_s1-v3lv', 'fei-wrong-006'): 32,  # 第 31 次以後「下一題」併成同一段
     ('fei', 'breeze2-seg-B_s1-v3lv', 'fei-gift-002'): 32,  # 賄賂照「會洛」念
     ('fei', 'breeze2-seg-B_s1-v3lv', 'fei-wrong-004'): 42,  # 腫脹照「腫帳」念
-    # mock_high-002 台詞加了「嗎」，辨識 24 次都沒寫出「嗎」（念錯率 6%），Roger 聽過可以
+    # mock_high-002 台詞加了「嗎」，Roger 聽過挑的（當時說辨識沒寫出「嗎」是 voice_check 快取沿用舊檔的結果，11/15 重新辨識後兩次都是 0%）
     ('fei', 'breeze2-seg-B_s1-v3lv', 'fei-mock_high-002.m'): 10,
     ('fei', 'breeze2-seg-B_s1-v3lv', 'fei-mock_high-002.f'): 5,
     ('fei', 'breeze2-seg-B_s1-v3lv', 'fei-comeback-002'): 2,
@@ -93,7 +93,7 @@ def syllables(text):
 
 
 def misread(ref, heard):
-    a, b = syllables(ref), syllables(chinese_numbers(heard))
+    a, b = syllables(chinese_numbers(ref)), syllables(chinese_numbers(heard))
     prev = list(range(len(b) + 1))
     for i, x in enumerate(a, 1):
         cur = [i]
@@ -119,6 +119,18 @@ def live(take):
     if take.get('verdict') is not None:
         return take['verdict']
     return take['misread'] <= MAX_MISREAD and not take['extra'] and take.get('tune', True)
+
+
+PICKS_FILE = ART / 'voice_picks.json'
+
+
+def picked_take(cid, cfg, key):
+    """Roger 挑的那次：先看 PICK，再看互動挑選頁（voice_server.py）存的 voice_picks.json"""
+    if (cid, cfg, key) in PICK:
+        return PICK[cid, cfg, key]
+    if not PICKS_FILE.exists():
+        return None
+    return json.loads(PICKS_FILE.read_text(encoding='utf-8')).get(cid, {}).get(cfg, {}).get(key, {}).get('take')
 
 
 def tune_ok(item):
@@ -158,7 +170,7 @@ def best_takes(cid, cfg, max_take=None):
             t['verdict'] = HEARD.get((cid, cfg, name))
         for t in takes:
             score(text, t)
-        picked = [t for t in takes if t['take'] == PICK.get((cid, cfg, key))]
+        picked = [t for t in takes if t['take'] == picked_take(cid, cfg, key)]
         best = picked[0] if picked else min(takes, key=lambda t: score(text, t))
         if picked:
             best['verdict'] = True

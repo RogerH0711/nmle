@@ -1,0 +1,278 @@
+{
+ "fei": {
+  "breeze2-seg-B_s1-v3lv": {
+   "fei-story-0-01": {
+    "take": 3
+   },
+   "fei-story-0-02": {
+    "take": 6
+   },
+   "fei-story-0-03": {
+    "take": 1
+   },
+   "fei-story-0-04": {
+    "take": 5
+   },
+   "fei-story-0-05": {
+    "take": 5
+   },
+   "fei-story-0-06": {
+    "take": 1
+   },
+   "fei-story-0-07": {
+    "take": 1
+   },
+   "fei-story-1-04": {
+    "take": 2
+   },
+   "fei-story-1-05": {
+    "take": 2
+   },
+   "fei-story-1-06": {
+    "take": 2
+   },
+   "fei-story-1-07": {
+    "take": 2
+   },
+   "fei-story-1-08": {
+    "take": 2
+   },
+   "fei-story-1-09": {
+    "take": 1
+   },
+   "fei-story-1-10": {
+    "take": 6
+   },
+   "fei-story-2-04": {
+    "take": 2
+   },
+   "fei-story-2-05": {
+    "take": 4
+   },
+   "fei-story-2-06": {
+    "take": 4
+   },
+   "fei-story-2-07": {
+    "take": 2
+   },
+   "fei-story-3-02": {
+    "take": 4
+   },
+   "fei-story-3-04": {
+    "take": 5
+   },
+   "fei-story-4-01": {
+    "take": 1
+   },
+   "fei-story-4-02": {
+    "take": 1
+   },
+   "fei-story-4-03": {
+    "take": 1
+   },
+   "fei-story-4-04": {
+    "take": 3
+   },
+   "fei-story-4-05": {
+    "take": 1
+   },
+   "fei-story-4-07": {
+    "take": 6
+   },
+   "fei-story-1-01": {
+    "take": 19
+   },
+   "fei-story-2-03": {
+    "take": 20
+   },
+   "fei-story-1-03": {
+    "take": 15
+   },
+   "fei-story-3-03": {
+    "take": 11
+   },
+   "fei-story-3-06": {
+    "take": 11
+   },
+   "fei-story-3-07": {
+    "take": 9
+   },
+   "fei-story-3-08": {
+    "take": 12
+   },
+   "fei-story-2-02": {
+    "take": 34
+   },
+   "fei-story-4-06": {
+    "take": 41
+   },
+   "fei-story-3-01": {
+    "take": 4
+   },
+   "fei-story-2-01": {
+    "take": 1
+   },
+   "fei-gift-001.latte": {
+    "take": 1
+   },
+   "fei-gift-004.latte": {
+    "take": 9
+   },
+   "fei-gift-001.sticky_notes": {
+    "take": 2
+   },
+   "fei-gift-004.sticky_notes": {
+    "take": null,
+    "note": "整句話的情緒沒有連貫"
+   },
+   "fei-gift-001.pudding": {
+    "take": 12
+   }
+  },
+  "gift-compare-v4": {
+   "fei-gift-001.latte": {
+    "take": "v4blv:2"
+   },
+   "fei-gift-001.sticky_notes": {
+    "take": "v4blv:2"
+   },
+   "fei-gift-004.latte": {
+    "take": "v4blv:2"
+   },
+   "fei-gift-004.sticky_notes": {
+    "take": null
+   },
+   "direction": {
+    "take": null,
+    "note": "我已經盡量選比較好的了，你分析我選的選項有甚麼特點，把記下來\n"
+   }
+  },
+  "breeze2-seg-B_s1-v4blv": {
+   "fei-gift-001.latte": {
+    "take": 2
+   },
+   "fei-gift-004.latte": {
+    "take": 4
+   },
+   "fei-gift-001.sticky_notes": {
+    "take": 2
+   },
+   "fei-gift-004.sticky_notes": {
+    "take": 1
+   },
+   "fei-gift-001.pudding": {
+    "take": 2
+   },
+   "fei-gift-004.pudding": {
+    "take": 5
+   }
+  },
+  "breeze2-seg-B_s1-v5parts": {
+   "fei-gift-001.latte.head": {
+    "take": 2,
+    "note": "從整句的挑選頁帶過來"
+   },
+   "fei-gift-001.sticky_notes.head": {
+    "take": 2,
+    "note": "從整句的挑選頁帶過來"
+   },
+   "fei-gift-001.pudding.head": {
+    "take": 2,
+    "note": "從整句的挑選頁帶過來"
+   },
+   "fei-gift-001.tail": {
+    "take": 401,
+    "note": "C 第 3 次後面還可以，第一個音“喔\"這個不行"
+   },
+   "fei-gift-004.tail": {
+    "take": 608,
+    "note": "B 第 5 次尾音算比較好的，但”喔“沒念好"
+   },
+   "fei-gift-001.highlighter.head": {
+    "take": 3
+   },
+   "fei-gift-001.sports_drink.head": {
+    "take": 8
+   },
+   "fei-gift-001.wristband.head": {
+    "take": 6
+   },
+   "fei-gift-001.glasses_cloth.head": {
+    "take": 2
+   },
+   "fei-gift-001.sketchbook.head": {
+    "take": 3
+   },
+   "fei-gift-001.ribbon.head": {
+    "take": 105
+   },
+   "fei-gift-001.microbe_plush.head": {
+    "take": 6
+   },
+   "fei-gift-001.chamomile.head": {
+    "take": 1
+   },
+   "fei-gift-001.hand_cream.head": {
+    "take": 2
+   },
+   "fei-gift-001.strawberry_cake.head": {
+    "take": 6
+   },
+   "fei-gift-001.eye_mask.head": {
+    "take": 6
+   },
+   "fei-gift-001.bouquet.head": {
+    "take": 4
+   },
+   "fei-gift-004.latte.head": {
+    "take": 3
+   },
+   "fei-gift-004.sticky_notes.head": {
+    "take": 2
+   },
+   "fei-gift-004.pudding.head": {
+    "take": 2
+   },
+   "fei-gift-004.highlighter.head": {
+    "take": 2
+   },
+   "fei-gift-004.sports_drink.head": {
+    "take": 106,
+    "note": "全錯，沒一個講對的，你有先檢查過嗎？"
+   },
+   "fei-gift-004.wristband.head": {
+    "take": 107,
+    "note": "全錯，沒一個講對的，你有先檢查過嗎？"
+   },
+   "fei-gift-004.glasses_cloth.head": {
+    "take": null,
+    "note": "全錯，沒一個講對的"
+   },
+   "fei-gift-004.sketchbook.head": {
+    "take": 6
+   },
+   "fei-gift-004.ribbon.head": {
+    "take": 4
+   },
+   "fei-gift-004.microbe_plush.head": {
+    "take": 208,
+    "note": "細菌的菌是四聲，現在聽起來都是一聲"
+   },
+   "fei-gift-004.chamomile.head": {
+    "take": 6
+   },
+   "fei-gift-004.hand_cream.head": {
+    "take": 2
+   },
+   "fei-gift-004.strawberry_cake.head": {
+    "take": 3
+   },
+   "fei-gift-004.eye_mask.head": {
+    "take": 2
+   },
+   "fei-gift-004.bouquet.head": {
+    "take": 2
+   }
+  }
+ }
+}

@@ -12,10 +12,8 @@ from pathlib import Path
 
 import numpy as np
 import soundfile as sf
-import soxr
-import torch
-from transformers import pipeline
 
+# 辨識用的套件（soxr、torch、transformers）在用到的函式裡才載入，plain／cer 在沒有這些套件的環境也能用（voice_gift_splice.py page）
 PUNCT = re.compile(r'[\s，。、！？!?,.…—\-－～~「」『』（）()：:；;""\'＂]+')
 
 
@@ -65,12 +63,15 @@ def gaps(wav, sr, floor_db=-35, min_secs=0.12):
 
 
 def load_asr():
+    import torch
+    from transformers import pipeline
     return pipeline('automatic-speech-recognition', model='MediaTek-Research/Breeze-ASR-25',
                     torch_dtype=torch.float16, device='cuda:0')
 
 
 def check(asr, items):
     """items：[(音檔路徑, 原文)]，回傳每個音檔的 (路徑, 秒數, 最長停頓, CER, 辨識結果)"""
+    import soxr
     rows = []
     for path, ref in items:
         wav, sr = sf.read(path, dtype='float32')
@@ -114,18 +115,20 @@ def check_breezy(asr):
     """voice_breezy.py 念的台詞。每句念了好幾次（<台詞 id>_t<k>.wav），每次都辨識，結果寫進 results.json；
     每個設定（資料夾）印出每句最好的那次，和「最好的那次錯字率 5% 以下」的句數"""
     import json
-    from voice_breezy import DATA, OUT, PLAYER
+    from voice_breezy import DATA, OUT, PLAYER, expand, story_lines
 
-    # 已經辨識過的音檔沿用 results.json 的結果（voice_breezy.py 不會重念已經有的檔案，所以同一個檔名內容不變）
+    # 已經辨識過的音檔沿用 results.json 的結果。11/15：改了台詞、舊檔移走後重念，新檔和舊檔同名，沿用到舊的辨識結果
+    #（2-01 看圖題被當成還在念「圖善題」）。現在每次記下檔案的修改時間（mtime），不一樣就重新辨識
     old_path = OUT / 'results.json'
     old = json.loads(old_path.read_text(encoding='utf-8')) if old_path.exists() else {}
     results = {}
     for cdir in sorted(p for p in OUT.iterdir() if p.is_dir()):
         texts = {}
-        for l in json.loads((DATA / f'{cdir.name}.json').read_text(encoding='utf-8'))['lines']:
+        for l in json.loads((DATA / f'{cdir.name}.json').read_text(encoding='utf-8'))['lines'] + story_lines(cdir.name):
             texts[l['id']] = l['text'].replace('{player}', '學弟')  # 10/25 試念的檔名沒有 .m／.f，念的是學弟
             for k, v in PLAYER.items():
                 texts[f"{l['id']}.{k}"] = l['text'].replace('{player}', v)
+            texts.update(expand(l['id'], l['text']))  # {gift} 每種禮物一版
         for r in sorted(p for p in cdir.iterdir() if p.is_dir()):
             wavs = sorted(r.glob('*_t*.wav'))  # 沒有 _t 的是 10/25 第一次試念，沒有固定 seed，不算
             done = {(lid, t['take']): t for lid, ts in old.get(cdir.name, {}).get(r.name, {}).get('takes', {}).items() for t in ts}
@@ -133,14 +136,15 @@ def check_breezy(asr):
             new = []
             for w in wavs:
                 lid, k = w.stem.rsplit('_t', 1)
-                if (lid, int(k)) in done:
-                    takes.setdefault(lid, []).append(done[lid, int(k)])
+                old_take = done.get((lid, int(k)))
+                if old_take and old_take.get('mtime') == round(w.stat().st_mtime, 1):
+                    takes.setdefault(lid, []).append(old_take)
                 else:
                     new.append((w, texts[lid]))
             for path, secs, pause, e, hyp in check(asr, new):
                 lid, k = path.stem.rsplit('_t', 1)
                 takes.setdefault(lid, []).append({'take': int(k), 'secs': round(secs, 1), 'pause': round(pause, 1),
-                                                  'cer': round(e, 3), 'heard': hyp})
+                                                  'cer': round(e, 3), 'heard': hyp, 'mtime': round(path.stat().st_mtime, 1)})
             for lid, ts in takes.items():
                 for t in ts:
                     if 'gaps' not in t:  # 11/12 以前的結果沒有，不用重新辨識，直接讀音檔算

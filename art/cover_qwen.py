@@ -1371,6 +1371,18 @@ UNIFY = {
     "c0": {"bg_blur": 2.5, "bg_haze": 0.08, "shadow": 0.45, "shadow_blur": 18, "shadow_offset": (12, 9),
            "ao": 0.3, "ao_blur": 8, "light": 0.05, "wrap": 0, "wrap_width": 6, "rim": 0, "thick": True,
            "bloom": 0.15},
+    # 11/19 Roger：換成 Animagine 畫風後「跟舊封面比，光線和色彩還是比較平，舊封面的逆光和亮部比較有層次」。
+    # c 的輪廓光、bloom 都很保守；d、e 加強，另外加左上方的陽光暈（sun：中心 x、y（畫面比例）、半徑（畫面寬的比例）、強度）
+    "d": {"bg_blur": 2.5, "bg_haze": 0.12, "shadow": 0.45, "shadow_blur": 18, "shadow_offset": (12, 9),
+          "ao": 0.3, "ao_blur": 8, "light": 0.08, "wrap": 0.4, "wrap_width": 8, "rim": 0.6, "thick": True,
+          "bloom": 0.3, "sun": (0.12, -0.05, 0.55, 0.35)},
+    "e": {"bg_blur": 2.5, "bg_haze": 0.15, "shadow": 0.45, "shadow_blur": 18, "shadow_offset": (14, 11),
+          "ao": 0.3, "ao_blur": 8, "light": 0.1, "wrap": 0.45, "wrap_width": 10, "rim": 0.9, "thick": True,
+          "bloom": 0.4, "sun": (0.12, -0.05, 0.7, 0.5)},
+    # d、e 的陽光暈罩在人物上，靜澄整個發霧變淡。舊封面的逆光是背景亮、人物顏色飽和、只有邊緣亮：f 的陽光暈只加在背景（sun_bg）
+    "f": {"bg_blur": 2.5, "bg_haze": 0.08, "shadow": 0.45, "shadow_blur": 18, "shadow_offset": (12, 9),
+          "ao": 0.3, "ao_blur": 8, "light": 0.05, "wrap": 0.4, "wrap_width": 8, "rim": 0.8, "thick": True,
+          "bloom": 0.2, "sun_bg": (0.3, -0.1, 0.9, 0.55)},
 }
 SHADOW_TINT = np.array([0.72, 0.70, 0.84])  # 陰影乘上的顏色（偏紫灰）
 SUN = np.array([255, 246, 228]) / 255  # 輪廓光的顏色
@@ -1400,6 +1412,10 @@ def cmd_unify(args):
         bg = blur(bg0, u["bg_blur"])
         sky = np.array([0.86, 0.90, 0.97], np.float32)
         bg = bg * (1 - u["bg_haze"]) + sky * u["bg_haze"]
+        if u.get("sun_bg"):  # 逆光：只有背景被陽光照亮，人物前面不起霧
+            sx, sy, radius, strength = u["sun_bg"]
+            d = np.hypot(xx / W - sx, (yy - sy * H) / W) / radius
+            bg = screen(bg, SUN * (np.clip(1 - d, 0, 1) ** 1.5 * strength)[..., None])
         wrap_src = blur(bg, 25)
         rgb = np.zeros((H, W, 3), np.float32)  # 人物層（已經疊好的人），預乘透明度前的顏色
         alpha = np.zeros((H, W), np.float32)
@@ -1438,6 +1454,10 @@ def cmd_unify(args):
         lum = img.mean(axis=2, keepdims=True)
         glow = blur(img * np.clip((lum - 0.75) / 0.25, 0, 1), 30)
         img = screen(img, glow * u["bloom"])
+        if u.get("sun"):  # 陽光暈：畫面外左上方的太陽，往右下漸弱
+            sx, sy, radius, strength = u["sun"]
+            d = np.hypot(xx / W - sx, (yy - sy * H) / W) / radius
+            img = screen(img, SUN * (np.clip(1 - d, 0, 1) ** 2 * strength)[..., None])
         Image.fromarray((np.clip(img, 0, 1) * 255).round().astype(np.uint8)).save(out_folder / f"{name}.png")
         with open(out_folder / "log.jsonl", "a", encoding="utf-8") as fh:
             fh.write(json.dumps({"kind": "unify", "variant": name, "params": u, "time": time.time()},

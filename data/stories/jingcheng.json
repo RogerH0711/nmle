@@ -7,25 +7,25 @@
       "background": "anatomy_lab",
       "lines": [
         { "speaker": "narration", "text": "讀書會的第一天，學姊們各自帶開。解剖這組被帶到大體解剖教室，福馬林的味道很重，冷氣開得很強。" },
-        { "speaker": "jingcheng", "expression": "normal", "text": "你是{player}？筆記給我看。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-0-01", "expression": "normal", "text": "你是{player}？筆記給我看。" },
         { "speaker": "player", "text": "喔、好。" },
         { "speaker": "narration", "text": "她一頁一頁翻過去，翻得很快，偶爾停下來，用指尖點一下某一行。" },
-        { "speaker": "jingcheng", "expression": "normal", "text": "臂神經叢在第三頁，橈神經在第十一頁，中間夾了兩頁生化。" },
-        { "speaker": "jingcheng", "expression": "normal", "text": "考試的時候，你要翻八頁才找得到同一條神經。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-0-02", "expression": "normal", "text": "臂神經叢在第三頁，橈神經在第十一頁，中間夾了兩頁生化。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-0-03", "expression": "normal", "text": "考試的時候，你要翻八頁才找得到同一條神經。" },
         { "speaker": "player", "text": "我是照上課的順序抄的……" },
         { "speaker": "choice", "options": [
           { "text": "那學姊都怎麼整理？", "lines": [
-            { "speaker": "jingcheng", "expression": "normal", "text": "按區域。上肢一頁，骨頭、肌肉、神經、血管寫在一起。讀完一區再換下一區。" }
+            { "speaker": "jingcheng", "id": "jingcheng-story-0-04", "expression": "normal", "text": "按區域。上肢一頁，骨頭、肌肉、神經、血管寫在一起。讀完一區再換下一區。" }
           ] },
           { "text": "我回去重寫一份。", "lines": [
-            { "speaker": "jingcheng", "expression": "normal", "text": "嗯。先寫上肢就好，不用一次全部。" }
+            { "speaker": "jingcheng", "id": "jingcheng-story-0-05", "expression": "normal", "text": "嗯。先寫上肢就好，不用一次全部。" }
           ] }
         ] },
         { "speaker": "narration", "text": "她把筆記闔起來放回你桌上，順手推到和桌緣對齊。" },
-        { "speaker": "jingcheng", "expression": "normal", "text": "我是沈靜澄，解剖所碩二，大體解剖課的助教。解剖、胚胎、組織歸我。" },
-        { "speaker": "jingcheng", "expression": "normal", "text": "明天同一個時間，這間教室。重寫的帶來。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-0-06", "expression": "normal", "text": "我是沈靜澄，解剖所碩二，大體解剖課的助教。解剖、胚胎、組織歸我。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-0-07", "expression": "normal", "text": "明天同一個時間，這間教室。重寫的帶來。" },
         { "speaker": "narration", "text": "她走到門口，又回頭看了你一眼。" },
-        { "speaker": "jingcheng", "expression": "normal", "text": "外套穿著。這間冷氣很強，第一次來的人常常感冒。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-0-08", "expression": "normal", "text": "外套穿著。這間冷氣很強，第一次來的人常常感冒。" },
         { "speaker": "narration", "text": "說完她就走了。你這才發現，手臂上起了一層雞皮疙瘩。" }
       ]
     },
@@ -36,15 +36,15 @@
       "lines": [
         { "speaker": "narration", "text": "圖書館四樓的角落。你把臂神經叢的圖蓋起來默寫，第五次，還是畫錯。" },
         { "speaker": "narration", "text": "對面翻書的聲音停了。" },
-        { "speaker": "jingcheng", "expression": "normal", "text": "筆借我。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-1-01", "expression": "normal", "text": "筆借我。" },
         { "speaker": "narration", "text": "她把你的筆記翻到空白頁，從左邊開始畫。線條很直，像用尺畫的。" },
-        { "speaker": "jingcheng", "expression": "normal", "text": "C5 到 T1，五條神經根。往外是根、幹、股、索、支，先把這五層畫出來，再往裡面填名字。" },
-        { "speaker": "jingcheng", "expression": "normal", "text": "最後分出五條終末分支：肌皮、腋、橈、正中、尺神經。你每次都漏腋神經。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-1-02", "expression": "normal", "text": "C5 到 T1，五條神經根。往外是根、幹、股、索、支，先把這五層畫出來，再往裡面填名字。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-1-03", "expression": "normal", "text": "最後分出五條終末分支：肌皮、腋、橈、正中、尺神經。你每次都漏腋神經。" },
         { "speaker": "player", "text": "學姊怎麼知道我每次都漏掉？" },
-        { "speaker": "jingcheng", "expression": "surprised", "text": "…………" },
-        { "speaker": "jingcheng", "expression": "shy", "text": "你默寫完都丟在桌上。我剛好看到。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-1-04", "expression": "surprised", "text": "…………" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-1-05", "expression": "shy", "text": "你默寫完都丟在桌上。我剛好看到。" },
         { "speaker": "narration", "text": "她低下頭，把最後一條線畫完。耳朵有一點紅。" },
-        { "speaker": "jingcheng", "expression": "normal", "text": "照著畫三次。畫完拿給我。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-1-06", "expression": "normal", "text": "照著畫三次。畫完拿給我。" },
         { "speaker": "narration", "text": "畫到第三次的時候你抬起頭。她的書已經闔上了，一直在看你畫。" }
       ]
     },
@@ -54,26 +54,26 @@
       "background": "anatomy_lab",
       "lines": [
         { "speaker": "narration", "text": "晚上十一點，你回解剖教室拿忘記的圖譜。教室的燈還亮著。" },
-        { "speaker": "jingcheng", "expression": "surprised", "text": "{player}？這麼晚還沒回去。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-2-01", "expression": "surprised", "text": "{player}？這麼晚還沒回去。" },
         { "speaker": "player", "text": "學姊也還在？" },
-        { "speaker": "jingcheng", "expression": "normal", "text": "明天上課要用的標本，標籤還沒寫完。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-2-02", "expression": "normal", "text": "明天上課要用的標本，標籤還沒寫完。" },
         { "speaker": "narration", "text": "她面前排著一整排小牌子，每一張的字都一樣大。" },
-        { "speaker": "jingcheng", "expression": "normal", "text": "要幫忙的話，那疊照著唸給我聽。我寫比較快。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-2-03", "expression": "normal", "text": "要幫忙的話，那疊照著唸給我聽。我寫比較快。" },
         { "speaker": "narration", "text": "你唸，她寫。唸到第二十幾張的時候，她停下筆。" },
-        { "speaker": "jingcheng", "expression": "normal", "text": "我準備一階的時候，有一次模擬考差點不及格。解剖還好，生化幾乎都用猜的。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-2-04", "expression": "normal", "text": "我準備一階的時候，有一次模擬考差點不及格。解剖還好，生化幾乎都用猜的。" },
         { "speaker": "player", "text": "學姊也會這樣？" },
-        { "speaker": "jingcheng", "expression": "sad", "text": "會啊。那時候都一個人在這裡讀到很晚。讀不懂，也找不到人問。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-2-05", "expression": "sad", "text": "會啊。那時候都一個人在這裡讀到很晚。讀不懂，也找不到人問。" },
         { "speaker": "narration", "text": "她又低頭寫字，寫得比剛才慢。" },
-        { "speaker": "jingcheng", "expression": "shy", "text": "所以你錯的題目，我都有記下來。我不想你也那樣。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-2-06", "expression": "shy", "text": "所以你錯的題目，我都有記下來。我不想你也那樣。" },
         { "speaker": "choice", "options": [
           { "text": "那我以後也留下來陪學姊寫。", "lines": [
-            { "speaker": "jingcheng", "expression": "shy", "text": "……寫完就回去睡。明天還要上課。" }
+            { "speaker": "jingcheng", "id": "jingcheng-story-2-07", "expression": "shy", "text": "……寫完就回去睡。明天還要上課。" }
           ] },
           { "text": "謝謝學姊。", "lines": [
-            { "speaker": "jingcheng", "expression": "normal", "text": "嗯。" }
+            { "speaker": "jingcheng", "id": "jingcheng-story-2-08", "expression": "normal", "text": "嗯。" }
           ] }
         ] },
-        { "speaker": "jingcheng", "expression": "normal", "text": "下一張。唸吧。" }
+        { "speaker": "jingcheng", "id": "jingcheng-story-2-09", "expression": "normal", "text": "下一張。唸吧。" }
       ]
     },
     {
@@ -82,16 +82,16 @@
       "background": "library",
       "lines": [
         { "speaker": "narration", "text": "閉館廣播響了。你在兩排書架中間的地上，撿到一副灰色細框眼鏡。" },
-        { "speaker": "jingcheng", "expression": "noglasses_squint", "text": "{player}？……你有沒有看到我的眼鏡。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-3-01", "expression": "noglasses_squint", "text": "{player}？……你有沒有看到我的眼鏡。" },
         { "speaker": "narration", "text": "她從書架另一頭走過來，瞇著眼，一隻手扶著書架。平常隔三排書都看得清楚書背上的小字的人，現在差點撞上還書的推車。" },
         { "speaker": "player", "text": "在我這裡。" },
-        { "speaker": "jingcheng", "expression": "noglasses_shy", "text": "給我。不要一直看。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-3-02", "expression": "noglasses_shy", "text": "給我。不要一直看。" },
         { "speaker": "narration", "text": "你把眼鏡放進她手心。她的指尖碰到你的手指，停了一下，才慢慢收回去。" },
-        { "speaker": "jingcheng", "expression": "noglasses_shy", "text": "你的手好冰。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-3-03", "expression": "noglasses_shy", "text": "你的手好冰。" },
         { "speaker": "player", "text": "這裡冷氣很強嘛。" },
         { "speaker": "narration", "text": "她把眼鏡戴回去，推了一下鏡框，看了你一眼。" },
-        { "speaker": "jingcheng", "expression": "shy", "text": "外套又放在座位上沒穿。現在看得很清楚了。" },
-        { "speaker": "jingcheng", "expression": "happy", "text": "剛才的樣子，不准跟別人講。我請你吃晚餐，當作封口費。" }
+        { "speaker": "jingcheng", "id": "jingcheng-story-3-04", "expression": "shy", "text": "外套又放在座位上沒穿。現在看得很清楚了。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-3-05", "expression": "happy", "text": "剛才的樣子，不准跟別人講。我請你吃晚餐，當作封口費。" }
       ]
     },
     {
@@ -100,14 +100,14 @@
       "background": "anatomy_lab",
       "lines": [
         { "speaker": "narration", "text": "學期末的大體老師感恩儀式。家屬都離開以後，教室裡只剩你們兩個在收花。" },
-        { "speaker": "jingcheng", "expression": "normal", "text": "每年這一天，我都會想起我的第一位大體老師。" },
-        { "speaker": "jingcheng", "expression": "sad", "text": "他教我的東西，比哪一本圖譜都多。可是謝謝，我只能對著照片說。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-4-01", "expression": "normal", "text": "每年這一天，我都會想起我的第一位大體老師。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-4-02", "expression": "sad", "text": "他教我的東西，比哪一本圖譜都多。可是謝謝，我只能對著照片說。" },
         { "speaker": "player", "text": "學姊每年都把他教的東西教給下一屆。他應該會知道吧。" },
         { "speaker": "narration", "text": "她沒有回答，把最後一束花插進花瓶，轉了一下角度，讓花朝著照片。" },
-        { "speaker": "jingcheng", "expression": "shy", "text": "……謝謝你陪我。這半年，在這間很冷的教室。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-4-03", "expression": "shy", "text": "……謝謝你陪我。這半年，在這間很冷的教室。" },
         { "speaker": "player", "text": "學姊……" },
-        { "speaker": "jingcheng", "expression": "normal", "text": "其他的話，等你一階考完再說。現在說，你會分心。" },
-        { "speaker": "jingcheng", "expression": "happy", "text": "考好。我在這裡等你。" }
+        { "speaker": "jingcheng", "id": "jingcheng-story-4-04", "expression": "normal", "text": "其他的話，等你一階考完再說。現在說，你會分心。" },
+        { "speaker": "jingcheng", "id": "jingcheng-story-4-05", "expression": "happy", "text": "考好。我在這裡等你。" }
       ]
     }
   ]

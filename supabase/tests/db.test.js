@@ -1061,3 +1061,34 @@ describe('收藏、不確定、筆記（question_marks）', () => {
     assert.equal(r.rows[0].n, 0)
   })
 })
+
+// 改進清單第 41 項：原本靠人記，新增 migration 時忘了就會漏
+describe('資料庫的整體安全設定', () => {
+  test('public 的每張表都開了 RLS；沒有會繞過 RLS 的 view', async () => {
+    const r = await db.query(
+      `select c.relname, c.relkind from pg_class c join pg_namespace n on n.oid = c.relnamespace
+       where n.nspname = 'public' and (
+         (c.relkind in ('r', 'p') and not c.relrowsecurity)
+         or c.relkind = 'm'
+         or (c.relkind = 'v' and not coalesce(c.reloptions && array['security_invoker=true', 'security_invoker=on'], false))
+       ) order by 1`,
+    )
+    // 新的表要 enable row level security；view 預設用擁有者的權限查，要 with (security_invoker = true)；materialized view 沒有 RLS，不要用
+    assert.deepEqual(r.rows, [])
+  })
+
+  test('用擁有者權限執行（security definer）的函式：沒登入能呼叫的只有使用統計', async () => {
+    // Postgres 預設所有人都能執行新函式，PostgREST 會把它開成 API；trigger 函式不能直接呼叫，不用檢查
+    const r = await db.query(
+      `select p.proname, has_function_privilege('anon', p.oid, 'execute') as anon,
+              has_function_privilege('authenticated', p.oid, 'execute') as authed
+       from pg_proc p join pg_namespace n on n.oid = p.pronamespace
+       where n.nspname = 'public' and p.prosecdef and p.prorettype <> 'trigger'::regtype
+       order by 1`,
+    )
+    const callable = (role) => r.rows.filter((x) => x[role]).map((x) => x.proname)
+    // 新增 security definer 函式時要 revoke execute ... from public, anon（登入才能用的再 grant 給 authenticated），並更新這裡
+    assert.deepEqual(callable('anon'), ['ping_usage'])
+    assert.deepEqual(callable('authed'), ['delete_my_account', 'leaderboard_mock', 'leaderboard_streaks', 'leaderboard_weekly', 'ping_usage'])
+  })
+})

@@ -8,7 +8,8 @@
     "test:db": "node --test \"supabase/tests/*.test.js\"",
     "db:status": "supabase migration list --linked",
     "db:push:dry": "supabase db push --linked --include-seed --dry-run",
-    "db:push": "supabase db push --linked --include-seed"
+    "db:push": "supabase db push --linked --include-seed",
+    "db:backup": "node supabase/backup.mjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.5.10",

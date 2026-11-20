@@ -34,6 +34,18 @@ npx supabase migration repair --status applied 20261014000000 20261015000000
 4. `npm run db:push` 套用 migration；正解檔有變更時也會一起執行。
 5. `npm run db:status` 確認遠端狀態。
 
+## 備份線上資料
+
+免費方案沒有自動備份。登入使用者的紀錄只存在 Supabase（登出時會清掉裝置上的副本），所以由 Roger 每週一次、以及 `db:push` 有新 migration 之前，在自己的電腦備份：
+
+1. 打開 Docker Desktop，等它啟動完：CLI 連線上專案時是在 Docker 容器裡跑 `pg_dump`（11/20 查過 CLI 2.121 的實作）。詳解批次這類吃記憶體的工作在跑時先不要開。
+2. `npm run db:backup`：存到 `~/nmle-backups/<日期時間>/` 的 `roles.sql`、`schema.sql`、`data.sql`，做法照官方的 [Backup and Restore using the CLI](https://supabase.com/docs/guides/platform/migrating-within-supabase/backup-restore)。要放別的地方：`npm run db:backup -- D:\某個資料夾`；資料夾在 repo 裡面會拒絕。
+3. 最後會列出各表筆數；`data.sql` 沒有 `auth.users`、或 public 的表全部 0 筆時會報錯。
+
+`data.sql` 有使用者的 Email、密碼雜湊和全部作答紀錄：不要 commit、不要放到公開的地方（包括 GitHub Actions，公開 repo 的產出別人下載得到），舊的留最近幾份就好。
+
+還原（只有專案救不回來時才需要）：照官方指南建新專案，用 `psql` 依序執行 `roles.sql`、`schema.sql`、`SET session_replication_role = replica`、`data.sql`。登入設定（Google OAuth、Site URL、關閉 Email 註冊、Turnstile）不在備份裡，要在新專案的 Dashboard 重設；前端的網址和 publishable key（`web/src/supabase.ts`）也要換。
+
 ## 專案被暫停時
 
 免費方案一週內沒有足夠的資料庫活動會自動暫停專案（暫停前一週寄警告信、暫停時再寄一封）。恢復期限：11/20 收到的信寫 90 天，官方文件（[Project Pausing](https://supabase.com/docs/guides/platform/free-project-pausing)）寫 1 年，以 Dashboard 為準；超過就只能下載資料。11/20 發生過一次。

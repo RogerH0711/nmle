@@ -34,6 +34,16 @@ npx supabase migration repair --status applied 20261014000000 20261015000000
 4. `npm run db:push` 套用 migration；正解檔有變更時也會一起執行。
 5. `npm run db:status` 確認遠端狀態。
 
+## 專案被暫停時
+
+免費方案一週內沒有足夠的資料庫活動會自動暫停專案（暫停前一週寄警告信、暫停時再寄一封）。恢復期限：11/20 收到的信寫 90 天，官方文件（[Project Pausing](https://supabase.com/docs/guides/platform/free-project-pausing)）寫 1 年，以 Dashboard 為準；超過就只能下載資料。11/20 發生過一次。
+
+預防：`.github/workflows/keepalive.yml` 每天三次用 publishable key 查一次資料庫（官方文件說一週內每天有幾次對資料庫的請求通常就夠，打 API 也算活動，但不保證）。這個 workflow 失敗時 GitHub 會寄信，通常代表專案已經被暫停。公開 repo 60 天沒有活動時 GitHub 會停用排程，要到 Actions 頁面重新啟用。
+
+- 症狀：網站的登入、同步、排行榜、回報都失敗（作答照樣存在瀏覽器，恢復後自動補傳）；專案網址 `gppcwxkhkzfogdfudebu.supabase.co` 的 DNS 查不到；`db:push` 出現 `unexpected login role status 544 ... connection timeout`。
+- 恢復：Dashboard 打開專案 → Restore project。等「Status」底下每一項（Database、PostgREST、Auth、Realtime、Storage）都變 Healthy 再操作：只有 Database 好了時 `db:push` 一樣會逾時；服務起來後 API 還要再一兩分鐘才讀得到資料表（11/20：19:50 服務回應、19:52 讀得到資料表）。
+- 確認：`curl -H "apikey: <publishable key>" https://gppcwxkhkzfogdfudebu.supabase.co/rest/v1/profiles?select=*&limit=1` 回 200（RLS 下沒登入看到的是 `[]`）；回 `PGRST205`（找不到資料表）就是還沒載入完，再等一下。
+
 ## 處理回報疑義
 
 使用者按題目下方的「回報疑義」會寫進 `reports` 表（沒登入也能回報）。網站上沒有人讀得到這張表，只能從 Dashboard 看：

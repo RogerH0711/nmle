@@ -46,7 +46,7 @@
 
 **Roger**
 
-- **11/20 部署前要 `npm run db:push`**：新的 migration（`question_marks`，收藏與筆記）和 105–109 年的正解 seed。順序：先 push 資料庫、確認線上舊版前端正常，再 push 前端（migration 和舊版前端相容）。
+- 11/20 `db:push` 完成：`question_marks`（收藏與筆記）和 105–109 年的正解 seed。這次前端先部署、資料庫後推（migration 和前端兩邊相容，中間只是同步失敗、作答不判分）。推之前發現 Supabase 專案因為 7 天沒活動被暫停，網站的登入、同步、排行榜停了一段時間；恢復步驟寫在 `supabase/README.md`「專案被暫停時」。預防：Roger 決定加排程，`.github/workflows/keepalive.yml` 每天三次查一次資料庫（官方文件的判定方式與限制寫在該檔開頭）；push 之後要到 Actions 手動跑一次確認。
 - 10/25 改版通知已發；台詞改版、音檔做完再發一次。
 - 看過五位學姊的劇本、調整語氣（10/25：之後再說）。
 

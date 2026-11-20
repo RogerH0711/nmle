@@ -1,0 +1,42 @@
+# 免費方案的 Supabase 專案一週沒有足夠的資料庫活動就會被暫停（11/20 發生過，恢復步驟見 supabase/README.md）。
+# 官方文件（supabase.com/docs/guides/platform/free-project-pausing）：一週內每天有幾次對資料庫的使用者請求，
+# 通常就足以避免暫停；「打專案的 API」也列為活動。但官方沒有保證，暫停前一週會寄警告信。
+# 這裡每天三次，用前端公開的 publishable key 查一次 profiles：沒登入時 RLS 只回空陣列，但查詢確實在資料庫執行。
+# - 不用 ping_usage（會寫進使用統計），不需要任何秘密金鑰
+# - repo 是公開的，Actions 的日誌誰都看得到：只印 HTTP 狀態和長度，不印回應內容
+# - 查詢失敗時這個 workflow 會失敗，GitHub 會寄信通知，等於提早發現專案被暫停
+# - GitHub 會在公開 repo 60 天沒有活動時自動停用排程 workflow（Actions 頁面可以重新啟用）
+name: Supabase 保持運作
+
+on:
+  schedule:
+    - cron: '23 1,9,17 * * *' # UTC；台灣時間 09:23、17:23、01:23。避開整點，整點的排程比較容易延遲
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # 網址和 publishable key 跟前端讀同一個檔案，換專案時不用改這裡
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: web/src/supabase.ts
+          sparse-checkout-cone-mode: false
+
+      - name: 查詢資料庫
+        run: |
+          url=$(grep -oE "https://[a-z0-9]+\.supabase\.co" web/src/supabase.ts | head -1)
+          key=$(grep -oE "sb_publishable_[A-Za-z0-9_-]+" web/src/supabase.ts | head -1)
+          # 專案剛恢復時 API 要一兩分鐘才讀得到資料表，失敗就隔 30 秒再試，共 3 次
+          for i in 1 2 3; do
+            code=$(curl -s -o body.txt -w '%{http_code}' --max-time 30 -H "apikey: $key" "$url/rest/v1/profiles?select=*&limit=1" || true)
+            echo "第 $i 次：HTTP $code，回應 $(wc -c < body.txt 2>/dev/null || echo 0) bytes"
+            [ "$code" = "200" ] && exit 0
+            sleep 30
+          done
+          echo "::error::Supabase 查詢失敗，專案可能被暫停了（恢復步驟見 supabase/README.md）"
+          exit 1

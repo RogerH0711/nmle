@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react'
 import { playVoice, stopVoice } from './audio'
 import { useDialog } from './dialog'
 import { fillPlayer, type Character } from './characters'
-import { Portrait } from './CharacterStage'
+import { Portrait, usePreloadPortraits } from './CharacterStage'
 import { goalText, STAGE_NAMES, type Affection } from './affection'
 import type { PlayerTitle } from './player'
 import { backgroundUrl, sceneId, storyTimeline, type Scene, type StoryLine } from './stories'
+import { sceneExpressions } from './storyRules'
 
 // 背景圖還沒做好時改用漸層色，載入失敗的不要每次重抓
 const missingBg = new Set<string>()
@@ -43,6 +44,7 @@ export function StoryPlayer(props: {
   const [mode, setMode] = useState<Mode>('manual')
   const [backlog, setBacklog] = useState(false)
   const [, rerender] = useState(0)
+  usePreloadPortraits(character.id, sceneExpressions(scene.lines, character.id), scene.outfit)
 
   const timeline = storyTimeline(scene.lines, picks)
   const line = timeline[pos]

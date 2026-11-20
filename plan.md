@@ -27,7 +27,7 @@
 
 ## 待辦
 
-**全面檢查（11/16，`reports/improvement-review.md`）**：49 項建議，照報告的「處理順序」做，狀態記在報告開頭的表。11/16 完成第一到第三組：多分頁合併、返回鍵、備份與搬家、按鈕對比、圖示與 PWA（離線）、ErrorBoundary、對話框焦點（細節在 `docs/design.md`「技術架構」），以及 oxlint、測試檔型別檢查、e2e 進 CI、App.tsx 拆出四個元件和 `run.ts`。11/20 做了第四組的不確定清單、收藏、筆記（圖書館的三個清單，雲端同步，第 25、26 項）。還沒 commit、部署。部署後要在手機上實際試返回鍵和「加到主畫面」。11/20 次主題（第 27 項）：83 個定案（`docs/subtopics.md`），網站接好了；`NMLE 詳解批次` 正在跑 35B 分類（約 3 小時），跑完自動匯出 `data/subtopics.json`，Claude 每科抽查後再 commit。
+**全面檢查（11/16，`reports/improvement-review.md`）**：49 項建議，照報告的「處理順序」做，狀態記在報告開頭的表。11/16 完成第一到第三組：多分頁合併、返回鍵、備份與搬家、按鈕對比、圖示與 PWA（離線）、ErrorBoundary、對話框焦點（細節在 `docs/design.md`「技術架構」），以及 oxlint、測試檔型別檢查、e2e 進 CI、App.tsx 拆出四個元件和 `run.ts`。11/20 做了第四組的不確定清單、收藏、筆記（圖書館的三個清單，雲端同步，第 25、26 項）和次主題（第 27 項，83 個，`docs/subtopics.md`；35B 分類 4,199 題、抽查約 96% 正確），11/20 已 commit、部署、`db:push`。還沒做：在手機上實際試返回鍵和「加到主畫面」。
 
 **Claude（依序）**
 
@@ -47,6 +47,7 @@
 **Roger**
 
 - 11/20 `db:push` 完成：`question_marks`（收藏與筆記）和 105–109 年的正解 seed。這次前端先部署、資料庫後推（migration 和前端兩邊相容，中間只是同步失敗、作答不判分）。推之前發現 Supabase 專案因為 7 天沒活動被暫停，網站的登入、同步、排行榜停了一段時間；恢復步驟寫在 `supabase/README.md`「專案被暫停時」。預防：Roger 決定加排程，`.github/workflows/keepalive.yml` 每天三次查一次資料庫（官方文件的判定方式與限制寫在該檔開頭）；push 之後要到 Actions 手動跑一次確認。
+- 線上資料備份（11/20 做好 `npm run db:backup`）：詳解批次跑完後開 Docker Desktop 跑第一次，之後每週一次、`db:push` 有新 migration 之前也跑（`supabase/README.md`「備份線上資料」）。
 - 10/25 改版通知已發；台詞改版、音檔做完再發一次。
 - 看過五位學姊的劇本、調整語氣（10/25：之後再說）。
 
@@ -79,7 +80,7 @@
 - [x] security review 的發現（10/25 修正並上線，`reports/security-review.md`）；L6（帳號名稱可以被試出來）只記錄不修
 - [x] security review 的 Dashboard 檢查清單（10/26 Roger 確認完成，報告最後）：Confirm email 關閉、Secure email change 開啟、Anonymous sign-ins 關閉、Redirect URLs 只留自己的網址、設定用量告警（Settings → Usage）
 - [x] 題庫抽檢進 CI（10/25，`web/src/questionBank.test.ts`，跟著 `npm test` 跑；第一次跑抓到 2 題 override 混進看不見的控制字元，已修正）
-- [ ] 搬到自訂網域 `nmle.me`（security review L3；11/05 Roger 已註冊）：舊網站公告請先登入 → 改網址、手動設 DNS、GitHub 驗證網域、`nmle` repo 設自訂網域 → 更新 Supabase、Google OAuth、Turnstile、Search Console、朋友的連結。注意事項見 `docs/design.md`「技術架構」的自訂網域
+- [ ] 搬到自訂網域 `nmle.me`（security review L3；11/05 Roger 已註冊）：舊網站公告請先登入 → 改網址（程式裡只有 `web/src/site.ts` 一處，README、`docs/invite.md` 另外改）、手動設 DNS、GitHub 驗證網域、`nmle` repo 設自訂網域 → 更新 Supabase、Google OAuth、Turnstile、Search Console、朋友的連結。注意事項見 `docs/design.md`「技術架構」的自訂網域
 - [ ] 確認 Dcard 醫師版板規
 - [ ] 寄信給陽明醫國考詳解的作者群，說明我們拿詳解來比對（見「詳解與題目正確率」）
 

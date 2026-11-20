@@ -8,7 +8,7 @@
 // Supabase 和 Turnstile 的請求全部擋掉：測的是沒登入的使用情境，不碰線上資料庫。
 import { after, before, test } from 'node:test'
 import assert from 'node:assert/strict'
-import { mkdtempSync, writeFileSync } from 'node:fs'
+import { mkdtempSync, readFileSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -19,7 +19,7 @@ const PORT = 4174
 const SITE = `http://localhost:${PORT}/`
 let server: PreviewServer
 let browser: Browser
-const problems: string[] = [] // 所有頁面的 CSP 違規和未處理的例外，最後一起檢查
+const problems: string[] = [] // 所有頁面的 CSP 違規、未處理的例外和原生對話框，最後一起檢查
 
 before(async () => {
   server = await preview({ root: fileURLToPath(new URL('..', import.meta.url)), preview: { port: PORT, strictPort: true }, logLevel: 'warn' })
@@ -51,6 +51,11 @@ async function open(ctx: BrowserContext): Promise<Page> {
     if (m.type() === 'error' && /Content Security Policy|Refused to/.test(m.text())) problems.push(`CSP：${m.text()}`)
   })
   page.on('pageerror', (e) => problems.push(`例外：${e.message}`))
+  // 原生的 confirm／alert／prompt 在 App 內建的瀏覽器可能被擋，網站一律用 ConfirmDialog.tsx
+  page.on('dialog', (d) => {
+    problems.push(`原生對話框：${d.message()}`)
+    void d.dismiss()
+  })
   await page.goto(SITE)
   return page
 }
@@ -152,9 +157,9 @@ test('備份：匯入會合併，重複匯入不會重複計算', async () => {
   for (let round = 0; round < 2; round++) {
     await page.getByRole('button', { name: '說明' }).click()
     await page.getByRole('tab', { name: '帳號與聲音' }).click()
-    page.once('dialog', (d) => void d.accept())
     const reloaded = page.waitForEvent('load')
     await page.locator('.backup-import input').setInputFiles(file)
+    await page.getByRole('alertdialog').getByRole('button', { name: '匯入' }).click()
     await reloaded
     assert.equal(await answerCount(page), 2, `第 ${round + 1} 次匯入後`)
   }
@@ -213,6 +218,64 @@ test('收藏、筆記；圖書館的不確定清單再答一次就移出', async
   await ctx2.close()
 })
 
-test('所有頁面沒有 CSP 違規、沒有未處理的例外', () => {
+test('陪讀時先預載她的全部表情：第一次換表情不會空白一下', async () => {
+  const ctx = await newContext({ characterMode: true })
+  const page = await open(ctx)
+  await page.locator('.pin, .spot-main').first().click()
+  await page.locator('.story').waitFor() // 第一次先播初識劇情
+  await page.keyboard.press('Escape') // 跳過劇情，開始讀書
+  const src = (await page.locator('.stage .portrait img').getAttribute('src')) ?? ''
+  const id = /characters\/([a-z]+)\//.exec(src)?.[1]
+  const { characters } = JSON.parse(readFileSync(new URL('../../data/characters.json', import.meta.url), 'utf-8')) as {
+    characters: { id: string; expressions: string[] }[]
+  }
+  const want = characters.find((c) => c.id === id)?.expressions.map((e) => `/characters/${id}/${e}.webp`) ?? []
+  assert.ok(want.length >= 5, `找不到 ${src} 的表情清單`)
+  await page.waitForFunction(
+    (paths) => {
+      const got = performance.getEntriesByType('resource').map((e) => new URL(e.name).pathname)
+      return paths.every((p) => got.some((g) => g.endsWith(p)))
+    },
+    want,
+    { timeout: 10_000 },
+  )
+  await ctx.close()
+})
+
+test('確認對話框：模擬考的開始與交卷；Esc、返回鍵等於取消，對話框開著時數字鍵不會作答', async () => {
+  const ctx = await newContext({ mobile: true })
+  const page = await open(ctx)
+  await page.locator('button.option').first().waitFor()
+  await page.getByRole('button', { name: '模擬考', exact: true }).click()
+  const startButton = page.getByRole('row').getByRole('button', { name: '開始' }).first()
+  const dialog = page.getByRole('alertdialog')
+
+  await startButton.click()
+  await dialog.waitFor()
+  assert.match((await dialog.textContent()) ?? '', /限時/)
+  await page.keyboard.press('Escape')
+  await dialog.waitFor({ state: 'detached' })
+  assert.equal(await page.locator('.mock-bar').count(), 0, '取消後不會開始')
+
+  await startButton.click()
+  await dialog.getByRole('button', { name: '開始' }).click()
+  const bar = page.locator('.mock-bar')
+  await bar.waitFor()
+
+  await bar.getByRole('button', { name: '交卷' }).click()
+  await dialog.waitFor()
+  await page.keyboard.press('1')
+  assert.match((await page.locator('.mock-count').textContent()) ?? '', /已答 0/, '對話框開著時按 1 不能選到底下題目的答案')
+  await page.goBack() // 手機返回鍵：只關掉對話框，模擬考還在
+  await dialog.waitFor({ state: 'detached' })
+  assert.equal(await bar.count(), 1)
+
+  await bar.getByRole('button', { name: '交卷' }).click()
+  await dialog.getByRole('button', { name: '交卷' }).click()
+  await bar.waitFor({ state: 'detached' })
+  await ctx.close()
+})
+
+test('所有頁面沒有 CSP 違規、沒有未處理的例外、沒有原生對話框', () => {
   assert.deepEqual(problems, [])
 })

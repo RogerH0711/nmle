@@ -18,6 +18,7 @@
   --wrong-bg: #fbe9e5;
   --warn-bg: #fff3d6;
   --warn: #8a5a00;
+  --danger: #c2412d; /* 刪除這類按鈕的底色，配白字 5.1:1；深色模式不換（--wrong 在深色模式是淺紅，配白字不夠） */
   color-scheme: light;
 }
 
@@ -1184,12 +1185,64 @@ button.link:hover {
   padding: 16px;
   border-radius: var(--r-l);
   background: var(--card);
-  border-top: 4px solid var(--char);
+  /* 劇情清單用學姊的顏色；其他對話框外層沒有 --char，用主題橘色（沒有預設值時整條框線會失效，11/20 修） */
+  border-top: 4px solid var(--char, var(--accent));
 }
 
 /* 對話框打開時焦點移到對話框本體（dialog.ts），本體不用畫焦點框，裡面的按鈕照常有 */
-[role='dialog']:focus {
+[role='dialog']:focus,
+[role='alertdialog']:focus {
   outline: none;
+}
+
+/* 確認與通知（ConfirmDialog.tsx）：疊在其他對話框、劇情、標題畫面上面 */
+.confirm-backdrop {
+  z-index: 50;
+}
+
+.modal.confirm.danger {
+  border-top-color: var(--danger);
+}
+
+.confirm-message {
+  margin: 0 0 14px;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.confirm-input {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0 0 14px;
+  font-size: 0.9rem;
+}
+
+.confirm-input input {
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-s);
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+}
+
+.confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+button.danger {
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+}
+
+.confirm-actions button:disabled {
+  opacity: 0.45;
+  cursor: default;
 }
 
 .modal h2 {

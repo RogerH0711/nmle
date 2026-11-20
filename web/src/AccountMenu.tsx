@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { User } from '@supabase/supabase-js'
 import { dismissMerged, syncNow, type SyncStatus } from './answers'
 import { deleteAccount, signOut } from './account'
+import { ask, tell } from './ConfirmDialog'
 import { displayNameError, NAME_MAX } from './displayName'
 import { usernameOf } from './login'
 
@@ -34,14 +35,18 @@ export function Account(props: {
 
   const remove = async () => {
     if (!user) return
-    const typed = window.prompt(
-      '刪除帳號會永久刪除雲端上的作答紀錄、模擬考、禮物、收藏與筆記和暱稱，也會清掉這台裝置上這個帳號的紀錄，無法復原。\n\n確定要刪除，請輸入「刪除」：',
-    )
-    if (typed?.trim() !== '刪除') return
+    const ok = await ask({
+      title: '刪除帳號',
+      message: '會永久刪除雲端上的作答紀錄、模擬考、禮物、收藏與筆記和暱稱，也會清掉這台裝置上這個帳號的紀錄，無法復原。',
+      requireText: '刪除',
+      confirm: '永久刪除',
+      danger: true,
+    })
+    if (!ok) return
     setSaving(true)
     try {
       await deleteAccount(user.id)
-      window.alert('帳號已刪除。')
+      await tell('帳號已刪除', '接下來會重新整理網頁。')
       window.location.reload() // 重新載入，清掉記憶體裡的紀錄
     } catch {
       setRenameError('刪除失敗，請確認網路連線後再試一次')
@@ -142,7 +147,7 @@ export function Account(props: {
           </button>
         </span>
       )}
-      <button className="ghost small" onClick={() => void signOut(user.id).catch(() => window.alert('登出失敗，請再試一次'))}>
+      <button className="ghost small" onClick={() => void signOut(user.id).catch(() => tell('登出失敗', '請確認網路連線後再試一次。'))}>
         登出
       </button>
     </div>

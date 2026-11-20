@@ -2,6 +2,13 @@ import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 import { APP_CSP } from './src/csp.ts'
+import { SITE } from './src/site.ts'
+
+// index.html 裡分享預覽要的絕對網址：__SITE__ 換成 src/site.ts 的網址（搬網域時只改那裡）
+const site: Plugin = {
+  name: 'site-url',
+  transformIndexHtml: { order: 'pre', handler: (html) => html.replaceAll('__SITE__', SITE) },
+}
 
 // 只在 build 時把 CSP 加進 index.html（理由見 src/csp.ts）；放在 <head> 最前面，才會套用到後面所有的 script
 const csp: Plugin = {
@@ -57,7 +64,7 @@ const pwa = VitePWA({
 
 // 題庫 JSON 和圖片放在 repo 根目錄的 data/，直接當成靜態檔案一起部署
 export default defineConfig({
-  plugins: [react(), csp, pwa],
+  plugins: [react(), site, csp, pwa],
   publicDir: '../data',
   base: './',
   build: {

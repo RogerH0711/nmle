@@ -1,6 +1,6 @@
 import { useSyncExternalStore } from 'react'
 import { dataUrl } from './bank'
-import { normalizeAudio, voiceKeys, type AudioSettings } from './audioRules'
+import { keepRecent, normalizeAudio, voiceKeys, type AudioSettings } from './audioRules'
 import type { PlayerTitle } from './player'
 
 // 聲音：音效、BGM、語音三個聲道，全部走 Web Audio。
@@ -114,17 +114,17 @@ function applyVolumes() {
   voiceGain.gain.setTargetAtTime(settings.voice, t, 0.05)
 }
 
-const buffers = new Map<string, Promise<AudioBuffer | null>>()
-function loadBuffer(path: string) {
-  let p = buffers.get(path)
-  if (!p) {
-    p = fetch(dataUrl(`audio/${path}`))
+// 解碼後的音檔只留最近用過的幾個（audioRules.ts 的 keepRecent）：BGM 兩首（地圖和圖書館之間來回不用重新解碼），
+// 語音 24 句。丟掉的再用到時重新下載、解碼：原始檔在 service worker 的快取裡，不走網路，解碼一首約零點幾秒
+const KEEP = { bgm: 2, voice: 24 }
+const buffers = { bgm: new Map<string, Promise<AudioBuffer | null>>(), voice: new Map<string, Promise<AudioBuffer | null>>() }
+function loadBuffer(kind: keyof typeof KEEP, path: string) {
+  return keepRecent(buffers[kind], path, KEEP[kind], () =>
+    fetch(dataUrl(`audio/${path}`))
       .then((r) => (r.ok ? r.arrayBuffer() : Promise.reject(new Error(String(r.status)))))
       .then((b) => ctx!.decodeAudioData(b))
-      .catch(() => null)
-    buffers.set(path, p)
-  }
-  return p
+      .catch(() => null),
+  )
 }
 
 // ---------- 音效 ----------
@@ -193,7 +193,7 @@ async function applyBgm() {
   const track = wanted ? manifest.bgm[wanted] : undefined
   if (!wanted || !track) return fadeOut() // 這個畫面不放，或這首還沒做
   const id = wanted
-  const buffer = await loadBuffer(track.file)
+  const buffer = await loadBuffer('bgm', track.file)
   if (my !== token || !buffer || !running()) return
   fadeOut()
   const source = ctx!.createBufferSource()
@@ -235,7 +235,7 @@ export async function playVoice(lineId: string | null, player: PlayerTitle): Pro
   if (!lineId || !running()) return false
   const key = voiceKeys(lineId, player).find((k) => manifest.voice.includes(k))
   if (!key) return false
-  const buffer = await loadBuffer(`voice/${key}.mp3`)
+  const buffer = await loadBuffer('voice', `voice/${key}.mp3`)
   if (!buffer || !running() || request !== voiceRequest) return false
   const source = ctx!.createBufferSource()
   source.buffer = buffer

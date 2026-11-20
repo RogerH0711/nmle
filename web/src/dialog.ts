@@ -45,6 +45,9 @@ window.addEventListener('keydown', (e) => {
   }
 })
 
+/** 有沒有對話框開著：全頁的鍵盤快捷鍵（作答、模擬考）在對話框開著時不要動到底下的畫面 */
+export const dialogOpen = () => stack.length > 0
+
 /**
  * 把回傳的 ref 接到對話框本體（role="dialog" 那個元素）。onClose 不給的話 Esc 不會關（例如第一次選稱呼是必選的）。
  * 對話框本體要加 tabIndex={-1} 才能接收焦點。

@@ -1,7 +1,8 @@
 // SEO 靜態頁的 HTML。執行：npm test
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { paperPage, questionPage, questionPath, sitemap, SITE } from './staticPages.ts'
+import { paperPage, questionPage, questionPath, sitemap } from './staticPages.ts'
+import { SITE } from './site.ts'
 import type { ExamFile, Index, PaperInfo, Question } from './types.ts'
 
 const index: Index = { subjects: { pharmacology: '藥理學' }, papers: [] }

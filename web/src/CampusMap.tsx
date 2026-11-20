@@ -48,6 +48,8 @@ function useLayout(): Layout {
 
 interface MapLayout {
   image: string
+  width?: number // 圖片的像素尺寸：寫在 <img> 上，瀏覽器在下載前就能照比例留位置，標記不會跟著跳
+  height?: number
   spots: Record<string, [number, number]> // 地點 id → [x%, y%]
 }
 type MapConfig = Record<Layout, MapLayout>
@@ -234,7 +236,7 @@ function MapView(props: Props & { layout: Layout; config: MapLayout; onFail: () 
   }
   return (
     <div className={`campus-map map-${layout}`}>
-      <img className="campus-map-img" src={backgroundUrl(config.image)} alt="校園地圖" onError={props.onFail} />
+      <img className="campus-map-img" src={backgroundUrl(config.image)} width={config.width} height={config.height} alt="校園地圖" onError={props.onFail} />
       {characters.map((c) => {
         const loc = c.location ?? 'cafe'
         return (

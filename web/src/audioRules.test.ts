@@ -1,7 +1,7 @@
 // 聲音的規則。執行：npm test
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { chooseBgm, DEFAULT_AUDIO, giftVoiceId, normalizeAudio, voiceKeys } from './audioRules.ts'
+import { chooseBgm, DEFAULT_AUDIO, giftVoiceId, keepRecent, normalizeAudio, voiceKeys } from './audioRules.ts'
 
 test('設定：預設靜音；壞掉或超出範圍的值改回預設或夾在 0–1', () => {
   assert.equal(DEFAULT_AUDIO.enabled, false)
@@ -33,4 +33,17 @@ test('收禮台詞有 {gift} 的，每種禮物各一個語音檔；沒有的用
   assert.equal(giftVoiceId({ id: 'fei-gift-001', text: '{gift}？……喔，謝謝。' }, 'latte'), 'fei-gift-001.latte')
   assert.equal(giftVoiceId({ id: 'fei-gift-002', text: '送我的？' }, 'latte'), 'fei-gift-002')
   assert.deepEqual(voiceKeys('fei-gift-001.latte', '學弟'), ['fei-gift-001.latte.m', 'fei-gift-001.latte'])
+})
+
+test('解碼後的音檔只留最近用過的幾個：用到的移到最後，超過就丟最舊的', () => {
+  const cache = new Map<string, string>()
+  const made: string[] = []
+  const get = (k: string) => keepRecent(cache, k, 2, () => (made.push(k), `buf-${k}`))
+  assert.equal(get('map'), 'buf-map')
+  get('library')
+  assert.equal(get('map'), 'buf-map') // 還在：不重新載入
+  get('story') // 超過兩個：丟掉最久沒用的 library
+  assert.deepEqual([...cache.keys()], ['map', 'story'])
+  get('library')
+  assert.deepEqual(made, ['map', 'library', 'story', 'library'])
 })

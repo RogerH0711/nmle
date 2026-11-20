@@ -60,3 +60,18 @@ export function giftVoiceId(line: { id: string; text: string }, giftId: string) 
 export function voiceKeys(lineId: string, player: PlayerTitle) {
   return [`${lineId}.${PLAYER_VOICE[player]}`, lineId]
 }
+
+/**
+ * 只留最近用過的 limit 個（改進清單第 19 項）：Map 依放進去的順序排，用到的移到最後，超過就從最舊的丟。
+ * 解碼後的音檔很大（80 秒的立體聲 BGM 約 28 MB），全部留著的話七首聽一輪就超過 190 MB，手機 Safari 可能直接關掉分頁
+ */
+export function keepRecent<V>(cache: Map<string, V>, key: string, limit: number, make: () => V): V {
+  const value = cache.has(key) ? (cache.get(key) as V) : make()
+  cache.delete(key)
+  cache.set(key, value)
+  for (const k of cache.keys()) {
+    if (cache.size <= limit) break
+    cache.delete(k)
+  }
+  return value
+}

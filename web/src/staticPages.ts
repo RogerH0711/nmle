@@ -4,8 +4,8 @@
 import type { ExamFile, Index, PaperInfo, Question } from './types.ts'
 import { LEVELS, parseExplanation, type ExplanationLevel } from './explanationText.ts'
 import { STATIC_PAGE_CSP } from './csp.ts'
+import { SITE } from './site.ts'
 
-export const SITE = 'https://rogerh0711.github.io/nmle/'
 const NAME = '醫師一階攻略'
 const LETTERS = ['A', 'B', 'C', 'D']
 

@@ -8,6 +8,7 @@ import { MIN_ANSWERS, RECENT } from './abilities'
 import { STREAK_MILESTONES, STREAK_MIN_DAILY } from './messages'
 import { EARN, GIFT_BONUS } from './shop'
 import { countAnswers, downloadBackup, importBackup, parseBackup } from './backup'
+import { ask } from './ConfirmDialog'
 
 const SEEN_KEY = 'nmle.guide.seen.v1'
 
@@ -224,7 +225,8 @@ function BackupControls() {
       const backup = parseBackup(await file.text())
       const n = countAnswers(backup)
       const date = new Date(backup.exported_at).toLocaleDateString('zh-TW')
-      if (!window.confirm(`匯入 ${date} 的備份（${n} 筆作答）？會和這台裝置現有的紀錄合併，完成後重新整理網頁。`)) return
+      const message = `${date} 的備份，${n} 筆作答。\n會和這台裝置現有的紀錄合併（同一筆不會重複計算），完成後重新整理網頁。`
+      if (!(await ask({ title: '匯入備份', message, confirm: '匯入' }))) return
       importBackup(backup)
       window.location.reload()
     } catch (e) {
@@ -249,7 +251,10 @@ function BackupControls() {
       </button>
       <label className="ghost small backup-import">
         匯入備份
-        <input type="file" accept="application/json,.json" onChange={(e) => void onFile(e.target.files?.[0])} />
+        <input type="file" accept="application/json,.json" onChange={(e) => {
+            void onFile(e.target.files?.[0])
+            e.target.value = '' // 取消匯入後再選同一個檔案也要觸發
+          }} />
       </label>
       {status && (
         <p className="guide-small" role="status">

@@ -4,6 +4,8 @@ import assert from 'node:assert/strict'
 import { readdirSync, readFileSync } from 'node:fs'
 import type { Line } from './characters.ts'
 import { eligible, matchesTopic } from './lineRules.ts'
+import type { StoryLine } from './stories.ts'
+import { sceneExpressions } from './storyRules.ts'
 import type { ExamFile } from './types.ts'
 
 const data = new URL('../../data/', import.meta.url)
@@ -81,15 +83,24 @@ test('劇情裡角色說的每句都有 id（對應配音 data/audio/voice/<id>.
   }
 })
 
+test('sceneExpressions：只算她的台詞，含選項後的台詞，一定有 normal', () => {
+  const lines: StoryLine[] = [
+    { speaker: 'narration', text: '……' },
+    { speaker: 'fei', expression: 'pout', text: '幹嘛' },
+    { speaker: 'ying', expression: 'happy', text: '別人的表情不算' },
+    { speaker: 'choice', options: [{ text: '甲', lines: [{ speaker: 'fei', expression: 'shy', text: '……謝謝' }] }, { text: '乙', lines: [] }] },
+    { speaker: 'fei', text: '沒寫表情' },
+  ]
+  assert.deepEqual(sceneExpressions(lines, 'fei'), ['normal', 'pout', 'shy'])
+})
+
 test('劇情用到的每個表情都有立繪（有寫 outfit 的劇情看那套服裝的資料夾）', () => {
-  type Line = { speaker: string; expression?: string; options?: { lines: Line[] }[] }
-  const flat = (lines: Line[]): Line[] => lines.flatMap((l) => [l, ...flat(l.options?.flatMap((o) => o.lines) ?? [])])
   let checked = 0
   for (const f of files.filter((f) => f.name.startsWith('stories/'))) {
-    const story = JSON.parse(f.text) as { character: string; scenes: { title: string; outfit?: string; lines: Line[] }[] }
+    const story = JSON.parse(f.text) as { character: string; scenes: { title: string; outfit?: string; lines: StoryLine[] }[] }
     for (const scene of story.scenes) {
-      const used = new Set(['normal', ...flat(scene.lines).flatMap((l) => (l.speaker === story.character && l.expression ? [l.expression] : []))])
-      for (const e of used) {
+      // 和劇情播放時預載的是同一份清單（Story.tsx）
+      for (const e of sceneExpressions(scene.lines, story.character)) {
         const path = `characters/${story.character}/${scene.outfit ? `${scene.outfit}/` : ''}${e}.webp`
         assert.doesNotThrow(() => readFileSync(new URL(path, data)), `${f.name}「${scene.title}」缺 ${path}`)
       }
@@ -185,4 +196,25 @@ test('知識台詞的關鍵字，至少對得到她負責學科的一題（不�
       assert.ok(mine.some((q) => matchesTopic(l, q)), `${l.id} 的關鍵字 ${l.keywords!.join('、')} 一題都對不到`)
     }
   }
+})
+
+/** webp 檔頭的寬高（VP8X 延伸格式、VP8 有損、VP8L 無損） */
+function webpSize(buf: Buffer): [number, number] {
+  const kind = buf.toString('ascii', 12, 16)
+  if (kind === 'VP8X') return [1 + buf.readUIntLE(24, 3), 1 + buf.readUIntLE(27, 3)]
+  if (kind === 'VP8 ') return [buf.readUInt16LE(26) & 0x3fff, buf.readUInt16LE(28) & 0x3fff]
+  if (kind === 'VP8L') {
+    const bits = buf.readUInt32LE(21)
+    return [1 + (bits & 0x3fff), 1 + ((bits >>> 14) & 0x3fff)]
+  }
+  throw new Error(`不認得的 webp 格式：${kind}`)
+}
+
+test('校園地圖的 width、height 和圖片的實際尺寸一樣（瀏覽器下載前先照這個比例留位置）', () => {
+  const map = JSON.parse(readFileSync(new URL('map.json', data), 'utf-8')) as Record<string, { image: string; width: number; height: number }>
+  for (const layout of ['wide', 'tall']) {
+    const { image, width, height } = map[layout]
+    assert.deepEqual(webpSize(readFileSync(new URL(`backgrounds/${image}.webp`, data))), [width, height], `map.json 的 ${layout}`)
+  }
+  assert.deepEqual(webpSize(readFileSync(new URL('cover.webp', data))), [1920, 1080]) // 順便確認讀檔頭的方式對（Pillow 量的）
 })

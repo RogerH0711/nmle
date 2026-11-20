@@ -40,6 +40,8 @@ import { QuestionBank } from './QuestionBank'
 import { parseBankHash, type BankRoute } from './search'
 import { toOriginal, type Order as OptionOrder } from './options'
 import { useBack } from './backStack'
+import { ask } from './ConfirmDialog'
+import { dialogOpen } from './dialog'
 import { switchMarksUser, updateMark, useMarks } from './marksStore'
 import { listOf } from './marks'
 import { Library, LIST_LABEL, type ListKind } from './Library'
@@ -554,7 +556,7 @@ export default function App() {
     const message =
       `開始 ${paperLabel(p)} 模擬考？\n限時 ${MOCK_MINUTES / 60} 小時，開始後計時不會暫停，要交卷才會結束。` +
       (again ? '\n這份考卷之前考過，這次不會列入排行榜。' : '')
-    if (!window.confirm(message)) return
+    if (!(await ask({ title: '開始模擬考', message, confirm: '開始' }))) return
     try {
       mergePaper(await loadPaper(index, paperId))
       setMockResultId(null)
@@ -624,8 +626,8 @@ export default function App() {
   // 鍵盤：1–4 或 A–D 作答，Enter／→ 下一題，← 上一題
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      // 看排行榜、考模擬考、看劇情、看能力值、在校園地圖上時，不要對藏起來的題目作答
-      if (titleOpen || view !== 'quiz' || session || story || storyList || statusOpen || shopOpen || guideOpen || loginOpen || libraryOpen || messagesOpen !== false || (characterMode && onMap && characters.length > 0)) return
+      // 看排行榜、考模擬考、看劇情、看能力值、在校園地圖上、有對話框開著時，不要對藏起來的題目作答
+      if (dialogOpen() || titleOpen || view !== 'quiz' || session || story || storyList || statusOpen || shopOpen || guideOpen || loginOpen || libraryOpen || messagesOpen !== false || (characterMode && onMap && characters.length > 0)) return
       if (e.ctrlKey || e.metaKey || e.altKey) return
       if (e.target instanceof Element && e.target.closest('select, input, textarea')) return
       const k = e.key.toUpperCase()

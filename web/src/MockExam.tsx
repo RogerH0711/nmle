@@ -8,6 +8,8 @@ import {
 } from './mock'
 import { CharacterStage } from './CharacterStage'
 import type { Reaction } from './characters'
+import { ask, dismiss } from './ConfirmDialog'
+import { dialogOpen } from './dialog'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
 const LOW_TIME_MS = 10 * 60_000 // 剩 10 分鐘時倒數變紅
@@ -147,7 +149,10 @@ export function MockRunner(props: {
 
   useEffect(() => {
     const t = setInterval(() => setNow(Date.now()), 1000)
-    return () => clearInterval(t)
+    return () => {
+      clearInterval(t)
+      dismiss() // 時間到自動交卷時，「確定要交卷嗎」不要留在成績畫面上
+    }
   }, [])
 
   const left = deadline(session.startedAt) - now
@@ -185,7 +190,9 @@ export function MockRunner(props: {
     const blank = questions.length - answered
     const flags = session.flags.length
     const notes = [blank && `還有 ${blank} 題沒作答`, flags && `${flags} 題有標記`].filter(Boolean).join('、')
-    if (window.confirm(`${notes ? notes + '。' : ''}確定要交卷嗎？交卷後就不能再改。`)) submit()
+    void ask({ title: '交卷', message: `${notes ? notes + '。\n' : ''}確定要交卷嗎？交卷後就不能再改。`, confirm: '交卷' }).then((ok) => {
+      if (ok) submit()
+    })
   }
 
   // 鍵盤：1–4 或 A–D 選答案（再按一次取消），←／→ 換題，Enter 下一題，F 標記
@@ -193,7 +200,7 @@ export function MockRunner(props: {
   keyRef.current = { pick, go, toggleFlag, pos }
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.ctrlKey || e.metaKey || e.altKey) return
+      if (dialogOpen() || e.ctrlKey || e.metaKey || e.altKey) return // 「確定要交卷嗎」開著時不要動到題目
       if (e.target instanceof Element && e.target.closest('select, input, textarea')) return
       const k = e.key.toUpperCase()
       const n = '1234'.indexOf(k)

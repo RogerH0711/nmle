@@ -715,12 +715,12 @@
       "number": 30,
       "subject": "parasitology",
       "subject_status": "range",
-      "stem": "邱先生買了一塊農地種菜，經常弄得手腳滿是污泥，最近手臂發癢並出現延伸的紅斑，下列敘述那一項最不適當？",
+      "stem": "邱先生買了一塊農地種菜，經常弄得手腳滿是污泥，最近手臂發癢並出現延伸的紅斑，下列敘述那一項最不適當？",
       "options": [
         "皮膚搔癢（pruritus）可能是寄生蟲引起的過敏反應",
         "可能是搔癢抓破皮引起的細菌性感染",
         "可能是東方毛線蟲（Trichostrongylus orientalis）感染造成的",
-        "可能罹患鉤蟲爬行疹（creeping eruption）"
+        "可能罹患鉤蟲爬行疹（creeping eruption）"
       ],
       "answers": [
         "C"
@@ -1507,7 +1507,7 @@
       "number": 63,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列抗心律不整藥物，何者具有抑制thyroxine（T4）轉變成triiodothyronine（T3）的作用？",
+      "stem": "下列抗心律不整藥物，何者具有抑制thyroxine（T4）轉變成triiodothyronine（T3）的作用？",
       "options": [
         "adenosine",
         "amiodarone",

@@ -4,6 +4,9 @@ import { dataUrl, imageUrl, loadPaper, paperLabel } from './bank'
 import { loadExplanationTexts } from './explanations'
 import { ExplanationPanel } from './ExplanationPanel'
 import { ReportButton } from './Report'
+import { FavoriteButton, NoteEditor } from './MarkControls'
+import { useMarks } from './marksStore'
+import { subtopicName, subtopicOf, type SubtopicData } from './subtopics'
 import {
   bankHash, buildExpansions, expandTerms, fold, highlight, inScope, parseQuery, searchBank,
   type BankRoute, type Expansions,
@@ -30,9 +33,10 @@ function loadExpansions() {
 export function QuestionBank(props: {
   index: Index
   initial: BankRoute
+  subtopics: SubtopicData | null // 次主題（subtopics.ts）；還沒分類時是 null，不顯示
   onPractice: (ids: string[], label: string) => void
 }) {
-  const { index, onPractice } = props
+  const { index, subtopics, onPractice } = props
   const [route, setRoute] = useState(props.initial)
   const [questions, setQuestions] = useState<Question[] | null>(null)
   const [withExplanations, setWithExplanations] = useState(false)
@@ -40,6 +44,8 @@ export function QuestionBank(props: {
   const [shown, setShown] = useState(PAGE)
   const [error, setError] = useState(false)
   const [expansions, setExpansions] = useState<Expansions | null>(null)
+  const [onlyFavorites, setOnlyFavorites] = useState(false) // 只看收藏的題目（marks.ts）
+  const { marks } = useMarks()
   const query = useDeferredValue(route.query) // 打字時先更新輸入框，結果晚一點跟上
 
   const years = [...new Set(index.papers.map((p) => p.year))].sort((a, b) => b - a)
@@ -93,8 +99,10 @@ export function QuestionBank(props: {
   const hits = useMemo(() => {
     if (!questions) return []
     const all = searchBank(questions, { scope: route.scope, subject: route.subject, groups }, explanations ?? undefined)
-    return route.number === null ? all : all.filter((h) => h.q.number === route.number)
-  }, [questions, route.scope, route.subject, route.number, groups, explanations])
+    const topic = route.subject !== 'all' && subtopics ? route.topic : undefined
+    const shown = all.filter((h) => (!onlyFavorites || marks[h.q.id]?.favorite) && (!topic || subtopicOf(subtopics!, h.q.id) === topic))
+    return route.number === null ? shown : shown.filter((h) => h.q.number === route.number)
+  }, [questions, route.scope, route.subject, route.number, route.topic, groups, explanations, onlyFavorites, marks, subtopics])
   // 「抗生素」也找了 gentamicin、vancomycin…：讓人知道為什麼會出現沒有這個字的題目
   const expanded = groups
     .filter((g) => g.length > 1)
@@ -112,7 +120,8 @@ export function QuestionBank(props: {
         const p = index.papers.find((x) => x.id === route.scope)
         return p ? paperLabel(p) : route.scope
       })()
-  const practiceLabel = [scopeLabel, route.subject !== 'all' && index.subjects[route.subject], query.trim() && `「${query.trim()}」`]
+  const topicName = subtopics && route.subject !== 'all' ? subtopicName(subtopics, route.subject, route.topic ?? null) : null
+  const practiceLabel = [scopeLabel, route.subject !== 'all' && index.subjects[route.subject], topicName, query.trim() && `「${query.trim()}」`, onlyFavorites && '收藏']
     .filter(Boolean)
     .join(' ')
 
@@ -144,7 +153,7 @@ export function QuestionBank(props: {
               </optgroup>
             ))}
           </select>
-          <select aria-label="學科" value={route.subject} onChange={(e) => update({ subject: e.target.value })}>
+          <select aria-label="學科" value={route.subject} onChange={(e) => update({ subject: e.target.value, topic: undefined })}>
             <option value="all">全部學科</option>
             {Object.entries(index.subjects).map(([id, name]) => (
               <option key={id} value={id}>
@@ -152,9 +161,30 @@ export function QuestionBank(props: {
               </option>
             ))}
           </select>
+          {subtopics && route.subject !== 'all' && (
+            <select aria-label="次主題" value={route.topic ?? 'all'} onChange={(e) => update({ topic: e.target.value === 'all' ? undefined : e.target.value })}>
+              <option value="all">全部次主題</option>
+              {(subtopics.subjects[route.subject] ?? []).map((s) => (
+                <option key={s.id} value={s.id}>
+                  {s.name}
+                </option>
+              ))}
+            </select>
+          )}
           <label className="toggle">
             <input type="checkbox" checked={withExplanations} onChange={(e) => setWithExplanations(e.target.checked)} />
             也搜詳解
+          </label>
+          <label className="toggle">
+            <input
+              type="checkbox"
+              checked={onlyFavorites}
+              onChange={(e) => {
+                setOnlyFavorites(e.target.checked)
+                setShown(PAGE)
+              }}
+            />
+            只看收藏
           </label>
         </div>
       </div>
@@ -189,7 +219,9 @@ export function QuestionBank(props: {
           </p>
         ))}
       {route.subject !== 'all' && route.number === null && (
-        <p className="hint">學科目前依題號區段粗分，還沒有逐題確認，可能有少數題目分錯。</p>
+        <p className="hint">
+          學科依考卷的題號區段劃分{subtopics && `，次主題由 AI 依題目內容分類（${subtopics.model}）`}，可能有少數題目分錯。
+        </p>
       )}
 
       <ol className="bank-list">
@@ -198,6 +230,7 @@ export function QuestionBank(props: {
             key={h.q.id}
             q={h.q}
             index={index}
+            topic={subtopics ? subtopicName(subtopics, h.q.subject, subtopicOf(subtopics, h.q.id)) : null}
             terms={terms}
             inExplanation={h.inExplanation}
             open={route.number !== null}
@@ -212,7 +245,9 @@ export function QuestionBank(props: {
       )}
       {questions && hits.length === 0 && !error && (
         <p className="center-note">
-          找不到符合的題目。{!withExplanations && terms.length > 0 && '可以勾「也搜詳解」，或換成英文、中文的另一種寫法再試試。'}
+          {onlyFavorites && !terms.length
+            ? '還沒有收藏的題目。按題目右上角的 ☆ 收藏，之後可以在這裡或圖書館一起刷。'
+            : <>找不到符合的題目。{!withExplanations && terms.length > 0 && '可以勾「也搜詳解」，或換成英文、中文的另一種寫法再試試。'}</>}
         </p>
       )}
     </section>
@@ -230,12 +265,13 @@ function Marked({ text, terms }: { text: string; terms: string[] }) {
 function BankItem(props: {
   q: Question
   index: Index
+  topic: string | null // 次主題名稱
   terms: string[]
   inExplanation: boolean
   open: boolean // 單題網址：直接展開正解
   onPermalink: () => void
 }) {
-  const { q, index, terms, inExplanation, onPermalink } = props
+  const { q, index, topic, terms, inExplanation, onPermalink } = props
   const [revealed, setRevealed] = useState(props.open)
   const paper = index.papers.find((p) => q.id.startsWith(p.id + '_'))
 
@@ -248,11 +284,13 @@ function BankItem(props: {
         {q.subject && (
           <span className="tag" title={q.subject_status === 'range' ? '依題號區段粗分，尚未逐題確認' : undefined}>
             {index.subjects[q.subject] ?? q.subject}
+            {topic && `・${topic}`}
           </span>
         )}
         {q.free_point && <span className="tag warn">本題一律給分</span>}
         {!q.free_point && q.answers.length > 1 && <span className="tag warn">一題多解</span>}
         {inExplanation && <span className="tag">詳解提到</span>}
+        <FavoriteButton questionId={q.id} />
       </div>
 
       <p className="stem">
@@ -279,6 +317,9 @@ function BankItem(props: {
             {q.free_point ? '本題官方一律給分。' : `正解：${q.answers.join('、')}`}
             {q.answer_note && !q.free_point && <span className="note">（{q.answer_note}）</span>}
           </p>
+          <div className="mark-row">
+            <NoteEditor questionId={q.id} />
+          </div>
           <ExplanationPanel questionId={q.id} number={q.number} />
           <div className="card-foot">
             <ReportButton questionId={q.id} picked={undefined} />

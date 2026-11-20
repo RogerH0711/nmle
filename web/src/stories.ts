@@ -3,6 +3,7 @@ import { dataUrl } from './bank'
 
 export interface StoryLine {
   speaker: string // 角色 id、player（玩家）、narration（旁白）或 choice（選項）
+  id?: string // 角色的台詞才有（<角色 id>-story-<階段>-<序號>），對應配音 data/audio/voice/<id>.mp3。序號定了就不改，插入新台詞用新號碼
   expression?: string
   text?: string // choice 沒有
   options?: StoryOption[] // 只有 choice 有
@@ -76,9 +77,10 @@ export function loadSeen(): Set<string> {
   }
 }
 
+// 和已經存的合併：別的分頁看過的劇情不會被這個分頁蓋掉
 export function saveSeen(seen: Set<string>) {
   try {
-    localStorage.setItem(SEEN_KEY, JSON.stringify([...seen]))
+    localStorage.setItem(SEEN_KEY, JSON.stringify([...new Set([...loadSeen(), ...seen])]))
   } catch {
     // 存不了就只在這次瀏覽有效
   }

@@ -851,6 +851,636 @@
           "pathology"
         ]
       ]
+    },
+    {
+      "id": "109100_1",
+      "year": 109,
+      "session": 2,
+      "paper": "醫學(一)",
+      "file": "questions/109100_1.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          31,
+          "anatomy"
+        ],
+        [
+          32,
+          36,
+          "embryology"
+        ],
+        [
+          37,
+          46,
+          "histology"
+        ],
+        [
+          47,
+          73,
+          "physiology"
+        ],
+        [
+          74,
+          100,
+          "biochemistry"
+        ]
+      ]
+    },
+    {
+      "id": "109100_2",
+      "year": 109,
+      "session": 2,
+      "paper": "醫學(二)",
+      "file": "questions/109100_2.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          28,
+          "microbiology"
+        ],
+        [
+          29,
+          35,
+          "parasitology"
+        ],
+        [
+          36,
+          50,
+          "public_health"
+        ],
+        [
+          51,
+          75,
+          "pharmacology"
+        ],
+        [
+          76,
+          100,
+          "pathology"
+        ]
+      ]
+    },
+    {
+      "id": "109020_1",
+      "year": 109,
+      "session": 1,
+      "paper": "醫學(一)",
+      "file": "questions/109020_1.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          31,
+          "anatomy"
+        ],
+        [
+          32,
+          36,
+          "embryology"
+        ],
+        [
+          37,
+          46,
+          "histology"
+        ],
+        [
+          47,
+          73,
+          "physiology"
+        ],
+        [
+          74,
+          100,
+          "biochemistry"
+        ]
+      ]
+    },
+    {
+      "id": "109020_2",
+      "year": 109,
+      "session": 1,
+      "paper": "醫學(二)",
+      "file": "questions/109020_2.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          28,
+          "microbiology"
+        ],
+        [
+          29,
+          35,
+          "parasitology"
+        ],
+        [
+          36,
+          50,
+          "public_health"
+        ],
+        [
+          51,
+          75,
+          "pharmacology"
+        ],
+        [
+          76,
+          100,
+          "pathology"
+        ]
+      ]
+    },
+    {
+      "id": "108100_1",
+      "year": 108,
+      "session": 2,
+      "paper": "醫學(一)",
+      "file": "questions/108100_1.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          31,
+          "anatomy"
+        ],
+        [
+          32,
+          36,
+          "embryology"
+        ],
+        [
+          37,
+          46,
+          "histology"
+        ],
+        [
+          47,
+          73,
+          "physiology"
+        ],
+        [
+          74,
+          100,
+          "biochemistry"
+        ]
+      ]
+    },
+    {
+      "id": "108100_2",
+      "year": 108,
+      "session": 2,
+      "paper": "醫學(二)",
+      "file": "questions/108100_2.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          28,
+          "microbiology"
+        ],
+        [
+          29,
+          35,
+          "parasitology"
+        ],
+        [
+          36,
+          50,
+          "public_health"
+        ],
+        [
+          51,
+          75,
+          "pharmacology"
+        ],
+        [
+          76,
+          100,
+          "pathology"
+        ]
+      ]
+    },
+    {
+      "id": "108030_1",
+      "year": 108,
+      "session": 1,
+      "paper": "醫學(一)",
+      "file": "questions/108030_1.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          31,
+          "anatomy"
+        ],
+        [
+          32,
+          36,
+          "embryology"
+        ],
+        [
+          37,
+          46,
+          "histology"
+        ],
+        [
+          47,
+          73,
+          "physiology"
+        ],
+        [
+          74,
+          100,
+          "biochemistry"
+        ]
+      ]
+    },
+    {
+      "id": "108030_2",
+      "year": 108,
+      "session": 1,
+      "paper": "醫學(二)",
+      "file": "questions/108030_2.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          28,
+          "microbiology"
+        ],
+        [
+          29,
+          35,
+          "parasitology"
+        ],
+        [
+          36,
+          50,
+          "public_health"
+        ],
+        [
+          51,
+          75,
+          "pharmacology"
+        ],
+        [
+          76,
+          100,
+          "pathology"
+        ]
+      ]
+    },
+    {
+      "id": "107100_1",
+      "year": 107,
+      "session": 2,
+      "paper": "醫學(一)",
+      "file": "questions/107100_1.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          31,
+          "anatomy"
+        ],
+        [
+          32,
+          36,
+          "embryology"
+        ],
+        [
+          37,
+          46,
+          "histology"
+        ],
+        [
+          47,
+          73,
+          "physiology"
+        ],
+        [
+          74,
+          100,
+          "biochemistry"
+        ]
+      ]
+    },
+    {
+      "id": "107100_2",
+      "year": 107,
+      "session": 2,
+      "paper": "醫學(二)",
+      "file": "questions/107100_2.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          28,
+          "microbiology"
+        ],
+        [
+          29,
+          35,
+          "parasitology"
+        ],
+        [
+          36,
+          50,
+          "public_health"
+        ],
+        [
+          51,
+          75,
+          "pharmacology"
+        ],
+        [
+          76,
+          100,
+          "pathology"
+        ]
+      ]
+    },
+    {
+      "id": "107020_1",
+      "year": 107,
+      "session": 1,
+      "paper": "醫學(一)",
+      "file": "questions/107020_1.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          31,
+          "anatomy"
+        ],
+        [
+          32,
+          36,
+          "embryology"
+        ],
+        [
+          37,
+          46,
+          "histology"
+        ],
+        [
+          47,
+          73,
+          "physiology"
+        ],
+        [
+          74,
+          100,
+          "biochemistry"
+        ]
+      ]
+    },
+    {
+      "id": "107020_2",
+      "year": 107,
+      "session": 1,
+      "paper": "醫學(二)",
+      "file": "questions/107020_2.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          28,
+          "microbiology"
+        ],
+        [
+          29,
+          35,
+          "parasitology"
+        ],
+        [
+          36,
+          50,
+          "public_health"
+        ],
+        [
+          51,
+          75,
+          "pharmacology"
+        ],
+        [
+          76,
+          100,
+          "pathology"
+        ]
+      ]
+    },
+    {
+      "id": "106100_1",
+      "year": 106,
+      "session": 2,
+      "paper": "醫學(一)",
+      "file": "questions/106100_1.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          31,
+          "anatomy"
+        ],
+        [
+          32,
+          36,
+          "embryology"
+        ],
+        [
+          37,
+          46,
+          "histology"
+        ],
+        [
+          47,
+          73,
+          "physiology"
+        ],
+        [
+          74,
+          100,
+          "biochemistry"
+        ]
+      ]
+    },
+    {
+      "id": "106100_2",
+      "year": 106,
+      "session": 2,
+      "paper": "醫學(二)",
+      "file": "questions/106100_2.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          28,
+          "microbiology"
+        ],
+        [
+          29,
+          35,
+          "parasitology"
+        ],
+        [
+          36,
+          50,
+          "public_health"
+        ],
+        [
+          51,
+          75,
+          "pharmacology"
+        ],
+        [
+          76,
+          100,
+          "pathology"
+        ]
+      ]
+    },
+    {
+      "id": "106020_1",
+      "year": 106,
+      "session": 1,
+      "paper": "醫學(一)",
+      "file": "questions/106020_1.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          28,
+          "anatomy"
+        ],
+        [
+          29,
+          32,
+          "embryology"
+        ],
+        [
+          33,
+          41,
+          "histology"
+        ],
+        [
+          42,
+          74,
+          "microbiology"
+        ],
+        [
+          75,
+          82,
+          "parasitology"
+        ],
+        [
+          83,
+          100,
+          "public_health"
+        ]
+      ]
+    },
+    {
+      "id": "106020_2",
+      "year": 106,
+      "session": 1,
+      "paper": "醫學(二)",
+      "file": "questions/106020_2.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          25,
+          "physiology"
+        ],
+        [
+          26,
+          50,
+          "biochemistry"
+        ],
+        [
+          51,
+          75,
+          "pharmacology"
+        ],
+        [
+          76,
+          100,
+          "pathology"
+        ]
+      ]
+    },
+    {
+      "id": "105020_1",
+      "year": 105,
+      "session": 1,
+      "paper": "醫學(一)",
+      "file": "questions/105020_1.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          28,
+          "anatomy"
+        ],
+        [
+          29,
+          32,
+          "embryology"
+        ],
+        [
+          33,
+          41,
+          "histology"
+        ],
+        [
+          42,
+          74,
+          "microbiology"
+        ],
+        [
+          75,
+          82,
+          "parasitology"
+        ],
+        [
+          83,
+          100,
+          "public_health"
+        ]
+      ]
+    },
+    {
+      "id": "105020_2",
+      "year": 105,
+      "session": 1,
+      "paper": "醫學(二)",
+      "file": "questions/105020_2.json",
+      "count": 100,
+      "subject_runs": [
+        [
+          1,
+          25,
+          "physiology"
+        ],
+        [
+          26,
+          50,
+          "biochemistry"
+        ],
+        [
+          51,
+          75,
+          "pharmacology"
+        ],
+        [
+          76,
+          100,
+          "pathology"
+        ]
+      ]
     }
   ]
 }

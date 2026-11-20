@@ -58,6 +58,29 @@ test('禮物：每位學姊都有收禮台詞，她喜歡的每一樣禮物都�
   }
 })
 
+test('劇情裡角色說的每句都有 id（對應配音 data/audio/voice/<id>.mp3），而且和台詞的 id 不重複', () => {
+  type StoryLine = { speaker: string; id?: string; options?: { lines: StoryLine[] }[] }
+  const flat = (lines: StoryLine[]): StoryLine[] => lines.flatMap((l) => [l, ...flat(l.options?.flatMap((o) => o.lines) ?? [])])
+  const seen = new Set<string>()
+  for (const f of files.filter((f) => f.name.startsWith('lines/'))) {
+    for (const l of (JSON.parse(f.text) as { lines: { id: string }[] }).lines) seen.add(l.id)
+  }
+  for (const f of files.filter((f) => f.name.startsWith('stories/'))) {
+    const story = JSON.parse(f.text) as { character: string; scenes: { stage: number; lines: StoryLine[] }[] }
+    for (const scene of story.scenes) {
+      for (const l of flat(scene.lines)) {
+        if (l.speaker === 'choice' || l.speaker === 'player' || l.speaker === 'narration') {
+          assert.equal(l.id, undefined, `${f.name}：旁白、玩家、選項不配音，不用 id`)
+          continue
+        }
+        assert.match(l.id ?? '', new RegExp(`^${story.character}-story-${scene.stage}-\\d{2}$`), `${f.name}：${JSON.stringify(l)} 的 id`)
+        assert.ok(!seen.has(l.id!), `${l.id} 重複`)
+        seen.add(l.id!)
+      }
+    }
+  }
+})
+
 test('劇情用到的每個表情都有立繪（有寫 outfit 的劇情看那套服裝的資料夾）', () => {
   type Line = { speaker: string; expression?: string; options?: { lines: Line[] }[] }
   const flat = (lines: Line[]): Line[] => lines.flatMap((l) => [l, ...flat(l.options?.flatMap((o) => o.lines) ?? [])])

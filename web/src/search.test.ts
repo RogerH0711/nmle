@@ -65,6 +65,11 @@ test('網址來回轉換；亂打的範圍當成全部', () => {
   assert.equal(parseBankHash('#/bank/y113/5')?.number, null) // 題號只對單份考卷有意義
   assert.equal(parseBankHash('#/other'), null)
   assert.equal(parseBankHash(''), null)
+  // 次主題：要搭配學科，沒有學科的 t 不理會
+  const t = { scope: 'all', number: null, query: '', subject: 'pathology', topic: 'renal_male' }
+  assert.deepEqual(parseBankHash(bankHash(t)), t)
+  assert.equal(bankHash(t), '#/bank/all?s=pathology&t=renal_male')
+  assert.equal(parseBankHash('#/bank/all?t=renal_male')?.topic, undefined)
 })
 
 // ---------- 同義詞與上位概念 ----------

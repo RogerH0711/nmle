@@ -2,6 +2,7 @@ import { useSyncExternalStore } from 'react'
 import { dataUrl } from './bank'
 import { fetchAllPages, supabase } from './supabase'
 import type { GiftCatalog, GiftRecord } from './shop'
+import { mergeRecords } from './merge'
 
 // 送禮紀錄的本機儲存與同步，做法同 mockStore.ts：
 // 先存本機，登入後和 Supabase 的 gifts 雙向同步；紀錄只增不改。書籤餘額由作答紀錄和這份紀錄推算（shop.ts）。
@@ -129,4 +130,13 @@ export async function syncGifts() {
 
 window.addEventListener('online', () => {
   if (state.owner !== ANON) void syncGifts()
+})
+
+// 別的分頁送禮時把紀錄併進來，做法同 answers.ts（不併的話兩個分頁都能花同一筆書籤）
+window.addEventListener('storage', (e) => {
+  if (e.key !== recordsKey(state.owner) || e.newValue === null) return
+  const merged = mergeRecords(state.records, read(state.owner), (r) => r.given_at)
+  if (!merged) return
+  state = { ...state, records: merged }
+  listeners.forEach((l) => l())
 })

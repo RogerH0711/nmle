@@ -89,11 +89,12 @@ interface Props {
   hasStories: (c: Character) => boolean
   roundSize: number
   reviewDue: number
+  listCount: number // 圖書館的不確定、收藏清單共幾題（Library.tsx）
   answeredToday: number
   resume: string | null // 進行中的回合（例如「和顏緋讀書 5 / 20」），沒有就是 null
   onStudy: (c: Character) => void
   onStories: (c: Character) => void
-  onReview: () => void
+  onReview: () => void // 打開圖書館（錯題複習、不確定、收藏）
   onFree: () => void
   onStatus: () => void
   balance: number | null // 書籤餘額；禮物清單還沒載入時是 null，不顯示按鈕
@@ -105,7 +106,7 @@ interface Props {
 }
 
 /**
- * 角色模式的首頁：校園地圖。每位學姊待在自己的地點，點她就一起讀書；圖書館是錯題複習。
+ * 角色模式的首頁：校園地圖。每位學姊待在自己的地點，點她就一起讀書；圖書館是錯題複習和不確定、收藏清單。
  * 參考 galgame 的「地圖型」選擇（見 docs/design.md「遊戲介面方向」）。
  * 有校園俯視圖（data/map.json）時，地點是圖上的標記；圖還沒做好時，地點排成格子。
  */
@@ -174,6 +175,10 @@ export function CampusMap(props: Props) {
   )
 }
 
+// 圖書館上的小字：有到期的錯題先講錯題，沒有的話講清單
+const libraryCount = (due: number, lists: number) =>
+  due ? `錯題到期 ${due} 題` : lists ? `清單 ${lists} 題` : '今天沒有到期的錯題'
+
 /** 地點卡片排成格子（還沒有校園俯視圖時用） */
 function SpotGrid(props: Props) {
   const { characters, subjects, affections, hasNewScene, hasStories, reviewDue } = props
@@ -208,11 +213,11 @@ function SpotGrid(props: Props) {
 
       <div className={`spot spot-review bg-${REVIEW_LOCATION}`}>
         <SpotBackground id={REVIEW_LOCATION} />
-        <button className="spot-main" onClick={props.onReview} disabled={!reviewDue}>
+        <button className="spot-main" onClick={props.onReview}>
           <span className="spot-place">{LOCATION_NAMES[REVIEW_LOCATION]}</span>
           <span className="spot-info">
-            <strong>錯題複習</strong>
-            <span className="spot-count">{reviewDue ? `今天到期 ${reviewDue} 題` : '今天沒有到期的錯題'}</span>
+            <strong>錯題複習・清單</strong>
+            <span className="spot-count">{libraryCount(reviewDue, props.listCount)}</span>
           </span>
         </button>
       </div>
@@ -251,13 +256,13 @@ function MapView(props: Props & { layout: Layout; config: MapLayout; onFail: () 
           </button>
         )
       })}
-      <button className="pin pin-review" style={at(REVIEW_LOCATION)} onClick={props.onReview} disabled={!reviewDue}>
+      <button className="pin pin-review" style={at(REVIEW_LOCATION)} onClick={props.onReview}>
         <span className="pin-avatar pin-icon" aria-hidden>
           {reviewDue || '✓'}
         </span>
         <span className="pin-label">
-          <strong>錯題複習</strong>
-          <span className="pin-count">{reviewDue ? `到期 ${reviewDue} 題` : '今天沒有'}</span>
+          <strong>圖書館</strong>
+          <span className="pin-count">{libraryCount(reviewDue, props.listCount)}</span>
         </span>
       </button>
     </div>

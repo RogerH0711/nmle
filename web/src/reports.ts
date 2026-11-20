@@ -65,6 +65,7 @@ const listeners = new Set<() => void>()
 
 function changed() {
   write(PENDING_KEY, pending)
+  reported = new Set([...read<string[]>(SENT_KEY, []), ...reported]) // 別的分頁回報過的題目也留著
   write(SENT_KEY, [...reported])
   snapshot = { reported, pending: pending.length }
   listeners.forEach((l) => l())

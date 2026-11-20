@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
+import { playVoice, stopVoice } from './audio'
+import { useDialog } from './dialog'
 import { fillPlayer, type Character } from './characters'
 import { Portrait } from './CharacterStage'
 import { goalText, STAGE_NAMES, type Affection } from './affection'
+import type { PlayerTitle } from './player'
 import { backgroundUrl, sceneId, storyTimeline, type Scene, type StoryLine } from './stories'
 
 // 背景圖還沒做好時改用漸層色，載入失敗的不要每次重抓
@@ -10,6 +13,8 @@ const missingBg = new Set<string>()
 // 自動播放：字打完後每句停留的時間，依字數加長；快轉固定很短
 const autoDelay = (text: string) => 1200 + text.length * 40
 const FAST_DELAY = 250
+// 有配音的句子：自動播放等語音念完，再停這麼久才換下一句
+const VOICE_DELAY = 600
 
 // 文字逐字出現：每個字的間隔，句尾標點多停一下
 const CHAR_DELAY = 30
@@ -28,7 +33,7 @@ type Mode = 'manual' | 'auto' | 'fast'
 export function StoryPlayer(props: {
   character: Character
   scene: Scene
-  player: string
+  player: PlayerTitle
   affection?: Affection
   onClose: () => void
 }) {
@@ -60,10 +65,29 @@ export function StoryPlayer(props: {
 
   useEffect(() => {
     if (typed || backlog) return
-    const delay = PAUSE_AFTER.includes(chars[count - 1] ?? '') ? PAUSE_DELAY : CHAR_DELAY
+    const delay = PAUSE_AFTER.includes(Array.from(text)[count - 1] ?? '') ? PAUSE_DELAY : CHAR_DELAY
     const t = setTimeout(() => setTyping({ key: lineKey, count: count + 1 }), delay)
     return () => clearTimeout(t)
   }, [typed, backlog, lineKey, count, text])
+
+  // 配音：換到角色有 id 的台詞就念（旁白、玩家不配音）；快轉時不念。換句、關掉劇情時停掉上一句
+  const voiceId = !choosing && line.speaker === character.id ? line.id : undefined
+  const fast = mode === 'fast'
+  const [voiced, setVoiced] = useState<{ key: string; played: boolean } | null>(null)
+  useEffect(() => {
+    if (fast || !voiceId) {
+      stopVoice()
+      setVoiced({ key: lineKey, played: false })
+      return
+    }
+    let alive = true
+    void playVoice(voiceId, player).then((played) => alive && setVoiced({ key: lineKey, played }))
+    return () => {
+      alive = false
+    }
+  }, [lineKey, voiceId, fast, player])
+  useEffect(() => stopVoice, [])
+  const voiceDone = voiced?.key === lineKey
 
   const next = () => {
     if (choosing || backlog) return
@@ -84,16 +108,17 @@ export function StoryPlayer(props: {
     setPos(pos + 1) // 跳過「玩家說出選項」那一句（剛點過），直接看她的回應
   }
 
-  // 自動、快轉：字打完才開始計時，遇到選項或最後一句就停下來
+  // 自動、快轉：字打完、語音念完才開始計時，遇到選項或最後一句就停下來
   useEffect(() => {
-    if (mode === 'manual' || backlog || choosing || !typed) return
+    if (mode === 'manual' || backlog || choosing || !typed || !voiceDone) return
     if (last) {
       setMode('manual')
       return
     }
-    const t = setTimeout(() => setPos((p) => p + 1), mode === 'fast' ? FAST_DELAY : autoDelay(text))
+    const delay = mode === 'fast' ? FAST_DELAY : voiced?.played ? VOICE_DELAY : autoDelay(text)
+    const t = setTimeout(() => setPos((p) => p + 1), delay)
     return () => clearTimeout(t)
-  }, [mode, backlog, choosing, typed, last, pos, text])
+  }, [mode, backlog, choosing, typed, voiceDone, voiced, last, pos, text])
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -235,12 +260,16 @@ export function StoryList(props: {
   onClose: () => void
 }) {
   const { character, scenes, affection, seen, onPlay, onClose } = props
+  const dialogRef = useDialog(onClose) // Esc、Tab、焦點（dialog.ts）
   return (
     <div className="modal-backdrop" onClick={onClose}>
       <div
         className="modal story-list"
         style={{ '--char': character.color } as React.CSSProperties}
         role="dialog"
+        aria-modal="true"
+        ref={dialogRef}
+        tabIndex={-1}
         aria-label={`${character.name}的劇情`}
         onClick={(e) => e.stopPropagation()}
       >

@@ -2,8 +2,20 @@
 "_說明": "題庫搜尋的中英同義（pipeline/search_synonyms.py 產生，不要手改）。每組第一個是英文，後面是題庫用過、也是國家教育研究院學術名詞的中文譯名；搜尋框的字和其中一個相同，就一起找整組。",
 "groups": [
 [
+"a-v node",
+"房室結"
+],
+[
+"abducent nerve",
+"外展神經"
+],
+[
 "abduction",
 "外展"
+],
+[
+"abscess",
+"膿瘍"
 ],
 [
 "accessory hemiazygos vein",
@@ -14,8 +26,20 @@
 "副神經"
 ],
 [
+"acetone",
+"丙酮"
+],
+[
+"acetylation",
+"乙醯化"
+],
+[
 "acetylcholine",
 "乙醯膽鹼"
+],
+[
+"acid mist",
+"酸霧"
 ],
 [
 "aconitase",
@@ -24,6 +48,14 @@
 [
 "acromegaly",
 "肢端肥大症"
+],
+[
+"actin",
+"肌動蛋白"
+],
+[
+"actinomyces",
+"放線菌"
 ],
 [
 "actinomyces israelii",
@@ -36,6 +68,10 @@
 [
 "active transport",
 "主動運輸"
+],
+[
+"acute lymphoblastic leukemia",
+"急性淋巴母細胞白血病"
 ],
 [
 "acute respiratory distress syndrome",
@@ -74,6 +110,14 @@
 "黏附"
 ],
 [
+"adipocyte",
+"脂肪細胞"
+],
+[
+"adipose tissue",
+"脂肪組織"
+],
+[
 "adrenal cortex",
 "腎上腺皮質"
 ],
@@ -98,8 +142,16 @@
 "有氧呼吸"
 ],
 [
+"aflatoxin",
+"黃麴毒素"
+],
+[
 "african sleeping sickness",
 "非洲睡眠病"
+],
+[
+"aggregation",
+"聚集"
 ],
 [
 "agonist",
@@ -108,6 +160,10 @@
 [
 "alanine",
 "丙胺酸"
+],
+[
+"albumin",
+"白蛋白"
 ],
 [
 "aldosterone",
@@ -124,6 +180,14 @@
 [
 "alkylating agent",
 "烷化劑"
+],
+[
+"allantois",
+"尿囊"
+],
+[
+"alveoli",
+"肺泡"
 ],
 [
 "alveolus",
@@ -166,8 +230,16 @@
 "動脈瘤"
 ],
 [
+"angiofibroma",
+"血管纖維瘤"
+],
+[
 "angiosarcoma",
 "血管肉瘤"
+],
+[
+"angiotensin-converting enzyme",
+"血管張力素轉換酶"
 ],
 [
 "ankle joint",
@@ -190,16 +262,36 @@
 "前十字韌帶"
 ],
 [
+"anterior inferior iliac spine",
+"髂骨前下棘"
+],
+[
 "anterior intercostal artery",
 "肋間前動脈"
+],
+[
+"anterior scalene muscle",
+"前斜角肌"
+],
+[
+"anterior spinal artery",
+"脊髓前動脈"
 ],
 [
 "anterior tibial artery",
 "脛前動脈"
 ],
 [
+"antibiotic",
+"抗生素"
+],
+[
 "antibiotics",
 "抗生素"
+],
+[
+"anticoagulant",
+"抗凝血劑"
 ],
 [
 "antidiuretic hormone",
@@ -212,6 +304,10 @@
 [
 "antigen",
 "抗原"
+],
+[
+"anulus fibrosus",
+"纖維環"
 ],
 [
 "anxiety",
@@ -230,12 +326,20 @@
 "主動脈閉鎖"
 ],
 [
+"aorticorenal ganglion",
+"主動脈腎神經節"
+],
+[
 "aplastic anemia",
 "再生不良性貧血"
 ],
 [
 "apoptosis",
 "細胞凋亡"
+],
+[
+"aqueous humor",
+"水樣液"
 ],
 [
 "arginine",
@@ -248,6 +352,14 @@
 [
 "arteriole",
 "小動脈"
+],
+[
+"arteriosclerosis",
+"動脈硬化"
+],
+[
+"arthropods",
+"節肢動物"
 ],
 [
 "articular capsule",
@@ -274,12 +386,30 @@
 "天門冬胺酸轉胺酶"
 ],
 [
+"aspirin",
+"阿司匹靈",
+"阿斯匹林"
+],
+[
 "asthma",
 "氣喘"
 ],
 [
 "astigmatism",
 "散光"
+],
+[
+"asymptomatic infection",
+"無症狀感染"
+],
+[
+"atherosclerosis",
+"動脈硬化",
+"動脈粥狀硬化"
+],
+[
+"atlas",
+"寰椎"
 ],
 [
 "atrioventricular node",
@@ -338,8 +468,16 @@
 "枯草桿菌"
 ],
 [
+"bacterial infection",
+"細菌感染"
+],
+[
 "bacteriophage",
 "噬菌體"
+],
+[
+"balantidium coli",
+"大腸纖毛蟲"
 ],
 [
 "basal lamina",
@@ -348,6 +486,10 @@
 [
 "basement membrane",
 "基底膜"
+],
+[
+"basilar artery",
+"基底動脈"
 ],
 [
 "basilar membrane",
@@ -382,6 +524,10 @@
 "膽管"
 ],
 [
+"bile salt",
+"膽鹽"
+],
+[
 "bile salts",
 "膽鹽"
 ],
@@ -402,12 +548,28 @@
 "生物製劑"
 ],
 [
+"biotin",
+"生物素"
+],
+[
 "bipolar cell",
 "雙極細胞"
 ],
 [
 "blastocyst",
 "囊胚"
+],
+[
+"blood",
+"血液"
+],
+[
+"blood capillary",
+"微血管"
+],
+[
+"blood coagulation",
+"凝血作用"
 ],
 [
 "blood-brain barrier",
@@ -442,8 +604,20 @@
 "肱橈肌"
 ],
 [
+"bradykinin",
+"舒緩激肽"
+],
+[
+"broad ligament",
+"闊韌帶"
+],
+[
 "broad ligament of uterus",
 "子宮闊韌帶"
+],
+[
+"bronchi",
+"支氣管"
 ],
 [
 "bronchial artery",
@@ -458,6 +632,10 @@
 "支氣管收縮"
 ],
 [
+"bronchodilation",
+"支氣管擴張"
+],
+[
 "bronchus",
 "支氣管"
 ],
@@ -468,6 +646,10 @@
 [
 "brush cell",
 "刷狀細胞"
+],
+[
+"buccal artery",
+"頰動脈"
 ],
 [
 "buccal mucosa",
@@ -490,8 +672,20 @@
 "尿道球腺"
 ],
 [
+"calcaneal tendon",
+"跟腱"
+],
+[
 "calcaneus",
 "跟骨"
+],
+[
+"calcification",
+"鈣化"
+],
+[
+"calcitonin",
+"抑鈣素"
 ],
 [
 "calcium channel blocker",
@@ -504,6 +698,18 @@
 [
 "candida albicans",
 "白色念珠菌"
+],
+[
+"candida parapsilosis",
+"近平滑念珠菌"
+],
+[
+"candida tropicalis",
+"熱帶念珠菌"
+],
+[
+"capillaries",
+"微血管"
 ],
 [
 "capillary",
@@ -522,12 +728,24 @@
 "主韌帶"
 ],
 [
+"carditis",
+"心臟炎"
+],
+[
+"carotid sinus",
+"頸動脈竇"
+],
+[
 "cartilage",
 "軟骨"
 ],
 [
 "cecum",
 "盲腸"
+],
+[
+"celiac artery",
+"腹腔動脈"
 ],
 [
 "cell cycle",
@@ -578,6 +796,10 @@
 "大腦半球"
 ],
 [
+"cerebrum",
+"大腦"
+],
+[
 "cervical carcinoma",
 "子宮頸癌"
 ],
@@ -598,16 +820,41 @@
 "下疳"
 ],
 [
+"chelating agent",
+"螫合劑",
+"螯合劑"
+],
+[
+"chemotherapy",
+"化療"
+],
+[
 "chief cell",
 "主細胞"
+],
+[
+"chitin",
+"幾丁質"
 ],
 [
 "chloramphenicol",
 "氯黴素"
 ],
 [
+"cholangitis",
+"膽管炎"
+],
+[
 "cholecystokinin",
 "膽囊收縮素"
+],
+[
+"choledochal cyst",
+"總膽管囊腫"
+],
+[
+"cholestasis",
+"膽汁鬱積"
 ],
 [
 "cholesterol",
@@ -622,8 +869,16 @@
 "軟骨細胞"
 ],
 [
+"chondrosarcoma",
+"軟骨肉瘤"
+],
+[
 "chorda tympani nerve",
 "鼓索神經"
+],
+[
+"chordae tendineae",
+"腱索"
 ],
 [
 "choroid",
@@ -642,6 +897,14 @@
 "染色質"
 ],
 [
+"chromosome",
+"染色體"
+],
+[
+"chronic granulomatous disease",
+"慢性肉芽腫疾病"
+],
+[
 "chronic lymphocytic leukemia",
 "慢性淋巴球性白血病"
 ],
@@ -652,6 +915,14 @@
 [
 "chylomicron",
 "乳糜微粒"
+],
+[
+"chylothorax",
+"乳糜胸"
+],
+[
+"chymotrypsin",
+"胰凝乳蛋白酶"
 ],
 [
 "cilia",
@@ -682,6 +953,14 @@
 "乳糜池"
 ],
 [
+"cisterna magna",
+"大池"
+],
+[
+"citric acid cycle",
+"檸檬酸循環"
+],
+[
 "citrulline",
 "瓜胺酸"
 ],
@@ -691,6 +970,7 @@
 ],
 [
 "clearance",
+"廓清率",
 "清除率"
 ],
 [
@@ -702,8 +982,16 @@
 "中華肝吸蟲"
 ],
 [
+"coagulase",
+"凝固酶"
+],
+[
 "coagulation necrosis",
 "凝固性壞死"
+],
+[
+"coccidioides immitis",
+"粗球孢子菌"
 ],
 [
 "coccygeus",
@@ -759,12 +1047,24 @@
 "複合體"
 ],
 [
+"compliance",
+"順應性"
+],
+[
+"conduction aphasia",
+"傳導性失語症"
+],
+[
 "confidence interval",
 "信賴區間"
 ],
 [
 "congo red",
 "剛果紅"
+],
+[
+"conjunctivitis",
+"結膜炎"
 ],
 [
 "connective tissue",
@@ -775,8 +1075,24 @@
 "接觸性皮膚炎"
 ],
 [
+"contractility",
+"收縮力"
+],
+[
 "copula",
 "聯合部"
+],
+[
+"coracoacromial ligament",
+"喙肩韌帶"
+],
+[
+"coracoclavicular ligament",
+"喙鎖韌帶"
+],
+[
+"coracohumeral ligament",
+"喙肱韌帶"
 ],
 [
 "cornea",
@@ -815,8 +1131,16 @@
 "黃體"
 ],
 [
+"corpus striatum",
+"紋狀體"
+],
+[
 "correlation coefficient",
 "相關係數"
+],
+[
+"cortex",
+"皮質"
 ],
 [
 "corynebacterium diphtheriae",
@@ -839,12 +1163,28 @@
 "顱骨"
 ],
 [
+"creatine",
+"肌酸"
+],
+[
 "creatine phosphate",
 "磷酸肌胺酸"
 ],
 [
+"creeping eruption",
+"爬行疹"
+],
+[
 "cremaster muscle",
 "提睪肌"
+],
+[
+"cretinism",
+"呆小症"
+],
+[
+"cricothyroid muscle",
+"環甲肌"
 ],
 [
 "crista ampullaris",
@@ -859,12 +1199,24 @@
 "骰骨"
 ],
 [
+"cutaneous larva migrans",
+"皮膚幼蟲移行症"
+],
+[
+"cycloserine",
+"環絲胺酸"
+],
+[
 "cysteine",
 "半胱胺酸"
 ],
 [
 "cystic duct",
 "膽囊管"
+],
+[
+"cystine",
+"胱胺酸"
 ],
 [
 "cytokines",
@@ -879,12 +1231,32 @@
 "胞嘧啶"
 ],
 [
+"cytotoxin",
+"細胞毒素"
+],
+[
+"decidua",
+"蛻膜"
+],
+[
 "deep artery of clitoris",
 "陰蒂深動脈"
 ],
 [
+"deep cervical artery",
+"頸深動脈"
+],
+[
 "deep fibular nerve",
 "腓深神經"
+],
+[
+"deep petrosal nerve",
+"岩深神經"
+],
+[
+"deletion",
+"缺失"
 ],
 [
 "deltoid muscle",
@@ -905,6 +1277,10 @@
 [
 "dengue virus",
 "登革熱病毒"
+],
+[
+"dense connective tissue",
+"緻密結締組織"
 ],
 [
 "dentin",
@@ -931,12 +1307,20 @@
 "皮膚炎"
 ],
 [
+"dermatome",
+"皮節"
+],
+[
 "desmosome",
 "橋粒"
 ],
 [
 "diabetes",
 "糖尿病"
+],
+[
+"diaphysis",
+"骨幹"
 ],
 [
 "diarrhea",
@@ -953,6 +1337,10 @@
 [
 "digastric muscle",
 "二腹肌"
+],
+[
+"digestive tract",
+"消化道"
 ],
 [
 "dihydrotestosterone",
@@ -973,6 +1361,14 @@
 [
 "dipole",
 "偶極"
+],
+[
+"dirofilaria immitis",
+"犬心絲蟲"
+],
+[
+"distribution",
+"分布"
 ],
 [
 "diuretic",
@@ -1019,8 +1415,16 @@
 "十二指腸"
 ],
 [
+"dwarfism",
+"侏儒症"
+],
+[
 "dyslipidemia",
 "血脂異常"
+],
+[
+"ecthyma gangrenosum",
+"壞疽性臁瘡"
 ],
 [
 "ectoderm",
@@ -1031,8 +1435,16 @@
 "水腫"
 ],
 [
+"efflux",
+"流出"
+],
+[
 "ejaculatory duct",
 "射精管"
+],
+[
+"elasticity",
+"彈性"
 ],
 [
 "electrolytes",
@@ -1079,6 +1491,10 @@
 "心內膜墊"
 ],
 [
+"endocardium",
+"心內膜"
+],
+[
 "endocrine gland",
 "內分泌腺"
 ],
@@ -1093,6 +1509,10 @@
 [
 "endometrium",
 "子宮內膜"
+],
+[
+"endoneurium",
+"神經內膜"
 ],
 [
 "endoplasmic reticulum",
@@ -1139,6 +1559,14 @@
 "室管膜細胞"
 ],
 [
+"epicardium",
+"心外膜"
+],
+[
+"epidemiology",
+"流行病學"
+],
+[
 "epidermis",
 "表皮"
 ],
@@ -1152,6 +1580,10 @@
 "附睪"
 ],
 [
+"epiglottis",
+"會厭"
+],
+[
 "epilepsy",
 "癲癇"
 ],
@@ -1160,8 +1592,16 @@
 "腎上腺素"
 ],
 [
+"epineurium",
+"神經外膜"
+],
+[
 "epiphyseal plate",
 "骨骺板"
+],
+[
+"epiphysis",
+"骨骺"
 ],
 [
 "epithelium",
@@ -1192,6 +1632,10 @@
 "大腸桿菌"
 ],
 [
+"esophageal artery",
+"食道動脈"
+],
+[
 "esophagus",
 "食道"
 ],
@@ -1212,6 +1656,10 @@
 "乙胺丁醇"
 ],
 [
+"ethanol",
+"乙醇"
+],
+[
 "ethmoid bone",
 "篩骨"
 ],
@@ -1226,6 +1674,14 @@
 [
 "exotoxin",
 "外毒素"
+],
+[
+"external acoustic meatus",
+"外耳道"
+],
+[
+"external iliac artery",
+"髂外動脈"
 ],
 [
 "external intercostal muscle",
@@ -1254,6 +1710,14 @@
 [
 "facial nerve",
 "顏面神經"
+],
+[
+"facial vein",
+"面靜脈"
+],
+[
+"fascia",
+"筋膜"
 ],
 [
 "fascia lata",
@@ -1286,6 +1750,10 @@
 [
 "ferritin",
 "鐵蛋白"
+],
+[
+"fever",
+"發燒"
 ],
 [
 "fibrin",
@@ -1340,8 +1808,20 @@
 "濾泡性淋巴瘤"
 ],
 [
+"food poisoning",
+"食物中毒"
+],
+[
+"foramen lacerum",
+"破裂孔"
+],
+[
 "foramen magnum",
 "枕骨大孔"
+],
+[
+"foramen ovale",
+"卵圓孔"
 ],
 [
 "foramen rotundum",
@@ -1364,12 +1844,20 @@
 "穹窿"
 ],
 [
+"fragmentation",
+"斷裂"
+],
+[
 "free energy",
 "自由能"
 ],
 [
 "free radical",
 "自由基"
+],
+[
+"frontal bone",
+"額骨"
 ],
 [
 "frontal nerve",
@@ -1380,12 +1868,24 @@
 "果糖"
 ],
 [
+"fungal infection",
+"黴菌感染"
+],
+[
+"fungi",
+"真菌"
+],
+[
 "fungus",
 "黴菌"
 ],
 [
 "galactose",
 "半乳糖"
+],
+[
+"gall bladder",
+"膽囊"
 ],
 [
 "gallbladder",
@@ -1398,6 +1898,14 @@
 [
 "gastric pit",
 "胃小凹"
+],
+[
+"gastric ulcer",
+"胃潰瘍"
+],
+[
+"gastrocnemius",
+"腓腸肌"
 ],
 [
 "gastroduodenal artery",
@@ -1420,12 +1928,24 @@
 "基因型"
 ],
 [
+"geometric mean",
+"幾何平均值"
+],
+[
 "gingiva",
 "牙齦"
 ],
 [
+"glans penis",
+"龜頭"
+],
+[
 "glaucoma",
 "青光眼"
+],
+[
+"glomerular capillary",
+"腎絲球微血管"
 ],
 [
 "glossopharyngeal nerve",
@@ -1466,6 +1986,7 @@
 ],
 [
 "glycogen",
+"肝糖",
 "肝醣"
 ],
 [
@@ -1493,8 +2014,16 @@
 "股薄肌"
 ],
 [
+"gradient",
+"梯度"
+],
+[
 "granulation tissue",
 "肉芽組織"
+],
+[
+"granule",
+"顆粒"
 ],
 [
 "granulocyte",
@@ -1525,6 +2054,10 @@
 "枕大神經"
 ],
 [
+"greater palatine canal",
+"大腭管"
+],
+[
 "greater palatine foramen",
 "腭大孔"
 ],
@@ -1541,12 +2074,24 @@
 "大轉子"
 ],
 [
+"greater wing",
+"大翼"
+],
+[
 "ground substance",
 "基質"
 ],
 [
+"growth factors",
+"生長因子"
+],
+[
 "growth hormone",
 "生長激素"
+],
+[
+"gyrase",
+"旋轉酶"
 ],
 [
 "hair follicle",
@@ -1565,6 +2110,10 @@
 "錯構瘤"
 ],
 [
+"health belief model",
+"健康信念模式"
+],
+[
 "healthy city",
 "健康城市"
 ],
@@ -1573,12 +2122,20 @@
 "心臟衰竭"
 ],
 [
+"heat shock protein",
+"熱休克蛋白"
+],
+[
 "helicotrema",
 "蝸孔"
 ],
 [
 "hemangioma",
 "血管瘤"
+],
+[
+"hematoma",
+"血腫"
 ],
 [
 "hematopoiesis",
@@ -1598,6 +2155,14 @@
 "溶血素"
 ],
 [
+"hemolysis",
+"溶血"
+],
+[
+"hemolytic anemia",
+"溶血性貧血"
+],
+[
 "hemophilia",
 "血友病"
 ],
@@ -1608,6 +2173,10 @@
 [
 "hemoptysis",
 "咳血"
+],
+[
+"hemosiderin",
+"血鐵質"
 ],
 [
 "hepatic duct",
@@ -1622,6 +2191,10 @@
 "群體免疫"
 ],
 [
+"heroin",
+"海洛因"
+],
+[
 "herpes encephalitis",
 "疱疹性腦炎"
 ],
@@ -1632,6 +2205,10 @@
 [
 "herpesvirus",
 "疱疹病毒"
+],
+[
+"hiatus semilunaris",
+"半月裂孔"
 ],
 [
 "hindgut",
@@ -1654,6 +2231,10 @@
 "組織蛋白"
 ],
 [
+"hodgkin's lymphoma",
+"何杰金氏淋巴瘤"
+],
+[
 "holocrine gland",
 "全泌腺"
 ],
@@ -1663,6 +2244,7 @@
 ],
 [
 "hormones",
+"激素",
 "荷爾蒙"
 ],
 [
@@ -1676,6 +2258,18 @@
 [
 "humerus",
 "肱骨"
+],
+[
+"hyaluronic acid",
+"玻尿酸"
+],
+[
+"hyaluronidase",
+"玻尿酸酶"
+],
+[
+"hybridization",
+"雜交"
 ],
 [
 "hydrocephalus",
@@ -1710,8 +2304,16 @@
 "增生"
 ],
 [
+"hypertension",
+"高血壓"
+],
+[
 "hypertonic solution",
 "高張溶液"
+],
+[
+"hypertrophic scar",
+"肥厚性瘢痕"
 ],
 [
 "hypertrophy",
@@ -1742,8 +2344,16 @@
 "下視丘"
 ],
 [
+"hypothyroidism",
+"甲狀腺功能低下症"
+],
+[
 "hypoventilation",
 "換氣不足"
+],
+[
+"hypoxanthine",
+"次黃嘌呤"
 ],
 [
 "ileocolic artery",
@@ -1758,8 +2368,24 @@
 "髂腰動脈"
 ],
 [
+"iliotibial tract",
+"髂脛徑"
+],
+[
 "immature teratoma",
 "未成熟畸胎瘤"
+],
+[
+"immunomodulators",
+"免疫調節劑"
+],
+[
+"in situ hybridization",
+"原位雜交法"
+],
+[
+"inclusion body",
+"包涵體"
 ],
 [
 "inclusion body myositis",
@@ -1778,6 +2404,14 @@
 "梗塞"
 ],
 [
+"inferior alveolar artery",
+"下齒槽動脈"
+],
+[
+"inferior alveolar nerve",
+"下齒槽神經"
+],
+[
 "inferior articular process",
 "下關節突"
 ],
@@ -1788,6 +2422,10 @@
 [
 "inferior mesenteric artery",
 "腸繫膜下動脈"
+],
+[
+"inferior mesenteric vein",
+"腸繫膜下靜脈"
 ],
 [
 "inferior nasal concha",
@@ -1802,6 +2440,10 @@
 "膈下動脈"
 ],
 [
+"inferior thyroid artery",
+"甲狀腺下動脈"
+],
+[
 "inferior vena cava",
 "下腔靜脈"
 ],
@@ -1810,8 +2452,16 @@
 "流行性感冒"
 ],
 [
+"influenza virus",
+"流行性感冒病毒"
+],
+[
 "infraorbital foramen",
 "眶下孔"
+],
+[
+"infrared radiation",
+"紅外線"
 ],
 [
 "inguinal ligament",
@@ -1820,6 +2470,14 @@
 [
 "inhibin",
 "抑制素"
+],
+[
+"inner cell mass",
+"內細胞團"
+],
+[
+"insomnia",
+"失眠症"
 ],
 [
 "insulin",
@@ -1842,8 +2500,20 @@
 "干擾素"
 ],
 [
+"interior",
+"內部"
+],
+[
+"interleukins",
+"介白素"
+],
+[
 "interlobular duct",
 "小葉間管"
+],
+[
+"intermediate filaments",
+"中間絲"
 ],
 [
 "intermediate mesoderm",
@@ -1878,8 +2548,20 @@
 "離子交換層析法"
 ],
 [
+"ionic bond",
+"離子鍵"
+],
+[
 "iron deficiency anemia",
 "缺鐵性貧血"
+],
+[
+"isoelectric point",
+"等電點"
+],
+[
+"isoenzyme",
+"同功酶"
 ],
 [
 "jaundice",
@@ -1888,6 +2570,10 @@
 [
 "jugular foramen",
 "頸靜脈孔"
+],
+[
+"juxtaglomerular cell",
+"近腎絲球細胞"
 ],
 [
 "kala-azar",
@@ -1904,6 +2590,10 @@
 [
 "ketone bodies",
 "酮體"
+],
+[
+"knee joint",
+"膝關節"
 ],
 [
 "labyrinthine artery",
@@ -1942,6 +2632,14 @@
 "潛伏期"
 ],
 [
+"lateral arcuate ligament",
+"外側弓狀韌帶"
+],
+[
+"lateral cutaneous nerve of forearm",
+"前臂外側皮神經"
+],
+[
 "lateral malleolus",
 "外踝"
 ],
@@ -1950,8 +2648,20 @@
 "側腦室"
 ],
 [
+"latissimus dorsi",
+"闊背肌"
+],
+[
+"left subclavian artery",
+"左鎖骨下動脈"
+],
+[
 "left superior intercostal vein",
 "左上肋間靜脈"
+],
+[
+"left ventricle",
+"左心室"
 ],
 [
 "leiomyoma",
@@ -1960,6 +2670,14 @@
 [
 "leiomyosarcoma",
 "平滑肌肉瘤"
+],
+[
+"lenticular degeneration",
+"豆狀核變性"
+],
+[
+"lepromin",
+"麻瘋菌素"
 ],
 [
 "leprosy",
@@ -1982,6 +2700,10 @@
 "小轉子"
 ],
 [
+"lesser wing",
+"小翼"
+],
+[
 "lethal toxin",
 "致死毒素"
 ],
@@ -1994,12 +2716,20 @@
 "左旋氧氟沙星"
 ],
 [
+"ligamentum teres",
+"圓韌帶"
+],
+[
 "lingual artery",
 "舌動脈"
 ],
 [
 "lingual nerve",
 "舌神經"
+],
+[
+"lingual vein",
+"舌靜脈"
 ],
 [
 "lingula of lung",
@@ -2018,6 +2748,14 @@
 "長骨"
 ],
 [
+"long thoracic nerve",
+"胸長神經"
+],
+[
+"low density lipoprotein",
+"低密度脂蛋白"
+],
+[
 "lumbar splanchnic nerve",
 "腰內臟神經"
 ],
@@ -2034,6 +2772,10 @@
 "淋巴結"
 ],
 [
+"lymphatic system",
+"淋巴系統"
+],
+[
 "lymphatic vessel",
 "淋巴管"
 ],
@@ -2043,7 +2785,12 @@
 ],
 [
 "lymphocytes",
+"淋巴球",
 "淋巴細胞"
+],
+[
+"lysis",
+"溶解"
 ],
 [
 "lysosome",
@@ -2060,6 +2807,10 @@
 [
 "malaria",
 "瘧疾"
+],
+[
+"malignant lymphoma",
+"惡性淋巴瘤"
 ],
 [
 "malignant melanoma",
@@ -2082,6 +2833,14 @@
 "下頜骨"
 ],
 [
+"mandibular nerve",
+"下頜神經"
+],
+[
+"mannitol",
+"甘露醇"
+],
+[
 "masseter",
 "嚼肌"
 ],
@@ -2094,12 +2853,28 @@
 "成熟畸胎瘤"
 ],
 [
+"maxillary artery",
+"上頜動脈"
+],
+[
+"maxillary vein",
+"上頜靜脈"
+],
+[
 "measles",
 "麻疹"
 ],
 [
 "measles virus",
 "麻疹病毒"
+],
+[
+"medial cutaneous nerve of arm",
+"臂內側皮神經"
+],
+[
+"medial cutaneous nerve of forearm",
+"前臂內側皮神經"
 ],
 [
 "medial meniscus",
@@ -2122,6 +2897,14 @@
 "睪丸縱隔"
 ],
 [
+"mediator",
+"介質"
+],
+[
+"medulla oblongata",
+"延髓"
+],
+[
 "melanocyte",
 "黑色素細胞"
 ],
@@ -2136,6 +2919,14 @@
 [
 "membranous labyrinth",
 "膜迷路"
+],
+[
+"meningitis",
+"腦膜炎"
+],
+[
+"menopause",
+"停經"
 ],
 [
 "mental nerve",
@@ -2160,6 +2951,10 @@
 [
 "mesonephric duct",
 "中腎管"
+],
+[
+"metanephric duct",
+"後腎管"
 ],
 [
 "metaplasia",
@@ -2190,6 +2985,22 @@
 "硝基甲嘧唑乙醇"
 ],
 [
+"microglia",
+"小神經膠質細胞"
+],
+[
+"midaxillary line",
+"腋中線"
+],
+[
+"midbrain",
+"中腦"
+],
+[
+"midclavicular line",
+"鎖骨中線"
+],
+[
 "middle cardiac vein",
 "心中靜脈"
 ],
@@ -2210,12 +3021,20 @@
 "中鼻甲"
 ],
 [
+"middle scalene muscle",
+"中斜角肌"
+],
+[
 "middle suprarenal artery",
 "腎上腺中動脈"
 ],
 [
 "midgut",
 "中腸"
+],
+[
+"migraine",
+"偏頭痛"
 ],
 [
 "minocycline",
@@ -2238,6 +3057,14 @@
 "單株抗體"
 ],
 [
+"monocytes",
+"單核球"
+],
+[
+"motion sickness",
+"動暈症"
+],
+[
 "motor cortex",
 "運動皮質"
 ],
@@ -2246,20 +3073,48 @@
 "黏液素"
 ],
 [
+"mucopolysaccharide",
+"黏多醣類"
+],
+[
 "mucosa",
 "黏膜"
+],
+[
+"multiple myeloma",
+"多發性骨髓瘤"
 ],
 [
 "multiple sclerosis",
 "多發性硬化症"
 ],
 [
+"mumps virus",
+"腮腺炎病毒"
+],
+[
 "musculocutaneous nerve",
 "肌皮神經"
 ],
 [
+"musculophrenic artery",
+"肌膈動脈"
+],
+[
+"mutation",
+"突變"
+],
+[
+"mycobacterial infection",
+"分枝桿菌感染"
+],
+[
 "mycobacterium",
 "分枝桿菌屬"
+],
+[
+"mycobacterium marinum",
+"海洋分枝桿菌"
 ],
 [
 "mycobacterium tuberculosis",
@@ -2290,6 +3145,26 @@
 "肌凝蛋白"
 ],
 [
+"myositis ossificans",
+"骨化性肌炎"
+],
+[
+"narcolepsy",
+"發作性睡病"
+],
+[
+"nasopharyngeal carcinoma",
+"鼻咽癌"
+],
+[
+"necrosis",
+"壞死"
+],
+[
+"necrotizing vasculitis",
+"壞死性血管炎"
+],
+[
 "neisseria gonorrhoeae",
 "淋病雙球菌"
 ],
@@ -2300,6 +3175,18 @@
 [
 "nephrotic syndrome",
 "腎病症候群"
+],
+[
+"nerve cell",
+"神經細胞"
+],
+[
+"nerve of pterygoid canal",
+"翼管神經"
+],
+[
+"nervus intermedius",
+"中間神經"
 ],
 [
 "neural groove",
@@ -2322,6 +3209,10 @@
 "嗜中性白血球"
 ],
 [
+"nicotinic acid",
+"菸鹼酸"
+],
+[
 "niemann-pick disease",
 "尼曼匹克症"
 ],
@@ -2336,6 +3227,14 @@
 [
 "norepinephrine",
 "正腎上腺素"
+],
+[
+"normal distribution",
+"常態分布"
+],
+[
+"nuclease",
+"核酸酶"
 ],
 [
 "nucleoside",
@@ -2374,8 +3273,20 @@
 "嗅球"
 ],
 [
+"olfactory cortex",
+"嗅覺皮質"
+],
+[
 "olfactory epithelium",
 "嗅覺上皮"
+],
+[
+"olive oil",
+"橄欖油"
+],
+[
+"omohyoid muscle",
+"肩胛舌骨肌"
 ],
 [
 "operon",
@@ -2394,6 +3305,10 @@
 "調理素"
 ],
 [
+"optic foramen",
+"視神經孔"
+],
+[
 "optic nerve",
 "視神經"
 ],
@@ -2408,6 +3323,10 @@
 [
 "orbit",
 "眼眶"
+],
+[
+"orchitis",
+"睪丸炎"
 ],
 [
 "organelle",
@@ -2426,7 +3345,12 @@
 "滲透壓"
 ],
 [
+"osteitis fibrosa cystica",
+"囊狀纖維性骨炎"
+],
+[
 "osteoblast",
+"成骨細胞",
 "骨母細胞"
 ],
 [
@@ -2450,6 +3374,10 @@
 "耳神經節"
 ],
 [
+"oval foramen",
+"卵圓孔"
+],
+[
 "oval window",
 "卵圓窗"
 ],
@@ -2458,8 +3386,24 @@
 "卵巢動脈"
 ],
 [
+"ovarian ligament",
+"卵巢韌帶"
+],
+[
 "ovary",
 "卵巢"
+],
+[
+"ovulation",
+"排卵"
+],
+[
+"oxidase",
+"氧化酶"
+],
+[
+"oxidative phosphorylation",
+"氧化磷酸化"
 ],
 [
 "oxytocin",
@@ -2486,6 +3430,10 @@
 "胰液"
 ],
 [
+"pancreatitis",
+"胰臟炎"
+],
+[
 "pantothenic acid",
 "泛酸"
 ],
@@ -2505,6 +3453,10 @@
 [
 "papule",
 "丘疹"
+],
+[
+"parakeratosis",
+"角化不全"
 ],
 [
 "paramesonephric duct",
@@ -2529,6 +3481,10 @@
 [
 "parietal cell",
 "壁細胞"
+],
+[
+"parietal pleura",
+"壁層胸膜"
 ],
 [
 "passive transport",
@@ -2565,16 +3521,36 @@
 "肽聚糖"
 ],
 [
+"performance",
+"表現"
+],
+[
 "pericranium",
 "顱骨膜"
+],
+[
+"perilymph",
+"外淋巴"
 ],
 [
 "perineum",
 "會陰"
 ],
 [
+"perineurium",
+"神經束膜"
+],
+[
+"peristalsis",
+"蠕動"
+],
+[
 "peritoneum",
 "腹膜"
+],
+[
+"permeability",
+"通透性"
 ],
 [
 "pernicious anemia",
@@ -2597,12 +3573,33 @@
 "咽溝"
 ],
 [
+"pharyngeal vein",
+"咽靜脈"
+],
+[
 "phenylalanine",
 "苯丙胺酸"
 ],
 [
+"phenylalanine hydroxylase",
+"苯丙胺酸羥化酶"
+],
+[
+"pheochromocytoma",
+"嗜鉻細胞瘤"
+],
+[
 "phlebitis",
 "靜脈炎"
+],
+[
+"phosphodiesterase",
+"磷酸二酯酶",
+"磷酸雙酯酶"
+],
+[
+"phospholipase",
+"磷脂酶"
 ],
 [
 "phosphorylase kinase",
@@ -2625,12 +3622,21 @@
 "生理性肥大"
 ],
 [
+"pigments",
+"色素"
+],
+[
 "pineal body",
 "松果體"
 ],
 [
 "pineal gland",
 "松果腺"
+],
+[
+"pituitary gland",
+"腦下垂體",
+"腦下腺"
 ],
 [
 "placenta",
@@ -2641,8 +3647,16 @@
 "鼠疫"
 ],
 [
+"plantaris",
+"蹠肌"
+],
+[
 "plasma cell",
 "漿細胞"
+],
+[
+"plasmalogen",
+"縮醛磷脂"
 ],
 [
 "plasmid",
@@ -2657,6 +3671,14 @@
 "血小板"
 ],
 [
+"platelet activating factor",
+"血小板活化因子"
+],
+[
+"platelet-derived growth factor",
+"血小板衍生生長因子"
+],
+[
 "platysma",
 "闊肌"
 ],
@@ -2669,6 +3691,10 @@
 "胸膜"
 ],
 [
+"pleural effusion",
+"胸膜積水"
+],
+[
 "pneumococcus",
 "肺炎鏈球菌"
 ],
@@ -2679,6 +3705,14 @@
 [
 "pneumothorax",
 "氣胸"
+],
+[
+"poliomyelitis",
+"脊髓灰質炎"
+],
+[
+"poliovirus",
+"小兒麻痺病毒"
 ],
 [
 "polyene",
@@ -2709,6 +3743,10 @@
 "膕靜脈"
 ],
 [
+"portal vein",
+"門靜脈"
+],
+[
 "posterior auricular artery",
 "耳後動脈"
 ],
@@ -2717,12 +3755,32 @@
 "後主靜脈"
 ],
 [
+"posterior cerebral artery",
+"大腦後動脈"
+],
+[
+"posterior communicating artery",
+"後交通動脈"
+],
+[
 "posterior intercostal artery",
 "肋間後動脈"
 ],
 [
+"posterior interosseous artery",
+"骨間後動脈"
+],
+[
+"posterior scalene muscle",
+"後斜角肌"
+],
+[
 "posterior scrotal nerve",
 "陰囊後神經"
+],
+[
+"posterior spinal artery",
+"脊髓後動脈"
 ],
 [
 "posterior tibial artery",
@@ -2731,6 +3789,10 @@
 [
 "posterior tibial vein",
 "脛後靜脈"
+],
+[
+"postinfectious encephalitis",
+"感染後腦炎"
 ],
 [
 "poxvirus",
@@ -2773,6 +3835,10 @@
 "痤瘡丙酸桿菌"
 ],
 [
+"prosencephalon",
+"前腦"
+],
+[
 "prostaglandin",
 "前列腺素"
 ],
@@ -2787,6 +3853,10 @@
 [
 "prostate gland",
 "前列腺"
+],
+[
+"prostatitis",
+"前列腺炎"
 ],
 [
 "protease",
@@ -2809,12 +3879,20 @@
 "綠膿桿菌"
 ],
 [
+"psoriasis",
+"牛皮癬"
+],
+[
 "pterion",
 "翼點"
 ],
 [
 "pterygopalatine ganglion",
 "翼腭神經節"
+],
+[
+"ptosis",
+"下垂"
 ],
 [
 "pubic symphysis",
@@ -2827,6 +3905,14 @@
 [
 "pulmonary artery",
 "肺動脈"
+],
+[
+"pulmonary emphysema",
+"肺氣腫"
+],
+[
+"pulmonary thrombosis",
+"肺栓塞"
 ],
 [
 "pulmonary trunk",
@@ -2849,20 +3935,40 @@
 "股四頭肌"
 ],
 [
+"quaternary structure",
+"四級結構"
+],
+[
 "quinine",
 "奎寧"
+],
+[
+"rabies",
+"狂犬病"
 ],
 [
 "rabies virus",
 "狂犬病病毒"
 ],
 [
+"radial artery",
+"橈動脈"
+],
+[
 "radial nerve",
 "橈神經"
 ],
 [
+"range",
+"全距"
+],
+[
 "rate constant",
 "速率常數"
+],
+[
+"rate-limiting step",
+"速率決定步驟"
 ],
 [
 "rectum",
@@ -2901,8 +4007,24 @@
 "再極化"
 ],
 [
+"resistance",
+"阻力"
+],
+[
+"respiratory acidosis",
+"呼吸性酸血症"
+],
+[
 "respiratory distress",
 "呼吸窘迫"
+],
+[
+"respiratory quotient",
+"呼吸商"
+],
+[
+"respiratory tract",
+"呼吸道"
 ],
 [
 "restriction enzymes",
@@ -2913,6 +4035,10 @@
 "睪丸網"
 ],
 [
+"reticular cell",
+"網狀細胞"
+],
+[
 "reticulocyte",
 "網狀紅血球"
 ],
@@ -2921,8 +4047,16 @@
 "視網膜"
 ],
 [
+"retromandibular vein",
+"下頜後靜脈"
+],
+[
 "reverse transcriptase",
 "反轉錄酶"
+],
+[
+"rheumatic fever",
+"風濕熱"
 ],
 [
 "rheumatoid factor",
@@ -2957,6 +4091,14 @@
 "立汎黴素"
 ],
 [
+"right atrium",
+"右心房"
+],
+[
+"right brachiocephalic vein",
+"右頭臂靜脈"
+],
+[
 "right coronary artery",
 "右冠狀動脈"
 ],
@@ -2969,12 +4111,32 @@
 "聲門裂"
 ],
 [
+"rna polymerase",
+"核醣核酸聚合酶"
+],
+[
+"rocky mountain spotted fever",
+"落磯山斑疹熱"
+],
+[
+"rod cell",
+"桿狀細胞"
+],
+[
+"roseola",
+"玫瑰疹"
+],
+[
 "round ligament of liver",
 "肝圓韌帶"
 ],
 [
 "round ligament of uterus",
 "子宮圓韌帶"
+],
+[
+"round window",
+"圓窗"
 ],
 [
 "rubella virus",
@@ -3013,6 +4175,10 @@
 "衛星細胞"
 ],
 [
+"scala vestibuli",
+"前庭階"
+],
+[
 "scalp",
 "頭皮"
 ],
@@ -3021,8 +4187,16 @@
 "肩胛骨"
 ],
 [
+"scapular line",
+"肩胛線"
+],
+[
 "scarlet fever",
 "猩紅熱"
+],
+[
+"schistosomiasis",
+"血吸蟲病"
 ],
 [
 "schizophrenia",
@@ -3053,6 +4227,18 @@
 "分泌素"
 ],
 [
+"secretion",
+"分泌"
+],
+[
+"semen",
+"精液"
+],
+[
+"semimembranosus",
+"半膜肌"
+],
+[
 "seminal vesicle",
 "精囊"
 ],
@@ -3077,16 +4263,36 @@
 "中隔"
 ],
 [
+"serosa",
+"漿膜"
+],
+[
 "serotonin",
 "血清素"
+],
+[
+"serratus anterior",
+"前鋸肌"
+],
+[
+"serum albumin",
+"血清白蛋白"
 ],
 [
 "serum sickness",
 "血清病"
 ],
 [
+"shock",
+"休克"
+],
+[
 "sinoatrial node",
 "竇房結"
+],
+[
+"skeletal muscle",
+"骨骼肌"
 ],
 [
 "small cardiac vein",
@@ -3101,13 +4307,29 @@
 "平滑肌"
 ],
 [
+"soleus",
+"比目魚肌"
+],
+[
+"somatic mutation",
+"體細胞突變"
+],
+[
 "somatostatin",
 "體抑素"
+],
+[
+"specific activity",
+"特異活性"
 ],
 [
 "specificity",
 "專一性",
 "特異性"
+],
+[
+"sperm",
+"精子"
 ],
 [
 "spermatogonium",
@@ -3118,6 +4340,10 @@
 "蝶骨"
 ],
 [
+"sphincter",
+"括約肌"
+],
+[
 "spinal cord",
 "脊髓"
 ],
@@ -3126,12 +4352,28 @@
 "棘肌"
 ],
 [
+"spinothalamic tract",
+"脊髓丘腦徑"
+],
+[
+"spirochete",
+"螺旋體"
+],
+[
 "splenic artery",
 "脾動脈"
 ],
 [
+"splenic vein",
+"脾靜脈"
+],
+[
 "splenomegaly",
 "脾腫大"
+],
+[
+"splicing",
+"剪接"
 ],
 [
 "sporulation",
@@ -3166,8 +4408,16 @@
 "葡萄腫"
 ],
 [
+"starch",
+"澱粉"
+],
+[
 "steady state",
 "穩態"
+],
+[
+"stearic acid",
+"硬脂酸"
 ],
 [
 "sternal angle",
@@ -3186,8 +4436,16 @@
 "斜視"
 ],
 [
+"stratum corneum",
+"角質層"
+],
+[
 "stratum germinativum",
 "生發層"
+],
+[
+"stratum granulosum",
+"顆粒層"
 ],
 [
 "streptomycin",
@@ -3200,6 +4458,14 @@
 [
 "striatum",
 "紋狀體"
+],
+[
+"stroke",
+"中風"
+],
+[
+"structure",
+"結構"
 ],
 [
 "strychnine",
@@ -3216,6 +4482,10 @@
 [
 "subclavian vein",
 "鎖骨下靜脈"
+],
+[
+"subclavius muscle",
+"鎖骨下肌"
 ],
 [
 "subcostal muscle",
@@ -3250,12 +4520,28 @@
 "腓淺神經"
 ],
 [
+"superficial inguinal lymph nodes",
+"腹股溝淺淋巴結"
+],
+[
+"superficial temporal artery",
+"淺顳動脈"
+],
+[
+"superior cervical ganglion",
+"上頸神經節"
+],
+[
 "superior colliculus",
 "上丘"
 ],
 [
 "superior mesenteric artery",
 "腸繫膜上動脈"
+],
+[
+"superior mesenteric vein",
+"腸繫膜上靜脈"
 ],
 [
 "superior nasal concha",
@@ -3306,6 +4592,10 @@
 "腓腸神經"
 ],
 [
+"surface tension",
+"表面張力"
+],
+[
 "surfactant",
 "界面活性劑",
 "表面活性劑"
@@ -3331,6 +4621,10 @@
 "交感神經系統"
 ],
 [
+"sympathetic ophthalmia",
+"交感性眼炎"
+],
+[
 "sympathetic system",
 "交感神經系統"
 ],
@@ -3343,8 +4637,16 @@
 "梅毒"
 ],
 [
+"systemic mastocytosis",
+"全身性肥大細胞增生症"
+],
+[
 "talus",
 "距骨"
+],
+[
+"tectospinal tract",
+"四疊體脊髓徑"
 ],
 [
 "telencephalon",
@@ -3367,6 +4669,10 @@
 "畸胎瘤"
 ],
 [
+"tertiary structure",
+"三級結構"
+],
+[
 "testis",
 "睪丸"
 ],
@@ -3381,7 +4687,8 @@
 ],
 [
 "thalassemia",
-"地中海型貧血"
+"地中海型貧血",
+"地中海貧血"
 ],
 [
 "therapeutic index",
@@ -3408,8 +4715,16 @@
 "凝血酶"
 ],
 [
+"thrombosis",
+"血栓形成"
+],
+[
 "thrombus",
 "血栓"
+],
+[
+"thymic carcinoma",
+"胸腺癌"
 ],
 [
 "thymoma",
@@ -3420,12 +4735,20 @@
 "胸腺"
 ],
 [
+"thyroarytenoid muscle",
+"甲杓肌"
+],
+[
 "thyroid gland",
 "甲狀腺"
 ],
 [
 "thyroid hormones",
 "甲狀腺素"
+],
+[
+"thyroid stimulating hormone",
+"甲狀腺刺激素"
 ],
 [
 "thyroiditis",
@@ -3450,6 +4773,10 @@
 [
 "tibial nerve",
 "脛神經"
+],
+[
+"toluene",
+"甲苯"
 ],
 [
 "topoisomerase",
@@ -3484,8 +4811,24 @@
 "轉位"
 ],
 [
+"transporter",
+"轉運子"
+],
+[
+"transverse process",
+"橫突"
+],
+[
 "transversus abdominis",
 "腹橫肌"
+],
+[
+"trapezius",
+"斜方肌"
+],
+[
+"trapezius muscle",
+"斜方肌"
 ],
 [
 "trauma",
@@ -3494,6 +4837,10 @@
 [
 "treponema pallidum",
 "梅毒螺旋體"
+],
+[
+"triceps brachii",
+"肱三頭肌"
 ],
 [
 "trigeminal nerve",
@@ -3505,12 +4852,20 @@
 "三酸甘油酯"
 ],
 [
+"trimer",
+"三聚體"
+],
+[
 "trochlea",
 "滑車"
 ],
 [
 "trochlear nerve",
 "滑車神經"
+],
+[
+"trypsin",
+"胰蛋白酶"
 ],
 [
 "tsutsugamushi disease",
@@ -3545,6 +4900,10 @@
 "鼓膜"
 ],
 [
+"typhus",
+"斑疹傷寒"
+],
+[
 "tyrosine",
 "酪胺酸"
 ],
@@ -3561,6 +4920,10 @@
 "尺神經"
 ],
 [
+"ultrafiltration",
+"超過濾"
+],
+[
 "umbilical vein",
 "臍靜脈"
 ],
@@ -3571,6 +4934,10 @@
 [
 "uracil",
 "脲嘧啶"
+],
+[
+"urea cycle",
+"尿素循環"
 ],
 [
 "urease",
@@ -3587,6 +4954,10 @@
 [
 "urethra",
 "尿道"
+],
+[
+"urethritis",
+"尿道炎"
 ],
 [
 "uric acid",
@@ -3617,6 +4988,10 @@
 "疫苗接種"
 ],
 [
+"vaccine",
+"疫苗"
+],
+[
 "vagina",
 "陰道"
 ],
@@ -3637,6 +5012,10 @@
 "血管炎"
 ],
 [
+"vasoconstriction",
+"血管收縮"
+],
+[
 "vasopressin",
 "血管加壓素"
 ],
@@ -3653,16 +5032,36 @@
 "靜脈竇"
 ],
 [
+"ventilation",
+"換氣"
+],
+[
 "ventral mesentery",
 "腹側腸繫膜"
+],
+[
+"ventricular septum",
+"心室中隔"
 ],
 [
 "venule",
 "小靜脈"
 ],
 [
+"vermis",
+"小腦蚓部"
+],
+[
 "vertebra",
 "椎骨"
+],
+[
+"vertebral arch",
+"椎弓"
+],
+[
+"vestibulocerebellar tract",
+"前庭小腦徑"
 ],
 [
 "vestibulocochlear nerve",
@@ -3673,20 +5072,48 @@
 "毒力"
 ],
 [
+"visual field",
+"視野"
+],
+[
 "vital capacity",
 "肺活量"
+],
+[
+"vitamin",
+"維生素"
 ],
 [
 "vitelline vein",
 "卵黃靜脈"
 ],
 [
+"vomiting center",
+"嘔吐中樞"
+],
+[
+"west nile virus",
+"西尼羅河病毒"
+],
+[
+"white blood cell",
+"白血球"
+],
+[
 "white matter",
 "白質"
 ],
 [
+"xanthine",
+"黃嘌呤"
+],
+[
 "xanthine oxidase",
 "黃嘌呤氧化酶"
+],
+[
+"xanthoma",
+"黃瘤"
 ],
 [
 "yellow fever",
@@ -3699,6 +5126,10 @@
 [
 "zygomatic bone",
 "顴骨"
+],
+[
+"zygomaticofacial nerve",
+"顴面神經"
 ],
 [
 "zygote",

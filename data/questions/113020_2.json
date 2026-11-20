@@ -690,12 +690,12 @@
       "number": 29,
       "subject": "parasitology",
       "subject_status": "range",
-      "stem": "寄生蟲感染人體所造成之症狀，下列敘述何者正確？ћ犬蛔蟲（Toxocara canis）可造成眼部幼蟲移行症（ocular larva migrans） ќ班氏絲蟲（Wuchereria bancrofti）的慢性感染可造成下肢象皮病（elephantiasis） ѝ免疫低下之病患受到鞭蟲（Trichuris trichiura）感染必造成死亡 ў蛔蟲（Ascaris lumbricoides）感染可能出現異位寄生（ectopic parasitism）",
+      "stem": "寄生蟲感染人體所造成之症狀，下列敘述何者正確？①犬蛔蟲（Toxocara canis）可造成眼部幼蟲移行症（ocular larva migrans） ②班氏絲蟲（Wuchereria bancrofti）的慢性感染可造成下肢象皮病（elephantiasis） ③免疫低下之病患受到鞭蟲（Trichuris trichiura）感染必造成死亡 ④蛔蟲（Ascaris lumbricoides）感染可能出現異位寄生（ectopic parasitism）",
       "options": [
-        "僅ћѝ",
-        "僅ќў",
-        "僅ћќў",
-        "ћќѝў"
+        "僅①③",
+        "僅②④",
+        "僅①②④",
+        "①②③④"
       ],
       "answers": [
         "C"
@@ -762,12 +762,12 @@
       "number": 32,
       "subject": "parasitology",
       "subject_status": "range",
-      "stem": "水生植物可當何種寄生蟲之中間宿主？ћ牛羊肝吸蟲（Fasciola hepatica） ќ薑片蟲（Fasciolopsisbuski） ѝ中華肝吸蟲（Clonorchis sinensis） ў槍狀肝吸蟲（Dicrocoelium dendriticum）",
+      "stem": "水生植物可當何種寄生蟲之中間宿主？①牛羊肝吸蟲（Fasciola hepatica） ②薑片蟲（Fasciolopsisbuski） ③中華肝吸蟲（Clonorchis sinensis） ④槍狀肝吸蟲（Dicrocoelium dendriticum）",
       "options": [
-        "ћќ",
-        "ѝў",
-        "ћѝ",
-        "ќў"
+        "①②",
+        "③④",
+        "①③",
+        "②④"
       ],
       "answers": [
         "A"
@@ -1002,7 +1002,7 @@
       "number": 42,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "關於空氣品質，我國從 2016 年 12 月開始實施的空氣品質監測標準，採取空氣品質指標（air qualityindex，簡稱 AQI）。下列有關 AQI 之敘述，何者最不恰當？",
+      "stem": "關於空氣品質，我國從 2016 年 12 月開始實施的空氣品質監測標準，採取空氣品質指標（air quality index，簡稱 AQI）。下列有關 AQI 之敘述，何者最不恰當？",
       "options": [
         "測量的污染項目包含六種，分別是臭氧（O₃）、細懸浮微粒（PM₂.₅）、懸浮微粒（PM₁₀）、一氧化碳（CO）、二氧化硫（SO₂）及二氧化氮（NO₂）",
         "AQI 係依據空氣污染物的監測資料，將當日空氣污染物濃度值，以其對人體健康之影響程度，換算出各污染物之副指標值",
@@ -1890,12 +1890,12 @@
       "number": 79,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "下列疾病中，何者一般被認為大部分是與 T_H2 細胞的作用或反應有關？ћ蠕蟲類寄生蟲感染 ќ外因性過敏性鼻炎（allergic rhinitis） ѝ肉芽腫性發炎（granulomatous inflammation）",
+      "stem": "下列疾病中，何者一般被認為大部分是與 T_H2 細胞的作用或反應有關？①蠕蟲類寄生蟲感染 ②外因性過敏性鼻炎（allergic rhinitis） ③肉芽腫性發炎（granulomatous inflammation）",
       "options": [
-        "ћќѝ",
-        "僅ћќ",
-        "僅ќѝ",
-        "僅ћѝ"
+        "①②③",
+        "僅①②",
+        "僅②③",
+        "僅①③"
       ],
       "answers": [
         "B"

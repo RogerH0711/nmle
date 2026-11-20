@@ -1,9 +1,12 @@
-import { useEffect, useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import type { AnswerRecord } from './answers'
 import type { Character } from './characters'
 import { WornPortrait } from './CharacterStage'
 import type { SubjectMap } from './affection'
 import { abilities, grade, MIN_ANSWERS, PASS_RATE, RECENT, weakest, type Ability } from './abilities'
+import { useDialog } from './dialog'
+import { questionIdsOf, subtopicAbilities, type SubtopicAbility, type SubtopicData } from './subtopics'
+import { pickRound } from './run'
 
 // 雷達圖上的學科簡稱（全名太長放不下）
 const SHORT: Record<string, string> = {
@@ -25,14 +28,18 @@ interface Props {
   records: AnswerRecord[]
   map: SubjectMap
   onStudy: (c: Character) => void
+  subtopics: SubtopicData | null // 次主題（subtopics.ts）；還沒分類時是 null，不顯示
+  onPractice: (ids: string[], label: string) => void // 刷某個次主題
   onClose: () => void
 }
+
+const SUB_ROUND = 20 // 從能力值面板刷一個次主題，一次幾題
 
 /**
  * 狀態面板：各科最近的正確率當成「能力值」，像模擬經營型 galgame 的能力畫面（見 docs/design.md「遊戲介面方向」）。
  * 雷達圖看整體，下面依負責的學姊分組列出各科。最弱的一科建議找負責的學姊一起讀書。
  */
-export function StatusPanel({ characters, subjectNames, records, map, onStudy, onClose }: Props) {
+export function StatusPanel({ characters, subjectNames, records, map, onStudy, subtopics, onPractice, onClose }: Props) {
   // 學科依學姊排，沒有人負責的學科排最後
   const order = useMemo(() => {
     const owned = characters.flatMap((c) => c.subjects)
@@ -50,19 +57,27 @@ export function StatusPanel({ characters, subjectNames, records, map, onStudy, o
   const weakOwner = weak && ownerOf(weak.subject)
   const unowned = order.filter((s) => !ownerOf(s))
 
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key !== 'Escape') return
-      e.preventDefault()
-      onClose()
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [onClose])
+  // 各科的次主題能力值；最弱的次主題（有正確率的裡面最低的）
+  const subs = useMemo(
+    () => new Map(subtopics ? order.map((s) => [s, subtopicAbilities(subtopics, s, records, map.of)] as const) : []),
+    [subtopics, order, records, map],
+  )
+  const weakSub = [...subs].flatMap(([s, list]) => list.filter((x) => x.rate !== null).map((x) => ({ subject: s, ...x })))
+    .reduce<(SubtopicAbility & { subject: string }) | undefined>((min, x) => (!min || x.rate! < min.rate! ? x : min), undefined)
+  const answeredIds = useMemo(() => new Set(records.map((r) => r.question_id)), [records])
+  const practice = (subject: string, sub: SubtopicAbility) => {
+    if (!subtopics) return
+    const ids = pickRound(questionIdsOf(subtopics, sub.id, map.of, subject), answeredIds, SUB_ROUND)
+    if (!ids.length) return
+    onClose()
+    onPractice(ids, `${name(subject)}・${sub.name}`)
+  }
+
+  const dialogRef = useDialog(onClose) // Esc、Tab、焦點（dialog.ts）
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
-      <div className="status" role="dialog" aria-label="能力值" onClick={(e) => e.stopPropagation()}>
+      <div className="status" role="dialog" aria-modal="true" ref={dialogRef} tabIndex={-1} aria-label="能力值" onClick={(e) => e.stopPropagation()}>
         <header className="status-head">
           <div>
             <h2>能力值</h2>
@@ -106,6 +121,16 @@ export function StatusPanel({ characters, subjectNames, records, map, onStudy, o
                     找{weakOwner.name}一起讀書
                   </button>
                 )}
+                {weakSub && (
+                  <>
+                    <span>
+                      最弱的次主題：{name(weakSub.subject)}・{weakSub.name}（{weakSub.rate}%）
+                    </span>
+                    <button className="ghost small" onClick={() => practice(weakSub.subject, weakSub)}>
+                      刷這個次主題 {SUB_ROUND} 題
+                    </button>
+                  </>
+                )}
               </div>
             )}
           </div>
@@ -120,13 +145,14 @@ export function StatusPanel({ characters, subjectNames, records, map, onStudy, o
               {c.name}
               <small>{c.title}</small>
             </h3>
-            {c.subjects.map((s) => bySubject.get(s) && <Row key={s} name={name(s)} ability={bySubject.get(s)!} />)}
+            {c.subjects.map((s) => bySubject.get(s) && <Row key={s} name={name(s)} ability={bySubject.get(s)!} subs={subs.get(s)} onPractice={(x) => practice(s, x)} />)}
           </section>
         ))}
+        {subtopics && <p className="status-note">次主題由 AI 依題目內容分類（{subtopics.model}），可能有少數分錯。</p>}
         {unowned.length > 0 && (
           <section className="status-group">
             <h3>其他學科</h3>
-            {unowned.map((s) => bySubject.get(s) && <Row key={s} name={name(s)} ability={bySubject.get(s)!} />)}
+            {unowned.map((s) => bySubject.get(s) && <Row key={s} name={name(s)} ability={bySubject.get(s)!} subs={subs.get(s)} onPractice={(x) => practice(s, x)} />)}
           </section>
         )}
       </div>
@@ -134,9 +160,16 @@ export function StatusPanel({ characters, subjectNames, records, map, onStudy, o
   )
 }
 
-function Row({ name, ability: a }: { name: string; ability: Ability }) {
+function Row({ name, ability: a, subs, onPractice }: {
+  name: string
+  ability: Ability
+  subs?: SubtopicAbility[] // 這科的次主題；沒有次主題資料時不能展開
+  onPractice: (sub: SubtopicAbility) => void
+}) {
   const g = a.rate === null ? null : grade(a.rate)
+  const [open, setOpen] = useState(false)
   return (
+    <>
     <div className="status-row">
       <span className="status-subject">{name}</span>
       <span className="status-bar" aria-hidden>
@@ -153,8 +186,34 @@ function Row({ name, ability: a }: { name: string; ability: Ability }) {
             {a.change > 0 ? `　▲${a.change}` : `　▼${-a.change}`}
           </span>
         )}
+        {subs && subs.length > 0 && (
+          <button className="link status-expand" aria-expanded={open} onClick={() => setOpen(!open)}>
+            {open ? '收起次主題' : '次主題'}
+          </button>
+        )}
       </span>
     </div>
+    {open && subs && (
+      <ul className="status-subs">
+        {subs.map((x) => (
+          <li key={x.id}>
+            <span className="status-sub-name">{x.name}</span>
+            <span className="status-bar" aria-hidden>
+              <span style={{ width: `${x.rate ?? 0}%` }} />
+              <i style={{ left: `${PASS_RATE}%` }} />
+            </span>
+            <span className="status-rate">{x.rate === null ? '—' : `${x.rate}%`}</span>
+            <span className="status-sub-count">
+              {x.covered} / {x.total}
+            </span>
+            <button className="ghost small" onClick={() => onPractice(x)} disabled={!x.total}>
+              刷 {Math.min(SUB_ROUND, x.total)} 題
+            </button>
+          </li>
+        ))}
+      </ul>
+    )}
+    </>
   )
 }
 

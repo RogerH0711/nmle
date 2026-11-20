@@ -26,6 +26,9 @@ npm ci && npm ci --prefix web       # 第一次 clone 後
 npm --prefix web run dev            # 本機網站 http://localhost:5173
 npm test                            # 資料庫測試 + 前端測試
 npm run build --prefix web          # 型別檢查 + build
+npm run lint --prefix web           # oxlint（React hooks 依賴等）
+npm run typecheck --prefix web      # 測試檔與 e2e 的型別
+npm run e2e --prefix web            # build 之後：真的瀏覽器測 CSP、離線、返回鍵等（本機沒裝 Chromium 就加 E2E_CHANNEL=msedge）
 ```
 
 解析考卷（需要 Python 虛擬環境與 `pipeline/requirements.txt`）：

@@ -984,3 +984,80 @@ describe('同步與排行榜效能', () => {
   })
 })
 
+
+describe('收藏、不確定、筆記（question_marks）', () => {
+  const M = 'c0c0c0c0-0000-4000-8000-000000000001'
+  const N = 'c0c0c0c0-0000-4000-8000-000000000002'
+  before(async () => {
+    await createUser(db, M, '真名子')
+    await createUser(db, N, '真名丑')
+  })
+  // 前端的同步：upsert，衝突時整列更新（supabase-js 的 upsert）
+  const save = (user, qid, fields, updatedAt = 'now()') =>
+    tryAs(
+      db,
+      user,
+      `insert into public.question_marks (user_id, question_id, favorite, unsure, note, updated_at)
+       values ($1, $2, $3, $4, $5, ${updatedAt})
+       on conflict (user_id, question_id) do update
+         set favorite = excluded.favorite, unsure = excluded.unsure, note = excluded.note, updated_at = excluded.updated_at`,
+      [user, qid, fields.favorite ?? false, fields.unsure ?? false, fields.note ?? null],
+    )
+  const mine = async (user) =>
+    (await as(db, user, `select question_id, favorite, unsure, note from public.question_marks order by question_id`)).rows
+
+  test('可以收藏、標不確定、寫筆記，之後再改', async () => {
+    assert.equal((await save(M, '115090_1_001', { favorite: true, note: '  記得看圖  ' })).ok, true)
+    assert.deepEqual(await mine(M), [{ question_id: '115090_1_001', favorite: true, unsure: false, note: '記得看圖' }])
+    assert.equal((await save(M, '115090_1_001', { favorite: false, unsure: true, note: '' })).ok, true)
+    assert.deepEqual(await mine(M), [{ question_id: '115090_1_001', favorite: false, unsure: true, note: null }])
+  })
+
+  test('看不到別人的，也不能替別人寫、改或刪', async () => {
+    assert.deepEqual(await mine(N), [])
+    assert.equal((await save(N, '115090_1_001', { favorite: true }).then(() => tryAs(db, N, `insert into public.question_marks (user_id, question_id, updated_at) values ($1, '115090_1_002', now())`, [M]))).ok, false)
+    await as(db, N, `update public.question_marks set favorite = true where user_id = $1`, [M])
+    assert.equal((await mine(M))[0].favorite, false)
+    const del = await tryAs(db, M, `delete from public.question_marks where question_id = '115090_1_001'`)
+    assert.equal(del.ok && del.res.affectedRows !== 0, false) // 沒有 delete policy：刪不到任何一列
+    assert.equal((await mine(M)).length, 1)
+  })
+
+  test('未登入不能讀寫', async () => {
+    assert.equal((await tryAs(db, null, `select * from public.question_marks`)).res?.rows?.length ?? 0, 0)
+    assert.equal((await tryAs(db, null, `insert into public.question_marks (user_id, question_id, updated_at) values ($1, '115090_1_003', now())`, [M])).ok, false)
+  })
+
+  test('兩台裝置都改過：改的時間比較新的贏，舊的修改晚到也不會蓋掉', async () => {
+    await save(M, '115090_1_010', { favorite: true }, `now() - interval '1 minute'`)
+    await save(M, '115090_1_010', { favorite: false, note: '新的' }, 'now()')
+    await save(M, '115090_1_010', { favorite: true, note: '離線時的舊修改' }, `now() - interval '1 hour'`)
+    const row = (await mine(M)).find((r) => r.question_id === '115090_1_010')
+    assert.deepEqual(row, { question_id: '115090_1_010', favorite: false, unsure: false, note: '新的' })
+  })
+
+  test('改的時間不能在未來（否則之後的修改永遠蓋不過去）；同步時間由資料庫決定', async () => {
+    await save(M, '115090_1_011', { favorite: true }, `now() + interval '10 years'`)
+    await save(M, '115090_1_011', { favorite: false }, `now() + interval '1 second'`)
+    const r = await as(db, M, `select favorite, updated_at <= now() + interval '5 minutes' as sane, synced_at from public.question_marks where question_id = '115090_1_011'`)
+    assert.deepEqual([r.rows[0].favorite, r.rows[0].sane], [false, true])
+  })
+
+  test('題目 id 格式、筆記長度有限制', async () => {
+    assert.equal((await save(M, 'bad', { favorite: true })).ok, false)
+    assert.equal((await save(M, '115090_1_012', { note: 'x'.repeat(2001) })).ok, false)
+    assert.equal((await save(M, '115090_1_012', { note: 'x'.repeat(2000) })).ok, true)
+  })
+
+  test('每人每天最多 2,000 次寫入（新增和修改都算）', async () => {
+    await setUsed(`question_marks:${N}`, 'day', 1999)
+    assert.equal((await save(N, '115090_1_020', { favorite: true })).ok, true)
+    assert.equal((await save(N, '115090_1_020', { favorite: false })).ok, false)
+  })
+
+  test('刪除帳號時一起刪掉', async () => {
+    await as(db, M, `select public.delete_my_account()`)
+    const r = await db.query(`select count(*)::int as n from public.question_marks where user_id = $1`, [M])
+    assert.equal(r.rows[0].n, 0)
+  })
+})

@@ -82,7 +82,7 @@ def main(start, end):
                                  "paper": paper, "corrected": has_m, "name": name})
                     print(year, code, cls, subj, paper, "更正" if has_m else "", cls_name)
     out = Path(__file__).resolve().parent / "exams.json"
-    out.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8")
+    out.write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
 
 
 if __name__ == "__main__":

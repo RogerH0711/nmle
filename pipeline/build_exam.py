@@ -15,6 +15,7 @@ import itertools
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 import pymupdf
@@ -66,6 +67,7 @@ SCRIPT_SHIFT = 1.0         # pt
 ADJACENT_GAP = 1.5         # pt；上下標和本體字之間的最大間距
 ADJACENT_OVERLAP = 4.0     # pt；斜體字（V、k）的字框會往右凸，下標常和它重疊
 SCRIPT_TEXT = re.compile(r"[0-9A-Za-z+\-−–=/.,()α-ωΑ-Ω]{1,6}")  # 上下標只會是短的符號，不會有中文
+LABEL = re.compile(r"(\d{1,3}|[A-DＡ-Ｄ])[.．]")  # 題號、選項字母
 SCRIPT_BASE = re.compile(r"[0-9A-Za-zα-ωΑ-ΩＡ-Ｚａ-ｚ)\]）］]")
 
 
@@ -109,9 +111,14 @@ def dedupe_fake_bold(blocks):
                     c, (x, y) = ch["c"], ch["origin"]
                     if not c.isspace():
                         gx, gy = round(x / FAKE_BOLD_TOLERANCE), round(y / FAKE_BOLD_TOLERANCE)
-                        if any(seen.get((c, gx + dx, gy + dy)) for dx in (-1, 0, 1) for dy in (-1, 0, 1)):
+                        # 重複的字要「幾乎在同一個位置」：距離小於字寬的一半。相鄰的同一個字（yellow 的 ll）
+                        # 也在容許範圍的格子裡，106 年第二次的考卷兩個 l 的字框重疊 0.1 pt，原本會被刪掉一個
+                        near = min(FAKE_BOLD_TOLERANCE, (ch["bbox"][2] - ch["bbox"][0]) / 2)
+                        if any(abs(px - x) < near and abs(py - y) < FAKE_BOLD_TOLERANCE
+                               for dx in (-1, 0, 1) for dy in (-1, 0, 1)
+                               for px, py in seen.get((c, gx + dx, gy + dy), ())):
                             continue
-                        seen[(c, gx, gy)] = True
+                        seen.setdefault((c, gx, gy), []).append((x, y))
                     kept.append(ch)
                 span["chars"] = kept
                 span["text"] = "".join(ch["c"] for ch in kept)
@@ -201,7 +208,14 @@ def classify_scripts(spans):
             return text[0]
         return None
 
-    candidates = [s for s in spans if SCRIPT_TEXT.fullmatch(s["text"].strip()) and s["size"] >= 1]
+    def starts_row(span):
+        """這一列最左邊的字（前面沒有別的字）"""
+        return not any(n is not span and same_row(span, n) and edges[id(n)][1] <= edges[id(span)][0] + 0.5 for n in spans)
+
+    # 一列開頭的題號「81.」、選項字母「A.」不會是上下標：106 年第二次的考卷題號和選項字母比內文小一號，
+    # 後面接英數字時（81.AZT、A.adenine）會被誤判成上標
+    candidates = [s for s in spans if SCRIPT_TEXT.fullmatch(s["text"].strip()) and s["size"] >= 1
+                  and not (LABEL.fullmatch(s["text"].strip()) and starts_row(s))]
     result, refs = {}, {}
     for span in candidates:
         bases = []
@@ -294,7 +308,25 @@ def join_text(parts):
             if a + b not in vocab() and a in vocab() and b in vocab():
                 text += " "
         text += p
-    return re.sub(r"[ \t\u3000]+", " ", text).strip()
+    return fix_cjk(re.sub(r"[ \t\u3000]+", " ", text).strip())
+
+
+# \u6709\u4e9b\u5e74\u5ea6\u7684\u5b57\u578b\u628a\u5e38\u7528\u5b57\u5c0d\u61c9\u5230\u300c\u5eb7\u7199\u90e8\u9996\u300d\uff08\u2f8e U+2F8E\uff09\u6216\u300c\u76f8\u5bb9\u8868\u610f\u5b57\u300d\u5340\u6bb5\uff0c\u756b\u9762\u4e0a\u770b\u8d77\u4f86\u4e00\u6a23\uff0c
+# \u4f46\u8907\u88fd\u51fa\u53bb\u3001\u5728\u5225\u7684\u7db2\u7ad9\u641c\u5c0b\u90fd\u627e\u4e0d\u5230\u300c\u8840\u300d\u3002\u53ea\u8f49\u9019\u5169\u500b\u5340\u6bb5\uff08NFKC \u6703\u628a \u2460\u3001\u5168\u5f62\u6a19\u9ede\u3001\u4e0a\u4e0b\u6a19\u4e5f\u8f49\u6389\uff09\u3002
+# 108 \u5e74\u7b2c\u4e00\u6b21\u7684\u8003\u5377\u7279\u5225\u591a\uff08\u7d04 950 \u500b\u5b57\uff09
+CJK_COMPAT = re.compile(r"[\u2e80-\u2fdf\uf900-\ufaff]")
+# \u300c\u90e8\u9996\u88dc\u5145\u300d\u5340\u6bb5\u5927\u591a\u6c92\u6709 NFKC \u5c0d\u61c9\uff0c\u9047\u5230\u7684\u53e6\u5916\u5217\uff08108 \u5e74\u7b2c\u4e00\u6b21\u7684\u8003\u5377\uff09
+CJK_RADICAL_SUPPLEMENT = {"\u2ed1": "\u9577", "\u2ec4": "\u897f"}
+
+
+# 113 年第一次醫學(二) 的字型（細明體）把圈號 ①–⑤ 對應到西里爾字母 ћ ќ ѝ ў џ（U+045B–045F），
+# 網站上顯示成「ћќ」。考卷不會有真的西里爾字母，直接換回來
+CIRCLED_MISMAP = str.maketrans("ћќѝўџ", "①②③④⑤")
+
+
+def fix_cjk(text):
+    text = text.translate(CIRCLED_MISMAP)
+    return CJK_COMPAT.sub(lambda m: CJK_RADICAL_SUPPLEMENT.get(m.group(0)) or unicodedata.normalize("NFKC", m.group(0)), text)
 
 
 def parse_questions(doc):
@@ -356,6 +388,10 @@ def crop_images(doc, questions, key):
     讓檢查步驟擋下來，等人工在 overrides 補上文字。
     """
     img_dir = DATA_DIR / "images" / key
+    # 先清掉這份考卷之前裁的圖：切題方式改了以後，題號或頁碼不同的舊圖會留著沒人用（CI 的題庫抽檢會擋）
+    if img_dir.exists():
+        for old in img_dir.iterdir():
+            old.unlink()
     for q in questions:
         q["images"], q["inline_figures"] = [], []
 
@@ -413,7 +449,8 @@ def parse_corrections(text):
             # 例：「答Ｂ或Ｄ或BD者均給分」、「更正為Ｃ」
             desc_ascii = desc.translate(FULLWIDTH)
             answers = sorted(set(re.findall(r"(?<![A-D])([A-D])(?![A-D])", desc_ascii)))
-            kind = "multiple" if len(answers) > 1 else "corrected"
+            # 「答Ａ、Ｂ、Ｃ、Ｄ給分」（105 年）和「除未作答者不給分外，其餘均給分」一樣當成送分題
+            kind = "free" if len(answers) == 4 else "multiple" if len(answers) > 1 else "corrected"
         result[num] = {"answers": answers, "kind": kind, "note": f"第{num}題{desc}"}
     return result
 
@@ -557,7 +594,7 @@ def write_index():
             "subject_runs": subject_runs(data["questions"]),
         })
     index = {"subjects": SUBJECTS, "papers": papers}
-    (DATA_DIR / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8")
+    (DATA_DIR / "index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
 
 
 def read_header(doc):
@@ -627,7 +664,7 @@ def build(exam: str, subject: str):
 
     out_path = DATA_DIR / "questions" / f"{key}.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+    out_path.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
 
     invalid = [q for q in out["questions"] if not q["valid"]]
     noted = [q for q in out["questions"] if q["answer_note"]]

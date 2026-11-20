@@ -1,10 +1,17 @@
 :root {
+  /* 圓角（11/15 Roger：統一設計語言）：xs 進度條、標記；s 小按鈕、輸入框；m 一般按鈕、選項、對話框裡的區塊；l 卡片、對話框、遊戲畫面 */
+  --r-xs: 3px;
+  --r-s: 8px;
+  --r-m: 12px;
+  --r-l: 16px;
   --bg: #f6f4f1;
   --card: #ffffff;
   --text: #22201d;
   --muted: #6f6a63;
   --line: #e4dfd8;
   --accent: #e8772e; /* 夏以晴的橘，之後依角色切換 */
+  --accent-strong: #b8561a; /* 白字的底色：--accent 配白字對比只有 2.95:1，這個是 4.79:1（WCAG AA 要 4.5） */
+  --accent-text: #a84e12; /* 橘色的字：白底 5.58:1、答錯的粉紅底 4.75:1（深色模式改用 --accent） */
   --right: #2f8a4f;
   --right-bg: #e6f4ea;
   --wrong: #c2412d;
@@ -27,6 +34,7 @@
     --wrong-bg: #3d231e;
     --warn-bg: #3a2f17;
     --warn: #f0c56b;
+    --accent-text: #e8772e; /* 深色底 5.37:1、答錯的底 4.88:1、答對的底 4.5:1 */
     color-scheme: dark;
   }
 }
@@ -48,6 +56,17 @@ button,
 select {
   font: inherit;
   color: inherit;
+}
+
+/* 沒有另外指定的按鈕、輸入框也用一樣的圓角，不要出現瀏覽器預設的直角 */
+button {
+  border-radius: var(--r-m);
+}
+
+input,
+select,
+textarea {
+  border-radius: var(--r-s);
 }
 
 .app {
@@ -125,7 +144,7 @@ select {
   background: var(--card);
   border: 1px solid var(--line);
   border-left: 4px solid var(--accent);
-  border-radius: 10px;
+  border-radius: var(--r-m);
 }
 
 .review-stats {
@@ -138,7 +157,7 @@ select {
 button.small {
   min-height: 36px;
   padding: 0 12px;
-  border-radius: 8px;
+  border-radius: var(--r-s);
   cursor: pointer;
 }
 
@@ -150,14 +169,14 @@ button.small:disabled {
 .controls select {
   padding: 6px 8px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: var(--r-s);
   background: var(--card);
   max-width: 100%;
 }
 
 .progress {
   height: 6px;
-  border-radius: 3px;
+  border-radius: var(--r-xs);
   background: var(--line);
   overflow: hidden;
 }
@@ -180,7 +199,7 @@ button.small:disabled {
 .card {
   background: var(--card);
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: var(--r-l);
   padding: 18px 16px;
 }
 
@@ -222,7 +241,7 @@ button.small:disabled {
   max-width: 100%;
   margin: 0 auto 14px;
   background: #fff;
-  border-radius: 6px;
+  border-radius: var(--r-s);
 }
 
 .options {
@@ -243,7 +262,7 @@ button.small:disabled {
   text-align: left;
   background: var(--card);
   border: 1.5px solid var(--line);
-  border-radius: 10px;
+  border-radius: var(--r-m);
   cursor: pointer;
 }
 
@@ -300,7 +319,7 @@ button.small:disabled {
 .feedback {
   margin-top: 14px;
   padding: 10px 12px;
-  border-radius: 10px;
+  border-radius: var(--r-m);
   border-left: 4px solid;
 }
 
@@ -338,7 +357,7 @@ button.small:disabled {
 .nav button {
   min-height: 44px;
   padding: 0 18px;
-  border-radius: 10px;
+  border-radius: var(--r-m);
   cursor: pointer;
 }
 
@@ -348,7 +367,7 @@ button.small:disabled {
 }
 
 .primary {
-  background: var(--accent);
+  background: var(--accent-strong);
   color: #fff;
   border: none;
   font-weight: 600;
@@ -469,7 +488,7 @@ button.small:disabled {
   flex: none;
   width: 96px;
   height: 132px;
-  border-radius: 10px;
+  border-radius: var(--r-m);
 }
 
 .speech {
@@ -479,7 +498,7 @@ button.small:disabled {
   padding: 10px 12px;
   background: var(--card);
   border: 1.5px solid var(--char);
-  border-radius: 12px;
+  border-radius: var(--r-m);
 }
 
 .speaker {
@@ -589,7 +608,7 @@ button.link:hover {
   max-width: 50vw;
   padding: 6px 8px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: var(--r-s);
   background: var(--card);
   color: var(--text);
   font: inherit;
@@ -680,7 +699,7 @@ button.link:hover {
   margin-left: 6px;
   padding: 0 6px;
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--accent-strong);
   color: #fff;
   font-size: 0.7rem;
   font-weight: 600;
@@ -807,7 +826,7 @@ button.link:hover {
 }
 
 .option.is-picked .key {
-  background: var(--accent);
+  background: var(--accent-strong);
   color: #fff;
 }
 
@@ -829,7 +848,7 @@ button.link:hover {
   min-height: 34px;
   padding: 0;
   border: 1.5px solid var(--line);
-  border-radius: 6px;
+  border-radius: var(--r-s);
   background: var(--card);
   font-size: 0.8rem;
   font-variant-numeric: tabular-nums;
@@ -900,7 +919,7 @@ button.link:hover {
 .board-filter select {
   padding: 6px 8px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: var(--r-s);
   background: var(--card);
   max-width: 100%;
 }
@@ -1018,7 +1037,7 @@ button.link:hover {
   margin-top: 4px;
   padding: 10px 12px;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: var(--r-m);
   background: var(--bg);
 }
 
@@ -1051,7 +1070,7 @@ button.link:hover {
   width: 100%;
   padding: 8px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: var(--r-s);
   background: var(--card);
   color: var(--text);
   font: inherit;
@@ -1097,7 +1116,7 @@ button.link:hover {
   margin-left: 6px;
   padding: 0 6px;
   border-radius: 999px;
-  background: var(--char);
+  background: color-mix(in srgb, var(--char) 75%, #000); /* 角色色加深 25%，白字才夠清楚（對比 4.5:1 以上） */
   color: #fff;
   font-size: 0.7rem;
   font-weight: 700;
@@ -1122,7 +1141,7 @@ button.link:hover {
   flex: 1;
   max-width: 80px;
   height: 4px;
-  border-radius: 2px;
+  border-radius: var(--r-xs);
   background: var(--line);
   overflow: hidden;
 }
@@ -1141,7 +1160,7 @@ button.link:hover {
   gap: 8px;
   margin-bottom: 12px;
   padding: 10px 12px;
-  border-radius: 10px;
+  border-radius: var(--r-m);
   background: var(--warn-bg);
   color: var(--warn);
   font-weight: 700;
@@ -1163,9 +1182,14 @@ button.link:hover {
   max-height: calc(100vh - 32px);
   overflow: auto;
   padding: 16px;
-  border-radius: 14px;
+  border-radius: var(--r-l);
   background: var(--card);
   border-top: 4px solid var(--char);
+}
+
+/* 對話框打開時焦點移到對話框本體（dialog.ts），本體不用畫焦點框，裡面的按鈕照常有 */
+[role='dialog']:focus {
+  outline: none;
 }
 
 .modal h2 {
@@ -1300,7 +1324,7 @@ button.link:hover {
 }
 
 .story-figure .portrait.placeholder {
-  border-radius: 16px 16px 0 0;
+  border-radius: var(--r-l) var(--r-l) 0 0;
 }
 
 /* 選項：半透明圓角長條，疊在畫面中間 */
@@ -1329,7 +1353,7 @@ button.link:hover {
 
 .story-choices button:hover,
 .story-choices button:focus-visible {
-  background: var(--char);
+  background: color-mix(in srgb, var(--char) 75%, #000); /* 角色色加深 25%，白字才夠清楚（對比 4.5:1 以上） */
   color: #fff;
 }
 
@@ -1347,8 +1371,8 @@ button.link:hover {
   display: inline-block;
   margin: 0 0 -1px 14px;
   padding: 3px 18px;
-  border-radius: 10px 10px 0 0;
-  background: var(--char);
+  border-radius: var(--r-m) var(--r-m) 0 0;
+  background: color-mix(in srgb, var(--char) 75%, #000); /* 角色色加深 25%，白字才夠清楚（對比 4.5:1 以上） */
   color: #fff;
   font-weight: 700;
   letter-spacing: 1px;
@@ -1368,7 +1392,7 @@ button.link:hover {
   min-height: 7.2em;
   padding: 14px 26px 18px;
   border: 1.5px solid var(--char);
-  border-radius: 14px;
+  border-radius: var(--r-l);
   background: rgb(20 18 26 / 0.86);
   line-height: 1.7;
   box-shadow:
@@ -1447,8 +1471,8 @@ button.link:hover {
 }
 
 .story-controls button.on {
-  background: var(--char);
-  border-color: var(--char);
+  background: color-mix(in srgb, var(--char) 75%, #000); /* 角色色加深 25%，白字才夠清楚（對比 4.5:1 以上） */
+  border-color: color-mix(in srgb, var(--char) 75%, #000);
 }
 
 /* 紀錄：回看前面的台詞 */
@@ -1523,7 +1547,7 @@ button.link:hover {
 .campus {
   margin-bottom: 12px;
   padding: 14px;
-  border-radius: 18px;
+  border-radius: var(--r-l);
   background: linear-gradient(160deg, #2a2438, #15131c);
   color: #fff;
   box-shadow: 0 6px 24px rgb(0 0 0 / 0.25);
@@ -1568,7 +1592,7 @@ button.link:hover {
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border: 2px solid var(--char, #6d6880);
-  border-radius: 14px;
+  border-radius: var(--r-l);
   background: #2f2b3b;
 }
 
@@ -1722,7 +1746,7 @@ button.link:hover {
   .campus {
     margin: 0 -8px 10px;
     padding: 10px;
-    border-radius: 14px;
+    border-radius: var(--r-l);
   }
 
   .campus-grid {
@@ -1775,7 +1799,7 @@ button.link:hover {
   width: 100%;
   height: auto;
   border: 2px solid rgb(255 255 255 / 0.15);
-  border-radius: 14px;
+  border-radius: var(--r-l);
 }
 
 /* 標記：頭像加名字牌，底部中間對準地點的座標 */
@@ -1874,7 +1898,7 @@ button.link:hover {
   align-items: center;
   padding: 2px 10px;
   border-bottom: 2px solid var(--char, #fff);
-  border-radius: 8px;
+  border-radius: var(--r-s);
   background: rgb(20 18 26 / 0.85);
   line-height: 1.3;
   white-space: nowrap;
@@ -1906,7 +1930,7 @@ button.link:hover {
   gap: 2px 8px;
   padding: 6px 8px;
   border-left: 3px solid var(--char);
-  border-radius: 8px;
+  border-radius: var(--r-s);
   background: rgb(255 255 255 / 0.06);
 }
 
@@ -1984,7 +2008,7 @@ button.link:hover {
   max-height: calc(100vh - 32px);
   overflow: auto;
   padding: 16px;
-  border-radius: 18px;
+  border-radius: var(--r-l);
   background: linear-gradient(160deg, #2a2438, #15131c);
   color: #fff;
   box-shadow: 0 10px 40px rgb(0 0 0 / 0.5);
@@ -2086,7 +2110,7 @@ button.link:hover {
   gap: 8px;
   padding: 10px 12px;
   border-left: 4px solid var(--char, #fff);
-  border-radius: 8px;
+  border-radius: var(--r-s);
   background: rgb(255 255 255 / 0.08);
 }
 
@@ -2097,14 +2121,14 @@ button.link:hover {
 
 .status-advice .primary {
   align-self: flex-start;
-  background: var(--char, var(--accent));
-  border-color: var(--char, var(--accent));
+  background: color-mix(in srgb, var(--char, var(--accent)) 75%, #000);
+  border-color: color-mix(in srgb, var(--char, var(--accent)) 75%, #000);
 }
 
 .status-group {
   margin-top: 10px;
   padding: 8px 12px 4px;
-  border-radius: 12px;
+  border-radius: var(--r-m);
   background: rgb(255 255 255 / 0.05);
   border-left: 4px solid var(--char, rgb(255 255 255 / 0.3));
 }
@@ -2312,6 +2336,37 @@ button.link:hover {
   color: var(--muted);
 }
 
+.guide-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 4px 0 12px;
+}
+
+.guide-tabs button {
+  padding: 4px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.guide-tabs button.active {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: #fff;
+  font-weight: 600;
+}
+
+.guide section[role='tabpanel'] {
+  min-height: 220px;
+}
+
+.guide-steps li {
+  margin-bottom: 6px;
+}
+
 .guide-stages {
   list-style: none;
   padding-left: 0 !important;
@@ -2441,7 +2496,7 @@ button.link:hover {
 .level-conflict .explanation-level,
 .level-terms .explanation-level {
   padding: 6px 10px;
-  border-radius: 6px;
+  border-radius: var(--r-s);
   background: var(--warn-bg);
   color: var(--warn);
 }
@@ -2483,9 +2538,78 @@ button.link:hover {
   font-size: 1.1rem;
 }
 
+.player-choice h3 {
+  margin: 20px 0 6px;
+  font-size: 1rem;
+}
+
+.sound-options button {
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.player-start {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+}
+
 .guide-small {
   font-size: 0.85rem;
   color: var(--muted);
+}
+
+/* 畫面出錯時（ErrorBoundary.tsx） */
+.crash {
+  max-width: 560px;
+  margin: 48px auto;
+  padding: 0 16px;
+}
+
+.crash h1 {
+  font-size: 1.3rem;
+}
+
+.crash textarea {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  font-family: ui-monospace, monospace;
+  font-size: 0.75rem;
+}
+
+/* 備份與搬家：匯入用的 <label> 做成和按鈕一樣，真正的檔案選擇框藏起來 */
+.backup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.backup-import {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: var(--r-s);
+  cursor: pointer;
+}
+
+.backup-import:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.backup-import input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.backup p {
+  flex-basis: 100%;
+  margin: 0;
 }
 
 /* ---------- 學姊傳訊息 ---------- */
@@ -2514,7 +2638,7 @@ button.link:hover {
   flex-direction: column;
   width: min(760px, 100%);
   height: min(600px, calc(100vh - 32px));
-  border-radius: 14px;
+  border-radius: var(--r-l);
   background: var(--card);
   overflow: hidden;
 }
@@ -2644,7 +2768,7 @@ button.link:hover {
   max-width: 100%;
   margin: 0;
   padding: 8px 12px;
-  border-radius: 4px 14px 14px 14px;
+  border-radius: var(--r-xs) var(--r-l) var(--r-l) var(--r-l);
   background: color-mix(in srgb, var(--char) 16%, var(--card));
   white-space: pre-wrap;
 }
@@ -2658,7 +2782,7 @@ button.link:hover {
 
 .bubble-action {
   margin-top: 6px;
-  background: var(--char);
+  background: color-mix(in srgb, var(--char) 75%, #000); /* 角色色加深 25%，白字才夠清楚（對比 4.5:1 以上） */
 }
 
 /* 手機：列表和對話分開兩頁 */
@@ -2695,7 +2819,7 @@ button.link:hover {
   width: min(420px, calc(100% - 32px));
   border: 1px solid var(--line);
   border-left: 4px solid var(--char);
-  border-radius: 12px;
+  border-radius: var(--r-m);
   background: var(--card);
   box-shadow: 0 8px 24px rgb(0 0 0 / 0.25);
   transform: translateX(-50%);
@@ -2748,7 +2872,7 @@ button.link:hover {
   max-height: calc(100vh - 32px);
   overflow: auto;
   padding: 16px;
-  border-radius: 18px;
+  border-radius: var(--r-l);
   background: linear-gradient(160deg, #2a2438, #15131c);
   color: #fff;
   box-shadow: 0 10px 40px rgb(0 0 0 / 0.5);
@@ -2810,7 +2934,7 @@ button.link:hover {
   align-items: flex-start;
   gap: 12px;
   padding: 10px;
-  border-radius: 12px;
+  border-radius: var(--r-m);
   background: rgb(255 255 255 / 0.06);
   border-left: 4px solid var(--char);
 }
@@ -2819,7 +2943,7 @@ button.link:hover {
   flex: none;
   width: 96px;
   height: 132px;
-  border-radius: 10px;
+  border-radius: var(--r-m);
   background: #f4f0ea;
 }
 
@@ -2855,7 +2979,7 @@ button.link:hover {
 .shop-speech {
   margin: 2px 0 0;
   padding: 8px 12px;
-  border-radius: 12px;
+  border-radius: var(--r-m);
   background: rgb(255 255 255 / 0.92);
   color: #22201d;
   border-left: 4px solid var(--char);
@@ -2889,7 +3013,7 @@ button.link:hover {
   width: 100%;
   padding: 10px 6px 8px;
   border: 1px solid rgb(255 255 255 / 0.15);
-  border-radius: 12px;
+  border-radius: var(--r-m);
   background: rgb(255 255 255 / 0.06);
   color: #fff;
   cursor: pointer;
@@ -3095,7 +3219,7 @@ button.link:hover {
   width: min(260px, calc(100vw - 32px));
   padding: 12px;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: var(--r-m);
   background: var(--card);
   box-shadow: 0 8px 24px rgb(0 0 0 / 0.18);
 }
@@ -3300,7 +3424,7 @@ ul.login-note {
 .login-form input {
   padding: 8px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: var(--r-s);
   background: var(--card);
   color: var(--text);
   font: inherit;
@@ -3334,7 +3458,7 @@ ul.login-note {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: var(--r-m);
   background: var(--card);
   color: inherit;
   font: inherit;
@@ -3386,7 +3510,7 @@ ul.login-note {
   display: flex;
   gap: 8px;
   padding: 4px 6px;
-  border-radius: 8px;
+  border-radius: var(--r-s);
 }
 
 .bank-options .key {
@@ -3425,7 +3549,7 @@ ul.login-note {
 .bank-item mark {
   background: var(--warn-bg);
   color: inherit;
-  border-radius: 3px;
+  border-radius: var(--r-xs);
   box-shadow: 0 0 0 1px var(--warn-bg);
 }
 
@@ -3434,7 +3558,7 @@ ul.login-note {
   width: 100%;
   margin-top: 12px;
   min-height: 44px;
-  border-radius: 10px;
+  border-radius: var(--r-m);
   cursor: pointer;
 }
 
@@ -3442,4 +3566,225 @@ ul.login-note {
   margin: 24px 0;
   text-align: center;
   color: var(--muted);
+}
+
+/* ---------- 開發者面板（只在 npm run dev） ---------- */
+
+.dev-panel {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  z-index: 900;
+  font-size: 0.85rem;
+}
+
+.dev-toggle {
+  opacity: 0.6;
+}
+
+.dev-toggle:hover,
+.dev-toggle[aria-expanded='true'] {
+  opacity: 1;
+}
+
+.dev-body {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 8px);
+  width: min(440px, calc(100vw - 24px));
+  max-height: 70vh;
+  overflow: auto;
+  padding: 12px 14px;
+  background: var(--card, #fff);
+  border: 1px solid var(--line, #ccc);
+  border-radius: var(--r-m);
+  box-shadow: 0 6px 24px rgb(0 0 0 / 0.2);
+}
+
+.dev-body h3 {
+  margin: 0 0 4px;
+}
+
+.dev-body p {
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+
+.dev-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.dev-name {
+  width: 4em;
+  font-weight: bold;
+}
+
+/* ---------- 收藏、不確定、筆記（MarkControls.tsx）與圖書館（Library.tsx） ---------- */
+
+.review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* 題目右上角的星號：推到題號列的最右邊 */
+.mark-star {
+  margin-left: auto;
+  min-width: 36px;
+  min-height: 36px;
+  padding: 0 6px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.mark-star.on {
+  color: #a87400; /* 白底 4.07:1、深色底 3.9:1（圖示要 3:1） */
+}
+
+.mark-star:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.mark-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 6px 12px;
+  margin: 6px 0;
+}
+
+.mark-unsure.on {
+  border-color: var(--accent);
+  color: var(--accent-text);
+  font-weight: 600;
+}
+
+.mark-note {
+  flex: 1 1 240px;
+}
+
+.mark-note-text {
+  margin: 0 0 2px;
+  padding: 6px 10px;
+  border-left: 3px solid #a87400;
+  border-radius: var(--r-xs);
+  background: var(--warn-bg);
+  white-space: pre-wrap;
+  font-size: 0.9rem;
+}
+
+.mark-note textarea {
+  display: block;
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.modal.library {
+  border-top-color: var(--accent);
+}
+
+.library-lists {
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.library-lists li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.library-lists li > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.library-lists span {
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.library-lists small {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.library-lists button {
+  flex: none;
+}
+
+/* 「寫筆記」「編輯筆記」：看得出來可以點 */
+.mark-note button.link {
+  min-height: 32px;
+  color: var(--accent-text);
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- 能力值面板的次主題（StatusPanel.tsx） ---------- */
+
+.status-expand {
+  margin-left: 8px;
+  color: var(--accent-text);
+  font-size: 0.8rem;
+  text-decoration: underline;
+}
+
+.status-subs {
+  margin: 2px 0 8px;
+  padding: 0 0 0 12px;
+  list-style: none;
+  border-left: 2px solid var(--line);
+}
+
+.status-subs li {
+  display: grid;
+  grid-template-columns: minmax(6em, 9em) 1fr 3em 4.5em auto;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 0;
+  font-size: 0.85rem;
+}
+
+.status-sub-count {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.status-note {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 599px) {
+  .status-subs li {
+    grid-template-columns: 1fr 3em auto;
+  }
+
+  .status-subs .status-bar,
+  .status-subs .status-sub-count {
+    display: none;
+  }
 }

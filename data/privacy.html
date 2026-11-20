@@ -18,7 +18,7 @@
     font-family: system-ui, -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif; line-height: 1.75;
   }
   main { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
-  article { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 8px 24px 24px; margin-bottom: 20px; }
+  article { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 8px 24px 24px; margin-bottom: 20px; }
   h1 { font-size: 1.4rem; margin: 8px 0 4px; }
   h2 { font-size: 1.15rem; margin: 20px 0 4px; padding-top: 8px; border-top: 2px solid var(--accent); display: inline-block; }
   h3 { font-size: 1rem; margin: 18px 0 4px; }
@@ -55,7 +55,7 @@
     <ul>
       <li><strong>用 Google 登入</strong>：登入由 Google 與 Supabase（資料庫代管服務）處理。本站會收到 Google 提供的 Email、名稱與大頭貼網址，存在 Supabase 的帳號資料中，只用來辨識你的帳號，不會顯示給其他使用者。本站看不到你的信件，也拿不到你的 Google 密碼。</li>
       <li><strong>用帳號密碼登入</strong>：不需要 Email。本站只存你取的帳號名稱，和由 Supabase 用 bcrypt 雜湊（單向轉換，無法還原）過的密碼，任何人（包括網站維護者）都看不到原本的密碼。帳號名稱不會顯示給其他使用者。因為沒有 Email，忘記密碼無法重設。</li>
-      <li>登入後，作答紀錄、模擬考作答、送出的禮物和你的暱稱會存到資料庫，讓你在不同裝置之間同步。</li>
+      <li>登入後，作答紀錄、模擬考作答、送出的禮物、收藏與筆記（含「不確定」標記）和你的暱稱會存到資料庫，讓你在不同裝置之間同步。</li>
       <li>回報疑義會連到你的帳號，方便處理；匿名使用統計仍然不會連到你的帳號。</li>
       <li><strong>排行榜</strong>只顯示暱稱和成績統計（正確率、連續天數、模擬考分數），其他使用者看不到你的 Email、名稱、帳號名稱或每一題的作答。暱稱預設是「同學」加四個數字，請不要改成真名。</li>
     </ul>
@@ -79,7 +79,7 @@
     <h3>保存與刪除</h3>
     <ul>
       <li>資料在網站營運期間保存。網站停止營運時會刪除資料庫。</li>
-      <li>登入後點右上角的暱稱，再按「刪除帳號」，就能自己刪除帳號與雲端上所有的作答紀錄、模擬考、禮物和暱稱，這台裝置上這個帳號的紀錄也會一起清掉，無法復原。回報疑義會保留題目相關的內容，但不再連到你的帳號。</li>
+      <li>登入後點右上角的暱稱，再按「刪除帳號」，就能自己刪除帳號與雲端上所有的作答紀錄、模擬考、禮物、收藏與筆記和暱稱，這台裝置上這個帳號的紀錄也會一起清掉，無法復原。回報疑義會保留題目相關的內容，但不再連到你的帳號。</li>
       <li>不登入時的紀錄只在你的瀏覽器裡，清除網站資料即可刪除。</li>
     </ul>
 

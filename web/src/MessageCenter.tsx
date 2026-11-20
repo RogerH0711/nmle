@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import type { Character } from './characters'
 import { WornPortrait } from './CharacterStage'
 import type { Message } from './messages'
+import { useDialog } from './dialog'
 
 // 學姊傳的訊息：聊天室樣式（見 docs/design.md「遊戲介面方向」第 4 點）
 
@@ -40,19 +41,11 @@ export function MessageCenter({ messages, characters, initial, onRead, onAction,
     if (open) onRead(open)
   }, [open, messages.length]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key !== 'Escape') return
-      e.preventDefault()
-      onClose()
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [onClose])
+  const dialogRef = useDialog(onClose) // Esc、Tab、焦點（dialog.ts）
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
-      <div className={open ? 'messages has-thread' : 'messages'} role="dialog" aria-label="訊息" onClick={(e) => e.stopPropagation()}>
+      <div className={open ? 'messages has-thread' : 'messages'} role="dialog" aria-modal="true" ref={dialogRef} tabIndex={-1} aria-label="訊息" onClick={(e) => e.stopPropagation()}>
         <header className="messages-head">
           {open && (
             <button className="ghost small messages-back" onClick={() => setOpen(null)}>

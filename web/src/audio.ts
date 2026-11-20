@@ -213,8 +213,11 @@ async function applyBgm() {
 
 let voice: AudioBufferSourceNode | null = null
 let voicePlaying = false
+// 每次停止或要播新的一句就加一：音檔還在下載時換了句子，下載完的舊句子就不播
+let voiceRequest = 0
 
 export function stopVoice() {
+  voiceRequest++
   voice?.stop()
   voice = null
   if (!voicePlaying) return
@@ -222,26 +225,33 @@ export function stopVoice() {
   applyVolumes()
 }
 
-/** 播這句台詞的語音（有的話）。同時只有一句，新的會打斷舊的 */
-export async function playVoice(lineId: string | null, player: PlayerTitle) {
+/**
+ * 播這句台詞的語音（有的話）。同時只有一句，新的會打斷舊的。
+ * 播完（或被打斷）時 resolve true；沒有語音、聲音關著、下載途中被換掉時 resolve false。劇情的自動播放用來等語音念完
+ */
+export async function playVoice(lineId: string | null, player: PlayerTitle): Promise<boolean> {
   stopVoice()
-  if (!lineId || !running()) return
+  const request = voiceRequest
+  if (!lineId || !running()) return false
   const key = voiceKeys(lineId, player).find((k) => manifest.voice.includes(k))
-  if (!key) return
+  if (!key) return false
   const buffer = await loadBuffer(`voice/${key}.mp3`)
-  if (!buffer || !running()) return
-  stopVoice()
+  if (!buffer || !running() || request !== voiceRequest) return false
   const source = ctx!.createBufferSource()
   source.buffer = buffer
   source.connect(voiceGain)
-  source.onended = () => {
-    if (voice !== source) return
-    voice = null
-    voicePlaying = false
-    applyVolumes()
-  }
+  const ended = new Promise<boolean>((resolve) => {
+    source.onended = () => {
+      resolve(true)
+      if (voice !== source) return
+      voice = null
+      voicePlaying = false
+      applyVolumes()
+    }
+  })
   voice = source
   voicePlaying = true
   applyVolumes()
   source.start()
+  return ended
 }

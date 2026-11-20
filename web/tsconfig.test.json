@@ -1,0 +1,10 @@
+{
+  // 測試檔和 build 腳本的型別檢查（npm run typecheck）。主程式的 tsconfig.json 排除了測試檔，
+  // Node 跑測試時只會去掉型別、不檢查，所以另外檢查一次。
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": ["node", "vite/client"]
+  },
+  "include": ["src", "scripts", "e2e"],
+  "exclude": []
+}

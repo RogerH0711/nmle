@@ -4,6 +4,8 @@
 export const NAME_MAX = 30
 
 // 控制字元、零寬字元、方向控制字元（會讓文字反向顯示）、看起來是空白的填充字元
+// 這個正規表示式就是要找控制字元和組合字元，關掉 linter 的提醒
+// oxlint-disable-next-line no-control-regex, no-misleading-character-class
 const INVISIBLE = /[\u0001-\u001F\u007F-\u009F\u00AD\u034F\u061C\u115F\u1160\u17B4\u17B5\u180E\u200B-\u200F\u2028-\u202E\u2060-\u206F\u3164\uFEFF\uFFA0]/
 
 /** 暱稱不合格時回傳原因；傳入前先 trim() */

@@ -58,6 +58,10 @@ const RESIDUE: [string, RegExp][] = [
   ['頁碼', /\d+\s*[－—–]\s*\d+\s*$/],
   ['選項標記', /^\s*[(（][A-DＡ-Ｄ][)）]|[(（][AＡ][)）].*[(（][BＢ][)）]/],
   ['亂碼', /[\p{Cc}\p{Cf}\p{Co}\p{Cs}\p{Zl}\p{Zp}\uFFFD]/u],
+  // 字型把字錯對應到別的文字系統（11/20 抓到：113020_2 的 ①② 變成西里爾字母 ћќ、106100_2 的「令」變成曼達文），
+  // 以及康熙部首這類看起來一樣、但搜尋不到的字（pipeline 的 fix_cjk 應該已經轉掉）
+  ['錯對應的字', /[\u0400-\u052f\u0590-\u08ff\u0900-\u0eff\u2e80-\u2fdf\uf900-\ufaff]/u], // 西里爾、希伯來到曼達文、印度諸文到寮文、部首、相容表意字
+  ['中文字之間夾拉丁字母', /\p{Script=Han}[\u00c0-\u024f]\p{Script=Han}/u],
 ]
 
 function residue(text: string): string[] {
@@ -110,16 +114,18 @@ test('正解：格式合法，一題多解與送分題照官方', () => {
     assert.ok(answers.every((a) => LETTERS.includes(a)), `${q.id} 的正解不在 A–D：${answers}`)
     assert.deepEqual(answers, LETTERS.filter((l) => answers.includes(l)), `${q.id} 的正解要依序且不重複`)
     if (q.free_point) {
-      // 一律給分：四個都算對，並附上更正答案的說明（「一律給分」或「除未作答者不給分外，其餘均給分」）
+      // 一律給分：四個都算對，並附上更正答案的說明（「一律給分」「除未作答者不給分外，其餘均給分」或 105 年的「答Ａ、Ｂ、Ｃ、Ｄ給分」）
       assert.deepEqual(answers, LETTERS, `${q.id} 送分題的正解要是 A–D`)
-      assert.match(q.answer_note ?? '', /一律給分|均給分/, `${q.id} 送分題沒有說明`)
+      assert.match(q.answer_note ?? '', /一律給分|均給分|Ａ、Ｂ、Ｃ、Ｄ給分/, `${q.id} 送分題沒有說明`)
     } else if (answers.length > 1) {
       // 一題多解：2–3 個正解，並附上更正答案的說明（四個都對應該是送分題）
       assert.ok(answers.length <= 3, `${q.id} 四個都對卻不是送分題`)
       assert.match(q.answer_note ?? '', /給分/, `${q.id} 一題多解沒有說明`)
       for (const a of answers) assert.ok(q.answer_note!.includes(String.fromCharCode(a.charCodeAt(0) + 0xfee0)) || q.answer_note!.includes(a), `${q.id} 的說明沒提到 ${a}`)
-    } else {
-      assert.equal(q.answer_note, null, `${q.id} 單一正解卻有更正說明`)
+    } else if (q.answer_note !== null) {
+      // 更正成另一個答案（例：107100_2_032 原本 C，「第32題答Ｄ給分」）：說明要提到更正後的答案
+      const [a] = answers
+      assert.ok(q.answer_note.includes(String.fromCharCode(a.charCodeAt(0) + 0xfee0)) || q.answer_note.includes(a), `${q.id} 的更正說明沒提到 ${a}`)
     }
   }
 })
@@ -166,4 +172,29 @@ test('data/explanations/ 的題號都對得到可出題的題目，詳解寫的�
       assert.deepEqual([...new Set(head[1].match(/[A-D]/g))].sort(), q.answers, `${q.id} 詳解的答案和正解不同`)
     }
   }
+})
+
+test('data/subtopics.json：每份考卷長度對、次主題都在那一科的清單裡、可出題的題目都有分類', () => {
+  if (!existsSync(new URL('subtopics.json', data))) return // 還沒跑分類（pipeline/explain/classify.py）
+  const sub = readJson<{ subjects: Record<string, { id: string }[]>; papers: Record<string, string[]> }>('subtopics.json')
+  const taxonomy = readJson<{ subjects: Record<string, { id: string }[]> }>('pipeline/subtopics.json', root)
+  assert.deepEqual(
+    Object.fromEntries(Object.entries(sub.subjects).map(([s, l]) => [s, l.map((x) => x.id)])),
+    Object.fromEntries(Object.entries(taxonomy.subjects).map(([s, l]) => [s, l.map((x) => x.id)])),
+    'data/subtopics.json 的分類表和 pipeline/subtopics.json 不同，要重新匯出',
+  )
+  assert.deepEqual(Object.keys(sub.papers).sort(), index.papers.map((p) => p.id).sort())
+  const missing: string[] = []
+  for (const { paper, exam } of exams) {
+    const row = sub.papers[paper.id]
+    assert.equal(row.length, exam.questions.length, `${paper.id} 的次主題數和題數不同`)
+    exam.questions.forEach((q, i) => {
+      if (!row[i]) {
+        if (q.valid) missing.push(q.id)
+        return
+      }
+      assert.ok(q.subject && sub.subjects[q.subject]?.some((s) => s.id === row[i]), `${q.id} 的次主題 ${row[i]} 不在 ${q.subject} 的清單裡`)
+    })
+  }
+  assert.deepEqual(missing.slice(0, 5), [], `${missing.length} 題還沒分類`)
 })

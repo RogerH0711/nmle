@@ -690,11 +690,11 @@
       "number": 29,
       "subject": "parasitology",
       "subject_status": "range",
-      "stem": "下列何種寄生蟲感染人體後，其第三期幼蟲會在橫紋肌形成囊體，臨床上此時期亦為診斷期（diagnosticstage）？",
+      "stem": "下列何種寄生蟲感染人體後，其第三期幼蟲會在橫紋肌形成囊體，臨床上此時期亦為診斷期（diagnosticstage）？",
       "options": [
         "犬蛔蟲（Toxocara canis）",
         "廣東住血線蟲（Angiostrongylus cantonensis）",
-        "菲律賓毛線蟲（Capillaria philippinensis）",
+        "菲律賓毛線蟲（Capillaria philippinensis）",
         "旋毛蟲（Trichinella spiralis）"
       ],
       "answers": [
@@ -762,10 +762,10 @@
       "number": 32,
       "subject": "parasitology",
       "subject_status": "range",
-      "stem": "下列有關陰道滴蟲症（vaginal trichomoniasis）之敘述，何者最不適當？",
+      "stem": "下列有關陰道滴蟲症（vaginal trichomoniasis）之敘述，何者最不適當？",
       "options": [
         "主要經由性行為傳播",
-        "男性患者通常無明顯症狀，但有可能引起攝護腺炎",
+        "男性患者通常無明顯症狀，但有可能引起攝護腺炎",
         "metronidazole 為常用的有效治療藥物",
         "新生兒不會感染此症"
       ],
@@ -810,12 +810,12 @@
       "number": 34,
       "subject": "parasitology",
       "subject_status": "range",
-      "stem": "李先生到非洲旅遊時遭到某種蠅類叮咬，不久叮咬處發生下疳（chancre），後來併有發燒、後頸淋巴結腫大等症狀，晚期於腦脊髓液中檢出的寄生蟲數亦高，他最可能感染下列何種寄生蟲？",
+      "stem": "李先生到非洲旅遊時遭到某種蠅類叮咬，不久叮咬處發生下疳（chancre），後來併有發燒、後頸淋巴結腫大等症狀，晚期於腦脊髓液中檢出的寄生蟲數亦高，他最可能感染下列何種寄生蟲？",
       "options": [
         "杜氏利什曼原蟲（Leishmania donovani）",
         "枯西氏錐蟲（Trypanosoma cruzi）",
         "布氏岡比亞錐蟲（Trypanosoma brucei gambiense）",
-        "惡性瘧原蟲（Plasmodium falciparum）"
+        "惡性瘧原蟲（Plasmodium falciparum）"
       ],
       "answers": [
         "C"

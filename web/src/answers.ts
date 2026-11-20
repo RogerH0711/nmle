@@ -5,6 +5,7 @@ import {
   decodeAnswers, decodeLegacyAnswers, encodeAnswers, nextCursor, syncPlan, type StoredAnswer, type SyncCursor,
 } from './answerStorage'
 import type { Letter } from './types'
+import { mergeRecords } from './merge'
 
 // 作答紀錄：先寫進瀏覽器（離線也能刷），登入後再和 Supabase 雙向同步。
 // 每筆有前端產生的 id，重送不會重複；紀錄只增不改。
@@ -248,4 +249,15 @@ function schedulePush() {
 
 window.addEventListener('online', () => {
   if (state.owner !== ANON) void syncNow()
+})
+
+// 同一個網站開了好幾個分頁：別的分頁寫入作答時，把它的紀錄併進這個分頁，
+// 不然這個分頁下次存檔會蓋掉別的分頁剛寫的作答（merge.ts）。storage 事件只會送到「別的」分頁，不會自己觸發自己。
+// 這裡只更新記憶體，不寫回去：寫入的那個分頁已經存好了，之後這個分頁存檔時會一起帶上。
+window.addEventListener('storage', (e) => {
+  if (e.key !== storageKey(state.owner) || e.newValue === null) return
+  const merged = mergeRecords(state.records, decodeAnswers(e.newValue), (r) => r.answered_at)
+  if (!merged) return
+  state = { ...state, records: merged }
+  listeners.forEach((l) => l())
 })

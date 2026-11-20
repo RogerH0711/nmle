@@ -12,6 +12,7 @@ import {
 import { STREAK_MIN_DAILY } from './messages'
 import { sfx } from './audio'
 import { sceneId } from './stories'
+import { useDialog } from './dialog'
 
 interface Props {
   characters: Character[]
@@ -24,6 +25,8 @@ interface Props {
   balance: number
   earnings: Earnings
   player: string
+  /** 開發者面板的「免費商店」：不看書籤、不限一天一次、服裝不用解鎖（只在 npm run dev） */
+  free?: boolean
   /** 送出禮物：寫進送禮紀錄，回傳她的反應 */
   onGive: (c: Character, g: Gift) => { expression: string; text: string | null }
   /** 買服裝送她：寫進送禮紀錄並換上，回傳她的反應 */
@@ -61,15 +64,7 @@ export function GiftShop(props: Props) {
   const [given, setGiven] = useState<Given | null>(null) // 剛送出的東西和她的反應
   const outfitState = useOutfits()
 
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key !== 'Escape') return
-      e.preventDefault()
-      props.onClose()
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [props.onClose])
+  const dialogRef = useDialog(props.onClose) // Esc、Tab、焦點（dialog.ts）
 
   // 送禮後升階：放升階音效
   const leveled = !!given && (affections.get(given.character)?.stage ?? 0) > given.stageBefore
@@ -83,7 +78,7 @@ export function GiftShop(props: Props) {
 
   const giftRecords = gifts.filter((g) => isGiftRecord(catalog, g)) // 買服裝不算一天一次、不列在「送過的禮物」
   const mine = giftRecords.filter((g) => g.character_id === c.id)
-  const today = givenToday(giftRecords, c.id)
+  const today = !props.free && givenToday(giftRecords, c.id)
   const giftOf = (id: string) => catalog.gifts.find((g) => g.id === id)
   const known = (g: Gift) => isLiked(catalog, c.id, g.id) && mine.some((x) => x.gift_id === g.id) // 送過才知道她喜歡
   const shown = given?.character === c.id ? given : null
@@ -93,7 +88,10 @@ export function GiftShop(props: Props) {
   const wearing = worn(c.id, outfitState)?.id ?? null
   const outfitList = outfitsOf(props.outfits, c.id)
   const seenScene = (characterId: string, stage: number) => props.seen.has(sceneId(characterId, stage))
-  const statusOf = (o: Outfit) => outfitStatus(o, { stage: a.stage, bought, seenScene })
+  const statusOf = (o: Outfit): OutfitStatus => {
+    const s = outfitStatus(o, { stage: a.stage, bought, seenScene })
+    return props.free && (s.kind === 'stage' || s.kind === 'story') ? { kind: 'buy', price: 0 } : s
+  }
   const isWearing = (o: Outfit) => (o.folder === null ? wearing === null : wearing === o.id)
 
   const choose = (id: string) => {
@@ -128,7 +126,7 @@ export function GiftShop(props: Props) {
 
   return (
     <div className="modal-backdrop" onClick={props.onClose}>
-      <div className="shop" role="dialog" aria-label="商店" onClick={(e) => e.stopPropagation()}>
+      <div className="shop" role="dialog" aria-modal="true" ref={dialogRef} tabIndex={-1} aria-label="商店" onClick={(e) => e.stopPropagation()}>
         <header className="status-head">
           <div>
             <h2>
@@ -213,7 +211,7 @@ export function GiftShop(props: Props) {
             {[...catalog.gifts]
               .sort((x, y) => x.price - y.price)
               .map((g) => {
-                const short = shownBalance < g.price
+                const short = !props.free && shownBalance < g.price
                 return (
                   <li key={g.id}>
                     <button
@@ -238,7 +236,7 @@ export function GiftShop(props: Props) {
             {outfitList.map((o) => {
               const s = statusOf(o)
               const on = s.kind === 'owned' && isWearing(o)
-              const short = s.kind === 'buy' && shownBalance < s.price
+              const short = !props.free && s.kind === 'buy' && shownBalance < s.price
               return (
                 <li key={o.id}>
                   <button

@@ -43,7 +43,7 @@
       "number": 2,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列何者為治療花柳性淋巴肉芽腫（lymphogranuloma venereum）的首選藥物？",
+      "stem": "下列何者為治療花柳性淋巴肉芽腫（lymphogranuloma venereum）的首選藥物？",
       "options": [
         "metronidazole",
         "penicillin",
@@ -262,7 +262,7 @@
       "number": 11,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "下列那幾種病毒可經由動物暨節肢動物而傳播？①漢他病毒（hantavirus） ②日本腦炎病毒（Japaneseencephalitis virus） ③黃熱病病毒（yellow fever virus） ④狂犬病病毒（rabies virus）",
+      "stem": "下列那幾種病毒可經由動物暨節肢動物而傳播？①漢他病毒（hantavirus） ②日本腦炎病毒（Japanese encephalitis virus） ③黃熱病病毒（yellow fever virus） ④狂犬病病毒（rabies virus）",
       "options": [
         "①②",
         "②③",
@@ -478,7 +478,7 @@
       "number": 20,
       "subject": "microbiology",
       "subject_status": "range",
-      "stem": "T 細胞的抗原受體（T cel receptor, TCR）在發育過程中會產生多樣性，下列何種機制和 TCR 多樣性有關？①V region 由數個基因片段（gene segments）組成 ②V(D)J DNA 重組 ③RAG1 和 RAG2 基因表現 ④AIRE 基因表現 ⑤terminal deoxynucleotidyl transferase （TdT） 基因表現 ⑥類型轉換重組（class switch recombination） ⑦N-nucleotide addition",
+      "stem": "T 細胞的抗原受體（T cell receptor, TCR）在發育過程中會產生多樣性，下列何種機制和 TCR 多樣性有關？①V region 由數個基因片段（gene segments）組成 ②V(D)J DNA 重組 ③RAG1 和 RAG2 基因表現 ④AIRE 基因表現 ⑤terminal deoxynucleotidyl transferase （TdT） 基因表現 ⑥類型轉換重組（class switch recombination） ⑦N-nucleotide addition",
       "options": [
         "①②③⑤⑦",
         "①③⑤⑥⑦",
@@ -696,7 +696,7 @@
       "subject_status": "range",
       "stem": "下列何種寄生蟲重度感染幼童時，最有可能造成異位性移行（ectopic migration）寄生？",
       "options": [
-        "菲律賓毛線蟲（Capillaria philippinensis）",
+        "菲律賓毛線蟲（Capillaria philippinensis）",
         "蟯蟲（Enterobius vermicularis）",
         "蛔蟲（Ascaris lumbricoides）",
         "鞭蟲（Trichuris trichiura）"
@@ -1489,7 +1489,7 @@
       "number": 62,
       "subject": "pharmacology",
       "subject_status": "range",
-      "stem": "下列抗心律不整藥物中，何者不具有抑制交感神經的作用？",
+      "stem": "下列抗心律不整藥物中，何者不具有抑制交感神經的作用？",
       "options": [
         "amiodarone",
         "esmolol",
@@ -2358,7 +2358,7 @@
       "number": 98,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "16 歲女生最近在右小腿靠近膝關節處有腫脹及疼痛感。電腦斷層掃描發現在右脛骨（tibia）上端有一疑似腫瘤病灶，其具有膨脹性溶解病變（expansile lytic lesion）且外覆一層薄的骨密質（thin shel of reactive bone）。病理切片檢查顯示其組成包括含有血之囊腫（blood-filled cystic space）混雜著纖維組織、fibroblast、woven bone 和類似蝕骨細胞之巨細胞（osteoclast-like giant cell）。根據上述，該病人最可能罹患的疾病是：",
+      "stem": "16 歲女生最近在右小腿靠近膝關節處有腫脹及疼痛感。電腦斷層掃描發現在右脛骨（tibia）上端有一疑似腫瘤病灶，其具有膨脹性溶解病變（expansile lytic lesion）且外覆一層薄的骨密質（thin shell of reactive bone）。病理切片檢查顯示其組成包括含有血之囊腫（blood-filled cystic space）混雜著纖維組織、fibroblast、woven bone 和類似蝕骨細胞之巨細胞（osteoclast-like giant cell）。根據上述，該病人最可能罹患的疾病是：",
       "options": [
         "海綿狀血管瘤（cavernous hemangioma）",
         "骨母細胞瘤（osteoblastoma）",

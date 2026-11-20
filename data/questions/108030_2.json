@@ -1,0 +1,2422 @@
+{
+  "exam": {
+    "id": "108030_2",
+    "exam_code": "108030",
+    "year": 108,
+    "session": 1,
+    "paper": "醫學(二)",
+    "paper_code": "2301",
+    "sources": {
+      "Q": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108030&c=301&s=22&q=1",
+      "S": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=108030&c=301&s=22&q=1",
+      "M": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=M&code=108030&c=301&s=22&q=1"
+    }
+  },
+  "problems": [],
+  "questions": [
+    {
+      "id": "108030_2_001",
+      "number": 1,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "肺炎鏈球菌（Streptococcus pneumoniae）對青黴素（penicillin）產生抗性之原因，主要為下列何者？",
+      "options": [
+        "產生青黴素分解酶（penicillinase）",
+        "青黴素結合蛋白質（penicillin-binding protein）改變",
+        "阻擋青黴素進入菌體",
+        "細胞壁結構改變"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_002",
+      "number": 2,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "對受到禽型分枝桿菌群（Mycobacterium avium Complex, MAC）感染的病患，建議使用下列那一種藥物合併乙胺丁醇（ethambutol）及利福布丁（rifabutin）進行治療？",
+      "options": [
+        "阿奇黴素（azithromycin）",
+        "硝基甲嘧唑乙醇（metronidazole）",
+        "克拉維酸（clavulanic acid）",
+        "棘白菌素（echinocandin）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_003",
+      "number": 3,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "有關細菌抗藥性之敘述，下列何者錯誤？",
+      "options": [
+        "廣泛抗藥性結核桿菌（XDR-TB）比多重抗藥性結核桿菌（MDR-TB）抗更多種藥物",
+        "厭氧菌通常對胺基糖苷類（aminoglycosides）藥物具感受性",
+        "具新德里金屬β-內酰胺酶（NDM）之細菌，對大多β-內酰胺（β-lactams）有抗藥性",
+        "細菌青黴素結合蛋白質（penicillin-binding protein）之改變會導致對青黴素（penicillin）產生抗性"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_004",
+      "number": 4,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "關於細菌致病島（pathogenicity island）之敘述，下列何者錯誤？",
+      "options": [
+        "可位於細菌的染色體（chromosome）或質體（plasmid）中",
+        "不存在於轉位子（transposon）之中",
+        "可被單一因子活化，例如：溫度或pH值的改變",
+        "由多數基因所組成，可製造多種致病因子（virulence factors）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_005",
+      "number": 5,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "關於單核細胞增多性李斯特菌（Listeria monocytogenes）的敘述，下列何者錯誤？",
+      "options": [
+        "是具運動性（motile）的革蘭氏陽性菌",
+        "可在細胞質內複製，且利用肌動蛋白（actin）移動至鄰近細胞",
+        "主要感染方式為吃進受此菌汙染的食物",
+        "此菌能形成內芽胞（endospores）在低溫存活"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_006",
+      "number": 6,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "對於細菌莢膜（capsule）之敘述，下列何者正確？",
+      "options": [
+        "主要成分為胜肽聚醣（peptidoglycan）",
+        "所有細菌皆有多醣類莢膜",
+        "導致革蘭氏染色（Gram stain）反應的主要原因",
+        "能幫助細菌抵抗吞噬作用（phagocytosis）"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_007",
+      "number": 7,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "對於肉毒桿菌（Clostridium botulinum）的敘述，下列何者錯誤？",
+      "options": [
+        "肉毒素（Botulinum toxin）主要使細胞內的Rho-GTPase失去活性",
+        "食入受此菌汙染的罐頭食品會造成肉毒症",
+        "嬰兒食入受到此菌芽胞污染的食物會造成肉毒症",
+        "肉毒素可做為生化武器，造成吸入性肉毒症（inhalation botulism）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_008",
+      "number": 8,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "關於韋爾病（Weil disease）的敘述，下列何者錯誤？",
+      "options": [
+        "其致病菌屬螺旋體（spirochete）",
+        "包括黃疸、腎衰竭、廣泛血管炎、心肌炎等臨床症狀",
+        "多數感染與從事水中活動或接觸動物有關",
+        "常由患者糞便中分離到致病菌"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_009",
+      "number": 9,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "有關細菌23S rRNA甲基化（methylation）會導致對下列那種藥物產生抗性？",
+      "options": [
+        "慶大黴素（Gentamicin）",
+        "磺胺甲基異唑（Sulfamethoxazole）",
+        "四環黴素（Tetracycline）",
+        "克林黴素（Clindamycin）"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_010",
+      "number": 10,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "下列那一種病毒有兩條單股RNA基因體，其中一條為雙義（ambisense）RNA？",
+      "options": [
+        "拉薩病毒（Lassa virus）",
+        "登革病毒（Dengue virus）",
+        "中東呼吸症候群冠狀病毒（MERS-CoV）",
+        "克里米亞-剛果出血熱病毒（Crimean-Congo hemorrhagic fever virus）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_011",
+      "number": 11,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "關於EB 病毒的敘述，下列何者正確？",
+      "options": [
+        "受EB病毒感染的成人，通常會出現帶狀疱疹",
+        "在愛滋病人體內，EB病毒主要感染T細胞，造成T細胞的過度增生",
+        "在鼻咽癌病人血液中，會偵測到抗EB病毒蛋白質的抗體力價上升",
+        "EB病毒感染B細胞之後，會進入潛伏狀態，完全不表現任何病毒RNA或蛋白質，以躲避免疫系統攻擊"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_012",
+      "number": 12,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "有關傳染性蛋白質（Prion）的敘述，下列何者正確？",
+      "options": [
+        "具有抗原性",
+        "可被福馬林及紫外線去除活性",
+        "無法有效刺激宿主產生干擾素（interferon）",
+        "會造成肺泡細胞堅實化病變"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_013",
+      "number": 13,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "下列何種流感病毒蛋白質是屬於質子通道（proton channel），與病毒釋放到細胞質有關？",
+      "options": [
+        "基質蛋白質（matrix protein, M1）",
+        "膜蛋白質（membrane protein, M2）",
+        "核殼體蛋白質（nucleocapsid protein, NP）",
+        "RNA聚合酶（polymerase, PA）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_014",
+      "number": 14,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "對於痘科病毒（Poxvirus）的敘述，下列何者正確？",
+      "options": [
+        "天花的撲滅，是因為全面接種猴痘科（monkeypox）病毒的死毒疫苗",
+        "天花的撲滅，是因為全面接種天花病毒（variola virus）的減毒疫苗",
+        "猴痘科病毒對動物的感染目前仍然流傳於非洲，但不會感染人類",
+        "痘科病毒感染細胞後的複製過程在細胞質內進行，不需要宿主的DNA複製系統協助"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_015",
+      "number": 15,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "關於嬰兒玫瑰疹（roseola）的敘述，下列何者錯誤？",
+      "options": [
+        "可由人類疱疹第六型病毒（human herpesvirus 6）感染所造成",
+        "被感染的成人有可能產生單核球增多症（mononucleosis）",
+        "被感染的幼兒通常不會發燒",
+        "病人體內的病毒會在Ｔ細胞內造成潛伏性感染（latent infection）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_016",
+      "number": 16,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "有關馬爾尼菲青黴菌（Talaromyces marneffer; formerly Penicillium memeffei）之敘述，下列何者正確？",
+      "options": [
+        "37℃呈絲狀菌（hyphae）形態",
+        "具關節孢子（arthroconidia）",
+        "不會呈現類酵母菌（yeast-like）型態",
+        "主要感染途徑為呼吸道（respiratory tract）"
+      ],
+      "answers": [
+        "B",
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": "第16題答Ｂ、Ｄ給分",
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_017",
+      "number": 17,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "培養莢膜組織胞漿菌（Histoplasma capsulatum）時，為防止其他汙染真菌之干擾，通常於培養基中加入下列何者？",
+      "options": [
+        "環絲胺酸（Cycloserine）",
+        "放線菌酮（Cycloheximide）",
+        "氯法齊明（Clofazimine）",
+        "奎奴普丁（Quinupristin）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_018",
+      "number": 18,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "巨噬細胞（macrophage）和嗜中性球（neutrophil）是體內最主要的吞噬細胞，它們都具有吞噬（phagocytosis）並殺死病原的能力，有關這兩群細胞的敘述何者錯誤？",
+      "options": [
+        "當嗜中性球被細菌活化後，會進行一種特殊的細胞死亡的過程，把核內的染色質（chromatin）釋放到細胞外的空間形成neutrophil extracellular traps（NETs），有效的抓住微生物",
+        "這兩群細胞在受到細菌刺激後都會進行所謂的呼吸爆發（respiratory burst）的現象，這是因為胞內酵素的作用，導致超氧離子（superoxide）的生成與二氧化碳大量釋出，藉以殺死細菌",
+        "巨噬細胞在各個器官及組織都存在，比如在肝臟的庫氏細胞（Kupffer cell）及神經組織中的小神經膠質細胞（microglia）等都是特化的巨噬細胞",
+        "如果NADPH氧化酶（oxidase）的基因發生突變而失去功能，會導致這兩群主要的吞噬細胞不能有效地殺死病原，結果造成慢性肉芽腫病（chronic granulomatous disease, CGD）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_019",
+      "number": 19,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "大部分人體內成熟T細胞上之TCR為α-chain及β-chain所組成，故稱為αβ T cells。當比對TCR α-chain及β-chain的DNA序列時，發現β-chain比α-chain多出了下列何種基因片段？",
+      "options": [
+        "V",
+        "D",
+        "J",
+        "C"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_020",
+      "number": 20,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "成熟的淋巴球在發育過程中會利用各種機制來達成自我耐受性（self-tolerance），下列何者和達成自我耐受性有直接的相關性？①AIRE基因②CTLA-4基因③Fas基因④正向選擇（positive selection）⑤負向選擇（negative selection）⑥regulatory T細胞形成",
+      "options": [
+        "①②③④⑥",
+        "①②③⑤⑥",
+        "僅②③⑤⑥",
+        "僅①②③⑤"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_021",
+      "number": 21,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "下列何種細胞素，並非毒殺性CD8 T細胞（cytotoxic CD8 T cells）所分泌來執行細胞毒殺功能？",
+      "options": [
+        "TNF-α",
+        "TGF-β",
+        "LT-α",
+        "IFN-γ"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_022",
+      "number": 22,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "胸腺依賴性（thymus-dependent）抗原活化B細胞需要輔助型T細胞的參與，而且這兩種細胞所辨識的抗原是存在一種相關性辨識（linked recognition）的關係，有關相關性辨識的敘述，何者錯誤？",
+      "options": [
+        "如果一個B細胞的抗原接受器是辨識一種病毒的表面蛋白，而輔助型T細胞的抗原接受器是辨識此病毒內部的核心蛋白，這個輔助型T細胞是無法協助前述B細胞的活化",
+        "相關性辨識可以確保自我耐受性（self-tolerance）的產生，因為對自體有反應的（self-reactive）T細胞必須碰到對自體有反應的B細胞才能引起自體抗體（autoantibody）的產生，而這種機率相當低",
+        "我們可以利用相關性辨識的概念來設計疫苗幫助嬰兒產生有效的抗體，去對付具有莢膜構造的病菌，比如流感嗜血桿菌（Haemophilus influenzae）",
+        "很多人對盤尼西林（penicillin）過敏的原因是因為盤尼西林注射到體內會和自體的蛋白形成聚合物，此聚合物會誘發T_H2細胞的生成，再藉著相關性辨識去活化B細胞產生IgE引起過敏反應"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_023",
+      "number": 23,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "在黏膜產生的分泌型IgA（secretary IgA）大部分為：",
+      "options": [
+        "單體（monomer）",
+        "二聚體（dimer）",
+        "三聚體（trimer）",
+        "五聚體（pentamer）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_024",
+      "number": 24,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "高免疫球蛋白M症候群（hyper-IgM syndrome）是一種罕見的先天性免疫不全疾病，患者血清中除了IgM之外其他類型，例如IgG和IgA數值明顯低於平均值，造成病患容易感染。B細胞中特定基因的缺陷會造成B細胞無法產生類型轉換（class switching），但是T細胞的基因突變也可以導致相同的疾病。以下那個蛋白質缺陷會造成T細胞無法幫助B細胞類型轉換？",
+      "options": [
+        "AID（activation-induced cytidine deaminase）",
+        "CD40",
+        "CD40 ligand",
+        "NEMO（NF-κB essential modulator，或稱IKK γ）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_025",
+      "number": 25,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "針對可以引起氣喘等第一型過敏性疾病之過敏原，下列那一項敘述最正確？",
+      "options": [
+        "與一般抗原相同，都需經抗原呈獻細胞作用來活化T細胞",
+        "同卵雙胞胎對特定過敏原都會有相同的反應",
+        "都具有蛋白水解酶（protease）的功能",
+        "病人體內都可以檢測出對過敏原具特異性的IgE"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_026",
+      "number": 26,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "下列自體免疫疾病中，何者侵犯不止一處組織，屬於系統性疾病？",
+      "options": [
+        "自體溶血性貧血（autoimmune hemolytic anemia）",
+        "自體免疫愛迪森疾患（autoimmune Addison's disease）",
+        "Hashimoto's thyroiditis",
+        "類風濕性關節炎（rheumatoid arthritis）"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_027",
+      "number": 27,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "下列用來治療癌症的抗體，何者屬於checkpoint blockade療法？",
+      "options": [
+        "Avastin（anti-VEGF antibody）",
+        "Pembrolizumab（anti-PD-1 antibody）",
+        "Rituximab（anti-CD20 antibody）",
+        "Trastuzumab（anti-HER2/neu antibody）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_028",
+      "number": 28,
+      "subject": "microbiology",
+      "subject_status": "range",
+      "stem": "藉由抑制破骨細胞（osteoclast cell）的活化，可以改善骨質流失的藥物為何？",
+      "options": [
+        "Infliximab（anti-TNF-α）",
+        "Denosumab（anti-RANK-L）",
+        "Daclizumab（anti-IL-2R）",
+        "Belimumab（anti-BLyS）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_029",
+      "number": 29,
+      "subject": "parasitology",
+      "subject_status": "range",
+      "stem": "下列有關人體感染海獸胃線蟲（Anisakis spp.）的敘述，何者錯誤？",
+      "options": [
+        "必須經過在2種中間宿主中發育後，才具有感染人之能力",
+        "必須檢查糞便內蟲卵才能確認感染",
+        "通常吃海水魚生魚片而感染",
+        "感染後常引起急性腹痛"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_030",
+      "number": 30,
+      "subject": "parasitology",
+      "subject_status": "range",
+      "stem": "有關班氏絲蟲（Wuchereria bancrofti）的感染，下列敘述何者錯誤？",
+      "options": [
+        "病媒蚊吸血時直接將微絲蟲（microfilaria）注入人體",
+        "蟲體在淋巴管發育為成蟲",
+        "只有在夜間微絲蟲（microfilaria）才會大量出現在末梢血液",
+        "在乳糜尿（chyluria）中也可能發現微絲蟲（microfilaria）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_031",
+      "number": 31,
+      "subject": "parasitology",
+      "subject_status": "range",
+      "stem": "于先生因嗜愛美食而食用浸酒毛蟹（醉蟹）多年，日前因不明原因發燒、咳嗽、胸痛及大量帶血絲濃痰（blood-tinged sputum）而就醫，經醫院檢查發現痰液內有許多深褐色蟲卵及卡格里登結晶（Charcot-Leyden crystals)，胸部X光顯示有斑狀浸潤及結節狀囊體陰影，並有胸膜積水（pleural effusion）及嗜酸性白血球增多（eosinophilia）現象。依據以上敘述，于先生最可能感染何種寄生蟲？",
+      "options": [
+        "異形吸蟲（Heterophyes heterophyes）",
+        "日本血吸蟲（Schistosoma japonicum）",
+        "薑片蟲（Fasciolopsis buski）",
+        "衛氏肺吸蟲（Paragonimus westermani）"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_032",
+      "number": 32,
+      "subject": "parasitology",
+      "subject_status": "range",
+      "stem": "下列有關人罹患豬囊尾幼蟲症（cysticercosis cellulosae）的敘述，何者錯誤？",
+      "options": [
+        "食入未熟帶蟲之豬肉，其囊蟲侵犯內臟器官致病",
+        "也會在肌肉致病",
+        "病患可能發生癲癇（epilepsy）",
+        "血清抗體檢查有助於診斷"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_033",
+      "number": 33,
+      "subject": "parasitology",
+      "subject_status": "range",
+      "stem": "下列有關寄生蟲之敘述中，何者錯誤？",
+      "options": [
+        "瘧疾發作（paroxysm）之過程依序為：惡寒（chill）、發燒（fever）、發汗（sweat）",
+        "三日瘧原蟲（Plasmodium malariae）較喜侵入成熟的紅血球中分裂增殖",
+        "卵形瘧原蟲（Plasmodium ovale）之鑑定，常視患者血液抹片是否有帶狀型滋養體（band form trophozoites）",
+        "在瘧疾流行地區，六個月以下的嬰兒常因為得自母體抗體的保護作用，甚少罹患瘧疾"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_034",
+      "number": 34,
+      "subject": "parasitology",
+      "subject_status": "range",
+      "stem": "下列有關阿米巴之敘述中，何者正確？",
+      "options": [
+        "嗜碘阿米巴（Iodamoeba bütschlii）的滋養體（trophozoites）具有一個很大的肝醣泡（glycogenvacuole）",
+        "哈氏阿米巴（Entamoeba hartmanni）的滋養體（trophozoites）也會吞噬紅血球",
+        "痢疾阿米巴（Entamoeba histolytica）感染之高危險群包括男同性戀者及啟智、精神教養院生",
+        "痢疾阿米巴（Entamoeba histolytica）的囊體中的類染色體（chromatoid bodies）之成分是DNA"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_035",
+      "number": 35,
+      "subject": "parasitology",
+      "subject_status": "range",
+      "stem": "有關蠅蛆症（myiasis）之敘述，下列何者錯誤？",
+      "options": [
+        "人膚蠅（Dermatobia hominis）產卵於吸血性蚊/蠅之腹部而致孵化之幼蟲鑽入宿主皮膚傷口",
+        "院內蠅蛆症（nosocomial myiasis）常發生於長期臥床且有開放性傷口病患",
+        "耳部蠅蛆症（aural myiasis）病患常有蟲體爬動感、雜音及惡臭分泌物",
+        "人膚蠅（Dermatobia hominis）傳播之蠅蛆症經常發生於亞洲地區"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_036",
+      "number": 36,
+      "subject": "public_health",
+      "subject_status": "range",
+      "stem": "關於測量尺度（measurement scale）的敘述，下列何者正確？",
+      "options": [
+        "血型為序位尺度（ordinal scale）",
+        "膽固醇值（mg／100 ml）為等比尺度（ratio scale）",
+        "體溫（攝氏度C）為等比尺度（ratio scale）",
+        "癌症分期為等距尺度（interval scale）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_037",
+      "number": 37,
+      "subject": "public_health",
+      "subject_status": "range",
+      "stem": "下面的傳染病中，何者是臺灣傳染病通報分級中的第一類（必須立即通報）？",
+      "options": [
+        "狂犬病",
+        "日本腦炎",
+        "瘧疾",
+        "梅毒"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_038",
+      "number": 38,
+      "subject": "public_health",
+      "subject_status": "range",
+      "stem": "一研究想比較抽菸者與非抽菸者的血膽固醇濃度，下列敘述何者錯誤？",
+      "options": [
+        "檢定時犯下型一錯誤（type I error）的機率，即為研究者設定的顯著水準",
+        "若顯著水準不變，欲增加統計檢定力，可以增加樣本數",
+        "型一錯誤是抽菸者與非抽菸者的血膽固醇濃度沒差異，但檢定時卻誤判有差異的情形",
+        "型一錯誤加型二錯誤的機率和為1"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_039",
+      "number": 39,
+      "subject": "public_health",
+      "subject_status": "range",
+      "stem": "疾病篩檢以平行檢定（Simultaneous Testing）為之，對篩檢效度有何影響？",
+      "options": [
+        "淨敏感度（Net sensitivity）增加",
+        "淨特異度（Net specificity）增加",
+        "淨特異度（Net specificity）減少",
+        "偽陽性率（False positive rate）增加"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_040",
+      "number": 40,
+      "subject": "public_health",
+      "subject_status": "range",
+      "stem": "某研究想探討吸菸與肺功能值的關係，將受試者依吸菸狀況分為五組：①本人不吸菸工作環境也無人吸菸②本人不吸菸但工作環境很多人吸菸③本人吸菸程度輕微④本人吸菸程度中等⑤本人吸菸程度嚴重。每組找100人，測量每個人的某肺功能指標。假如我們要檢定這五種吸菸狀況下的肺功能平均值是否不同，下列那一種統計分析方法最適當？",
+      "options": [
+        "獨立t檢定",
+        "配對t檢定",
+        "皮爾森氏卡方檢定",
+        "單因子變異數分析"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_041",
+      "number": 41,
+      "subject": "public_health",
+      "subject_status": "range",
+      "stem": "研究臺灣各鄉鎮市區空氣污染與癌症發生之關係，空氣污染資料來自環保署，而癌症發生資料來自衛生福利部，這些資料除了性別與年齡外無個人生活相關資料，則該研究屬何種？",
+      "options": [
+        "個案報告（case report）",
+        "生態學研究（ecological study）",
+        "病例對照研究（case-control study）",
+        "世代研究（cohort study）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_042",
+      "number": 42,
+      "subject": "public_health",
+      "subject_status": "range",
+      "stem": "那些空氣污染物會造成酸雨效應？①一氧化碳②臭氧③硫氧化物④氮氧化物",
+      "options": [
+        "僅①②",
+        "①②③",
+        "僅③④",
+        "②③④"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_043",
+      "number": 43,
+      "subject": "public_health",
+      "subject_status": "range",
+      "stem": "下列那一選項，最適用於描述非致癌物之風險評估？",
+      "options": [
+        "劑量反應假設具有閾值存在",
+        "使用斜率因子進行風險計算",
+        "量化結果一般與10⁻⁶比較，以判定風險是否可接受",
+        "不適合進行不確定性分析"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_044",
+      "number": 44,
+      "subject": "public_health",
+      "subject_status": "range",
+      "stem": "傳染登革熱的病媒蚊是下列何者？",
+      "options": [
+        "熱帶家蚊、白腹叢蚊",
+        "埃及斑蚊、白線斑蚊",
+        "白腹叢蚊、小黑蚊",
+        "中華瘧蚊、熱帶家蚊"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_045",
+      "number": 45,
+      "subject": "public_health",
+      "subject_status": "range",
+      "stem": "某勞工每日工作八小時，假設每一個小時之前10分鐘暴露於60 ppm之甲苯，後50分鐘則未暴露，其八小時時量平均暴露濃度為何？",
+      "options": [
+        "10 ppm",
+        "15 ppm",
+        "20 ppm",
+        "60 ppm"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_046",
+      "number": 46,
+      "subject": "public_health",
+      "subject_status": "range",
+      "stem": "工人長期暴露在有機溶劑環境中，會產生許多危害，長期暴露於苯，最可能會發生那種癌症？",
+      "options": [
+        "血癌",
+        "肝癌",
+        "腎癌",
+        "皮膚癌"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_047",
+      "number": 47,
+      "subject": "public_health",
+      "subject_status": "range",
+      "stem": "根據衛生福利部定義我國成人肥胖的BMI（Body Mass Index）切點為何？",
+      "options": [
+        "25",
+        "27",
+        "29",
+        "31"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_048",
+      "number": 48,
+      "subject": "public_health",
+      "subject_status": "range",
+      "stem": "下列那個模式最適合用來解釋「在有可能罹患癌症的高危險群中，為何有些人會去使用癌症篩檢的服務，而有些人卻不會去使用」之行為？",
+      "options": [
+        "跨理論模式 （the transtheoretical model）",
+        "社會行銷 （social marketing）",
+        "健康信念模式 （health belief model）",
+        "創新擴散理論 （diffusion of innovations）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_049",
+      "number": 49,
+      "subject": "public_health",
+      "subject_status": "range",
+      "stem": "醫療費用的成長率跟下列那一個因素關聯性較小？",
+      "options": [
+        "人口老化",
+        "所得增加",
+        "醫療科技進步",
+        "醫病資訊不對稱"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_050",
+      "number": 50,
+      "subject": "public_health",
+      "subject_status": "range",
+      "stem": "原開發廠的新藥成本較高，售價昂貴的原因，以下那一項因素的影響較小？",
+      "options": [
+        "研究及發展費用",
+        "專利權的保護",
+        "臨床試驗的花費",
+        "生產製造的成本"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_051",
+      "number": 51,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "下列何者不是抗生素metronidazole之臨床用途？",
+      "options": [
+        "腹腔內厭氧菌感染，例如：C. difficile感染",
+        "陰道滴蟲（T. vaginalis）引起之感染",
+        "淋病球菌（N. gonorrhoeae）引起之感染",
+        "阿米巴原蟲（E. histolytica）引起之結腸發炎"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_052",
+      "number": 52,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "王小姐45歲，未婚，最近發現左側乳房有小塊腫瘤，經醫師診斷為乳癌，進行手術切除後，並給予cyclophosphamide, methotrexate及5-fluorouracil癌症化學治療，下列藥物與機轉之配對何者正確？",
+      "options": [
+        "cyclophosphamide & methotrexate：抑制topoisomerase II",
+        "methotrexate & 5-fluorouracil：抑制有絲分裂（mitosis）",
+        "methotrexate & 5-fluorouracil：抗代謝藥物（anti-metabolites）",
+        "cyclophosphamide & 5-fluorouracil：DNA烷基化物（DNA alkylating agents）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_053",
+      "number": 53,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "下列何種藥物不是血小板凝集之拮抗劑？",
+      "options": [
+        "dipyridamole",
+        "aspirin",
+        "heparin",
+        "ticlopidine"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_054",
+      "number": 54,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "有關多巴胺受體作用劑（dopamine receptor agonist）bromocriptine的作用敘述，下列何者錯誤？",
+      "options": [
+        "在臨床上可以用來治療高泌乳素血症（hyperprolactinemia），主要係透過減少泌乳素的分泌作用",
+        "在臨床上可以使用於巴金森氏症（Parkinson's disease）的病人，改善其運動功能的障礙",
+        "可以有效改善肢端肥大症（acromegaly）病人的臨床症狀，主要係透過增加體制素（somatostatin）的分泌作用",
+        "可以有效改善婦女產後乳房腫脹及泌乳過量的情形"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_055",
+      "number": 55,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "有關血管加壓素（vasopressin）的描述，下列何者錯誤？",
+      "options": [
+        "主要由腦下垂體後葉（posterior pituitary）所分泌，具有促進血管收縮的作用",
+        "於腸胃道中容易被破壞，因此口服無效",
+        "可以用來治療垂體性尿崩症（pituitary diabetes insipidus）",
+        "具有利尿的作用，因此會造成水分與鈉離子流失"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_056",
+      "number": 56,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "下列那一種利尿劑合併生理食鹽水注射投與，用於治療血鈣過高之症狀效果最好？",
+      "options": [
+        "furosemide",
+        "hydrochlorothiazide",
+        "amiloride",
+        "conivaptan"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_057",
+      "number": 57,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "下列藥物中何者之主要臨床副作用為類紅斑性狼瘡症狀？",
+      "options": [
+        "sotalol",
+        "disopyramide",
+        "amiodarone",
+        "procainamide"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_058",
+      "number": 58,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "活化下列何種自主神經傳遞物質作用的受體，通常會抑制 adenylyl cyclase 的活性？",
+      "options": [
+        "muscarinic M₂ cholinoceptor",
+        "muscarinic M₃ cholinoceptor",
+        "β₁ adrenoceptor",
+        "β₃ adrenoceptor"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_059",
+      "number": 59,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "下列藥物何者為PGI₂致效劑，可用於治療肺高壓（pulmonary hypertension）？",
+      "options": [
+        "treprostinil",
+        "alprostadil",
+        "misoprostol",
+        "latanoprost"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_060",
+      "number": 60,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "下列何種藥物是作用於dopaminergic D₂ receptor用於治療帕金森氏症（Parkinsonism）？",
+      "options": [
+        "pramipexole",
+        "bromocriptine",
+        "flurazepam",
+        "selegiline"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_061",
+      "number": 61,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "下列何者屬於antipseudomonal penicilins，可與 aminoglycoside 併用以治療綠膿桿菌（P. aeruginosa） 所引起的感染？",
+      "options": [
+        "amoxicillin",
+        "dicloxacillin",
+        "nafcillin",
+        "ticarcillin"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_062",
+      "number": 62,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "關於抗生素ceftriaxone之敘述，下列何者正確？",
+      "options": [
+        "為淋病球菌（N. gonorrhoeae）感染的首選用藥",
+        "屬於第四代cephalosporins",
+        "常和clavulanate併用以增強其抗菌效果",
+        "腎衰竭病人使用此藥時，應降低劑量至原治療劑量之一半"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_063",
+      "number": 63,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "下列何者無助於改善貧血？",
+      "options": [
+        "口服 ferrous fumarate",
+        "注射 iron dextran",
+        "注射 deferoxamine",
+        "補充維生素B₁₂及葉酸（folic acid）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_064",
+      "number": 64,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "一位18歲少女當月經來潮時會有腹部疼痛的症狀，醫師詳細檢查發現有骨盆腹膜子宮內膜異位的病變。下列何者較適合被用來治療這位病人？",
+      "options": [
+        "口服flutamide",
+        "肌肉注射medroxyprogesterone",
+        "靜脈注射oxandrolone",
+        "口服raloxifene"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_065",
+      "number": 65,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "一位40歲男性患有肢端肥大的症狀，放射學診斷發現有腦下垂體腫瘤，除了外科手術切除腫瘤外。下列何者可以被用來治療此種疾病？",
+      "options": [
+        "desmopressin",
+        "octreotide",
+        "leuprolide",
+        "somatropin"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_066",
+      "number": 66,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "下列何種降血壓藥物，在長期服用高劑量治療時，若立即停藥會因為強烈增加交感神經活性，可能引發致命性高血壓？",
+      "options": [
+        "clonidine",
+        "nifedipine",
+        "hydralazine",
+        "captopril"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_067",
+      "number": 67,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "下列何者是直接作用型蕈毒鹼致效劑（direct-acting muscarinic agonist）， 可用於治療薛格連氏症候群（Sjögren's syndrome）或放射線治療引起的口乾症？",
+      "options": [
+        "atropine",
+        "cevimeline",
+        "neostigmine",
+        "succinylcholine"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_068",
+      "number": 68,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "當偏頭痛患者出現噁心、嘔吐等症狀時，下列何者是最佳的治療藥物？",
+      "options": [
+        "acetaminophen",
+        "allopurinol",
+        "sumatriptan",
+        "sulindac"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_069",
+      "number": 69,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "病人做化療（chemotherapy）或手術後所引起的噁心、嘔吐症狀，可以預先使用下列何種藥物來緩解，其作用機轉是透過拮抗neurokinin（NK₁）的受體？",
+      "options": [
+        "riociguat",
+        "fasudil",
+        "bosentan",
+        "aprepitant"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_070",
+      "number": 70,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "下列何種減肥藥是作用在腸胃道，可減少脂肪的吸收？",
+      "options": [
+        "phentermine",
+        "topiramate",
+        "orlistat",
+        "lorcaserin"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_071",
+      "number": 71,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "靜脈注射型麻醉劑 ketamine 的主要作用機轉為何？",
+      "options": [
+        "活化GABA_A受體",
+        "抑制GABA_A受體",
+        "活化NMDA受體",
+        "抑制NMDA受體"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_072",
+      "number": 72,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "關於levetiracetam為部分癲癇發作（partial seizure）治療藥物，下列敘述何者錯誤？",
+      "options": [
+        "可經由口服給藥",
+        "選擇性的結合突觸小泡蛋白SV₂A",
+        "影響神經傳遞物質如glutamate和GABA的釋放",
+        "主要經由肝臟代謝"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_073",
+      "number": 73,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "下列藥物之中樞鎮靜作用可被flumazenil拮抗，何者為誤？",
+      "options": [
+        "zolpidem",
+        "lorazapam",
+        "alcohol",
+        "aplrazolam"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_074",
+      "number": 74,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "下列何種思覺失調症（schizophrenia）的治療藥物，與serotonin (5-HT₂) receptor有高的親和力，較不會引起錐體外症候群（extrapyramidal symptoms），但有QT延長（QT prolongation）的風險？",
+      "options": [
+        "ziprasidone",
+        "clozapine",
+        "chlorpromazine",
+        "haloperidol"
+      ],
+      "answers": [
+        "A",
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": "第74題答Ａ、Ｂ給分",
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_075",
+      "number": 75,
+      "subject": "pharmacology",
+      "subject_status": "range",
+      "stem": "下列何者可用於治療放射性銫（radioactive cesium，¹³⁷Cs）污染或鉈鹽（thallium salts）中毒？",
+      "options": [
+        "EDTA",
+        "unithiol",
+        "deferasirox",
+        "prussian blue"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_076",
+      "number": 76,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "74歲男性，發燒咳嗽，右下肺葉有一個圓形病灶，內含很多中性球、壞死細胞的黏稠液，此病灶最可能為：",
+      "options": [
+        "肥厚性瘢痕（hypertrophic scar）",
+        "膿瘍（abscess）",
+        "血腫（hematoma）",
+        "結核（tuberculosis）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_077",
+      "number": 77,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "懷孕時乳房最可能發生何種變化？",
+      "options": [
+        "間質纖維化（stromal fibrosis）",
+        "乳管上皮鱗狀化生（ductal epithelium squamous metaplasia）",
+        "腺泡細胞異生（acinic cell dysplasia）",
+        "小葉增生（lobular hyperplasia）"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_078",
+      "number": 78,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "在產前染色體檢查分析的20個羊水細胞中，發現5個細胞有46條正常染色體，15個細胞多了一條第21號染色體。下列何者為最可能的診斷？",
+      "options": [
+        "無分離（nondisjunction）型唐氏症候群（Down syndrome）",
+        "無分離（nondisjunction）型愛德華氏症候群（Edwards syndrome）",
+        "轉位（translocation）型愛德華氏症候群（Edwards syndrome）",
+        "異常細胞鑲嵌（mosaicism）型唐氏症候群（Down syndrome）"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_079",
+      "number": 79,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "關於類澱粉沉積症（amyloidosis）的敘述，下列何者正確？",
+      "options": [
+        "阿茲海默症（Alzheimer disease）沉積的類澱粉，主要是屬AA（amyloid-associated）型澱粉樣蛋白",
+        "甲狀腺髓質癌（medullary thyroid cancer）造成的類澱粉沉積主要因癌細胞產生的降鈣素（calcitonin）所致",
+        "剛果紅（Congo red）染色只適合用來診斷輕鏈蛋白相關之類澱粉沉積症，無法偵測非原發性的類澱粉沉積",
+        "交叉α折疊（crossed α-pleated）結構是剛果紅染色陽性的原因"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_080",
+      "number": 80,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "關於癌症病人的惡體質（cachexia），下列何者為最可能之原因？①TNF produced by macrophages②TNF produced by tumor cells③IL-10 produced by macrophages④IL-10 produced by tumor cells",
+      "options": [
+        "①②",
+        "②③",
+        "①④",
+        "③④"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_081",
+      "number": 81,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "70歲男性因為心臟衰竭與心律不整住院，心臟內膜與心肌切片（endomyocardial biopsy）顯示有粉紅色物質沉積於心肌細胞之間，這些物質用剛果紅（Congo red）染色於偏光顯微鏡下呈現蘋果綠的顏色；病人經檢查沒有惡性腫瘤、慢性發炎疾病、腎臟疾病或是神經病變，下列何者是最可能堆積的物質？",
+      "options": [
+        "免疫球蛋白（immunoglobulin）",
+        "β2-microglobulin",
+        "transthyretin",
+        "calcitonin"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_082",
+      "number": 82,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "下列何者會出現溶血性貧血（hemolytic anemia）、血小板低下與血液抹片出現碎裂紅血球（schistocytes）？①栓塞性血小板低下紫斑（thrombotic thrombocytopenic purpura）②巨大的血管瘤（hemangioma）③瀰漫性血管內凝血（disseminated intravascular coagulation）④免疫性血小板低下紫斑（immune thrombocytopenic purpura）",
+      "options": [
+        "僅①②",
+        "僅①③",
+        "①②③",
+        "②③④"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_083",
+      "number": 83,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "下列物質於血液中的濃度上升與粥狀動脈硬化（atherosclerosis）發生有關，但何者除外？",
+      "options": [
+        "C-reactive protein",
+        "高密度脂蛋白（high-density lipoprotein）",
+        "同半胱胺酸（homocysteine）",
+        "血糖"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_084",
+      "number": 84,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "下列何者是成年人最常見的惡性淋巴瘤？",
+      "options": [
+        "瀰漫大B細胞淋巴瘤（diffuse large B-cell lymphoma）",
+        "未特指周邊T細胞淋巴瘤（peripheral T-cell lymphoma, unspecified）",
+        "退行性大細胞淋巴瘤（anaplastic large cell lymphoma）",
+        "被套細胞淋巴瘤（mantle cell lymphoma）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_085",
+      "number": 85,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "9歲男孩自上週以來四肢瘀傷。身體檢查：四肢瘀傷及出血斑點；血色素、血容積比、平均紅血球體積（MCV）及白血球計數正常，血小板明顯降低。病人3週前曾有呼吸道融合病毒（respiratory syncytial virus）感染。病人狀況經使用類固醇治療後緩和。下列何者為此病人出血傾向之最可能原因？",
+      "options": [
+        "抗血小板抗體（anti-platelet antibodies）",
+        "骨髓造血不良",
+        "醣蛋白IIb-IIIa功能不全",
+        "vWF金屬酵素缺乏（vWF metalloprotease deficiency）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_086",
+      "number": 86,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "上呼吸道腫瘤利用免疫組織化學染色，發現腫瘤細胞表現synaptophysin與chromogranin抗原時，下列何者為最可能的診斷？",
+      "options": [
+        "鼻咽上皮細胞癌",
+        "嗅母神經胚細胞癌（olfactory neuroblastoma）",
+        "喉頭上皮細胞癌",
+        "NUT中線癌（NUT midline carcinoma）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_087",
+      "number": 87,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "下列有關類肉瘤（sarcoidosis）的敘述，何者錯誤？",
+      "options": [
+        "大多數的病人表現雙側肺門淋巴結腫大",
+        "CD4陽性T細胞所驅動之免疫反應",
+        "病理變化為壞死性肉芽腫",
+        "病灶可在肺、脾、肝等器官發現"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_088",
+      "number": 88,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "大學生騎機車不幸發生車禍，造成左小腿複雜性骨折，經開刀固定後，病情穩定。數日後胸痛、呼吸困難，轉入加護病房，其診斷最可能為：",
+      "options": [
+        "敗血症",
+        "肺栓塞",
+        "顱內出血",
+        "細菌性肺炎"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_089",
+      "number": 89,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "以下何種肝炎病毒常是造成旅行者肝炎（traveler hepatitis）的元凶，並且懷孕婦女感染有將近20%的死亡率？",
+      "options": [
+        "A型肝炎病毒",
+        "B型肝炎病毒",
+        "D型肝炎病毒",
+        "E型肝炎病毒"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_090",
+      "number": 90,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "關於纖維薄層型肝細胞癌（fibrolamellar carcinoma），下列敘述何者錯誤？",
+      "options": [
+        "好發於年輕人",
+        "背景肝臟通常已有嚴重纖維化或肝硬化",
+        "腫瘤細胞為含有許多粒線體的oncocytes，由緻密的纖維帶分開",
+        "通常預後較好"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_091",
+      "number": 91,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "下列那一項不是潰瘍性結腸炎（ulcerative colitis）的特徵？",
+      "options": [
+        "大部分（＞50％）的潰瘍性結腸炎患者也患有原發性硬化性膽管炎（primary sclerosing cholangitis）",
+        "可見pseudopolyps，嚴重時可造成toxic megacolon",
+        "它通常影響直腸並向近端延伸",
+        "發炎通常侷限於黏膜層及表淺的黏膜下層"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_092",
+      "number": 92,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "以下病理變化在高血壓性腎硬化（hypertensive nephrosclerosis）病灶中最不可能發生的是：",
+      "options": [
+        "腎小球硬化（glomerulosclerosis）",
+        "小動脈硬化（arteriosclerosis）",
+        "細動脈硬化（arteriolosclerosis）",
+        "靜脈硬化（phlebosclerosis）"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_093",
+      "number": 93,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "腦下垂體中風（pituitary apoplexy）最常見的原因為：",
+      "options": [
+        "嚴重之腦下垂體出血",
+        "血管之阻塞導致缺血性壞死",
+        "膿瘍之產生",
+        "惡性腫瘤細胞之侵犯"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_094",
+      "number": 94,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "45歲女性，甲狀腺呈結節性、對稱性腫大，與四周組織無沾黏。實驗室檢查發現血中有抗微粒體抗體（antimicrosomal antibody）。病理顯微變化如圖示，下列何者為最有可能的診斷？",
+      "options": [
+        "橋本氏甲狀腺炎（Hashimoto thyroiditis）",
+        "亞急性甲狀腺炎（subacute thyroiditis）",
+        "雷得氏甲狀腺炎（Riedel thyroiditis）",
+        "慢性纖維性甲狀腺炎（chronic fibrosing thyroiditis）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [
+        "images/108030_2/q094_p15.png"
+      ],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_095",
+      "number": 95,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "下列有關子宮頸上皮內瘤變／鱗狀上皮內病灶（cervical intraepithelial neoplasia/squamous intraepitheliallesions）的敘述， 何者較不正確？",
+      "options": [
+        "大部分的低度鱗狀上皮內病灶（low-grade squamous intraepithelial lesion, LSIL）會持續存在而不會回復（regress）",
+        "約有10%的低度鱗狀上皮內病灶（low-grade squamous intraepithelial lesion, LSIL）會進展（progress）成高度鱗狀上皮內病灶（high-grade squamous intraepithelial lesion, HSIL）",
+        "少數高度鱗狀上皮內病灶（high-grade squamous intraepithelial lesion, HSIL）會回復（regress）",
+        "大部分高度鱗狀上皮內病灶（high-grade squamous intraepithelial lesion, HSIL）會持續存在（persist）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_096",
+      "number": 96,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "下列有關前列腺炎（prostatitis）的敘述， 何者較不正確？",
+      "options": [
+        "急性細菌性前列腺炎（acute bacterial prostatitis），其致病病原菌通常與引起泌尿道感染的病原菌類似",
+        "慢性細菌性前列腺炎（chronic bacterial prostatitis）一般不易診斷與治療，病人常有反覆泌尿道感染的病史",
+        "在美國，最常引起肉芽腫性前列腺炎（granulomatous prostatitis）的原因是使用Bacillus Calmette-Guérin（BCG）治療表面性膀胱癌（superficial bladder cancer）",
+        "慢性非細菌性前列腺炎（chronic abacterial prostatitis）的病人一般沒有反覆泌尿道感染的病史，其發生率是各種前列腺炎中最低的"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_097",
+      "number": 97,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "下列有關睪丸精母細胞瘤（testicular seminoma）的敘述， 何者較不正確？",
+      "options": [
+        "常見的染色體變化為第十二條染色體短臂的等臂染色體（isochromosome 12p）",
+        "腫瘤細胞會表現OCT3/4與NANOG",
+        "常常發生在嬰兒時期（infant）",
+        "部分腫瘤會有KIT gene的活化性突變（activating mutations）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_098",
+      "number": 98,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "病理診斷狂犬病（Rabies）的最主要依據是觀察到：",
+      "options": [
+        "Lewy body",
+        "Kuru plaque",
+        "Negri body",
+        "Stress granules"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_099",
+      "number": 99,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "肉芽腫性葡萄膜炎（granulomatous uveitis）是下列何種疾病的常見併發症？",
+      "options": [
+        "惡性黑色素瘤（malignant melanoma）",
+        "惡性淋巴瘤（malignant lymphoma）",
+        "類肉瘤病（sarcoidosis）",
+        "紅斑性狼瘡（lupus erythematosus）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_2_100",
+      "number": 100,
+      "subject": "pathology",
+      "subject_status": "range",
+      "stem": "50歲男性，患胃炎且常嘔吐，亦有記憶衰退及虛談（confabulation），病理解剖發現腦部乳頭體（mamillary bodies）及第三及第四腦室壁出血及壞死，其腦部病變與下列何種維生素（vitamin）缺乏有關？",
+      "options": [
+        "A",
+        "B₁",
+        "B₆",
+        "B₁₂"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    }
+  ]
+}

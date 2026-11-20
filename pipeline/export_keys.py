@@ -39,7 +39,7 @@ def main():
         "",
     ]
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text("\n".join(sql), encoding="utf-8")
+    OUT.write_text("\n".join(sql), encoding="utf-8", newline="\n")
     print(f"{len(rows)} 題 → {OUT.relative_to(ROOT)}（{OUT.stat().st_size // 1024} KB）")
 
 

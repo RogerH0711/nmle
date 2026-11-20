@@ -1,0 +1,11 @@
+{
+  "100": {
+    "options": {
+      "A": "5'-GAATTC-3' ／ 3'-CTTAAG-5'",
+      "B": "5'-CATTAG-3' ／ 3'-GTAATC-5'",
+      "C": "5'-CATATG-3' ／ 3'-GTATAC-5'",
+      "D": "5'-CAATTG-3' ／ 3'-GTTAAC-5'"
+    },
+    "reason": "原卷四個選項都是上下兩股的 DNA 序列，抽文字時讀不到，依原始 PDF 人工補字（兩股用「／」分開）"
+  }
+}

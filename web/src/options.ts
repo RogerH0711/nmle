@@ -8,17 +8,25 @@ const IDENTITY = [0, 1, 2, 3]
 /** 畫面上第 i 個位置放原本的第 order[i] 個選項 */
 export type Order = number[]
 
-// 選項提到其他選項（「以上皆是」「選項 A 與 B」）的題目打亂會出錯。110–115 年沒有這種題目，留著防之後解析的年份。
+// 選項提到其他選項（「以上皆是」「選項 A 與 B」）的題目打亂會出錯。105–115 年沒有這種題目，留著防之後解析的年份。
 // （不用 lookbehind：iOS 16.4 以前的 Safari 不支援，整支程式會載入失敗）
 const REFERS_TO_OPTIONS =
   /以上(皆|均|都)|上述(皆|均|都|選項)|其他選項|選項\s*[A-DＡ-Ｄ](?![A-Za-z])|(^|[^A-Za-z])[A-DＡ-Ｄ]\s*[與和及、或]\s*[A-DＡ-Ｄ](?![A-Za-z])\s*(皆|均|都)/
 
+// 選項本身就是 A–D 其中一個字母（維生素 A、D、E、K；TCR 的 V、D、J、C 片段；B₁、B₁₂）：打亂後會出現「B. A」「A. D」，
+// 很容易看錯成選項代號，維持原順序（106100_1_078、108030_2_019、108030_2_100、114090_1_005 的 C 纖維）
+const LETTER_OPTION = /^[A-DＡ-Ｄ][₀-₉]*$/
+
 /**
  * 能不能打亂：一題多解、官方註記（「第 88 題答Ａ、Ｂ給分」寫的是原本的字母）、一律給分、
- * 選項提到其他選項的題目維持原順序。
+ * 選項提到其他選項、選項本身是一個字母的題目維持原順序。
  */
 export function canShuffle(q: Question) {
-  return q.answers.length === 1 && !q.answer_note && !q.free_point && !q.options.some((o) => REFERS_TO_OPTIONS.test(o))
+  return (
+    q.answers.length === 1 && !q.answer_note && !q.free_point &&
+    !q.options.some((o) => REFERS_TO_OPTIONS.test(o)) &&
+    !q.options.some((o) => LETTER_OPTION.test(o.trim()))
+  )
 }
 
 export function makeOrder(q: Question, random = Math.random): Order {

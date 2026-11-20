@@ -821,7 +821,7 @@
       "options": [
         "有關布氏羅德西亞錐蟲（Trypanosoma brucei rhodesiense）的毒力（virulence）決定於寄生蟲與受感染人類的基因型（genotype）之交互作用",
         "受感染者會在頸部與鼠蹊部位出現淋巴結的水腫，臨床稱為 Jericho boil",
-        "當錐蟲被病媒（vector）攝入後，蟲體細胞膜上的前環素蛋白（procyclin）會被變異表面醣蛋白（variantsurface glycoprotein）所取代，以逃避宿主的免疫攻擊",
+        "當錐蟲被病媒（vector）攝入後，蟲體細胞膜上的前環素蛋白（procyclin）會被變異表面醣蛋白（variant surface glycoprotein）所取代，以逃避宿主的免疫攻擊",
         "在許多人類罹患非洲錐蟲症的案例中，蟲體入侵神經系統大多發生在感染初期，因此導致昏睡症（sleepingsickness）"
       ],
       "answers": [
@@ -913,7 +913,7 @@
       "number": 38,
       "subject": "public_health",
       "subject_status": "range",
-      "stem": "臨床試驗中，實施盲性程序（blinding or masking）是一項重要的執行技巧，藥廠規劃盲性之主要目的為何？",
+      "stem": "臨床試驗中，實施盲性程序（blinding or masking）是一項重要的執行技巧，藥廠規劃盲性之主要目的為何？",
       "options": [
         "去除介入組和對照組執行上的系統性偏差，以保證兩組的執行程序可比",
         "去除介入組的霍桑效應（Hawthorne effect）",
@@ -2023,7 +2023,7 @@
       "number": 84,
       "subject": "pathology",
       "subject_status": "range",
-      "stem": "55 歲男性，臨床表現為肌肉無力，抽血測得對抗乙醯膽鹼受器的自體抗體（anti-acetylcholine receptorautoantibody），電腦斷層掃描發現前縱隔腫瘤，此腫瘤最可能是下列何者？",
+      "stem": "55 歲男性，臨床表現為肌肉無力，抽血測得對抗乙醯膽鹼受器的自體抗體（anti-acetylcholine receptor autoantibody），電腦斷層掃描發現前縱隔腫瘤，此腫瘤最可能是下列何者？",
       "options": [
         "鱗狀細胞癌（squamous cell carcinoma）",
         "畸胎瘤（teratoma）",

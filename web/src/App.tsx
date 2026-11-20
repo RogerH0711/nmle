@@ -1,29 +1,25 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import type { User } from '@supabase/supabase-js'
 import type { ExamFile, Index, Letter, Question } from './types'
-import { imageUrl, loadIndex, loadPaper, loadQuestions, paperLabel, paperOf } from './bank'
-import { dismissMerged, recordAnswer, recordAnswers, switchUser, syncNow, useAnswers, type SyncStatus } from './answers'
+import { dataUrl, loadIndex, loadPaper, loadQuestions, paperLabel, paperOf } from './bank'
+import { useSubtopics } from './subtopics'
+import { recordAnswer, recordAnswers, switchUser, useAnswers } from './answers'
 import { localDate, reviewStates, reviewSummary } from './review'
 import { getDisplayName, setDisplayName, supabase } from './supabase'
-import { deleteAccount, signOut } from './account'
-import { displayNameError, NAME_MAX } from './displayName'
 import { LoginDialog } from './LoginDialog'
-import { usernameOf } from './login'
 import { Leaderboard } from './Leaderboard'
 import {
   characterForSubject, COMEBACK_DAYS, fillAway, fillPlayer, loadCharacters, loadLines, pickLine as pickCharacterLine,
   STREAK_EVERY, type Character, type Line, type Reaction, type Situation,
 } from './characters'
-import { CharacterStage, Portrait } from './CharacterStage'
+import { CharacterStage } from './CharacterStage'
 import { bestCharacter, firstAttempts, isMockCorrect, MOCK_HIGH, MOCK_MINUTES, mockQueue, scoreMock, submitTime, type MockSession } from './mock'
 import { addMock, loadSession, saveSession, switchMockUser, useMocks } from './mockStore'
 import { MockHome, MockResult, MockRunner } from './MockExam'
-import { ReportButton } from './Report'
-import { AskAi } from './AskAi'
-import { ExplanationPanel } from './ExplanationPanel'
 import { affection as affectionOf, rival as rivalOf, STAGE_NAMES, subjectMap, type Affection } from './affection'
 import { loadSeen, loadStory, saveSeen, sceneId, unseenScene, type Scene } from './stories'
 import { StoryList, StoryPlayer } from './Story'
+import { DevPanel } from './DevPanel'
 import { CampusMap } from './CampusMap'
 import { StatusPanel } from './StatusPanel'
 import { Guide, guideSeen } from './Guide'
@@ -38,32 +34,23 @@ import { addGift, loadGifts, switchGiftUser, useGifts } from './giftStore'
 import { fillGiftLine, GiftShop } from './GiftShop'
 import { loadOutfits, pickOutfitLine, switchOutfitUser, useOutfits, wear, type Outfit } from './outfits'
 import { playVoice, setBgm, sfx } from './audio'
-import { chooseBgm } from './audioRules'
+import { chooseBgm, giftVoiceId } from './audioRules'
 import { SoundSettings } from './SoundSettings'
 import { QuestionBank } from './QuestionBank'
 import { parseBankHash, type BankRoute } from './search'
-import { makeOrder, shownQuestion, toOriginal, toShown, type Order as OptionOrder } from './options'
+import { toOriginal, type Order as OptionOrder } from './options'
+import { useBack } from './backStack'
+import { switchMarksUser, updateMark, useMarks } from './marksStore'
+import { listOf } from './marks'
+import { Library, LIST_LABEL, type ListKind } from './Library'
+import { isCorrect, loadRun, paperQueue, pickRound, runStats, saveRun, shuffle, subjectQuestionIds, withOrders, wrongIds, type Order, type Run } from './run'
+import { Account } from './AccountMenu'
+import { Disclaimer } from './Disclaimer'
+import { QuestionCard } from './QuestionCard'
+import { Summary } from './Summary'
 
 const LETTERS: Letter[] = ['A', 'B', 'C', 'D']
 
-type Order = 'seq' | 'random'
-
-// 一回合：依考卷刷題（paper）、錯題複習（review）、跟角色讀書（character，subject 存角色 id）、
-// 檢討模擬考（mock，picks 預先填入交卷時的答案）或刷題庫搜尋找到的題目（bank，subject 存搜尋條件的說明）。
-// 題目可以跨考卷，用題目 id 串起來。存在 localStorage，重新整理不會不見。
-interface Run {
-  kind: 'paper' | 'review' | 'character' | 'mock' | 'bank'
-  paperId: string | null
-  subject: string
-  order: Order
-  queue: string[]
-  pos: number
-  picks: Record<string, Letter> // 原本的字母（選項打亂時也是）
-  affection?: number // 角色回合開始時的好感度階段，回合結束時比較有沒有升階
-  orders?: Record<string, OptionOrder> // 每題畫面上的選項順序（options.ts），回合開始時決定，重新整理不會變
-}
-
-const RUN_KEY = 'nmle.run.v2'
 const CHARACTER_MODE_KEY = 'nmle.characterMode'
 const SHUFFLE_KEY = 'nmle.shuffleOptions'
 const IDENTITY: OptionOrder = [0, 1, 2, 3]
@@ -90,63 +77,6 @@ function saveFlag(key: string, on: boolean) {
   }
 }
 
-function loadRun(): Run | null {
-  try {
-    const raw = localStorage.getItem(RUN_KEY)
-    return raw ? (JSON.parse(raw) as Run) : null
-  } catch {
-    return null
-  }
-}
-
-function saveRun(run: Run) {
-  try {
-    localStorage.setItem(RUN_KEY, JSON.stringify(run))
-  } catch {
-    // 無痕模式等情況存不了，就只在這次瀏覽有效
-  }
-}
-
-function shuffle<T>(items: T[]): T[] {
-  const a = [...items]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
-
-// 替還沒決定選項順序的題目打亂選項。檢討模擬考維持考卷原本的順序，跟交卷時看到的一樣。
-function withOrders(run: Run, questions: Map<string, Question>): Run {
-  if (run.kind === 'mock') return run
-  const orders = { ...run.orders }
-  for (const id of run.queue) {
-    const q = questions.get(id)
-    if (q && !orders[id]) orders[id] = makeOrder(q)
-  }
-  return { ...run, orders }
-}
-
-function isCorrect(q: Question, pick: Letter) {
-  return q.free_point || q.answers.includes(pick)
-}
-
-function paperQueue(questions: Question[], subject: string, order: Order) {
-  const ids = questions.filter((q) => q.valid && (subject === 'all' || q.subject === subject)).map((q) => q.id)
-  return order === 'random' ? shuffle(ids) : ids
-}
-
-// 一般模式（或這個學科的角色還沒推出）用的通用回饋
-const FEEDBACK = {
-  correct: ['答對了！', '漂亮！', '正確！', '很穩！'],
-  wrong: ['差一點，看一下正解。', '這題記下來，之後再複習。', '沒關係，下一題。'],
-}
-
-function pickLine(kind: keyof typeof FEEDBACK, seed: number) {
-  const lines = FEEDBACK[kind]
-  return lines[seed % lines.length]
-}
-
 export default function App() {
   const [index, setIndex] = useState<Index | null>(null)
   const [questions, setQuestions] = useState<Map<string, Question>>(new Map())
@@ -154,6 +84,9 @@ export default function App() {
   const [error, setError] = useState<string | null>(null)
   const [user, setUser] = useState<User | null>(null)
   const answers = useAnswers()
+  const { marks } = useMarks() // 收藏、不確定、筆記（marksStore.ts）
+  const subtopicData = useSubtopics(dataUrl('subtopics.json')) // 次主題（subtopics.ts），還沒分類時是 null
+  const [libraryOpen, setLibraryOpen] = useState(false) // 圖書館的三個清單（角色模式）
   const [characters, setCharacters] = useState<Character[]>([])
   const [lines, setLines] = useState<Record<string, Line[]>>({})
   const [characterMode, setCharacterMode] = useState(() => loadFlag(CHARACTER_MODE_KEY, true)) // 角色模式為主：第一次打開就是校園地圖
@@ -170,7 +103,7 @@ export default function App() {
   const [mockStage, setMockStage] = useState<StageReaction | null>(null) // 剛交卷、高分時角色的反應
   const [stories, setStories] = useState<Record<string, Scene[]>>({})
   const [seen, setSeen] = useState(() => loadSeen()) // 這台裝置看過的劇情
-  const [story, setStory] = useState<{ character: Character; scene: Scene; then?: () => void } | null>(null)
+  const [story, setStory] = useState<{ character: Character; scene: Scene; afterwards?: () => void; dev?: boolean } | null>(null)
   const [storyList, setStoryList] = useState<Character | null>(null)
   const [statusOpen, setStatusOpen] = useState(false) // 狀態面板（能力值）
   const [titleOpen, setTitleOpen] = useState(() => !titleSeen() && !bankStart) // 開頭畫面（封面）：每次打開網站先顯示；從題庫網址進來的不擋
@@ -186,6 +119,7 @@ export default function App() {
   const [toast, setToast] = useState<Message | null>(null) // 剛收到的訊息，在畫面下方通知
   const gifts = useGifts() // 送給學姊的禮物（giftStore.ts）
   const [catalog, setCatalog] = useState<GiftCatalog | null>(null) // 禮物清單（data/gifts.json）
+  const [freeShop, setFreeShop] = useState(false) // 開發者面板的免費商店（只在 npm run dev）
   const outfits = useOutfits() // 服裝清單與換上的服裝（outfits.ts）
   const [shopOpen, setShopOpen] = useState(false)
 
@@ -255,11 +189,12 @@ export default function App() {
 
   const closeStory = () => {
     if (!story) return
+    if (story.dev) return setStory(null) // 開發者面板打開的，不記成看過
     const next = new Set(seen).add(sceneId(story.character.id, story.scene.stage))
     setSeen(next)
     saveSeen(next)
     setStory(null)
-    story.then?.()
+    story.afterwards?.()
   }
 
   const newScene = (c: Character) => unseenScene(c.id, stories[c.id] ?? [], stageOf(c), seen)
@@ -273,6 +208,7 @@ export default function App() {
         void switchUser(session?.user.id ?? null)
         void switchMockUser(session?.user.id ?? null)
         void switchGiftUser(session?.user.id ?? null)
+        void switchMarksUser(session?.user.id ?? null)
         switchOutfitUser(session?.user.id ?? null)
       }, 0)
       if (event === 'SIGNED_IN' && window.location.search.includes('code=')) {
@@ -361,11 +297,11 @@ export default function App() {
     const stage = stageOf(c)
     const line = catalog ? pickGiftLine(lines[c.id] ?? [], g.id, isLiked(catalog, c.id, g.id), stage) : null
     addGift({
-      id: crypto.randomUUID(), character_id: c.id, gift_id: g.id, price: g.price, stage,
+      id: crypto.randomUUID(), character_id: c.id, gift_id: g.id, price: freeShop ? 0 : g.price, stage,
       line_id: line?.id ?? null, given_at: new Date().toISOString(),
     })
     sfx('gift')
-    void playVoice(line?.id ?? null, PLAYER)
+    void playVoice(line ? giftVoiceId(line, g.id) : null, PLAYER)
     return { expression: line?.expression ?? 'happy', text: line ? fillGiftLine(line.text, g, PLAYER) : null }
   }
 
@@ -374,7 +310,7 @@ export default function App() {
     const stage = stageOf(c)
     const line = pickOutfitLine(lines[c.id] ?? [], o.id, stage)
     addGift({
-      id: crypto.randomUUID(), character_id: c.id, gift_id: o.id, price: o.price ?? 0, stage,
+      id: crypto.randomUUID(), character_id: c.id, gift_id: o.id, price: freeShop ? 0 : (o.price ?? 0), stage,
       line_id: line?.id ?? null, given_at: new Date().toISOString(),
     })
     wear(c.id, o.id)
@@ -443,19 +379,7 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reaction, characterMode, run, characters, lines, done, current, picked])
 
-  const stats = useMemo(() => {
-    let answered = 0
-    let correct = 0
-    for (const id of run?.queue ?? []) {
-      const q = questions.get(id)
-      const p = run?.picks[id]
-      if (q && p) {
-        answered++
-        if (isCorrect(q, p)) correct++
-      }
-    }
-    return { answered, correct }
-  }, [run, questions])
+  const stats = useMemo(() => runStats(run, questions), [run, questions])
 
   // 這題由哪位角色陪：角色回合固定是那位，其他回合看題目學科歸誰
   const stageCharacter = !characterMode
@@ -502,6 +426,8 @@ export default function App() {
       const ok = isCorrect(current, letter)
       setRun({ ...run, picks: { ...run.picks, [current.id]: letter } })
       recordAnswer(current.id, letter, ok)
+      // 不確定清單的題目再答一次就移出：答錯會進錯題複習，答對但還是沒把握就再按一次「加入不確定清單」
+      if (marks[current.id]?.unsure) updateMark(current.id, { unsure: false })
       revealRef.current = true
       const nextStreak = ok ? streak + 1 : 0
       setStreak(nextStreak)
@@ -512,7 +438,7 @@ export default function App() {
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [run, current, picked, optionOrder, streak, stageCharacter, lines, reaction],
+    [run, current, picked, optionOrder, streak, stageCharacter, lines, reaction, marks],
   )
 
   const go = useCallback(
@@ -531,15 +457,13 @@ export default function App() {
   const restart = (subject: string, order: Order, onlyWrong = false) => {
     if (!index || !run) return
     if (onlyWrong) {
-      const wrong = run.queue.filter((id) => {
-        const q = questions.get(id)
-        const p = run.picks[id]
-        return q && p && !isCorrect(q, p)
-      })
+      const wrong = wrongIds(run, questions)
       const queue = order === 'random' ? shuffle(wrong) : wrong
       setRun(withOrders({ ...run, subject, order, queue, pos: 0, picks: {}, orders: undefined }, questions)) // 重做時選項重新打亂
     } else if (run.kind === 'review') {
       startReview()
+    } else if (run.kind === 'list') {
+      startList(run.subject as ListKind)
     } else if (run.kind === 'character') {
       const c = characters.find((x) => x.id === run.subject)
       if (c) startCharacterRun(c)
@@ -555,10 +479,25 @@ export default function App() {
     void startRun(index, { kind: 'review', paperId: null, subject: 'all', order: 'seq', queue: review.due, pos: 0, picks: {} })
   }
 
+  // 圖書館的清單：不確定、收藏（只算題庫裡有的考卷）
+  const lists = useMemo(() => {
+    const known = (id: string) => !!index?.papers.some((p) => id.startsWith(p.id + '_'))
+    return { unsure: listOf(marks, 'unsure').filter(known), favorite: listOf(marks, 'favorite').filter(known) }
+  }, [marks, index])
+
+  const startList = (kind: ListKind) => {
+    if (!index || !lists[kind].length) return
+    setLibraryOpen(false)
+    setStreak(0)
+    setOnMap(false)
+    setView('quiz')
+    void startRun(index, { kind: 'list', paperId: null, subject: kind, order: 'random', queue: shuffle(lists[kind]), pos: 0, picks: {} })
+  }
+
   // 跟角色讀書：有還沒看過的劇情就先播，看完再開始
   const startCharacterRun = (c: Character) => {
     const scene = newScene(c)
-    if (scene) setStory({ character: c, scene, then: () => void beginCharacterRun(c) })
+    if (scene) setStory({ character: c, scene, afterwards: () => void beginCharacterRun(c) })
     else void beginCharacterRun(c)
   }
 
@@ -566,12 +505,11 @@ export default function App() {
   const beginCharacterRun = async (c: Character) => {
     if (!index) return
     try {
-      const files = await Promise.all(index.papers.map((p) => loadPaper(index, p.id)))
-      const pool = files.flatMap((f) => f.questions).filter((q) => q.valid && q.subject && c.subjects.includes(q.subject))
+      // 先從學科區段抽題號，只載入抽到的考卷；多抽幾題，扣掉不能出題的（例如選項是圖的題目）
       const seen = new Set(answers.records.map((r) => r.question_id))
-      const queue = [...shuffle(pool.filter((q) => !seen.has(q.id))), ...shuffle(pool.filter((q) => seen.has(q.id)))]
-        .slice(0, ROUND_SIZE)
-        .map((q) => q.id)
+      const picked = pickRound(subjectQuestionIds(index.papers, c.subjects), seen, ROUND_SIZE + 5)
+      const loaded = await loadQuestions(index, picked)
+      const queue = picked.filter((id) => loaded.get(id)?.valid).slice(0, ROUND_SIZE)
       const last = answers.records.reduce((max, r) => (r.answered_at > max ? r.answered_at : max), '')
       const awayMs = last ? Date.now() - new Date(last).getTime() : 0
       const away = awayMs > COMEBACK_DAYS * 86_400_000
@@ -687,7 +625,7 @@ export default function App() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       // 看排行榜、考模擬考、看劇情、看能力值、在校園地圖上時，不要對藏起來的題目作答
-      if (titleOpen || view !== 'quiz' || session || story || storyList || statusOpen || shopOpen || guideOpen || loginOpen || messagesOpen !== false || (characterMode && onMap && characters.length > 0)) return
+      if (titleOpen || view !== 'quiz' || session || story || storyList || statusOpen || shopOpen || guideOpen || loginOpen || libraryOpen || messagesOpen !== false || (characterMode && onMap && characters.length > 0)) return
       if (e.ctrlKey || e.metaKey || e.altKey) return
       if (e.target instanceof Element && e.target.closest('select, input, textarea')) return
       const k = e.key.toUpperCase()
@@ -701,7 +639,24 @@ export default function App() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [pick, go, picked, view, session, story, storyList, statusOpen, shopOpen, guideOpen, loginOpen, messagesOpen, characterMode, onMap, characters, titleOpen])
+  }, [pick, go, picked, view, session, story, storyList, statusOpen, shopOpen, guideOpen, loginOpen, libraryOpen, messagesOpen, characterMode, onMap, characters, titleOpen])
+
+  // ---------- 返回鍵（backStack.ts） ----------
+  // 每一層打開時佔一筆 history，手機按返回時關掉最上面那層，不會直接離開網站。
+  // 順序就是疊起來的順序：同一次畫面更新裡同時打開的，寫在前面的先推（例如交卷時先是模擬考畫面、再是成績）
+  useBack(characterMode && characters.length > 0 && !onMap, () => setOnMap(true)) // 角色模式的題目畫面 → 回地圖
+  useBack(view !== 'quiz', () => setView('quiz'))
+  useBack(view === 'mock' && !!mockResultId, () => setMockResultId(null))
+  useBack(!!session, () => false) // 模擬考作答中：和正式考試一樣不能中途離開，要交卷
+  useBack(!!storyList, () => setStoryList(null))
+  useBack(statusOpen, () => setStatusOpen(false))
+  useBack(libraryOpen, () => setLibraryOpen(false))
+  useBack(shopOpen, () => setShopOpen(false))
+  useBack(messagesOpen !== false, () => setMessagesOpen(false))
+  useBack(guideOpen, () => setGuideOpen(false))
+  useBack(loginOpen, () => setLoginOpen(false))
+  useBack(playerOpen && !!player, () => setPlayerOpen(false)) // 第一次選稱呼是必選的，不能返回
+  useBack(!!story, () => closeStory())
 
   // 開頭畫面蓋在最前面，題庫在後面照常載入（點開始時通常已經載好）
   if (titleOpen) return <TitleScreen onStart={closeTitle} />
@@ -735,6 +690,7 @@ export default function App() {
   const runLabel =
     run.kind === 'character' ? `和${runCharacter?.name ?? '角色'}讀書`
     : run.kind === 'review' ? '錯題複習'
+    : run.kind === 'list' ? LIST_LABEL[run.subject as ListKind] ?? '清單'
     : run.kind === 'mock' ? '檢討模擬考'
     : run.kind === 'bank' ? `題庫：${run.subject}`
     : runPaper ? paperLabel(runPaper) : '刷題'
@@ -858,6 +814,7 @@ export default function App() {
           key={bankStart ? JSON.stringify(bankStart) : 'bank'}
           index={index}
           initial={bankStart ?? { scope: 'all', number: null, query: '', subject: 'all' }}
+          subtopics={subtopicData}
           onPractice={practiceBank}
         />
       ) : (
@@ -872,11 +829,12 @@ export default function App() {
           hasStories={(c) => !!stories[c.id]?.length}
           roundSize={ROUND_SIZE}
           reviewDue={review.due.length}
+          listCount={lists.unsure.length + lists.favorite.length}
           answeredToday={answeredToday}
           resume={resumeLabel}
           onStudy={studyWith}
           onStories={setStoryList}
-          onReview={startReview}
+          onReview={() => setLibraryOpen(true)}
           onFree={() => setOnMap(false)}
           onStatus={() => setStatusOpen(true)}
           balance={catalog?.gifts.length ? Math.max(0, wallet) : null}
@@ -903,9 +861,16 @@ export default function App() {
               今天到期 {review.due.length} 題・等待中 {review.waiting}・已攻略 {review.done}
             </span>
           </div>
-          <button className="primary small" onClick={startReview} disabled={!review.due.length || run.kind === 'review'}>
-            {run.kind === 'review' ? '複習中' : '開始複習'}
-          </button>
+          <span className="review-actions">
+            <button className="primary small" onClick={startReview} disabled={!review.due.length || run.kind === 'review'}>
+              {run.kind === 'review' ? '複習中' : '開始複習'}
+            </button>
+            {(['unsure', 'favorite'] as const).map((k) => (
+              <button key={k} className="ghost small" onClick={() => startList(k)} disabled={!lists[k].length}>
+                {k === 'unsure' ? '不確定' : '收藏'} {lists[k].length}
+              </button>
+            ))}
+          </span>
         </section>
       )}
 
@@ -916,6 +881,7 @@ export default function App() {
           onChange={(e) => void openPaper(index, e.target.value)}
         >
           {run.kind === 'review' && <option value="">（錯題複習）</option>}
+          {run.kind === 'list' && <option value="">（{LIST_LABEL[run.subject as ListKind] ?? '清單'}）</option>}
           {run.kind === 'character' && <option value="">（和{runCharacter?.name ?? '角色'}讀書）</option>}
           {run.kind === 'mock' && <option value="">（檢討模擬考）</option>}
           {run.kind === 'bank' && <option value="">（題庫：{run.subject}）</option>}
@@ -976,8 +942,8 @@ export default function App() {
               run={run}
               questions={questions}
               subjects={index.subjects}
-              onRestart={run.kind === 'paper' || run.kind === 'character' ? () => restart(run.subject, run.order) : undefined}
-              restartLabel={run.kind === 'character' ? '再一回合' : '重新開始'}
+              onRestart={run.kind === 'paper' || run.kind === 'character' || run.kind === 'list' ? () => restart(run.subject, run.order) : undefined}
+              restartLabel={run.kind === 'character' ? '再一回合' : run.kind === 'list' ? '再刷一次' : '重新開始'}
               onRetryWrong={() => restart(run.subject, run.order, true)}
               unlock={
                 runCharacter && run.affection !== undefined && stageOf(runCharacter) > run.affection
@@ -1043,6 +1009,19 @@ export default function App() {
       {guideOpen && (
         <Guide characters={characters} subjects={index.subjects} roundSize={ROUND_SIZE} onClose={() => setGuideOpen(false)} />
       )}
+      {libraryOpen && (
+        <Library
+          review={{ due: review.due.length, waiting: review.waiting, done: review.done }}
+          unsure={lists.unsure.length}
+          favorite={lists.favorite.length}
+          onReview={() => {
+            setLibraryOpen(false)
+            startReview()
+          }}
+          onList={startList}
+          onClose={() => setLibraryOpen(false)}
+        />
+      )}
       {statusOpen && subjects && (
         <StatusPanel
           characters={characters}
@@ -1050,6 +1029,8 @@ export default function App() {
           records={answers.records}
           map={subjects}
           onStudy={studyWith}
+          subtopics={subtopicData}
+          onPractice={practiceBank}
           onClose={() => setStatusOpen(false)}
         />
       )}
@@ -1065,6 +1046,7 @@ export default function App() {
           balance={wallet}
           earnings={earned}
           player={PLAYER}
+          free={import.meta.env.DEV && freeShop}
           onGive={giveGift}
           onBuyOutfit={buyOutfit}
           hasNewScene={(c) => !!newScene(c)}
@@ -1107,339 +1089,17 @@ export default function App() {
           />
         ) : null
       })()}
+      {import.meta.env.DEV && (
+        <DevPanel
+          characters={characters}
+          stories={stories}
+          onPlay={(character, scene) => setStory({ character, scene, dev: true })}
+          freeShop={freeShop}
+          onFreeShop={setFreeShop}
+          onOpenShop={catalog && characterMode ? () => setShopOpen(true) : undefined} // 商店要在角色模式才算得出好感度
+        />
+      )}
       {story && <StoryPlayer key={sceneId(story.character.id, story.scene.stage)} character={story.character} scene={story.scene} player={PLAYER} affection={affections.get(story.character.id)} onClose={closeStory} />}
     </div>
-  )
-}
-
-// 每一頁最下方的免責聲明
-function Disclaimer() {
-  return (
-    <footer className="disclaimer">
-      <p>
-        非官方題庫。試題與答案取自考選部公開的歷屆試題，正解以考選部公告（含更正答案）為準。題目由程式從 PDF
-        解析，可能有誤，發現問題請按題目下方的「回報疑義」。
-      </p>
-      <p>
-        角色立繪、背景音樂與配音為 AI 生成（立繪 Animagine XL 4.0，去背使用 BRIA RMBG-2.0，CC BY-NC 4.0；音樂 ACE-Step 1.5；配音 Breeze TTS 2，BreezeBlue Research and Non-Commercial License）。網站會記錄匿名的使用統計（隨機的裝置代碼和每天作答題數，不含個人資料）。
-      </p>
-      <p>
-        <a href={`${import.meta.env.BASE_URL}privacy.html`}>隱私權政策與使用條款</a>
-        {/* 靜態的歷屆試題頁（build 時產生，給搜尋引擎收錄；scripts/static-pages.ts） */}
-        {' ・ '}
-        <a href={`${import.meta.env.BASE_URL}q/index.html`}>歷屆試題總覽</a>
-      </p>
-    </footer>
-  )
-}
-
-const STATUS_TEXT: Record<SyncStatus, string> = {
-  local: '只存在這台裝置',
-  syncing: '同步中…',
-  synced: '已同步',
-  offline: '離線，連線後自動同步',
-  error: '同步失敗',
-}
-
-function Account(props: {
-  user: User | null
-  displayName: string | null
-  onRename: (name: string) => Promise<void>
-  onLogin: () => void
-  status: SyncStatus
-  pending: number
-  storageFull: boolean // 瀏覽器儲存空間滿了，作答紀錄存不進去
-  mergedFromAnon: number // 登入時併進帳號的、這台裝置上沒登入時的作答
-}) {
-  const { user, displayName, onRename, onLogin, status, pending, storageFull, mergedFromAnon } = props
-  const [editing, setEditing] = useState(false)
-  const [draft, setDraft] = useState('')
-  const [saving, setSaving] = useState(false)
-  const [renameError, setRenameError] = useState<string | null>(null)
-  const loginName = usernameOf(user?.email) // 帳號密碼註冊的人沒有 Email 可以找回，提醒帳號名稱
-
-  const remove = async () => {
-    if (!user) return
-    const typed = window.prompt(
-      '刪除帳號會永久刪除雲端上的作答紀錄、模擬考、禮物和暱稱，也會清掉這台裝置上這個帳號的紀錄，無法復原。\n\n確定要刪除，請輸入「刪除」：',
-    )
-    if (typed?.trim() !== '刪除') return
-    setSaving(true)
-    try {
-      await deleteAccount(user.id)
-      window.alert('帳號已刪除。')
-      window.location.reload() // 重新載入，清掉記憶體裡的紀錄
-    } catch {
-      setRenameError('刪除失敗，請確認網路連線後再試一次')
-      setSaving(false)
-    }
-  }
-
-  const save = async () => {
-    const name = draft.trim()
-    const invalid = displayNameError(name)
-    if (invalid) {
-      setRenameError(invalid)
-      return
-    }
-    setSaving(true)
-    try {
-      await onRename(name)
-      setEditing(false)
-      setRenameError(null)
-    } catch {
-      setRenameError('儲存失敗，再試一次')
-    } finally {
-      setSaving(false)
-    }
-  }
-
-  if (!user) {
-    return (
-      <div className="account">
-        <span className="sync">{STATUS_TEXT.local}</span>
-        {storageFull && <span className="sync error">瀏覽器空間滿了，新的作答重新整理後會不見，登入才能存到雲端</span>}
-        <button className="ghost small" onClick={onLogin}>
-          登入
-        </button>
-      </div>
-    )
-  }
-  if (editing) {
-    return (
-      <form
-        className="account"
-        onSubmit={(e) => {
-          e.preventDefault()
-          void save()
-        }}
-      >
-        <input
-          className="name-input"
-          value={draft}
-          maxLength={NAME_MAX}
-          autoFocus
-          aria-label="暱稱"
-          placeholder="排行榜上顯示的名字"
-          onChange={(e) => setDraft(e.target.value)}
-        />
-        <button className="primary small" type="submit" disabled={saving}>
-          儲存
-        </button>
-        <button className="ghost small" type="button" onClick={() => setEditing(false)}>
-          取消
-        </button>
-        <button className="link delete-account" type="button" disabled={saving} onClick={() => void remove()}>
-          刪除帳號
-        </button>
-        {loginName && <span className="sync">登入帳號：{loginName}</span>}
-        {renameError && <span className="sync error">{renameError}</span>}
-      </form>
-    )
-  }
-
-  return (
-    <div className="account">
-      <span className={`sync ${status}`} title={pending ? `${pending} 筆尚未上傳` : undefined}>
-        {STATUS_TEXT[status]}
-      </span>
-      {status === 'error' && (
-        <button className="ghost small" onClick={() => void syncNow()}>
-          重試
-        </button>
-      )}
-      <button
-        className="name link"
-        title="修改暱稱（排行榜上顯示的名字）"
-        onClick={() => {
-          setDraft(displayName ?? '')
-          setRenameError(null)
-          setEditing(true)
-        }}
-      >
-        {displayName ?? '…'} ✎
-      </button>
-      {storageFull && <span className="sync error">瀏覽器空間滿了，離線時的作答重新整理後會不見</span>}
-      {mergedFromAnon > 0 && (
-        <span className="sync">
-          已把這台裝置上沒登入時寫的 {mergedFromAnon} 題併進帳號
-          <button className="link dismiss" aria-label="知道了" onClick={dismissMerged}>
-            ✕
-          </button>
-        </span>
-      )}
-      <button className="ghost small" onClick={() => void signOut(user.id).catch(() => window.alert('登出失敗，請再試一次'))}>
-        登出
-      </button>
-    </div>
-  )
-}
-
-function QuestionCard(props: {
-  q: Question
-  order: OptionOrder // 畫面上的選項順序；picked 是原本的字母，onPick 傳畫面上的字母
-  index: Index
-  picked: Letter | undefined
-  onPick: (l: Letter) => void
-  onNext: () => void
-  onPrev?: () => void
-  seed: number
-  showLine: boolean // 有角色陪讀時，反應台詞由角色說，這裡只顯示正解
-  speech: { name: string; color: string; text: string } | null // 手機版把角色台詞放在選項下方，作答後一眼看得到
-  navRef: React.RefObject<HTMLElement | null> // 作答後捲到這裡，回饋和「下一題」才看得到
-}) {
-  const { order, index, onPick, onNext, onPrev, seed, showLine, speech, navRef } = props
-  const correct = props.picked ? isCorrect(props.q, props.picked) : null
-  // 以下都用畫面上的順序和字母；回報疑義用原本的字母
-  const q = shownQuestion(props.q, order)
-  const picked = props.picked && toShown(order, props.picked)
-  const paper = index.papers.find((p) => q.id.startsWith(p.id + '_'))
-
-  return (
-    <main className="card">
-      <div className="qhead">
-        <span className="qnum">
-          {paper && `${paper.year}-${paper.session ?? ''} ${paper.paper} `}第 {q.number} 題
-        </span>
-        {q.subject && (
-          <span className="tag" title={q.subject_status === 'range' ? '依題號區段粗分，尚未逐題確認' : undefined}>
-            {index.subjects[q.subject] ?? q.subject}
-          </span>
-        )}
-        {q.free_point && <span className="tag warn">本題一律給分</span>}
-        {!q.free_point && q.answers.length > 1 && <span className="tag warn">一題多解</span>}
-      </div>
-
-      <p className="stem">{q.stem}</p>
-      {q.images.map((src) => (
-        <img key={src} className="figure" src={imageUrl(src)} alt={`第 ${q.number} 題附圖`} />
-      ))}
-
-      <ol className="options">
-        {q.options.map((text, i) => {
-          const letter = LETTERS[i]
-          let state = ''
-          if (picked) {
-            if (q.answers.includes(letter) && !q.free_point) state = 'is-answer'
-            if (letter === picked) state += correct ? ' is-right' : ' is-wrong'
-          }
-          return (
-            <li key={letter}>
-              <button className={`option ${state}`} onClick={() => onPick(letter)} disabled={!!picked}>
-                <span className="key">{letter}</span>
-                <span className="text">{text}</span>
-              </button>
-            </li>
-          )
-        })}
-      </ol>
-
-      {picked && (
-        <div className={`feedback ${correct ? 'good' : 'bad'}`} role="status">
-          {showLine && <p className="line">{pickLine(correct ? 'correct' : 'wrong', seed)}</p>}
-          {speech && (
-            <p className="line char-line">
-              <span style={{ color: speech.color }}>{speech.name}</span>：{speech.text}
-            </p>
-          )}
-          <p className="answer">
-            {q.free_point ? '本題官方一律給分。' : `正解：${q.answers.join('、')}`}
-            {q.answer_note && !q.free_point && <span className="note">（{q.answer_note}）</span>}
-          </p>
-          <ExplanationPanel key={`exp-${q.id}`} questionId={q.id} number={q.number} order={order} />
-          <AskAi key={q.id} q={q} paper={paper} subject={q.subject ? (index.subjects[q.subject] ?? q.subject) : null} picked={picked} />
-        </div>
-      )}
-
-      <nav className="nav" ref={navRef}>
-        <button className="ghost" onClick={onPrev} disabled={!onPrev}>
-          ← 上一題
-        </button>
-        <button className="primary" onClick={onNext} disabled={!picked}>
-          下一題 →
-        </button>
-      </nav>
-      <div className="card-foot">
-        <ReportButton key={q.id} questionId={q.id} picked={props.picked} />
-        <p className="hint">鍵盤：1–4 作答，Enter 下一題</p>
-      </div>
-    </main>
-  )
-}
-
-function Summary(props: {
-  run: Run
-  questions: Map<string, Question>
-  subjects: Record<string, string>
-  onRestart?: () => void
-  restartLabel: string
-  onRetryWrong: () => void
-  unlock?: { text: string; onPlay?: () => void } // 這回合好感度升階
-}) {
-  const { run, questions, subjects, onRestart, restartLabel, onRetryWrong, unlock } = props
-  const unlocked = !!unlock
-  useEffect(() => {
-    if (unlocked) sfx('unlock')
-  }, [unlocked])
-  const rows = new Map<string, { total: number; correct: number }>()
-  let wrong = 0
-  for (const id of run.queue) {
-    const q = questions.get(id)
-    const p = run.picks[id]
-    if (!q || !p) continue
-    const key = q.subject ?? 'unknown'
-    const row = rows.get(key) ?? { total: 0, correct: 0 }
-    row.total++
-    if (isCorrect(q, p)) row.correct++
-    else wrong++
-    rows.set(key, row)
-  }
-
-  return (
-    <main className="card summary">
-      <h2>{run.kind === 'review' ? '今天的複習完成了' : run.kind === 'mock' ? '檢討完成' : '這回合結束'}</h2>
-      {unlock && (
-        <div className="unlock">
-          <span>{unlock.text}</span>
-          {unlock.onPlay && (
-            <button className="primary small" onClick={unlock.onPlay}>
-              看新劇情
-            </button>
-          )}
-        </div>
-      )}
-      <table>
-        <thead>
-          <tr>
-            <th>學科</th>
-            <th>答對</th>
-            <th>正確率</th>
-          </tr>
-        </thead>
-        <tbody>
-          {[...rows].map(([key, r]) => (
-            <tr key={key}>
-              <td>{subjects[key] ?? '未分類'}</td>
-              <td>
-                {r.correct} / {r.total}
-              </td>
-              <td>{Math.round((r.correct / r.total) * 100)}%</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <nav className="nav">
-        {onRestart ? (
-          <button className="ghost" onClick={onRestart}>
-            {restartLabel}
-          </button>
-        ) : (
-          <span />
-        )}
-        <button className="primary" onClick={onRetryWrong} disabled={wrong === 0}>
-          重做錯題（{wrong}）
-        </button>
-      </nav>
-    </main>
   )
 }

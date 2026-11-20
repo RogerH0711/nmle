@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from 'react'
 import { fetchAllPages, supabase } from './supabase'
 import type { MockRecord, MockSession } from './mock'
+import { mergeRecords } from './merge'
 
 // 模擬考的本機儲存與同步，做法同 answers.ts：
 // - 作答中的模擬考只存在這台裝置，重新整理、關掉分頁再打開都能接著考，計時不會停。
@@ -126,4 +127,13 @@ export async function syncMocks() {
 
 window.addEventListener('online', () => {
   if (state.owner !== ANON) void syncMocks()
+})
+
+// 別的分頁交卷時把紀錄併進來，做法同 answers.ts
+window.addEventListener('storage', (e) => {
+  if (e.key !== recordsKey(state.owner) || e.newValue === null) return
+  const merged = mergeRecords(state.records, read<MockRecord[]>(recordsKey(state.owner), []), (r) => r.started_at)
+  if (!merged) return
+  state = { ...state, records: merged }
+  listeners.forEach((l) => l())
 })

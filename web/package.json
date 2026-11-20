@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build && node scripts/static-pages.ts",
     "preview": "vite preview",
-    "test": "node --test \"src/**/*.test.ts\""
+    "test": "node --test \"src/**/*.test.ts\"",
+    "lint": "oxlint --deny-warnings src scripts e2e",
+    "typecheck": "tsc -p tsconfig.test.json --noEmit",
+    "e2e": "node --test --test-concurrency=1 \"e2e/*.test.ts\""
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.3",
@@ -15,10 +18,14 @@
     "react-dom": "^19.3.0"
   },
   "devDependencies": {
+    "@types/node": "^24.19.2",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.91.0",
+    "playwright": "^1.64.1",
     "typescript": "^7.0.2",
-    "vite": "^8.3.4"
+    "vite": "^8.3.4",
+    "vite-plugin-pwa": "^2.0.0"
   }
 }

@@ -1,6 +1,7 @@
 import type { AnswerRecord } from './answers'
 import type { SubjectMap } from './affection'
 import { localDate } from './review.ts'
+import { mergeByKey } from './merge.ts'
 
 // 學姊傳訊息：打開網站時依作答紀錄判斷，用聊天訊息的樣子提醒（見 docs/design.md「遊戲介面方向」第 4 點）。
 // 網站做不到手機推播，所以只在打開網站時「收到」。訊息內容存在這台裝置，不同步。
@@ -146,9 +147,10 @@ export function loadMessages(): Message[] {
   }
 }
 
+// 和已經存的合併（merge.ts）：別的分頁收到的訊息、讀過的標記不會被這個分頁蓋掉
 export function saveMessages(list: Message[]) {
   try {
-    localStorage.setItem(STORE_KEY, JSON.stringify(list.slice(-KEEP)))
+    localStorage.setItem(STORE_KEY, JSON.stringify(mergeByKey(loadMessages(), list).slice(-KEEP)))
   } catch {
     // 存不了就只在這次瀏覽有效
   }

@@ -142,7 +142,7 @@ export function highlight(text: string, terms: string[]): { text: string; mark: 
     folded += f
     for (let k = 0; k < f.length; k++) origin.push(i) // 以 UTF-16 單位對應，和 indexOf 回傳的位置一致
   })
-  const marked = new Array<boolean>(chars.length).fill(false)
+  const marked = Array.from({ length: chars.length }, () => false)
   for (const t of terms) {
     for (let at = folded.indexOf(t); at >= 0; at = folded.indexOf(t, at + 1)) {
       const from = origin[at]
@@ -160,7 +160,7 @@ export function highlight(text: string, terms: string[]): { text: string; mark: 
 }
 
 // ---------- 網址 ----------
-// #/bank/<範圍>[/<題號>][?q=關鍵字&s=學科]：範圍是 all、y113 或考卷 id。
+// #/bank/<範圍>[/<題號>][?q=關鍵字&s=學科&t=次主題]：範圍是 all、y113 或考卷 id。
 // 可以把搜尋結果或某一題的網址分享出去；之後的 SEO 靜態頁也連回這裡。
 
 export interface BankRoute {
@@ -168,6 +168,7 @@ export interface BankRoute {
   number: number | null // 只看這份考卷的這一題
   query: string
   subject: string
+  topic?: string // 次主題 id（subtopics.ts），要搭配學科
 }
 
 const SCOPE = /^(all|y\d{3}|\d{6}_\d)$/
@@ -182,6 +183,7 @@ export function parseBankHash(hash: string): BankRoute | null {
     number: m[2] && /^\d{6}_\d$/.test(scope) ? Number(m[2]) : null,
     query: params.get('q') ?? '',
     subject: params.get('s') ?? 'all',
+    ...(params.get('t') && params.get('s') ? { topic: params.get('t')! } : {}),
   }
 }
 
@@ -189,6 +191,7 @@ export function bankHash(r: BankRoute) {
   const params = new URLSearchParams()
   if (r.query.trim()) params.set('q', r.query.trim())
   if (r.subject !== 'all') params.set('s', r.subject)
+  if (r.subject !== 'all' && r.topic) params.set('t', r.topic)
   const qs = params.toString()
   return `#/bank/${r.scope}${r.number !== null ? `/${r.number}` : ''}${qs ? `?${qs}` : ''}`
 }

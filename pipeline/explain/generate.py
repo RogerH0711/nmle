@@ -8,7 +8,7 @@
     python pipeline/explain/generate.py all --model qwen3.5:35b-a3b       # 全部考卷
 
 模型只看得到題目和正解，看不到學生詳解（界線見 docs/design.md「詳解與題目正確率」）。
-已經生成的題目會跳過，中斷後重跑會接著做。送分題和有圖的題目先不生成。
+已經生成的題目會跳過，中斷後重跑會接著做；被截斷的題目重跑時會換 seed 再試（最多 3 次）。送分題和有圖的題目先不生成。
 """
 import argparse
 import sys
@@ -70,6 +70,15 @@ def skip_reason(q):
     return None
 
 
+# thinking 想太久會超過 context、還沒寫答案就被截斷（10/20 35B 開 thinking 的 20 題有 1 題，想了 16,000 tokens），
+# 重跑時換 seed 再試，第一次加上重試最多 3 次；還是截斷的就留著，export_web.py 不會匯出
+MAX_ATTEMPTS = 3
+
+
+def truncated(entry):
+    return entry.get("done_reason") == "length" and entry.get("attempt", 0) < MAX_ATTEMPTS - 1
+
+
 def generate(q, model, attempt=0, think=False):
     messages = [{"role": "system", "content": SYSTEM}, {"role": "user", "content": prompt_for(q)}]
     # 重新生成時換 seed、稍微提高溫度，得到不同的寫法
@@ -97,7 +106,7 @@ def main():
         for q in load_exam(exam_id)["questions"][: args.limit]:
             key = str(q["number"])
             entry = out["questions"].get(key)
-            if entry and q["number"] not in args.redo:
+            if entry and q["number"] not in args.redo and not truncated(entry):
                 continue
             reason = skip_reason(q)
             if reason:
@@ -109,12 +118,18 @@ def main():
     progress = Progress(f"生成 {len(exam_ids)} 份考卷（{folder.name}）", len(todo))
     for exam_id, q, entry in todo:
         path = folder / f"{exam_id}.json"
-        out = read_json(path, {})
         attempt = entry.get("attempt", 0) + 1 if entry else 0
-        text, stats = generate(q, args.model, attempt, args.think)
-        out["questions"][str(q["number"])] = {"text": text, "attempt": attempt, **stats}
-        write_json(path, out)  # 每題存一次，中斷後重跑會接著做
-        progress.step(f"{exam_id} #{q['number']} {stats['seconds']}s {stats['output_tokens']} tokens")
+        while True:
+            text, stats = generate(q, args.model, attempt, args.think)
+            out = read_json(path, {})
+            entry = {"text": text, "attempt": attempt, **stats}
+            out["questions"][str(q["number"])] = entry
+            write_json(path, out)  # 每題存一次，中斷後重跑會接著做
+            if not truncated(entry):
+                break
+            attempt += 1
+        cut = "（截斷）" if entry.get("done_reason") == "length" else ""
+        progress.step(f"{exam_id} #{q['number']} {stats['seconds']}s {stats['output_tokens']} tokens{cut}")
     progress.finish(f"生成 {len(todo)} 題 → {folder.relative_to(folder.parents[2])}")
 
 

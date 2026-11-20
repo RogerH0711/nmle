@@ -32,6 +32,9 @@ test('打亂的結果是 0–3 的排列；不能打亂的題目維持原順序'
   assert.deepEqual(makeOrder(q({ options: ['甲', '乙', '丙', '以上皆是'] })), [0, 1, 2, 3])
   assert.deepEqual(makeOrder(q({ options: ['甲', '乙', 'A與B皆正確', '丁'] })), [0, 1, 2, 3])
   assert.ok(canShuffle(q({ options: ['A 校與 B 校', 'A 型肝炎', '維生素 A', '60 歲以上'] }))) // 題幹的標籤、名詞不算
+  // 選項本身是一個字母：打亂會出現「B. A」，維持原順序
+  assert.deepEqual(makeOrder(q({ options: ['A', 'D', 'E', 'K'] })), [0, 1, 2, 3])
+  assert.deepEqual(makeOrder(q({ options: ['A', 'B₁', 'B₆', 'B₁₂'] })), [0, 1, 2, 3])
 })
 
 test('詳解：字母換成畫面上的，選項解析照畫面順序排；V(D)J 不換', () => {
@@ -57,10 +60,14 @@ const questions = readdirSync(new URL('questions/', data))
   .filter((f) => f.endsWith('.json'))
   .flatMap((f) => (JSON.parse(readFileSync(new URL(`questions/${f}`, data), 'utf-8')) as ExamFile).questions)
 
-test('題庫：只有一題多解、有官方註記或一律給分的題目不打亂（選項參照規則沒有誤判）', () => {
+test('題庫：只有一題多解、有官方註記、一律給分或選項是單一字母的題目不打亂（選項參照規則沒有誤判）', () => {
   const fixed = questions.filter((x) => !canShuffle(x))
-  assert.ok(questions.length > 2000)
-  for (const x of fixed) assert.ok(x.answers.length !== 1 || x.answer_note || x.free_point, `${x.id} 被當成選項參照`)
+  const letterOptions = ['106100_1_078', '108030_2_019', '108030_2_100', '114090_1_005']
+  assert.ok(questions.length > 4000)
+  for (const x of fixed) {
+    assert.ok(x.answers.length !== 1 || x.answer_note || x.free_point || letterOptions.includes(x.id), `${x.id} 被當成選項參照`)
+  }
+  for (const id of letterOptions) assert.ok(fixed.some((x) => x.id === id), `${id} 的選項是單一字母，應該不打亂`)
 })
 
 test('詳解：每份詳解換字母後，選項解析還是 A–D 各一項', () => {

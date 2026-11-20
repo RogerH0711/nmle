@@ -264,7 +264,7 @@
         "眼輪匝肌（orbicularis oculi muscle）",
         "降眉間肌（procerus muscle）",
         "提上眼瞼肌（levator palpebrae superioris）",
-        "皺眉肌（corrugator supercili muscle）"
+        "皺眉肌（corrugator supercilii muscle）"
       ],
       "answers": [
         "C"
@@ -1531,7 +1531,7 @@
       "number": 64,
       "subject": "physiology",
       "subject_status": "range",
-      "stem": "腸道中，關於分解與吸收蛋白質類營養物質的敘述，下列何者最適當？",
+      "stem": "腸道中，關於分解與吸收蛋白質類營養物質的敘述，下列何者最適當？",
       "options": [
         "僅能吸收單一胺基酸（amino acid）",
         "分解蛋白質的酵素主要來自肝臟（liver）所分泌",

@@ -41,12 +41,20 @@ export function chooseBgm(s: {
   if (s.story) return s.story.bgm ?? `theme_${s.story.character}`
   if (s.onMap) return 'map'
   if (s.runKind === 'character' && s.runCharacter) return `theme_${s.runCharacter}`
-  if (s.runKind === 'review') return 'library'
+  if (s.runKind === 'review' || s.runKind === 'list') return 'library' // 圖書館的清單（Library.tsx）也在圖書館
   return 'map'
 }
 
 // 有 {player} 的台詞要錄學弟、學妹兩個版本，檔名加上 .m / .f
 const PLAYER_VOICE: Record<PlayerTitle, string> = { 學弟: 'm', 學妹: 'f' }
+
+/**
+ * 收禮台詞的語音 id：台詞有 {gift}（念出禮物名稱）的，每種禮物各錄一版（<台詞 id>.<禮物 id>.mp3，11/15）；沒有的就是台詞 id。
+ * 錄音那邊的組法在 art/voice_breezy.py 的 expand
+ */
+export function giftVoiceId(line: { id: string; text: string }, giftId: string) {
+  return line.text.includes('{gift}') ? `${line.id}.${giftId}` : line.id
+}
 
 /** 這句台詞的語音要找哪幾個檔名（依序）：先找有稱呼的版本，再找共用的 */
 export function voiceKeys(lineId: string, player: PlayerTitle) {

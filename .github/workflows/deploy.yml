@@ -39,6 +39,12 @@ jobs:
       - name: 前端單元測試與題庫抽檢
         run: npm test --prefix web
 
+      # oxlint：React hooks 的依賴等；測試檔和 e2e 的型別（主程式的型別在 build 時檢查）
+      - name: Lint 與測試檔型別檢查
+        run: |
+          npm run lint --prefix web
+          npm run typecheck --prefix web
+
   build:
     needs: test
     runs-on: ubuntu-latest
@@ -62,6 +68,14 @@ jobs:
         working-directory: web
         env:
           VITE_BUILD: ${{ github.sha }}
+
+      # 對 build 出來的網站跑端對端測試（web/e2e/）：CSP、service worker、返回鍵、多分頁、備份。
+      # 開發伺服器沒有 CSP 和 service worker，這些只有在這裡測得到
+      - name: 端對端測試
+        working-directory: web
+        run: |
+          npx playwright install --with-deps chromium
+          npm run e2e
 
       - uses: actions/configure-pages@v6
         if: github.event_name != 'pull_request'

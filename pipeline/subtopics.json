@@ -1,0 +1,440 @@
+{
+  "_說明": "學科底下的次主題（11/20 Roger 定案：粒度照草稿、不加器官系統）。每題只歸自己學科的一個次主題，由 pipeline/explain/classify.py 用本機 Qwen 判斷，結果匯出到 data/subtopics.json。名稱與範圍的說明見 docs/subtopics.md，兩邊要一起改。",
+  "subjects": {
+    "anatomy": [
+      {
+        "id": "neuro",
+        "name": "神經解剖",
+        "includes": "大腦、小腦、腦幹、脊髓、傳導路徑、腦室與腦脊髓液、腦的血液供應"
+      },
+      {
+        "id": "head_neck",
+        "name": "頭頸部",
+        "includes": "顱骨、臉、眼眶、耳、鼻、口腔、咽喉、頸部、腦神經的周邊走向"
+      },
+      {
+        "id": "back",
+        "name": "背部與脊柱",
+        "includes": "椎骨、背部肌肉、脊神經根、椎管"
+      },
+      {
+        "id": "thorax",
+        "name": "胸部",
+        "includes": "胸壁、乳房、胸膜與肺、心臟、縱膈"
+      },
+      {
+        "id": "abdomen",
+        "name": "腹部",
+        "includes": "腹壁與腹股溝、腹膜、腹腔器官、後腹壁、腎與腎上腺"
+      },
+      {
+        "id": "pelvis",
+        "name": "骨盆與會陰",
+        "includes": "骨盆、骨盆腔器官、會陰、生殖器官的解剖"
+      },
+      {
+        "id": "upper_limb",
+        "name": "上肢",
+        "includes": "肩、臂、前臂、手、臂神經叢"
+      },
+      {
+        "id": "lower_limb",
+        "name": "下肢",
+        "includes": "臀、大腿、小腿、足、腰薦神經叢"
+      }
+    ],
+    "embryology": [
+      {
+        "id": "early",
+        "name": "早期發育與胎盤",
+        "includes": "配子形成、受精、第 1–8 週、胚層、胎膜與胎盤、雙胞胎、致畸胎因子"
+      },
+      {
+        "id": "cardio_resp",
+        "name": "心血管與呼吸系統發育",
+        "includes": "心臟、大血管、胎兒循環與出生後留下的遺跡（臍韌帶、動脈韌帶）、肺"
+      },
+      {
+        "id": "gi_gu",
+        "name": "消化與泌尿生殖系統發育",
+        "includes": "腸道旋轉與生理性臍疝、肝胰、腎、性腺與生殖管、外生殖器"
+      },
+      {
+        "id": "head_neuro",
+        "name": "頭頸與神經系統發育",
+        "includes": "咽弓與咽囊、臉與顎、神經管、腦泡、眼、耳"
+      },
+      {
+        "id": "musculoskeletal",
+        "name": "肌肉骨骼與體腔",
+        "includes": "體節、四肢、顱骨、體腔與橫膈"
+      }
+    ],
+    "histology": [
+      {
+        "id": "cell_epithelium",
+        "name": "細胞與上皮組織",
+        "includes": "胞器、細胞骨架、細胞接合、上皮、腺體"
+      },
+      {
+        "id": "connective_bone",
+        "name": "結締組織、軟骨與骨",
+        "includes": "纖維與基質、軟骨、骨與骨生成"
+      },
+      {
+        "id": "muscle_nerve",
+        "name": "肌肉與神經組織",
+        "includes": "骨骼肌、心肌、平滑肌、神經元、神經膠細胞（含室管膜細胞）、周邊神經"
+      },
+      {
+        "id": "blood_immune",
+        "name": "血液、免疫與循環系統",
+        "includes": "血球、骨髓、淋巴結、脾、胸腺、血管"
+      },
+      {
+        "id": "digestive",
+        "name": "消化系統",
+        "includes": "消化道、唾液腺、肝、胰、膽"
+      },
+      {
+        "id": "resp_urinary_skin",
+        "name": "呼吸、泌尿與皮膚",
+        "includes": "呼吸道與肺、腎與泌尿道、皮膚與附屬器"
+      },
+      {
+        "id": "endocrine_repro",
+        "name": "內分泌與生殖系統",
+        "includes": "內分泌腺、睪丸與男性生殖腺體、卵巢、子宮、乳腺"
+      },
+      {
+        "id": "eye_ear",
+        "name": "眼與耳",
+        "includes": "眼球、視網膜、內耳"
+      }
+    ],
+    "physiology": [
+      {
+        "id": "cell",
+        "name": "細胞生理與膜電位",
+        "includes": "膜運輸、靜止膜電位、動作電位、突觸、第二傳訊者"
+      },
+      {
+        "id": "neuro",
+        "name": "神經生理",
+        "includes": "感覺（含視覺、聽覺、平衡）、運動控制、自主神經、睡眠與高級功能"
+      },
+      {
+        "id": "muscle",
+        "name": "肌肉生理",
+        "includes": "骨骼肌、平滑肌、興奮收縮偶聯"
+      },
+      {
+        "id": "cardio",
+        "name": "心血管與血液",
+        "includes": "心臟電生理、心動週期、血壓調控、微循環、止血"
+      },
+      {
+        "id": "resp",
+        "name": "呼吸",
+        "includes": "肺容積、通氣灌流、氣體運輸、呼吸調控、高海拔"
+      },
+      {
+        "id": "renal",
+        "name": "腎臟、體液與酸鹼",
+        "includes": "腎絲球過濾、腎小管、水分與電解質、酸鹼平衡"
+      },
+      {
+        "id": "gi",
+        "name": "消化",
+        "includes": "腸胃道運動、分泌、消化吸收、腸胃道激素"
+      },
+      {
+        "id": "endocrine",
+        "name": "內分泌",
+        "includes": "下視丘與腦下垂體、甲狀腺、腎上腺、胰臟激素、鈣磷調節、能量代謝與體溫"
+      },
+      {
+        "id": "repro",
+        "name": "生殖",
+        "includes": "男性與女性生殖生理、月經週期、懷孕、泌乳"
+      }
+    ],
+    "biochemistry": [
+      {
+        "id": "protein_enzyme",
+        "name": "蛋白質結構與酵素",
+        "includes": "胺基酸性質、蛋白質結構、血紅素功能、酵素動力學與調控"
+      },
+      {
+        "id": "carbohydrate",
+        "name": "醣類代謝",
+        "includes": "糖解、糖質新生、肝醣、五碳醣磷酸路徑"
+      },
+      {
+        "id": "energy",
+        "name": "能量代謝與代謝整合",
+        "includes": "檸檬酸循環、電子傳遞與氧化磷酸化、飢餓與進食狀態"
+      },
+      {
+        "id": "lipid",
+        "name": "脂質代謝",
+        "includes": "脂肪酸、酮體、膽固醇、脂蛋白、類固醇與類花生酸"
+      },
+      {
+        "id": "nitrogen",
+        "name": "胺基酸與含氮物代謝",
+        "includes": "尿素循環、胺基酸代謝與先天代謝異常、血基質、核苷酸代謝"
+      },
+      {
+        "id": "vitamin",
+        "name": "維生素與營養",
+        "includes": "維生素、輔酶、礦物質"
+      },
+      {
+        "id": "molecular",
+        "name": "分子生物學",
+        "includes": "DNA 複製與修復、轉錄、轉譯、基因表現調控"
+      },
+      {
+        "id": "genetics",
+        "name": "分子技術與遺傳",
+        "includes": "PCR、定序、重組 DNA、遺傳模式、遺傳疾病的分子機轉"
+      },
+      {
+        "id": "signaling",
+        "name": "訊息傳遞與膜生化",
+        "includes": "受體、G 蛋白、激酶、生物膜、激素的生化作用"
+      }
+    ],
+    "microbiology": [
+      {
+        "id": "innate",
+        "name": "先天免疫與免疫細胞",
+        "includes": "屏障、吞噬細胞、NK 細胞、補體、發炎相關細胞激素、類鐸受體"
+      },
+      {
+        "id": "adaptive",
+        "name": "後天免疫",
+        "includes": "抗體、MHC 與抗原呈現、T 細胞與 B 細胞的發育與活化"
+      },
+      {
+        "id": "immune_disease",
+        "name": "免疫疾病",
+        "includes": "過敏、自體免疫、免疫缺陷、移植、腫瘤免疫、疫苗"
+      },
+      {
+        "id": "bacteriology",
+        "name": "細菌學總論",
+        "includes": "細菌構造與遺傳、致病機轉與毒素、抗生素作用與抗藥性、消毒滅菌"
+      },
+      {
+        "id": "gram_positive",
+        "name": "革蘭氏陽性菌",
+        "includes": "葡萄球菌、鏈球菌、桿菌屬、梭菌、白喉、李斯特菌"
+      },
+      {
+        "id": "gram_negative",
+        "name": "革蘭氏陰性菌",
+        "includes": "腸道菌、奈瑟菌、嗜血桿菌、弧菌、彎曲桿菌、幽門桿菌、綠膿桿菌"
+      },
+      {
+        "id": "other_bacteria",
+        "name": "其他細菌",
+        "includes": "分枝桿菌、螺旋體、披衣菌、立克次體、黴漿菌、退伍軍人菌"
+      },
+      {
+        "id": "dna_virus",
+        "name": "DNA 病毒與病毒學總論",
+        "includes": "病毒構造與複製、疱疹、腺病毒、乳突瘤、B 型肝炎"
+      },
+      {
+        "id": "rna_virus",
+        "name": "RNA 病毒",
+        "includes": "流感、腸病毒、HIV、其他肝炎病毒、登革熱、冠狀病毒、狂犬病、普利昂"
+      },
+      {
+        "id": "fungi",
+        "name": "黴菌",
+        "includes": "酵母菌、絲狀真菌、雙型性真菌、抗黴菌藥的作用"
+      }
+    ],
+    "parasitology": [
+      {
+        "id": "protozoa",
+        "name": "原蟲",
+        "includes": "阿米巴、鞭毛蟲、瘧原蟲、弓漿蟲、焦蟲"
+      },
+      {
+        "id": "nematode",
+        "name": "線蟲",
+        "includes": "腸道線蟲、絲蟲、幼蟲移行症、廣東住血線蟲"
+      },
+      {
+        "id": "trematode",
+        "name": "吸蟲",
+        "includes": "肝吸蟲、肺吸蟲、血吸蟲、腸吸蟲"
+      },
+      {
+        "id": "cestode",
+        "name": "絛蟲",
+        "includes": "豬肉與牛肉絛蟲、包蟲、裂頭絛蟲"
+      },
+      {
+        "id": "arthropod",
+        "name": "醫學節肢動物與病媒",
+        "includes": "蚊、蜱、蟎、蚤、蝨、病媒傳染病"
+      }
+    ],
+    "public_health": [
+      {
+        "id": "biostat",
+        "name": "生物統計",
+        "includes": "描述統計、機率分布、假說檢定、迴歸與相關、存活分析"
+      },
+      {
+        "id": "epidemiology",
+        "name": "流行病學",
+        "includes": "疾病測量、研究設計、偏差與干擾、因果推論、篩檢"
+      },
+      {
+        "id": "environment",
+        "name": "環境與職業衛生",
+        "includes": "空氣、水、輻射、化學物質與毒理、職業病與職場法規"
+      },
+      {
+        "id": "prevention",
+        "name": "傳染病防治與健康促進",
+        "includes": "法定傳染病、疫苗政策、衛生教育、健康行為理論"
+      },
+      {
+        "id": "policy",
+        "name": "衛生政策與醫療管理",
+        "includes": "健康保險、醫療體系與醫院管理、醫療經濟、長期照護"
+      },
+      {
+        "id": "law_ethics",
+        "name": "醫療法規與倫理",
+        "includes": "醫師法、醫療法、病人權利、醫學倫理"
+      }
+    ],
+    "pharmacology": [
+      {
+        "id": "general",
+        "name": "藥理總論與中毒",
+        "includes": "藥物動力學、藥效學、受體、藥物交互作用、中毒與解毒劑"
+      },
+      {
+        "id": "autonomic",
+        "name": "自主神經藥物",
+        "includes": "擬膽鹼、抗膽鹼、腎上腺素受體致效劑與拮抗劑、神經肌肉阻斷劑"
+      },
+      {
+        "id": "cns",
+        "name": "中樞神經藥物",
+        "includes": "麻醉、鎮靜安眠、抗癲癇、抗精神病、抗憂鬱、帕金森、鴉片類、成癮"
+      },
+      {
+        "id": "cardio_renal",
+        "name": "心血管與腎臟藥物",
+        "includes": "降血壓、抗心律不整、心衰竭、心絞痛、利尿劑、降血脂"
+      },
+      {
+        "id": "blood",
+        "name": "血液藥物",
+        "includes": "抗凝血、抗血小板、溶栓、貧血治療"
+      },
+      {
+        "id": "endocrine",
+        "name": "內分泌藥物",
+        "includes": "糖尿病、甲狀腺、皮質類固醇、性荷爾蒙與避孕藥、子宮收縮與安胎藥、骨質疏鬆"
+      },
+      {
+        "id": "inflammation",
+        "name": "抗發炎與免疫藥物",
+        "includes": "NSAIDs、痛風、自泌素（組織胺、血清素、前列腺素）、抗風濕、免疫抑制劑、生物製劑"
+      },
+      {
+        "id": "resp_gi",
+        "name": "呼吸與消化道藥物",
+        "includes": "氣喘與 COPD、消化性潰瘍、止吐、腸道用藥"
+      },
+      {
+        "id": "antimicrobial",
+        "name": "抗微生物藥物",
+        "includes": "抗生素、抗分枝桿菌、抗病毒、抗黴菌、抗寄生蟲"
+      },
+      {
+        "id": "anticancer",
+        "name": "抗癌藥物",
+        "includes": "細胞毒性藥物、標靶藥物、免疫治療"
+      }
+    ],
+    "pathology": [
+      {
+        "id": "cell_injury",
+        "name": "細胞傷害與適應",
+        "includes": "萎縮、肥大、化生、壞死、凋亡、細胞內堆積、鈣化"
+      },
+      {
+        "id": "inflammation",
+        "name": "發炎與修復",
+        "includes": "急慢性發炎、介質、肉芽腫、傷口癒合"
+      },
+      {
+        "id": "hemodynamics",
+        "name": "血流動力學",
+        "includes": "水腫（含淋巴水腫）、充血、出血、血栓、栓塞、梗塞、休克"
+      },
+      {
+        "id": "genetic_env",
+        "name": "免疫、遺傳與環境病理",
+        "includes": "過敏反應、自體免疫疾病、移植排斥、免疫缺陷、類澱粉沉積、遺傳疾病、兒科疾病、營養與環境疾病"
+      },
+      {
+        "id": "neoplasia",
+        "name": "腫瘤總論",
+        "includes": "腫瘤命名、致癌機轉、癌基因與抑癌基因、分級與分期"
+      },
+      {
+        "id": "cardio",
+        "name": "心血管系統",
+        "includes": "動脈粥狀硬化、高血壓、心臟病、血管炎"
+      },
+      {
+        "id": "heme",
+        "name": "血液與淋巴",
+        "includes": "貧血、白血病、淋巴瘤、骨髓增生性疾病"
+      },
+      {
+        "id": "resp",
+        "name": "呼吸系統與頭頸",
+        "includes": "肺炎、阻塞性與限制性肺病、肺腫瘤、鼻咽、唾液腺"
+      },
+      {
+        "id": "gi",
+        "name": "消化系統",
+        "includes": "食道、胃、腸、肝、膽、胰"
+      },
+      {
+        "id": "renal_male",
+        "name": "腎臟、泌尿與男性生殖",
+        "includes": "腎絲球疾病、腎小管間質、泌尿道腫瘤、攝護腺、睪丸"
+      },
+      {
+        "id": "female_breast",
+        "name": "女性生殖與乳房",
+        "includes": "子宮頸、子宮、卵巢、妊娠相關、乳房"
+      },
+      {
+        "id": "endocrine",
+        "name": "內分泌",
+        "includes": "甲狀腺、副甲狀腺、腎上腺、腦下垂體、胰島"
+      },
+      {
+        "id": "neuro_msk_skin",
+        "name": "神經、骨骼肌肉與皮膚",
+        "includes": "中樞神經、肌肉、骨與關節、軟組織腫瘤、皮膚"
+      }
+    ]
+  }
+}

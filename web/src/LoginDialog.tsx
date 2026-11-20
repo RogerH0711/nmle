@@ -4,6 +4,7 @@ import {
   authErrorText, normalizeUsername, PASSWORD_MAX, passwordError, USERNAME_MAX, usernameError,
 } from './login'
 import { signInWithGoogle, signInWithUsername, signUpWithUsername } from './supabase'
+import { useDialog } from './dialog'
 
 type Mode = 'signin' | 'signup'
 
@@ -16,15 +17,7 @@ export function LoginDialog({ onClose }: { onClose: () => void }) {
   const [error, setError] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
 
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key !== 'Escape') return
-      e.preventDefault()
-      onClose()
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [onClose])
+  const dialogRef = useDialog(onClose) // Esc、Tab、焦點（dialog.ts）
 
   // 帳號密碼登入前的真人驗證（turnstile.ts）
   const captchaRef = useRef<HTMLDivElement>(null)
@@ -81,7 +74,7 @@ export function LoginDialog({ onClose }: { onClose: () => void }) {
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal login" role="dialog" aria-label="登入" onClick={(e) => e.stopPropagation()}>
+      <div className="modal login" role="dialog" aria-modal="true" ref={dialogRef} tabIndex={-1} aria-label="登入" onClick={(e) => e.stopPropagation()}>
         <h2>登入</h2>
         <p className="login-why">
           不登入也能刷題，紀錄存在這台裝置的瀏覽器裡。登入後紀錄會同步到各裝置，也能上排行榜；登入前在這台裝置寫的題目會併進帳號。

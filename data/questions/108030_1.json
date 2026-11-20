@@ -1,0 +1,2423 @@
+{
+  "exam": {
+    "id": "108030_1",
+    "exam_code": "108030",
+    "year": 108,
+    "session": 1,
+    "paper": "醫學(一)",
+    "paper_code": "1301",
+    "sources": {
+      "Q": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=Q&code=108030&c=301&s=11&q=1",
+      "S": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=S&code=108030&c=301&s=11&q=1",
+      "M": "https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?t=M&code=108030&c=301&s=11&q=1"
+    }
+  },
+  "problems": [],
+  "questions": [
+    {
+      "id": "108030_1_001",
+      "number": 1,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "有關小腦的敘述，下列何者錯誤？",
+      "options": [
+        "背側脊髓小腦徑（dorsal spinocerebellar tract）主要由nucleus thoracicus（又稱 Clarke's column或nucleus dorsalis）發出",
+        "背側脊髓小腦徑（dorsal spinocerebellar tract）左右交叉後由下小腦腳（inferior cerebellar peduncle）進入小腦",
+        "上小腦腳（superior cerebellar peduncle）含有進、出小腦的神經纖維",
+        "中小腦腳（middle cerebellar peduncle）含橋腦核（pontine nucleus）發出之神經纖維"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_002",
+      "number": 2,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "甲狀腺切除手術不慎傷及喉外神經（external laryngeal nerve），下列何肌的功能最可能受損？",
+      "options": [
+        "環狀甲骨肌（cricothyroid muscle）",
+        "甲狀杓骨肌（thyroarytenoid muscle）",
+        "後環杓肌（posterior cricoarytenoid muscle）",
+        "外側環杓肌（lateral cricoarytenoid muscle）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_003",
+      "number": 3,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "下列何者的分泌物最不可能流經過半月裂孔（hiatus semilunaris）？",
+      "options": [
+        "額竇（frontal sinus）",
+        "前篩竇（anterior ethmoidal sinus）",
+        "上頜竇（maxillary sinus）",
+        "蝶竇（sphenoid sinus）"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_004",
+      "number": 4,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "兩眼同時看向正上方，為何種神經之作用？",
+      "options": [
+        "眼神經（ophthalmic nerve）",
+        "滑車神經（trochlear nerve）",
+        "動眼神經（oculomotor nerve）",
+        "外展神經（abducent nerve）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_005",
+      "number": 5,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "胸骨柄正中間處的穿刺傷，最可能傷及下列何者？",
+      "options": [
+        "主動脈弓（aortic arch）",
+        "左心室（left ventricle）",
+        "肺動脈幹（pulmonary trunk）",
+        "上腔靜脈（superior vena cava）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_006",
+      "number": 6,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "下列何者是臍靜脈（umbilical vein）的殘跡？",
+      "options": [
+        "肝鐮韌帶（falciform ligament）",
+        "肝圓韌帶（ligamentum teres）",
+        "冠狀韌帶（coronary ligament）",
+        "正中臍韌帶（median umbilical ligament）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_007",
+      "number": 7,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "下列何者穿過橫膈中央腱（central tendon of diaphragm）？",
+      "options": [
+        "主動脈",
+        "下腔靜脈",
+        "食道",
+        "肝門靜脈"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_008",
+      "number": 8,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "陰部神經（pudendal nerve）位於坐骨肛門窩（ischioanal fossa）的何處？",
+      "options": [
+        "內側壁",
+        "外側壁",
+        "上側壁",
+        "後側壁"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_009",
+      "number": 9,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "下列何者走在下肢的內側？",
+      "options": [
+        "大隱靜脈（great saphenous vein）",
+        "小隱靜脈（small saphenous vein）",
+        "膕靜脈（popliteal vein）",
+        "股靜脈（femoral vein）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_010",
+      "number": 10,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "肱骨外科頸（surgical neck of humerus）骨折，最可能傷及那一條神經？",
+      "options": [
+        "肌皮神經（musculocutaneous nerve）",
+        "正中神經（median nerve）",
+        "尺神經（ulnar nerve）",
+        "腋神經（axillary nerve）"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_011",
+      "number": 11,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "腳踝內側割裂，傷及繞過內踝的跗骨隧道（tarsal tunnel）內的所有肌腱，下列腳趾的何種動作最可能受影響？",
+      "options": [
+        "屈曲（flexion）",
+        "伸直（extension）",
+        "內收（adduction）",
+        "外展（abduction）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_012",
+      "number": 12,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "下列何者之功能與邊緣系統（limbic system）最不相關？",
+      "options": [
+        "齒狀迴（dentate gyrus）",
+        "穹束（fornix）",
+        "乳頭體（mamillary body）",
+        "杏仁核（amygdala）"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_013",
+      "number": 13,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "關於視覺皮質（visual cortex）的敘述，下列何者錯誤？",
+      "options": [
+        "視覺聯合皮質（visual association cortex）位於額葉（frontal lobe）",
+        "初級視覺皮質（primary visual cortex）位於枕葉（occipital lobe）",
+        "視覺聯合皮質（visual association cortex）可參與顏色判定與辨別",
+        "初級視覺皮質（primary visual cortex）接受外側膝狀體（lateral geniculate body）傳入之訊息"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_014",
+      "number": 14,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "正常人一側眼睛受到強光照射，雙眼瞳孔收縮，有關此反應之敘述，下列何者錯誤？",
+      "options": [
+        "此為瞳孔光反射（pupillary light reflex）",
+        "頂蓋前區（pretectal area）參與其機轉",
+        "後聯合（posterior commissure）參與其機轉",
+        "三叉神經（trigeminal nerve）之眼神經（ophthalmic nerve）參與其機轉"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_015",
+      "number": 15,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "關於前庭神經核（vestibular nuclei）的敘述，下列何者錯誤？",
+      "options": [
+        "可發出前庭脊髓徑（vestibulospinal tract）",
+        "部分神經纖維併入內側縱束（medial longitudinal fasciculus）",
+        "主要與小腦齒狀核（dentate nucleus）相連繫",
+        "可參與前庭眼球反射（vestibulo-ocular reflex）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_016",
+      "number": 16,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "海馬（hippocampus）最主要之傳入纖維（afferent fiber）來自何處？",
+      "options": [
+        "內鼻皮質（entorhinal cortex）",
+        "扣帶迴（cingulate gyrus）",
+        "杏仁核（amygdala）",
+        "韁核（habenular nucleus）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_017",
+      "number": 17,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "刺激淚腺（lacrimal gland）分泌的副交感節後神經纖維（parasympathetic postganglionic fibers）源自於下列何者？",
+      "options": [
+        "睫狀神經節（ciliary ganglion）",
+        "膝神經節（geniculate ganglion）",
+        "翼腭神經節（pterygopalatine ganglion）",
+        "耳神經節（otic ganglion）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_018",
+      "number": 18,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "下列那一頸部筋膜（fascia）位於舌骨下肌（infrahyoid muscles）後面，並覆蓋在甲狀腺（thyroid gland）表面？",
+      "options": [
+        "包圍層（investing layer）",
+        "頸動脈鞘（carotid sheath）",
+        "氣管前層（pretracheal layer）",
+        "椎前層（prevertebral layer）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_019",
+      "number": 19,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "下列何者支配前、中顱窩（anterior and middle cranial fossae）的硬腦膜（dura mater）及小腦天幕（tentorium cerebelli）？",
+      "options": [
+        "舌咽神經（glossopharyngeal nerve）",
+        "三叉神經（trigeminal nerve）",
+        "迷走神經（vagus nerve）",
+        "舌下神經（hypoglossal nerve）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_020",
+      "number": 20,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "在胎兒時期，卵圓孔（oval foramen）可溝通下列何者？",
+      "options": [
+        "主動脈與肺動脈",
+        "右心房與右心室",
+        "右心房與左心房",
+        "右心室與左心室"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_021",
+      "number": 21,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "下肺葉病灶刺激貼著縱隔及橫膈中央的壁層胸膜而引起頸部疼痛，最有可能是下列那一條神經所引發之痛？",
+      "options": [
+        "肋間神經",
+        "迷走神經",
+        "膈神經",
+        "交感神經幹"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_022",
+      "number": 22,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "下列何者不負責乳腺之血液供應？",
+      "options": [
+        "肋間動脈（intercostal artery）",
+        "內胸動脈（internal thoracic artery）",
+        "外胸動脈（lateral thoracic artery）",
+        "肋下動脈（subcostal artery）"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_023",
+      "number": 23,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "施行心包膜穿刺術（pericardiocentesis）時，由那一個位置下針，可減低刺破肋膜腔（pleural cavity）之機會？",
+      "options": [
+        "胸骨右側第六肋間",
+        "胸骨左側第三肋間",
+        "胸骨劍突（sternal xiphoid process）與左肋下緣交點",
+        "胸骨右側第四肋間"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_024",
+      "number": 24,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "正常年輕男性直立姿勢時，心尖（apex）之體表投影位置，最有可能在：",
+      "options": [
+        "第四肋間鎖骨中線外側",
+        "左側乳頭處",
+        "第六肋間前腋線外側",
+        "第五肋間鎖骨中線內側"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_025",
+      "number": 25,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "上腸繫膜淋巴結（superior mesenteric lymph nodes），最不可能引流來自下列何處的淋巴？",
+      "options": [
+        "胰脾淋巴結（pancreaticosplenic lymph node）",
+        "腸繫膜淋巴結（mesenteric lymph node）",
+        "中結腸腸淋巴結（middle colic lymph node）",
+        "腸管旁淋巴結（juxta-intestinal lymph node）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_026",
+      "number": 26,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "下列何者不受腰神經叢（lumbar plexus）受損影響？",
+      "options": [
+        "腹橫肌（transversus abdominis muscle）",
+        "提睪肌（cremaster muscle）",
+        "肉膜肌（dartos muscle）",
+        "閉孔外肌（obturator externus）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_027",
+      "number": 27,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "下列何者不連接於子宮體的兩側？",
+      "options": [
+        "卵巢韌帶（ovary ligament）",
+        "子宮圓韌帶（round ligament of the uterus）",
+        "闊韌帶（broad ligament）",
+        "主韌帶（cardinal ligamnet）"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_028",
+      "number": 28,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "下列何者不是陰部神經（pudendal nerve）的分支？",
+      "options": [
+        "陰莖背神經（dorsal nerve of penis）",
+        "下直腸神經（inferior rectal nerve）",
+        "前陰囊神經（anterior scrotal nerve）",
+        "後陰囊神經（posterior scrotal nerve）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_029",
+      "number": 29,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "下肢的內側迴旋股動脈（medial circumflex femoral artery）與外側迴旋股動脈（lateral circumflex femoral artery）是下列何者的直接分支？",
+      "options": [
+        "股動脈（femoral artery）",
+        "深股動脈（deep femoral artery）",
+        "前者是股動脈（femoral artery），後者是深股動脈（deep femoral artery)",
+        "前者是深股動脈（deep femoral artery），後者是股動脈（femoral artery）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_030",
+      "number": 30,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "肩胛上切迹（suprascapular notch）處的肩胛上神經（suprascapular nerve)受傷時，那兩塊肌肉會直接受到影響？",
+      "options": [
+        "棘下肌（infraspinatus）與小圓肌（teres minor）",
+        "三角肌（deltoid muscle）與小圓肌（teres minor）",
+        "棘上肌（supraspinatus）與棘下肌（infraspinatus）",
+        "棘上肌（supraspinatus）與肩胛下肌（subscapularis）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_031",
+      "number": 31,
+      "subject": "anatomy",
+      "subject_status": "range",
+      "stem": "下列何者是單一並沒有成對的構造？",
+      "options": [
+        "脊髓前動脈（anterior spinal artery）與大腦前交通動脈（anterior communicating artery）",
+        "脊髓後動脈（posterior spinal artery）與大腦後交通動脈（posterior communicating artery）",
+        "脊髓前動脈（anterior spinal artery）與大腦後交通動脈（posterior communicating artery）",
+        "脊髓後動脈（posterior spinal artery）與大腦前交通動脈（anterior communicating artery）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_032",
+      "number": 32,
+      "subject": "embryology",
+      "subject_status": "range",
+      "stem": "下列何者會製造人類絨毛膜促性腺激素（human chorionic gonadotrophin）？",
+      "options": [
+        "腦下腺（pituitary gland）前葉",
+        "融合滋養層（syncytiotrophoblast）",
+        "黃體（corpus luteum）",
+        "蛻膜（decidua）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_033",
+      "number": 33,
+      "subject": "embryology",
+      "subject_status": "range",
+      "stem": "胚胎發育第四週時，橫中隔（septum transversum）的位置是相對於下列何種體節（somite）之高度？",
+      "options": [
+        "枕節",
+        "頸節",
+        "胸節",
+        "腰節"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_034",
+      "number": 34,
+      "subject": "embryology",
+      "subject_status": "range",
+      "stem": "下列有關膀胱（urinary bladder）的敘述，何者錯誤？",
+      "options": [
+        "內襯上皮的胚胎起源是內胚層（endoderm）",
+        "膀胱三角（trigone）起源於後腎管（metanephric duct）",
+        "六歲時進入大骨盆（greater pelvis）",
+        "在胚胎時期與尿囊（allantois）相連"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_035",
+      "number": 35,
+      "subject": "embryology",
+      "subject_status": "range",
+      "stem": "有關動脈韌帶（ligamentum arteriosum）的敘述，何者正確？",
+      "options": [
+        "位於主動脈弓（aortic arch）與肺動脈幹（pulmonary trunk）間",
+        "胎兒出生後由臍動脈（umbilical artery）閉鎖形成",
+        "胚胎時期只攜帶缺氧血",
+        "連接肺動脈（pulmonary artery）與肺靜脈（pulmonary vein）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_036",
+      "number": 36,
+      "subject": "embryology",
+      "subject_status": "range",
+      "stem": "下列何者衍生自脊索（notochord）？",
+      "options": [
+        "椎體（body of vertebra）",
+        "髓核（nucleus pulposus）",
+        "纖維環（anulus fibrosus）",
+        "椎弓（vertebral arch）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_037",
+      "number": 37,
+      "subject": "histology",
+      "subject_status": "range",
+      "stem": "下列何者主要是由骨骼肌細胞的細胞膜（plasma membrane）所組成？",
+      "options": [
+        "肌纖維膜（sarcolemma）",
+        "肌外膜（epimysium）",
+        "肌內膜（endomysium）",
+        "肌束膜（perimysium）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_038",
+      "number": 38,
+      "subject": "histology",
+      "subject_status": "range",
+      "stem": "下列胞器，何者不具有膜（membrane）的構造？",
+      "options": [
+        "核仁（nucleolus）",
+        "胞內體（endosome）",
+        "過氧化質體（peroxisome）",
+        "內質網（endoplasmic reticulum）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_039",
+      "number": 39,
+      "subject": "histology",
+      "subject_status": "range",
+      "stem": "下列關於脂肪組織（adipose tissue）的敘述，何者正確？",
+      "options": [
+        "白色脂肪組織（white adipose tissue）主要是產生熱能，棕色脂肪組織（brown adipose tissue）主要是儲存能量",
+        "脂肪細胞中的脂肪小滴（lipid droplet）是由漿膜（plasma membrane）包裹起來",
+        "白色脂肪細胞（white adipocyte）中有很多小顆的脂肪小滴（lipid droplet），而棕色脂肪細胞內的則為一大顆",
+        "棕色脂肪組織（brown adipose tissue）在新生兒含量多且分布廣，隨著成長會逐漸減少"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_040",
+      "number": 40,
+      "subject": "histology",
+      "subject_status": "range",
+      "stem": "下列有關神經元（neuron）對受傷（injury）後反應的敘述，何者錯誤？",
+      "options": [
+        "在神經受傷處遠端的軸突（axon）會出現順行性退化（anterograde degeneration）",
+        "神經損傷導致神經元細胞體內尼氏小體（Nissl body）的消失，稱為染色質溶解（chromatolysis）",
+        "在周邊神經系統，於神經受傷處會有單核球衍生之吞噬細胞（monocyte-derived macrophage）的聚集",
+        "在中樞神經系統，於神經受傷處主要由寡樹突膠細胞（oligodendrocyte）負責髓鞘（myelin）的分解清除"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_041",
+      "number": 41,
+      "subject": "histology",
+      "subject_status": "range",
+      "stem": "下列何種器官內不具有淋巴小結（lymphatic nodules）？",
+      "options": [
+        "胸腺（thymus）",
+        "脾臟（spleen）",
+        "小腸（small intestine）",
+        "扁桃體（tonsil）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_042",
+      "number": 42,
+      "subject": "histology",
+      "subject_status": "range",
+      "stem": "在肛門直腸連接處（anorectal junction）的位置，會觀察到下列何項構造？",
+      "options": [
+        "直腸（rectum）上皮有許多杯狀細胞（goblet cells）",
+        "直腸（rectum）上皮為複層扁平上皮（stratified squamous epithelium）",
+        "肛門（anus）有Peyer's patch",
+        "肛門（anus）肌外層的縱走肌肉（longitudinal layer of muscularis externa）有顯著加厚作為內括約肌（internal sphincter）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_043",
+      "number": 43,
+      "subject": "histology",
+      "subject_status": "range",
+      "stem": "下列何者是屬於胃腺（gastric gland proper）的細胞？",
+      "options": [
+        "壁細胞（parietal cells）",
+        "微皺襞細胞（M cells/microfold cells）",
+        "Paneth氏細胞（Paneth cells）",
+        "杯狀細胞（goblet cells）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_044",
+      "number": 44,
+      "subject": "histology",
+      "subject_status": "range",
+      "stem": "下列有關構成表皮（epidermis）的細胞敘述，何者錯誤？",
+      "options": [
+        "角質細胞（keratinocyte）是表皮中含量最多的細胞",
+        "黑色素細胞（melanocyte）的細胞體主要分布在表皮的基底層（stratum basale）",
+        "默克耳氏細胞（Merkel's cell）主要分布在表皮的棘狀層（stratum spinosum）",
+        "蘭格罕氏細胞（Langerhans' cell）具有樹突狀突起（dendritic process），是一種抗原呈現細胞（antigen-presenting cell）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_045",
+      "number": 45,
+      "subject": "histology",
+      "subject_status": "range",
+      "stem": "下列何種濾泡（follicle）不具有透明帶（zona pellucida）？",
+      "options": [
+        "成熟濾泡（mature follicle）",
+        "次級濾泡（secondary follicle）",
+        "初級濾泡（primary follicle）",
+        "原始濾泡（primordial follicle）"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_046",
+      "number": 46,
+      "subject": "histology",
+      "subject_status": "range",
+      "stem": "精液（semen）不含下列何者之分泌產物？",
+      "options": [
+        "前列腺（prostate gland）",
+        "陰莖海綿體（corpus cavernosum）",
+        "尿道球腺（bulbourethral gland）",
+        "精囊（seminal vesicle）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_047",
+      "number": 47,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列①至④項中那些物質運輸方向是由高濃度到低濃度？①鈣離子經由幫浦（Ca²⁺ ATPase）回收至肌漿網（sarcoplasmic reticulum）②鈉離子經由鈉-葡萄糖共同轉運蛋白（sodium-glucose cotransporter）進入小腸表皮細胞內③近端腎小管氫離子經由鈉-氫逆向運輸（Na⁺-H⁺ countertransport）分泌至管腔④鉀離子經由滲漏性鉀離子通道（leak K⁺ channels）流出細胞",
+      "options": [
+        "①③",
+        "②③",
+        "②④",
+        "①②"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_048",
+      "number": 48,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "氣味受器（odorant receptors）主要位於下列何處？",
+      "options": [
+        "嗅球（olfactory bulb）之毛叢狀細胞（tufted cells）上",
+        "嗅球（olfactory bulb）之僧帽細胞（mitral cells）上",
+        "嗅覺皮質（olfactory cortex）的感覺神經元上",
+        "嗅覺上皮（olfactory epithelium）內的感覺神經元上"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_049",
+      "number": 49,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "Caudate nucleus主導下列何種功能？",
+      "options": [
+        "情緒控制",
+        "動作執行",
+        "調控自律神經",
+        "記憶能力"
+      ],
+      "answers": [
+        "A",
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": "第49題答Ａ、Ｂ給分",
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_050",
+      "number": 50,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列有關視神經盤（optic disc）的敘述，何者錯誤？",
+      "options": [
+        "視神經盤和黃斑（macula densa）是視網膜（retina）上兩個不同的構造",
+        "視神經盤富含光感受器（photoreceptor）",
+        "視神經盤為視神經（optic nerve）聚集處",
+        "視神經盤導致視野（visual field）上的盲點（blind spot）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_051",
+      "number": 51,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列那一種肌細胞具有最低的ATPase活性？",
+      "options": [
+        "slow oxidative fibers",
+        "smooth muscle fibers",
+        "fast-oxidative glycolytic fibers",
+        "fast-glycolytic fibers"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_052",
+      "number": 52,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "骨骼肌收縮時tropomyosin發生結構變化，會導致下列何種反應？",
+      "options": [
+        "Ca²⁺離開troponin後啟動骨骼肌收縮",
+        "暴露出actin上的myosin結合位置，使骨骼肌收縮",
+        "分解ATP產生能量使actin與myosin結合，並產生滑動",
+        "tropomyosin與myosin接合，啟動骨骼肌收縮"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_053",
+      "number": 53,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "因車禍而急需輸血患者的血型為AB型，在場三人中，小李血型是A型，小吳是B型，小何是O型，下列敘述何者正確？",
+      "options": [
+        "只有小李及小吳可捐血給患者",
+        "只有小何可捐血給患者",
+        "三人均可捐血給患者",
+        "三人均不可捐血給患者"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_054",
+      "number": 54,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "正常情況下，下列何種血漿蛋白主要由肝臟生成？",
+      "options": [
+        "protein C",
+        "von Willebrand factor（vWF）",
+        "granulocyte-colony stimulating factor（G-CSF）",
+        "interferon gamma"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_055",
+      "number": 55,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "心臟舒張期時的心雜音（murmur）可由下列何者引起？",
+      "options": [
+        "房室瓣狹窄、主動脈瓣狹窄",
+        "房室瓣閉鎖不全、主動脈瓣閉鎖不全",
+        "房室瓣狹窄、主動脈瓣閉鎖不全",
+        "房室瓣閉鎖不全、主動脈瓣狹窄"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_056",
+      "number": 56,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列何者最可能增加心肌細胞的收縮力（contractility）？",
+      "options": [
+        "促進肌漿網（sarcoplasmic reticulum）上的鈣離子幫浦（Ca²⁺ ATPase）的活性",
+        "抑制肌漿網（sarcoplasmic reticulum）上ryanodine receptors的作用",
+        "抑制細胞膜上鈉－鉀幫浦（Na⁺-K⁺ ATPase）的作用",
+        "增加細胞膜上鈉－鈣交換蛋白（Na⁺-Ca²⁺ exchanger）的活性"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_057",
+      "number": 57,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列那一個敘述最符合在休息狀態下，心房纖維顫動（atrial fibrillation）的病患之身體情況？",
+      "options": [
+        "心電圖上P波較正常人明顯",
+        "心電圖上QRS波正常但R-R間隔不規則",
+        "心室充血（ventricular filling）效率明顯下降了30～40%或更多",
+        "因為房室結（A-V node）傳導的延遲，心室跳動速率明顯下降"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_058",
+      "number": 58,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列何者在動脈粥狀硬化（atherosclerosis）患者會有增加的現象？①收縮壓（systolic pressure）②舒張壓（diastolic pressure）③脈搏壓（pulse pressure）④動脈順應性（compliance）",
+      "options": [
+        "僅①②③",
+        "僅①③",
+        "僅②③",
+        "①②③④"
+      ],
+      "answers": [
+        "A",
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": "第58題答Ａ、Ｂ給分",
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_059",
+      "number": 59,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列何者不屬於肺氣腫（emphysema）應有的變化？",
+      "options": [
+        "呼吸道阻力增加（increased airway resistance）",
+        "擴散容積增加（increased diffusing capacity）",
+        "總肺容量增加（increased total lung capacity）",
+        "通氣灌流失衡（ventilation perfusion mismatch）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_060",
+      "number": 60,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "登山者進入高海拔地區時，動脈氧分壓降為80 mmHg時，最主要是發生下列何種反應所造成？",
+      "options": [
+        "呼吸性酸血症（respiratory acidosis）",
+        "紅血球減少製造 2,3-二磷甘油酯（2,3-diphosphoglycerate），以便增加血紅素對氧氣親和力",
+        "主動脈體（aortic body）因缺氧而抑制神經衝動",
+        "每分鐘通氣量（ventilation）增加"
+      ],
+      "answers": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "free_point": true,
+      "answer_note": "第60題一律給分",
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_061",
+      "number": 61,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列何者氧分壓（Po₂）最高？",
+      "options": [
+        "肺泡（alveolus）",
+        "肺泡微血管（alveolar capillary）內血液",
+        "體動脈血（systemic arterial blood）",
+        "呼出氣體（expired air）"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": "原卷「Po₂」為行內公式圖片，抽文字時遺失，依原始 PDF 人工補字",
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_062",
+      "number": 62,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列何者最具有刺激胃黏膜增生（growth of the gastric mucosa）的功能？",
+      "options": [
+        "膽囊收縮素（cholecystokinin）",
+        "胃泌素（gastrin）",
+        "運動素（motilin）",
+        "胰泌素（secretin）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_063",
+      "number": 63,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列何者最可能導致食道遲緩不能症（achalasia）？",
+      "options": [
+        "nitric oxide及vasoactive intestinal polypeptide分泌過多",
+        "食道的myenteric plexus缺損",
+        "會厭軟骨（epiglottis）之功能缺陷",
+        "幽門狹窄（pylorostenosis）"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_064",
+      "number": 64,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "在不分泌唾液的狀況下，下列那些營養成分在人體中仍可被消化？①醣類②脂肪③蛋白質",
+      "options": [
+        "僅①②",
+        "僅②③",
+        "僅①③",
+        "①②③"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_065",
+      "number": 65,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列有關第二型水通道蛋白（aquaporin 2）之敘述，何者正確？",
+      "options": [
+        "其轉位至細胞膜之現象是受血管加壓素(vasopressin)所調控",
+        "主要存在於亨利氏環下降枝（descending limb of loop of Henle）",
+        "協助水分子由高張（hypertonic）向低張（hypotonic）處移動",
+        "負責進行水分的主動運輸（active transport）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_066",
+      "number": 66,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列何者最不常作為腎小管之管腔內氫離子的酸鹼緩衝物質？",
+      "options": [
+        "HCO₃⁻",
+        "HPO₄²⁻",
+        "NH₃",
+        "C₃H₇COO⁻"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_067",
+      "number": 67,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列有關腎小管葡萄糖再吸收的描述，何者正確？",
+      "options": [
+        "遠端腎小管頂膜（apical membrane）利用第一型葡萄糖運輸蛋白（glucose transporter 1）再吸收葡萄糖",
+        "遠端腎小管基底外側膜（basolateral membrane）利用第一型鈉依賴性葡萄糖運輸蛋白（sodium-dependent glucose transporter 1）再吸收葡萄糖",
+        "近端腎小管頂膜（apical membrane）主要利用第二型鈉依賴性葡萄糖運輸蛋白（sodium-dependent glucose transporter 2）再吸收葡萄糖",
+        "近端腎小管基底外側膜（basolateral membrane）主要利用第一型葡萄糖運輸蛋白（glucose transporter 1）再吸收葡萄糖"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_068",
+      "number": 68,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列何者最不會隨晝夜生物時鐘而改變？",
+      "options": [
+        "體溫",
+        "皮質醇（cortisol）分泌",
+        "褪黑激素（melatonin）分泌",
+        "胰島素分泌"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_069",
+      "number": 69,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列何者是steroidogenic acute regulatory protein的主要功能？",
+      "options": [
+        "促使膽固醇轉變成妊烯醇酮（pregnenolone）",
+        "促使膽固醇進入細胞內",
+        "促使膽固醇送入粒線體內",
+        "促使膽固醇轉變成低密度脂蛋白（low density lipoprotein）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_070",
+      "number": 70,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列那一種激素主要是進入細胞內與其受器（receptor）結合而產生作用？",
+      "options": [
+        "thyroid hormone",
+        "insulin",
+        "growth hormone",
+        "atrial natriuretic peptide（ANP）"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_071",
+      "number": 71,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列有關以激素治療因手術切除腦下垂體腫瘤（pituitary adenoma）所導致前葉功能全面性降低之敘述，何者正確？",
+      "options": [
+        "只補充雄性素（androgen）即可恢復病患精子製造能力",
+        "不需要補充甲狀腺素（thyroid hormone）",
+        "需補充抗利尿激素（ADH）以防止尿崩症",
+        "當處於壓力（stress）狀況時，需補充額外之腎上腺皮質素（cortisol）"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_072",
+      "number": 72,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "血睪屏障（blood testis barrier）具有保護下列何種細胞之功能？",
+      "options": [
+        "Leydig cells",
+        "myoid cells",
+        "fibroblasts",
+        "primary spermatocytes"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_073",
+      "number": 73,
+      "subject": "physiology",
+      "subject_status": "range",
+      "stem": "下列何者對於乳汁生成（milk synthesis）扮演最重要的角色？",
+      "options": [
+        "oxytocin",
+        "prolactin",
+        "progesterone",
+        "prostaglandins"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_074",
+      "number": 74,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "某多胜肽（polypeptide）在其等電點pH（isolelectric pH）的溶液中，該多胜肽的電荷為何？",
+      "options": [
+        "胺基（amino）和羧基（carboxyl）末端（termini）皆帶正電荷",
+        "胺基和羧基末端皆不帶電荷",
+        "淨電荷為零",
+        "帶有四個淨電荷"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_075",
+      "number": 75,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "下列那一種生化實驗技術無法直接應用於蛋白質身分鑑定？",
+      "options": [
+        "西方墨點法（Western blot analysis）",
+        "質譜法（mass spectrometry）",
+        "分子篩管柱層析法（size-exclusion chromatography）",
+        "胺基端序列分析（N-terminal sequencing）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_076",
+      "number": 76,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "下列A到D蛋白質的混合物，在適當的條件下，以凝膠過濾色層分析法（gel filtration chromatography）分離時，第二順位沖提出來的蛋白質為何？",
+      "options": [
+        "細胞色素c（cytochrome c）Mr=13,000",
+        "免疫球蛋白G（immunoglobulin G）Mr=145,000",
+        "核醣核酸酶A（ribonuclease A）Mr=13,700",
+        "核醣核酸聚合酶（RNA polymerase）Mr=450,000"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_077",
+      "number": 77,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "下列那一種維生素的化學結構含有鈷離子（cobalt ion）？",
+      "options": [
+        "vitamin K",
+        "vitamin E",
+        "vitamin B₆",
+        "vitamin B₁₂"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_078",
+      "number": 78,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "維生素A（vitamin A）會與細胞中下列那一類蛋白質直接結合，以調控基因表達？",
+      "options": [
+        "calcitriol receptor",
+        "receptor tyrosine kinases",
+        "nuclear retinoid receptors",
+        "G protein-coupled receptors"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_079",
+      "number": 79,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "霍亂弧菌（Vibrio cholerae）會產出霍亂毒素（cholera toxin），催化Gsα（即stimulatory G蛋白α次單元）之ADP-ribosylation，而使Gsα的GTPase活性受抑制，下列有關此毒素作用在病人腸內上皮細胞之敘述何者錯誤？",
+      "options": [
+        "細胞中Gsα無法活化下游效應物（effectors）",
+        "細胞中Gsα與Gs蛋白βγ次單元的重新結合（re-association）受到抑制",
+        "細胞中adenylyl cyclase持續活化",
+        "細胞中cAMP增加"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_080",
+      "number": 80,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "下列有關酵素異常的敘述，何者最可能導致痛風（gout）的發生？",
+      "options": [
+        "缺乏citrate synthase",
+        "5-phosphoribosyl-1-pyrophosphate synthetase活性降低",
+        "hypoxanthine-guanine phosphoribosyltransferase活性降低",
+        "glucose 6-phosphatase表現量上升"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_081",
+      "number": 81,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "在大腸桿菌中，下列何者為Dam甲基化酶（Dam methylase）所扮演的功能？",
+      "options": [
+        "甲基化尿嘧啶（uracil），使之轉化為胸腺嘧啶（thymine）",
+        "對DNA模板股（template strand）的修飾，以便DNA修復系統的辨認",
+        "去除模板股（template strand）上的錯誤配對",
+        "修復編碼股（coding strand）上的錯誤配對"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_082",
+      "number": 82,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "大腸桿菌的DNA polymerase I本身不具有下列何種活性？",
+      "options": [
+        "含3'→5'外切酵素（exonuclease）活性",
+        "含DNA gyrase活性",
+        "含5'→3'DNA聚合酵素（polymerase）活性",
+        "含5'→3'外切酵素（exonuclease）活性"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_083",
+      "number": 83,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "下列何者是真核細胞組蛋白去乙醯酶（histone deacetylase）之主要功能？",
+      "options": [
+        "調節基因之轉錄",
+        "增加組蛋白之濃度",
+        "減少mRNA轉譯之作用",
+        "增加真核起始因子2（eIF2）蛋白質之穩定性"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_084",
+      "number": 84,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "關於真核生物DNA複製的敘述，下列何者錯誤？",
+      "options": [
+        "主要由DNA polymerase I進行DNA複製",
+        "複製起始需要RNA引子（primer）",
+        "Helicase可解開雙股螺旋DNA",
+        "Replication protein A（RPA）可與單股DNA結合"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_085",
+      "number": 85,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "在大腸桿菌中，下列何者為利用弱化作用（attenuation）以調控色胺酸操縱子（Trp operon）表現的調控機制？",
+      "options": [
+        "弱化機制是調控色胺酸生合成酵素表現的唯一機制",
+        "前導肽（leader peptide）直接對RNA聚合酶作用，以弱化色胺酸生合成酵素基因的轉錄表現",
+        "前導肽上的色胺酸編碼子（Trp codons）是主要的遺傳設計，可用以偵測細胞中色胺酸的含量",
+        "當色胺酸在細胞中的量很低時，會引發色胺酸操縱子的弱化作用"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_086",
+      "number": 86,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "細菌的DNA錯配修復（mismatch repair）主要是利用下列何種DNA的修飾反應，以判斷那一股為模板股（template strand）？",
+      "options": [
+        "乙醯化（acetylation）",
+        "磷酸化（phosphorylation）",
+        "甲基化（methylation）",
+        "醣化（glycation）"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_087",
+      "number": 87,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "有關肝醣合成酶（glycogen synthase）參與肝醣合成之敘述，下列何者正確？",
+      "options": [
+        "此酵素被磷酸化後可被活化",
+        "此酵素只存在於肝臟",
+        "利用glucose-6-phosphate做為葡萄糖單元的供給者",
+        "將葡萄糖殘基以（α1→4）鍵結至肝醣鏈（glycogen chain）之非還原端"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_088",
+      "number": 88,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "缺乏維生素B₁（thiamine）而引起的代謝性乳酸中毒（lactic acidosis）與下列那個酵素的功能異常有關？",
+      "options": [
+        "異檸檬酸脫氫酶（isocitrate dehydrogenase）",
+        "乳酸脫氫酶（lactate dehydrogenase）",
+        "蘋果酸脫氫酶（malate dehydrogenase）",
+        "丙酮酸脫氫酶複合體（pyruvate dehydrogenase complex）"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_089",
+      "number": 89,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "一位第一型糖尿病（type 1 diabetes mellitus）患者注射胰島素（insulin）後，未進食以至低血糖昏迷，下列何者是造成低血糖的最主要因素？",
+      "options": [
+        "胰島素增加肝臟組織的第一型葡萄糖運輸蛋白（GLUT1）的作用",
+        "胰島素增加肝外組織的第四型葡萄糖運輸蛋白（GLUT4）的作用",
+        "胰島素增加肝臟hexokinase的活性",
+        "胰島素增加肝外組織hexokinase的活性"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_090",
+      "number": 90,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "下列何者不是細胞內acetyl-CoA的主要來源？",
+      "options": [
+        "fatty acids",
+        "ketogenic amino acids",
+        "pyrimidine",
+        "pyruvate"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_091",
+      "number": 91,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "下列有關glutathione（GSH）的敘述，何者錯誤？",
+      "options": [
+        "由Glu、Cys及Gly三種胺基酸組成",
+        "某些種類的leukotriene的生合成需要glutathione的參與",
+        "GSH被氧化時，經由雙硫鍵的形成產生glutathione disulfide（GSSG）",
+        "glutathione reductase利用ATP可直接將GSSG還原成2個GSH"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_092",
+      "number": 92,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "下列那一種胺基酸為腎上腺素（epinephrine）生合成的前驅物？",
+      "options": [
+        "glycine",
+        "tryptophan",
+        "histidine",
+        "tyrosine"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_093",
+      "number": 93,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "下列何種物質可經由轉氨基作用（transamination）直接合成glutamic acid？",
+      "options": [
+        "α-ketoglutarate",
+        "pyruvate",
+        "acetoacetate",
+        "oxaloacetate"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_094",
+      "number": 94,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "下列那一種胺基酸是血清素（serotonin）生合成的前驅物？",
+      "options": [
+        "arginine",
+        "glutamic acid",
+        "tryptophan",
+        "tyrosine"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_095",
+      "number": 95,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "下列關於ATP synthase的敘述，何者錯誤？",
+      "options": [
+        "位於粒線體內膜",
+        "使用粒線體內膜兩側的氫離子濃度差合成ATP",
+        "ATP會在粒線體內膜及外膜之間的間隙中形成",
+        "合成ATP的過程中涉及ATP synthase之四級結構變化"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_096",
+      "number": 96,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "下列關於電子傳遞鏈的敘述，何者錯誤？",
+      "options": [
+        "氧分子（O₂）為電子最終的接受者",
+        "NADH的氧化發生於complex I",
+        "Coenzyme Q（CoQ）可協助將電子由complex I傳遞至complex II",
+        "Cytochrome c（Cyt c）可協助將電子由complex III傳遞至complex IV"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_097",
+      "number": 97,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "下列何種情況會刺激DNA合成所需酵素的生成，進而使細胞週期從G1期進入S期？",
+      "options": [
+        "p53蛋白質被活化",
+        "p21蛋白質大量產生",
+        "CDK2磷酸化retinoblastoma protein（pRb）",
+        "形成pRb-E2F複合體"
+      ],
+      "answers": [
+        "C"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_098",
+      "number": 98,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "下列何種蛋白質與G蛋白（G protein）的訊息傳遞路徑無關？",
+      "options": [
+        "類固醇受體（steroid receptors）",
+        "腺苷酸環化酶（adenylyl cyclase）",
+        "磷脂酶C（phospholipase C）",
+        "Ras蛋白"
+      ],
+      "answers": [
+        "A"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_099",
+      "number": 99,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "攜鈣素（Calmodulin）不具有下列那種特性？",
+      "options": [
+        "與鈣離子結合會改變其構型",
+        "含有一個兩性（amphipathic）的β層（β-sheet）能與標靶蛋白質（target protein）相互作用",
+        "調節許多蛋白激酶（protein kinase）的活性",
+        "以螺旋-環-螺旋結構（helix-loop-helix motif）與鈣離子結合"
+      ],
+      "answers": [
+        "B"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    },
+    {
+      "id": "108030_1_100",
+      "number": 100,
+      "subject": "biochemistry",
+      "subject_status": "range",
+      "stem": "下列何者是實驗室中用來將質體（plasmid）直接轉形（transformation）進入細菌的最常用的方法？",
+      "options": [
+        "低電壓電泳法（low-voltage electrophoresis）將質體牽引入細菌中",
+        "帶有質體的噬菌體轉染法（transfection）",
+        "微注射法（micro-injection）將質體注入細菌中",
+        "CaCl₂處理細菌後再以熱休克法（heat shock）將質體送入細菌中"
+      ],
+      "answers": [
+        "D"
+      ],
+      "free_point": false,
+      "answer_note": null,
+      "override_reason": null,
+      "images": [],
+      "explanation": null,
+      "explanation_status": "none",
+      "valid": true,
+      "issues": []
+    }
+  ]
+}

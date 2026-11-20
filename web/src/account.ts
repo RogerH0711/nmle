@@ -5,6 +5,7 @@ import { keepUnsyncedAnswers, switchUser } from './answers'
 import { keepUnsyncedGifts, switchGiftUser } from './giftStore'
 import { keysToClearOnDelete } from './localData'
 import { keepUnsyncedMocks, switchMockUser } from './mockStore'
+import { keepUnsyncedMarks, switchMarksUser } from './marksStore'
 import { switchOutfitUser } from './outfits'
 import { supabase } from './supabase'
 
@@ -13,6 +14,7 @@ function switchToAnon() {
   void switchUser(null)
   void switchMockUser(null)
   void switchGiftUser(null)
+  void switchMarksUser(null)
   switchOutfitUser(null)
 }
 
@@ -30,6 +32,7 @@ export async function signOut(userId: string) {
   keepUnsyncedAnswers(userId)
   keepUnsyncedMocks(userId)
   keepUnsyncedGifts(userId)
+  keepUnsyncedMarks(userId)
 }
 
 /**

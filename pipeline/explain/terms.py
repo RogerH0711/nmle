@@ -12,6 +12,8 @@
     python pipeline/explain/terms.py scan 110020_1 --model qwen3.6:27b-fp8-vllm --think
     python pipeline/explain/terms.py prepare 110020_1 --model qwen3.6:27b-fp8-vllm --think   # 產生 Colab 請求檔
     python pipeline/explain/terms.py collect --model qwen3.6:27b-fp8-vllm --think
+    python pipeline/explain/terms.py judge 105020_1 --model qwen3.5:35b-a3b --think      # 本機 Ollama 判斷
+    python pipeline/explain/terms.py collect --model qwen3.5:35b-a3b --think --results local
 """
 import argparse
 import csv
@@ -22,11 +24,13 @@ import sys
 import urllib.parse
 from collections import defaultdict
 
-from common import OUT, REFERENCE_SPLIT, all_exam_ids, load_exam, normalize, out_dir, read_json, write_json
+from common import (OUT, REFERENCE_SPLIT, Progress, all_exam_ids, chat, load_exam, normalize, out_dir, read_json,
+                    write_json)
 
 TERMS = OUT / "terms"
 NAER = TERMS / "naer"
 WORK = OUT / "colab"
+LOCAL_RESULTS = WORK / "terms_results.local.jsonl"  # judge（本機）的結果，和 Colab 的分開放
 # 國教院開放資料的檔名（data.gov.tw 上「國家教育研究院-○○學術名詞」）；生理、生化、微免目前沒有單獨的名詞集
 NAER_SETS = ["人體解剖學", "醫學", "病理學", "藥學", "化學名詞-化學術語", "動物學", "獸醫學", "兩岸對照名詞-醫學"]
 
@@ -182,7 +186,8 @@ JUDGE = """你是臺灣醫學名詞的審稿人。下面是一份醫學考題詳
 {"terms": [{"index": 1, "status": "ok"}, {"index": 2, "status": "wrong", "correct": "棘上肌"}, …]}"""
 
 
-def prepare(args):
+def requests_for(args):
+    """每題一個請求：那題被標出來的名詞配對，交給模型判斷。"""
     folder = out_dir(args.model, args.think)
     exam_ids = all_exam_ids() if args.exams == ["all"] else args.exams
     rows = []
@@ -194,6 +199,29 @@ def prepare(args):
                      for n, i in enumerate(r["flagged"], 1)]
             rows.append({"id": f"{exam_id}/{key}", "messages": [
                 {"role": "system", "content": JUDGE}, {"role": "user", "content": "\n".join(lines)}]})
+    return rows
+
+
+def judge(args):
+    """在本機用 Ollama 判斷（11/27 起，沒有 Colab Pro）。結果一題一行寫進 LOCAL_RESULTS，中斷後重跑會接著做；
+    跑完用 collect --results local 寫回 .terms.json。"""
+    rows = requests_for(args)
+    done = set()
+    if LOCAL_RESULTS.exists():
+        done = {json.loads(line)["id"] for line in LOCAL_RESULTS.read_text(encoding="utf-8").splitlines() if line}
+    todo = [r for r in rows if r["id"] not in done][: args.limit]
+    progress = Progress(f"名詞判斷（{args.judge}）", len(todo))
+    WORK.mkdir(parents=True, exist_ok=True)
+    for r in todo:
+        text, stats = chat(r["messages"], model=args.judge, temperature=0, think=True)
+        with LOCAL_RESULTS.open("a", encoding="utf-8", newline="\n") as f:
+            f.write(json.dumps({"id": r["id"], "text": text, "done_reason": stats["done_reason"]}, ensure_ascii=False) + "\n")
+        progress.step(f"{r['id']} {len(r['messages'][1]['content'].splitlines())} 組 {stats['seconds']}s {stats['output_tokens']} tokens")
+    progress.finish(f"判斷 {len(todo)} 題 → {LOCAL_RESULTS.relative_to(OUT)}")
+
+
+def prepare(args):
+    rows = requests_for(args)
     WORK.mkdir(parents=True, exist_ok=True)
     path = WORK / "terms_requests.jsonl"
     path.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8")
@@ -203,7 +231,8 @@ def prepare(args):
 def collect(args):
     folder = out_dir(args.model, args.think)
     by_exam = defaultdict(dict)
-    for line in (WORK / "terms_results.jsonl").read_text(encoding="utf-8").splitlines():
+    results = LOCAL_RESULTS if args.results == "local" else WORK / "terms_results.jsonl"
+    for line in results.read_text(encoding="utf-8").splitlines():
         r = json.loads(line)
         exam_id, key = r["id"].split("/")
         answer = r["text"].rsplit("</think>", 1)[-1]
@@ -238,18 +267,23 @@ def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("download")
-    for name in ("scan", "prepare"):
+    for name in ("scan", "prepare", "judge"):
         p = sub.add_parser(name)
         p.add_argument("exams", nargs="+", help="考卷 id，或 all 代表全部")
-        p.add_argument("--model", required=True)
+        p.add_argument("--model", required=True, help="生成詳解的模型（決定讀哪個資料夾）")
         p.add_argument("--think", action="store_true")
         if name == "scan":
             p.add_argument("--show", action="store_true", help="列出每一組被標出來的名詞")
+        if name == "judge":
+            p.add_argument("--judge", default="qwen3.5:35b-a3b", help="判斷用的本機模型")
+            p.add_argument("--limit", type=int)
     c = sub.add_parser("collect")
     c.add_argument("--model", required=True)
     c.add_argument("--think", action="store_true")
+    c.add_argument("--results", choices=["colab", "local"], default="colab")
     args = ap.parse_args()
-    {"download": lambda a: download(), "scan": scan, "prepare": prepare, "collect": collect}[args.cmd](args)
+    {"download": lambda a: download(), "scan": scan, "prepare": prepare, "judge": judge,
+     "collect": collect}[args.cmd](args)
 
 
 if __name__ == "__main__":

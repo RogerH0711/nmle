@@ -1,0 +1,397 @@
+{
+  "model": "Qwen3.5-35B-A3B",
+  "questions": {
+    "1": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n烏巴苷（ouabain）會抑制鈉－鉀腺苷三磷酸酶（Na⁺-K⁺ ATPase）。此酵素（enzyme）負責將鈉離子（sodium ions）泵出心肌細胞（cardiomyocytes）。功能喪失導致細胞內鈉離子濃度上升。鈉－鈣交換器（Na⁺-Ca²⁺ exchanger）依賴鈉離子梯度運送鈣離子（calcium ions）。正常時將鈣離子排出細胞，當細胞內鈉離子積累，驅動力減弱使得排除鈣離子的能力下降。\n\n**選項解析**\n- (A) 正確，因為藥物（drug）抑制導致細胞內鈉離子濃度升高，直接降低交換器運送鈣離子的效率。\n- (B) 錯誤，驅動力下降無法增加排出量，導致鈣離子積累於細胞內，影響收縮功能。\n- (C) 錯誤，離子濃度已改變，生理狀態不會維持不變。\n- (D) 錯誤，藥理作用為持續抑制，非先增後減的動態變化。",
+      "level": "unchecked"
+    },
+    "2": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n聽覺訊號從耳蝸神經核（cochlear nuclei）開始。\n經過腦幹（brainstem）上行傳導。\n主要路徑包含下丘（inferior colliculus）。\n並經內側膝狀體（medial geniculate body）。\n最後投射至聽覺皮質（auditory cortex）。\n此路徑負責處理聲音訊號的空間定位與頻率分析。\n\n**選項解析**\n- (A) 此路徑正確反映中樞聽覺傳導順序。\n訊號先至耳蝸神經核，再上行至下丘。\n接著經內側膝狀體換元，終止於聽覺皮質。\n這是標準的聽覺通路架構。\n- (B) 上丘（superior colliculus）主要參與視覺反射與眼球運動控制。\n它並非聽覺通路的主要結構節點。\n因此此選項路徑中樞位置錯誤。\n- (C) 外側膝狀體（lateral geniculate body）屬於視覺傳導路徑的換元站點。\n聽覺系統應使用內側膝狀體進行訊號傳遞至皮質。\n故該選項解剖結構不符。\n- (D) 同時混淆了上丘與外側膝狀體的正確功能定位。\n此組合不符合中樞神經系統（central nervous system）的解剖結構與生理功能。\n因此無法正確描述聽覺傳導路徑。",
+      "level": "unchecked"
+    },
+    "3": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n神經纖維 (nerve fiber) 傳遞不同強度的感覺刺激時，主要依賴動作電位 (action potential) 的頻率變化來編碼。\n根據全有或全無定律 (all-or-none law)，單一神經纖維發出的動作電位振幅不會隨刺激強度改變。\n因此大腦透過解碼動作電位 的頻率高低，來判斷刺激的強弱程度。\n此外，強刺激也會募集更多神經纖維參與反應，但單根纖維主要靠頻率變化。\n\n**選項解析**\n- (A) 正確，因為感覺刺激強度增加時，神經纖維會提高動作電位 發射的頻率。\n- (B) 錯誤，單一神經纖維的動作電位振幅 (amplitude) 是固定的，不會因刺激變強而增大。\n- (C) 錯誤，每個動作電位 的持續時間通常維持穩定，不隨刺激強度改變。\n- (D) 錯誤，感受器電位 (receptor potential) 的潛伏期主要反映神經傳導速度，而非刺激強度的編碼方式。",
+      "level": "unchecked"
+    },
+    "4": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n背柱中央蹄系統（dorsal column-medial lemniscal system）負責傳遞觸覺與本體感覺。第一階神經元（first-order neuron）細胞體（cell body）位於背根神經節（dorsal root ganglion）。第二階神經元（second-order neuron）細胞體位於延髓（medulla oblongata）的薄束核（nucleus gracilis）或楔束核（nucleus cuneatus）。第三階神經元（third-order neuron）細胞體位於丘腦（thalamus）腹後外側核（ventral posterolateral nucleus）。\n\n**選項解析**\n- (A) 第一階神經元細胞體位於背根神經節，而非脊髓背角（dorsal horn of the spinal cord）。\n- (B) 第二階神經元軸突交叉後上行形成內側丘系（medial lemniscus），其細胞體位於延髓，屬於腦幹（brain stem）的一部分。\n- (C) 第三階神經元投射至大腦皮質（cerebral cortex），其細胞體位於丘腦，而非下視丘（hypothalamus）。\n- (D) 黑質（substantia nigra）主要參與運動控制，並非感覺路徑中第三階神經元的位置。",
+      "level": "unchecked"
+    },
+    "6": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n運動控制階層由上至下分為高級計畫、中級協調與低級執行。\n脊髓 (Spinal cord) 位於最底層，是運動指令最終輸出的共同通路。\n此處包含前角運動神經元 (Anterior horn motor neuron)，直接支配骨骼肌 (Skeletal muscle)。\n上層結構透過下行徑路 (Descending pathway) 控制下層，形成階層式調節機制。\n\n**選項解析**\n- (A) 脊髓 屬於最下階的執行層級，整合感覺輸入並發出運動指令。\n- (B) 基底核 (Basal ganglia) 位於大腦 (Brain) 深部，主要參與動作計畫與啟動，屬於中上階層。\n- (C) 小腦 (Cerebellum) 負責協調與平衡修正，透過回饋機制調整動作，不直接執行肌肉 (Muscle) 收縮。\n- (D) 大腦的初級運動皮層 (Primary motor cortex) 位於額葉 (Frontal lobe)，負責產生自願性運動指令，屬於最高階層。",
+      "level": "unchecked"
+    },
+    "7": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n平滑肌細胞（smooth muscle cells）具有肌源性收縮特性，受到機械性牽張時會引發膜電位（membrane potential）去極化（depolarization）。此現象稱為肌源性反應（myogenic response），導致鈣離子通道（calcium channels）開啟並引發收縮。骨骼肌與心肌的收縮機制則依賴神經傳導（neural conduction）或前負荷（preload）改變，而非單純牽張直接誘發細胞內變化。\n\n**選項解析**\n- (A) 骨骼肌（skeletal muscle）受到牽張時需透過反射弧（reflex arc）引發收縮，非細胞直接反應。\n- (B) 心肌（cardiac muscle）遵循法蘭克 - 史達林定律（Frank-Starling law），牽張增加收縮力但不直接啟動收縮。\n- (C) 小腸平滑肌（small intestinal smooth muscle）屬於單單位平滑肌（unitary smooth muscle），細胞膜（cell membrane）受牽張後產生去極化電位，引發鈣離子內流（calcium influx）導致收縮。\n- (D) 大動脈平滑肌（large artery smooth muscle）雖有貝利斯效應（Bayliss effect），但小腸平滑肌對牽張的收縮反應更為典型且具生理意義。",
+      "level": "unchecked"
+    },
+    "8": {
+      "text": "**答案：D**\n\n**關鍵觀念**\nA 型血友病（hemophilia A）屬於 X 染色體（chromosome）隱性遺傳疾病。其病理機轉為第八凝血因子（factor VIII）缺乏或功能異常。這會導致內源性凝血路徑（intrinsic pathway）受阻，引發嚴重出血傾向。臨床表現常為關節腔出血或深層組織血腫。此疾病需依賴凝血因子（coagulation factor）補充治療。\n\n**選項解析**\n- (A) 組織因子路徑抑制物（tissue factor pathway inhibitor）主要調節外源性凝血路徑，過度產生並非血友病成因。\n- (B) 凝血酶原（prothrombin, factor II）基因（gene）缺陷會導致凝血酶（thrombin）生成減少，但與 A 型血友病定義不同。\n- (C) 第十凝血因子（factor X）活化依賴鈣離子（calcium ion），此為共同路徑機制，非特定遺傳病因。\n- (D) 第八凝血因子基因缺陷，導致其活性不足，是 A 型血友病的確切起因。",
+      "level": "unchecked"
+    },
+    "9": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n心室肌細胞 (Ventricular muscle cell) 動作電位 (Action potential) 中，鉀離子 (Potassium ion) 外流是再極化 (Repolarization) 的主要驅動力。各期離子通道 (Ion channel) 狀態不同，需區分鈣離子 (Calcium ion) 與鉀離子的開關時機。鈣離子內流與鉀離子外流共同決定膜電位 (Membrane potential) 變化。\n\n**選項解析**\n- (A) 第零期去極化 (Depolarization) 主要是鈉離子 (Sodium ion) 通道開啟造成內流，鉀離子通道雖關閉但非去極化機制。\n- (B) 第一期快速再極化是由瞬時外向鉀離子通道開啟所致，並非關閉。\n- (C) 第二期高原期 (Plateau) 是鈣離子內流與鉀離子外流達平衡，鉀離子通道並未完全關閉。\n- (D) 第三期最終再極化時，鈣離子通道關閉，鉀離子通道開啟導致大量外流，為主要因素。",
+      "level": "unchecked"
+    },
+    "10": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n心肌（Cardiac muscle）收縮後必須放鬆，才能進行下一次心室充血。\n放鬆的關鍵在於細胞質內鈣離子（Calcium ions）濃度迅速下降。\n肌漿網（Sarcoplasmic reticulum）上鈣離子幫浦（Ca²⁺ ATPase）負責將鈣離子泵回儲存處。\n此過程消耗三磷酸腺苷（ATP），降低細胞質鈣離子濃度。\n鈣離子與肌旋轉素（troponin）解離，肌肉（Muscle）得以舒張。\n\n**選項解析**\n- (A) 活化細胞膜（Cell membrane）上 L-型鈣離子通道（L-type Ca²⁺ channels）會增加鈣離子內流。\n  這會促進收縮，而非加速放鬆過程。\n- (B) 活化肌漿網上雷恩諾鹼受體（ryanodine receptors）會釋放鈣離子。\n  這同樣是引發收縮的步驟。\n- (C) 鈣離子與肌旋轉素結合是啟動收縮的必要條件。\n  活化此蛋白質不會加速放鬆，反而維持收縮狀態。\n- (D) 活化肌漿網上鈣離子幫浦可加速移除細胞質鈣離子。\n  這能縮短收縮期，增加心室充血期時間比例。",
+      "level": "unchecked"
+    },
+    "11": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n主動脈壓（aortic pressure）曲線上的重搏凹跡（dicrotic notch）代表主動脈瓣（aortic valve）閉鎖。\n這發生在心室射血結束，血液回流衝擊關閉的瓣膜（valve）時。\n此時刻標誌著等容心室舒張期（isovolumetric ventricular relaxation）的開始。\n此時心室肌（ventricular muscle）收縮停止，但所有瓣膜均關閉，故稱等容。\n重搏凹跡是射血期（ejection period）結束與舒張期交界的特徵性波形。\n此現象反映主動脈彈性回縮導致壓力短暫下降後回升。\n\n**選項解析**\n- (A) 正確。主動脈瓣閉鎖產生重搏凹跡，隨後進入等容心室舒張期。\n- (B) 錯誤。此時期主動脈壓持續下降，無瓣膜關閉事件發生。\n- (C) 錯誤。此時期為射血開始前，主動脈壓尚未達到峰值。\n- (D) 錯誤。此時期主動脈壓上升或維持高點，瓣膜仍開啟。",
+      "level": "unchecked"
+    },
+    "12": {
+      "text": "**答案：(B)**\n\n**關鍵觀念**\n正常休息狀態下，動脈血 (arterial blood) 進入組織 (tissue) 進行氣體交換 (gas exchange)。\n氧氣 (oxygen) 從血液擴散至細胞 (cell)。\n血紅素 (hemoglobin) 釋放部分氧氣。\n混合靜脈血 (mixed venous blood) 離開組織時的血紅素氧飽和度約為 75%。\n此數值反映休息時全身組織的氧氣消耗與血液攜帶能力之平衡。\n氧離曲線 (oxygen dissociation curve) 顯示此飽和度對應的氧分壓 (partial pressure) 約為 40 mmHg。\n\n**選項解析**\n- (A) 90%：此數值接近肺靜脈或動脈血的飽和度，代表未經過充分組織交換。\n- (B) 正確：正常休息時，全身組織消耗氧氣後，血紅素仍保留約 75% 的結合能力。\n- (C) 50%：此數值通常出現在劇烈運動或代謝率極高狀態下，非正常休息。\n- (D) 25%：此數值過低，代表嚴重缺氧或休克狀態，不符合生理常態。",
+      "level": "unchecked"
+    },
+    "13": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n呼吸調節主要依賴中樞化學感受器（Central chemoreceptor）對氫離子（Hydrogen ion）濃度變化敏感。二氧化碳（Carbon dioxide）能自由穿透血腦障壁（Blood-brain barrier），但氫離子不能。延髓（Medulla oblongata）表面化學感受器主要偵測腦脊液（Cerebrospinal fluid）中的酸鹼度改變。酵素（Enzyme）碳酸酐酶（Carbonic anhydrase）參與反應加速平衡。\n\n**選項解析**\n- (A) 二氧化碳本身不直接刺激中樞化學感受器。它透過產生氫離子間接作用。\n- (B) 體動脈血（Systemic arterial blood）二氧化碳分壓（Partial pressure）升高。二氧化碳進入延髓後形成碳酸（Carbonic acid）。碳酸解離出氫離子刺激中樞化學感受器，此為最主要機制。\n- (C) 體動脈血中的氫離子無法穿透血腦障壁，因此不能直接進入延髓刺激中樞。\n- (D) 周邊化學感受器（Peripheral chemoreceptor）雖可感知血液酸鹼變化，但對二氧化碳分壓升高的反應較慢，非最主要機制。",
+      "level": "unchecked"
+    },
+    "14": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n此題考酸鹼平衡（Acid-base balance）的判斷。患者 pH 值為 7.16，顯示酸血症（Acidemia）。動脈血二氧化碳分壓（PaCO₂）升高至 61 mmHg，代表呼吸性酸中毒（Respiratory acidosis）。碳酸氫根離子（HCO₃⁻）濃度正常，表示尚未發生腎臟代償（Renal compensation），急性變化通常少於數小時。\n\n**選項解析**\n- (A) 急性呼吸道阻塞會導致二氧化碳滯留，PaCO₂ 上升且 HCO₃⁻ 未及調整，符合此數據。\n- (B) 慢性呼吸道阻塞患者，腎臟會保留 HCO₃⁻，使血中濃度升高以代償酸中毒，需數天時間。\n- (C) 腎衰竭主要引起代謝性酸中毒（Metabolic acidosis），特徵為 HCO₃⁻ 顯著下降，而非 PaCO₂ 升高。\n- (D) 此選項描述與數據不符，因患者無代謝性酸中毒跡象，亦無呼吸代償的慢性變化特徵。",
+      "level": "unchecked"
+    },
+    "15": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n消化酵素依作用位置分為內胜肽酶（endopeptidase）與外胜肽酶（exopeptidase）。\n內胜肽酶會切斷胜肽（peptide）鏈內部特定的胺基酸（amino acid）鍵結。\n外胜肽酶則從胜肽鏈的 N-末端（N-terminal）開始，一次切下一個胺基酸。\n本題考的是消化過程中不同酵素的作用機制差異與分類原則。\n\n**選項解析**\n- (A) 胺基胜肽酶（aminopeptidase）屬於外胜肽酶。它從胜肽鏈的 N-末端切下胺基酸，故為正確答案。\n- (B) 胰凝乳蛋白酶（chymotrypsin）屬於內胜肽酶。它會切斷芳香族胺基酸旁的內部鍵結。\n- (C) 彈性酶（elastase）屬於內胜肽酶。它主要分解彈性蛋白的內部胜肽鍵。\n- (D) 胰蛋白酶（trypsin）屬於內胜肽酶。它專一切斷帶正電荷胺基酸旁的內部鍵結。",
+      "level": "unchecked"
+    },
+    "16": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n消化道平滑肌（smooth muscle）具有多種收縮（contraction）模式。\n不同區段的功能需求決定了其運動形式差異。\n大腸（large intestine）特有的高振幅傳播收縮稱為集團收縮（mass action contraction）。\n此現象通常在進食後發生，將內容物快速推向直腸（rectum）。\n它有助於形成排便反射，頻率約每日三至四次。\n\n**選項解析**\n- (A) 蠕動波（peristaltic wave）廣泛存在於食道（esophagus）、小腸（small intestine）及大腸。\n  它負責推動食糜向前移動，並非大腸特有模式。\n- (B) 分節收縮（segmentation contraction）主要發生在小腸區域。\n  此模式用於混合食糜與消化液，促進吸收作用。\n- (C) 張力性收縮（tonic contraction）維持器官基礎張力。\n  胃底（gastric fundus）與食道亦常見，非大腸特有現象。\n- (D) 集團收縮是大腸特有的高振幅傳播收縮。\n  它負責將糞便快速推入直腸，引發排便反射。\n  此收縮頻率較低，但強度較高且具推進性。",
+      "level": "unchecked"
+    },
+    "17": {
+      "text": "**答案：（A）**\n\n**關鍵觀念**\n腎小管（renal tubule）近端上皮細胞（epithelial cell）負責再吸收葡萄糖（glucose）。\n此過程依賴鈉離子（sodium ion）順濃度梯度進入細胞的動力。\n轉運蛋白為鈉-葡萄糖共轉運蛋白（sodium-glucose cotransporter）。\n此機制屬於次級主動運輸（secondary active transport）。\n能量間接來自鈉鉀泵（Na+/K+ ATPase）水解三磷酸腺苷（ATP）建立的離子梯度。\n\n**選項解析**\n- (A) 正確。葡萄糖與鈉離子共同進入細胞，利用鈉梯度驅動，符合次級主動運輸定義。\n- (B) 錯誤。二價鐵離子（Fe²⁺）主要參與血紅素（hemoglobin）合成或電子傳遞，不介導葡萄糖轉運。\n- (C) 錯誤。胞噬作用（phagocytosis）用於吞噬大分子或顆粒，不適用于小分子營養物質吸收。\n- (D) 錯誤。氧化磷酸化作用（oxidative phosphorylation）發生於線粒體（mitochondrion）產生 ATP，並非跨膜運輸機轉。",
+      "level": "unchecked"
+    },
+    "18": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n腎臟（kidney）清除率（clearance）定義為單位時間內，腎臟完全清除某種物質的血漿（plasma）體積。計算公式為尿液（urine）濃度乘以尿流速，再除以血漿濃度。單位為毫升每分鐘，計算時請注意小數點位置。此題主要測試基礎數學運算與公式記憶。血比容（hematocrit）在此為干擾資訊，不影響物質 X 的清除率計算。因題目已直接提供血漿濃度，無需轉換全血濃度。\n\n**選項解析**\n- (A) 未正確代入數值或計算錯誤導致結果偏小，非正確數值。\n- (B) 可能誤將血比容納入計算，造成干擾而選錯。\n- (C) 正確答案，依據清除率公式 $(36 \\times 1) / 0.25$ 得出 144 mL/min。數值單位一致可直接運算。\n- (D) 計算時可能誤將除數或乘數顛倒，導致結果翻倍，非正確數值。",
+      "level": "unchecked"
+    },
+    "19": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n近端腎小管 (proximal tubule) 進行等滲透壓再吸收。溶質如鈉離子被主動運輸後，水分子順著滲透梯度移動。因此管腔內液體與血液維持滲透平衡，不會產生高滲狀態。此機制確保水分隨溶質比例排出。\n\n**選項解析**\n- (A) 此敘述錯誤。近端腎小管末端液體的滲透壓仍約等於初始腎小球過濾液 (glomerular filtrate)。不會上升至 2 倍之高滲狀態。若上升代表水吸收少於溶質，這不符合生理事實。\n- (B) 此敘述正確。第一型水通道蛋白 (aquaporin-1) 存在於上皮細胞 (epithelial cell) 頂膜與基底外側膜。協助水分快速跨細胞移動。缺乏此蛋白會嚴重影響水重吸收效率。\n- (C) 此敘述正確。正常生理狀態下，近端腎小管可再吸收約 60～70% 的腎小球過濾液水分。這是維持體液平衡的重要環節。\n- (D) 此敘述正確。高血糖超過腎閾值時，葡萄糖滯留於管腔造成滲透性利尿。影響近端腎小管水分吸收導致多尿症。這是糖尿病 (diabetes mellitus) 患者的典型症狀之一。",
+      "level": "unchecked"
+    },
+    "20": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n維生素 D（Vitamin D）在體內需經過兩次羥化作用才能成為活化態。第一次羥化發生在肝臟 (liver)，第二次發生在腎臟 (kidney)。最終產物是生理活性最高的形式，負責調節鈣磷代謝。此過程依賴特定酵素 (enzyme) 催化反應。它與細胞核受體 (nuclear receptor) 結合，調控基因表現。\n\n**選項解析**\n- (A) 1, 25-dihydroxycholecalciferol 是活化態維生素 D（Vitamin D）的分子結構 (molecular structure)。它由腎臟酵素產生，具有生物活性。它能促進腸道吸收鈣離子 (calcium ion)。\n- (B) 7-dehydrocholesterol 是皮膚中的前驅物，經紫外線照射後轉化。它尚未經過羥化作用，無生理活性。\n- (C) 25-hydroxycholecalciferol 是肝臟代謝後的產物，屬於儲存形式。它需要再經腎臟活化才具完全功能。\n- (D) cholecalciferol 是膳食來源的維生素 D3（Vitamin D3）。它必須在體內經過羥化作用才能被利用。",
+      "level": "unchecked"
+    },
+    "21": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n佝僂症（rickets）是兒童時期因維生素 D（Vitamin D）缺乏引起的代謝性骨骼（bone）疾病。此病導致鈣（calcium）與磷（phosphorus）吸收障礙。這造成骨質軟化及生長板（growth plate）異常。智力發育主要涉及中樞神經系統（central nervous system）功能。並非佝僂症的典型臨床表現。\n\n**選項解析**\n- (A) 兒童出現生長遲緩：骨骼礦化不足會影響長骨（long bone）生長。這會導致身高增長停滯或生長遲緩。\n- (B) 智力發育遲緩：此症狀與佝僂症最無關。因為維生素 D（Vitamin D）缺乏主要影響骨骼而非大腦認知功能。\n- (C) 血中鈣濃度降低：維生素 D（Vitamin D）不足會減少腸道（intestine）對鈣的吸收。進而導致低血鈣血症。\n- (D) 牙齒（teeth）發育不全：牙齒礦化同樣依賴維生素 D（Vitamin D）與鈣。缺乏時易造成牙釉質缺陷或蛀牙。",
+      "level": "unchecked"
+    },
+    "22": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n人類月經週期（menstrual cycle）主要受下視丘（hypothalamus）與腦下垂體（pituitary gland）調控。雌激素（estrogen）在濾泡（follicle）期末達到第一次高峰，排卵（ovulation）後黃體（corpus luteum）形成會導致第二次分泌增高。因此選項 (C) 描述雌激素僅在排卵前增高是錯誤的。\n\n**選項解析**\n- (A) 黃體促素（luteinizing hormone）在排卵前會產生大量分泌，這股峰值確實誘發排卵。此敘述正確。\n- (B) 助孕酮（progesterone）主要由黃體分泌，因此血漿（plasma）中濃度只有在排卵後才會明顯升高。此敘述正確。\n- (C) 雌激素在濾泡期晚期達到高峰，但黃體細胞也會分泌雌激素，造成第二次升高。黃體期亦會分泌雌激素，故非僅限於排卵前。所以選項說只會在排卵前增高是錯誤的。\n- (D) 濾泡顆粒細胞（granulosa cell）負責分泌雌激素，此激素與卵子（oocyte）的發育成熟密切相關。此敘述正確。",
+      "level": "unchecked"
+    },
+    "23": {
+      "text": "**答案：A、B**\n\n**關鍵觀念**\n胎兒時期中樞神經（central nervous system）的成熟需要特定激素（hormone）調節。甲狀腺素（thyroxine）是促進神經元（neuron）分化與髓鞘（myelin sheath）形成的核心物質。缺乏會導致智力障礙。生長激素（growth hormone）則負責整體組織的生長，包含對神經系統（nervous system）的支持作用。\n\n**選項解析**\n- (A) 生長激素主要促進骨骼與肌肉發育，但本題修正後認定其對胎兒整體成長有貢獻，故列為正確選項之一。\n- (B) 甲狀腺素是關鍵答案，缺乏會導致智力障礙，直接影響中樞神經功能與結構。\n- (C) 腎上腺皮質醇（cortisol）主要調節代謝與壓力反應，過量反而抑制胎兒發育，不具備促進神經發育角色。\n- (D) 泌乳素（prolactin）主要作用於乳腺（breast），促進乳汁分泌，與神經發育無直接關聯，故排除。",
+      "level": "unchecked"
+    },
+    "24": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n甲狀腺激素（Thyroid Hormone）對骨骼生長板（Epiphyseal Plate）與中樞神經系統（Central Nervous System）成熟至關重要。先天性缺乏此類激素會導致先天性甲狀腺功能低下症（Congenital Hypothyroidism）。此疾病若未及早治療，將造成不可逆的神經損傷與生長遲緩。\n\n**選項解析**\n- (A) ①與②正確，但③低血鉀症（Hypokalemia）非甲狀腺激素缺乏之典型電解質異常表現，常為正常血鉀。\n- (B) ④正確，但⑤性早熟（Precocious Puberty）相反，患者常出現性發育延遲現象而非早熟，故排除此項。\n- (C) ①生長遲緩、②智能發育受損及④甲狀腺功能低下皆為該疾病核心臨床特徵，故選此項正確。\n- (D) 此選項包含錯誤症狀③與⑤，不符合先天性甲狀腺功能低下症之病理生理機轉與臨床表現，故不選。",
+      "level": "unchecked"
+    },
+    "25": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n先天性甲狀腺功能低下（congenital hypothyroidism）若未及時治療，會導致生長遲滯與智能障礙。\n這種臨床症候群在醫學上稱為呆小症（cretinism）。\n甲狀腺素（thyroxine）對中樞神經系統（central nervous system）發育至關重要。\n缺乏此激素會影響腦部與骨骼的正常成長。\n\n**選項解析**\n- (A) 正確。先天性甲狀腺功能低下嚴重時即為呆小症。\n患者會出現身材矮小與智力受損。\n- (B) 錯誤。先天性腎上腺增生症（congenital adrenal hyperplasia）主要影響類固醇合成酵素（enzyme）。\n臨床表現多為外生殖器異常或電解質失衡。\n不會造成典型的智能障礙。\n- (C) 錯誤。生長激素缺乏性侏儒症（dwarfism）源於腦下垂體（pituitary gland）分泌不足。\n患者身材矮小但智力通常正常。\n與甲狀腺素缺乏的病理機轉不同。\n- (D) 錯誤。普拉德－威利症候群（Prader-Willi syndrome）是染色體（chromosome）缺失所致。\n特徵為肌張力低下與成年後肥胖。\n並非甲狀腺功能異常引起。",
+      "level": "unchecked"
+    },
+    "26": {
+      "text": "**答案：（A）**\n\n**關鍵觀念**\n蛋白質（Protein）二級結構（secondary structure）主要包含α-螺旋（alpha helix）與β-折疊層（β-sheet）。\nβ-折疊層由多條β-鏈（β-strand）透過分子（molecule）間氫鍵（hydrogen bond）相互堆疊形成。\n反平行鏈（antiparallel strand）的氫鍵方向與肽鏈（peptide chain）軸線垂直。\n該結構鍵結幾何形狀最佳且穩定。\n平行鏈（parallel strand）的氫鍵呈傾斜角度，鍵結長度較長導致能量較高而不穩定。\n\n**選項解析**\n- (A) 正確。平行鏈間氫鍵非直線排列，鍵結強度弱於反平行鏈，故熱力學穩定性較差。\n- (B) 錯誤。雙硫鍵（disulfide bond）屬共價鍵（covalent bond），主要穩定三級結構（tertiary structure），非二級結構穩定主因。\n- (C) 錯誤。平行鏈與反平行鏈均可堆疊成β-折疊層（β-sheet），差異在於氫鍵方向而非能否形成。\n- (D) 錯誤。此選項涉及蛋白質功能域（protein-protein binding domain），與二級結構熱力學穩定性無直接關係。",
+      "level": "unchecked"
+    },
+    "27": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n青黴素（penicillin）屬於內醯胺類抗生素。它的作用機轉是抑制細菌細胞壁（cell wall）的合成。細菌細胞壁的主要成分是肽聚糖（peptidoglycan）。合成過程中需要轉肽基酶（transpeptidase）進行交聯反應。此酵素（enzyme）被抑制後，細胞壁無法形成完整結構。細菌會因滲透壓差而破裂死亡。\n\n**選項解析**\n- (A) 內醯胺酶（β-lactamase）是細菌產生的酵素。它能分解青黴素的內醯胺環。這代表抗藥性機制，而非殺菌作用目標。\n- (B) 轉肽基酶負責肽聚糖網狀結構的交聯。青黴素與此酵素活性部位結合。這阻斷了細胞壁合成，導致殺菌效果。\n- (C) 接合酶（ligase）主要參與 DNA 修復或複製過程。它與細菌細胞壁的構建無關。因此不是青黴素的作用標的。\n- (D) 醛縮酶（aldolase）是糖解作用中的關鍵酵素。它參與葡萄糖代謝，不影響細胞壁完整性。故非正確選項。",
+      "level": "unchecked"
+    },
+    "28": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n胺基酸（amino acid）的電荷狀態取決於溶液 pH 值與等電點（isoelectric point, pI）的相對大小。\n當環境 pH 值低於 pI 時，代表溶液中氫離子（hydrogen ion）濃度較高。\n過量的質子（proton）會使胺基酸的羧基（carboxyl group）結合氫離子而帶正電。\n同時胺基的氮原子也會被質子化，導致整體分子（molecule）呈現淨正電荷。\n在電泳實驗中，此狀態下的胺基酸會向陰極移動。\n這是因為酸性環境抑制了羧基的解離，並促進了氨基的質子化反應。\n此時分子不再處於兩性離子（zwitterion）形式，而是帶正電荷的陽離子。\n\n**選項解析**\n- (A) 錯誤。當溶液 pH 值高於 pI 時，羧基解離出氫離子，胺基酸才會呈淨負電荷。\n- (B) 正確。pH 低於 pI 代表環境酸性強，胺基酸接受質子而帶正電，故為主要性質。\n- (C) 錯誤。只有當 pH 值等於 pI 時，正負電荷數量相等，才呈中性狀態。\n- (D) 錯誤。此描述指等電點時的離子狀態，但淨電荷為零而非呈現電荷等量分佈的性質。",
+      "level": "unchecked"
+    },
+    "29": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n此病患症狀符合壞血病（Scurvy）的臨床表現。維生素 C（Vitamin C）是膠原蛋白（Collagen）合成中羥化酶（Hydroxylase）的輔因子（Cofactor）。缺乏時膠原蛋白前體（Precursor）無法穩定。此狀況導致血管（Blood Vessel）脆弱與結締組織（Connective Tissue）修復障礙。\n\n**選項解析**\n- (A) 維生素 B₁（Vitamin B₁）缺乏會引起腳氣病（Beriberi），主要影響神經（Nerve）與心臟（Heart）。\n- (B) 維生素 B₁₂（Vitamin B₁₂）缺乏常導致巨紅血球性貧血（Megaloblastic Anemia）及周邊神經病變（Peripheral Neuropathy）。\n- (C) 維生素 C（Vitamin C）參與脯胺酸（Proline）與賴胺酸（Lysine）的羥化反應（Reaction），此過程對膠原蛋白穩定至關重要。缺乏時牙齦（Gums）出血、浮腫（Edema）且傷口（Wound）癒合不良，符合本題描述。\n- (D) 維生素 A（Vitamin A）主要影響視覺循環（Visual Cycle）與上皮細胞（Epithelial Cell）分化（Differentiation），缺乏會導致夜盲症（Night Blindness）。",
+      "level": "unchecked"
+    },
+    "30": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n核糖核酸 (Ribonucleic Acid) 降解時，嘧啶核苷酸 (Pyrimidine nucleotide) 會先水解為核苷與磷酸。胞嘧啶 (Cytosine) 鹼基經脫氨作用後，會轉化為尿嘧啶 (Uracil)。尿苷單磷酸 (UMP) 則經去磷酸化生成尿苷，再分解出尿嘧啶。此物質是嘧啶降解的共同中間產物，隨後嘧啶環才會開環進入β-氧化途徑生成可溶性小分子。\n\n**選項解析**\n- (A) β-aminoisobutyrate：這是胸腺嘧啶 (Thymine) 鹼基降解後的產物，主要來自脫氧核糖核酸 (Deoxyribonucleic Acid) 代謝過程，與 RNA 無關。\n- (B) thymine：胸腺嘧啶是 DNA 特有的含氮鹼基，RNA 結構中不存在此成分，故非正確選項。\n- (C) uracil：尿嘧啶正確。胞嘧啶與尿嘧啶核苷酸降解後，均會產生尿嘧啶作為主要中間產物。\n- (D) hypoxanthine：次黃嘌呤屬於嘌呤 (Purine) 代謝途徑的產物，源自腺嘌呤或鳥嘌呤分解，不屬於嘧啶路徑。",
+      "level": "unchecked"
+    },
+    "31": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n核酸去嘌呤作用（depurination of nucleotides）破壞鹼基（base）與核糖（ribose）間的連結。此化學鍵稱為糖苷鍵（glycosidic bond）。在核苷酸（nucleotide）結構中，鹼基連接於戊糖的異頭碳原子。此鍵結屬於 N-β-glycosyl bond 類型，易受水解影響。\n\n**選項解析**\n- (A) 氫鍵（hydrogen bond）主要維持去氧核醣核酸（DNA）雙股結構穩定性。它存在於互補鹼基對之間，而非鹼基與糖之間。因此此選項錯誤。\n- (B) 糖苷鍵連接含氮鹼基與五碳糖的異頭碳。去嘌呤作用即指此鍵水解斷裂。故為正確答案。\n- (C) 磷酸二酯鍵（phosphodiester bond）連接相鄰核苷酸的磷酸與戊糖。它構成核酸骨架，非鹼基連結處。因此此選項錯誤。\n- (D) 醯胺鍵（amide bond）常見於蛋白質的肽鍵（peptide bond）或某些側鏈結構。它不負責鹼基與核糖的結合。因此此選項錯誤。",
+      "level": "unchecked"
+    },
+    "32": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n艾姆氏測試法（Ames test）是用來檢測化學物質是否具有致突變性的篩檢方法。該實驗使用組胺酸營養缺陷型（histidine auxotroph）的沙門氏桿菌（Salmonella typhimurium）。若受試化合物能誘發細菌基因（gene）突變。使其恢復合成組胺酸的能力，即表示具有致突變性。這種現象稱為逆轉突變（reversion mutation）。由於許多致癌物（carcinogen）也是致突變物，此測試可用於評估潛在的致癌風險。\n\n**選項解析**\n- (A) 致病性是指微生物引起疾病的能力，與基因突變檢測無關。\n- (B) 去氧核醣核酸（DNA）複製速率涉及複製酶（polymerase）活性，非本測試目的。\n- (C) 抗生素（antibiotic）藥效評估細菌生長抑制，而非基因突變頻率變化。\n- (D) 本測試核心即為評估化合物致突變性的能力，故正確。",
+      "level": "unchecked"
+    },
+    "33": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n去氧核醣核酸（DNA）複製（DNA replication）過程具有方向性限制。\nDNA 聚合酶（DNA polymerase）只能將核苷酸（nucleotide）加到 3'端。\n因此新鏈合成方向固定為 5'→ 3'。\nOkazaki 片段（Okazaki fragment）是滯後鏈（lagging strand）不連續合成的中間產物。\n這些片段最終由連接酶（ligase）接合形成完整鏈。\n複製時需要引子（primer）啟動合成反應。\n\n**選項解析**\n- (A) 內切酶（endonuclease）主要負責切割磷酸二酯鍵，並非產生此片段的機制。\n- (B) 30S 核糖體次單元（ribosomal subunit）參與蛋白質合成，與 DNA 複製無關。\n- (C) 滯後鏈模板方向為 5'→ 3'，需反向不連續合成。\n- (D) 所有去氧核醣核酸片段皆由 5'→ 3'方向合成，不存在 3'→ 5'合成的 DNA 片段。",
+      "level": "unchecked"
+    },
+    "34": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n真核細胞（Eukaryotic cell）的基因表現受 mRNA（messenger RNA）穩定性調控。\n5'端帽子結構（5' cap）與 3'端多聚腺苷酸尾（3' poly(A) tail）是保護機制。\n這些結構能阻擋核酸酶（nuclease）攻擊，延長 RNA 分子（RNA molecule）在細胞質（cytoplasm）中的壽命。\n缺乏保護的 mRNA 會迅速被分解，無法有效進行蛋白質（protein）合成與細胞功能運作。\n\n**選項解析**\n- (A) mRNA 降解路徑因物種而異，細菌（Bacteria）常從 3'端開始，並非僅限 5'到 3'方向。\n- (B) 細菌 mRNA 半衰期（half-life）極短，通常僅數分鐘，不如真核細胞穩定。\n- (C) 細胞內合成與降解速率需維持動態平衡，並非降解速率一定快過合成十倍之多。\n- (D) 5' cap 和 poly(A) tail 可阻擋外切酶（exonuclease）作用，確實增加 mRNA 穩定性。",
+      "level": "unchecked"
+    },
+    "35": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n基因序列的核苷酸（nucleotide）改變，會直接影響轉譯（translation）過程中的蛋白質（protein）合成結果。\n無義突變（nonsense mutation）是指原本編碼胺基酸（amino acid）的密碼子（codon），突變成終止密碼子（stop codon）。\n這會讓核糖體（ribosome）在正常位置前識別到終止信號，導致多肽鏈合成提前結束。\n此類突變通常會產生截短且無功能的蛋白質產物，影響細胞（cell）生理機能。\n\n**選項解析**\n- (A) 同義突變（silent mutation）改變核苷酸。它不改變胺基酸，因此蛋白質序列與功能不變。\n- (B) 錯義突變（missense mutation）會替換單一胺基酸。這可能影響結構但不會導致合成提前終止。\n- (C) 抑制突變（suppressor mutation）能修正其他突變的效應。通常恢復正常的轉譯過程與功能。\n- (D) 無義突變產生提前終止信號。使轉譯過程在正常位置前結束，導致蛋白質功能喪失。",
+      "level": "unchecked"
+    },
+    "36": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n胺醯-tRNA合成酶（aminoacyl-tRNA synthetases）負責將特定胺基酸（amino acid）與對應的轉運核糖核酸（tRNA）結合。此酵素具有高度專一性，能同時辨識特定的胺基酸及 tRNA 分子。反應過程需消耗三磷酸腺苷（ATP），生成胺醯-AMP 中間產物後，再將胺基酸轉移至 tRNA 3'端。\n\n**選項解析**\n- (A) 正確。此酵素能辨識特定的轉運核糖核酸及胺基酸，促進胺醯-tRNA 的合成，符合其專一性特徵。\n- (B) 錯誤。每種胺基酸對應一種特異性的胺醯-tRNA合成酶，不需其他酵素協同即可完成結合。\n- (C) 錯誤。活化胺基酸所需的能量來源為三磷酸腺苷，而非鳥苷三磷酸（GTP）。\n- (D) 錯誤。反應需先經活化形成高能中間產物，並非直接結合；且重點在於酵素對底物的專一性辨識。",
+      "level": "unchecked"
+    },
+    "37": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n細胞凋亡（apoptosis）受 Bcl-2 家族蛋白質（protein）調控。\n該家族分為抗凋亡（anti-apoptotic）與促凋亡（pro-apoptotic）兩類。\nBcl-2 蛋白主要位於線粒體（mitochondrion）外膜，阻止細胞色素 c（cytochrome c）釋放。\n若無此抑制作用，會啟動下游酵素（enzyme）導致細胞死亡。\n\n**選項解析**\n- (A) Bak 屬於促凋亡蛋白質，會促進細胞凋亡。\n- (B) Bax 亦為促凋亡成員，與 Bak 功能相似，誘導線粒體膜通透性改變。\n- (C) Bcl-2 是抗凋亡蛋白質，能抑制細胞色素 c（cytochrome c）釋放，阻斷死亡訊號傳導。\n- (D) FASL 為 FAS 配體（ligand），活化外源性路徑，引發細胞凋亡而非抑制。",
+      "level": "unchecked"
+    },
+    "38": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n成熟紅血球（Red Blood Cell）缺乏粒線體（mitochondria），無法進行有氧氧化。因此主要依賴糖解作用（glycolysis）產生三磷酸腺苷（ATP）供能。此途徑同時生成還原型輔酶Ⅱ（NADPH）與 2,3-雙磷酸甘油酸（2,3-bisphosphoglycerate）。\n\n**選項解析**\n- (A) 紅血球無粒線體，故糖解作用產生的三磷酸腺苷是主要能量來源。此敘述正確。\n- (B) 糖解作用除產生能量外，亦生成 2,3-雙磷酸甘油酸（2,3-bisphosphoglycerate）調節血紅素氧親和力。故選項錯誤。\n- (C) 克氏循環（TCA cycle）需粒線體參與，成熟紅血球缺乏此構造，故無法進行。此敘述錯誤。\n- (D) 五碳糖磷酸途徑（pentose phosphate pathway）發生於細胞質（cytosol），而非粒線體。此敘述錯誤。",
+      "level": "unchecked"
+    },
+    "39": {
+      "text": "**答案：A、B、D**\n\n**關鍵觀念**\n肝糖（glycogen）合成路徑中，葡萄糖（glucose）需先磷酸化。\n進入細胞（cell）後轉為葡萄糖 6-磷酸（glucose 6-phosphate）。\n再經異構酵素（enzyme）轉換為葡萄糖 1-磷酸（glucose 1-phosphate）。\n最終生成尿苷二磷酸葡萄糖（UDP-glucose）作為活化供體。\n此過程涉及肝臟（liver）及骨骼肌（skeletal muscle）細胞的代謝調節，三者皆為途徑中分子（molecule）形式。\n題目要求選出參與合成的型式，包含中間產物與直接底物。\n\n**選項解析**\n- (A) 葡萄糖 1-磷酸是合成途徑中的關鍵中間產物，參與後續反應。\n- (B) 葡萄糖 6-磷酸是葡萄糖進入肝細胞及骨骼肌細胞後的第一個代謝產物。\n- (C) CMP-glucose 並非肝糖合成的活化形式，此選項與生理機轉不符。\n- (D) UDP-glucose（尿苷二磷酸葡萄糖）是合成酵素直接使用的底物，直接參與鏈增長過程。",
+      "level": "unchecked"
+    },
+    "40": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n激烈運動時，骨骼肌（skeletal muscle）耗氧量大於供氧量。糖酵解（glycolysis）產生大量還原型輔酵素（NADH），必須再氧化為氧化型輔酵素（NAD⁺）才能持續進行。此過程發生在細胞質（cytosol）中，不需依賴線粒體（mitochondria）功能。\n\n**選項解析**\n- (A) α-酮基戊二酸（α-ketoglutarate）轉為琥珀醯輔酵素 A（succinyl-CoA）屬於三羧酸循環（tricarboxylic acid cycle）步驟。此反應位於線粒體內，無法直接再生細胞質還原型輔酵素。\n- (B) 丙酮酸（pyruvate）在乳酸去氫酶（lactate dehydrogenase）作用下轉為乳酸（lactate）。此反應氧化還原型輔酵素生成氧化型輔酵素（NAD⁺），維持無氧糖酵解作用。\n- (C) 輔酵素 Q（coenzyme Q）與細胞色素 b（cytochrome b）參與電子傳遞鏈（electron transport chain）運作。該系統需氧氣作為最終電子接受體，缺氧時無法再氧化還原型輔酵素。\n- (D) 丙酮酸轉為乙醯輔酵素 A（acetyl-CoA）由丙酮酸去氫酶複合體催化。此反應發生於線粒體基質，需氧氣環境支持後續循環。",
+      "level": "unchecked"
+    },
+    "41": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n胰臟（pancreas）β細胞（beta cell）利用葡萄糖激酶（glucokinase）作為血糖（blood glucose）濃度感測器。當血糖上升時，此酵素（enzyme）催化速率增加，產生更多三磷酸腺苷（ATP）。ATP 升高會關閉鉀離子通道（potassium channel），導致細胞去極化並引發胰島素（insulin）分泌。\n\n**選項解析**\n- (A) 糖原合成酶（glycogen synthase）主要負責儲存肝醣（glycogen），不直接參與血糖感測與胰島素分泌調控。\n- (B) 葡萄糖激酶又稱己糖激酶 IV（hexokinase IV），是此路徑的限速酵素（rate-limiting enzyme），反應速率隨血糖濃度上升而提高。\n- (C) 磷酸化酶激酶（phosphorylase kinase）參與肝醣分解途徑，與胰臟β細胞感測血糖機制無關。\n- (D) 糖原磷酸化酶（glycogen phosphorylase）負責分解肝醣為葡萄糖，在β細胞中非主要調控胰島素分泌的酵素。",
+      "level": "unchecked"
+    },
+    "42": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n低密度脂蛋白（LDL）負責將血液中的膽固醇（cholesterol）運送至周邊組織細胞（cell）。\n細胞表面的受體（receptor）會辨識低密度脂蛋白上的載脂蛋白 B-100（Apo B-100）。\n此結合動作是促進細胞攝取血液中膽固醇的關鍵機轉。\n\n**選項解析**\n- (A) 正確。載脂蛋白 B-100（Apo B-100）是低密度脂蛋白的主要結構蛋白，作為配體（ligand）與受體結合。\n- (B) 錯誤。載脂蛋白 C-I（Apo C-I）主要抑制卵磷脂膽固醇酰基轉移酶（LCAT）活性，不參與受體辨識。\n- (C) 錯誤。載脂蛋白 C-II（Apo C-II）功能是活化脂蛋白脂肪酶（lipoprotein lipase），協助三酸甘油酯（triglyceride）分解而非細胞攝取。\n- (D) 錯誤。脂蛋白脂肪酶是一種酵素（enzyme），負責水解乳糜微粒（chylomicron）與極低密度脂蛋白（VLDL）中的三酸甘油酯。",
+      "level": "unchecked"
+    },
+    "43": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n細菌視紫蛋白（bacteriorhodopsin）是一種典型的穿膜蛋白（transmembrane protein）。它主要存在於嗜鹽菌（halobacteria）的細胞膜（cell membrane）上。該蛋白質由七個α-螺旋（alpha-helix）結構組成跨膜通道。它利用結合的視黃醛（retinal）分子進行光驅動質子運輸（light-driven proton transport）。此結構是研究膜蛋白的重要模型。\n\n**選項解析**\n- (A) 此敘述正確，細菌視紫蛋白確實是由七個α-螺旋構成的穿膜結構。\n- (B) 此敘述錯誤，因為它並非利用β-螺旋（beta-helix），而是依靠α-螺旋來穿過細胞膜。這是本題的正確選項。\n- (C) 此敘述正確，其穿膜結構中會與視黃醛分子共價結合以發揮功能。\n- (D) 此敘述正確，它的主要生理功能是作為光驅動質子泵（proton pump）進行質子運輸。",
+      "level": "unchecked"
+    },
+    "44": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\nLDL (low density lipoprotein) 代謝主要發生在肝臟器官。肝細胞 (hepatocyte) 表面的 LDL 受體 (LDL receptor) 負責清除血液中的 LDL 顆粒。攝取後的膽固醇可用於合成膽汁鹽 (bile salts) 或抑制 HMG-CoA 還原酶 (HMG-CoA reductase)。此機制維持體內膽固醇平衡。\n\n**選項解析**\n- (A) LDL 受體不僅存在肝細胞，其他組織如腎上腺皮質細胞也有表現。\n- (B) 正確。肝細胞透過 LDL 受體介導的內吞作用攝取 LDL。釋放的膽固醇可轉化為膽汁鹽以維持平衡。這是肝臟處理外源性膽固醇的主要途徑。\n- (C) LDL 主要攜帶的是膽固醇酯，而非三酸甘油酯 (triglyceride)。三酸甘油酯含量較少，主要在乳糜微粒 (chylomicrons) 中。\n- (D) LDL 是由 VLDL (very low density lipoprotein) 在血液中代謝轉變而來。肝臟直接分泌的是 VLDL 或乳糜微粒。",
+      "level": "unchecked"
+    },
+    "45": {
+      "text": "**答案：（A）**\n\n**關鍵觀念**\n苯丙胺酸羥化酶（phenylalanine hydroxylase）是肝臟（liver）中負責代謝的重要酵素（enzyme）。\n此酵素催化苯丙胺酸（phenylalanine）轉化為酪胺酸（tyrosine），活性缺失會導致苯丙酮酸尿症（phenylketonuria）。\n患者體內苯丙胺酸堆積，且無法合成足夠的酪胺酸。\n此為一種先天性代謝異常疾病（inborn error of metabolism）。\n\n**選項解析**\n- (A) 正確。因酵素功能缺失，代謝路徑阻斷，導致患者無法自行合成足夠的酪胺酸。\n- (B) 錯誤。此疾病主要影響苯丙胺酸代謝，與色胺酸（tryptophan）路徑無關，尿液中不會出現大量色胺酸。\n- (C) 錯誤。這是先天性代謝異常疾病，並非免疫系統對苯丙胺酸產生過敏反應。\n- (D) 錯誤。患者腸道對苯丙胺酸吸收功能正常，問題在於細胞內酵素無法進行後續的代謝轉換，而非吸收不足。",
+      "level": "unchecked"
+    },
+    "46": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n腎上腺素（epinephrine）和正腎上腺素（norepinephrine）屬於兒茶酚胺（catecholamine）類神經傳導物質（neurotransmitter）。它們的生合成路徑起始於芳香族胺基酸（aromatic amino acid）酪胺酸（tyrosine）。此過程需要酵素（enzyme）酪胺酸羥化酶（tyrosine hydroxylase）催化第一步反應。隨後經多巴脫羧酶（dopa decarboxylase）作用生成多巴胺（dopamine），再進一步轉化為正腎上腺素及腎上腺素。\n\n**選項解析**\n- (A) 精胺酸（arginine）主要參與一氧化氮（nitric oxide）及肌酸（creatine）的合成，並非兒茶酚胺前驅物。\n- (B) 組織胺酸（histidine）是組織胺（histamine）的前驅物，與腎上腺素合成無關。\n- (C) 酪胺酸經酵素酪胺酸羥化酶轉化為左旋多巴（L-DOPA），再逐步生成正腎上腺素及腎上腺素。\n- (D) 色胺酸（tryptophan）主要用於合成血清素（serotonin）與褪黑激素（melatonin），不參與兒茶酚胺路徑。",
+      "level": "unchecked"
+    },
+    "47": {
+      "text": "**答案：A、D**\n\n**關鍵觀念**\n線粒體（Mitochondria）電子傳遞鏈中，載體分為水溶性和脂溶性兩類。泛醌（Coenzyme Q）具有疏水長鏈，可自由穿梭於脂質雙層（Lipid Bilayer）內。本題將與膜結合緊密的細胞色素 c（Cytochrome c）亦歸類為膜相關脂溶性傳遞者。\n\n**選項解析**\n- (A) 細胞色素 c（Cytochrome c）位於線粒體內膜外側表面，雖具水溶性特徵，但與膜結合後參與電子傳遞，本題將其列為正確選項之一。\n- (B) 還原型煙醯胺腺嘌呤二核苷酸（NADH）主要存在於基質中，屬於水溶性分子，無法直接溶入脂質雙層進行運送。\n- (C) 還原型黃素腺嘌呤二核苷酸（FADH₂）通常與酶複合體共價結合，亦為水溶性輔因子，不具備在膜內擴散的脂溶性。\n- (D) 泛醌含有異戊二烯側鏈，完全溶於膜脂質環境中，是典型的脂溶性電子傳遞者，負責在不同複合體間運送電子。",
+      "level": "unchecked"
+    },
+    "48": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n原始致癌基因（proto-oncogenes）負責調節細胞週期（cell cycle）與分裂。\n轉變為致癌基因（oncogenes）後，會導致細胞失控增生。\n此過程通常涉及基因表現量增加或蛋白質（protein）活性增強。\n因此，合成量下降不會造成癌變，而是功能喪失。\n腫瘤抑制基因（tumor suppressor genes）才是因突變而失去功能。\n\n**選項解析**\n- (A) 化學性誘導突變（chemical-induced mutation）可改變基因序列，使蛋白質過度活化。\n- (B) 染色體重組（chromosomal rearrangement）可能將基因置於強啟動子（promoter）下，增加表現量。\n- (C) 病毒感染（viral infection）如逆轉錄病毒（retrovirus），可插入致癌序列或激活宿主基因。\n- (D) 啟動區（promoter region）突變導致合成量下降，屬於功能喪失而非活化。",
+      "level": "unchecked"
+    },
+    "49": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n胰島素（insulin）基因（gene）在細胞核（nucleus）內轉錄（transcription）為信使 RNA（mRNA）。\n隨後在細胞質（cytoplasm）的核糖體（ribosome）上轉譯（translation）成單一多胜肽前驅物（polypeptide precursor）。\n此分子包含 A 鏈、B 鏈與連接兩鏈的 C 肽（C-peptide）。\n所有鏈段皆源自單一基因序列，並非由不同基因分別轉錄。\n\n**選項解析**\n- (A) 胰島素的前激素原（preprohormone）確實於內質網（endoplasmic reticulum）之核糖體開始合成，並含信號勝肽（signal peptide）。\n- (B) 此敘述錯誤，因為 A 鏈與 B 鏈是由同一個基因轉譯出的前體經切割而成，非兩個獨立基因共同表達。\n- (C) 成熟胰島素確實需經蛋白裂解（proteolytic cleavage）移除 C 肽後才形成，此過程發生於高爾基體（Golgi apparatus）。\n- (D) 加工完成後會進入分泌顆粒（secretory granule），等待血糖升高時釋放至血液循環中。",
+      "level": "unchecked"
+    },
+    "50": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n本題考的是分子生物學中檢測蛋白質 (Protein) 交互作用 (Protein-protein interaction) 的方法。\n酵母雙雜交系統 (Yeast two-hybrid analysis) 可用於研究蛋白質與蛋白質之間的結合關係。\n其他選項主要針對核酸分子，如 DNA (Deoxyribonucleic acid) 或 RNA (Ribonucleic acid) 的分析技術。\n此類方法需區分檢測目標是核酸還是蛋白質產物。\n\n**選項解析**\n- (A) DNA 微陣列分析 (DNA microarray analysis)：此法用於大量檢測基因表現，並非直接分析蛋白質交互作用。\n- (B) 北印法 (Northern blotting)：此法用於檢測特定核糖核酸 (RNA) 分子的存在與大小。\n- (C) 南印法 (Southern blotting)：此法用於檢測特定脫氧核糖核酸 (DNA) 序列的存在。\n- (D) 雙雜交分析法 (Two-hybrid analysis)：此法利用轉錄因子結構，篩選蛋白質與蛋白質之間的交互作用。",
+      "level": "unchecked"
+    },
+    "51": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n藥物代謝（Drug metabolism）分為第一相反應（Phase I reaction）與第二相反應（Phase II reaction）。第一相反應主要包含氧化、還原及水解作用。這些反應旨在引入或暴露功能基團（functional group）。第二相反應則是結合反應，會增加分子的水溶性（water solubility）。最終目的是促進藥物排泄（excretion）。第一相反應通常使藥物極性增加，便於第二相進行。\n\n**選項解析**\n- (A) 氧化（Oxidation）屬於第一相反應，常由細胞色素 P450 酵素（Cytochrome P450 enzymes）催化。\n- (B) 水解（Hydrolysis）屬於第一相反應，利用水分子斷裂化學鍵。\n- (C) 結合（Conjugation）屬於第二相反應，將內源性分子與藥物連接。因此本題選 C。\n- (D) 還原（Reduction）屬於第一相反應，改變官能基團的氧化狀態。",
+      "level": "unchecked"
+    },
+    "52": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n肝臟 (Liver) 清除率取決於肝血流量 (Hepatic blood flow) 或酵素 (Enzyme) 容量。高萃取率藥物 (Drug) 代謝受肝血流限制，稱為血流限制性（blood flow-limited）。低萃取率藥物代謝則受酵素容量限制，與肝血流量無關。高萃取藥物口服生體可用率低，因首過效應顯著。肝血流改變對高萃取藥物影響大，對低萃取藥物影響小。\n\n**選項解析**\n- (A) Alprenolol 是高萃取率藥物，其清除率主要受肝血流量影響。\n- (B) Lidocaine 亦為高萃取率藥物，代謝速率隨肝血流增加而提高。\n- (C) Isoniazid 經乙醯化酵素代謝，但此題重點在於區別血流限制特性。\n- (D) Aspirin 屬於低萃取率藥物，其清除率取決於酵素活性而非肝血流量。Aspirin 主要經酯酵素水解，此過程不依賴肝血流量。",
+      "level": "unchecked"
+    },
+    "53": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n本題考抗黴菌藥（antifungal）的藥動學特性與副作用差異。酮康唑（Ketoconazole）穿透中樞神經系統（central nervous system, CNS）能力差，氟康唑（Fluconazole）則可進入腦脊髓液（cerebrospinal fluid）。兩藥皆抑制細胞色素 P450（cytochrome P450），但酮康唑對類固醇（steroid）合成抑制較強。\n\n**選項解析**\n- (A) 正確。酮康唑會抑制人類腎上腺皮質醇（cortisol）之生成，氟康唑則較不會影響類固醇合成。\n- (B) 錯誤。氟康唑脂溶性高，可穿透血腦屏障（blood-brain barrier）治療中樞性黴菌感染，酮康唑則無法有效進入腦部。\n- (C) 正確。酮康唑主要由肝臟（liver）代謝而失去藥效，氟康唑則以原形由腎臟（kidney）排出體外。\n- (D) 正確。酮康唑會抑制人類肝臟細胞色素 P450 之活性，氟康唑雖也有此作用但較弱。",
+      "level": "unchecked"
+    },
+    "54": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n本題考點在於抗黴菌藥（Antifungal agent）的臨床應用與吸收特性。免疫低下患者易發生口腔念珠菌（Candida）感染，需使用不經腸胃吸收的局部用藥。黴菌素（Nystatin）屬於多烯類抗黴菌藥（Polyene antifungal），主要作用於黏膜表面，全身毒性極低。\n\n**選項解析**\n- (A) 灰黃黴素（Griseofulvin）為抗黴菌藥，但僅針對皮質黴菌（Dermatophyte）感染有效。它無法治療念珠菌引起的口腔問題，故不選。\n- (B) 咪康唑（Miconazole）雖具抗黴菌活性，但多用於皮膚或全身性黴菌感染。在口腔預防上，其吸收特性不如黴菌素安全穩定，非首選藥物。\n- (C) 特比萘芬（Terbinafine）屬於烯丙胺類抗黴菌藥（Allylamine antifungal），主要抑制角質合成。此藥物針對皮質黴菌如灰指甲，對念珠菌效果不佳。\n- (D) 黴菌素為多烯類抗黴菌藥，能與細胞膜（Cell membrane）上的麥角固醇（Ergosterol）結合。此作用會導致細胞膜通透性改變。這會使離子外漏而殺死黴菌。因口服不吸收，適合用於口腔念珠菌預防。",
+      "level": "unchecked"
+    },
+    "55": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n恩夫韋肽（Enfuvirtide）是一種抗人類免疫缺乏病毒（Human Immunodeficiency Virus）的融合抑制劑。它的作用機轉是與病毒包膜蛋白（viral envelope protein）結合，阻斷病毒與宿主細胞膜（host cell membrane）的融合過程。這使得病毒無法進入細胞內進行複製。\n\n**選項解析**\n- (A) 利巴韋林（Ribavirin）是一種鳥苷類似物，主要用於治療呼吸道合胞病毒（Respiratory syncytial virus）或丙型肝炎（Hepatitis C）。它干擾病毒 RNA（Ribonucleic acid）的合成，而非阻斷膜融合。\n- (B) 阿德福韋（Adefovir）是一種核苷酸類似物，用於治療乙型肝炎病毒（Hepatitis B virus）。它抑制病毒 DNA（Deoxyribonucleic acid）聚合酶（DNA Polymerase）的活性。\n- (C) 恩夫韋肽是正確的選項，它直接結合病毒表面糖蛋白 gp41，阻止構形改變以達成融合。\n- (D) 阿巴卡韋（Abacavir）是一種核苷類反轉錄酶抑制劑，用於治療 HIV。它競爭性抑制反轉錄酶（Reverse transcriptase）的活性，不影響膜融合步驟。",
+      "level": "unchecked"
+    },
+    "56": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n氯吡格雷（Clopidogrel）屬於抗血小板藥物。它主要作用於血小板（platelet）表面的 P2Y12 受體（P2Y12 receptor）。此藥會不可逆地結合於 ADP 受體（ADP receptor），進而抑制血小板活化與凝集。此藥需經肝臟代謝活化後才具活性。\n\n**選項解析**\n- (A) 提升環磷酸腺苷（c-AMP）：這是前列腺素類藥物或磷酸二酯酶抑制劑的機制，非氯吡格雷作用。\n- (B) ADP 受體之拮抗：正確。氯吡格雷為 P2Y12 受體拮抗劑，阻斷 ADP 結合。\n- (C) 纖維蛋白原受體（Fibrinogen receptor）即醣蛋白 IIb/IIIa（GpIIb/IIIa）之拮抗：這是 GpIIb/IIIa 抑制劑如 Abciximab（Abciximab）的機制。\n- (D) 血栓素受體（Thromboxane receptor）之拮抗：阿斯匹靈（Aspirin）主要抑制 COX-1（Cyclooxygenase-1），減少血栓素 A2（Thromboxane A2）合成，非直接拮抗受體。",
+      "level": "unchecked"
+    },
+    "57": {
+      "text": "**答案：(A)**\n\n**關鍵觀念**\n纖維蛋白溶解（Fibrinolysis）是分解血栓（Thrombus）的生理過程。\n拮抗劑（Antagonist）藥物（Drug）用於抑制此過程以達到止血效果。\n這類藥物用於止血。它們稱為纖維蛋白溶解抑制劑（Fibrinolytic inhibitors）。\n\n**選項解析**\n- (A) 水蛭素（Hirudin）是直接凝血酶抑制劑（Direct thrombin inhibitor），主要用於抗凝血治療。\n- (B) 氨甲環酸（Aminocaproic acid）屬於賴氨酸類似物（Lysine analog），可阻斷纖溶酶原（Plasminogen）活化。\n- (C) 傳明酸（Tranexamic acid）也是賴氨酸類似物，能抑制纖維蛋白溶解。\n- (D) 抑肽酶（Aprotinin）是絲胺酸蛋白酶抑制劑（Serine protease inhibitor），直接抑制纖溶酶（Plasmin）活性。",
+      "level": "unchecked"
+    },
+    "58": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n他莫昔芬（Tamoxifen）是一種選擇性雌激素受體（Estrogen Receptor）調節劑。它在不同組織表現出拮抗或激動作用。在乳腺組織為拮抗，但在肝臟與骨骼則呈現雌激素樣效應。\n\n**選項解析**\n- (A) 此藥屬於非類固醇的抗雌激素藥物。它會與雌激素受體結合，進而抑制內生性雌激素作用於乳腺細胞。描述正確。\n- (B) 他莫昔芬廣泛地被使用來治療乳癌（Breast Cancer）患者。特別是對於激素受體陽性的病患效果顯著。描述正確。\n- (C) 在停經後婦女，他莫昔芬對肝臟呈現雌激素激動作用。這會導致血中總膽固醇（Cholesterol）及低密度脂蛋白（Low-density lipoprotein）濃度下降，而非升高。故本選項錯誤。\n- (D) 由於骨骼組織受其雌激素樣效應保護。使用可降低停經後婦女腰椎骨密度（Lumbar bone density）降低的風險。描述正確。",
+      "level": "unchecked"
+    },
+    "59": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n生長激素（growth hormone）與甲狀腺素（thyroid hormone）對骨骼（bone）生長具有協同作用。嚴重腦部創傷（brain trauma）可能損傷腦下垂體（pituitary gland）。這會導致多項激素（hormone）分泌不足。若缺乏甲狀腺素，生長激素無法有效促進骨頭生長。\n\n**選項解析**\n- (A) 體制素（somatostatin）分泌過量會抑制內源性生長激素，但外源性補充已達正常濃度，故非主因。\n- (B) 生長激素受體（growth hormone receptor）表現不足雖會導致抵抗，但腦傷後多發性激素缺乏較常見。\n- (C) 繼發性甲狀腺機能減退（secondary hypothyroidism）是腦下垂體損傷的常見併發症，甲狀腺素不足會阻斷生長激素的生長效應。甲狀腺素對於生長激素誘導胰島素樣生長因子（insulin-like growth factor 1）合成至關重要。\n- (D) 生長激素代謝速率過快通常不易維持正常血中濃度，與題幹描述不符。",
+      "level": "unchecked"
+    },
+    "60": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n左旋甲狀腺素（levothyroxine）是合成之甲狀腺激素，用於治療甲狀腺功能低下症（hypothyroidism）。其作用為補充體內不足之激素，恢復基礎代謝率。對於藥物誘發之甲狀腺功能異常，外源性補充仍為主要治療手段。\n\n**選項解析**\n- (A) 鈣（calcium）離子與含鋁（aluminum）製劑的制酸劑（antacids），會降低左旋甲狀腺素之腸道吸收，故建議錯開服用，此敘述正確。\n- (B) 胺碘酮（amiodarone）雖可干擾甲狀腺功能，但所致之甲狀腺功能低下症仍可用左旋甲狀腺素治療且有效，故稱效果不佳為錯誤敘述。\n- (C) 懷孕（pregnancy）期間母體代謝率改變，需增加左旋甲狀腺素劑量，該藥對胎兒安全，可用於孕婦之甲狀腺功能低下症，此敘述正確。\n- (D) 黏液性水腫昏迷（myxedema coma）為嚴重併發症，需立即給予靜脈注射左旋甲狀腺素及支持療法，此敘述正確。",
+      "level": "unchecked"
+    },
+    "61": {
+      "text": "**答案：B、C**\n\n**關鍵觀念**\n格雷夫斯病（Graves' disease）是一種自體免疫性甲狀腺機能亢進症（Hyperthyroidism）。治療目標在於抑制甲狀腺激素（Thyroid hormone）合成，並控制交感神經（Sympathetic nerve）興奮症狀。抗甲狀腺藥物與β-受體阻斷劑（Beta-blocker）皆為臨床常用治療手段。\n\n**選項解析**\n- (A) 左旋甲狀腺素（Levothyroxine）是用於甲狀腺機能低下症（Hypothyroidism）補充激素，會加重格雷夫斯病病情。\n- (B) 甲硫咪唑（Methimazole）屬於抗甲狀腺藥物，能抑制過氧化物酵素（Thyroid peroxidase）活性，阻斷甲狀腺激素合成，為主要治療用藥。\n- (C) 普萘洛爾（Propranolol）為非選擇性β-受體阻斷劑，可緩解心悸、震顫等交感神經興奮症狀，常作為輔助治療。\n- (D) 奧曲肽（Octreotide）是生長抑素類似物（Somatostatin analog），主要用於肢端肥大症（Acromegaly）或類癌症候群（Carcinoid syndrome），不適用於格雷夫斯病治療。",
+      "level": "unchecked"
+    },
+    "62": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n垂體性尿崩症（pituitary diabetes insipidus）是因抗利尿激素（antidiuretic hormone, ADH）分泌不足所致。\n去氨加壓素（Desmopressin）是人工合成的血管加壓素類似物。\n它主要作用於腎臟集合管（renal collecting ducts）上的 V2 受體（V2 receptor）。\n這能增加水通道蛋白（aquaporin）的插入。\n進而促進水分重吸收，從而減少尿量。\n\n**選項解析**\n- (A) 阿托西班（Atosiban）是催產素受體拮抗劑（oxytocin receptor antagonist），主要用於抑制子宮收縮治療早產（preterm labor）。\n- (B) 去氨加壓素具有較高的 V2 受體選擇性，可用於治療中樞性尿崩症（central diabetes insipidus），減少多尿症狀。\n- (C) 康尼伐坦（Conivaptan）是血管加壓素受體拮抗劑（vasopressin receptor antagonist），用於治療低血鈉症（hyponatremia）。\n- (D) 催產素（Oxytocin）主要促進子宮收縮與乳汁排出，對腎臟水重吸收作用微弱，不作為尿崩症用藥。",
+      "level": "unchecked"
+    },
+    "63": {
+      "text": "**答案：(B)**\n\n**關鍵觀念**\n眼房液（Aqueous humor）主要由睫狀體上皮細胞（Ciliary epithelial cells）分泌。\n碳酸酐酶（Carbonic anhydrase）參與離子轉運以生成眼房液。\n抑制該酵素可減少房水形成，進而降低眼內壓。\n此類藥物常作為局部用藥治療青光眼（Glaucoma）。\n全身吸收少，副作用較少。\n\n**選項解析**\n- (A) Amiloride 為鉀離子保留利尿劑（Potassium-sparing diuretic）。\n- (B) Dorzolamide 為碳酸酐酶抑制劑（Carbonic anhydrase inhibitor）。\n- (C) Torsemide 屬於袢利尿劑（Loop diuretics），作用於亨利氏環（Loop of Henle）。\n- (D) Bumetanide 亦為袢利尿劑，主要用於水腫。\n- 其他選項均無抑制碳酸酐酶之臨床用途。",
+      "level": "unchecked"
+    },
+    "64": {
+      "text": "**答案：C**\n\n**關鍵觀念**\nSildenafil（西地那非）屬於磷酸雙酯酶（phosphodiesterase）抑制劑。它能選擇性抑制磷酸雙酯酶 5（PDE5）。此酵素負責分解環磷酸鳥苷（cGMP），抑制後可使細胞內 cGMP 濃度上升。高濃度的 cGMP 會降低細胞內鈣離子濃度，最終導致血管平滑肌（smooth muscle）舒張。\n\n**選項解析**\n- (A) Misoprostol（米索前列醇）為前列腺素 E1（Prostaglandin E1）類似物，主要作用於子宮或胃黏膜受體，不透過磷酸雙酯酶路徑。\n- (B) Nitroglycerine（硝酸甘油）在體內釋放氧化氮（NO），活化鳥苷酸環化酶（guanylyl cyclase）促進 cGMP 合成。\n- (C) Sildenafil（西地那非）正確，它阻斷磷酸雙酯酶對 cGMP 的分解作用，維持平滑肌舒張狀態以治療勃起功能障礙。\n- (D) Theophylline（茶鹼）主要抑制磷酸雙酯酶 3 和 4，增加環磷酸腺苷（cAMP）濃度，用於慢性阻塞性肺病或氣喘治療。",
+      "level": "unchecked"
+    },
+    "65": {
+      "text": "**答案：(A)**\n\n**關鍵觀念**\n腎素血管張力素系統 (Renin-Angiotensin-Aldosterone System) 調節血壓與液體平衡。阿利吉倫 (Aliskiren) 為直接腎素抑制劑，作用於腎素 (renin)。它阻斷血管緊張素原 (angiotensinogen) 轉化為血管緊張素 I (angiotensin I)，進而減少血管緊張素 II (angiotensin II) 生成。\n\n**選項解析**\n- (A) 阿利吉倫 直接結合並抑制腎素 活性。此機轉從源頭減少血管張力素系統活化，符合題目描述。故正確。\n- (B) 氫氯噻嗪 (Hydrochlorothiazide) 屬於利尿劑 (diuretic)，會導致鈉離子 (sodium ion) 流失與血容積下降。低血容積狀態反饋性刺激腎素 分泌增加。故錯誤。\n- (C) 洛沙坦 (Losartan) 為血管張力素 II 受體阻斷劑，作用於 AT1 受體 (receptor)。它不抑制腎素活性，反而因負回饋使血中腎素濃度上升。故錯誤。\n- (D) 雷米普利 (Ramipril) 為血管張力素轉換酶 (ACE) 抑制劑，阻斷血管緊張素 I (angiotensin I) 轉化為 II。此藥會導致腎素 分泌增加，無法降低其活性。故錯誤。",
+      "level": "unchecked"
+    },
+    "66": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n交感神經末梢 (sympathetic nerve terminal) 存在自身受體 (autoreceptor)，調節正腎上腺素 (norepinephrine) 釋放。β₂ 受體 (β₂ receptor) 活化後會增加細胞內環磷酸腺苷 (cyclic AMP) 濃度。此機制促進囊泡 (vesicle) 融合與神經傳導物質 (neurotransmitter) 釋出。α₂ 受體 (α₂ receptor) 則為負回饋機制，抑制釋放。\n\n**選項解析**\n- (A) α₂ 受體是交感神經末梢的自身受體，活化後會抑制正腎上腺素釋放，屬於負回饋調節。\n- (B) β₂ 受體位於交感神經末梢，活化後透過 Gs 蛋白 (Gs protein) 增加環磷酸腺苷，促進正腎上腺素釋放。\n- (C) 多巴胺 D₂ 受體 (Dopamine D₂ receptor) 主要在中樞神經系統 (central nervous system) 或血管平滑肌 (vascular smooth muscle)，非此處主要調節遞質釋出的受體。\n- (D) 毒蕈鹼 M₂ 受體 (Muscarinic M₂ receptor) 位於心臟 (heart)，活化後抑制心跳，與交感神經末梢釋放正腎上腺素無關。",
+      "level": "unchecked"
+    },
+    "67": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n手術後尿滯留（postoperative urinary retention）通常因膀胱逼尿肌（detrusor muscle）收縮力不足所致。治療需使用膽鹼能促效劑（cholinomimetic）來刺激 M 受體（muscarinic receptor）。貝膽鹼（Bethanechol）是選擇性 M 受體促效劑，可增強膀胱平滑肌（smooth muscle）收縮而不影響神經節（ganglion）傳導。\n\n**選項解析**\n- (A) 阿托品（Atropine）為抗膽鹼藥物（anticholinergic）。會抑制膀胱收縮，加重尿滯留症狀，故禁用。\n- (B) 貝膽鹼直接作用於 M 受體，增加逼尿肌張力與收縮力，促進排尿。\n- (C) 毛果黴靈（Pilocarpine）雖為 M 受體促效劑，但副作用較多，臨床主要用於青光眼（glaucoma）或口乾症（xerostomia）。\n- (D) 利瓦斯替明（Rivastigmine）為膽鹼酯酶抑制劑（cholinesterase inhibitor）。主要用於阿茲海默症（Alzheimer's disease）治療，非尿滯留首選。",
+      "level": "unchecked"
+    },
+    "68": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n運動引起的氣管痙攣（Exercise-Induced Bronchospasm, EIB）預防需使用快速作用的藥物。\n茶鹼類藥物（Theophylline）作用緩慢。\n其治療指數窄，不適合用於急性預防。\n臨床上首選為吸入型支氣管擴張劑（Bronchodilator）。\n\n**選項解析**\n- (A) 色甘酸鈉（Cromolyn）是肥大細胞（Mast cell）穩定劑，可抑制介質釋放，適合運動前使用。\n- (B) 特布他林（Terbutaline）為短效乙型交感神經（Sympathetic nerve）刺激劑，作用快速，是首選預防藥物。\n- (C) 沙美特羅（Salmeterol）屬長效乙型交感神經刺激劑，雖非首選但仍有預防效果。\n- (D) 茶鹼為甲基黃嘌呤類（Methylxanthines）。\n口服吸收慢且副作用多，不建議用於運動前即時預防。",
+      "level": "unchecked"
+    },
+    "69": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n痛風（Gout）是因血中尿酸（Uric acid）過高導致結晶沉積。\n體內尿酸主要源自嘌呤（Purine）代謝，此路徑需黃嘌呤氧化酶（Xanthine oxidase）催化。\n慢性痛風治療目標為降低尿酸生成或促進排泄。\n抑制黃嘌呤氧化酶可阻斷尿酸合成，屬降尿酸藥物。\n\n**選項解析**\n- (A) 非布司他（Febuxostat）為非嘌呤類黃嘌呤氧化酶抑制劑，有效降低血中尿酸。\n- (B) 丙磺舒（Probenecid）屬於促尿酸排泄藥（Uricosuric agent），作用於腎臟（Kidney）增加尿酸排出量。\n- (C) 磺吡酮（Sulfinpyrazone）亦為促尿酸排泄藥，機制與丙磺舒相似，非酵素（Enzyme）抑制劑。\n- (D) 秋水仙素（Colchicine）主要用於急性痛風發作之消炎，無法降低血中尿酸濃度。",
+      "level": "unchecked"
+    },
+    "70": {
+      "text": "**答案：(B)**\n\n**關鍵觀念**\n前列腺素 (Prostaglandin) 類藥物可刺激子宮平滑肌 (uterine smooth muscle) 收縮。\n其中地諾前列酮 (Dinoprostone) 為前列腺素 E2 (PGE2)，常用於墮胎或引產。\n此機制涉及促進子宮頸 (cervix) 成熟與引發宮縮。\n前列腺素受體活化後會增加細胞內鈣離子 (calcium ion) 濃度。\n高劑量使用可導致流產或早產風險。\n藥物作用主要透過 EP 受體 (EP receptor) 介導平滑肌 (smooth muscle) 興奮。\n\n**選項解析**\n- (A) 阿爾普斯他定 (Alprostadil) 為前列腺素 E1 (Prostaglandin E1)，用於勃起功能障礙 (erectile dysfunction)。\n- (B) 地諾前列酮 為前列腺素 E2 (PGE2)，可誘發子宮收縮與頸部成熟。\n- (C) 依前列醇 (Epoprostenol) 為前列腺素 I2 (Prostaglandin I2)，用於肺動脈高壓 (pulmonary hypertension)。\n- (D) 伊洛前列素 (Iloprost) 為前列環素類似物 (prostacyclin analog)，用於雷諾氏症 (Raynaud's disease) 治療。",
+      "level": "unchecked"
+    },
+    "71": {
+      "text": "**答案：(A)**\n\n**關鍵觀念**\nLevodopa（左旋多巴）是治療帕金森氏症（Parkinson's disease）的主要藥物。它進入腦部前會在周邊組織被代謝，導致療效降低且副作用增加。Carbidopa（卡比多巴）本身無藥理活性，但能抑制周邊的 Dopa decarboxylase（多巴脫羧酶）。兩者合併使用可增加進入中樞神經系統（CNS）的 Levodopa 濃度。\n\n**選項解析**\n- (A) 正確。Carbidopa 為外周型 Dopa decarboxylase 抑制劑，可減少周邊代謝。這能保護 Levodopa 不被分解。\n- (B) 錯誤。3-O-Methyldopa（3-O-甲基多巴）是 Levodopa 的代謝產物，並非用藥目的。增加此物質無益於治療。\n- (C) 錯誤。Tyrosine hydroxylase（酪氨酸羥化酶）活性由體內調控，不受 Carbidopa 影響。此酵素負責將 Tyrosine（酪胺酸）轉化為 Dopa（多巴）。\n- (D) 錯誤。抑制周邊 COMT（兒茶酚氧位甲基轉移酶）活性的藥物是 Entacapone（恩他卡朋）。這與 Carbidopa 機制不同，屬另一類輔助用藥。",
+      "level": "unchecked"
+    },
+    "72": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n酒精（Ethanol）藥理學探討其吸收、分佈與代謝特性。\n酒精經胃腸道（Gastrointestinal tract）完全吸收，無明顯首過效應阻礙。\n酒精在中毒劑量下代謝符合零級反應（Zero-order kinetics），乙醛（Acetaldehyde）為初級產物。\n性別差異常與體液含量及胃部酵素（Enzyme）活性有關，靜脈注射（Intravenous injection）影響分佈差異。\n\n**選項解析**\n- (A) 酒精可經胃腸道完全吸收，此敘述符合藥理學事實。\n- (B) 雖女性體液較少，但靜脈注射繞過胃部代謝，此題視性別差異主要源於口服首過效應，靜脈注射影響較小，故視為錯誤選項。\n- (C) 酒精在中毒劑量下代謝符合零級反應，此敘述正確。\n- (D) 乙醛為酒精代謝之初級產物，此敘述正確。",
+      "level": "unchecked"
+    },
+    "73": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n非洲錐蟲病（African trypanosomiasis）晚期感染需使用特定藥物殺滅寄生蟲。三價砷化合物（trivalent arsenic compounds）是治療此疾病的重要選項之一。美拉胂醇（Melarsoprol）屬於此類含砷（arsenic）結構的有機金屬化合物。其作用機轉涉及與錐蟲（Trypanosomes）酵素結合。\n\n**選項解析**\n- (A) 二巰基丙醇（Dimercaprol）主要用於重金屬中毒（heavy metal poisoning）的解毒治療，並非抗寄生蟲藥物。\n- (B) 琥珀酸二巰基丁二酸（Succimer）是口服螯合劑（chelating agent），常用於鉛中毒（lead poisoning）或砷中毒（arsenic poisoning）之解毒。\n- (C) 美拉胂醇為三價砷衍生物，對晚期非洲錐蟲病有效，但副作用顯著。\n- (D) 非洛沙明（Ferroxamine）並非治療此病的標準藥物，在藥理學教科書中無此適應症記載。",
+      "level": "unchecked"
+    },
+    "74": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n本題描述的是兒童失神發作（absence seizure）的典型臨床表現。\n患者出現目光呆滯與腦波（EEG）棘波 - 慢波（spike-wave）波形，是診斷依據。\n丙戊酸（Valproic acid）為廣效型抗癲癇藥（antiepileptic drug），適用於此類發作。\n治療需選擇能控制全身性發作（generalized seizure）的藥物，避免使用可能惡化病情的藥物。\n\n**選項解析**\n- (A) 卡馬西平（Carbamazepine）主要用於部分性發作（partial seizure），可能加重失神發作症狀。\n- (B) 丙戊酸對全身性發作有效，包含失神發作，為適宜選擇。\n- (C) 苯妥英鈉（Phenytoin）對失神發作無效，不建議用於此類治療。\n- (D) 地西泮（Diazepam）主要用於癲癇持續狀態（status epilepticus），非長期維持用藥。",
+      "level": "unchecked"
+    },
+    "75": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n抗癲癇藥物（anti-epileptic drugs）的選擇需依據發作（seizure）類型，錯誤用藥可能加重病情。某些鈉離子通道阻斷劑（sodium channel blocker）可能惡化廣汎性癲癇（generalized epilepsy）中的失神發作（absence seizure）。\n\n**選項解析**\n- (A) 丙戊酸（Valproic acid）為廣汎性癲癇之首選，能穩定神經細胞（neuron）膜電位。\n- (B) 拉莫三嗪（Lamotrigine）亦適用於此類發作，通常不會導致病情惡化或增加頻率。\n- (C) 苯妥英（Phenytoin）主要抑制鈉離子通道（sodium channel），對失神發作無效且可能加重丘腦皮層（thalamocortical）異常放電。\n- (D) 乙琥胺（Ethosuximide）專一阻斷 T 型鈣離子通道（T-type calcium channel），是治療單純失神發作之特效藥。",
+      "level": "unchecked"
+    },
+    "76": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n人體組織（tissue）依再生能力分為三類，分別是永久性、穩定性及不穩定性組織。\n永久性組織（permanent tissues）細胞（cell）失去分裂能力。\n受損後則由纖維化修復。\n穩定性組織（stable tissues）處於 G0 期。\n受刺激可進入細胞週期（cell cycle）進行分裂。\n此分類是醫師國考病理學（pathology）中關於細胞再生能力的核心重點，務必熟記。\n\n**選項解析**\n- (A) 神經元（neurons）屬於永久性組織，成熟後不再分裂，受損無法再生。\n- (B) 骨骼肌細胞（skeletal muscle cells）在傳統分類中視為永久性組織，功能修復主要靠衛星細胞（satellite cells）參與。\n- (C) 平滑肌細胞（smooth muscle cells）屬於穩定性組織，具有潛在分裂能力，受損後可進行再生修復。\n- (D) 心肌細胞（cardiac muscle cells）屬於永久性組織，受損後多形成疤痕組織（scar tissue）而非再生。",
+      "level": "unchecked"
+    },
+    "77": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n炎症反應（inflammation）的介質（mediator）各有特定功能。血管擴張（vasodilation）主要靠組織胺（histamine）、一氧化氮（nitric oxide）與前列腺素（prostaglandins）。發燒（fever）則由細胞激素（cytokines）如 TNF（Tumor Necrosis Factor）、IL-1（Interleukin-1）刺激下視丘（hypothalamus）產生前列腺素所致。\n\n**選項解析**\n- (A) 錯誤。TNF（Tumor Necrosis Factor）與 IL-1（Interleukin-1）主要誘導發燒。內皮細胞（endothelial cells）活化亦為其功能。並非直接引起血管擴張的主要介質。\n- (B) 正確。C3a 及 C5a 為補體系統（complement system）裂解產物，能顯著增加血管滲透性（vascular permeability）。\n- (C) 正確。發炎介質刺激下視丘產生前列腺素，導致體溫調節點上移而發燒。\n- (D) 正確。遲緩激肽（bradykinin）能直接刺激神經末梢，是引起疼痛（pain）的重要化學介質之一。",
+      "level": "unchecked"
+    },
+    "78": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n梅毒（Syphilis）是由螺旋體（spirochete）引起的慢性感染性疾病。\n第一期與第二期病灶的主要特徵是血管周圍發炎。\n此處最主要的發炎反應細胞為漿細胞（plasma cell）。\n漿細胞負責產生抗體，對抗病原體感染。\n這是病理學診斷早期梅毒的重要線索。\n慢性發炎過程中，B 細胞（B cell）會分化成漿細胞。\n這種發炎模式有助於區分其他感染。\n\n**選項解析**\n- (A) 淋巴球（lymphocyte）雖會出現在病灶中，但並非最具特徵性的細胞。\n- (B) 嗜中性白血球（neutrophil）主要見於急性化膿性發炎，非梅毒典型表現。\n- (C) 漿細胞在早期梅毒病灶中大量浸潤，為正確選項。\n- (D) 嗜酸性白血球（eosinophil）常見於過敏或寄生蟲感染，與此病無關。",
+      "level": "unchecked"
+    },
+    "79": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n腮腺炎病毒（Mumps virus）屬於副黏液病毒科（Paramyxoviridae），具有嗜唾液腺（Salivary glands）特性。此病毒經呼吸道傳播後，可隨血液擴散至多種器官組織。雖然主要臨床表現為腮腺腫大，但亦可侵犯中樞神經系統（Central nervous system）、睪丸（Testis）及胰臟（Pancreas）。肝臟（Liver）並非其典型靶器官，病理學上極少發現顯著病變。\n\n**選項解析**\n- (A) 肝臟對腮腺炎病毒較不敏感，罕見發生肝炎（Hepatitis）或細胞壞死等病理變化。\n- (B) 中樞神經系統是常見侵犯部位，可引發腦膜（Meninges）發炎反應與滲出物堆積。\n- (C) 睪丸在青春期後男性較常受累，可能導致單側或雙側急性發炎與間質水腫。\n- (D) 胰臟亦為好發器官之一，病理上可見腺泡細胞損傷及局部淋巴球（Lymphocyte）浸潤現象。",
+      "level": "unchecked"
+    },
+    "80": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n這題考的是癌症 (cancer) 流行病學中，基因遺傳 (genetics) 與環境因素對疾病 (disease) 發生的交互作用。移民研究顯示，移居後飲食習慣改變會降低風險。這代表環境因素重要。但風險仍高於當地人，暗示遺傳背景仍有影響。因此結論是兩者皆參與癌症發生機轉。胃癌 (gastric cancer) 的發生率變化正是此類證據的典型範例。\n\n**選項解析**\n- (A) 若僅與環境有關，第二代應與當地人無差異，但數據顯示仍有差距，故錯誤。\n- (B) 若僅與基因有關，第一代移民風險應與日本住民相同，但數據顯示已下降，故錯誤。\n- (C) 第一代風險介於兩者之間，第二代更接近當地人但仍較高，支持環境與基因遺傳共同影響的假說。\n- (D) 題目未比較不同年齡層的發生率，無法從移民世代推論年齡因素，故非最適當答案。",
+      "level": "unchecked"
+    },
+    "81": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n苯（Benzene）是一種常見的工業有機溶劑，具有明確的致癌性。它主要攻擊造血組織（Hematopoietic tissue）。導致骨髓（Bone marrow）功能異常或惡性轉變。長期暴露會增加罹患急性白血病（Acute leukemia）的風險。亦增加惡性淋巴瘤（Malignant lymphoma）的機率。此機轉涉及代謝產物對 DNA 的損傷作用。\n\n**選項解析**\n- (A) 石棉（Asbestos）纖維吸入後，主要誘發間皮瘤（Mesothelioma）。亦可能導致肺癌（Lung cancer）。不直接引起血液腫瘤。\n- (B) 鎘化合物（Cadmium compounds）暴露與攝護腺癌（Prostate cancer）有關。它非白血病典型致癌物。\n- (C) 氯乙烯（Vinyl chloride）是肝血管肉瘤（Hepatic angiosarcoma）的特定致癌因子。不常導致血液系統（Hematopoietic system）癌症。\n- (D) 苯代謝後產生自由基（Free radicals）。破壞骨髓幹細胞（Bone marrow stem cells）。最易引起白血病及惡性淋巴瘤，為正確選項。",
+      "level": "unchecked"
+    },
+    "82": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n肺心症（Cor Pulmonale）依病程分為急性與慢性，病理機轉截然不同。急性期主要表現為右心室（Right Ventricle）急性擴張。尚未產生代償性肥厚。慢性期則因長期高壓導致心肌細胞（Cardiac Muscle Cells）重塑與壁增厚。\n\n**選項解析**\n- (A) 錯誤。急性肺心症發生迅速。右心室來不及增生肌肉細胞（Muscle Cells）。因此不會出現明顯肥厚，此為本題答案。\n- (B) 正確。急性壓力負荷增加。使右心室擴張且形狀改變為卵圓形。符合急性病理特徵。\n- (C) 正確。慢性肺心症長期高壓刺激。導致右心室壁肌肉細胞肥大。造成壁增厚，屬於典型代償變化。\n- (D) 正確。慢性肺心症病程中。右心室壁結構重塑。脂肪組織（Fat Tissue）分布會隨之改變或消失。此為慢性期特徵之一。",
+      "level": "unchecked"
+    },
+    "83": {
+      "text": "**答案：（A）**\n\n**關鍵觀念**\n惡性腫瘤（malignancy）會導致全身高凝血狀態（hypercoagulable state）。\n這種狀態容易在心臟瓣膜（heart valve）形成無菌性贅生物（sterile vegetations）。\n此病理變化稱為非細菌性血栓性心內膜炎（non-bacterial thrombotic endocarditis）。\n贅生物脫落後會造成遠端器官栓塞。\n此現象可導致腦梗塞（cerebral infarction）。\n\n**選項解析**\n- (A) 胰臟腺癌（pancreatic adenocarcinoma）患者常伴隨遷移性靜脈炎（migratory thrombophlebitis）與高凝血狀態。\n  心臟瓣膜上易形成無菌血栓。\n  此病變稱為非細菌性血栓性心內膜炎。\n  脫落可引起腦梗塞等全身性栓塞症狀。\n- (B) Libman-Sacks氏心內膜炎（Libman-Sacks endocarditis）主要發生於全身性紅斑狼瘡（systemic lupus erythematosus）。\n  與惡性腫瘤引起的高凝血狀態無直接關聯。\n- (C) 急性感染性心內膜炎（acute infective endocarditis）由細菌感染引起。\n  患者通常伴有發燒或感染跡象，而非單純癌症併發症。\n- (D) 急性心肌梗塞（acute myocardial infarction）是冠狀動脈（coronary artery）阻塞導致的心肌壞死（myocardial necrosis）。\n  與瓣膜無菌性血栓脫落引起的栓塞機制不同。",
+      "level": "unchecked"
+    },
+    "84": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n這題考的是骨髓增殖性腫瘤（myeloproliferative neoplasms）的分子生物學特徵。\n增多性紅血球症（polycythemia vera）與原發性血小板增多症（essential thrombocythemia）均屬於慢性骨髓增殖性腫瘤。\n兩者最常發生變異的基因都是 JAK2（Janus kinase 2），這是一種細胞內酪胺酸激酶（intracellular tyrosine kinase）。\n\n**選項解析**\n- (A) 正確，因為這兩種疾病均為骨髓增殖性腫瘤，且高比例帶有 JAK2 V617F 突變。\n- (B) 錯誤，全身性肥大細胞增生症（systemic mastocytosis）主要與 KIT（KIT proto-oncogene, receptor tyrosine kinase）基因突變相關。\n- (C) 錯誤，原發性血小板增多症與全身性肥大細胞增生症的致病基因並不相同，前者多為 JAK2，後者多為 KIT。\n- (D) 錯誤，急性淋巴性白血病（acute lymphoblastic leukemia）屬於淋巴系統惡性腫瘤，其基因變異與骨髓增殖性腫瘤不同。",
+      "level": "unchecked"
+    },
+    "85": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n兒童急性淋巴母細胞白血病（Acute lymphoblastic leukemia）是發生率最高的兒童惡性腫瘤。\nB 細胞（B cell）標記包含 CD19、CD20，TdT（Terminal deoxynucleotidyl transferase）酵素則是未成熟淋巴母細胞特異性指標。\nt(12;21) 染色體轉位（chromosomal translocation）是兒童 B 細胞急性淋巴母細胞白血病（B-cell acute lymphoblastic leukemia）最常見的遺傳異常，此轉位代表預後較佳的族群。\n\n**選項解析**\n- (A) T 細胞（T cell）標記應為 CD3、CD7，且慢性型在兒童極少見。\n- (B) T 細胞急性淋巴母細胞白血病（T-cell acute lymphoblastic leukemia）通常表現 CD3 陽性，而非 B 細胞抗原 CD19。\n- (C) CD19 與 CD10 陽性代表 B 細胞來源，加上 t(12;21) 轉位，符合兒童 B 細胞急性淋巴母細胞白血病特徵。\n- (D) 慢性型通常發生於成人，且成熟細胞為主，不會出現大量原始細胞（blast cells）。",
+      "level": "unchecked"
+    },
+    "86": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n移植肺（Transplanted lung）發生慢性排斥反應（Chronic rejection）時，氣道會發生纖維化與狹窄。\n這種最主要的病理變化稱為阻塞性支氣管炎（Bronchiolitis obliterans）。\n此變化代表移植物長期損傷後的不可逆改變。\n氣道平滑肌（Airway smooth muscle）與黏膜下組織會發生纖維化（Fibrosis）。\n\n**選項解析**\n- (A) 發炎細胞浸潤（Inflammatory cell infiltration）主要見於急性排斥反應（Acute rejection）。此非慢性排斥的主要特徵。血管周圍淋巴球（Perivascular lymphocyte）堆積是急性排斥的表現。\n- (B) 瀰漫性肺泡傷害（Diffuse alveolar damage）常見於急性呼吸窘迫症候群（Acute respiratory distress syndrome），非慢性排斥的典型病理。\n- (C) 阻塞性支氣管炎是移植肺慢性排斥反應最特異性的病理變化，導致通氣功能下降。\n- (D) 巨細胞病毒感染（Cytomegalovirus infection）可能併發於移植後，但屬於感染性併發症，並非慢性排斥本身的定義。",
+      "level": "unchecked"
+    },
+    "87": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n急性間質性肺炎（Acute Interstitial Pneumonia）主要病理特徵為肺泡壁（Alveolar wall）與間質組織（Interstitial tissue）的發炎。\n此類疾病常見於病毒感染（Viral infection）、過敏性反應（Allergic reaction）或吸入化學毒物（Chemical toxins），導致間質結構受損。\n相對而言，吸入胃部內含異物主要引發化膿性肺炎（Suppurative pneumonia），病變焦點在於肺泡腔（Alveolar cavity）內的滲出液（Exudate）積聚。\n\n**選項解析**\n- (A) 吸入毒氣（Toxic gas）會直接損傷肺泡上皮細胞（Alveolar epithelial cells），誘發間質性的發炎反應（Inflammatory reaction）。\n- (B) 過敏性反應如過敏性肺炎（Hypersensitivity pneumonitis），常造成淋巴球浸潤（Lymphocytic infiltration）與間質組織增厚。\n- (C) 病毒性感染是間質性肺炎最常見的病因之一，主要影響肺泡壁結構完整性。\n- (D) 吸入胃部內含異物主要造成化學性灼傷（Chemical burn）或細菌感染（Bacterial infection），病變以肺泡腔內滲出為主，與間質性肺炎較無關。",
+      "level": "unchecked"
+    },
+    "88": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n藥物 (drug) 性肝臟 (liver) 傷害的病理表現多樣。乙醯氨基酚 (acetaminophen) 在正常劑量下經葡萄糖醛酸 (glucuronide) 代謝。過量時則轉為細胞色素 P450 酵素 (enzyme) 代謝路徑。產生毒性分子 (molecule) NAPQI。此分子會結合肝細胞 (hepatocyte) 蛋白質。當谷胱甘肽 (glutathione) 耗竭後，引發氧化壓力。最終導致肝小葉 (lobule) 中央區的肝細胞 凝固性壞死 (coagulative necrosis)。\n\n**選項解析**\n- (A) 胺碘酮 (amiodarone) 為抗心律不整藥物，易造成磷脂質沉積與纖維化。\n- (B) acetaminophen 是解熱鎮痛藥，過量時毒性代謝物導致肝細胞 壞死為主。\n- (C) 吩噻嗪類 (phenothiazine) 為抗精神病藥，典型副作用為膽汁鬱積型黃疸。\n- (D) 甲氨蝶呤 (methotrexate) 為葉酸拮抗劑，長期使用易致肝纖維化或肝硬化。",
+      "level": "unchecked"
+    },
+    "89": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n本題描述年輕男性出現腹痛、發燒及右下腹壓痛。\n內視鏡顯示迴腸（ileum）與升結腸（ascending colon）病變，橫結腸（transverse colon）與降結腸（descending colon）正常。\n這種節段性跳躍病變是克羅恩氏病（Crohn's disease）的典型特徵。\n其組織病理學最特異的表現為非乾酪性肉芽腫（non-caseating granulomas），常伴隨透壁性發炎（transmural inflammation）與裂溝（fissure）形成。\n\n**選項解析**\n- (A) 隱窩膿瘍（crypt abscess）常見於潰瘍性結腸炎（ulcerative colitis），通常從直腸（rectum）連續向上蔓延。\n- (B) 腺癌（adenocarcinoma）屬於惡性腫瘤，不會呈現急性發炎與跳躍性病變的臨床表現。\n- (C) 壞死性血管炎（necrotizing vasculitis）多見於多發性動脈炎（polyarteritis nodosa），非本症特徵。\n- (D) 非乾酪性肉芽腫是克羅恩氏病的病理標誌，符合患者迴腸與結腸受累情形。",
+      "level": "unchecked"
+    },
+    "90": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n本題考的是新生兒（neonate）黃疸（jaundice）的鑑別診斷。\n核心在於病理解剖變化。\n嬰兒出現灰白色大便代表膽汁無法排入腸道（intestine）。\n這是膽道阻塞（biliary obstruction）的典型表現。\n肝臟（liver）切片顯示膽小管（bile ductule）增生與纖維化（fibrosis）。\n符合先天性膽道閉鎖（biliary atresia）的病理特徵。\n肝細胞（hepatocyte）有明顯膽汁鬱積（cholestasis）。\n表示排泄功能受損。\n常伴隨肝腫大（hepatomegaly）。\n此病發生於出生後數週內，需早期手術以改善預後。\n\n**選項解析**\n- (A) 總膽管囊腫（choledochal cyst）是膽管先天性擴張，通常不會造成嚴重肝臟纖維化或灰白便。\n- (B) 膽管炎（cholangitis）多為感染性發炎，常伴隨發燒與腹痛，非此嬰兒主要表現。\n- (C) 膽道閉鎖是新生兒黃疸最常見的外科原因，特徵為肝門部膽管缺如或纖維化。\n- (D) 膽管癌（cholangiocarcinoma）屬於惡性腫瘤，極罕見於四週大嬰兒，不可能是此診斷。",
+      "level": "unchecked"
+    },
+    "91": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n典型溶血性尿毒症候群（typical hemolytic-uremic syndrome）主要與腸出血型大腸桿菌（enterohemorrhagic Escherichia coli）感染有關。\n該細菌會產生類志賀氏毒素（Shiga-like toxin），直接損傷血管內皮細胞（vascular endothelial cell）。\n毒素導致微血管病變，引發溶血性貧血（hemolytic anemia）與血小板減少（thrombocytopenia）。\n\n**選項解析**\n- (A) 血栓性血小板減少性紫斑症（thrombotic thrombocytopenic purpura）主要因 ADAMTS13 酵素（enzyme）活性缺乏所致。\n- (B) 特發性血小板減少性紫斑症（idiopathic thrombocytopenic purpura）屬於自體免疫疾病（autoimmune disease），抗血小板抗體會破壞血小板。\n- (C) 典型溶血性尿毒症候群確實由大腸桿菌產生的毒素引發，為兒童急性腎衰竭（acute renal failure）常見原因。\n- (D) 非典型溶血性尿毒症候群（atypical hemolytic-uremic syndrome）多與補體系統（complement system）調節異常有關，並非毒素直接作用。",
+      "level": "unchecked"
+    },
+    "92": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n甲狀腺髓質癌（medullary carcinoma）起源於甲狀腺濾泡旁細胞（parafollicular C cells）。這些細胞負責分泌降鈣素（calcitonin）。此腫瘤發生與 RET 原癌基因（proto-oncogene）突變高度相關。遺傳性病例常歸類為多發性內分泌腫瘤症候群（MEN2A/2B）。散發性病例亦常見此基因突變。\n\n**選項解析**\n- (A) RAS 基因突變常見於甲狀腺濾泡癌或乳頭狀癌，並非髓質癌的主要成因。\n- (B) RET 原癌基因突變是甲狀腺髓質癌最關鍵的分子病變機制。\n- (C) BRAF 基因突變主要與甲狀腺乳頭狀癌（papillary carcinoma）之惡性度相關，非此題答案。\n- (D) PTEN 基因突變與 Cowden 症候群（Cowden syndrome）有關，增加多種癌症風險，但非髓質癌特徵性標記。",
+      "level": "unchecked"
+    },
+    "93": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n偶發性副甲狀腺腺瘤 (parathyroid adenoma) 最常見的分子 (molecule) 異常是環狀蛋白 D1 (cyclin D1) 過度表現。環狀蛋白 D1 (cyclin D1) 是一種調節細胞週期 (cell cycle) 的蛋白質，會促進細胞增生與分裂。此異常常由染色體易位或基因調控失調引起，導致副甲狀腺細胞 (parathyroid cells) 不受控制地生長。\n\n**選項解析**\n- (A) 環狀蛋白 D1 (cyclin D1) 在大多數偶發性副甲狀腺腺瘤中呈現過度表現，是主要的致病機轉之一。它促使細胞從 G1 期進入 S 期，造成腫瘤形成與持續增生。\n- (B) 鈣敏感受體 (calcium-sensing receptor) 基因突變主要與家族性低尿鈣高血鈣症候群 (Familial Hypocalciuric Hypercalcemia) 有關，而非偶發性腺瘤的最常見原因。其功能失調會導致鈣離子調節異常。\n- (C) 維生素 D 受體 (vitamin D receptor) 異常較少見於副甲狀腺腫瘤的發生機轉中，不是典型特徵。維生素 D 主要參與鈣磷代謝調節。\n- (D) 副甲狀腺激素 (parathyroid hormone) 是副甲狀腺細胞分泌的激素，其濃度升高是結果而非導致腫瘤的分子缺陷。腫瘤形成後才會造成 PTH 過度分泌。",
+      "level": "unchecked"
+    },
+    "94": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n本題考的是水泡狀胎塊（Hydatidiform Mole）的遺傳學分類。\n部分性水泡狀胎塊（Partial Hydatidiform Mole）常伴隨有胎兒組織存在。\n其染色體（Chromosome）異常多為三倍體（Triploidy），即擁有六十九條染色體。\n典型成因是雙精子受精（Dispermy）導致。\n母方卵子（Ovum）與兩顆精子（Sperm）結合。\n\n**選項解析**\n- (A) 69,XXY 是部分性水泡狀胎塊常見的三倍體核型（Karyotype），符合題目描述。\n此異常會造成胎盤（Placenta）形成葡萄狀水泡，且胎兒發育遲滯。\n手指連在一起畸形也是三倍體胚胎可能出現的肢體缺陷之一。\n- (B) 46,XX 為正常女性染色體，不會出現葡萄狀水泡樣變性。\n完全性水泡狀胎塊通常無胎兒組織且核型多為 46,XX。\n- (C) 23,Y 僅含單套染色體，無法形成完整胎兒或胎盤組織。\n此核型在人類胚胎中無法存活，不會出現流產後的胎兒畸形。\n- (D) 47,XXY 是克氏症候群（Klinefelter syndrome）的核型，與此病變無關。\n此異常主要影響男性性腺發育，不會導致胎盤水泡狀變化或特定手指畸形。",
+      "level": "unchecked"
+    },
+    "95": {
+      "text": "**答案：C**\n\n**關鍵觀念**\nQueyrat 紅斑症（Erythroplasia of Queyrat）是龜頭（glans penis）表面的原位癌（carcinoma in situ）。\n此病變屬於鱗狀細胞癌（squamous cell carcinoma）的一種特殊形式。\n病理特徵為表皮層（epidermis）出現異生細胞（dysplastic cells），但未侵犯真皮層（dermis）。\n臨床呈現亮紅色光滑斑塊，需向病人說明這是早期惡性腫瘤。\n此病需早期治療以防惡化。\n\n**選項解析**\n- (A) 淋病（Gonorrhea）是細菌感染，臨床表現為尿道分泌物，並非皮膚斑塊。\n- (B) 尖頭濕疣（condyloma acuminatum）由人類乳突病毒（HPV）引起，外觀呈菜花狀突起。\n- (C) Queyrat 紅斑症即為原位癌，鏡下可見異生細胞取代正常上皮層（epithelium），且無真皮浸潤，符合病理診斷。\n- (D) 梅毒（Syphilis）初期為硬下疳（chancre），二期為全身性紅疹，與此亮紅色光滑斑塊不同。",
+      "level": "unchecked"
+    },
+    "96": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n軟骨肉瘤（chondrosarcoma）好發於中老年人，高峰年齡在 40 至 60 歲之間。\n腫瘤內常出現鈣化（calcification），這是影像學檢查的重要特徵之一。\n低級別惡性（malignant）度轉移（metastasis）風險極低，高級別則轉移機率顯著增加。\n第三級（grade 3）軟骨肉瘤較少見，需與軟骨母細胞骨肉瘤（chondroblastic osteosarcoma）鑑別診斷。\n\n**選項解析**\n- (A) 錯誤。大多數病人年齡在 40 歲以上，20 幾歲較少見，此為骨肉瘤好發年齡。\n- (B) 錯誤。腫瘤內常有鈣化影，X 光可見環狀鈣化影，並非少有鈣化。\n- (C) 錯誤。第一級（grade 1）惡性軟骨轉移機率極低，遠低於 10%，通常視為局部侵襲。\n- (D) 正確。第三級軟骨形態需排除骨肉瘤（osteosarcoma），因後者較常見且預後不同，臨床處理方式亦異。",
+      "level": "unchecked"
+    },
+    "98": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n腦膿瘍（Brain abscess）導致顱內壓上升（Increased intracranial pressure），引發經天幕腦脫疝（Transtentorial herniation）。此過程使內側顳葉組織向下移位。移位的組織會壓迫中腦（Midbrain）旁的血管結構。後大腦動脈（Posterior cerebral artery）因此受擠壓而發生局部缺血（Ischemia）。\n\n**選項解析**\n- (A) 前大腦動脈（Anterior cerebral artery）主要供應額葉（Frontal lobe）內側區域，非此型脫疝的主要受壓位置。\n- (B) 中大腦動脈（Middle cerebral artery）負責大腦外側皮質區（Cortex）血流，通常不直接受小腦幕緣壓迫。\n- (C) 後大腦動脈走行於小腦幕（Tentorium cerebelli）切跡邊緣附近。脫疝時血管會被壓迫至硬膜（Dura mater）緣。這會導致枕葉（Occipital lobe）缺血性病變。\n- (D) 基底動脈（Basilar artery）位於橋腦（Pons）前方。它與中腦血供相關，但非此處典型受壓致局部缺血的血管。",
+      "level": "unchecked"
+    },
+    "99": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n此題考過敏性肺炎（Hypersensitivity Pneumonitis）的臨床表現與致病機轉。農夫在收割期接觸霉變穀物，吸入有機抗原（Organic Antigen）引發免疫反應。這屬於第三型（Type III）和第四型（Type IV）超敏反應。症狀常在暴露後數小時內發生發燒與呼吸困難。血中白血球（Leukocyte）增高反映急性發炎狀態。抗原與抗體（Antibody）複合物沉積於肺泡壁。\n\n**選項解析**\n- (A) 支氣管肺炎（Bronchopneumonia）通常由細菌感染引起，無明顯季節性職業暴露史。\n- (B) 結核性肺炎（Tuberculous Pneumonia）病程較緩慢，常伴隨夜間盜汗或體重減輕。\n- (C) 過敏性肺炎符合農夫肺（Farmer's Lung）特徵，與特定抗原暴露相關。吸入黴菌（Fungi）孢子後引發肺部發炎反應。此病變主要影響肺泡（Alveoli）與間質組織（Interstitial tissue）。\n- (D) 成人呼吸窘迫症候群（Adult Respiratory Distress Syndrome, ARDS）多由嚴重感染、創傷引起，非特定季節性職業暴露。",
+      "level": "unchecked"
+    },
+    "100": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n此題考點為慢性發炎（Chronic inflammation）的病理特徵。\n組織（Tissue）學上可見間質纖維化（Interstitial fibrosis）與單核細胞（Mononuclear cell）浸潤。\n主要浸潤細胞包含淋巴球（Lymphocyte）與漿細胞（Plasma cell）。\n膠原蛋白（Collagen）沉積導致組織硬化，稱為纖維化。\n\n**選項解析**\n- (A) 正確。符合慢性發炎的典型病理變化。\n- (B) 錯誤。嗜酸性球（Eosinophil）浸潤多見於過敏反應（Allergic reaction）或寄生蟲（Parasite）感染。\n- (C) 錯誤。乾酪性壞死（Caseous necrosis）及肉芽腫（Granuloma）是結核病（Tuberculosis）特徵。\n- (D) 錯誤。嗜中性白血球（Neutrophil）浸潤及化膿（Suppuration）屬於急性發炎（Acute inflammation）。",
+      "level": "unchecked"
+    }
+  }
+}

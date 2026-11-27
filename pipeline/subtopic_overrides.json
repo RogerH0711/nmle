@@ -1,0 +1,57 @@
+{
+  "_說明": "次主題的人工修正：classify.py export 會用這裡的次主題蓋掉模型的結果。只放模型明顯分錯、而且正確歸屬清楚的題目，寫明原因。11/27 由 105–109 重分類後的 71 題變動逐題核對而來（見 docs/subtopics.md）。",
+  "papers": {
+    "105020_1": {
+      "48": { "subtopic": "gram_positive", "reason": "炭疽桿菌（Bacillus anthracis）是桿菌屬，革蘭氏陽性菌" }
+    },
+    "105020_2": {
+      "82": { "subtopic": "cardio", "reason": "肺心症考的是右心室的變化，屬心臟病" },
+      "91": { "subtopic": "renal_male", "reason": "溶血性尿毒症候群是腎臟疾病，不是消化系統" }
+    },
+    "106020_2": {
+      "86": { "subtopic": "resp", "reason": "題目問的是肺部出血疾病的鑑別" },
+      "100": { "subtopic": "genetic_env", "reason": "承上題的病人是 SLE，考自體免疫疾病造成 VDRL 偽陽性" }
+    },
+    "107020_1": {
+      "35": { "subtopic": "musculoskeletal", "reason": "胸心包膜與膈神經屬體腔與橫膈的發育" }
+    },
+    "107100_2": {
+      "25": { "subtopic": "immune_disease", "reason": "HLA 與自體免疫疾病的關聯，依規則 5 歸免疫疾病" },
+      "77": { "subtopic": "heme", "reason": "傳染性單核球增多症的非典型淋巴球，屬血液與淋巴" }
+    },
+    "108030_2": {
+      "58": { "subtopic": "autonomic", "reason": "考 muscarinic 與腎上腺素受體的訊息傳遞，屬自主神經藥物" },
+      "85": { "subtopic": "heme", "reason": "免疫性血小板減少紫斑症屬血液疾病" }
+    },
+    "110020_2": {
+      "76": { "subtopic": "cell_injury", "reason": "類纖維蛋白性壞死是壞死的一種，屬細胞傷害" },
+      "84": { "subtopic": "heme", "reason": "慢性免疫性血小板減少紫斑症屬血液疾病" }
+    },
+    "110101_2": {
+      "68": { "subtopic": "resp_gi", "reason": "misoprostol 這題考消化性潰瘍的用藥性質" },
+      "79": { "subtopic": "genetic_env", "reason": "梅毒分期跨好幾個器官，不屬消化系統；先天性梅毒屬兒科疾病" }
+    },
+    "111020_2": {
+      "96": { "subtopic": "renal_male", "reason": "溶血性尿毒症候群是腎臟疾病，不是消化系統" }
+    },
+    "112020_2": {
+      "100": { "subtopic": "neuro_msk_skin", "reason": "腦幹神經膠瘤，依規則 4 歸器官（中樞神經）" }
+    },
+    "112100_2": {
+      "67": { "subtopic": "resp_gi", "reason": "zafirlukast 是氣喘用藥" },
+      "68": { "subtopic": "resp_gi", "reason": "alvimopan 治療術後腸阻塞，屬腸道用藥" }
+    },
+    "113020_2": {
+      "82": { "subtopic": "renal_male", "reason": "溶血性尿毒症候群是腎臟疾病" }
+    },
+    "113090_1": {
+      "34": { "subtopic": "cardio_resp", "reason": "下腔靜脈的發育屬大血管" }
+    },
+    "113090_2": {
+      "9": { "subtopic": "bacteriology", "reason": "考 metronidazole 的作用機轉與抗菌範圍，屬抗生素作用；Bacteroides 也不是陽性菌" }
+    },
+    "114020_1": {
+      "35": { "subtopic": "cardio_resp", "reason": "奇靜脈的起源屬大血管發育" }
+    }
+  }
+}

@@ -3,6 +3,8 @@
 用法：
     python pipeline/explain/export_web.py all
     python pipeline/explain/export_web.py 110020_1 --model qwen3.6:27b-fp8-vllm --check-label colab-qwen3.6-27b-fp8-vllm-think
+    python pipeline/explain/export_web.py 105020_1 --model qwen3.5:35b-a3b --model-name Qwen3.5-35B-A3B   # 105–109 年
+（不加考卷 id 的 all 用預設模型，只適合 110–115 年；105–109 年是另一個模型，要列出考卷 id）
 
 分級（網站依此標示，做法見 docs/design.md「詳解與題目正確率」）：
 - checked：和參考詳解比對沒有衝突，名詞檢查也沒有判定譯錯
@@ -73,7 +75,7 @@ def export(exam_id, args):
         if wrong:
             item["terms"] = wrong
         questions[key] = item
-    write_json(DEST / f"{exam_id}.json", {"model": MODEL_NAME, "questions": questions})
+    write_json(DEST / f"{exam_id}.json", {"model": args.model_name, "questions": questions})
     counts = {}
     for q in questions.values():
         counts[q["level"]] = counts.get(q["level"], 0) + 1
@@ -86,6 +88,7 @@ def main():
     ap.add_argument("exams", nargs="+", help="考卷 id，或 all 代表全部")
     ap.add_argument("--model", default=MODEL)
     ap.add_argument("--check-label", default=CHECK_LABEL)
+    ap.add_argument("--model-name", default=MODEL_NAME, help="網站上顯示的模型名稱")
     args = ap.parse_args()
     exams = all_exam_ids() if args.exams == ["all"] else args.exams
     DEST.mkdir(parents=True, exist_ok=True)

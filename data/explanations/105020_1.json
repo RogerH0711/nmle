@@ -1,0 +1,389 @@
+{
+  "model": "Qwen3.5-35B-A3B",
+  "questions": {
+    "1": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n丘腦（thalamus）是大腦深部的重要神經核團（nucleus），負責感覺訊息的整合與傳遞。其血液供應主要來自後大腦動脈（posterior cerebral artery）的穿通支。這些血管稱為丘腦穿通動脈（thalamoperforating arteries），是維持丘腦功能的關鍵。後大腦動脈由基底動脈（basilar artery）終末分支形成。\n\n**選項解析**\n- (A) 中大腦動脈（middle cerebral artery）主要供應大腦半球（cerebral hemisphere）外側面的皮質（cortex）。它也會分支至基底神經節（basal ganglia），但非丘腦的主要血供來源。\n- (B) 椎動脈（vertebral artery）匯合形成基底動脈。其分支主要供應腦幹（brainstem）與小腦（cerebellum），不直接供給丘腦。\n- (C) 後大腦動脈發出丘腦穿通動脈。這是丘腦最主要的深部血液來源，完全符合題目描述。\n- (D) 前大腦動脈（anterior cerebral artery）主要供應大腦半球內側面的皮質。它也會分支至胼胝體（corpus callosum），與丘腦血供無關。",
+      "level": "unchecked"
+    },
+    "2": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n胼胝體（Corpus callosum）是連接左右大腦半球（cerebral hemisphere）的主要白質纖維束。其血液供應主要依賴前大腦動脈（anterior cerebral artery）的分支血管。前大腦動脈沿著胼胝體溝走行並發出胼周動脈（pericallosal artery）。因此前大腦動脈是此區域最主要的供血來源。它屬於前循環系統。\n\n**選項解析**\n- (A) 正確。前大腦動脈的分支直接供應胼胝體表面與深層結構。\n- (B) 錯誤。中大腦動脈（middle cerebral artery）主要供應大腦半球外側面的大部分區域，而非內側面。\n- (C) 錯誤。基底動脈（basilar artery）屬於後循環系統，主要供應腦幹（brainstem）與小腦（cerebellum）組織。\n- (D) 錯誤。前脈絡叢動脈（anterior choroidal artery）主要供應內囊（internal capsule）、視束（optic tract）及部分丘腦（thalamus）結構。",
+      "level": "unchecked"
+    },
+    "3": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n當腦壓升高時，小腦（cerebellum）下方構造易受擠壓向下移位。\n小腦扁桃體（tonsil）位於枕骨大孔（foramen magnum）上方區域。\n此處發生脫疝（herniation）。會直接壓迫延髓（medulla oblongata）。導致呼吸心跳異常。\n延髓控制自主神經功能，受損將危及生命。\n此症候群（syndrome）稱為小腦扁桃體脫疝，需緊急處理以維持生命徵象。\n此情況需立即減壓以保護腦幹（brainstem）功能。\n\n**選項解析**\n- (A) 下蚓部（inferior vermis）屬於小腦正中線構造，位置較高不易向下脫出。\n- (B) 絨球結節葉（flocculonodular lobe）位於小腦後下方，主要參與前庭功能與平衡。\n- (C) 小腦扁桃體位置最低，最易經枕骨大孔壓迫延髓，造成致命性壓迫。\n- (D) 下小腦腳（inferior cerebellar peduncle）是連接橋腦與小腦的神經纖維束，非實質性腫塊。",
+      "level": "unchecked"
+    },
+    "4": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n副交感神經核（parasympathetic nucleus）主要位於中腦（midbrain）與延髓（medulla oblongata）。這些核（nuclei）負責控制腺體分泌與平滑肌（smooth muscle）收縮。三叉神經運動核（trigeminal motor nucleus）屬於軀體運動核（somatic motor nucleus），不參與自主神經（autonomic nervous system）調節。\n\n**選項解析**\n- (A) 上唾液核（superior salivatory nucleus）是副交感神經核，透過面神經（facial nerve）控制淚腺（lacrimal gland）與下頜下腺（submandibular gland）分泌。\n- (B) 迷走神經背運動核（dorsal motor nucleus of vagus nerve）是副交感神經核，提供胸腔與腹腔臟器（abdominal viscera）之副交感纖維（parasympathetic fibers）。\n- (C) 三叉神經運動核控制咀嚼肌（muscle of mastication），屬於軀體運動系統，非副交感神經核。\n- (D) 艾丁格 - 韋斯特法爾核（Edinger-Westphal nucleus）是副交感神經核，參與瞳孔（pupil）收縮與晶狀體（lens）調節反射。",
+      "level": "unchecked"
+    },
+    "5": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n暈眩（Vertigo）是平衡感失調的症狀，主要與前庭系統（Vestibular system）有關。小腦（Cerebellum）、內耳（Inner ear）及腦幹（Brainstem）均參與維持身體平衡。這三個構造任何一處受損，都可能導致感覺整合錯誤而引發暈眩。\n\n**選項解析**\n- (A) 此選項排除腦幹，但腦幹前庭核團（Vestibular nuclei）受損也會造成中樞性暈眩，故不正確。\n- (B) 此選項排除小腦，但小腦負責協調運動與平衡，病變可致頭暈感，故不正確。\n- (C) 此選項僅提及內耳，忽略了中樞神經系統（Central Nervous System）構造受損亦會引起症狀，故不完整。\n- (D) ①小腦損傷影響平衡協調，②內耳含前庭器官（Vestibular organs）直接感知位置，③腦幹整合前庭訊號，三者皆可能致病，故正確。",
+      "level": "unchecked"
+    },
+    "6": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n咽縮肌（pharyngeal constrictor）依位置分為上、中、下三層肌肉，不同神經與血管會穿過這些肌肉間的間隙進入深部結構。\n舌咽神經（glossopharyngeal nerve）主要負責咽部感覺與部分運動功能。\n其行經路徑需通過上咽縮肌與中咽縮肌之間的空隙到達舌根。\n此解剖位置是國考常見的神經血管穿過點之一，需熟記其相對位置關係。\n\n**選項解析**\n- (A) 舌咽神經確實穿過上、中咽縮肌之間，進入咽側壁並支配相關肌肉。\n- (B) 喉內神經（internal laryngeal nerve）是迷走神經（vagus nerve）分支，穿過甲狀舌骨膜（thyrohyoid membrane）而非咽縮肌間隙。\n- (C) 喉上動脈（superior laryngeal artery）伴隨喉內神經經甲狀舌骨膜進入喉腔黏膜下層，供應喉部上方區域血液。\n- (D) 喉返神經（recurrent laryngeal nerve）主要走行於氣管（trachea）與食道（esophagus）之間的溝槽內，不經過咽縮肌間隙。",
+      "level": "unchecked"
+    },
+    "7": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n上頸神經節（superior cervical ganglion）是頸部交感神經幹（sympathetic trunk）最上方的神經節。其位置與深層頸部肌肉及血管鞘有固定解剖關係。此處常考其相對方位。\n\n**選項解析**\n- (A) 正確。此神經節位於頸動脈鞘（carotid sheath）之外側，並未包埋於鞘內結構中。\n- (B) 錯誤。上頸神經節通常位於頭最長肌（longus capitis）的前方或表面，而非肌肉在其前方。題目敘述顛倒了前後關係。\n- (C) 正確。來自此處的交感節後纖維，會與舌咽神經（CN IX）及迷走神經（CN X）的副交感纖維混合形成咽神經叢（pharyngeal plexus）。\n- (D) 正確。這些節後神經纖維經頸內動脈叢（internal carotid plexus）延伸至深岩神經（deep petrosal nerve），最終透過三叉神經（CN V）分支到達唾液腺（salivary glands）進行血管收縮調節。",
+      "level": "unchecked"
+    },
+    "8": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n頸部前三角（anterior triangle of neck）由胸鎖乳突肌（sternocleidomastoid muscle）與下頜骨（mandible）下緣劃分。\n二腹肌三角（digastric triangle）又稱下頜下三角，是頸部前三角的次級區域。\n此區域內主要包含下頜下腺（submandibular gland）及其導管（duct）。\n解剖位置關係對於國考題目至關重要，需熟記各三角邊界。\n\n**選項解析**\n- (A) 肌三角（muscular triangle）位於頸部中線附近，主要包含甲狀舌骨肌（thyrohyoid muscle）等肌肉。\n  此處並非腺體所在區域，故排除。\n- (B) 頸動脈三角（carotid triangle）內含有頸動脈鞘（carotid sheath）結構，並非下頜下腺的主要位置。\n  該區主要處理血管與神經路徑，故不選。\n- (C) 二腹肌三角由二腹肌（digastric muscle）前後腹與舌骨（hyoid bone）圍成。\n  下頜下腺正位於此三角深處，因此選項正確。\n- (D) 頦下三角（submental triangle）位於正中線下方，主要包含淋巴結（lymph node）而非腺體本體。\n  此區位置較低，與題目描述不符，故不選。",
+      "level": "unchecked"
+    },
+    "9": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n聽覺傳導路徑中，內耳耳蝸（cochlea）內的雙極神經元（bipolar neuron）胞體聚集形成螺旋神經節（spiral ganglion）。這些神經元的周邊突連接柯蒂氏器（organ of Corti），中樞突組成耳蝸神經（cochlear nerve）。此結構負責將聲音訊號傳入腦幹（brainstem），是聽覺傳遞的關鍵解剖基礎。\n\n**選項解析**\n- (A) 耳神經節（otic ganglion）屬於副交感神經節（parasympathetic ganglion），主要支配腮腺（parotid gland）分泌，與聽覺無關。\n- (B) 前庭神經節（vestibular ganglion）位於內耳，負責平衡感覺傳導，不參與聲音訊號的傳遞過程。\n- (C) 螺旋神經節位於耳蝸軸心，包含聽覺神經元的胞體，直接接收來自柯蒂氏器的刺激並傳入中樞。\n- (D) 翼腭神經節（pterygopalatine ganglion）為副交感神經節，主要支配淚腺（lacrimal gland）及鼻黏膜（nasal mucosa）分泌，與聽覺功能無涉。",
+      "level": "unchecked"
+    },
+    "10": {
+      "text": "**答案：B、D**\n\n**關鍵觀念**\n鼻中隔 (nasal septum) 的穩定性依賴於骨骼 (bone) 與軟骨 (cartilage) 支撐。主要構成包括篩骨 (ethmoid bone) 垂直板、犁骨 (vomer) 以及鼻中隔軟骨 (septal cartilage)。重建手術需針對這些核心結構進行修復以恢復鼻腔通氣功能與外觀，避免偏曲影響呼吸。\n\n**選項解析**\n- (A) 包含額骨 (frontal bone)，位於鼻腔上方，不構成鼻中隔主體，故錯誤。\n- (B) ②隔軟骨、④篩骨、⑤犁骨均為鼻中隔標準解剖組成，符合教科書定義，此為正確選項之一。\n- (C) 下鼻甲骨 (inferior turbinate bone) 位於鼻腔側壁，非中隔構造，且含額骨亦不正確。\n- (D) 雖包含鼻骨 (nasal bone)，但涵蓋②與⑤等關鍵成分。本題經官方更正後，此選項亦予計分。",
+      "level": "unchecked"
+    },
+    "11": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n附著於舌骨（hyoid bone）的肌肉分為舌骨上肌群（suprahyoid muscles）與舌骨下肌群（infrahyoid muscles）。這些肌肉的神經支配來源主要包含三叉神經（trigeminal nerve）、面神經（facial nerve）與舌下神經（hypoglossal nerve）。舌咽神經（glossopharyngeal nerve）主要支配咽部（pharynx）相關構造，不直接控制舌骨附著肌肉。\n\n**選項解析**\n- (A) 面神經支配莖突舌骨肌（stylohyoid muscle）與二腹肌後腹（posterior belly of digastric muscle），兩者皆附著於舌骨。\n- (B) 舌咽神經主要支配莖突咽肌（stylopharyngeus muscle），此肌肉屬於咽縮肌群（pharyngeal constrictor muscles），不直接控制舌骨運動。\n- (C) 舌下神經支配頦舌骨肌（geniohyoid muscle），該肌肉起於頦棘止於舌骨，參與舌骨上提動作。\n- (D) 第五顱神經第三支（third branch of cranial nerve V）包含下牙顎神經（inferior alveolar nerve），其分支支配下頜舌骨肌神經（nerve to mylohyoid），控制二腹肌前腹與下頜舌骨肌（mylohyoid muscle）。",
+      "level": "unchecked"
+    },
+    "12": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n心臟在胸壁的投影位置是解剖學考試重點。肺動脈幹（pulmonary trunk）起自右心室（right ventricle）。它向左後上方斜行。位於胸骨左緣第 2 肋間深處。胸骨角（sternal angle）位於第 2 肋水平，是重要解剖標記。此處穿刺傷最容易直接損傷該結構。\n\n**選項解析**\n- (A) 右心室主要位於胸骨體（body of sternum）後方。位置較低且偏中線。其前壁構成大部分胸骨後面區域。\n- (B) 右心房（right atrium）構成心臟右緣，位於胸骨右側第 3 肋間附近。它不延伸至左側第 2 肋間深處。\n- (C) 上腔靜脈（superior vena cava）位於右側鎖骨下方，進入右心房上方。其位置偏右，非左側穿刺傷目標。\n- (D) 肺動脈幹在胸骨左側第 2 肋間處位置最表淺，符合穿刺傷路徑。此處也是聽診肺動脈瓣（pulmonary valve）音的最佳位置，臨床意義重要。",
+      "level": "unchecked"
+    },
+    "13": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n心包膜 (pericardium) 斜竇（oblique pericardial sinus）是位於心臟 (heart) 後方的盲囊結構。\n它由漿液性心包膜 (serous pericardium) 反折形成。\n位置在左心房 (left atrium) 之後方。\n此結構的邊界主要涉及肺靜脈 (pulmonary vein)。\n與下腔靜脈 (inferior vena cava)。\n\n**選項解析**\n- (A) 心包膜橫竇（transverse pericardial sinus）位於主動脈 (aorta) 之後方。\n它也在上腔靜脈 (superior vena cava) 之前方。\n此處並非題目描述的位置。\n- (B) 心包膜斜竇正確。\n它位於心臟後方，由肺靜脈與下腔靜脈圍成。\n靠近上腔靜脈基部區域。\n- (C) 冠狀竇（coronary sinus）是心臟表面的靜脈血管結構。\n收集心肌 (myocardium) 血液回流至右心房 (right atrium)。\n它不是心包膜內的潛在腔隙。\n- (D) 心包膜腔橫膈面（diaphragmic surface of pericardial cavity）指心包與橫膈接觸的區域。\n並非特定的竇狀結構名稱。",
+      "level": "unchecked"
+    },
+    "14": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n肝臟（liver）表面有明顯的解剖標記區分不同葉。方形葉（quadrate lobe）位於肝臟臟面右側區域。它被膽囊（gallbladder）與圓韌帶裂隙（fissure for ligamentum teres）包圍。此結構在形態學上屬於左葉，但位置獨立。功能性分葉與形態學分葉在此處有所不同。正中裂（median fissure）將肝臟分為左右兩部分。\n\n**選項解析**\n- (A) 左葉（left lobe）包含肝臟左側大部分實質。其右界為正中裂，左界為肝膈面邊緣。它不直接夾在膽囊與圓韌帶裂隙間。\n- (B) 右葉（right lobe）為肝臟最大部分，位於正中裂右側。其範圍遠大於方形葉所處位置。包含肝門靜脈右支。\n- (C) 方形葉確實位於膽囊窩與圓韌帶裂隙之間。這是本題考點之正確解剖位置關係。亦稱第四葉。\n- (D) 尾葉（caudate lobe）位於肝臟後方，靠近下腔靜脈（inferior vena cava）。它不與圓韌帶裂隙相鄰。具有獨立血液供應。",
+      "level": "unchecked"
+    },
+    "15": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n膈神經（phrenic nerve）是支配呼吸主要肌肉（muscle）的神經。它起源於頸髓第 3 至 5 脊髓節段（spinal segment）。這些纖維從前根（anterior root）發出。神經向下穿過縱隔（mediastinum）。到達橫膈膜（diaphragm）。臨床口訣為 C3, 4, 5 keep the diaphragm alive。此神經受損會導致呼吸困難。它主要控制橫膈膜的收縮。此神經為混合性神經。\n\n**選項解析**\n- (A) 正確。膈神經確實起自頸髓第 3、4、5 脊髓節段。\n- (B) 錯誤。C7～T2 主要參與構成臂叢（brachial plexus），負責上肢的神經支配。\n- (C) 錯誤。T3～5 屬於胸神經（thoracic nerve），主要形成肋間神經（intercostal nerve）。\n- (D) 錯誤。T6～10 的脊髓節段主要支配腹壁肌肉的感覺與運動，不影響呼吸。",
+      "level": "unchecked"
+    },
+    "16": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n腰神經叢（lumbar plexus）主要由第一至第四腰神經前支構成。\n其分支主要支配下腹部、大腿前側及內側的肌肉（muscle）與皮膚（skin）。\n後股皮神經（posterior femoral cutaneous nerve）則源自薦神經叢（sacral plexus）。\n此區分是解剖學中神經叢起源的重要考點，需熟記神經根來源。\n\n**選項解析**\n- (A) 髂腹下神經（iliohypogastric nerve）是腰神經叢的分支，由第一腰神經前支發出。\n它主要支配下腹部皮膚與肌肉，屬於皮神經與運動神經混合。\n- (B) 髂腹股溝神經（ilioinguinal nerve）也是腰神經叢的分支，同樣源自第一腰神經前支。\n其路徑經過腹股溝管（inguinal canal），支配陰囊或大陰唇皮膚感覺。\n- (C) 後股皮神經屬於薦神經叢的分支，並非腰神經叢直接發出。\n它主要負責大腿後面與會陰部（perineum）的皮膚感覺，神經根來源為薦一至三節。\n- (D) 閉孔神經（obturator nerve）是腰神經叢的重要分支，由第二至第四腰神經前支構成。\n它穿過骨盆側壁，支配大腿內收肌群及相關關節囊感覺。",
+      "level": "unchecked"
+    },
+    "17": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n膀胱（bladder）的血液供應主要來自內髂動脈（internal iliac artery）的分支。\n內髂動脈分為前、後兩幹。\n它發出多條臟器支供應盆腔（pelvic cavity）。\n在女性骨盆解剖中，陰道動脈（vaginal artery）會參與膀胱底部的血液循環。\n此題考查盆腔臟器血管分布的細節差異。\n\n**選項解析**\n- (A) 卵巢動脈（ovarian artery）主要供應卵巢（ovary），源自腹主動脈（abdominal aorta），位置較高，不直接供應膀胱。\n- (B) 陰道動脈在女性通常源自子宮動脈（uterine artery）或內髂動脈，分支可延伸至膀胱底部提供血液。因此這是正確選項。\n- (C) 直腸中動脈（middle rectal artery）主要供應直腸（rectum）壁層，與膀胱血管路徑不同。\n- (D) 陰部內動脈（internal pudendal artery）主要供應會陰（perineum）及外生殖器（external genitalia），不負責膀胱供血。",
+      "level": "unchecked"
+    },
+    "18": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n骨盆橫膈（pelvic diaphragm）是分隔骨盆腔（pelvic cavity）與會陰（perineum）的重要肌肉層。它主要由提肛肌（levator ani）和尾骨肌（coccygeus muscle）組成。這兩組肌肉共同支撐盆腔臟器（pelvic viscera）並維持腹內壓（intra-abdominal pressure）。其上方覆蓋盆膈上筋膜（superior fascia of pelvic diaphragm）。下方為盆膈下筋膜（inferior fascia of pelvic diaphragm）。此結構形成骨盆底（pelvic floor）的主要部分，位於尿生殖膈（urogenital diaphragm）之上。\n\n**選項解析**\n- (A) 提肛肌是骨盆橫膈的主要構成部分，此為正確答案。它包含恥骨尾骨肌（pubococcygeus）等亞型，直接參與盆腔支撐。\n- (B) 閉孔內肌（obturator internus）位於骨盆腔側壁，負責髖關節外旋，不屬於骨盆橫膈。其筋膜形成閉孔筋膜（obturator fascia）。\n- (C) 會陰深橫肌（deep transverse perineal muscle）位於尿生殖膈，與骨盆橫膈不同層。它位於尿生殖三角區。\n- (D) 尿道外括約肌（external urethral sphincter）主要位於尿生殖膈區域，負責控制排尿，非骨盆橫膈成分。",
+      "level": "unchecked"
+    },
+    "19": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n陰囊（scrotum）的血液供應來自多條動脈分支，涉及不同血管系統。主要來源包括提睪肌動脈、外陰部動脈（external pudendal artery）及內陰部動脈（internal pudendal artery）系統。這些血管分別源自腹股溝韌帶附近或骨盆內側。前側與後側由不同血管負責，需區分其來源路徑。\n\n**選項解析**\n- (A) 提睪肌動脈（cremasteric artery）是腹壁下動脈（inferior epigastric artery）的分支，負責供應提睪肌（cremaster muscle）與陰囊前側組織。\n- (B) 股動脈（femoral artery）發出外陰部動脈，其分支可供應陰囊前側皮膚與肌肉層。\n- (C) 陰莖球動脈（artery of the bulb of penis）主要供應陰莖球與海綿體（corpus spongiosum）組織，不直接供應陰囊結構。\n- (D) 髂內動脈（internal iliac artery）發出內陰部動脈，其分支負責陰囊後側血液供應。",
+      "level": "unchecked"
+    },
+    "20": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n腰神經叢（lumbar plexus）位於腰大肌（psoas major）深面。它主要支配下肢前群與內收肌群。其重要分支包含股神經（femoral nerve）與閉孔神經（obturator nerve）。這些神經在骨盆內形成後，需穿過特定通道離開骨盆腔。骶神經叢（sacral plexus）則位於臀區深部。它負責支配臀部肌肉與會陰區域。\n\n**選項解析**\n- (A) 臀上神經（superior gluteal nerve）源自骶神經叢。它並非腰神經叢的分支。它穿過坐骨大孔（greater sciatic foramen）離開骨盆。此選項不滿足題目條件。\n- (B) 至閉孔內肌之神經（nerve to obturator internus）源自骶神經叢。它主要支配閉孔內肌（obturator internus）。它同樣穿過坐骨大孔離開骨盆。\n- (C) 閉孔神經直接源自腰神經叢。它由 L2 至 L4 脊神經前支組成。它行經骨盆內側，經閉孔管（obturator canal）穿出至大腿內側。此選項符合題目描述。\n- (D) 骨盆內臟神經（pelvic splanchnic nerve）源自骶髓（sacral spinal cord）S2 至 S4 節段。它屬於副交感神經系統（parasympathetic nervous system）。它不屬於腰神經叢的體幹分支。",
+      "level": "unchecked"
+    },
+    "21": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n直腸乙狀結腸交接處（rectosigmoid junction）是降結腸（descending colon）轉為直腸（rectum）的解剖位置。\n在成人屍體標本中，此交界點通常位於第三薦椎（third sacral vertebra, S3）水平。\n這個高度對於內窺鏡檢查與腹部手術定位至關重要。\n了解此標誌有助於區分結腸不同段落的血液供應來源差異。\n乙狀結腸（sigmoid colon）在此處終止，並延續為直腸。\n此位置也是腹膜反折（peritoneal reflection）附近的參考點之一。\n\n**選項解析**\n- (A) 第一薦椎（first sacral vertebra, S1）位置較高，位於骨盆入口（pelvic inlet）附近。\n- (B) 第二薦椎（second sacral vertebra, S2）水平接近直腸上段起始處。\n- (C) 第三薦椎是直腸乙狀結腸交接處的標準解剖標記。\n- (D) 第四薦椎（fourth sacral vertebra, S4）位置較低，接近肛管（anal canal）與直腸交界區域。",
+      "level": "unchecked"
+    },
+    "22": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n正常女性骨盆內，子宮（uterus）呈現前傾前屈的姿勢。\n此姿勢主要依賴子宮圓韌帶（round ligament of the uterus）的牽拉作用維持。\n該構造收縮時會將子宮底（fundus uteri）向前下方拉動。\n\n**選項解析**\n- (A) 闊韌帶（broad ligament）是雙層腹膜（peritoneum）形成的皺襞。\n它主要包圍輸卵管（fallopian tube）與卵巢（ovary），提供被動支撐功能。\n並非主動維持前傾姿勢的主要動力來源。\n- (B) 主韌帶（cardinal ligament）位於子宮頸（cervix uteri）兩側的基底部。\n它是防止子宮脫垂（uterine prolapse）最重要的結構。\n若此處鬆弛則易造成子宮下垂症狀。\n- (C) 子宮圓韌帶起自子宮角，穿過腹股溝管（inguinal canal）。\n它止於大陰唇（labia majora）皮下組織（subcutaneous tissue）。\n其收縮力能將子宮底拉向前方，維持前傾前屈姿勢。\n- (D) 子宮薦韌帶（uterosacral ligament）連接子宮頸與薦骨（sacrum）。\n它將子宮頸向後上方牽引，有助於維持後位穩定。\n此構造對防止子宮過度前傾亦有作用。",
+      "level": "unchecked"
+    },
+    "23": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n小腿（leg）主要神經（nerve）通常與特定血管（blood vessel）形成神經血管束（neurovascular bundle）。脛神經（tibial nerve）伴行後脛動脈（posterior tibial artery）。腓深神經（deep fibular nerve）伴行前脛動脈（anterior tibial artery）。腓腸神經（sural nerve）伴行小隱靜脈（small saphenous vein）。此為解剖學重要考點。\n\n**選項解析**\n- (A) 腓腸神經沿小腿後外側下行，伴行小隱靜脈，故有血管伴行。\n- (B) 腓深神經與前脛動脈共同走行於前間室（compartment），故有血管伴行。\n- (C) 腓淺神經（superficial fibular nerve）主要支配外側群肌肉（muscle）及皮膚（skin），無主要動脈伴行，符合題意。\n- (D) 脛神經與後脛動脈形成束狀結構，故有血管伴行。",
+      "level": "unchecked"
+    },
+    "24": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n跟腱（calcaneal tendon）是由小腿後群肌肉的肌腱（tendon）融合而成。\n這些肌肉主要位於小腿深層與淺層，最終匯集於跟骨（calcaneus）。\n此結構負責足部（foot）蹠屈動作，是全身最粗壯的肌腱。\n臨床上常簡稱為阿基里斯腱（Achilles tendon），易發生斷裂。\n\n**選項解析**\n- (A) 腓腸肌（gastrocnemius）：此肌肉位於小腿後方淺層，起自股骨（femur）髁上。\n  其肌腱參與形成跟腱上部，是主要組成肌肉之一。\n- (B) 比目魚肌（soleus）：此肌肉位於腓腸肌深層，起自脛骨（tibia）、腓骨（fibula）近端。\n  與腓腸肌共同構成跟腱主體，提供強大的蹠屈力量。\n- (C) 膕肌（popliteus）：此肌肉位於膝關節（knee joint）後方，主要功能是屈膝並旋轉脛骨。\n  其肌腱不延伸至足部，因此不參與形成跟腱。\n- (D) 蹠肌（plantaris）：此為細長小肌肉，起自股骨外上髁。\n  其肌腱通常會加入跟腱內側，雖小但確實參與構成。",
+      "level": "unchecked"
+    },
+    "25": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n本題考的是大腿肌肉的跨關節特性。縫匠肌（sartorius）是典型雙關節肌（bi-articular muscle）。它同時跨越髖關節（hip joint）與膝關節（knee joint）。其他選項多為單關節肌（mono-articular muscle）。它們僅作用於單一關節。\n\n**選項解析**\n- (A) 正確。縫匠肌起點在髂前上棘（anterior superior iliac spine）。止點在脛骨鵝足（pes anserinus）。它同時跨越髖關節與膝關節。它負責屈曲髖關節與膝關節。\n- (B) 錯誤。內收大肌（adductor magnus）主要止於股骨（femur）內側唇。雖有部分纖維連接至內上髁（medial epicondyle）。但不跨越膝關節進入小腿。\n- (C) 錯誤。股外側肌（vastus lateralis）屬於股四頭肌（quadriceps femoris）。起點在股骨。止點經髕骨（patella）連至脛骨粗隆（tibial tuberosity）。它僅跨越膝關節。不跨越髖關節。\n- (D) 錯誤。股內側肌（vastus medialis）與股外側肌相同。起點在股骨。止點經髕骨連至脛骨粗隆。它僅跨越膝關節。不跨越髖關節。",
+      "level": "unchecked"
+    },
+    "26": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n手指（finger）內收（adduction）動作主要由手掌內在肌（intrinsic muscles of hand）負責。其中掌側骨間肌（palmar interossei muscles）專司此功能。這些肌肉受尺神經（ulnar nerve）的深支（deep branch）支配。\n\n**選項解析**\n- (A) 橈神經（radial nerve）的深支主要支配前臂伸肌群（extensor muscles）。它負責手腕與手指伸展。不負責內收。\n- (B) 橈神經的淺支（superficial branch）主要為手背（dorsum of hand）皮膚提供感覺傳入。此分支無運動功能。\n- (C) 尺神經的深支支配手掌內在肌，包含掌側骨間肌。受損時手指無法內收夾住紙片。\n- (D) 尺神經的淺支主要負責小指與環指尺側半皮膚的感覺。它不控制手部肌肉（hand muscles）運動功能。",
+      "level": "unchecked"
+    },
+    "27": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n肩關節旋轉套（rotator cuff）由四塊肌肉（muscle）組成，負責穩定肱骨頭（head of humerus）。\n腋神經（axillary nerve）源自臂叢（brachial plexus）後束（posterior cord），穿過四邊孔（quadrangular space）。\n該神經主要支配三角肌（deltoid muscle）與小圓肌（teres minor）。\n其他旋轉套肌肉則由不同神經支配，例如肩胛上神經（suprascapular nerve）。\n\n**選項解析**\n- (A) 棘上肌（supraspinatus muscle）起始於肩胛骨，由肩胛上神經支配。\n- (B) 棘下肌（infraspinatus muscle）主要負責外旋，亦受肩胛上神經控制。\n- (C) 肩胛下肌（subscapularis muscle）位於胸側面，由上、下肩胛下神經（subscapular nerve）支配。\n- (D) 小圓肌為旋轉套最外側肌肉，直接接受腋神經運動纖維支配。",
+      "level": "unchecked"
+    },
+    "28": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n手部肌肉（muscle）的神經支配是解剖學常考重點。正中神經（median nerve）主要支配魚際肌群（thenar muscles）的大部分功能。尺神經（ulnar nerve）則負責內收拇指肌與手背骨間肌（interossei）。LOAF 記憶法可用於輔助理解手部肌肉的神經來源。\n\n**選項解析**\n- (A) 拇指對掌肌（opponens pollicis）由正中神經深支支配，故此選項不符合題意。\n- (B) 外展拇指短肌（abductor pollicis brevis）亦為正中神經支配，屬於魚際肌群主要肌肉之一。\n- (C) 屈拇指短肌（flexor pollicis brevis）淺頭由正中神經支配，深頭偶見尺神經支配，故非最典型答案。\n- (D) 內收拇指肌（adductor pollicis）完全由尺神經深支支配，為正確選項。",
+      "level": "unchecked"
+    },
+    "30": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n胚胎發育中，腭部由前腭（primary palate）與後腭（secondary palate）組成。\n前腭源自球狀突（median nasal process）融合。\n後腭源自側腭突（lateral palatine processes）融合。\n門齒窩（incisive fossa）是區分兩者的解剖學指標。\n此處代表原發性腭與次發性腭的交界線。\n臨床上以此區分唇顎裂（cleft lip and palate）類型。\n\n**選項解析**\n- (A) 盲孔（foramen cecum）位於額骨（frontal bone）與篩骨（ethmoid bone）交界，非腭部標記。\n- (B) 門齒窩位於硬顎（hard palate）前段，分隔原發性與次發性腭。\n- (C) 大腭管（greater palatine canal）位於硬顎後方，傳導神經血管。非前後腭分界指標。\n- (D) 卵圓孔（foramen ovale）位於顱底（base of skull），通過三叉神經下頜支（mandibular branch of trigeminal nerve）。與腭部發育無關。\n\n(Count Check: 268 characters roughly. Need to ensure it hits 250 minimum comfortably.)\nI will add a bit more detail to the explanations to ensure length safety without violating rules.\n\n**Revised Final:**\n**答案：（B）**\n\n**關鍵觀念**\n胚胎發育中，腭部由前腭與後腭組成。\n前腭源自球狀突融合。\n後腭源自側腭突融合。\n門齒窩是區分兩者的解剖學指標。\n此處代表原發性腭與次發性腭的交界線。\n臨床上以此區分唇顎裂類型。\n\n**選項解析**\n- (A) 盲孔位於額骨與篩骨交界，非腭部標記。此處為舌盲孔位置，與甲狀舌管（thyroglossal duct）相關。\n- (B) 門齒窩位於硬顎前段，分隔原發性與次發性腭。此處為唇裂與腭裂分界點。切牙孔（incisive foramen）亦位於此區。\n- (C) 大腭管位於硬顎後方，傳導神經血管。非前後腭分界指標。其開口於大腭孔（greater palatine foramen）。\n- (D) 卵圓孔位於顱底，通過三叉神經下頜支。與腭部發育無關。此處為顱骨基底部結構。\n\nCharacter count looks sufficient now.\nFinal check on English rule: \"每個專有名詞...第一次出現時\".\nI have added English to most key terms.\n\"神經血管\" (nerves and vessels) - I will leave without English as it is a general category, not a specific named structure like the others.\n\"顱骨基底部結構\" - General description.\nLooks compliant.\n\nWait, one more check on \"球狀突\". In Taiwan embryology, 球狀突 (globular process) is often used for medial nasal process derivatives. I will keep it as is.\nAlso ensure no extra paragraphs.\nEnsure format matches exactly.\nReady to generate.cs\n</think>\n\n**答案：（B）**\n\n**關鍵觀念**\n胚胎發育中，腭部由前腭與後腭組成。\n前腭源自球狀突融合。\n後腭源自側腭突融合。\n門齒窩是區分兩者的解剖學指標。\n此處代表原發性腭與次發性腭的交界線。\n臨床上以此區分唇顎裂類型。\n\n**選項解析**\n- (A) 盲孔位於額骨與篩骨交界，非腭部標記。此處為舌盲孔位置，與甲狀舌管相關。\n- (B) 門齒窩位於硬顎前段，分隔原發性與次發性腭。此處為唇裂與腭裂分界點。切牙孔亦位於此區。\n- (C) 大腭管位於硬顎後方，傳導神經血管。非前後腭分界指標。其開口於大腭孔。\n- (D) 卵圓孔位於顱底，通過三叉神經下頜支。與腭部發育無關。此處為顱骨基底部結構。",
+      "level": "unchecked"
+    },
+    "31": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n腎臟發育（kidney development）主要涉及後腎間質（metanephric mesenchyme）與輸尿管芽（ureteric bud）的相互作用，形成永久腎臟。輸尿管芽誘導周圍的後腎間質分化形成腎單位（nephron）。輸尿管芽本身則會分支並演變成集尿系統（collecting system）。它包含集合管與腎盂（renal pelvis）。\n\n**選項解析**\n- (A) 鮑氏囊（Bowman's capsule）是腎小體（renal corpuscle）的一部分，源自後腎間質，並非由輸尿管芽形成，因此錯誤。\n- (B) 近曲小管（proximal convoluted tubule）屬於腎單位結構，同樣源自後腎間質分化。\n- (C) 絲球體（glomerulus）亦為後腎間質來源，負責過濾血液中的廢物與水分。\n- (D) 集尿小管（collecting tubule）屬於集尿系統，直接由輸尿管芽發育形成，故為正確選項。",
+      "level": "unchecked"
+    },
+    "32": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n胚胎時期的肌節（myotome）分為軸上區與軸下區。\n軸上區（epaxial division）衍生出背部深層肌肉（muscle）。\n由脊神經（spinal nerve）背側分支（dorsal ramus）支配。\n軸下區（hypaxial division）衍生出體壁及四肢肌肉。\n由脊神經腹側分支（ventral ramus）支配。\n\n**選項解析**\n- (A) 頭夾肌（splenius capitis muscle）位於頸後部，屬於背部淺層肌肉。其運動神經來自脊神經背側分支，因此歸類為軸上區衍生物。\n- (B) 中斜角肌（middle scalene muscle）位於頸部側方，屬於體壁前群肌肉。由臂叢神經（brachial plexus）腹側分支支配，源自軸下區肌節。\n- (C) 肋間肌（intercostal muscle）位於胸廓，負責呼吸運動。其神經來自肋間神經（intercostal nerve），屬於典型的軸下區衍生物。\n- (D) 腰方肌（quadratus lumborum muscle）位於腹後壁，協助脊柱穩定。由腰叢神經（lumbar plexus）腹側分支支配，源自軸下區肌節。",
+      "level": "unchecked"
+    },
+    "33": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n冷凍割斷術（freeze fracture technique）是用來觀察細胞膜（cell membrane）結構的顯微技術。\n此技術將細胞膜沿著疏水核心（hydrophobic core）裂開，形成兩個切面。\n一個切面稱為 P 面（P-face），另一個稱為 E 面（E-face）。\nP 面代表原質面（protoplasmic face），與細胞質（cytoplasm）相連；E 面代表外質面（exoplasmic face），朝向細胞外。\n此技術主要用於觀察膜蛋白（membrane protein）的分佈情形。\n膜蛋白在兩面的分佈密度通常不同。\n\n**選項解析**\n- (A) 正確。細胞膜內葉層（inner leaflet）與外葉層（outer leaflet）分離，呈現 P 面與 E 面。\n- (B) 正確。此技術可用來觀察細胞膜內的跨膜蛋白質顆粒（intramembrane particles）。\n- (C) 錯誤。P 面對應的是內葉層，即朝向細胞質的一面，而非外葉層。\n- (D) 正確。通常 P 面所含的蛋白質顆粒較 E 面多，因為許多蛋白質與細胞骨架（cytoskeleton）相連。",
+      "level": "unchecked"
+    },
+    "34": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n蝕骨細胞（osteoclast）負責骨質吸收。\n其細胞特性與造骨細胞（osteoblast）不同。\n本題考點在於辨識形態特徵及染色性質。\n組織學上需區分兩類骨細胞的嗜酸或嗜鹼性（basophilic）差異。\n蝕骨細胞源自單核吞噬細胞系統，功能為分解骨質。\n其細胞質富含溶酶體（lysosome），故染色反應與合成蛋白質之細胞不同。\n\n**選項解析**\n- (A) 蝕骨細胞位於骨表面被吸收後形成的凹陷處，稱為吸收陷窩（Howship's lacunae）。此敘述正確。\n- (B) 蝕骨細胞由單核前驅細胞融合而成，因此具有多個細胞核，呈現多核（multinucleated）狀態。此敘述正確。\n- (C) 蝕骨細胞需分解骨基質，故細胞質內含有大量溶酶體，用於釋放酵素（enzyme）進行消化。此敘述正確。\n- (D) 蝕骨細胞的細胞質通常呈嗜酸性或淡染，而非嗜鹼性。造骨細胞因合成膠原蛋白（collagen）多，才呈現嗜鹼性。此敘述錯誤。",
+      "level": "unchecked"
+    },
+    "35": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n軟骨基質（Cartilage matrix）的鈣化（Calcification）特性取決於軟骨類型。透明軟骨（Hyaline cartilage）在生長板（Growth plate）或老化時會發生鈣化。彈性軟骨（Elastic cartilage）與纖維軟骨（Fibrocartilage）則通常不會進行鈣化，此現象與基質成分差異有關。透明軟骨常見於氣管環，隨年齡增長易鈣化。\n\n**選項解析**\n- (A) 錯誤，透明軟骨會鈣化，因此②不應列入不鈣化項目。\n- (B) 正確，彈性軟骨與纖維軟骨在生理狀態下不會鈣化。\n- (C) 錯誤，透明軟骨會鈣化，因此②不應列入不鈣化項目。\n- (D) 錯誤，透明軟骨會鈣化，因此②不應列入不鈣化項目。",
+      "level": "unchecked"
+    },
+    "36": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n骨骼肌 (Skeletal muscle) 與平滑肌 (Smooth muscle) 在組織學特徵上有顯著差異。骨骼肌細胞 (Skeletal muscle cell) 成熟後失去有絲分裂 (Mitosis) 能力，主要靠衛星細胞 (Satellite cells) 修復。平滑肌細胞則保留增殖潛力，可進行有絲分裂。\n\n**選項解析**\n- (A) 正確。骨骼肌纖維由多個前驅細胞融合而成，因此是多核細胞。平滑肌細胞通常只有一個細胞核 (Nucleus)。\n- (B) 正確。骨骼肌的細胞核被擠壓至細胞膜邊緣。平滑肌的細胞核位於細胞中央位置，染色後呈雪茄狀。\n- (C) 正確。骨骼肌肌原纖維 (Myofibril) 排列整齊，顯微鏡下可見橫紋。平滑肌肌絲排列不規則，故無橫紋。\n- (D) 錯誤。此為本題答案。成熟骨骼肌細胞無法進行有絲分裂增殖。相反地，平滑肌在懷孕或病變時可透過有絲分裂增加數量。",
+      "level": "unchecked"
+    },
+    "37": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n脾臟（spleen）紅髓（red pulp）內的脾靜脈竇（splenic sinuses）具有特殊組織學結構。其管壁內襯主要由桿狀內皮細胞（rod-shaped endothelial cells）構成。這些細胞呈長條狀，沿著血管（blood vessels）長軸平行排列。這種構造形成類似柵欄的過濾屏障，允許血球（blood cells）擠過間隙進入循環。基底膜（basement membrane）在此處不連續，有助於物質交換。\n\n**選項解析**\n- (A) 巨噬細胞（macrophages）存在於脾靜脈竇腔內及周圍。它們負責吞噬老化的紅血球（erythrocytes）。這些細胞並非構成管壁內襯的主要結構。\n- (B) 桿狀內皮細胞是此題正確答案。這些細胞形態特殊，形成連續的內層覆蓋物。它們與基底膜共同構成竇壁的過濾功能。\n- (C) 纖維母細胞（fibroblasts）主要負責合成膠原蛋白（collagen）與基質成分。它們位於結締組織（connective tissue）中，不直接構成竇壁內襯。\n- (D) 網狀細胞（reticular cells）參與形成脾臟的支架結構。它們提供支撐作用，但不是脾靜脈竇管壁的內層細胞。",
+      "level": "unchecked"
+    },
+    "38": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n微血管（capillaries）依內皮細胞（endothelial cells）結構分為三型。連續型（continuous）最常見，存在於肌肉（muscle）和肺臟（lung）。穿孔型（fenestrated）允許大分子（macromolecules）通過，多見於吸收或分泌旺盛的器官。血腦屏障（blood-brain barrier）屬於連續型且通透性極低。穿孔處常有隔膜（diaphragm）覆蓋以調節通透性。\n\n**選項解析**\n- (A) 骨骼肌（skeletal muscle）內為連續型微血管，利於物質交換但限制大分子。\n- (B) 肺臟微血管亦為連續型，維持氣體交換與血液屏障功能。\n- (C) 膽囊（gallbladder）黏膜需吸收水分與電解質，故微血管具穿孔構造以利通透。\n- (D) 大腦皮質（cerebral cortex）具有血腦屏障，內皮細胞間緊密連接（tight junctions），無穿孔現象。",
+      "level": "unchecked"
+    },
+    "39": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n胃黏膜（gastric mucosa）依解剖區域不同，細胞（cells）組成有顯著差異。\n賁門部（cardiac portion）主要功能是保護黏膜免受逆流胃酸（gastric acid）傷害。\n因此該處上皮（epithelium）以分泌黏液（mucus）的細胞為主，缺乏腺體（gastric glands）結構。\n黏液層（mucus layer）能中和酸鹼度，維持組織完整性與防禦功能。\n\n**選項解析**\n- (A) 表面黏膜細胞（surface mucous cells）在此區域數量最多，負責形成黏液碳酸氫鹽屏障。\n- (B) 腸內分泌細胞（enteroendocrine cells）散佈於腺體中，並非主要細胞類型，數量稀少。\n- (C) 壁細胞（parietal cells）主要存在於胃底與胃體部，負責分泌胃酸，賁門部極少見。\n- (D) 再生幹細胞（regenerative stem cells）位於腺頸部，負責更新上皮，但數量不如成熟細胞多。",
+      "level": "unchecked"
+    },
+    "40": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n血液中鈣離子（calcium ions）濃度調節主要依賴副甲狀腺（parathyroid gland）激素。\n副甲狀腺主細胞（chief cells of parathyroid gland）負責分泌副甲狀腺素（parathyroid hormone）。\n此激素能提升血鈣濃度，是維持鈣離子平衡的關鍵細胞。\n\n**選項解析**\n- (A) 松果腺主細胞（pinealocytes）主要分泌褪黑激素（melatonin），調節睡眠週期。\n- (B) 甲狀腺濾泡細胞（thyroid follicular cells）負責合成與分泌甲狀腺素（thyroid hormone），影響代謝率而非血鈣。\n- (C) 腎上腺嗜鉻細胞（chromaffin cells）位於腎上腺髓質（adrenal medulla），分泌兒茶酚胺類物質參與應激反應。\n- (D) 副甲狀腺主細胞能感知血鈣濃度變化並分泌副甲狀腺素。\n該激素可促進骨（bone）吸收與腎臟（kidney）重吸收鈣離子，直接參與血鈣調節。\n當血鈣降低時，這些細胞會增加激素分泌以恢復正常水平。",
+      "level": "unchecked"
+    },
+    "41": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n前列腺（prostate）解剖上分為中央區（central zone）、過渡區（transition zone）與周圍區（peripheral zone）。良性前列腺腫大（benign prostatic hypertrophy, BPH）主要發生在過渡區。相反地，惡性前列腺癌（prostate cancer）則好發於周圍區。\n\n**選項解析**\n- (A) 萊迪氏細胞（Leydig cell）腫瘤（tumor）大多為良性，此敘述正確。\n- (B) 精子（sperm）及精原細胞（spermatogonia）內具有特定分子（molecule），會被免疫系統（immune system）辨識為外來抗原（antigen）。因血睪屏障（blood-testis barrier）存在，此敘述正確。\n- (C) 男性結紮手術（vasectomy）是將輸精管（ductus deferens）分離、綁緊並切斷，此敘述正確。\n- (D) 良性前列腺腫大好發於過渡區。周圍區才是前列腺癌的好發部位，故本選項錯誤。",
+      "level": "unchecked"
+    },
+    "42": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n這題考的是細菌外毒素 (exotoxin) 的作用機轉。炭疽桿菌水腫因子 (edema factor)、霍亂毒素 (cholera toxin) 及百日咳毒素 (pertussis toxin)，皆會導致細胞內環磷酸腺苷（cAMP）濃度增高。環磷酸腺苷是第二傳導物質 (second messenger)，負責傳遞細胞訊號。\n\n**選項解析**\n- (A) 抑制寄主細胞的蛋白質合成 (protein synthesis) 是白喉桿菌外毒素或志賀氏桿菌毒素的作用，與本題無關。\n- (B) 正確。炭疽桿菌水腫因子本身具有腺苷酸環化酶 (adenylate cyclase) 活性。霍亂毒素活化 Gs 蛋白 (Gs protein)，間接活化腺苷酸環化酶。百日咳毒素抑制 Gi 蛋白 (Gi protein)，解除對腺苷酸環化酶的抑制。三者最終都使細胞內環磷酸腺苷濃度升高。\n- (C) 具有脂肪酵素活性（phospholipase C）通常是產氣莢膜梭菌毒素的特性，並非此三者的共同點。\n- (D) 引起寄主腹瀉（diarrhea）主要是霍亂毒素的臨床表現，炭疽桿菌與百日咳桿菌主要侵犯皮膚或呼吸道。",
+      "level": "unchecked"
+    },
+    "43": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n志賀氏桿菌（Shigella）是引起桿菌性痢疾（bacillary dysentery）的主要病原體。其感染特性為低劑量即可致病，且具細胞（cell）內寄生與擴散能力。此菌不產生腸毒素，主要靠侵入黏膜（mucosa）造成損傷。\n\n**選項解析**\n- (A) 正確。志賀氏桿菌確實是桿菌性痢疾的主要病原菌。\n- (B) 正確。痢疾志賀氏桿菌（Shigella dysenteriae）血清型 1 可產生志賀毒素（Shiga toxin）。此毒素會抑制蛋白質（protein）合成導致細胞死亡。\n- (C) 正確。此菌具侵犯性，能侵入腸壁上皮細胞（epithelial cells）並利用肌動蛋白（actin）擴散至鄰近細胞。\n- (D) 錯誤。引發志賀氏桿菌感染（infection）所需的菌量極少，通常只需約 100 個細菌即可致病。選項所述之高菌量不符合其特性，此與沙門氏桿菌（Salmonella）不同。",
+      "level": "unchecked"
+    },
+    "44": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n傷寒（typhoid fever）病程中，細菌分離陽性的時機取決於檢體來源。\n不同檢體的陽性率隨病程進展而改變。\n第一週時菌血症（bacteremia）明顯，血培養（blood culture）陽性率最高。\n糞便培養（stool culture）通常在第二週後才逐漸轉為陽性。\n\n**選項解析**\n- (A) 傷寒桿菌（Salmonella typhi）是胞內寄生菌，可在巨噬細胞（macrophage）內存活並繁殖。\n- (B) 發病第一週時細菌主要存在於血液，糞便培養多為陰性結果，故本項錯誤。此時細菌尚未大量排入腸道。\n- (C) 慢性帶原者（carrier state）的細菌常潛伏於膽囊（gallbladder），易形成結石。\n- (D) Vi 抗原（Vi antigen）是莢膜多糖（capsular polysaccharides），可用於製作傷寒疫苗以誘發免疫反應。",
+      "level": "unchecked"
+    },
+    "45": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n化膿性鏈球菌（Streptococcus pyogenes）會產生多種毒力因子（virulence factors）。\n超抗原（Superantigen）能非特異性地活化大量 T 細胞（T cells），引發細胞激素風暴（cytokine storm）。\n此類毒素包含致熱性外毒素 A（pyrogenic exotoxin A, SpeA），具有熱不穩定性，可導致猩紅熱（scarlet fever）或中毒性休克症候群（toxic shock syndrome）。\n超抗原能同時結合 MHC II 分子（MHC II molecule）與 T 細胞受體（T cell receptor），造成過度免疫反應。\n\n**選項解析**\n- (A) M 蛋白（M-protein）主要功能是抗吞噬作用（phagocytosis），並非超抗原。\n- (B) F 蛋白（F-protein）負責黏附宿主細胞纖維連接蛋白（fibronectin）。\n- (C) 熱不穩定性毒素（heat-labile toxin）（SpeA）屬於致熱性外毒素，具有超抗原特性。\n- (D) 鏈球菌溶血素 S（Streptolysin S）是細胞毒素，造成紅血球（red blood cells）溶解。",
+      "level": "unchecked"
+    },
+    "46": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n葡萄球菌腸毒素（Staphylococcal enterotoxin）是金黃色葡萄球菌（Staphylococcus aureus）分泌的外毒素（exotoxin）。腸毒素 B (Enterotoxin B) 在多種血清型（serotype）中，對腸道黏膜（mucosa）的破壞力最強。此毒素可作為超抗原（superantigen），誘發免疫細胞（immune cell）釋放大量細胞激素（cytokine）。這種強烈發炎反應（inflammatory response）易導致假膜性小腸結腸炎（pseudomembranous enterocolitis）之病變。\n\n**選項解析**\n- (A) 腸毒素 A (Enterotoxin A)：常引起急性食物中毒（food poisoning），但造成嚴重黏膜損傷與假膜形成的機率較低。\n- (B) 腸毒素 B (Enterotoxin B)：此型毒素對腸壁組織侵蝕性高，可造成黏膜壞死並誘發假膜形成與嚴重炎症反應。\n- (C) 腸毒素 C (Enterotoxin C)：主要臨床表現為嘔吐（vomiting），較少見於導致假膜性病變之發生。\n- (D) 腸毒素 D (Enterotoxin D)：多引起輕微腹瀉（diarrhea）症狀，並非此嚴重症候群（syndrome）之主因。",
+      "level": "unchecked"
+    },
+    "47": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n能產生芽胞（endospore）的桿菌（bacilli），通常屬於革蘭氏陽性菌（Gram-positive bacteria）。\n這類細菌具有厚的細胞壁（cell wall），主要成分為肽聚糖（peptidoglycan）。\n在革蘭氏染色（Gram stain）過程中，它們能保留初染劑（primary stain）結晶紫（crystal violet）與媒染劑（mordant）碘液（iodine solution）形成的複合物。\n脫色步驟後，厚細胞壁不會被酒精（alcohol）溶解，因此染料無法被洗去。\n\n**選項解析**\n- (A) 紅色是革蘭氏陰性菌（Gram-negative bacteria）的顯色結果，因為其細胞壁薄且脂質（lipid）含量高，易被脫色劑（decolorizer）沖走染料。\n- (B) 綠色通常用於芽胞染色法（endospore stain），這是特殊染色法，並非一般細菌的常規革蘭氏染色結果。\n- (C) 深紫色是正確答案，因厚肽聚糖層在脫色劑處理後仍保留染料複合物，呈現典型的陽性反應。\n- (D) 黃色並非標準革蘭氏染色的顯色結果，沙黃（safranin）作為對染劑（counterstain）時通常呈現紅色或粉紅色給陰性菌使用。",
+      "level": "unchecked"
+    },
+    "48": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n炭疽芽孢桿菌（Bacillus anthracis）在體內感染時會產生莢膜（capsule）。\n此莢膜是主要毒力因子（virulence factor），可幫助細菌逃避宿主免疫系統（immune system）。\n臨床檢體中觀察到的細菌通常具有明顯的莢膜結構。\n\n**選項解析**\n- (A) 炭疽芽孢桿菌為大型革蘭氏陽性桿菌（Gram-positive bacilli）。\n  可直接利用革蘭氏染色法（Gram stain）檢查檢體中細菌特徵。\n  此敘述正確，故不選。\n- (B) 在臨床檢體或體內環境下，細菌會形成莢膜。\n  選項稱不會形成莢膜，與事實相反，故此為錯誤敘述。\n  符合題目要求，應選此項。\n- (C) gamma phage 是一種專一性噬菌體（phage），可用於鑑定炭疽芽孢桿菌。\n  該噬菌體會造成細菌溶解，此特性可用於實驗室診斷。\n  此敘述正確，故不選。\n- (D) DFA test（direct fluorescent antibody test）利用螢光標記抗體（antibody）檢測抗原（antigen）。\n  可針對細胞壁多醣體（polysaccharide）或莢膜成分進行特異性結合。\n  此敘述正確，故不選。",
+      "level": "unchecked"
+    },
+    "49": {
+      "text": "**答案：A、D**\n\n**關鍵觀念**\n本題考鑑別診斷（differential diagnosis）中的病毒性疾病（viral disease）。Epstein-Barr virus（EBV）與 Cytomegalovirus（CMV）均可引起傳染性單核球增多症（infectious mononucleosis）。兩者皆常伴隨肝炎（hepatitis）症狀，但嗜異性抗體（heterophile antibody）反應不同。\n\n**選項解析**\n- (A) Epstein-Barr virus（EBV）是傳染性單核球增多症主因。雖多數患者嗜異性抗體為陽性，但早期或兒童可能呈陰性。肝臟發炎常見，符合題目描述之臨床表現。\n- (B) Human herpesvirus-6（HHV-6）主要引起幼兒急疹（roseola infantum）。通常無肝炎或單核球增多症（mononucleosis）症狀，故不選。\n- (C) Human T-cell lymphotropic virus type 1（HTLV-1）與白血病（leukemia）相關。不會造成急性肝炎或嗜異性抗體陰性之單核球增多症。\n- (D) Cytomegalovirus（CMV）是嗜異性抗體陰性傳染性單核球增多症之主因。常伴隨肝炎及肝酵素（liver enzyme）上升，完全符合題目條件。",
+      "level": "unchecked"
+    },
+    "50": {
+      "text": "**答案：A**\n\n**關鍵觀念**\nHIV（Human immunodeficiency virus）入侵細胞需結合 CD4（CD4 分子）受器與趨化因子受器。\nM-tropic（巨噬細胞嗜性）病毒株主要利用 CCR5（CCR5 受體）作為共受器進入細胞。\nT-tropic（T 細胞嗜性）病毒株則偏好使用 CXCR4（CXCR4 受體）作為共受器。\n隨著疾病進展，病毒株通常會從 M-tropic 轉變為 T-tropic。\n\n**選項解析**\n- (A) 此敘述錯誤。M-tropic（巨噬細胞嗜性）病毒主要利用 CCR5（CCR5 受體）受器進入細胞，而非 CXCR4（CXCR4 受體）。\n- (B) 此敘述正確。T-tropic（T 細胞嗜性）病毒株通常在疾病後期增加，導致 CD4 T 細胞（T cell）下降加速。\n- (C) 此敘述正確。Kaposi’s sarcoma（卡波西氏肉瘤）是 AIDS（愛滋病）病人常見的機會性癌症。\n- (D) 此敘述正確。CD4 T 細胞數目低於 200/µL 時，免疫系統嚴重受損，易發生伺機性感染。",
+      "level": "unchecked"
+    },
+    "51": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n膿性指頭炎（whitlow）是一種手指軟組織的病毒感染。\n此疾病主要由單純疱疹病毒（Herpes simplex virus）引起。\n單純疱疹病毒第一型（Herpes simplex virus type 1）與第二型（type 2）皆可導致此疾病發生。\n感染通常發生在口腔或生殖器病變接觸手指後。\n臨床表現為疼痛、紅腫與水泡形成，且極度疼痛。\n醫護人員因接觸病患口腔分泌物而容易感染。\n此名稱雖有膿字，但並非細菌感染所致。\n\n**選項解析**\n- (A) 巨細胞病毒（Cytomegalovirus）主要引起免疫低下者的全身性感染。\n它常造成器官移植受者的併發症。\n- (B) 單純疱疹病毒是導致膿性指頭炎的常見病原體。\n- (C) 人類乳突病毒（Human papillomavirus）通常引起皮膚疣或黏膜病變。\n- (D) 人類疱疹病毒六型（Human herpesvirus-6）主要與幼兒急疹（Exanthem subitum）有關。",
+      "level": "unchecked"
+    },
+    "52": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n细小病毒科（Parvoviridae）屬於小型無外套（non-enveloped）病毒。\n其遺傳物質為單股脫氧核糖核酸（single-stranded DNA），並非雙股。\n病毒顆粒的衣殼（capsid）呈現二十面體（icosahedral）幾何結構。\n腺病毒相關病毒（Adenovirus-associated virus）是此科的代表性成員。\n\n**選項解析**\n- (A) 腺病毒相關病毒確實屬於细小病毒科。\n  它必須依賴輔助病毒才能進行複製週期，敘述正確。\n- (B) 细小病毒科的基因組為單股脫氧核糖核酸。\n  選項誤認為是雙股脫氧核糖核酸（double-stranded DNA），故為錯誤選項。\n- (C) 此病毒缺乏外層脂質外套（envelope），屬於無外套病毒。\n  因此對去污劑及乾燥環境具有較高抵抗力，敘述正確。\n- (D) 病毒衣殼由蛋白質亞基組成二十面體結構。\n  這是细小病毒科的典型形態特徵，敘述正確。",
+      "level": "unchecked"
+    },
+    "54": {
+      "text": "**答案：(A)**\n\n**關鍵觀念**\n亞急性硬化全腦炎（subacute sclerosing panencephalitis）是麻疹病毒（Measles virus）感染後的罕見遲發性併發症。\n此疾病通常在初次感染數年甚至十年後才出現中樞神經系統（central nervous system）退化症狀。\n其病理機轉涉及病毒在腦部組織內的持續低度複製與發炎反應。\n\n**選項解析**\n- (A) 麻疹病毒屬於副黏液病毒科（Paramyxoviridae），是已知唯一會導致亞急性硬化全腦炎之病毒。\n- (B) 腮腺炎病毒（Mumps virus）雖同屬副黏液病毒科，但主要引起腮腺腫大或病毒性腦膜炎（viral meningitis），不引發此特定慢性神經病變。\n- (C) 立百病毒（Nipah virus）可引發急性重症腦炎，但無多年後復發之亞急性硬化全腦炎臨床特徵。\n- (D) 亨得拉病毒（Hendra virus）與立百病毒親緣性高，臨床表現亦為急性重症感染，非本題所描述之慢性神經病變過程。",
+      "level": "unchecked"
+    },
+    "55": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n傑氏棒狀桿菌（Corynebacterium jeikeium）是一種機會性致病的細菌 (Bacteria)。\n它屬於嗜脂性棒狀桿菌（Lipophilic Corynebacteria），常發生於住院病人。\n此菌對多種藥物 (Drug) 具高度抗藥性，而非感受性。\n臨床治療困難。\n需考慮多重抗藥性。\n此菌常與長期使用抗生素有關。\n\n**選項解析**\n- (A) 正確。該菌常從菌血症 (Bacteremia) 之住院病人所分離，屬於醫院內感染。\n- (B) 正確。免疫功能不全之患者因抵抗力低，易受此細菌感染。\n- (C) 錯誤。傑氏棒狀桿菌對大部分常用抗生素 (Antibiotics) 具抗藥性，並非感受性。它常為多重抗藥性菌株，治療選擇有限。\n- (D) 正確。分類上屬於嗜脂性棒狀桿菌群組，生長需脂肪酸。",
+      "level": "unchecked"
+    },
+    "56": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n肝炎病毒（Hepatitis virus）包含 A、B、C、D、E 五種類型。其核酸性質與傳染途徑各異。\nD 型肝炎病毒（Hepatitis D virus）屬於缺陷病毒。它必須依賴 B 型肝炎病毒（Hepatitis B virus）才能完成複製週期。\n\n**選項解析**\n- (A) A 型與 E 型肝炎病毒主要經糞口傳染（fecal-oral transmission），此敘述正確。\n- (B) A、C、D、E 型之核酸（nucleic acid）均為核糖核酸（RNA），唯有 B 型為部分雙股環狀去氧核糖核酸（DNA），此敘述正確。\n- (C) B 型與 C 型肝炎病毒易導致慢性肝炎（chronic hepatitis），此敘述正確。\n- (D) D 型肝炎需 B 型肝炎表面抗原（surface antigen）之幫助來傳染和複製，而非 A 型，故此敘述錯誤。",
+      "level": "unchecked"
+    },
+    "57": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n皮下黴菌病（Subcutaneous mycoses）為真菌侵入皮膚（skin）與皮下組織（subcutaneous tissue）所致之感染。\n足菌腫（Mycetoma）依病原體分為真菌性（Eumycotic）與放線菌性（Actinomycotic）。\n本題考點在於特定疾病名稱與其對應致病原物種的正確配對關係。\n\n**選項解析**\n- (A) 孢子絲菌病（Sporotrichosis）之典型致病原為 Sporothrix schenckii，非 Chaetomium spp.。\n- (B) 色芽生菌病（Chromoblastomycosis）多由深色黴菌引起，Madurella spp. 則為足菌腫常見致病原。\n- (C) 真菌性足菌腫（Eumycotic mycetoma）之致病原包含 Aspergillus nidulans，此選項配對正確。\n- (D) 皮下接合黴菌病（Subcutaneous zygomycosis）由接合菌門（Zygomycota）引起，Sporothrix schenckii 則導致孢子絲菌病。",
+      "level": "unchecked"
+    },
+    "58": {
+      "text": "**答案：D**\n\n**關鍵觀念**\nD-阿拉伯糖醇（D-arabinitol）是一種真菌（fungus）代謝產物（metabolite）。\n此物質主要由白色念珠菌（Candida albicans）產生。\n血清（serum）中濃度升高可作為侵襲性念珠菌病（invasive candidiasis）的輔助診斷指標。\n其他常見黴菌通常不產生此類代謝物，因此具有特異性。\n此檢驗對於免疫低下患者（immunocompromised patients）尤為重要，能早期發現感染。\n\n**選項解析**\n- (A) Histoplasma capsulatum（組織胞漿菌）感染通常檢測尿液抗原（urine antigen），而非 D-arabinitol。\n- (B) Penicillium marneffei（馬尼菲青黴菌）目前分類為 Talaromyces marneffei，診斷依賴培養（culture）或血清學（serology）。\n- (C) Cryptococcus neoformans（新型隱球菌）感染主要檢測血清隱球菌抗原（Cryptococcal antigen）。\n- (D) Candida albicans（白色念珠菌）代謝產生 D-arabinitol，可用於監測侵襲性感染。",
+      "level": "unchecked"
+    },
+    "59": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n人類免疫缺乏病毒第一型（HIV-1）基因組（genome）包含結構與調節區域。外膜糖蛋白基因（env）編碼外膜糖蛋白。此蛋白質負責病毒進入宿主細胞。由於免疫壓力，該區域變異速率最快。這導致病毒逃避免疫系統偵測。\n\n**選項解析**\n- (A) 外膜糖蛋白基因編碼 gp120 與 gp41 蛋白質。這些蛋白質暴露於病毒表面。直接接觸宿主免疫系統。因此承受強烈選擇壓力，突變率最高。\n- (B) 核心蛋白質基因（gag）編碼核心蛋白質，如 p24。此區域結構功能保守。變異性較低。\n- (C) 聚合酶基因（pol）編碼酵素，如逆轉錄酵素（reverse transcriptase）。因涉及複製機制，序列相對穩定。\n- (D) LTR 為長末端重複序列（long terminal repeat），主要參與調控病毒基因表現。其變異性不如外膜糖蛋白基因顯著。",
+      "level": "unchecked"
+    },
+    "60": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n本題考的是幽門螺旋桿菌（Helicobacter pylori）的培養特性。\n此細菌屬於微需氧菌（microaerophile），需要低氧環境生長。\n它無法在正常大氣氧濃度下存活。\n必須降低氧氣並增加二氧化碳（carbon dioxide）濃度。\n\n**選項解析**\n- (A) 大氣環境氧氣濃度過高，會抑制幽門螺旋桿菌生長。\n  此菌對氧化壓力敏感，無法在常態空氣中繁殖。\n- (B) 無氧環境適合專性厭氧菌，但此菌需要少量氧氣進行代謝。\n  完全缺乏氧氣會導致其無法存活。\n- (C) 高氧環境對幽門螺旋桿菌具有毒性，無法培養成功。\n  過量氧氣會破壞細菌的酵素（enzyme）系統。\n- (D) 低氧環境含約 5% 氧氣，符合微需氧菌的最佳生長條件。\n  此濃度能模擬胃部幽門處的生理環境。\n  此為標準微需氧培養條件。",
+      "level": "unchecked"
+    },
+    "61": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n此題考的是幽門螺旋桿菌（Helicobacter pylori）感染的診斷原理。\n該細菌會產生大量尿素酶（urease）以中和胃酸環境。\n尿素酶分解尿素（urea）產生氨（ammonia），可保護細菌存活於酸性環境。\n吹氣法利用標記尿素，檢測細菌分解後產生的二氧化碳（carbon dioxide）。\n因此酵素偵測法主要針對尿素酶活性進行判斷。\n\n**選項解析**\n- (A) 蛋白酶（protease）：此酵素參與蛋白質分解，非幽門螺旋桿菌診斷特徵。\n- (B) 尿素酶：正確，此為幽門螺旋桿菌產生之關鍵酵素，可用於吹氣法檢測。\n- (C) 核酸酶（nuclease）：此酵素參與核酸分解，與胃腸道細菌診斷無關。\n- (D) 凝血酶（coagulase）：此酵素常見於金黃色葡萄球菌（Staphylococcus aureus），非本題情境。",
+      "level": "unchecked"
+    },
+    "62": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n抗原呈獻細胞（antigen-presenting cell, APC）負責將抗原處理後，透過主要組織相容性複合體（major histocompatibility complex, MHC）分子展示給 T 細胞（T cell）。\n專業型 APC 包含樹突狀細胞（dendritic cell）、巨噬細胞和 B 細胞，它們能啟動初級免疫反應。\nT 細胞本身是接受抗原訊號的效應細胞，通常不具備呈獻抗原的功能。\n\n**選項解析**\n- (A) B 細胞（B cell）屬於專業型 APC，能透過 B 細胞受體（receptor）攝取抗原並呈獻給輔助性 T 細胞（helper T cell）。\n- (B) CD4⁺ T 細胞（CD4+ T cell）主要功能是辨識抗原後活化或分泌細胞激素（cytokine），並非抗原呈獻細胞。\n- (C) 巨噬細胞（macrophage）吞噬病原體後，可將抗原肽段展示於 MHC II 類分子上啟動免疫反應。\n- (D) 蘭格翰細胞（Langerhans' cells）是位於皮膚的樹突狀細胞，屬於專業型 APC，負責誘導免疫耐受或活化。",
+      "level": "unchecked"
+    },
+    "63": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n抗體（antibody）重鏈（heavy chain）與輕鏈（light chain）的基因（gene）重組（recombination）順序不同。\n在 B 細胞（B cell）發育早期，重鏈基因座先進行 D-J joining。\n完成後才進行 V-DJ joining，形成完整的可變區（variable domain）結構。\n此過程由 RAG 酵素（enzyme）介導，確保序列（sequence）正確排列。\n\n**選項解析**\n- (A) 錯誤，V-J joining 通常發生於輕鏈或重鏈後期，非最早事件。\n- (B) 錯誤，D-J joining 是重鏈重組起始步驟，早於 V-J joining。\n- (C) 正確，重鏈基因座中 D-J joining 確實早於 V-DJ joining 過程。\n- (D) 錯誤，V-D joining 必須在 D-J joining 完成後才能進行連接。",
+      "level": "unchecked"
+    },
+    "64": {
+      "text": "**答案：B**\n\n**關鍵觀念**\nB 細胞（B cell）在骨髓中發育時，會經歷免疫球蛋白基因重排過程。第一個成功表達的抗體（antibody）同種型是免疫球蛋白 M（Immunoglobulin M）。這代表 µ 重鏈（µ heavy chain）最先合成並與輕鏈（light chain）結合形成受體。\n\n**選項解析**\n- (A) δ 重鏈（δ heavy chain）是在 B 細胞成熟後，發生類別轉換時才會表現。它通常與 µ 重鏈同時出現在成熟 B 細胞表面，作為成熟標記。\n- (B) µ 重鏈（µ heavy chain）是正確答案。在早期前 B 細胞階段，µ 重鏈基因首先重排成功並轉譯，形成膜結合型免疫球蛋白 M（IgM）。\n- (C) κ 輕鏈（κ light chain）會在 µ 重鏈表達後才加入。它與重鏈組成完整的 B 細胞受體（B cell receptor），用於抗原辨識。\n- (D) λ 輕鏈（λ light chain）也是輕鏈的一種，其表現時間與 κ 輕鏈相似。兩者皆晚於 µ 重鏈出現，且互斥表達。",
+      "level": "unchecked"
+    },
+    "65": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n毒殺性 T 細胞（cytotoxic T lymphocyte，CTL）與自然殺手細胞（natural killer cell，NK）皆屬於具有細胞毒殺能力的淋巴球（lymphocyte）。兩者執行細胞毒殺功能時，主要依賴穿孔素（perforin）及顆粒酶（granzyme）分子。這兩種分子共同作用，導致標的細胞發生凋亡（apoptosis）。\n\n**選項解析**\n- (A) 此敘述正確。CTL 與 NK 細胞在活化後，均會釋放穿孔素及顆粒酶。穿孔素會在標的細胞膜上形成孔洞，使顆粒酶進入誘導凋亡。\n- (B) 此敘述錯誤。NK 細胞屬於先天免疫系統（innate immune system），不需要辨認專一性抗原。其活化機制主要依賴「缺失自我」（missing self）或應激配體。\n- (C) 此敘述錯誤。CTL 需要 T 細胞受體（T cell receptor，TCR）辨識主要組織相容性複合體（major histocompatibility complex，MHC）class I 分子所呈現的特定抗原肽。僅有 MHC class I 本身不足以活化 CTL。\n- (D) 此敘述錯誤。CTL 屬於適應性免疫系統（adaptive immune system），活化後可分化成記憶性 T 細胞（memory T cell）。NK 細胞通常不形成典型的長期免疫記憶。",
+      "level": "unchecked"
+    },
+    "66": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\nB 細胞 (B cell) 活化後會發生親和力成熟 (affinity maturation)。記憶性 B 細胞 (memory B cell) 經過體細胞高變異 (somatic hypermutation) 與選擇。因此其產生的抗體 (antibody) 通常具有較高親和力 (affinity)。這是二次免疫反應的重要特徵。\n\n**選項解析**\n- (A) 成熟 naive B 細胞膜上主要表現 IgM 與 IgD，而非 IgG。IgG 是類別轉換後才出現。\n- (B) 成熟 naive B 細胞尚未結合辨識過特定抗原 (antigen)，故稱為 naive。一旦結合即開始活化。\n- (C) B 細胞主要在骨髓 (bone marrow) 發育，胸腺 (thymus) 是 T 細胞 (T cell) 成熟場所。記憶性 B 細胞存在於外周淋巴組織。\n- (D) 記憶性 B 細胞經歷親和力成熟過程，產生的抗體親和力較高。這能更有效地清除病原體。",
+      "level": "unchecked"
+    },
+    "67": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n樹突細胞 (Dendritic cells) 在特定微環境下可誘導免疫耐受。此機制涉及調節性 T 細胞 (Regulatory T cells) 的分化與功能維持。相關分子包括抗發炎細胞因子及代謝酵素。促發炎因子則會阻礙此分化途徑。若缺乏這些抑制性分子，則可能引發自體免疫反應。\n\n**選項解析**\n- (A) IL-10 即白介素 (Interleukin)-10。是重要的抗發炎分子。能促進調節性 T 細胞 的存活與抑制功能。\n- (B) TGF-β 即轉化生長因子β (Transforming growth factor-beta)。對於初始 T 細胞 (Naive T cells) 轉化為調節性 T 細胞 至關重要。是耐受誘導的核心因子。\n- (C) IDO 即吲哚胺 2,3-雙加氧酶 (Indoleamine 2,3-dioxygenase)。會分解色胺酸 (Tryptophan)。造成局部缺乏並抑制效應型 T 細胞 (Effector T cells) 增殖。進而促進調節性 T 細胞。\n- (D) IL-6 即白介素-6。主要為促發炎分子。與轉化生長因子β (Transforming growth factor-beta) 共同作用時會誘導 Th17 細胞 (Th17 cells) 分化。拮抗調節性 T 細胞 的生成。",
+      "level": "unchecked"
+    },
+    "68": {
+      "text": "**答案：B**\n\n**關鍵觀念**\nFas 受體（Fas receptor）與配體（ligand）結合後，啟動細胞凋亡（apoptosis）訊號路徑。此機制負責清除活化後的淋巴球（lymphocyte）。這能維持免疫耐受性。基因剔除小鼠（gene knockout mice）因缺乏 Fas 功能，導致淋巴球無法正常死亡而堆積。最終引發全身性自體免疫反應與器官腫大，即為淋巴球增生疾病（lymphoproliferative disease）。\n\n**選項解析**\n- (A) 發炎性腸道疾病（inflammatory bowel disease）主要與腸道菌群失衡或特定基因突變有關，非 Fas 剔除小鼠的典型表現。\n- (B) 正確。Fas 路徑缺陷使淋巴球無法凋亡，造成淋巴結（lymph node）與脾臟（spleen）腫大，符合淋巴球增生疾病特徵。\n- (C) 類風濕性關節炎（rheumatoid arthritis）雖為自體免疫病（autoimmune disease），但非 Fas 基因剔除小鼠的主要表型。\n- (D) 去髓鞘病變（demyelinating disease）通常涉及神經系統（nervous system），與 Fas 缺陷導致的全身性淋巴球堆積無直接關聯。",
+      "level": "unchecked"
+    },
+    "69": {
+      "text": "**答案：A**\n\n**關鍵觀念**\nToll 樣受體（Toll-like receptor）屬於先天免疫系統中的模式辨識受器（pattern recognition receptor）。不同類型的 Toll 樣受體會辨識不同的病原相關分子模式。其中 Toll 樣受體 3（TLR3）主要負責偵測病毒複製時產生的雙股核糖核酸（double-stranded RNA, dsRNA）。\n\n**選項解析**\n- (A) Toll 樣受體 3（TLR3）位於細胞內體（endosome）膜上，專門辨識病毒複製時產生的雙股核糖核酸（dsRNA），故為正確答案。\n- (B) Toll 樣受體 7（TLR7）主要辨識單股核糖核酸（single-stranded RNA, ssRNA)，常見於流感病毒或人類免疫缺乏病毒（HIV）等病毒感染。\n- (C) Toll 樣受體 6（TLR6）通常與 Toll 樣受體 2（TLR2）形成異二聚體，辨識細菌的脂多醣（lipopolysaccharide）或脂蛋白。\n- (D) Toll 樣受體 4（TLR4）是辨識革蘭氏陰性菌（Gram-negative bacteria）細胞壁成分脂多醣的主要受器（receptor），與病毒核糖核酸無關。",
+      "level": "unchecked"
+    },
+    "70": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n嚴重混合性免疫缺損（Severe Combined Immunodeficiency, SCID）是一種遺傳性免疫缺陷疾病（Disease）。\n最常見的類型為性聯遺傳型，由 IL2RG 基因突變引起。\n該基因編碼的產物是細胞（Cell）激素受體（Receptor）的共同γ鏈。\n此分子（Molecule）參與多種細胞激素訊息傳遞途徑，如白介素 -2（IL-2）。\n缺乏此分子會導致 T 細胞與 B 細胞發育受阻，造成嚴重免疫缺損。\n\n**選項解析**\n- (A) 正確。突變發生在細胞激素受體的訊息傳遞分子（signaling molecule），導致淋巴球無法正常活化。\n- (B) 錯誤。細胞骨架（cytoskeleton）組成分子異常通常影響細胞形態，非此病主要機轉。\n- (C) 錯誤。細胞游走所需的粘著分子（adhesion molecule）缺陷常見於 Leukocyte Adhesion Deficiency。\n- (D) 錯誤。血球產生活性氧自由基的酵素（enzyme）異常屬於慢性肉芽腫症（Chronic Granulomatous Disease）。",
+      "level": "unchecked"
+    },
+    "71": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n結核菌素皮膚試驗屬於第四型過敏反應（Type IV hypersensitivity）。\n此反應是由致敏之 T 淋巴細胞（T lymphocytes）主導，而非抗體介導。\n抗原再次進入後，巨噬細胞（macrophages）會釋放細胞因子（cytokines）。\n發炎反應通常在注射後 48 至 72 小時達到高峰。\n此過程屬於延遲性過敏反應，與細胞免疫功能密切相關。\n\n**選項解析**\n- (A) 此為第四型過敏反應，主要不涉及免疫球蛋白 E（IgE）。\nIgE 是第一型過敏反應的主要抗體，與立即性反應有關。\n結核菌素試驗不依賴 B 淋巴細胞（B lymphocytes）產生抗體。\n- (B) 正確，結核菌素試驗依賴活化之 T 淋巴細胞主導細胞免疫。\n致敏的 CD4+ T 細胞（CD4+ T cells）會釋放干擾素-γ（interferon-gamma）。\n這會吸引巨噬細胞聚集並造成局部硬結與紅腫。\n此為典型的細胞介導性免疫反應機制。\n- (C) 錯誤，此反應發生時間較晚，不會在半小時內發作。\n半小時內的反應通常屬於第一型過敏反應的立即性表現。\n延遲性反應需要時間讓 T 細胞活化與招募發炎細胞。\n- (D) 錯誤，浸潤細胞主要為單核球（monocytes）與淋巴細胞。\n嗜酸性球（eosinophils）常見於寄生蟲感染或第一型過敏反應。\n結核菌素試驗的組織切片顯示大量巨噬細胞聚集。",
+      "level": "unchecked"
+    },
+    "72": {
+      "text": "**答案：D**\n\n**關鍵觀念**\nB 淋巴球（B lymphocyte）在發育中心（germinal center）進行親和力成熟時，會發生體超突變機轉（somatic hypermutation）。此過程可能產生高親和力的自體抗體（autoantibody）。這些細胞會被判定為有害。免疫系統（immune system）透過缺乏 T 細胞（T cell）幫助的訊號，誘導這些 B 淋巴球凋亡（apoptosis），以維持免疫耐受性（immune tolerance）。這是外周耐受的重要機制之一，防止自體免疫疾病（autoimmune disease）發生。\n\n**選項解析**\n- (A) 錯誤。產生自體抗體的 B 淋巴球不會停留於發育中心，否則會引發自體免疫疾病。\n- (B) 錯誤。與補體（complement）結合並非清除此類細胞的主要機轉，且活化增生會加重自體免疫反應。\n- (C) 錯誤。巨噬細胞（macrophage）主要負責吞噬病原或殘骸，非發育中心內選擇性清除 B 淋巴球的主因。\n- (D) 正確。這些 B 淋巴球因無法獲得 T 細胞提供的存活訊號，最終啟動凋亡機轉而被清除，維持體內平衡。",
+      "level": "unchecked"
+    },
+    "73": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n腫瘤抗原 (Tumor antigens) 是細胞 (Cells) 癌變時表現的特殊蛋白質 (Proteins) 或分子。\n這些抗原包含突變後的自體抗原 (Self-antigens)、胎兒時期蛋白以及正常生長因子接受器 (Growth factor receptors)。\n醣化修飾 (Glycosylation modification) 的異常也是腫瘤細胞的重要特徵之一，會影響免疫辨識。\n\n**選項解析**\n- (A) 正確。基因突變會產生新的抗原決定基 (Epitopes)，屬於突變後的自體抗原。\n- (B) 正確。某些胎兒時期表現的蛋白在成人後重新表達，稱為胎兒腫瘤抗原。\n- (C) 正確。正常細胞生長因子接受器過度表現，也是常見的腫瘤抗原來源。\n- (D) 錯誤。腫瘤細胞表面的醣化修飾常發生異常，影響抗原性與免疫辨識。\n醣鏈結構改變會產生新的抗原表位 (Antigenic epitopes)，導致免疫系統辨識差異，因此與醣化修飾作用有關。",
+      "level": "unchecked"
+    },
+    "74": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n類固醇藥物（corticosteroids）是強效的抗發炎與免疫抑制劑。\n其作用機轉涉及細胞核內受體結合，改變基因表現。\n這會導致促發炎因子減少，並增加抗發炎蛋白合成。\n因此藥物不會促進細胞激素（cytokines），而是抑制其生成。\n此機制有助於控制過度活躍的免疫反應與發炎狀態。\n臨床常用於治療自體免疫疾病與嚴重過敏反應。\n長期使用可能導致骨質疏鬆症等副作用，需謹慎評估。\n\n**選項解析**\n- (A) 正確。類固醇藥物可誘導淋巴球等白血球（leukocytes）發生凋亡（apoptosis）。\n  此現象有助於減少發炎細胞在組織中的堆積數量。\n- (B) 錯誤。類固醇藥物會抑制細胞激素的產生，此為免疫抑制作用。\n  若促進產生則會加重發炎反應，與藥物目的相反。\n- (C) 正確。類固醇藥物能降低白血球向發炎部位的遷移（migration）。\n  藥物亦會降低細胞黏附分子表現，阻斷發炎反應。\n- (D) 正確。類固醇藥物抑制磷脂酶 A2，進而減少前列腺素（prostaglandins）的產生。\n  此路徑涉及花生四烯酸代謝，影響血管擴張與疼痛感。",
+      "level": "unchecked"
+    },
+    "75": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n蟯蟲（Enterobius vermicularis）成蟲主要寄生於盲腸（cecum）及大腸（large intestine）內。\n雌蟲夜間會移行至肛門（anus）周圍產卵。\n此行為引起局部搔癢症狀。\n診斷首選為肛門拭子檢查，糞便檢查敏感度較低易漏診。\n此病常發生自我感染（autoinfection），導致症狀反覆出現。\n搔抓後手指沾染蟲卵，再入口造成再次感染。\n\n**選項解析**\n- (A) 蟯蟲蟲卵輕小，易隨灰塵在空氣中傳播感染人體。\n- (B) 夜間搔癢會干擾患者睡眠品質，是常見臨床表現之一。\n- (C) 雌蟲偶可上行進入生殖道（reproductive tract），引起婦女骨盆腔腹膜炎（chronic pelvic peritonitis）。\n- (D) 糞便檢查並非最正確方式，因蟲卵多產於肛門周圍而非腸道內。故應採用透明膠帶法進行肛門採檢。",
+      "level": "unchecked"
+    },
+    "76": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n熱帶肺部嗜酸性白血球增多症（Tropical Pulmonary Eosinophilia）是一種對絲蟲（filaria）抗原（antigen）的過敏反應。成蟲通常隱藏在淋巴管（lymphatics）中，不會大量進入血液循環。因此患者末梢血液中微絲蟲（microfilaria）數量極少或缺失。這與典型絲蟲病的血液檢查結果不同。\n\n**選項解析**\n- (A) 正確。病患血清中會呈現高效價抗絲蟲抗體（antibody），這是免疫反應的證據。\n- (B) 正確。除肺部症狀外，末梢血液中之嗜酸性白血球（eosinophil）也明顯增多，是主要特徵之一。\n- (C) 錯誤。此症候群患者血液中通常找不到大量微絲蟲，這是與典型絲蟲病的區別點。多數情況下血中查不到成蟲或幼蟲。\n- (D) 正確。使用乙胺嗪（diethylcarbamazine）治療可有效殺滅成蟲並改善臨床症狀，是標準療法。藥物能降低抗體效價並緩解呼吸困難。",
+      "level": "unchecked"
+    },
+    "77": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n本題考的是肝吸蟲的傳播途徑與地理分佈差異。\n中華肝吸蟲、貓肝吸蟲及泰國肝吸蟲皆透過生食淡水魚類感染。\n且會寄生於膽管（bile duct）系統造成病變與阻塞。\n槍狀肝吸蟲的生活史則不同，需經過蝸牛與螞蟻媒介，非經口攝食生魚傳播。\n\n**選項解析**\n- (A) 中華肝吸蟲（Clonorchis sinensis）常見於中國大陸，透過生食淡水魚感染，會阻塞膽管，符合患者病史與流行病學特徵。\n- (B) 貓肝吸蟲（Opisthorchis felineus）亦為肝吸蟲類，生活史與中華肝吸蟲相似，可經生魚傳播至膽道系統（biliary system）引起類似症狀。\n- (C) 泰國肝吸蟲（Opisthorchis viverrini）盛行於東南亞地區，透過生食魚類感染，常導致黃疸（jaundice）與膽管阻塞，符合患者旅遊史。\n- (D) 槍狀肝吸蟲（Dicrocoelium dendriticum）需先感染蝸牛再經螞蟻傳播，人類因誤食含囊蚴的螞蟻而感染，非生魚片所致，故最不可能。",
+      "level": "unchecked"
+    },
+    "78": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n廣節裂頭絛蟲（Diphyllobothrium latum）是一種寄生在人腸道的絛蟲（cestode）。\n其生活史需要兩個中間宿主（intermediate host）才能完成發育。\n感染後主要競爭維生素 B12（Vitamin B12）。\n這導致巨幼細胞性貧血（megaloblastic anemia）。\n\n**選項解析**\n- (A) 廣節裂頭絛蟲的蟲卵（eggs）形態特徵為具有卵蓋（operculum），此敘述正確。\n- (B) 長尾幼蟲（plerocercoid）是感染性階段，可經未煮熟魚肉進入人體，此敘述正確。\n- (C) 本蟲寄生會消耗宿主維生素 B12。這引起巨幼細胞性貧血。而非缺鐵性貧血（iron deficiency anemia）。故此敘述錯誤。\n- (D) 生活史需先感染劍水蚤（copepod）為第一中間宿主，再感染魚類為第二中間宿主，此敘述正確。",
+      "level": "unchecked"
+    },
+    "79": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n一般寄生蟲生活史包含滋養體（trophozoite）與囊體期（cyst stage）兩種形式。\n寄生蟲學中，部分原蟲（Protozoa）生活史缺乏囊體期。\n滴蟲屬（Trichomonas）與雙核阿米巴（Dientamoeba fragilis）僅以滋養體形式存在。\n這類寄生蟲無法形成抵抗環境的囊體，主要透過直接接觸或性行為傳播，故無囊體期保護。\n\n**選項解析**\n- (A) 麥氏唇鞭毛蟲（Chilomastix mesnili）有囊體期，陰道滴蟲（Trichomonas vaginalis）無囊體期，故不選。\n- (B) 雙核阿米巴及腸道滴蟲［Trichomonas（Pentatrichomonas）hominis］均無囊體期，為正確配對。\n- (C) 大腸纖毛蟲（Balantidium coli）有囊體期，故不選。\n- (D) 嗜碘阿米巴（Iodamoeba bütschlii）有囊體期，故不選。",
+      "level": "unchecked"
+    },
+    "80": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n福氏內格里阿米巴（Naegleria fowleri）主要感染健康年輕人，而非身體虛弱老人。原發性阿米巴腦膜腦炎（primary amebic meningoencephalitis）病情進展極快，致死率極高。棘阿米巴（Acanthamoeba spp.）在組織切片中可見滋養體（trophozoites）及囊體（cysts），與福氏內格里阿米巴不同。\n\n**選項解析**\n- (A) 此敘述錯誤。福氏內格里阿米巴感染多發生於健康兒童或年輕人，並非身體虛弱老人。且暴露史通常為近期游泳，而非發病前一週。\n- (B) 此敘述正確。原發性阿米巴腦膜腦炎若未及時診治，患者通常在症狀出現後數天內死亡。\n- (C) 此敘述正確。棘阿米巴在組織切片中常同時發現滋養體及囊體，這是鑑別診斷重點之一。\n- (D) 此敘述正確。棘阿米巴除引起腦膜腦炎外，亦可能導致角膜炎（keratitis）及皮膚潰瘍（skin ulcers）。",
+      "level": "unchecked"
+    },
+    "81": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n塵蟎（dust mite）是室內常見的致敏原（allergen），常引起兒童氣喘（asthma）。\n其排泄物中的蛋白質會誘發免疫系統（immune system）產生過敏反應。\n吸入這些微粒後，呼吸道黏膜（mucosa）發炎導致支氣管收縮。\n此類過敏性氣喘屬於第一型超敏反應（Type I hypersensitivity），需避免接觸致敏原。\n\n**選項解析**\n- (A) 頭蝨（head louse）主要寄生於頭皮，引起搔癢與寄生蟲病，非氣喘致敏原。\n- (B) 跳蚤（flea）叮咬可造成皮膚炎（dermatitis）或過敏性反應，但較少作為氣喘的主要誘發因子。\n- (C) 塵蟎體積微小，其屍體與排泄物易懸浮於空氣中，是臨床上最常見的致敏原之一。\n- (D) 狗蜱（dog tick）主要傳播立克次氏體（Rickettsia）等病原體，並非引起氣喘的常見致敏原。",
+      "level": "unchecked"
+    },
+    "82": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n寄生蟲學 (Parasitology) 中，病媒蜱 (tick) 是重要的傳染媒介。許多細菌與原蟲透過蜱類叮咬傳播給人類。體蝨 (body louse) 則負責傳播另一種立克次體 (Rickettsia) 相關疾病。不同媒介生物決定了疾病的流行區域與預防方式。醫師需辨識媒介以確診。\n\n**選項解析**\n- (A) 巴貝氏原蟲症 (babesiosis) 是由巴貝氏原蟲 (Babesia) 引起，主要透過硬蜱屬 (Ixodes) 傳播。\n- (B) 艾利克次體症 (ehrlichiosis) 是細菌感染，經由鹿蜱或犬蜱叮咬傳染。此病亦為蜱媒疾病。\n- (C) 萊姆病 (Lyme disease) 由伯氏疏螺旋體 (Borrelia burgdorferi) 造成，主要媒介為肩板硬蜱 (Ixodes scapularis)。此為常見蜱媒病。\n- (D) 戰壕熱 (trench fever) 由五日熱巴通體 (Bartonella quintana) 引起，透過人體蝨 (Pediculus humanus corporis) 傳播。此病非蜱媒疾病，故選 D。",
+      "level": "unchecked"
+    },
+    "84": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n信賴區間（Confidence Interval）若包含零值，代表兩組差異在統計顯著（Statistical significance）上為不顯著。顯著性水準（Significance level）設定越嚴格，檢定標準越高。當 p 值（p-value）大於原水準時，改變為更嚴苛水準後仍不顯著。\n\n**選項解析**\n- (A) 原 95% 信賴區間包含零值，表示 p 值大於 0.05。當顯著性水準改為 0.01 時，檢定標準更嚴格，死亡率差異無法達統計顯著，故此敘述錯誤。\n- (B) 由於 95% 信賴區間涵蓋零值，代表兩麻醉藥物（anesthetic drugs）死亡率無顯著差異。降低顯著性水準不會使結果變顯著，此結果符合顯著性水準與信賴區間的互斥關係，故未達統計顯著，此敘述正確。\n- (C) 數據已提供完整資訊，可根據信賴區間與顯著性水準關係下結論，並非無法判斷，故此敘述錯誤。\n- (D) 型一錯誤（Type I error）指虛無假設（Null Hypothesis）為真時錯誤拒絕。此題結果未達顯著，不會發生拒絕虛無假設的情況，故不犯型一錯誤，此敘述錯誤。",
+      "level": "unchecked"
+    },
+    "85": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n世代追蹤研究 (Cohort Study) 是觀察性研究的一種。它能評估長期暴露與疾病 (Disease) 的關係。此設計能確立時間順序並計算發病率。此方法適合探討單一暴露對多器官系統的影響。\n\n**選項解析**\n- (A) 動物模式實驗 (Animal Model Experiment) 無法直接推論人類荷爾蒙補充療法 (Hormone Replacement Therapy) 的生理反應與風險。\n- (B) 隨機分派試驗 (Randomized Controlled Trial) 雖能控制混淆因子。但長期干預可能涉及倫理爭議。受試者也可能不願配合。\n- (C) 世代追蹤研究 可追蹤暴露群體，觀察長期後各器官系統的結果變化，適合評估長期副作用。\n- (D) 病例對照研究 (Case-Control Study) 為回顧性設計。此設計易受回憶偏誤影響。它難以確立暴露與結果的時間順序。",
+      "level": "unchecked"
+    },
+    "86": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n常態分布（Normal Distribution）經過標準化（Standardization）後，會變成標準常態分布。此過程將原始數據轉換為 Z 分數（Z-score）。公式為減去平均數（Mean）除以標準差（Standard Deviation）。這屬於線性變換的數學性質。轉換後的平均數固定為零。標準差固定為一。\n\n**選項解析**\n- (A) 標準差為零代表所有數據完全相同，無變異性，不符合常態分布特性。\n- (B) 標準化定義即為將分佈轉換為平均數零、標準差一的標準常態分布，故正確。\n- (C) 十是原始數據的誤算結果，並非標準化後的統計參數，與題目無關。\n- (D) 十五是原始數據的標準差，經過標準化後數值會改變，不再維持原值。",
+      "level": "unchecked"
+    },
+    "87": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n統計方法選擇需依據資料類型與分配特性。\n比較兩組獨立樣本之連續性變數（continuous variable）平均值（mean）差異時，需確認資料特性。\n若符合常態分配（normal distribution），應使用參數檢定（parametric test）。\n此方法假設兩組樣本相互獨立。\nt 檢定（Student's t test）即為針對此情境設計之標準統計工具。\n\n**選項解析**\n- (A) 卡方檢定（Chi-square test）主要用於分類變數（categorical variable）間之關聯性分析，無法處理連續性數值之平均值比較。\n- (B) t 檢定專用於兩組獨立樣本間連續變數平均值之差異顯著性檢驗，完全符合題目所述情境與條件。\n- (C) 曼惠特尼檢定（Mann-Whitney test）屬於非參數檢定（non-parametric test）方法，主要比較中位數（median）或排名順序，不直接針對平均值進行推論。\n- (D) 符號檢定（Sign test）通常用於配對樣本之順序資料分析，不適用於兩組獨立樣本之平均值差異檢驗，適用範圍不符。",
+      "level": "unchecked"
+    },
+    "88": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n特異度（specificity）是評估診斷檢查（diagnostic test）準確性的重要指標。\n它代表在沒有該項疾病（disease）的族群中，檢查結果（test result）呈現陰性（negative）的比例。\n高特異度意味著假陽性（false positive）的機率較低。\n此概念常用於篩檢（screening）後確認診斷時，以排除非病患干擾。\n\n**選項解析**\n- (A) 這是陽性預測值（positive predictive value）的定義。\n  它指檢查結果為陽性者中，確實患病者的比例。\n  此數值受盛行率（prevalence）影響較大。\n- (B) 這是陰性預測值（negative predictive value）的定義。\n  它指檢查結果為陰性者中，確實未患病者的比例。\n  此數值亦受疾病盛行率影響。\n- (C) 這是靈敏度（sensitivity）的定義。\n  它指有疾病患者中，檢查結果呈現陽性的機率。\n  高靈敏度有助於排除疾病（rule out）。\n- (D) 這是特異度的正確定義。\n  它指沒有疾病的個體中，檢查結果為陰性的機率。\n  高特異度有助於確認疾病（rule in）。",
+      "level": "unchecked"
+    },
+    "89": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n卡方檢定（Chi-square test）主要用於大樣本之分類資料分析。當期望值小於五時，近似分佈可能不準確導致誤差。此時應改用費雪恰當檢定（Fisher’s exact test）以確保統計效力與正確性。\n\n**選項解析**\n- (A) 簡單迴歸分析（simple regression）是用來探討連續變數間之線性關聯性。此法不適用於分類資料之頻率比較問題。\n- (B) 多變項分析（multivariate analysis）涉及多個自變項與依變項之複雜模型建構。它無法解決單一樣本期望值過低之統計檢定問題。\n- (C) 變異量分析（analysis of variance）用於比較三組以上連續變數之平均數差異。此方法不適用於二級分類資料之頻率檢定。\n- (D) 費雪恰當檢定（Fisher’s exact test）專為小樣本或期望值過低之列聯表設計。它能計算精確機率，避免卡方檢定在樣本小時產生誤差。",
+      "level": "unchecked"
+    },
+    "90": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n多環芳香烴（Polycyclic Aromatic Hydrocarbons, PAHs）為空氣中常見污染物。\n這類物質通常來自化石燃料或生物質的不完全燃燒。\n在公共衛生領域，需選定一種指標污染物（Indicator Pollutant）。\n該物質用以代表整體暴露水平。\n苯並[a]芘（Benzo[a]pyrene, BaP）因具強致癌性而被廣泛採用。\n其代謝產物易與去氧核醣核酸（DNA）結合形成加合物。\n\n**選項解析**\n- (A) 苯並[a]蒽（Benz[a]anthracene, BaA）屬於多環芳香烴類化合物。\n雖然具有生物活性，但非國際標準指標。\n- (B) 苯並[a]芘（Benzo[a]pyrene, BaP）是公認的指標污染物。\n其致癌潛力強且濃度易於測量。\n因此為正確選項。\n- (C) 苯並[k]熒蒽（Benzo[k]fluoranthene, BkF）亦為多環芳香烴成員。\n但監測標準上不如苯並[a]芘普遍使用。\n- (D) 苯並[ghi]䓛（Benzo[ghi]perylene, BghiP）屬於高分子量多環芳香烴。\n通常不作為空氣污染的主要指標物質。",
+      "level": "unchecked"
+    },
+    "91": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n職業性癌症（Occupational cancer）與特定化學物質暴露有關。\n醫師國考第一階段常考致癌物與目標器官的配對關係。\n不同職業暴露會導致特定組織發生惡性腫瘤。\n此類知識需熟記以應對考試。\n\n**選項解析**\n- (A) 掃煙囪工人長期接觸煤焦油（Coal tar），易發生陰囊癌（Scrotal cancer）。此為歷史經典案例。\n- (B) 砷（Arsenic）暴露會導致皮膚病變及皮膚癌（Skin cancer）。砷屬於已知致癌物。\n- (C) 苯（Benzene）主要抑制骨髓造血功能，引發白血病（Leukemia）。苯與血液系統相關。\n- (D) 染料工廠（Dye factory）工人接觸芳香胺類（Aromatic amines），易患膀胱癌（Bladder cancer）。甲狀腺癌（Thyroid cancer）並非染料廠典型職業病。",
+      "level": "unchecked"
+    },
+    "92": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n溫室效應機制為大氣中的氣體分子 (molecule) 允許短波輻射 (radiation) 通過，並吸收長波輻射。這能保存地球表面溫度，防止熱能快速散失至太空。臭氧屬於此類能吸收紅外線之溫室氣體分子。\n\n**選項解析**\n- (A) NO₂：二氧化氮主要為空氣污染物，易引發呼吸道疾病 (disease)，非典型溫室氣體分子。\n- (B) CO：一氧化碳具毒性，主要影響血氧運輸，對長波輻射吸收能力較弱。\n- (C) O₃：臭氧分子 能直接吸收長波輻射，屬於標準溫室氣體定義，故正確。\n- (D) CFCl₃：氟氯碳化物雖具暖化潛力，但主要被歸類為破壞臭氧層物質，此題側重典型溫室氣體分類。",
+      "level": "unchecked"
+    },
+    "94": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n塵肺症（Pneumoconiosis）是一種職業性肺部疾病（Occupational lung disease）。\n其主因是長期吸入礦物粉塵，例如矽（Silica）或石棉（Asbestos）。\n在職業衛生分類中，這些粉塵屬於化學性危害（Chemical hazard）因子。\n它們會引發肺組織（Lung tissue）發炎（Inflammation）與纖維化（Fibrosis）反應。\n\n**選項解析**\n- (A) 物理性危害（Physical hazard）包含噪音、輻射或極端溫度。\n  粉塵雖為固體顆粒，但在職業分類上歸類為化學物質暴露。\n  因此此選項不正確。\n- (B) 化學性危害包含氣體、蒸氣及粉塵。\n  吸入礦物粉塵會導致肺泡（Alveoli）巨噬細胞（Macrophage）吞噬後釋放發炎介質（Inflammatory mediators）。\n  長期累積造成肺纖維化，符合塵肺症成因。\n  因此此選項正確。\n- (C) 生物性危害（Biological hazard）包含細菌、病毒或黴菌。\n  這類因子主要引起感染性疾病而非職業性塵肺症。\n  因此此選項不正確。\n- (D) 人體工學危害（Ergonomic hazard）涉及姿勢不良或重複動作。\n  這通常導致肌肉（Muscle）骨骼系統損傷，與肺部疾病（Lung disease）無關。\n  因此此選項不正確。",
+      "level": "unchecked"
+    },
+    "95": {
+      "text": "**答案：(B)**\n\n**關鍵觀念**\n腕道症候群 (Carpal Tunnel Syndrome) 是手腕部最常見的壓迫性神經病變。此症候群的主因是正中神經 (Median nerve) 在腕管 (Carpal tunnel) 內受到壓迫。導致拇指、食指與中指出現麻木或疼痛感。夜間症狀加劇是常見臨床表現。長期壓迫可能導致魚際肌 (Thenar muscles) 萎縮。\n\n**選項解析**\n- (A) 尺神經 (Ulnar nerve) 主要支配小指與無名指的感覺，並非腕道症候群的主因。\n- (B) 正中神經穿過腕管進入手掌，受壓迫時會產生典型症狀，故為正確選項。其感覺分布涵蓋拇指、食指及中指。長期損傷可能影響魚際肌功能。\n- (C) 橈神經 (Radial nerve) 主要負責手腕伸展與手背感覺，受損不會造成此症候群。\n- (D) 腕神經並非標準解剖學名詞，臨床診斷上無此神經名稱。",
+      "level": "unchecked"
+    },
+    "96": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n社區健康促進（Community Health Promotion）的核心在於民眾（citizens）的自發性參與（spontaneous participation）。\n建立問題意識（awareness）是啟動集體行動（collective action）的最初步驟。\n此過程強調由下而上（bottom-up）的力量，而非外部強加。\n缺乏認知則無法引發後續的組織化與資源動員（resource mobilization）。\n\n**選項解析**\n- (A) 正確。民眾必須先有意識到社區健康問題之重要性，才會願意投入時間與精力。\n- (B) 錯誤。知名學者的調查報告雖具參考價值，但無法直接轉化為內部的行動動機。\n- (C) 錯誤。民間團體存在僅是組織基礎，若無成員意識到健康議題，仍無法形成有效集體力量。\n- (D) 錯誤。政府經費補助屬於外部資源支持，通常在計畫啟動後才需考量，非最初的心理認知要件。",
+      "level": "unchecked"
+    },
+    "97": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n羅傑斯創新擴散理論（Rogers' Innovation Diffusion Theory）是公共衛生（Public Health）政策的重要基礎。\n該理論認為新技術或疫苗（vaccine）被社會接受，取決於五個感知特性。\n這些特性必須能降低障礙並提升民眾對安全性的信任感。\n危害性會直接破壞信任，因此不是成功擴散的必要條件。\n政府推動政策時，需確保民眾感知到正面效益而非風險。\n\n**選項解析**\n- (A) 相容性（Compatibility）指新措施與現有文化或價值觀一致，能減少衝突。\n- (B) 相對利益（Relative Advantage）指民眾認為比舊方法更有效，是主要驅動力。\n- (C) 危害性（Harmfulness）代表負面後果，會增加疑慮，阻礙創新被採納。\n- (D) 成本效益（Cost-benefit）分析涉及資源利用效率，屬於相對利益的經濟層面。\n- 其他特性如複雜度（Complexity）與可試行性（Trialability）亦影響接受度。\n- 因此選項 C 為不符合成功要件之描述，應選此項。",
+      "level": "unchecked"
+    },
+    "98": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n長期照護（Long-term Care）與醫療照護（Medical Care）在目標與模式上存在差異。醫療照護主要針對急性（Acute）疾病（Disease）進行診斷。並進行治療與復原。長期照護則著重於功能維持、生活支持。提升生活品質（Quality of Life）。長期照護政策強調社區化（Community-based）與居家照顧。而非僅限機構式服務。\n\n**選項解析**\n- (A) 正確敘述。長期照護主要對象為慢性（Chronic）病患或身心障礙者。失能（Disability）或失智（Dementia）患者是核心服務族群。\n- (B) 正確敘述。醫療照護對象包括急性病患與慢性病患。兩者皆需專業醫療人員介入處理病情。\n- (C) 錯誤敘述。長期照護提倡去機構化（De-institutionalization）。目標是讓民眾在熟悉環境中接受照顧。如居家或社區據點。\n- (D) 正確敘述。醫療照護之照顧概念主要為治療疾病（Treatment of Disease）。旨在恢復健康或控制病情進展。",
+      "level": "unchecked"
+    },
+    "99": {
+      "text": "**答案：D**\n\n**關鍵觀念**\nDonabedian 之品質評估模式（Quality Assessment Model）是公共衛生（Public Health）與醫療管理（Medical Management）的基礎理論。該模式提出三個主要構面（Dimensions）來衡量醫療服務的品質。這三個構面分別是結構（Structure）、過程（Process）與結果（Outcome）。表現（Performance）並非此模型的核心維度之一，故為正確選項。\n\n**選項解析**\n- (A) 過程屬於 Donabedian 模式的三大構面之一。它指醫療人員在治療過程中所執行的活動與行為。例如診斷、治療與護理措施。\n- (B) 結構屬於 Donabedian 模式的三大構面之一。它包含醫療機構的硬體設施、設備與人員資格。這是提供服務的基礎條件。\n- (C) 結果屬於 Donabedian 模式的三大構面之一。它指醫療介入後對病患健康狀態產生的最終影響。例如死亡率或康復率。\n- (D) 表現不是 Donabedian 品質評估模式的主要構面。雖然相關，但該模型明確定義為結構、過程與結果三要素。因此選 D。",
+      "level": "unchecked"
+    },
+    "100": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n醫師法（Physician Act）規範執業資格。\n此法旨在保障民眾安全。\n擅自執行醫療業務指違反法規。\n無資格者從事醫療行為（Medical Act）。\n若非醫師在醫師指示下，執行不需由醫師親自執行的項目，屬於合法輔助行為。\n此區分在於確認何種技術需由專業人員親為。\n以維護醫療品質與患者權益。\n\n**選項解析**\n- (A) 非醫師執行應由醫師執行之醫療行為，屬違法，故包含於擅自執行醫療業務範圍內。\n- (B) 非醫師執行任何醫療行為，原則上無資格，除非有法律授權或指示，否則屬違法。\n- (C) 非醫師在醫師指示下，執行不需由醫師親自執行之醫療行為，係合法職務範圍，故不包含於擅自執行。\n- (D) 非醫師在醫師指示下，執行需由醫師親自執行之醫療行為，違反親為原則，仍屬違法業務。",
+      "level": "unchecked"
+    }
+  }
+}

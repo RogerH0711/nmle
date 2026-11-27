@@ -54,6 +54,15 @@ test('詳解：字母換成畫面上的，選項解析照畫面順序排；V(D)J
   assert.equal(relabelExplanation(text, [0, 1, 2, 3]), text)
 })
 
+test('詳解：一項寫成好幾行、項目之間有空行時，整項一起移動', () => {
+  const text = ['- (A) 甲。', '  甲的補充。', '- (B) 乙。', '乙的補充。', '', '- (C) 丙。', '- (D) 丁。', '丁的補充。', '', '結論。'].join('\n')
+  const out = relabelExplanation(text, [2, 0, 3, 1]).split('\n')
+  assert.deepEqual(out, ['- (A) 丙。', '- (B) 甲。', '  甲的補充。', '- (C) 丁。', '丁的補充。', '- (D) 乙。', '乙的補充。', '', '', '結論。'])
+  // 粗體標題結束選項解析
+  const titled = ['- (A) 甲。', '- (B) 乙。', '- (C) 丙。', '- (D) 丁。', '**結論**', '答案是 (B)。'].join('\n')
+  assert.deepEqual(relabelExplanation(titled, [1, 0, 2, 3]).split('\n').slice(4), ['**結論**', '答案是 (A)。'])
+})
+
 // ---------- 實際資料 ----------
 const data = new URL('../../data/', import.meta.url)
 const questions = readdirSync(new URL('questions/', data))

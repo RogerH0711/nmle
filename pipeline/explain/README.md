@@ -97,6 +97,16 @@ $py = ".venv-gpu\Scripts\python.exe"
 & $py pipeline\explain\export_web.py all
 ```
 
+105–109 年（11/27，本機 35B，沒有參考詳解所以不比對）：`all` 用的是 110–115 年的 27B，這幾份要列出考卷 id 並指定模型名稱。名詞判斷沒有 Colab 時用 `judge` 在本機跑（中斷後重跑會接著做）：
+
+```powershell
+$e = "105020_1 105020_2 106020_1 106020_2 106100_1 106100_2 107020_1 107020_2 107100_1 107100_2 108030_1 108030_2 108100_1 108100_2 109020_1 109020_2 109100_1 109100_2".Split()
+& $py pipeline\explain\terms.py scan @e --model qwen3.5:35b-a3b --think
+& $py pipeline\explain\terms.py judge @e --model qwen3.5:35b-a3b --think
+& $py pipeline\explain\terms.py collect --model qwen3.5:35b-a3b --think --results local
+& $py pipeline\explain\export_web.py @e --model qwen3.5:35b-a3b --model-name Qwen3.5-35B-A3B
+```
+
 重新生成（總控的 `5_regen` 到 `7_reterms`，10/22）：衝突和截斷的題目換 seed 再生成一次，結果放在 `out/qwen3.6_27b-fp8-v2-regen-think/`，不會動到原本的。跑完後先看結果，再合併、匯出：
 
 ```powershell

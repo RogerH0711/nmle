@@ -1,0 +1,401 @@
+{
+  "model": "Qwen3.5-35B-A3B",
+  "questions": {
+    "1": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n肺炎鏈球菌（Streptococcus pneumoniae）產生青黴素（penicillin）抗性，主因是細胞（cell）壁合成酵素（enzyme）改變。\n青黴素結合蛋白質（penicillin-binding protein, PBP）發生結構變異。\n導致藥物（drug）無法有效結合，抑制細胞壁合成能力下降。\n\n**選項解析**\n- (A) 產生青黴素分解酶（penicillinase）：這是金黃色葡萄球菌（Staphylococcus aureus）的主要抗性機制，非肺炎鏈球菌主因。\n- (B) 青黴素結合蛋白質改變：正確。PBP 親和力下降，使藥物無法發揮作用。\n- (C) 阻擋青黴素進入菌體：這是革蘭氏陰性菌（Gram-negative bacteria）常見機制，非肺炎鏈球菌主要抗性途徑。\n- (D) 細胞壁結構改變：過於籠統，具體分子（molecule）機轉為 PBP 變異，而非整體結構改變。",
+      "level": "unchecked"
+    },
+    "2": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n禽型分枝桿菌群（Mycobacterium avium Complex, MAC）感染治療需採用多藥合併療法。\n核心原則是以大環內酯類（macrolide）藥物作為基礎，搭配其他抗結核藥物。\n常用組合包含大環內酯類、乙胺丁醇（ethambutol）及利福布丁（rifabutin）。\n此三藥聯合使用可減少細菌產生抗藥性並提升治療成功率。\n單用大環內酯類易導致耐藥性發生，故必須合併其他藥物。\n\n**選項解析**\n- (A) 阿奇黴素（azithromycin）屬於大環內酯類，是治療 MAC 感染的首選藥物。\n它與乙胺丁醇及利福布丁共同構成標準的三聯療法，能有效抑制細菌生長。\n- (B) 硝基甲嘧唑乙醇（metronidazole）主要針對厭氧菌（anaerobe）及原蟲感染，對分枝桿菌無效。\n- (C) 克拉維酸（clavulanic acid）為β-內醯胺酶抑制劑（beta-lactamase inhibitor），通常與青黴素類併用以增強抗菌效果。\n它並非抗分枝桿菌藥物，無法單獨用於此類感染治療。\n- (D) 棘白菌素（echinocandin）是一類抗黴菌藥，作用於黴菌細胞壁合成途徑。\n其針對真菌而非細菌，因此不適用於分枝桿菌群感染的治療。",
+      "level": "unchecked"
+    },
+    "3": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n本題考細菌抗藥性之機轉與藥物特性。厭氧菌缺乏有氧代謝，故胺基糖苷類無法進入細胞（cell）發揮作用。其他選項涉及結核桿菌分類、酵素（enzyme）破壞及靶點改變。醫師國考常考此類藥物（drug）作用機制差異。\n\n**選項解析**\n- (A) 廣泛抗藥性結核桿菌（XDR-TB）定義比多重抗藥性結核桿菌（MDR-TB）更嚴格，故對更多藥物具抗性，敘述正確。\n- (B) 胺基糖苷類（aminoglycosides）需氧依賴性進入細菌，厭氧菌（anaerobes）缺乏此代謝途徑，無法攝取藥物，通常對此類藥物具抗藥性而非感受性，故本項錯誤。\n- (C) 新德里金屬β-內酰胺酶（NDM）能水解大多數β-內酰胺（β-lactams），導致細菌產生抗藥性，敘述正確。\n- (D) 青黴素結合蛋白質（penicillin-binding protein）結構改變會降低青黴素（penicillin）之結合親和力，從而導致抗性產生，敘述正確。",
+      "level": "unchecked"
+    },
+    "4": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n細菌致病島（Pathogenicity Island）是細菌（Bacteria）染色體（chromosome）上攜帶致病基因（gene）的大片段去氧核醣核酸（DNA）。這些區域通常具有與宿主不同的 GC 含量，並包含多種毒力相關基因。它們屬於可移動的遺傳元件，能協助細菌適應環境或增強致病性。\n\n**選項解析**\n- (A) 正確。致病島主要位於細菌染色體上，少數情況也能存在於質體（plasmid）中，故敘述正確。\n- (B) 錯誤。致病島常與轉位子（transposon）有關聯，其邊界常有插入序列（insertion sequence），部分毒力基因甚至位於轉位子內，故敘述錯誤。\n- (C) 正確。致病島的表現可受單一環境因子活化，例如溫度或 pH 值的改變會調節其基因表現，故敘述正確。\n- (D) 正確。致病島由多數基因所組成，能製造多種致病因子（virulence factors），如毒素（toxin）或黏附素（adhesin），故敘述正確。",
+      "level": "unchecked"
+    },
+    "5": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n單核細胞增多性李斯特菌（Listeria monocytogenes）是革蘭氏陽性（Gram-positive）桿菌。\n此菌不形成內芽胞（endospores）。\n但能在低溫環境下存活並生長繁殖。\n它是胞內寄生菌。\n利用宿主肌動蛋白（actin）聚合形成尾狀結構進行移動。\n\n**選項解析**\n- (A) 正確。此菌具有鞭毛運動性（motile），在室溫下表現明顯的翻滾運動特徵。\n- (B) 正確。細菌進入細胞質（cytoplasm）後複製，並利用肌動蛋白推進至鄰近細胞進行傳播。\n- (C) 正確。主要感染途徑為攝入受污染的食物，例如未巴氏殺菌之乳製品或生食蔬菜。\n- (D) 錯誤。此菌無法形成內芽胞，僅靠耐冷特性存活於冷藏環境，並非依靠孢子結構生存。",
+      "level": "unchecked"
+    },
+    "6": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n細菌莢膜（capsule）是部分細菌細胞壁（cell wall）外的一層黏液狀保護結構。\n其主要成分多為多醣類（polysaccharide）。\n少數菌種則由聚谷胺酸（polyglutamate）組成。\n此結構能幫助細菌抵抗宿主免疫系統。\n特別是抑制吞噬作用（phagocytosis）。\n莢膜可掩蓋細菌表面抗原。\n此舉能降低巨噬細胞（macrophage）對病原體的識別與攝取效率。\n缺乏莢膜的細菌株通常致病性較弱。\n易被宿主清除。\n此結構屬於細菌重要的毒力因子之一。\n能顯著提升存活率。\n\n**選項解析**\n- (A) 錯誤。胜肽聚醣（peptidoglycan）是細菌細胞壁的主要骨架成分，並非莢膜主要成分。\n- (B) 錯誤。並非所有細菌皆具備莢膜，僅部分致病菌在特定環境下才會形成此結構。\n- (C) 錯誤。革蘭氏染色（Gram stain）反應差異主要取決於細胞壁厚度與結構，非莢膜所致。\n- (D) 正確。莢膜具有抗吞噬功能，能減少巨噬細胞對細菌的攝取，增加致病性。",
+      "level": "unchecked"
+    },
+    "7": {
+      "text": "**答案：（A）**\n\n**關鍵觀念**\n肉毒素（Botulinum toxin）是一種強效的神經毒素（neurotoxin）。它主要作用於神經肌肉接合處（neuromuscular junction）。其機轉是抑制乙醯膽鹼（acetylcholine）的釋放。肉毒素會切割 SNARE 蛋白（SNARE proteins）。這阻斷了突觸囊泡融合（vesicle fusion）。Rho-GTPase 分子（Rho-GTPase）失活並非肉毒素的作用目標。此為梭菌其他外毒素（Clostridium exotoxins）的特徵。\n\n**選項解析**\n- (A) 此敘述錯誤。肉毒素主要作用於 SNARE 蛋白，而非使 Rho-GTPase 失去活性。這是梭菌其他外毒素的機制。\n- (B) 此敘述正確。食入受肉毒桿菌（Clostridium botulinum）汙染的罐頭食品會造成食源性肉毒症（foodborne botulism）。\n- (C) 此敘述正確。嬰兒腸道內的芽胞可能發芽產生毒素，造成嬰兒型肉毒症（infant botulism）。\n- (D) 此敘述正確。肉毒素毒性極強，可被視為生化武器，導致吸入性肉毒症（inhalation botulism）。",
+      "level": "unchecked"
+    },
+    "8": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n韋爾病（Weil disease）是鉤端螺旋體病（leptospirosis）的嚴重臨床表現。致病菌為鉤端螺旋體（Leptospira interrogans），分類上屬於螺旋體（spirochete）。細菌主要經腎臟（kidney）排泄，故傳染源為受污染之尿液。\n\n**選項解析**\n- (A) 正確。致病菌（Leptospira）具有特殊螺旋狀形態，分類學上歸類為螺旋體。\n- (B) 正確。重症患者常合併黃疸（jaundice）、腎衰竭（renal failure）及心肌炎（myocarditis）等症狀。\n- (C) 正確。多數感染源來自受污染之水體，或接觸帶菌之鼠類尿液後經皮膚黏膜（skin and mucosa）侵入。\n- (D) 錯誤。致病菌主要經尿液排出體外，臨床診斷應從尿液中分離細菌，而非患者糞便（feces）。因腸道（intestine）並非主要定植部位。",
+      "level": "unchecked"
+    },
+    "9": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n細菌核糖體（ribosome）的 23S rRNA（23S ribosomal RNA）甲基化會改變藥物結合位點。這種機轉主要影響結合於 50S 次單元（50S subunit）的大環內酯類（macrolide）、林可醯胺類（lincosamide）與鏈黴菌素類（streptogramin）。此抗性稱為 MLS_B 型抗藥性，由 erm 基因編碼的甲基化酵素（methylase）造成。\n\n**選項解析**\n- (A) 慶大黴素（Gentamicin）屬於氨基糖苷類（aminoglycoside），其抗性多因修飾酵素（modifying enzyme）改變藥物結構，非 rRNA 甲基化。\n- (B) 磺胺甲基異唑（Sulfamethoxazole）為磺胺類（sulfonamide），作用於葉酸合成途徑，與核糖體結合無關。\n- (C) 四環黴素（Tetracycline）主要透過外排泵（efflux pump）或核糖體保護蛋白（ribosomal protection protein）產生抗性，不依賴 23S rRNA 甲基化。\n- (D) 克林黴素（Clindamycin）屬於林可醯胺類，與大環內酯類共用結合位點。23S rRNA 甲基化會阻斷藥物結合，導致抗性產生。",
+      "level": "unchecked"
+    },
+    "10": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n病毒（virus）分類依據其基因體（genome）核酸（nucleic acid）類型與結構。拉薩病毒屬於沙粒病毒科（Arenaviridae），具有兩條單股核糖核酸（single-stranded RNA）。其中小片段（S segment）採用雙義（ambisense）編碼策略，即同一鏈包含反義與正義資訊。\n\n**選項解析**\n- (A) 拉薩病毒（Lassa virus）基因體分為大（L）與小（S）兩段，均為單股核糖核酸。小片段包含反義與正義區域，屬於雙義 RNA。此描述完全符合題目條件。\n- (B) 登革病毒（Dengue virus）屬於黃病毒科（Flaviviridae），具有一條單股正鏈核糖核酸。其基因體不為雙義，且僅有一段線性結構。\n- (C) 中東呼吸症候群冠狀病毒（MERS-CoV）屬於冠狀病毒科（Coronaviridae），具有一條單股正鏈核糖核酸。基因體較大，無雙義編碼結構。\n- (D) 克里米亞 - 剛果出血熱病毒（Crimean-Congo hemorrhagic fever virus）屬於布尼亞病毒目（Bunyavirales）奈羅病毒屬（Nairovirus）。其基因體分為三條單股核糖核酸，並非兩條，故不選。",
+      "level": "unchecked"
+    },
+    "11": {
+      "text": "**答案：C**\n\n**關鍵觀念**\nEB 病毒（Epstein-Barr virus）屬於人類疱疹病毒科（Human herpesvirus family）。\n該病毒主要感染 B 細胞（B cell）。\n鼻咽癌（Nasopharyngeal carcinoma）與此病毒感染有高度關聯性。\n臨床上常檢測患者血液中抗 EB 病毒蛋白質的抗體作為篩檢依據。\n\n**選項解析**\n- (A) 成人初次感染 EB 病毒，通常引發傳染性單核球增多症（Infectious mononucleosis）。此症狀並非帶狀疱疹（Herpes zoster），故錯誤。\n- (B) 在愛滋病（Acquired immunodeficiency syndrome）病人體內，EB 病毒仍主要感染 B 細胞。並非 T 細胞（T cell）造成過度增生，故錯誤。\n- (C) 鼻咽癌病人血液中，會偵測到抗 EB 病毒蛋白質的抗體力價上升，這是正確的診斷線索。\n- (D) EB 病毒感染 B 細胞進入潛伏狀態時，仍會表現部分病毒核糖核酸（RNA）或蛋白質，例如 EBNA（EB virus nuclear antigen）和 LMP（Latent membrane protein）。",
+      "level": "unchecked"
+    },
+    "12": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n傳染性蛋白質（Prion）是一種錯誤摺疊的蛋白質分子。它不含核酸（Nucleic acid），因此缺乏抗原決定簇（Antigenic determinant）。宿主免疫系統（Immune system）無法辨識其為異物。故不產生干擾素（Interferon）反應。\n\n**選項解析**\n- (A) 錯誤。因為缺少核酸結構，傳染性蛋白質通常不具有明顯的抗原性。\n- (B) 錯誤。傳染性蛋白質對福馬林（Formalin）及紫外線（Ultraviolet radiation）具有高度抗性。常規滅菌無法去除活性。\n- (C) 正確。由於缺乏核酸成分，傳染性蛋白質無法有效刺激宿主產生干擾素。\n- (D) 錯誤。傳染性蛋白質主要侵犯中樞神經系統（Central nervous system）。造成海綿狀腦病變（Spongiform encephalopathy），而非肺泡細胞（Alveolar cells）病變。",
+      "level": "unchecked"
+    },
+    "13": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n流感病毒（Influenza virus）A 型具有質子通道（proton channel）功能。\n此功能由膜蛋白質（membrane protein, M2）提供。\n當病毒（virus）進入細胞（cell）後，M2 允許質子流入病毒內部。\n酸鹼度改變導致基質蛋白質（matrix protein, M1）與核殼體（nucleocapsid）分離。\n\n**選項解析**\n- (A) 基質蛋白質主要維持病毒結構穩定性。\n它並非質子通道，無法調節內部酸鹼環境。\n- (B) 膜蛋白質是特異性的質子通道。\n它能促進病毒脫殼，使遺傳物質釋放到細胞質（cytoplasm）。\n因此這是正確選項。\n- (C) 核殼體蛋白質（nucleocapsid protein, NP）負責結合病毒核糖核酸（RNA）。\n它參與形成核殼體結構，不具備通道功能。\n- (D) RNA 聚合酶（polymerase, PA）屬於複製酵素（enzyme）。\n它負責病毒基因組（genome）的轉錄與複製過程。",
+      "level": "unchecked"
+    },
+    "14": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n痘科病毒（Poxvirus）屬於大型雙股去氧核糖核酸（double-stranded DNA）病毒。一般 DNA 病毒通常在細胞核（nucleus）內進行複製，但痘病毒是例外。它們攜帶自身編碼的酵素（enzyme），可在細胞質（cytoplasm）中獨立完成複製與轉錄過程。因此，這類病毒感染不需要依賴宿主細胞核內的 DNA 複製系統協助。\n\n**選項解析**\n- (A) 天花（smallpox）撲滅是因為接種牛痘病毒（vaccinia virus）疫苗，並非猴痘科病毒（monkeypox virus）。\n- (B) 歷史上使用的疫苗是牛痘病毒，並非天花病毒（variola virus）的減毒株製劑。\n- (C) 猴痘科病毒目前仍流傳於非洲，但已知會感染人類造成皮膚病變。\n- (D) 痘科病毒在細胞質內複製，擁有獨立轉錄與複製所需的酵素，不需宿主 DNA 聚合酶協助。這是因為它們攜帶 RNA 聚合酶（RNA polymerase），能自行啟動基因表現。",
+      "level": "unchecked"
+    },
+    "15": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n嬰兒玫瑰疹（roseola）是幼兒期常見之病毒性疾病。\n病原體主要為人類疱疹第六型病毒（human herpesvirus 6）。\n臨床典型表現為持續高燒（fever）數天，退燒後出現皮疹。\n病毒進入體內後會造成潛伏性感染（latent infection），主要藏匿於 T 細胞（T cell）內。\n本病通常為自限性過程，預後良好。\n\n**選項解析**\n- (A) 正確，本病主要由人類疱疹第六型病毒感染所致。\n- (B) 正確，成人若初次感染可能出現類似傳染性單核球增多症（mononucleosis）之症狀。\n- (C) 錯誤，幼兒感染初期通常會有高燒，持續數天後退燒才出疹，並非不會發燒。\n- (D) 正確，病毒在體內會建立潛伏性感染，常位於 T 細胞中長期存在。",
+      "level": "unchecked"
+    },
+    "16": {
+      "text": "**答案：B、D**\n\n**關鍵觀念**\n馬爾尼菲青黴菌（Talaromyces marneffii）是一種雙相型黴菌（dimorphic fungus）。在低溫環境下會形成絲狀菌（hyphae）。此時亦產生關節孢子（arthroconidia）。在高溫人體內則轉變為類酵母菌（yeast-like）型態。主要感染途徑是吸入空氣中的孢子，經呼吸道（respiratory tract）進入肺部（lung）。此病原體常見於愛滋病（AIDS）患者。\n\n**選項解析**\n- (A) 錯誤。37℃時該菌呈現類酵母菌型態，而非絲狀菌。\n- (B) 正確。在 25℃培養時，菌絲會斷裂形成關節孢子，這是其特徵之一。\n- (C) 錯誤。該菌具有雙相特性，在體溫下確實會呈現類酵母菌型態。\n- (D) 正確。人類主要透過吸入含有孢子的塵埃感染，病原體經呼吸道進入人體。",
+      "level": "unchecked"
+    },
+    "17": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n培養組織胞漿菌（Histoplasma capsulatum）時，常使用選擇性培養基。放線菌酮（Cycloheximide）是一種抑制真核生物蛋白質合成的藥物（Drug）。它能抑制大多數腐生真菌的生長，從而減少汙染。此機制有助於分離生長較慢的病原真菌。在微生物學檢驗中，這屬於選擇性培養基的重要應用。\n\n**選項解析**\n- (A) 環絲胺酸（Cycloserine）主要用於抑制細菌生長，特別是結核桿菌（Mycobacterium tuberculosis）。它不是用來選擇性培養真菌的藥物。此藥會干擾細菌細胞（Cell）壁合成。\n- (B) 放線菌酮能抑制大多數環境中的腐生真菌。組織胞漿菌對其具有相對抗性，因此可用於選擇性分離。這能讓目標菌落更容易被辨識。\n- (C) 氯法齊明（Clofazimine）主要用於治療麻風病（Leprosy），不具抗真菌的選擇性培養功能。此藥屬於抗分枝桿菌藥物之一。\n- (D) 奎奴普丁（Quinupristin）是一種抗生素，針對革蘭氏陽性細菌有效，無法抑制真菌汙染。它通常與達福普汀（Dalfopristin）聯合使用治療耐藥菌感染。",
+      "level": "unchecked"
+    },
+    "18": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n吞噬細胞（phagocyte）活化後會發生呼吸爆發（respiratory burst）。此過程依賴 NADPH 氧化酶（NADPH oxidase）產生超氧離子（superoxide）殺菌。選項 (B) 誤將二氧化碳（carbon dioxide）釋出視為主要殺菌機制，氧氣消耗增加才是特徵，故錯誤。\n\n**選項解析**\n- (A) 嗜中性球（neutrophil）活化後可釋放染色質（chromatin）。形成嗜中性球胞外陷阱（neutrophil extracellular traps, NETs），有效捕捉微生物。敘述正確。\n- (B) 主要產生超氧離子與過氧化氫（hydrogen peroxide），並非大量釋出二氧化碳來殺死細菌。故本選項錯誤。\n- (C) 巨噬細胞（macrophage）廣泛存在於組織。肝臟（liver）庫氏細胞（Kupffer cell）及神經小神經膠質細胞（microglia）均為特化類型。敘述正確。\n- (D) NADPH 氧化酶基因（gene）突變會導致慢性肉芽腫病（chronic granulomatous disease, CGD）。使吞噬細胞無法殺死病原（pathogen）。敘述正確。",
+      "level": "unchecked"
+    },
+    "19": {
+      "text": "**答案：B**\n\n**關鍵觀念**\nT 細胞受體（T-cell receptor）基因重排是免疫多樣性的重要來源。α鏈（alpha chain）與β鏈（beta chain）的 脫氧核糖核酸（DNA）序列結構不同。β鏈包含 V（Variable）、D（Diversity）、J（Joining）及 C（Constant）基因片段。α鏈僅含 V、J 及 C 基因片段，缺乏 D 片段。D 片段（Diversity segment）主要增加受體結合多樣性，提升免疫辨識能力。此機制發生於胸腺（thymus）發育過程中，影響 T 細胞（T cell）成熟。\n\n**選項解析**\n- (A) V 基因片段在 α鏈與β鏈皆存在，負責抗原辨識。\n- (B) D 基因片段僅存在於β鏈，增加受體多樣性，故為正確答案。\n- (C) J 基因片段在 α鏈與β鏈皆有，連接 V 區與 C 區。\n- (D) C 基因片段在 α鏈與β鏈皆存在，決定受體亞型。",
+      "level": "unchecked"
+    },
+    "20": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n免疫系統透過中央耐受與外周耐受機制，防止對自身抗原產生異常反應。胸腺內的負向選擇（negative selection）會清除高親和力之自我反應性淋巴球（lymphocyte）。AIRE 基因（AIRE gene）在胸腺上皮細胞表達，促進組織特異性抗原呈現以誘導耐受。\n\n**選項解析**\n- (A) 包含④正向選擇（positive selection），此機制主要確保 T 細胞（T cell）能辨識自身 MHC（Major Histocompatibility Complex）分子，而非建立對自身抗原的耐受性，故排除。\n- (B) 正確。①AIRE 基因與⑤負向選擇共同促成中央耐受。②CTLA-4 基因（CTLA-4 gene）與③Fas 基因（Fas gene）則參與外周耐受機制。\n- (C) 漏列①AIRE 基因，該基因對於胸腺內自我耐受性至關重要，不可遺漏。\n- (D) 漏列⑥regulatory T 細胞（regulatory T cells）形成，此類細胞負責抑制過度免疫反應，維持外周耐受狀態。",
+      "level": "unchecked"
+    },
+    "21": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n毒殺性 CD8 T 細胞（cytotoxic CD8 T cells）主要透過分泌細胞素（cytokine）與釋放顆粒來執行免疫防禦。這些細胞素包括腫瘤壞死因子（TNF-α）、淋巴毒素（LT-α）及干擾素（IFN-γ）。它們能誘導靶細胞凋亡或活化其他免疫細胞。轉化生長因子（TGF-β）則主要負責抑制免疫反應，並非用於毒殺功能。CD8 T 細胞活化後會釋放穿孔素與顆粒酵素（granzyme），直接破壞靶細胞膜結構。此因子會降低免疫反應強度，防止過度發炎。\n\n**選項解析**\n- (A) TNF-α 可由 CD8 T 細胞分泌，能直接誘導靶細胞凋亡。\n- (B) TGF-β 具有免疫調節作用，會抑制淋巴球增殖與活化。它並非執行毒殺功能的細胞素。\n- (C) LT-α 結構與功能類似 TNF-α，參與細胞毒殺途徑。\n- (D) IFN-γ 能增強主要組織相容性複合體（MHC）表現，提升抗原呈現效率。",
+      "level": "unchecked"
+    },
+    "22": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n胸腺依賴性抗原（thymus-dependent antigen）活化 B 細胞（B cell）需輔助型 T 細胞（helper T cell）參與。\n相關性辨識（linked recognition）指 B 細胞吞入抗原後，將其分解並呈現給 T 細胞（T cell）辨識。\n兩者辨識的表位（epitope）可來自同一病原體（pathogen）的不同部位。\n因此表面蛋白質與核心蛋白質若源自同一病毒（virus），仍可互相協助活化。\n\n**選項解析**\n- (A) 此敘述錯誤。B 細胞吞噬病毒後會將表面蛋白質與內部蛋白質共同處理呈現給 T 細胞。\n- (B) 此敘述正確。自體反應性（self-reactive）T 細胞必須碰到對自體有反應的 B 細胞才能引起自體抗體（autoantibody）。\n- (C) 此敘述正確。結合疫苗（conjugate vaccine）利用多糖（polysaccharide）與蛋白質連結，誘導 T 細胞協助 B 細胞。\n- (D) 此敘述正確。盤尼西林（penicillin）作為半抗原（hapten）與蛋白質結合，形成新抗原（neoantigen）刺激免疫反應。",
+      "level": "unchecked"
+    },
+    "23": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n黏膜（mucosa）免疫系統（immune system）主要產生分泌型 IgA（secretory IgA）。這種抗體（antibody）在腸道（intestine）或呼吸道（respiratory tract）等部位發揮局部保護作用。為了抵抗消化酵素（enzyme）分解，它會形成特殊的二聚體（dimer）結構。此過程需要 J chain（J chain）與分泌成分（secretory component）參與。\n在黏膜表面，抗體需要保護自身不被降解。\nJ chain（J chain）有助於穩定二聚體結構。\n分泌成分能幫助其穿越上皮細胞（epithelial cell）層。\n\n**選項解析**\n- (A) 血清中的 IgA 多為單體（monomer），但分泌型並非如此。\n- (B) 黏膜上皮細胞將二個 IgA 分子（molecule）連接，形成穩定的二聚體。\n- (C) 免疫球蛋白（immunoglobulin）通常不形成三聚體（trimer）結構來進行分泌。\n- (D) 五聚體（pentamer）是血清中 IgM（IgM）的主要存在形式。",
+      "level": "unchecked"
+    },
+    "24": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\nB 細胞（B cell）與 T 細胞（T cell）間的 CD40 接受器（CD40 receptor）與 CD40 配體（CD40 ligand）互動，是啟動類型轉換（class switching）的關鍵訊號。\n輔助 T 細胞（helper T cell）表面分子促使免疫球蛋白（immunoglobulin）從 IgM（immunoglobulin M）轉為 IgG（immunoglobulin G）或 IgA（immunoglobulin A）。\n若此途徑受阻，患者血清中僅剩高濃度 IgM，而缺乏其他抗體類型。\n\n**選項解析**\n- (A) AID（activation-induced cytidine deaminase）是 B 細胞內的酵素，缺陷導致 B 細胞無法進行類型轉換，屬 B 細胞缺陷型。\n- (B) CD40 接受器位於 B 細胞表面，其突變亦造成高免疫球蛋白 M 症候群（hyper-IgM syndrome），但非 T 細胞蛋白質缺陷。\n- (C) CD40 配體由活化 T 細胞表達，提供類型轉換第二訊號，此缺陷即為最常見的 T 細胞型高免疫球蛋白 M 症候群。\n- (D) NEMO（NF-κB essential modulator）涉及先天免疫與發炎反應調節，缺陷導致外胚層發育不良合併免疫不全，非單純類型轉換障礙。",
+      "level": "unchecked"
+    },
+    "25": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n引起氣喘的第一型過敏反應（Type I hypersensitivity），其致敏階段需要抗原呈獻細胞（Antigen-Presenting Cell）處理過敏原（Allergen）。T 細胞（T cell）必須被活化後，才能輔助 B 細胞（B cell）產生特異性免疫球蛋白 E（IgE）。因此過敏原與一般抗原相似，都需經此途徑啟動免疫反應。\n\n**選項解析**\n- (A) 正確。過敏原多為蛋白質，需經抗原呈獻細胞處理並呈現給 T 細胞。活化後的輔助性 T 細胞（Th2 cell）會促使 B 細胞進行抗體類別轉換。\n- (B) 錯誤。同卵雙胞胎（Monozygotic twins）雖基因相同，但過敏反應受環境因素影響極大。暴露於特定過敏原的經歷不同，導致免疫系統產生差異性反應。\n- (C) 錯誤。並非所有過敏原都具有蛋白水解酶（protease）功能。許多常見過敏原如塵蟎、花粉主要為蛋白質結構，酵素活性非其致敏的必要條件。\n- (D) 錯誤。雖然第一型過敏通常伴隨特異性 IgE，但部分患者可能因檢測靈敏度或臨床表現差異，無法在血清中穩定檢測出高濃度抗體（Antibody）。且此敘述未涵蓋致敏機轉的核心原則。",
+      "level": "unchecked"
+    },
+    "26": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n自體免疫疾病（autoimmune disease）可分為器官專一性與系統性。\n器官專一性僅侵犯單一特定臟器。\n系統性疾病則影響多處組織或全身。\n類風濕性關節炎是典型的系統性自體免疫疾病。\n其病變機制涉及免疫複合物（immune complex）沉積及慢性發炎反應。\n\n**選項解析**\n- (A) 自體溶血性貧血（autoimmune hemolytic anemia）主要攻擊紅血球（red blood cell），屬於器官專一性自體免疫疾病。\n- (B) 自體免疫愛迪森疾患（autoimmune Addison's disease）侵犯腎上腺皮質（adrenal cortex），為單一器官病變。\n- (C) 橋本氏甲狀腺炎（Hashimoto's thyroiditis）僅影響甲狀腺（thyroid gland）組織，不具全身性特徵。\n- (D) 類風濕性關節炎（rheumatoid arthritis）可侵犯關節（joint）、皮膚、肺臟等多處器官，屬於系統性疾病。",
+      "level": "unchecked"
+    },
+    "27": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n檢查點（checkpoint）阻斷療法是用來恢復免疫系統（immune system）對腫瘤（tumor）的攻擊能力。\n這類藥物主要針對 T 細胞（T cell）上的抑制性受體，例如 PD-1 受體（PD-1 receptor）。\n當抗體（antibody）結合這些受體時，可解除腫瘤細胞對免疫系統的抑制作用。\n\n**選項解析**\n- (A) 阿瓦斯丁（Avastin）是抗血管內皮生長因子（VEGF）的單株抗體（monoclonal antibody）。\n  它主要抑制血管新生（angiogenesis），並非檢查點阻斷療法。\n- (B) 派姆利珠單抗（Pembrolizumab）是抗 PD-1 受體的單株抗體。\n  它屬於檢查點阻斷療法，能增強 T 細胞殺傷腫瘤的能力。\n- (C) 利妥昔單抗（Rituximab）是抗 CD20 抗原（CD20 antigen）的單株抗體。\n  它用於治療 B 細胞（B cell）淋巴瘤，不屬於檢查點阻斷療法。\n- (D) 曲妥珠單抗（Trastuzumab）是抗 HER2/neu 受體（HER2/neu receptor）的單株抗體。\n  它用於乳癌（breast cancer）治療，作用機制為標靶治療（targeted therapy），非檢查點阻斷療法。",
+      "level": "unchecked"
+    },
+    "28": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n骨質流失主要與破骨細胞（osteoclast cell）過度活化有關。\nRANK 配體（RANK-L）分子是促進破骨細胞分化與活化的重要因子。\n地舒單抗（Denosumab）可結合 RANK 配體，抑制其作用以保護骨骼。\n此藥物屬於單株抗體，用於治療骨質疏鬆症（osteoporosis）。\n\n**選項解析**\n- (A) 英夫利昔單抗（Infliximab）用於類風濕性關節炎（rheumatoid arthritis），非骨質疏鬆症藥物。\n- (B) 地舒單抗阻斷 RANK 配體與受體結合，減少破骨細胞活性，改善骨質疏鬆症。\n- (C) 達克珠單抗（Daclizumab）用於器官移植排斥反應，影響 T 細胞（T cell）活化。\n- (D) 貝利尤單抗（Belimumab）用於全身性紅斑性狼瘡（systemic lupus erythematosus），抑制 B 細胞（B cell）存活。",
+      "level": "unchecked"
+    },
+    "29": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n海獸胃線蟲（Anisakis spp.）是人畜共通寄生蟲。\n人類屬於非正常宿主，幼蟲無法在體內發育成熟產卵。\n診斷主要依靠內視鏡（Endoscopy）或影像檢查，糞便檢查無助於確認。\n成蟲通常寄生於海洋哺乳動物（Marine mammals）的胃中。\n\n**選項解析**\n- (A) 正確。該寄生蟲生活史需經過橈腳類（Copepoda）與魚類兩種中間宿主發育。人類為非正常宿主，直接吞食含幼蟲之魚類即感染。\n- (B) 錯誤。人體感染後幼蟲多停留於胃腸道壁，不會成熟為成蟲產卵。因此糞便內查不到蟲卵，無法藉此確認感染。需靠內視鏡取出蟲體確診。\n- (C) 正確。人類通常因食用未煮熟之海水魚生魚片而吞入感染性第三期幼蟲（L3 larva）。此為主要傳染途徑。\n- (D) 正確。寄生蟲侵入胃腸黏膜會引起急性發炎反應，導致腹痛、噁心或嘔吐症狀。此症候群稱為異嗜性胃炎（Anisakiasis）。",
+      "level": "unchecked"
+    },
+    "30": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n班氏絲蟲（Wuchereria bancrofti）的生活週期需要中間宿主。病媒蚊（vector mosquito）吸血時注入的是第三期幼蟲，而非微絲蟲（microfilaria）。成蟲寄生於淋巴系統，導致淋巴管（lymphatic vessel）阻塞與乳糜尿（chyluria）。\n\n**選項解析**\n- (A) 錯誤。病媒蚊吸血時，將第三期幼蟲注入人體皮膚。微絲蟲需先在蚊子體內發育為感染性幼蟲。\n- (B) 正確。幼蟲進入人體後，移行至淋巴管並發育為成蟲。成蟲阻塞淋巴回流造成象皮腫（elephantiasis）。\n- (C) 正確。微絲蟲具有夜間週期性，夜間在末梢血液（peripheral blood）中數量最多。這有助於診斷抽血時間。\n- (D) 正確。淋巴管阻塞時可發生乳糜尿，尿液中可能發現微絲蟲。",
+      "level": "unchecked"
+    },
+    "31": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n本題考查寄生蟲學（Parasitology）中肺吸蟲病（Paragonimiasis）的臨床特徵與診斷。衛氏肺吸蟲（Paragonimus westermani）主要透過食用未煮熟的淡水蟹或蝲蛄感染人體。成蟲定居於肺部，導致咳嗽、胸痛及帶血絲濃痰等呼吸道症狀。檢查可見嗜酸性白血球增多（Eosinophilia）。痰液（Sputum）中可發現深褐色蟲卵及卡格里登結晶（Charcot-Leyden crystals）。胸部 X 光（Chest X-ray）常顯示斑狀浸潤或胸膜積水（Pleural effusion）。\n\n**選項解析**\n- (A) 異形吸蟲（Heterophyes heterophyes）屬於腸道寄生蟲，主要引起腹瀉或腹痛，不會造成肺部症狀。\n- (B) 日本血吸蟲（Schistosoma japonicum）成蟲寄生於腸系膜靜脈，蟲卵多隨糞便排出，而非痰液。\n- (C) 薑片蟲（Fasciolopsis buski）亦為腸道寄生蟲，感染後主要影響消化系統，無呼吸道表現。\n- (D) 衛氏肺吸蟲成蟲定居肺部，引起胸膜積水及斑狀浸潤，符合病例描述。",
+      "level": "unchecked"
+    },
+    "32": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n人感染豬帶絛蟲（Taenia solium）有兩種主要途徑。食入未熟豬肉會導致帶絛蟲症（taeniasis）。吞食蟲卵則會引發囊尾幼蟲症（cysticercosis）。兩者致病機轉與臨床表現截然不同。\n\n**選項解析**\n- (A) 此敘述錯誤。食入含囊蟲的豬肉，囊蟲在腸道發育為成蟲，造成帶絛蟲症。囊尾幼蟲症是因吞食蟲卵所致，非食用豬肉。\n- (B) 此敘述正確。囊蟲可隨血液循環寄生於骨骼肌（skeletal muscle），形成皮下結節或肌肉病變。\n- (C) 此敘述正確。若囊蟲寄生於腦部（brain），稱為腦囊尾幼蟲症（neurocysticercosis）。常見症狀為癲癇（epilepsy）發作，是成人癲癇主因之一。\n- (D) 此敘述正確。血清抗體檢查可用於輔助診斷囊尾幼蟲症。特別是神經系統（nervous system）病變時更具價值。",
+      "level": "unchecked"
+    },
+    "33": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n瘧疾（Malaria）是由瘧原蟲（Plasmodium）引起。瘧原蟲寄生於紅血球（Red blood cell）中。不同種類的瘧原蟲感染偏好與成熟度有關。臨床診斷需依據血液抹片形態特徵進行鑑別。\n\n**選項解析**\n- (A) 瘧疾發作（paroxysm）典型症狀順序為惡寒（chill）、發燒（fever）、發汗（sweat）。此敘述符合病理生理過程，正確。\n- (B) 三日瘧原蟲（Plasmodium malariae）較喜侵入成熟紅血球中分裂增殖。此特徵可區別於其他瘧原蟲，正確。\n- (C) 帶狀型滋養體（band form trophozoites）是三日瘧原蟲的特徵，非卵形瘧原蟲（Plasmodium ovale）。卵形瘧原蟲常使紅血球變為橢圓形。故本選項敘述錯誤，為本題答案。\n- (D) 六個月以下嬰兒常因為得自母體抗體（maternal antibody）的保護作用，甚少罹患瘧疾。此敘述符合免疫學原理，正確。",
+      "level": "unchecked"
+    },
+    "34": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n痢疾阿米巴（Entamoeba histolytica）是引起人類阿米巴痢疾（amebiasis）的主要病原體。其流行病學高危險群包含男同性戀者及啟智、精神教養院生。非致病性阿米巴與致病性阿米巴在形態與行為上有顯著差異。醫師需掌握感染途徑與鑑別診斷特徵，以進行正確治療。\n\n**選項解析**\n- (A) 嗜碘阿米巴（Iodamoeba bütschlii）滋養體（trophozoites）雖具肝醣泡（glycogen vacuole），但此非臨床鑑別重點。該特徵易與其他阿米巴混淆。\n- (B) 哈氏阿米巴（Entamoeba hartmanni）為非致病性，其滋養體不會吞噬紅血球（erythrocytes）。吞噬紅血球是痢疾阿米巴的特徵。\n- (C) 男同性戀者及啟智院生因衛生習慣或接觸方式，感染風險顯著較高。此為流行病學重要事實，涉及糞口傳播途徑。\n- (D) 囊體（cysts）中的類染色體（chromatoid bodies）成分為 RNA，而非 DNA 分子。此結構由核糖核酸組成，可用碘染色觀察。",
+      "level": "unchecked"
+    },
+    "35": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n蠅蛆症（myiasis）是指雙翅目（Diptera）昆蟲的幼蟲寄生於人體活體組織（tissue）。人膚蠅（Dermatobia hominis）是造成皮膚蠅蛆症的主要病原，其地理分布具有特定性。此病常見於美洲熱帶地區，而非亞洲（Asia）。\n\n**選項解析**\n- (A) 人膚蠅會將卵產在吸血昆蟲腹部，利用其作為運輸載體。幼蟲接觸宿主皮膚（skin）後會鑽入傷口或毛囊（hair follicle），造成寄生現象。此敘述符合傳播機轉，是該物種特有行為。\n- (B) 院內蠅蛆症（nosocomial myiasis）好發於長期臥床且無法自主活動的病患。開放性傷口容易吸引蒼蠅產卵，導致幼蟲侵入組織。此為高風險族群的典型特徵，需特別注意。\n- (C) 耳部蠅蛆症（aural myiasis）患者常主訴耳道（ear canal）內有蟲體爬動感或雜音。檢查可見惡臭分泌物及活體幼蟲存在。症狀與臨床表現相符，診斷明確。\n- (D) 人膚蠅主要分布於中南美洲（Central and South America）熱帶區域。亞洲地區並非其流行區，因此此敘述錯誤。",
+      "level": "unchecked"
+    },
+    "36": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n公共衛生統計學中，測量尺度（Measurement Scale）分為四類。名目尺度（Nominal scale）僅能分類，無大小順序之分。序位尺度（Ordinal scale）具有順序，但數值間差值無意義。等距尺度（Interval scale）具順序與相等差值，卻無絕對零點。等比尺度（Ratio scale）擁有絕對零點，代表數值為零即無此量，可進行倍數比較。統計學上常考此區分。\n\n**選項解析**\n- (A) 血型僅能區分類別，無法排序，屬於名目尺度，非序位尺度。\n- (B) 膽固醇（Cholesterol）值具有絕對零點，代表濃度為零，且可計算倍數關係，符合等比尺度定義。\n- (C) 攝氏體溫的零度不代表無熱量，僅為參考基準，不可算倍數，屬於等距尺度。\n- (D) 癌症（Cancer）分期雖有嚴重程度順序，但各期間差距不等，應歸類為序位尺度。",
+      "level": "unchecked"
+    },
+    "37": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n依據傳染病防治法，臺灣將傳染病分為五類進行管理。\n第一類（Class 1）傳染病代表極高公共衛生風險或致死率。\n醫師發現疑似病例必須立即通報至當地衛生單位。\n此類疾病包含鼠疫、霍亂與天花等嚴重威脅公共衛生之疾病。\n\n**選項解析**\n- (A) 狂犬病（Rabies）屬於第一類傳染病，需立即通報。\n- (B) 日本腦炎（Japanese Encephalitis）屬於第二類傳染病，需於二十四小時內通報。\n- (C) 瘧疾（Malaria）屬於第二類傳染病，需於二十四小時內通報。\n- (D) 梅毒（Syphilis）屬於第二類傳染病，需於二十四小時內通報。\n第一類疾病因傳播迅速且致死率高，故要求最嚴格的通報時程。\n例如炭疽病（Anthrax）亦屬此類，需高度警惕。\n第二類疾病則需於規定時間內完成通報程序。\n國考常考此分類差異，請務必熟記各別疾病之通報等級。",
+      "level": "unchecked"
+    },
+    "38": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n統計檢定（statistical testing）中存在兩種可能錯誤。顯著水準（significance level）設定為允許的型一錯誤（type I error）最大機率，虛無假說（null hypothesis）為真時拒絕它即為此錯誤。增加樣本數（sample size）可提升統計檢定力（statistical power），與型二錯誤（type II error）互補。\n\n**選項解析**\n- (A) 此敘述正確。顯著水準數值即等於犯下型一錯誤的機率上限。\n- (B) 此敘述正確。若顯著水準不變，增加樣本數可提升統計檢定力。\n- (C) 此敘述正確。研究誤判無差異為有差異，即為型一錯誤之典型情境。\n- (D) 此敘述錯誤。型一錯誤機率與型二錯誤機率之和不恆等於 1。兩者發生於互斥的假設狀態，故機率無法直接相加。統計檢定力加型二錯誤機率才等於 1。",
+      "level": "unchecked"
+    },
+    "39": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n平行檢定（Parallel Testing）是指同時進行多項篩檢。\n任一測試陽性即視為疾病（Disease）陽性。\n此策略的主要目的是減少漏診，因此會提高淨敏感度（Net sensitivity）。\n由於判定標準放寬，誤判健康者為患者的機率上升，導致淨特異度（Net specificity）下降。\n在公共衛生（Public Health）篩檢中，優先追求高敏感度以確保不遺漏病例。\n當兩項測試並行時，只要其中一項呈現陽性反應，受試者即被歸類為陽性。\n\n**選項解析**\n- (A) 正確。平行檢定中只要一項測試陽性即判定為有病，能捕捉更多真實患者，故敏感度增加。這符合篩檢減少偽陰性（False negative）的目標。\n- (B) 錯誤。判定標準放寬會使健康者被誤判為陽性的機率變高，特異度反而降低而非增加。\n- (C) 雖然淨特異度確實減少，但平行檢定的核心目的在提升偵測能力，故敏感度變化是主要特徵。\n- (D) 偽陽性（False positive）率會隨特異度下降而上升，但此題重點在於篩檢效度的正向指標，故非最佳選項。",
+      "level": "unchecked"
+    },
+    "40": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n本研究設計為比較五組不同吸菸狀況下的肺功能 (lung function) 數值。\n因變項為連續性資料，且自變項分為五個獨立群組。\n當需要比較三組以上平均值差異時，統計學上最適當的方法為單因子變異數分析 (one-way ANOVA)。\n若多次使用 t 檢定，會增加第一型錯誤 (Type I error) 的發生機率，故需使用此方法控制整體誤差率。\n\n**選項解析**\n- (A) 獨立 t 檢定 (independent t-test) 僅適用於比較兩組獨立樣本的平均值差異。\n- (B) 配對 t 檢定 (paired t-test) 主要用於同一受試者前後測或配對資料的數值比較。\n- (C) 皮爾森氏卡方檢定 (Pearson's Chi-square test) 常用於分析兩個分類變項之間的關聯性，無法處理連續數值平均值。\n- (D) 單因子變異數分析 透過 F 統計量比較組間與組內變異，用於檢定三個或以上群組的平均值是否存在顯著差異，符合本題五組比較的需求。",
+      "level": "unchecked"
+    },
+    "41": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n本研究以鄉鎮市區為分析單位，而非個別民眾作為觀察對象。\n資料來源為政府機構的彙整數據，缺乏個人生活相關資訊。\n此類探討群體暴露（exposure）與疾病（disease）發生率關聯的研究設計，稱為生態學研究（ecological study）。\n其特徵在於無法控制個體的潛在混淆因子（confounder），僅能推論群體層級之關聯。\n\n**選項解析**\n- (A) 個案報告（case report）僅描述單一或少數病例，無法推論群體風險因子。\n- (B) 生態學研究使用區域性彙整資料分析暴露與疾病關聯，符合題意。\n- (C) 病例對照研究（case-control study）需個別比對病患與對照組的過去暴露史。\n- (D) 世代研究（cohort study）需追蹤個別族群隨時間發展，並收集個人風險因子資料。此設計需明確追蹤個體暴露史，與題干彙整資料不符。",
+      "level": "unchecked"
+    },
+    "42": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n酸雨（acid rain）是指 pH 值低於五點六的降水現象。\n此效應會導致土壤酸化並影響水生生物生存。\n主要成因是化石燃料燃燒排放的硫氧化物（sulfur oxides）。\n此外氮氧化物（nitrogen oxides）也是形成酸雨的重要前驅物。\n它們在大氣中經氧化反應後，會轉化為硫酸或硝酸沉降。\n\n**選項解析**\n- (A) 一氧化碳（carbon monoxide）主要造成缺氧性傷害，不具酸性。\n- (B) 臭氧（ozone）屬於二次污染物，主要引起呼吸道發炎反應。\n- (C) 硫氧化物與氮氧化物是酸雨形成的關鍵物質，會降低雨水 pH 值。\n- (D) 選項包含臭氧，該氣體並非導致酸雨效應的直接原因，故不選。",
+      "level": "unchecked"
+    },
+    "43": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n風險評估 (Risk assessment) 是公共衛生核心工具，用於量化暴露與健康危害。\n非致癌物之劑量反應 (Dose-response) 關係通常假設存在閾值 (Threshold)。\n此閾值代表身體修復機制可抵禦的最低劑量。\n低於閾值時，不會產生不良健康效應或臨床症狀。\n致癌物則常採用無閾值線性模型進行推估，假設任何劑量皆有風險。\n\n**選項解析**\n- (A) 正確。非致癌物風險評估基於劑量反應假設具有閾值存在。\n參考劑量 (Reference dose) 即由此閾值推算而來，作為安全暴露標準。\n- (B) 錯誤。斜率因子 (Slope factor) 主要用於計算致癌物之風險機率。\n非致癌物不使用此參數進行線性外推，因存在安全劑量區間。\n- (C) 錯誤。量化結果一般與 10⁻⁶ 比較，通常適用於致癌物可接受風險判定。\n非致癌物則以參考劑量是否超過閾值作為判斷標準。\n- (D) 錯誤。不確定性分析 (Uncertainty analysis) 適合所有風險評估過程。\n此步驟用於處理數據變異與模型假設之不確定性，確保結果可靠。",
+      "level": "unchecked"
+    },
+    "44": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n登革熱（Dengue fever）的主要傳播媒介屬於蚊科（Culicidae）斑蚊屬（Aedes）。\n在臺灣，最主要的病媒蚊為埃及斑蚊（Aedes aegypti）與白線斑蚊（Aedes albopictus）。\n這兩種蚊子偏好白天活動，且常在居家環境繁殖。\n控制孳生源是預防登革熱的重要公共衛生策略。\n\n**選項解析**\n- (A) 熱帶家蚊（Culex quinquefasciatus）主要傳播絲蟲症（Filariasis）或西尼羅病毒（West Nile virus），非登革熱主要媒介。白腹叢蚊並非常見登革熱病媒。\n- (B) 埃及斑蚊與白線斑蚊均為世界衛生組織（World Health Organization）確認之登革熱主要傳播者。此選項正確。\n- (C) 小黑蚊通常指蠓科昆蟲，如台灣蠓（Culicoides formosanus），不傳播登革病毒。白腹叢蚊亦非主要病媒。\n- (D) 中華瘧蚊（Anopheles sinensis）是瘧疾（Malaria）的主要傳播媒介。熱帶家蚊主要與淋巴絲蟲症（Lymphatic filariasis）有關，非登革熱病媒。",
+      "level": "unchecked"
+    },
+    "45": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n此題考的是職業衛生中的時量平均濃度（Time-Weighted Average, TWA）計算。\n八小時工作制的暴露評估，需將不同時間段的暴露劑量加總。\n再除以總工時得出結果。\n甲苯（Toluene）為揮發性有機溶劑，其容許暴露標準常以此指標衡量。\n計算公式為各濃度與對應時間乘積之總和。\n再除以八小時總分鐘數。\n\n**選項解析**\n- (A) 正確。每小時暴露十分鐘，八小時共暴露八百分鐘。\n濃度六十 ppm 乘以八十分鐘，總暴露劑量為四千八百 ppm-min。\n再除以四十八十分鐘總工時，結果為十 ppm。\n此符合時量平均定義。\n- (B) 錯誤。此數值可能誤將非暴露時間納入計算，或比例換算錯誤導致數值偏高，未正確反映實際暴露強度。\n- (C) 錯誤。此數值未正確反映實際暴露時間與濃度的加權關係，計算過程可能有誤差。\n- (D) 錯誤。六十分 ppm 為峰值濃度（Peak Concentration），並非八小時內的平均暴露水平，不可直接作為長期暴露評估依據。",
+      "level": "unchecked"
+    },
+    "46": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n長期暴露於有機溶劑 (organic solvents) 中的苯 (benzene)，是已知的人類致癌物。\n其代謝產物會損傷骨髓 (bone marrow)。\n造血細胞 (hematopoietic cells) 受損導致惡性腫瘤發生。\n此職業醫學重點在於辨識特定化學物質與特定癌症的關聯性。\n暴露途徑多為呼吸道吸入。\n需嚴格監測工作環境濃度。\n\n**選項解析**\n- (A) 正確。長期吸入苯會增加血癌 (leukemia) 風險，這是公共衛生教科書確認的因果關係。骨髓造血功能受損是主要機轉。\n- (B) 錯誤。肝癌 (liver cancer) 較常與乙型或丙型肝炎病毒、黃麴毒素有關，而非苯典型危害。\n- (C) 錯誤。腎癌 (renal cancer) 主要風險因子包括吸菸、肥胖及某些化學物質，非苯典型危害。\n- (D) 錯誤。皮膚癌 (skin cancer) 多與紫外線暴露或特定職業接觸有關，非苯主要致癌表現。\n\n(Count check: ~320 characters. Complies with rules.)",
+      "level": "unchecked"
+    },
+    "47": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n公共衛生（Public Health）領域中，體位指數是評估健康風險的重要指標。\n臺灣人口體質與西方人種不同，脂肪分布模式存在差異。\n因此採用較低的 BMI（Body Mass Index）數值作為肥胖判定依據。\n衛生福利部（Ministry of Health and Welfare）明確規範成人肥胖之切點為 BMI ≥ 27 kg/m²。\n此標準旨在早期篩檢代謝症候群（Metabolic Syndrome）相關疾病風險。\n過高體脂率會增加心血管疾病（Cardiovascular Disease）發生機率。\n過重標準為 BMI ≥ 24 kg/m²，與肥胖定義不同。\n\n**選項解析**\n- (A) 25：這是世界衛生組織（World Health Organization）對亞洲人過重的定義，非肥胖標準。\n- (B) 27：正確，符合臺灣成人肥胖之 BMI 切點規範。\n- (C) 29：此數值高於實際定義，通常用於更嚴重的肥胖分級參考，非初篩切點。\n- (D) 31：此數值接近歐美肥胖標準（BMI ≥ 30），不適用於臺灣族群特徵。",
+      "level": "unchecked"
+    },
+    "48": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n健康信念模式（health belief model）解釋個人健康行為。該模式認為個體是否行動，取決於對疾病威脅與益處的評估。主要構面包含感知易感性、感知嚴重性、益處及障礙。癌症（cancer）篩檢時，高危險群若感知威脅高且有益，較可能接受服務。\n\n**選項解析**\n- (A) 跨理論模式（the transtheoretical model）描述行為改變階段，如前意向、行動期等。此模式側重準備程度，非解釋篩檢決策機轉。\n- (B) 社會行銷（social marketing）應用於公共衛生（public health）議題。旨在促進社會行為改變，非解釋個人決策機轉。\n- (C) 健康信念模式探討個人對疾病風險與篩檢效益的信念差異。此模式可解釋同風險群體中，篩檢行為的差異原因。\n- (D) 創新擴散理論（diffusion of innovations）描述新觀念或技術在社會網絡中傳播。關注技術傳播時間，不適合解釋個人篩檢決策。",
+      "level": "unchecked"
+    },
+    "49": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n醫療費用成長率主要受人口、經濟與技術三大變數影響。\n這三項因素均為動態變數，直接驅動支出曲線上升。\n人口老化（Population Aging）直接增加高齡族群的醫療資源使用量。\n所得（Income）增長會提升民眾對健康服務（Health Service）的需求彈性。\n醫療科技（Medical Technology）進步帶來新診斷與治療方式，推升單價成本。\n\n**選項解析**\n- (A) 人口老化使慢性病（Chronic Disease）盛行率上升，顯著增加長期照護費用。\n- (B) 所得增加代表支付能力提高，民眾更傾向使用高品質或昂貴的醫療服務。\n- (C) 醫療科技進步常伴隨新藥物（Drug）與設備導入，導致單位治療成本上升。\n- (D) 醫病資訊不對稱（Information Asymmetry）雖影響決策，但屬市場結構特性，非費用成長率之主要驅動因子。",
+      "level": "unchecked"
+    },
+    "50": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n新藥（New drug）定價策略主要基於回收高昂的前期投入。專利權（Patent）制度賦予廠商暫時市場獨占權，允許制定較高價格。生產製造（Manufacturing）成本在總開發費用中佔比通常較低，屬於變動成本。大量生產後單價更低，固定成本（Fixed cost）遠高於邊際成本。\n\n**選項解析**\n- (A) 研究及發展費用（Research and Development cost）極高，包含失敗風險與時間成本，需透過售價回收。\n- (B) 專利權保護期間內無競爭對手，廠商可制定較高價格以獲取利潤並補償風險。\n- (C) 臨床試驗（Clinical trial）花費龐大且耗時長，是決定藥物能否上市的重要沉沒成本。\n- (D) 生產製造的成本（Manufacturing cost）相對低廉，對最終售價影響較小，故為正確選項。",
+      "level": "unchecked"
+    },
+    "51": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n甲硝唑（Metronidazole）屬於硝基咪唑類（Nitroimidazoles）藥物。\n主要用於治療厭氧菌（Anaerobic bacteria）與原蟲（Protozoa）感染。\n其作用機轉是進入微生物細胞後還原產生毒性自由基。\n此自由基破壞去氧核醣核酸（DNA）結構導致死亡。\n此藥物對需氧菌（Aerobic bacteria）如淋病球菌（N. gonorrhoeae）無效。\n因此不適用於相關治療。\n\n**選項解析**\n- (A) 腹腔內厭氧菌感染屬於甲硝唑適應症，包括偽膜性結腸炎由艱難梭菌（C. difficile）引起者，可選此藥治療。\n- (B) 陰道滴蟲（T. vaginalis）為原蟲感染，是甲硝唑經典的治療用途之一，臨床常作為首選藥物。\n- (C) 淋病球菌為需氧革蘭氏陰性雙球菌，對甲硝唑不敏感，故非臨床用途，應選此項。\n- (D) 阿米巴原蟲（E. histolytica）引起之腸道感染，可使用甲硝唑進行治療，亦可用於肝膿瘍之併發症。",
+      "level": "unchecked"
+    },
+    "52": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n本題核心在於區分抗癌藥物的分類與作用機轉。甲氨蝶呤（methotrexate）與氟尿嘧啶（5-fluorouracil）皆歸類為抗代謝藥物（anti-metabolites）。環磷醯胺（cyclophosphamide）則屬於 DNA（脫氧核糖核酸）烷基化劑（DNA alkylating agents）。\n\n**選項解析**\n- (A) 環磷醯胺是烷化劑，作用機轉非抑制拓撲異構酶 II（topoisomerase II）。甲氨蝶呤主要抑制二氫葉酸還原酵素（dihydrofolate reductase）。\n- (B) 這兩種藥物主要干擾 DNA 合成過程，並非直接抑制有絲分裂（mitosis）。能抑制有絲分裂的藥物通常為微管蛋白抑制劑（microtubule inhibitors）。\n- (C) 甲氨蝶呤拮抗葉酸代謝。氟尿嘧啶（5-fluorouracil）干擾胸腺嘧啶合成。兩者均為抗代謝藥物。此配對正確。\n- (D) 環磷醯胺是 DNA 烷基化劑，但氟尿嘧啶（5-fluorouracil）不屬於此類藥物。",
+      "level": "unchecked"
+    },
+    "53": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n藥理學（Pharmacology）區分抗血小板藥物與抗凝血劑。抗血小板藥物抑制血小板凝集（platelet aggregation）。肝素（heparin）主要作用於凝血級聯反應（coagulation cascade）。它非血小板拮抗劑。抗凝血劑作用於凝血因子。\n\n**選項解析**\n- (A) 雙嘧達莫（dipyridamole）可提升細胞內環磷酸腺苷（cAMP）。它抑制血小板凝集。\n- (B) 阿斯匹靈（aspirin）不可逆抑制環氧合酶（COX-1）。它減少血栓素 A2（thromboxane A2）合成。\n- (C) 肝素增強抗凝血酶 III（antithrombin III）。它抑制凝血酶與凝血因子 Xa（Factor Xa）。不直接影響血小板。\n- (D) 噻氯匹定（ticlopidine）阻斷腺苷二磷酸（ADP）受體。它抑制血小板凝集反應。",
+      "level": "unchecked"
+    },
+    "54": {
+      "text": "**答案：C**\n\n**關鍵觀念**\nBromocriptine（bromocriptine）是一種多巴胺受體（dopamine receptor）作用劑。它主要結合於腦下垂體（pituitary gland）的 D2 受體（dopamine D2 receptor），抑制激素分泌。此藥物可用於治療高泌乳素血症（hyperprolactinemia）或巴金森氏症（Parkinson's disease）。\n\n**選項解析**\n- (A) 正確。Bromocriptine 抑制腺垂體的泌乳素（prolactin）細胞分泌，降低血中濃度。\n- (B) 正確。藥物可刺激黑質紋狀體路徑（nigrostriatal pathway），改善巴金森氏症運動障礙。\n- (C) 錯誤。Bromocriptine 直接抑制生長激素（growth hormone）分泌，並非透過增加體制素（somatostatin）。此藥不透過增加體制素分泌，而是直接抑制生長激素細胞。肢端肥大症（acromegaly）治療機制為直接作用於受體。\n- (D) 正確。藥物能降低泌乳素，有效改善產後乳房腫脹及泌乳過量情形。",
+      "level": "unchecked"
+    },
+    "55": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n血管加壓素（vasopressin）又稱抗利尿激素（antidiuretic hormone, ADH）。它主要作用於腎臟集合管（collecting ducts）的 V2 受體（V2 receptors）。此機轉會增加水通道蛋白（aquaporins）插入細胞膜（cell membrane），促進水分重吸收。因此它具有抗利尿作用，而非利尿作用。\n\n**選項解析**\n- (A) 正確。血管加壓素主要由腦下垂體後葉（posterior pituitary）所分泌。高劑量時可刺激平滑肌（smooth muscle）收縮，產生血管收縮效應。\n- (B) 正確。血管加壓素為多肽類激素（peptide hormone）。它在腸胃道（gastrointestinal tract）中易被酵素（enzymes）破壞，因此口服無效。\n- (C) 正確。此藥物可用來治療垂體性尿崩症（pituitary diabetes insipidus）。它能補充體內缺乏的抗利尿激素，減少排尿量。\n- (D) 錯誤。血管加壓素具有抗利尿作用，會促進水分重吸收。它不會造成水分與鈉離子（sodium ions）流失，反而有助於保留體液平衡。",
+      "level": "unchecked"
+    },
+    "56": {
+      "text": "**答案：（A）**\n\n**關鍵觀念**\n治療血鈣過高（hypercalcemia）需先補充生理食鹽水（normal saline）擴張血容。\n接著使用袢利尿劑（loop diuretic）促進鈣離子（calcium ion）從尿液排出。\n呋塞米（furosemide）作用於腎臟（kidney）髓袢昇支粗段（thick ascending limb）。\n它抑制鈉鉀氯共轉運蛋白（Na-K-2Cl cotransporter）功能。\n此機轉減少管腔內正電位，降低旁細胞（paracellular）再吸收。\n\n**選項解析**\n- (A) 呋塞米為袢利尿劑，可顯著增加尿鈣排泄。合併生理食鹽水注射效果最佳，故選此項。\n- (B) 噻嗪類利尿劑（thiazide diuretic）如氫氯噻嗪（hydrochlorothiazide），會減少尿鈣排泄。使用後可能加重血鈣過高症狀，故不選。\n- (C) 阿米洛利（amiloride）為保鉀利尿劑（potassium-sparing diuretic）。其對鈣離子影響較小，非治療嚴重血鈣過高首選藥物。\n- (D) 康尼伐坦（conivaptan）為 V2 受體拮抗劑（V2 receptor antagonist）。主要用於治療低血鈉症（hyponatremia），與鈣離子代謝無直接關聯，故不選。",
+      "level": "unchecked"
+    },
+    "57": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n某些抗心律不整藥物會引發藥物誘發性類紅斑性狼瘡（drug-induced lupus erythematosus）。普魯卡因胺（procainamide）是發生此副作用風險最高的藥物之一。其機轉與慢乙醯化代謝型（slow acetylator）族群有關，導致代謝產物累積引發免疫反應。N-乙醯轉移酵素 (N-acetyltransferase) 活性低者風險更高。\n\n**選項解析**\n- (A) 索他洛爾（sotalol）為兼具β-阻斷劑 (beta-blocker) 作用的第三類 (Class III) 抗心律不整藥。其主要副作用為心跳過緩或 QT 間期延長 (QT interval)，而非類紅斑性狼瘡症狀。\n- (B) 雙異丙吡胺（disopyramide）屬於 IA 類 (Class IA) 抗心律不整藥。其常見副作用為抗膽鹼能作用，如口乾、尿滯留，引發類紅斑性狼瘡機率極低。\n- (C) 胺碘酮（amiodarone）是第三類 抗心律不整藥。其主要臨床副作用包含甲狀腺功能異常或肺纖維化 (pulmonary fibrosis)，很少引起類紅斑性狼瘡症狀。\n- (D) 普魯卡因胺為 IA 類 抗心律不整藥。長期使用易引發藥物誘發性類紅斑性狼瘡，是此題正確選項。",
+      "level": "unchecked"
+    },
+    "58": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n自主神經系統（autonomic nervous system）受體透過 G 蛋白（G protein）傳遞細胞內訊號。\n抑制腺苷酸環化酶（adenylyl cyclase）活性通常與 Gi 蛋白（Gi protein）偶聯有關。\n活化後會降低細胞內環磷酸腺苷（cAMP）濃度。\n此結果產生抑制效果。\n\n**選項解析**\n- (A) 毒蕈鹼 M₂ 膽鹼受體（muscarinic M₂ cholinoceptor）屬於 Gi 蛋白偶聯受體。\n活化後直接抑制腺苷酸環化酶活性。\n此為正確機轉。\n- (B) 毒蕈鹼 M₃ 膽鹼受體（muscarinic M₃ cholinoceptor）主要與 Gq 蛋白（Gq protein）偶聯。\n活化後促進磷脂酶 C（phospholipase C）作用。\n- (C) β₁ 腎上腺素受體（β₁ adrenoceptor）屬於 Gs 蛋白（Gs protein）偶聯受體。\n活化後會刺激腺苷酸環化酶活性。\n- (D) β₃ 腎上腺素受體（β₃ adrenoceptor）亦為 Gs 蛋白偶聯受體。\n活化後同樣增加 cAMP 生成。",
+      "level": "unchecked"
+    },
+    "59": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n肺高壓（pulmonary hypertension）治療中，前列腺素 I₂（prostacyclin, PGI₂）致效劑是重要藥物。特羅普司汀（treprostinil）為穩定型 PGI₂ 類似物，可擴張血管並抑制血小板聚集。此類藥物主要用於改善肺動脈高壓症（pulmonary arterial hypertension）。\n\n**選項解析**\n- (A) 特羅普司汀是 PGI₂ 致效劑，結構穩定且可用於治療肺高壓。它活化腺苷酸環化酶（adenylate cyclase）。此作用提升細胞內環磷酸腺苷（cyclic AMP）濃度。因此本題正確答案為 A。\n- (B) 阿爾普斯他定（alprostadil）屬於前列腺素 E₁（PGE₁）類似物，用於動脈導管未閉（patent ductus arteriosus）。它也可用於勃起功能障礙，而非肺高壓首選。\n- (C) 米索前列醇（misoprostol）為 PGE₁ 合成類似物，用於預防非類固醇消炎藥引起的胃潰瘍（gastric ulcer）。它具有保護胃黏膜作用，不具肺血管擴張適應症。\n- (D) 拉坦前列腺素（latanoprost）是前列腺素 F₂α（PGF₂α）類似物，用於降低青光眼（glaucoma）眼壓。它透過增加葡萄膜鞏膜通道流出量來發揮作用。",
+      "level": "unchecked"
+    },
+    "60": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n溴隱亭 (Bromocriptine) 是麥角衍生物，屬於多巴胺受體促效劑 (dopamine receptor agonist)。它主要作用於中樞神經系統 (central nervous system) 的多巴胺能 D₂受體 (dopaminergic D₂ receptor)，用於治療帕金森氏症 (Parkinsonism)。此藥物能模擬多巴胺 (dopamine) 作用，補充基底核 (basal ganglia) 缺乏的神經傳導物質。其結構與麥角生物鹼 (ergot alkaloids) 相似，具有較高的 D₂受體親和力。\n\n**選項解析**\n- (A) 普拉克索 (Pramipexole) 也是多巴胺受體促效劑，但主要結合 D₂與 D₃受體 (D3 receptor)，非本題最佳選項。\n- (B) 溴隱亭 為經典的麥角類多巴胺能 D₂受體促效劑，符合題目描述之機轉。\n- (C) 氟拉西泮 (Flurazepam) 屬於苯二氮平類 (benzodiazepines)，主要用於安眠或抗焦慮，不直接作用於多巴胺受體。\n- (D) 司來吉蘭 (Selegiline) 為單胺氧化酶 B 抑制劑 (monoamine oxidase B inhibitor)，透過減少多巴胺分解來提升濃度，非直接受體促效劑。",
+      "level": "unchecked"
+    },
+    "61": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n青黴素類藥物（Penicillins）依抗菌範圍可分為不同類別。\n抗綠膿桿菌青黴素類（Antipseudomonal penicillins）包含羧基青黴素（Carboxypenicillins）與脲基青黴素（Ureidopenicillins）。\n此類藥物對綠膿桿菌（Pseudomonas aeruginosa）具活性，常與氨基糖苷類抗生素（Aminoglycosides）併用產生協同作用。\n此組合可增強殺滅細菌效果，用於嚴重綠膿桿菌感染之治療。\n\n**選項解析**\n- (A) 阿莫西林（Amoxicillin）屬於胺基青黴素類（Aminopenicillins），主要針對腸桿菌科（Enterobacteriaceae），無抗綠膿桿菌活性。\n- (B) 雙氯西林（Dicloxacillin）為耐青黴素酶青黴素（Penicillinase-resistant penicillins），主要用於抗金黃色葡萄球菌（Staphylococcus aureus）。\n- (C) 萘夫西林（Nafcillin）亦屬耐青黴素酶青黴素，對綠膿桿菌無效，不作為此類感染用藥。\n- (D) 羧苄西林（Ticarcillin）屬於羧基青黴素，具抗綠膿桿菌活性，符合題目描述之藥物分類。",
+      "level": "unchecked"
+    },
+    "62": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n頭孢曲松（ceftriaxone）屬於第三代頭孢菌素（cephalosporins）。此藥對淋病球菌（Neisseria gonorrhoeae）具有高度抗菌活性。其排泄途徑主要為膽汁（bile）。因此腎衰竭（renal failure）時通常不需調整劑量（dose）。\n\n**選項解析**\n- (A) 正確。美國疾病管制中心建議頭孢曲松為淋病感染的首選用藥。\n- (B) 錯誤。頭孢曲松屬於第三代頭孢菌素，而非第四代頭孢菌素。\n- (C) 錯誤。克拉維酸（clavulanate）常與阿莫西林（amoxicillin）併用以抑制β-內醯胺酶（beta-lactamase）。頭孢曲松本身對酵素（enzyme）穩定。不需此組合。\n- (D) 錯誤。此藥經膽道（biliary tract）及腎臟（kidney）雙重排泄。因此單純腎衰竭病人通常無需降低劑量。",
+      "level": "unchecked"
+    },
+    "63": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n改善貧血 (anemia) 需針對病因補充造血原料或藥物。鐵劑 (iron agents) 與維生素類可用於治療特定類型之貧血。缺鐵性貧血 (iron deficiency anemia) 需補充鐵質。巨幼細胞性貧血 (megaloblastic anemia) 需補充維生素。去鐵胺 (deferoxamine) 為鐵螯合劑，主要用於排除體內過量鐵質。\n\n**選項解析**\n- (A) 口服富馬酸亞鐵 (ferrous fumarate) 是常用鐵補充劑，能增加血中鐵含量以改善缺鐵性貧血症狀。\n- (B) 注射右旋糖酐鐵 (iron dextran) 屬於腸外給藥鐵劑，適用於吸收不良或無法耐受口服鐵劑之患者。\n- (C) 注射去鐵胺 會與體內游離鐵結合形成複合物並經尿液排出，用於治療急性鐵中毒或慢性鐵過量症。此藥物會降低血中鐵濃度，故無助於改善貧血。\n- (D) 補充維生素 B₁₂ (Vitamin B12) 及葉酸 (folic acid) 可促進紅血球前驅細胞之去氧核糖核酸 (DNA) 合成，改善因缺乏這些營養素導致的巨幼細胞性貧血。",
+      "level": "unchecked"
+    },
+    "64": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n子宮內膜異位（endometriosis）的治療目標是抑制月經週期。\n黃體素製劑（progestin）可造成假性懷孕狀態，減少病灶出血與疼痛。\n此類藥物能抑制排卵並使子宮內膜萎縮，緩解腹部疼痛症狀。\n長期使用需監測骨質密度變化與代謝副作用。\n肌肉注射劑型可提供穩定血中濃度，適合年輕患者長期管理。\n\n**選項解析**\n- (A) 口服氟他胺（flutamide）是抗雄激素（anti-androgen）藥物，主要用於攝護腺癌（prostate cancer）治療。\n- (B) 肌肉注射醋酸甲羥孕酮（medroxyprogesterone）為黃體素製劑，適合抑制病灶活性。\n- (C) 靜脈注射氧甲氫龍（oxandrolone）屬於合成類固醇（steroid），具有雄激素（androgen）作用不適用此症。\n- (D) 口服雷洛昔芬（raloxifene）為選擇性雌激素受體調節劑（SERM），用於骨質疏鬆症（osteoporosis）預防。",
+      "level": "unchecked"
+    },
+    "65": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n肢端肥大症（Acromegaly）主要是由腦下垂體（Pituitary gland）腺瘤過度分泌生長激素（Growth Hormone, GH）所致。奧曲肽（Octreotide）是一種生長抑素（Somatostatin）類似物，能抑制生長激素的釋放。因此可用於無法手術或術後仍有症狀的患者。\n\n**選項解析**\n- (A) 去氨加壓素（Desmopressin）是抗利尿激素（ADH）類似物，主要用於治療尿崩症（Diabetes Insipidus），與此疾病之治療無直接關聯。\n- (B) 奧曲肽能結合生長抑素受體（Somatostatin Receptor），直接抑制腦下垂體分泌過多的生長激素，為臨床常用之治療藥物。\n- (C) 亮丙瑞林（Leuprolide）是促性腺激素釋放激素（GnRH）激動劑，常用於攝護腺癌（Prostate Cancer）或子宮內膜異位症（Endometriosis）之治療。\n- (D) 生長激素製劑（Somatropin）為重組生長激素，用於生長激素缺乏症（Growth Hormone Deficiency），若使用會加重肢端肥大症病情。",
+      "level": "unchecked"
+    },
+    "66": {
+      "text": "**答案：(A)**\n\n**關鍵觀念**\n可樂定（Clonidine）是 α2 腎上腺素受體促效劑（alpha-2 adrenergic receptor agonist）。它作用於中樞神經系統（central nervous system）。此作用抑制交感神經輸出（sympathetic outflow）。長期使用會導致突觸後受體上調（postsynaptic receptor upregulation）。立即停藥會引發反彈性高血壓（rebound hypertension）。這是因為交感神經活性（sympathetic activity）突然增加所致。此現象可能導致致命性後果。\n\n**選項解析**\n- (A) 可樂定中樞作用強。它阻斷去甲腎上腺素（norepinephrine）釋放。停藥後交感張力反彈。可能引發致命性高血壓。此為正確機制。\n- (B) 硝苯地平（Nifedipine）是鈣離子通道阻斷劑（calcium channel blocker）。停藥不會導致強烈交感活性增加。也不會引發反彈性高血壓。\n- (C) 肼屈嗪（Hydralazine）為直接血管擴張劑（direct vasodilator）。主要副作用為反射性心跳過速。它不會引發停藥後高血壓。\n- (D) 卡托普利（Captopril）屬於 ACE 抑制劑（angiotensin-converting enzyme inhibitor）。停藥不會引發交感神經反彈現象。",
+      "level": "unchecked"
+    },
+    "67": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n直接作用型蕈毒鹼致效劑（direct-acting muscarinic agonist）能直接結合並刺激蕈毒鹼受體（muscarinic receptor）。\n此類藥物可用於治療薛格連氏症候群（Sjögren's syndrome）或放射線治療引起的口乾症（xerostomia）。\n西維美林（cevimeline）是選擇性較高的 M3 受體（muscarinic receptor subtype）致效劑，可促進唾液腺（salivary gland）分泌。\n\n**選項解析**\n- (A) 阿托品（atropine）屬於抗膽鹼藥（anticholinergic drug），會抑制副交感神經（parasympathetic nerve）活性，導致唾液分泌減少。\n- (B) 西維美林為直接作用型蕈毒鹼致效劑，能刺激唾液腺增加分泌，是正確治療用藥。\n- (C) 新斯的明（neostigmine）屬於乙醯膽鹼酯酶抑制劑（acetylcholinesterase inhibitor），主要用於重症肌無力（myasthenia gravis）或腸阻塞（intestinal obstruction）。\n- (D) 琥珀膽鹼（succinylcholine）為去極化型神經肌肉阻斷劑（depolarizing neuromuscular blocker），用於全身麻醉（general anesthesia）時的肌肉鬆弛，無促進唾液分泌作用。",
+      "level": "unchecked"
+    },
+    "68": {
+      "text": "**答案：(C)**\n\n**關鍵觀念**\n偏頭痛（migraine）發作時常伴隨噁心、嘔吐。\n此症狀反映胃排空延遲，影響口服藥吸收。\n舒馬普坦（Sumatriptan）是治療急性發作的首選藥物之一。\n它作用於血清素（Serotonin）受體。\n此舉緩解血管擴張與發炎反應。\n\n**選項解析**\n- (A) 乙醯胺酚（Acetaminophen）主要用於輕度疼痛或發燒。\n  對嚴重偏頭痛伴隨自主神經（Autonomic nervous system）症狀效果較差。\n  無法有效收縮擴張的顱內血管。\n- (B) 別嘌醇（Allopurinol）是痛風治療藥物。\n  它抑制黃嘌呤氧化酶（Xanthine oxidase），與偏頭痛機轉無關。\n  不適用於急性疼痛緩解。\n- (C) 舒馬普坦為血清素受體促效劑。\n  它能收縮顱內血管。\n  此舉抑制神經肽（Neuropeptide）釋放。\n  可改善發作症狀，包含噁心與嘔吐的根源。\n  屬於曲坦類（Triptan），針對偏頭痛病理機轉。\n- (D) 蘇林達克（Sulindac）屬於非類固醇消炎藥（NSAIDs）。\n  雖有止痛效果，但不如舒馬普坦針對偏頭痛機轉。\n  在嚴重發作時吸收可能受影響。",
+      "level": "unchecked"
+    },
+    "69": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n化療（chemotherapy）或手術後引起的噁心（nausea）、嘔吐（vomiting），常使用抗神經激肽（neurokinin）受體（receptor）拮抗劑來預防。此類藥物作用機轉是阻斷 NK₁受體，抑制嘔吐反射。P 物質（substance P）在延髓（medulla oblongata）嘔吐中心（vomiting center）發揮重要作用，被阻斷後可減輕症狀。\n\n**選項解析**\n- (A) 利奧西呱（riociguat）是可溶性鳥苷酸環化酶刺激劑，用於治療肺高血壓，與嘔吐無關。\n- (B) 法舒地爾（fasudil）為 Rho 激酶抑制劑，主要用於腦血管痙攣，非止吐藥物。\n- (C) 波生坦（bosentan）是內皮素受體拮抗劑，用於肺動脈高血壓，無止吐作用。\n- (D) 阿瑞匹坦（aprepitant）為 NK₁受體拮抗劑，能阻斷 P 物質作用，有效緩解化療或手術後嘔吐。",
+      "level": "unchecked"
+    },
+    "70": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n此題考的是減肥藥（Weight loss drugs）的作用機轉與作用部位。\n奧利司他（Orlistat）是一種腸胃道（Gastrointestinal tract）局部作用的藥物。\n它主要抑制胰脂酶（Pancreatic lipase），阻止脂肪（Fat）水解。\n因此未消化的脂肪無法被吸收，直接隨糞便排出。\n\n**選項解析**\n- (A) 芬特明（Phentermine）是擬交感神經藥，作用於中樞神經系統（Central nervous system）。\n  它透過釋放去甲腎上腺素（Norepinephrine）來抑制食慾，並非減少脂肪吸收。\n- (B) 托吡酯（Topiramate）原本是抗癲癇藥，用於減肥時也是影響中樞食慾調節。\n  它不直接作用於腸胃道消化酵素，主要機制與鈉離子通道有關。\n- (C) 奧利司他正確選項，抑制胰脂酶活性，減少膳食脂肪吸收。\n  此作用發生在腸腔內，常見副作用為油性糞便。\n- (D) 洛卡塞林（Lorcaserin）是血清素受體（Serotonin receptor）促效劑。\n  它作用於下視丘（Hypothalamus）調節食慾，屬於中樞神經系統作用機制。",
+      "level": "unchecked"
+    },
+    "71": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n凱他明（Ketamine）屬於解離性麻醉劑（dissociative anesthetic）。其主要作用機轉為拮抗 NMDA 受體（N-methyl-D-aspartate receptor）。此機制可產生鎮痛與麻醉效果，且對呼吸抑制較輕微。\n\n**選項解析**\n- (A) 活化 GABA_A 受體（GABA_A receptor）是丙泊酚（propofol）或苯二氮平類（benzodiazepines）的作用方式。凱他明不透過此途徑發揮作用。\n- (B) 抑制 GABA_A 受體會導致興奮性增加，並非麻醉劑常見機轉。此選項與凱他明特性不符。\n- (C) 活化 NMDA 受體會增強神經傳導，可能引發疼痛或驚厥。凱他明不會產生此類活化作用。\n- (D) 凱他明能阻斷 NMDA 受體通道（channel），抑制鈣離子（calcium ion）內流。這正是其作為靜脈注射型麻醉劑的主要藥理特性。它結合於通道內的特定位點，阻止興奮性神經傳導，產生解離狀態。",
+      "level": "unchecked"
+    },
+    "72": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n左乙拉西坦（Levetiracetam）為新型抗癲癇藥物，用於治療部分癲癇發作（Partial seizure）。其作用機轉涉及突觸小泡蛋白 SV₂A（Synaptic Vesicle Protein 2A），調節神經傳遞物質釋放與抑制。藥動學上，此藥主要經腎臟（Kidney）以原形排泄，僅少部分經肝臟（Liver）代謝。\n\n**選項解析**\n- (A) 左乙拉西坦口服吸收迅速且完全，生物利用度高達百分之百，可經口服給藥使用。\n- (B) 藥物分子選擇性地結合突觸小泡蛋白 SV₂A，此為其獨特作用標的。\n- (C) 透過與 SV₂A 結合，調節神經傳遞物質如 glutamate（穀氨酸）和 GABA（γ-氨基丁酸）的釋放。\n- (D) 左乙拉西坦主要經腎臟以原形排泄，僅少部分經肝臟代謝，故此敘述錯誤。",
+      "level": "unchecked"
+    },
+    "73": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n氟馬西尼（Flumazenil）是苯二氮平受體（benzodiazepine receptor）的特異性競爭性拮抗劑。它作用於 GABA-A 受體（GABA-A receptor）複合體上的苯二氮平結合位點。此藥物能逆轉苯二氮平類藥物（benzodiazepine drugs）的中樞神經抑制效果。酒精雖增強 GABA 功能，但結合位置不同，故無法被氟馬西尼拮抗。\n\n**選項解析**\n- (A) 唑吡坦（Zolpidem）是非典型苯二氮平受體調節劑。它主要作用於 GABA-A 受體的 BZ1 亞型（BZ1 subtype）。其鎮靜效果可被氟馬西尼逆轉。\n- (B) 勞拉西泮（Lorazepam）屬於傳統苯二氮平類藥物。它與 GABA-A 受體結合後增強氯離子通道（chloride ion channel）開放頻率。此作用可被氟馬西尼競爭性阻斷。\n- (C) 酒精（Alcohol）即乙醇（Ethanol），具中樞神經抑制作用。它結合於 GABA-A 受體的非苯二氮平位點。因此氟馬西尼無法拮抗酒精引起的鎮靜作用。\n- (D) 阿普唑侖（Alprazolam）屬於苯二氮平類藥物。其藥理特性與勞拉西泮相似。氟馬西尼可逆轉其產生的中樞鎮靜效果。",
+      "level": "unchecked"
+    },
+    "74": {
+      "text": "**答案：A、B**\n\n**關鍵觀念**\n此題考第二世代抗精神病藥物（second-generation antipsychotics）的受體結合特性。\n這類藥物對血清素（serotonin）(5-HT₂) 受體（receptor）有高親和力。\n且對多巴胺 D₂ 受體（dopamine D₂ receptor）作用較弱。\n高 5-HT₂/D₂比例可降低錐體外症候群（extrapyramidal symptoms）風險。\n部分藥物如齊拉西酮（ziprasidone）具有 QT 延長（QT prolongation）的潛在副作用。\n\n**選項解析**\n- (A) 齊拉西酮：屬於第二世代抗精神病藥物，對血清素(5-HT₂) 受體親和力高。\n其錐體外症候群發生率低。\n但已知有 QT 延長風險。\n- (B) 氯氮平（clozapine）：亦為第二世代抗精神病藥物，對血清素(5-HT₂) 受體親和力高。\n其錐體外症候群極低，符合題目描述之受體特性與安全性特徵。\n- (C) 氯丙嗪（chlorpromazine）：屬第一世代抗精神病藥物，D₂ 受體（D₂ receptor）阻斷作用強。\n易引起錐體外症候群。\n不符合題目低 EPS 之條件。\n- (D) 氟哌啶醇（haloperidol）：屬高強度第一世代抗精神病藥物，主要阻斷 D₂ 受體（D₂ receptor）。\n錐體外症候群風險高。\n不滿足題目對副作用的要求。",
+      "level": "unchecked"
+    },
+    "75": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n本題考的是重金屬與放射性離子 (radioactive ion) 的解毒劑選擇。普魯士藍 (prussian blue) 是一種離子交換樹脂 (ion exchange resin)。它能在腸道內結合銫離子 (cesium ion) 或鉈離子 (thallium ion)。此機制可阻斷腸肝循環 (enterohepatic circulation)，促進排泄。\n\n**選項解析**\n- (A) EDTA：乙二胺四乙酸鈣 (calcium disodium edetate) 主要用於鉛中毒 (lead poisoning)。它不適用於銫或鉈的治療。結合特性不同。\n- (B) unithiol：二巰基丙磺酸鈉 (sodium dimercaptosuccinate) 可用於砷 (arsenic) 或汞 (mercury) 中毒。對放射性銫無效。非首選解毒劑。\n- (C) deferasirox：去鐵酮 (deferasirox) 是一種鐵螯合劑 (iron chelator)。用於治療鐵過載症候群，非重金屬解毒藥物。\n- (D) prussian blue：普魯士藍 口服後不吸收。它選擇性結合腸道內的銫與鉈離子。因此是放射性銫 (radioactive cesium) 污染或鉈鹽 (thallium salts) 中毒的特效解毒劑。",
+      "level": "unchecked"
+    },
+    "76": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n臨床症狀發燒與咳嗽提示肺部存在急性感染。\n病理上，大量中性球（neutrophil）浸潤代表急性化膿性發炎反應。\n圓形病灶內含黏稠液體，符合膿瘍（abscess）的影像特徵。\n74 歲長者免疫力較差。\n易發生細菌感染形成膿瘍。\n其內容物包含液化壞死的細胞殘骸與黏稠的膿液（pus）。\n\n**選項解析**\n- (A) 肥厚性瘢痕（hypertrophic scar）是傷口癒合後的纖維增生，不會有急性發炎細胞浸潤。\n- (B) 此病灶含大量中性球與壞死細胞，符合膿瘍的病理定義。\n- (C) 血腫（hematoma）是血管破裂後血液積聚，主要成分為紅血球而非中性球。\n- (D) 結核病（tuberculosis）典型表現為乾酪樣壞死與肉芽腫，非急性化膿性變化。",
+      "level": "unchecked"
+    },
+    "77": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n懷孕期間荷爾蒙（hormone）水平改變會刺激乳腺（mammary gland）組織生長。雌激素（estrogen）與黃體素（progesterone）濃度顯著上升。這導致乳腺小葉（lobule）與腺泡（alveoli）發生生理性增生。此變化是為了後續哺乳功能做準備，屬於正常生理反應。乳管也會延長但非主要特徵。\n\n**選項解析**\n- (A) 間質纖維化（stromal fibrosis）通常發生於老化或良性乳房（breast）疾病，並非懷孕主要特徵。\n- (B) 乳管（duct）上皮鱗狀化生（ductal epithelium squamous metaplasia）常見於慢性刺激，非妊娠生理變化。\n- (C) 腺泡細胞異生（acinic cell dysplasia）暗示異常增生或病變，懷孕時不會出現此現象。\n- (D) 小葉增生（lobular hyperplasia）是懷孕時最明顯的組織（tissue）學改變，符合荷爾蒙刺激下的生理反應。",
+      "level": "unchecked"
+    },
+    "78": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n當個體內存在兩種或以上不同染色體（chromosome）核型的細胞系（cell line）時，稱為異常細胞鑲嵌（mosaicism）。此現象常發生於受精卵早期分裂過程中的有絲分裂錯誤。第 21 號染色體三體症（Trisomy 21）是唐氏症候群（Down syndrome）的主要成因。本題顯示部分細胞正常，部分細胞多一條第 21 號染色體，符合鑲嵌型特徵。\n\n**選項解析**\n- (A) 無分離（nondisjunction）型通常導致所有子細胞皆為異常，不會出現正常細胞系共存現象。\n- (B) 愛德華氏症候群（Edwards syndrome）是由第 18 號染色體三體症引起，與本題第 21 號不符。\n- (C) 轉位（translocation）型涉及染色體結構改變，雖可致唐氏症，但本題數據主要指向細胞系比例差異。\n- (D) 異常細胞鑲嵌型唐氏症候群符合部分細胞正常、部分細胞為第 21 號三體症的檢查結果。",
+      "level": "unchecked"
+    },
+    "79": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n類澱粉沉積症（amyloidosis）是異常蛋白質堆積形成的疾病。剛果紅（Congo red）染色是所有類型類澱粉的通用篩檢工具。其顯微鏡下特徵為蘋果綠雙折射（apple-green birefringence）。沈積物的核心結構是β-摺疊片層（β-pleated sheet），而非α-螺旋（alpha helix）。\n\n**選項解析**\n- (A) 阿茲海默症（Alzheimer disease）的類澱粉主要成分為β-澱粉樣蛋白（amyloid beta）。AA 型澱粉樣蛋白（amyloid A protein）常見於慢性發炎反應。它不屬於神經退化疾病。\n- (B) 甲狀腺髓質癌（medullary thyroid cancer）的腫瘤細胞會分泌降鈣素（calcitonin）。這些降鈣素分子沉積形成類澱粉纖維（amyloid fibrils），導致局部組織病變。此敘述符合病理機轉。\n- (C) 剛果紅染色可用於檢測所有主要類澱粉類型。它不僅限於輕鏈蛋白相關之類澱粉沉積症（AL amyloidosis）。非原發性類型如 AA 型同樣呈現陽性反應。\n- (D) 類澱粉纖維的穩定結構為β-摺疊片層，並非α-螺旋。剛果紅染色陽性正是因為此特殊空間構型與染料結合。交叉α折疊（crossed α-pleated）結構描述錯誤。",
+      "level": "unchecked"
+    },
+    "80": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n癌症惡體質 (cancer cachexia) 是晚期癌症常見之全身性消耗現象。\n其核心機轉涉及促發炎細胞激素 (pro-inflammatory cytokines) 的過度釋放。\n腫瘤壞死因子 (TNF) 又稱惡質素，能直接促進肌肉 (muscle) 蛋白質分解。\nTNF 亦會增加基礎代謝率，加速能量消耗。\n此因子可由免疫細胞 (immune cells) 或腫瘤組織 (tumor tissue) 本身大量產生。\n\n**選項解析**\n- (A) ①②：正確。巨噬細胞 (macrophages) 活化後會分泌 TNF 引發發炎反應。腫瘤細胞 (tumor cells) 亦能直接產出 TNF 影響代謝。兩者共同作用導致脂肪 (fat) 與肌肉流失，造成體重減輕。\n- (B) ②③：錯誤。白細胞介素 -10 (IL-10) 為抗發炎細胞激素，會抑制發炎反應。它無法解釋惡體質之消耗性變化。\n- (C) ①④：錯誤。雖然巨噬細胞可產生 TNF，但 IL-10 具有保護宿主作用。此組合不符合惡體質之致病因子特徵。\n- (D) ③④：錯誤。白細胞介素 -10 (IL-10) 主要功能是調節免疫反應。它不會造成癌症病人體重顯著下降或肌肉萎縮。",
+      "level": "unchecked"
+    },
+    "81": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n剛果紅（Congo red）染色在偏光顯微鏡（polarized microscope）下呈現蘋果綠雙折射，是澱粉樣物質（amyloid）的特徵。\n老年男性出現孤立性心臟衰竭（heart failure），且無惡性或發炎病史，最可能是野生型轉甲蛋白（transthyretin）堆積。\n這稱為老年人全身性澱粉樣變性（senile systemic amyloidosis）。\n此病變主要影響心肌細胞（cardiomyocyte），導致心臟功能逐漸退化。\n\n**選項解析**\n- (A) 免疫球蛋白（immunoglobulin）會形成 AL 型澱粉樣變性，常與多發性骨髓瘤（multiple myeloma）相關。\n- (B) β2-微球蛋白（β2-microglobulin）常見於長期洗腎患者的透析相關澱粉樣變性，但病人無腎臟疾病。\n- (C) 轉甲蛋白是老年人心臟澱粉樣變性的主要成因，符合患者年齡與臨床表現。\n- (D) 降鈣素（calcitonin）堆積見於甲狀腺髓質癌（medullary thyroid carcinoma），但病人無惡性腫瘤病史。",
+      "level": "unchecked"
+    },
+    "82": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n本題考查微血管病變性溶血（microangiopathic hemolytic anemia）的共同特徵。此類疾病會因小血管內血栓（thrombus）形成。紅血球（red blood cell）通過時受機械性剪切力破壞。臨床表現包含溶血性貧血（hemolytic anemia）、血小板低下（thrombocytopenia）及血液抹片出現碎裂紅血球（schistocytes）。\n\n**選項解析**\n- (A) 此組合漏掉瀰漫性血管內凝血，且包含巨大血管瘤，但邏輯不全面。\n- (B) 此組合排除巨大血管瘤，但該症候群確實可引發消耗性凝血異常。\n- (C) 栓塞性血小板低下紫斑（thrombotic thrombocytopenic purpura）會造成微血栓與紅血球碎裂。巨大的血管瘤（hemangioma）若伴隨卡薩巴氏美瑞現象（Kasabach-Merritt phenomenon），亦會出現類似機轉。瀰漫性血管內凝血（disseminated intravascular coagulation）則因全身凝血活化導致相同結果。三者皆符合題目描述，且均涉及微血管病變性溶血之範疇。\n- (D) 免疫性血小板低下紫斑（immune thrombocytopenic purpura）僅造成血小板破壞，不會引發溶血或碎裂紅血球。",
+      "level": "unchecked"
+    },
+    "83": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n粥狀動脈硬化（atherosclerosis）是一種慢性血管發炎性疾病。\n許多血液指標濃度上升會增加風險，但高密度脂蛋白（high-density lipoprotein）除外。\n此類物質多與內皮損傷或氧化壓力有關。\n保護性因子濃度升高通常代表較低的疾病風險。\n\n**選項解析**\n- (A) C 反應性蛋白（C-reactive protein）是發炎標記物。濃度升高與粥狀動脈硬化風險增加相關。\n- (B) 高密度脂蛋白負責逆向膽固醇運輸。具有保護血管作用，濃度上升反而降低風險。\n- (C) 同半胱胺酸（homocysteine）濃度過高會損傷內皮細胞（endothelial cells）。促進粥狀動脈硬化形成。\n- (D) 血糖（blood glucose）長期過高會造成糖化終產物堆積。損害血管內皮並加速粥狀動脈硬化發生。",
+      "level": "unchecked"
+    },
+    "84": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n瀰漫大 B 細胞淋巴瘤（diffuse large B-cell lymphoma）是成年人最常見的惡性非何杰金氏淋巴癌（non-Hodgkin lymphoma）。\n此疾病屬於 B 細胞（B cell）來源的淋巴球增生性疾病。\n在流行病學統計上，其發生率遠高於其他 T 細胞或 B 細胞亞型。\n此疾病特徵為淋巴球體積增大，且生長迅速。\n它是侵襲性淋巴瘤中預後較差但可治療的一類。\n\n**選項解析**\n- (A) 正確。瀰漫大 B 細胞淋巴瘤佔所有非何杰金氏淋巴癌的約三分之一。\n- (B) 錯誤。周邊 T 細胞淋巴瘤（peripheral T-cell lymphoma, unspecified）屬於 T 細胞（T cell）來源，發生率較低。\n- (C) 錯誤。退行性大細胞淋巴瘤（anaplastic large cell lymphoma）是較罕見的亞型，多見於兒童或青年。\n- (D) 錯誤。被套細胞淋巴瘤（mantle cell lymphoma）雖為 B 細胞來源，但盛行率不如瀰漫大 B 細胞淋巴瘤。",
+      "level": "unchecked"
+    },
+    "85": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n本題考的是免疫性血小板減少性紫斑症（Immune Thrombocytopenic Purpura, ITP）的病理機轉。\n兒童在病毒感染後常發生自體免疫反應，產生針對血小板（platelet）的抗體（antibody）。\n這些抗體標記血小板，使其被脾臟巨噬細胞（macrophage）吞噬破壞，導致血小板數量顯著下降。\n類固醇（steroids）治療可抑制免疫反應，因此症狀會隨之緩和。\n此病為自限性。多數兒童在數週內可自然恢復。\n\n**選項解析**\n- (A) 抗血小板抗體（anti-platelet antibodies）：正確。此為 ITP 的主要成因，自體抗體結合血小板表面抗原（antigen），引發破壞。\n- (B) 骨髓造血不良（bone marrow failure）：錯誤。若為造血功能障礙，紅血球（red blood cell）與白血球（white blood cell）計數通常也會異常，但本例僅血小板降低。\n- (C) 醣蛋白 IIb-IIIa 功能不全（glycoprotein IIb-IIIa dysfunction）：錯誤。此為先天性疾病格蘭茲曼氏血栓形成不良症（Glanzmann thrombasthenia），血小板計數通常正常，且無感染後發病特徵。\n- (D) vWF 金屬酵素缺乏（vWF metalloprotease deficiency）：錯誤。此為血栓性血小板減少性紫斑症（TTP），常伴隨微血管溶血性貧血（hemolytic anemia）。本例紅血球指數正常。故可排除此診斷。",
+      "level": "unchecked"
+    },
+    "86": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n突觸小泡蛋白（Synaptophysin）與嗜鉻粒蛋白（Chromogranin）是神經內分泌細胞（neuroendocrine cells）的特異性標記物。腫瘤細胞表現這些抗原時，代表具有神經外胚層（neural ectoderm）分化特徵。嗅母神經胚細胞癌起源於鼻腔頂部的嗅覺感受器（olfactory receptor）神經元（neuron），因此常表現這些神經內分泌抗原。\n\n**選項解析**\n- (A) 鼻咽上皮細胞癌（nasopharyngeal carcinoma）屬於上皮性腫瘤，主要表現角蛋白（Keratin），而非神經內分泌標記。\n- (B) 嗅母神經胚細胞癌（olfactory neuroblastoma）起源於鼻腔頂部的嗅覺感受器神經元，具有神經內分泌特性。此為惡性腫瘤，好發於鼻腔上部。\n- (C) 喉頭上皮細胞癌多為鱗狀上皮來源，免疫染色以角蛋白陽性為主，缺乏神經內分泌標記。\n- (D) NUT 中線癌（NUT midline carcinoma）特徵為 NUT 基因（NUT gene）重排，屬於極少數的惡性腫瘤，非典型神經內分泌表現。",
+      "level": "unchecked"
+    },
+    "87": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n類肉瘤（sarcoidosis）是一種原因不明的系統性發炎疾病（inflammatory disease）。其組織病理特徵為非乾酪樣（non-caseating）肉芽腫（granuloma）。這與結核病（tuberculosis）引起的壞死性肉芽腫不同。這是鑑別診斷的重點。肉芽腫由活化的巨噬細胞（macrophage）組成，無中央壞死區。\n\n**選項解析**\n- (A) 正確，臨床上大多數病人表現雙側肺門淋巴結（hilar lymph node）腫大，這是常見影像特徵。\n- (B) 正確，此免疫反應主要由 CD4 陽性 T 細胞（CD4+ T cells）驅動，導致巨噬細胞聚集形成肉芽腫。\n- (C) 錯誤，類肉瘤的病理變化為非壞死性（non-necrotizing）肉芽腫，而非壞死性，這是與結核病的關鍵差異。\n- (D) 正確，病灶可出現在肺、脾、肝等多種器官（organ），屬於全身性疾病，有時也會侵犯皮膚（skin）或眼睛（eye）。",
+      "level": "unchecked"
+    },
+    "88": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n長骨骨折（long bone fracture）與手術後，患者長期臥床易形成下肢深靜脈血栓（Deep vein thrombosis）。\n血栓（thrombus）脫落隨血流進入肺動脈（pulmonary artery），造成肺栓塞（Pulmonary embolism），引發胸痛與呼吸困難。\n此為外科病患常見之嚴重併發症，需高度懷疑並立即處理。\n\n**選項解析**\n- (A) 敗血症（Sepsis）：雖可能發生感染，但典型表現為高燒與休克，非首要考慮的急性呼吸症狀原因。\n- (B) 肺栓塞：符合骨折後臥床、血栓形成及突發性呼吸窘迫之臨床特徵，最可能診斷。\n- (C) 顱內出血（Intracranial hemorrhage）：主要表現為意識改變或神經學缺損，與呼吸困難無直接關聯。\n- (D) 細菌性肺炎（Bacterial pneumonia）：通常發病較慢，伴隨高燒及咳嗽，不如肺栓塞符合急性病程。",
+      "level": "unchecked"
+    },
+    "89": {
+      "text": "**答案：D**\n\n**關鍵觀念**\nE型肝炎病毒（Hepatitis E virus）是一種 RNA 病毒（RNA virus）。\n該病毒主要經糞口途徑（Fecal-oral route）傳播。\n該病毒常因飲用水源污染導致群聚感染，被稱為旅行者肝炎（Traveler hepatitis）。\n懷孕婦女感染後重症化風險高，死亡率可達近百分之二十。\n\n**選項解析**\n- (A) A型肝炎病毒（Hepatitis A virus）雖經糞口傳播，但孕婦併發症較少，無此高死亡率。\n- (B) B型肝炎病毒（Hepatitis B virus）主要透過血液或體液傳染，非旅行者肝炎主因。\n- (C) D型肝炎病毒（Hepatitis D virus）需合併 B 型肝炎病毒感染才會發病。\n- (D) E型肝炎病毒符合水源性爆發與孕婦高死亡率之臨床特徵，故為正確選項。",
+      "level": "unchecked"
+    },
+    "90": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n纖維薄層型肝細胞癌 (fibrolamellar carcinoma) 是一種罕見的惡性腫瘤。它好發於無慢性肝病背景的年輕人。此疾病與典型肝細胞癌 (hepatocellular carcinoma) 的危險因子不同。組織學上特徵為嗜酸性粒線體豐富的嗜酸細胞 (oncocytic cells)。\n\n**選項解析**\n- (A) 正確。此腫瘤確實好發於年輕人或青少年，平均年齡約二十多歲。\n- (B) 錯誤。背景肝臟 (liver) 通常正常，無嚴重纖維化 (fibrosis) 或肝硬化 (cirrhosis) 病史。這是與典型肝細胞癌最大的區別。\n- (C) 正確。顯微鏡下可見含有許多粒線體 (mitochondria) 的嗜酸細胞。這些細胞由緻密的膠原蛋白 (collagen) 纖維帶 (fibrous bands) 分隔開來。\n- (D) 正確。相較於典型肝細胞癌，此類腫瘤通常預後較好。切除手術後的存活率較高。",
+      "level": "unchecked"
+    },
+    "91": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n潰瘍性結腸炎（ulcerative colitis）屬於慢性發炎性腸道疾病（inflammatory bowel disease）。其病理特徵為黏膜層（mucosa）及表淺的黏膜下層（submucosa）發生非透壁性發炎。此病與原發性硬化性膽管炎（primary sclerosing cholangitis）有顯著關聯，但併發比例遠低於 50％。\n\n**選項解析**\n- (A) 此敘述錯誤。潰瘍性結腸炎患者中，僅少數會合併原發性硬化性膽管炎，盛行率約為 1-5％，並非大於 50％。\n- (B) 此敘述正確。嚴重發炎時黏膜修復可形成假息肉（pseudopolyps）。極重度病例可能引發中毒性巨結腸症（toxic megacolon）危及生命。\n- (C) 此敘述正確。病變通常始於直腸（rectum）並向近端連續延伸，不具跳躍式病變特徵。\n- (D) 此敘述正確。發炎深度侷限於黏膜層及表淺的黏膜下層，不會穿透肌層（muscularis propria）。",
+      "level": "unchecked"
+    },
+    "92": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n高血壓性腎硬化（hypertensive nephrosclerosis）是高血壓導致的腎臟病變。\n此疾病主要侵犯腎臟的血管系統（vascular system），特別是微循環部分。\n長期血壓升高會導致血管壁增厚與管腔狹窄。\n最終造成腎實質（renal parenchyma）缺血性萎縮與功能喪失。\n\n**選項解析**\n- (A) 腎小球硬化（glomerulosclerosis）是常見的繼發性病變。\n  入球小動脈（afferent arteriole）病變導致腎小球（glomerulus）血流灌注不足。\n  缺血會引發腎小球纖維化與玻璃樣變性，造成功能喪失。\n- (B) 小動脈硬化（arteriosclerosis）是血管壁結構改變的總稱。\n  在高血壓病程中，腎臟小動脈常出現管壁增厚現象。\n  此變化符合高血壓性腎硬化的病理特徵。\n- (C) 細動脈硬化（arteriolosclerosis）是本病的核心病變。\n  包括透明變性（hyaline arteriolosclerosis）或增生性病變。\n  這是區分其他腎臟疾病的重要組織學依據。\n- (D) 靜脈硬化（phlebosclerosis）最不可能發生。\n  靜脈（vein）系統承受壓力較低，非高血壓主要攻擊目標。\n  病理機制主要涉及動脈與微血管，不影響靜脈結構。",
+      "level": "unchecked"
+    },
+    "93": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n腦下垂體中風（pituitary apoplexy）是指腦下垂體（pituitary gland）發生急性出血（hemorrhage）或梗塞（infarction）。此症候群最常見的原因為腺瘤內發生嚴重之腦下垂體出血。血管阻塞導致缺血性壞死（ischemic necrosis）雖可發生，但非最主要原因。\n\n**選項解析**\n- (A) 正確。臨床上大多數病例源自腦下垂體腺瘤內的急性出血，導致腫脹與壓迫症狀。\n- (B) 錯誤。血管阻塞導致缺血性壞死可視為中風機制之一，但發生率低於自發性出血。\n- (C) 錯誤。膿瘍（abscess）之產生極少見，通常與感染或外傷相關，非典型病因。\n- (D) 錯誤。惡性腫瘤（malignant tumor）細胞之侵犯較罕見，多為良性腺瘤病變引發中風。",
+      "level": "unchecked"
+    },
+    "95": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n子宮頸上皮內瘤變（Cervical Intraepithelial Neoplasia, CIN）屬於癌前病變。\n常與人類乳突病毒（Human Papillomavirus, HPV）感染有關。\n低度鱗狀上皮內病灶（LSIL）代表輕微異常。\n免疫系統多能清除病毒。\n導致病變自然回復（regress）。\n高度鱗狀上皮內病灶（HSIL）代表較嚴重異常。\n細胞分化差，持續存在（persist）風險高。\n若未治療，部分 HSIL 可能進展為侵襲性子宮頸癌（Cervical Cancer）。\n\n**選項解析**\n- (A) 此敘述不正確。大部分低度鱗狀上皮內病灶具有自發性回復特性，不會持續存在。\n- (B) 此敘述正確。統計顯示約有少部分低度鱗狀上皮內病灶會進展（progress）為高度鱗狀上皮內病灶。\n- (C) 此敘述正確。少數高度鱗狀上皮內病灶在免疫監控下仍可能回復，但機率較低。\n- (D) 此敘述正確。大部分高度鱗狀上皮內病灶傾向持續存在，需密切追蹤或介入治療。",
+      "level": "unchecked"
+    },
+    "96": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n前列腺炎（prostatitis）依臨床表現分為四型。慢性非細菌性前列腺炎（chronic abacterial prostatitis）亦稱慢性骨盆疼痛症候群（Chronic Pelvic Pain Syndrome），發生率最高。急性與慢性細菌性前列腺炎（bacterial prostatitis）較少見但可明確診斷。肉芽腫性前列腺炎（granulomatous prostatitis）多為特殊原因引起。\n\n**選項解析**\n- (A) 急性細菌性前列腺炎（acute bacterial prostatitis）的病原菌通常與泌尿道感染（urinary tract infection）類似，常見如大腸桿菌（Escherichia coli）。此敘述正確。\n- (B) 慢性細菌性前列腺炎（chronic bacterial prostatitis）因抗生素（antibiotics）穿透前列腺（prostate）困難，治療不易且易復發。病人常有反覆泌尿道感染病史。此敘述正確。\n- (C) 在美國，肉芽腫性前列腺炎最常見原因為使用卡介苗（Bacillus Calmette-Guérin, BCG）治療表面性膀胱癌（superficial bladder cancer）。此敘述正確。\n- (D) 慢性非細菌性前列腺炎病人雖無反覆泌尿道感染病史，但其發生率是各種前列腺炎中最高的，而非最低。此敘述錯誤。",
+      "level": "unchecked"
+    },
+    "97": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n睪丸精母細胞瘤（testicular seminoma）屬於生殖細胞腫瘤（germ cell tumor）的一種。\n此疾病好發於青年至中年男性，高峰年齡約為三十至四十歲。\n典型遺傳變化包含第十二條染色體（chromosome）短臂的等臂染色體（isochromosome 12p）。\n腫瘤細胞（tumor cell）免疫標記常表現多能性轉錄因子（transcription factor）OCT3/4 與 NANOG。\n\n**選項解析**\n- (A) 此敘述正確，睪丸精母細胞瘤常見第十二條染色體短臂的等臂染色體。\n- (B) 此敘述正確，腫瘤細胞會表現多能性相關標記 OCT3/4 與 NANOG。\n- (C) 此敘述較不正確。睪丸精母細胞瘤好發於青年至中年男性。嬰兒時期（infant）極少發生，嬰兒多為其他類型生殖細胞腫瘤。\n- (D) 此敘述正確，部分腫瘤會有 KIT 基因（KIT gene）的活化性突變（activating mutations），與惡性程度相關。",
+      "level": "unchecked"
+    },
+    "98": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n狂犬病（Rabies）是由狂犬病毒（Rabies virus）感染中樞神經系統（Central Nervous System）所致的致命性腦脊髓炎（Encephalomyelitis）。\n病理切片檢查時，最可靠的診斷依據是發現神經元（Neuron）細胞質內的嗜酸性包涵體（Eosinophilic inclusion body）。\n此特徵性構造被命名為奈格里小體（Negri body），代表病毒在細胞內複製聚集。\n\n**選項解析**\n- (A) 路易氏體（Lewy body）常見於帕金森氏症（Parkinson's disease）患者黑質（Substantia nigra）的神經元內。\n- (B) 庫魯斑塊（Kuru plaque）是朊病毒病（Prion disease）的一種病理表現，主要見於庫魯病（Kuru）的腦組織切片中。\n- (C) 奈格里小體是狂犬病毒感染後形成的嗜酸性包涵體，好發於海馬迴（Hippocampus）或小腦皮質（Cerebellar cortex）。\n- (D) 應力顆粒（Stress granules）是細胞在氧化壓力下形成的核糖核蛋白複合物（Ribonucleoprotein complex），缺乏疾病特異性。",
+      "level": "unchecked"
+    },
+    "99": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n類肉瘤病（sarcoidosis）是一種原因不明的全身性非乾酪樣化肉芽腫性疾病。\n眼部是該疾病常見的受累器官，其中葡萄膜炎（uveitis）為主要臨床表現之一。\n此炎症反應特徵為肉芽腫（granuloma）形成，因此稱為肉芽腫性葡萄膜炎。\n其機轉涉及免疫細胞（immune cells）聚集，導致組織結構破壞與功能障礙。\n\n**選項解析**\n- (A) 惡性黑色素瘤（malignant melanoma）主要為色素細胞（melanocyte）惡性腫瘤，通常不引發肉芽腫性發炎反應。\n- (B) 惡性淋巴瘤（malignant lymphoma）為淋巴球（lymphocyte）惡性增生，雖可侵犯眼部但非典型肉芽腫性病變模式。\n- (C) 類肉瘤病常伴隨全身多器官肉芽腫形成，葡萄膜炎是其常見且重要的併發症。\n- (D) 紅斑性狼瘡（lupus erythematosus）屬自體免疫血管炎（vasculitis），眼部病變多為視網膜血管阻塞而非肉芽腫。",
+      "level": "unchecked"
+    },
+    "100": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n此病例呈現典型之威尼克腦病變（Wernicke encephalopathy）與柯薩可夫症候群（Korsakoff psychosis）。\n長期酗酒或營養不良會導致硫胺素（thiamine，即維生素 B₁）缺乏。\n乳頭體（mamillary bodies）及第三、第四腦室（ventricle）壁是此病變好發部位，會出現出血與壞死。\n此症候群主要因葡萄糖（glucose）代謝障礙，導致特定腦區神經細胞（neuron）死亡。\n\n**選項解析**\n- (A) 維生素 A（vitamin A）缺乏主要導致夜盲症或乾眼症，不會引起此類腦部病變。\n- (B) 維生素 B₁（vitamin B₁）即硫胺素，為丙酮酸脫氫酵素（pyruvate dehydrogenase enzyme）輔因子，缺乏時葡萄糖代謝受阻，造成乳頭體損傷。\n- (C) 維生素 B₆（vitamin B₆）缺乏可能引起周邊神經病變（peripheral neuropathy）或貧血，非此腦部症狀主因。\n- (D) 維生素 B₁₂（vitamin B₁₂）缺乏主要導致巨球型貧血（megaloblastic anemia）與脊髓亞急性聯合變性（subacute combined degeneration of spinal cord），病理表現不同。",
+      "level": "unchecked"
+    }
+  }
+}

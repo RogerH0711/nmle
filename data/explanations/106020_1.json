@@ -1,0 +1,401 @@
+{
+  "model": "Qwen3.5-35B-A3B",
+  "questions": {
+    "1": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n頭頸部大部分靜脈血液最終會回流至內頸靜脈（internal jugular vein）。\n此靜脈是收集腦部與面部血液的主要通道。\n但部分甲狀腺相關靜脈有特殊的引流路徑。\n下甲狀腺靜脈（inferior thyroid vein）不直接注入內頸靜脈。\n它屬於胸廓入口處（thoracic inlet）的靜脈回流系統。\n\n**選項解析**\n- (A) 下岩竇（inferior petrosal sinus）位於顱底，血液最終流入內頸靜脈起始處或乙狀竇（sigmoid sinus）。\n- (B) 面靜脈（facial vein）與後顏面靜脈（posterior facial vein）匯合，形成共同面靜脈（common facial vein）後注入內頸靜脈。\n- (C) 咽靜脈（pharyngeal vein）主要收集咽部血液，直接回流至內頸靜脈側壁。\n- (D) 下甲狀腺靜脈下行後匯入頭臂靜脈（brachiocephalic vein），不進入內頸靜脈。",
+      "level": "unchecked"
+    },
+    "2": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n三叉神經（trigeminal nerve）主要負責頭面部感覺與咀嚼運動。部分分支會攜帶其他顱神經（cranial nerves）的副交感神經纖維（parasympathetic nerve fibers）。這些纖維經特定神經節（ganglia）交換後，沿著三叉神經分支到達目標腺體。\n\n**選項解析**\n- (A) 瞳孔括約肌（sphincter pupillae）受第三顱神經（oculomotor nerve）控制。第七顱神經（facial nerve）不支配此肌肉，且與三叉神經無此伴行關係。\n- (B) 舌咽神經（glossopharyngeal nerve）發出副交感纖維至耳聳節（otic ganglion）。交換後纖維加入三叉神經下頜枝（mandibular branch）的耳顳神經（auriculotemporal nerve），最終控制耳下腺（parotid gland）分泌。\n- (C) 淚腺（lacrimal gland）受第七顱神經副交感纖維支配。路徑經三叉神經眼枝（ophthalmic branch）的鼻睫神經（nasociliary nerve），非第三顱神經直接控制。\n- (D) 舌下腺（sublingual gland）由第七顱神經透過鼓索神經（chorda tympani）支配。舌下神經（hypoglossal nerve）僅為運動神經，不負責分泌功能，亦無副交感纖維伴行。",
+      "level": "unchecked"
+    },
+    "3": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n胸膜（pleura）分為壁層（parietal layer）與臟層（visceral layer），兩者的淋巴回流（lymphatic drainage）路徑有顯著差異。\n臟層胸膜（visceral pleura）的淋巴主要沿著肺血管（pulmonary vessels）走向，回流至支氣管肺淋巴結（bronchopulmonary lymph nodes）。\n壁層胸膜（parietal pleura）則沿著肋間血管（intercostal vessels）或膈肌血管（phrenic vessels），回流至胸壁（chest wall）或縱隔內的系統性淋巴結。\n\n**選項解析**\n- (A) 壁層胸膜的肋間部分可經前肋間靜脈引流至腋淋巴結（axillary lymph nodes），此為胸壁相關路徑的常見考點。\n- (B) 支氣管肺淋巴結主要接收臟層胸膜與肺組織（lung tissue）的淋巴回流，非壁層主要路徑。\n- (C) 氣管支氣管淋巴結（tracheobronchial lymph nodes）位於氣管分叉處（carina），主要收集來自肺部及縱隔（mediastinum）的淋巴液。\n- (D) 支氣管縱隔淋巴幹（bronchomediastinal trunks）匯集後注入靜脈角（venous angle），屬於下游總匯結構而非壁層直接回流點。",
+      "level": "unchecked"
+    },
+    "4": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n胃壁擴張受器（stretch receptors）的訊號主要透過副交感神經（parasympathetic nerve）傳入腦幹（brainstem）。\n迷走神經（vagus nerve）含有大量內臟感覺纖維，負責傳遞飽足感與噁心感。\n內臟大、小及最小神經主要傳遞痛覺或調節血管（blood vessel）收縮，不主導飽足訊號。\n此類感覺傳入中樞後，會整合於延髓（medulla oblongata）的孤束核（nucleus tractus solitarius）。\n交感神經（sympathetic nerve）系統則主要參與抑制胃腸蠕動與血管收縮反應。\n\n**選項解析**\n- (A) 內臟大神經（greater splanchnic nerve）主要來自胸髓（thoracic spinal cord）T5-T9，負責傳遞上腹部痛覺與交感興奮。\n- (B) 內臟小神經（lesser splanchnic nerve）源自胸髓 T10-T11，主要支配腎上腺髓質（adrenal medulla）與腸道血管收縮。\n- (C) 內臟最小神經（least splanchnic nerve）來自胸髓 T12，主要影響腎臟血流與交感反射。\n- (D) 迷走神經含有大量傳入纖維，能感知胃壁擴張並傳遞至孤束核，產生飽足感覺。",
+      "level": "unchecked"
+    },
+    "5": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n膀胱 (Bladder) 是位於盆腔 (Pelvic cavity) 內的肌性囊狀器官。\n其表面覆蓋情況決定了手術路徑與病變範圍。\n僅膀胱的上表面 (Superior surface) 被腹膜 (Peritoneum) 覆蓋。\n其餘部分皆位於腹膜外，屬於腹膜後位結構。\n了解此結構有助於避免手術中誤傷。\n\n**選項解析**\n- (A) 後面：膀胱後面與直腸 (Rectum) 或子宮 (Uterus) 相鄰。\n  此處雖有腹膜反折形成陷凹，但非主要覆蓋面。\n- (B) 側下面：此區域直接接觸骨盆壁筋膜。\n  沒有腹膜覆蓋，屬於腹膜外位。\n- (C) 上表面：膀胱充盈時頂部上升進入腹腔 (Abdominal cavity)。\n  此處被腹膜完全覆蓋，是正確選項。\n- (D) 膀胱頸 (Bladder neck)：位於最下方，固定於骨盆底肌肉 (Pelvic floor muscles)。\n  此處無腹膜覆蓋，與尿道 (Urethra) 相連。",
+      "level": "unchecked"
+    },
+    "6": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n直腸（rectum）的淋巴引流具有明顯的分區特性。上段直腸的淋巴管（lymphatic vessel）沿著上直腸動脈（superior rectal artery）向上走行。這些淋巴管最終匯入腸繫膜下淋巴結（inferior mesenteric lymph nodes）。此區域屬於後腸（hindgut）衍生物的血供與引流範圍。了解此路徑對判斷直腸癌（rectal cancer）轉移很重要。這涉及肝臟（liver）或肺部（lung）的順序。\n\n**選項解析**\n- (A) 髂內淋巴結（internal iliac lymph nodes）主要接收中下段直腸的淋巴回流。上段直腸不直接匯入此處，故非正確答案。\n- (B) 腰淋巴結（lumbar lymph nodes）主要接收性腺（gonads）及腎臟（kidney）等器官的引流。直腸淋巴需先經腸繫膜下節再至乳糜池（cisterna chyli）。\n- (C) 腹股溝淺淋巴結（superficial inguinal lymph nodes）負責肛管（anal canal）齒狀線（pectinate line）以下的區域。此處皮膚（skin）與外生殖器（external genitalia）亦由此引流，與上段直腸無關。\n- (D) 腸繫膜下淋巴結是上段直腸的主要引流站。這符合後腸器官的淋巴回流路徑，故為正確選項。",
+      "level": "unchecked"
+    },
+    "7": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n大骨盆（Greater pelvis）又稱假骨盆，位於骨盆入口（Pelvic inlet）上方。\n大骨盆主要支撐腸道。\n骨盆入口由髂骨緣與骶骨岬構成，分隔腹腔（Abdominal cavity）與盆腔。\n女性骨盆（Female pelvis）較男性寬且淺，適應分娩需求。\n腎臟（Kidney）屬於腹膜後（Retroperitoneal）器官，位於腹腔上部兩側。\n\n**選項解析**\n- (A) 錯誤。大骨盆位於骨盆入口上方，小骨盆（Lesser pelvis）才在下方。\n- (B) 錯誤。女性骨盆較男性寬且淺，男性則較窄且深，形狀不同。\n- (C) 正確。大骨盆內含腹腔臟器，乙狀結腸（Sigmoid colon）部分位於此區域。\n- (D) 錯誤。腎臟位於腹膜後，不屬於骨盆腔（Pelvic cavity）內的內容物。",
+      "level": "unchecked"
+    },
+    "8": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n韌帶（ligament）主要功能是連接骨頭（bone）與骨頭，以穩定關節。\n部分特殊韌帶連接同一骨頭的兩個突起，不屬於不同骨頭間。\n本題考肩胛骨（scapula）相關韌帶的解剖位置與連接對象差異。\n\n**選項解析**\n- (A) 胸鎖韌帶（sternoclavicular ligament）連接胸骨（sternum）與鎖骨（clavicle），屬於不同骨頭間的韌帶結構。\n- (B) 喙肩韌帶（coracoacromial ligament）連接肩胛骨的喙突（coracoid process）與肩峰（acromion）。兩者皆為同一塊骨頭的構造，故非不同骨頭間。\n- (C) 喙鎖韌帶（coracoclavicular ligament）連接肩胛骨的喙突與鎖骨，屬於不同骨頭間的韌帶結構。\n- (D) 喙肱韌帶（coracohumeral ligament）連接肩胛骨的喙突與肱骨（humerus），屬於不同骨頭間的韌帶結構。",
+      "level": "unchecked"
+    },
+    "9": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n手部鼻煙區（snuff box）位於手腕橈側。\n此區域由特定肌腱圍成。\n鼻煙區由拇長展肌（abductor pollicis longus）與拇短伸肌腱（extensor pollicis brevis）形成。\n此區域底層深處有橈動脈（radial artery）經過。\n因此臨床常於此處觸摸橈動脈搏動以評估循環狀況。\n\n**選項解析**\n- (A) 正確。橈動脈走行於鼻煙區底面，位置表淺且固定，是標準的觸診點。\n- (B) 錯誤。尺動脈（ulnar artery）主要位於手腕尺側，與鼻煙區的解剖位置不相符。\n- (C) 錯誤。骨間前動脈（anterior interosseous artery）深埋於前臂骨間膜（interosseous membrane）前方，被肌肉覆蓋無法觸及。\n- (D) 錯誤。骨間後動脈（posterior interosseous artery）主要分布於前臂背側深層肌肉之間，位置較深。",
+      "level": "unchecked"
+    },
+    "10": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n前臂（forearm）伸直動作主要依賴肘關節（elbow joint）伸肌群（extensor muscles）收縮完成。支配此區域最主要的肌肉是肱三頭肌（triceps brachii）。該肌肉的神經支配來源為橈神經（radial nerve）。若此神經受損，患者將無法主動伸直手臂。\n\n**選項解析**\n- (A) 肌皮神經（musculocutaneous nerve）主要支配上臂前側的屈肌群（flexor muscles）。例如肱二頭肌（biceps brachii）與喙肱肌（coracobrachialis）。受損時會導致屈肘無力，而非無法伸直。\n- (B) 正中神經（median nerve）主要支配前臂大部分屈肌及手部內在肌。受損通常影響手指的屈曲功能與手掌感覺。\n- (C) 尺神經（ulnar nerve）主要支配手部內側的小肌肉群及部分屈腕肌。受損常導致爪形手畸形，不影響肘部伸直。\n- (D) 橈神經負責支配上肢後側的伸肌群。包含肱三頭肌與前臂伸肌。受損時最典型症狀為無法伸直肘關節及垂腕，並伴隨手背感覺喪失。",
+      "level": "unchecked"
+    },
+    "11": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n感覺型失語症（sensory aphasia）主要源於語言理解功能受損。\n渥尼克區（Wernicke area）位於左側顳上回（superior temporal gyrus）後部。\n此區域負責處理聽覺語言訊息，通常位於優勢半球。\n損傷會導致患者能流利說話，但內容缺乏意義且無法理解他人言語。\n\n**選項解析**\n- (A) 上丘（superior colliculus）主要參與視覺反射動作，與語言功能無關。\n- (B) 弓狀束（arcuate fasciculus）連接布洛卡區（Broca area）與渥尼克區，損傷會導致傳導型失語症（conduction aphasia）。\n- (C) 渥尼克區負責語言理解，受損即為感覺型失語症的典型原因。\n- (D) 前聯合（anterior commissure）連接兩側顳葉，主要涉及嗅覺與部分視覺通路，非語言核心區域。",
+      "level": "unchecked"
+    },
+    "12": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n味覺（gustation）訊號經腦幹（brainstem）神經核傳導至丘腦（thalamus）後，投射至大腦皮質。\n主要味覺皮質（primary gustatory cortex）位於島葉（insula）與額蓋部（frontal operculum）。\n此區域負責統合味覺感知、情緒反應及飲食行為調節。\n感覺訊息經腹後內側核（ventral posteromedial nucleus）中繼至皮質區。\n此區域亦與第二味覺皮質區相連，處理複雜味覺資訊。\n\n**選項解析**\n- (A) 正確，島葉包含第一味覺皮質區，接收來自面神經（facial nerve）與舌咽神經（glossopharyngeal nerve）的輸入。\n- (B) 錯誤，枕葉（occipital lobe）主要處理視覺（vision）資訊，位於大腦後部，與味覺無關。\n- (C) 錯誤，內側額葉（medial frontal lobe）參與運動控制與認知功能，非味覺中樞。\n- (D) 錯誤，背外側額葉（dorsal lateral frontal lobe）屬於前額葉皮質（prefrontal cortex），負責執行功能。",
+      "level": "unchecked"
+    },
+    "13": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n腦幹網狀結構（reticular formation）包含多個神經核群（nuclei）。這些核群負責調節意識與覺醒狀態。不同核群使用不同的神經傳遞物質（neurotransmitter）。藍斑核（locus coeruleus）是正腎上腺素（norepinephrine）的主要來源。縫核（raphe nucleus）主要分泌血清素（serotonin）。腹側被蓋區（ventral tegmental area）產生多巴胺（dopamine）。腳橋網狀核（pedunculopontine reticular nucleus）使用乙醯膽鹼（acetylcholine）。\n\n**選項解析**\n- (A) 正確。藍斑核位於橋腦（pons）背側。它是中樞神經系統（central nervous system）內正腎上腺素含量最高的區域。因此以正腎上腺素為主要神經傳遞物質。\n- (B) 錯誤。縫核位於中線結構。它主要分泌血清素。與題目要求的正腎上腺素不符。\n- (C) 錯誤。腹側被蓋區屬於邊緣系統（limbic system）相關結構。它主要產生多巴胺。並非正腎上腺素的主要來源。\n- (D) 錯誤。腳橋網狀核位於腦幹下部。其主要神經傳遞物質為乙醯膽鹼。不符合題目描述的神經傳遞物質。",
+      "level": "unchecked"
+    },
+    "14": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n大腦皮質（cerebral cortex）依據細胞（cell）構造（structure）不同，可劃分為多個布洛德曼區（Brodmann area）。\n初級視覺皮質（primary visual cortex）是處理視覺輸入的首要區域。\n此皮質位於枕葉（occipital lobe）內側面的距狀裂（calcarine sulcus）兩側。\n此區域亦稱為紋狀皮質（striate cortex）。\n視覺訊號經視神經傳入，最終投射至此區域進行分析。\n\n**選項解析**\n- (A) 19 區屬於視覺聯合皮質（visual association cortex），負責整合與辨識複雜影像。\n- (B) 17 區即為初級視覺皮質，接收來自視神經（optic nerve）的訊號進行初步處理。\n- (C) 22 區位於顳上回（superior temporal gyrus），主要負責語言理解功能。\n- (D) 45 區位於額下回（inferior frontal gyrus），與布洛卡區（Broca area）共同控制語言產出。",
+      "level": "unchecked"
+    },
+    "15": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n甲狀腺（thyroid gland）手術中，最需保護的結構是喉返神經（recurrent laryngeal nerve）。此神經沿氣管（trachea）與食道（esophagus）之間的溝槽上行。它緊貼後外側包膜（capsule）走行。因此手術時容易因牽拉或電灼而受損。受損後會導致聲帶（vocal cord）麻痺，引起聲音沙啞。\n\n**選項解析**\n- (A) 喉內神經（internal laryngeal nerve）屬於喉上神經（superior laryngeal nerve）分支。它穿過甲狀舌骨膜（thyrohyoid membrane），位置較高。雖然可能受傷，但發生率低於喉返神經。\n- (B) 膈神經（phrenic nerve）位於前斜角肌（anterior scalene muscle）表面深層。其解剖位置較遠，通常不會在甲狀腺手術範圍內受損。\n- (C) 頸襻下根（inferior root of ansa cervicalis）繞過頸內靜脈（internal jugular vein）外側。它主要支配舌骨下肌群，與甲狀腺實質關係較不密切。\n- (D) 喉返神經在甲狀腺切除時風險最高。此神經支配除環甲肌（cricothyroid muscle）外的所有喉內肌（intrinsic muscles of larynx）。受損後會導致聲帶麻痺，引起聲音沙啞。",
+      "level": "unchecked"
+    },
+    "16": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n上眼瞼下垂（ptosis）源於提上瞼肌（levator palpebrae superioris muscle）功能喪失。\n此肌肉由動眼神經（oculomotor nerve）支配，受損時無法收縮導致下垂。\n此外，動眼神經亦控制多數眼外肌（extraocular muscle），影響眼球（globe）運動。\n\n**選項解析**\n- (A) 外旋神經（abducent nerve）支配外直肌（lateral rectus muscle）。\n  負責眼球向外轉動，與上眼瞼無關，受損不致下垂。\n- (B) 滑車神經（trochlear nerve）支配上斜肌（superior oblique muscle）。\n  負責眼球向下及內旋，不影響眼瞼位置。\n  受損時患者會有複視（diplopia）現象，但無眼瞼下垂。\n- (C) 視神經（optic nerve）屬感覺神經，傳遞視覺訊號。\n  無運動纖維，無法控制肌肉收縮導致下垂。\n- (D) 動眼神經支配提上瞼肌。受損直接造成眼瞼無法抬起，形成上眼瞼下垂。同時伴隨瞳孔散大及眼球向下外斜視。",
+      "level": "unchecked"
+    },
+    "17": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n副鼻竇（paranasal sinuses）引流位置是解剖學重要考點。\n上頜竇（maxillary sinus）開口位於鼻腔側壁（lateral wall of nasal cavity）。\n具體位置在中鼻道（middle nasal meatus）的半月裂（semilunar hiatus）內側緣。\n此處通暢性影響鼻竇炎（sinusitis）發生機率，屬臨床重點。\n\n**選項解析**\n- (A) 篩泡（ethmoidal bulla）是篩骨迷宮（ethmoidal labyrinth）隆起，容納後篩氣房（posterior ethmoidal air cells），非上頜竇開口。\n- (B) 半月裂位於中鼻道，為上頜竇主要引流通道，連接篩漏斗（infundibulum）結構。\n- (C) 下鼻道（inferior nasal meatus）有淚管（nasolacrimal duct）開口，與副鼻竇無關，位置最低。\n- (D) 上鼻道（superior nasal meatus）接收後篩氣房引流，位置較高且狹窄，易阻塞。",
+      "level": "unchecked"
+    },
+    "18": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n顳頜關節（temporomandibular joint）是連接下頜骨（mandible）與顱骨的滑膜關節。\n翼外肌（lateral pterygoid muscle）收縮時，主要負責牽引下頜髁突（mandibular condyle）向前移動。\n此動作稱為下頜骨的前引（protrusion）。\n關節盤（articular disc）位於關節腔內，由纖維軟骨（fibrocartilage）構成。\n\n**選項解析**\n- (A) 莖突下頜韌帶（stylomandibular ligament）連接莖突與下頜角（angle of mandible），非舌部（lingula）。\n- (B) 蝶骨下頜韌帶（sphenomandibular ligament）連接蝶骨翼棘（spine of sphenoid bone）與下頜骨舌部，非下頜角。\n- (C) 翼外肌收縮時，牽引下頜髁突沿關節結節（articular eminence）向前滑動。\n- (D) 顳頜關節的關節盤為纖維軟骨，非彈性軟骨構成。",
+      "level": "unchecked"
+    },
+    "19": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n心肌梗塞（Myocardial infarction）引發的轉移痛，源於臟器與體表的神經匯聚。\n心臟（Heart）的無髓鞘傳入纖維沿著交感神經幹（Sympathetic trunk）進入脊髓（Spinal cord）。\n這些纖維終止於 T1 至 T4 脊髓節段，與來自胸壁的體感覺神經匯合。\n大腦誤將臟器痛訊號解讀為肋間神經（Intercostal nerves）支配的皮膚區域。\n此機制稱為匯聚投射理論（Convergence-projection theory）。\n因皮節（Dermatome）重疊導致定位錯誤，產生體表疼痛感。\n\n**選項解析**\n- (A) 迷走神經（Vagus nerve）：主要負責胸腔內臟感覺傳導，不直接傳導前胸壁體表痛覺。\n- (B) 膈神經（Phrenic nerve）：主要支配橫膈膜運動與感覺，與左上臂或前胸壁皮膚無關。\n- (C) 交感神經幹：負責將心臟痛訊號傳入脊髓，但非體表位置的感覺傳導神經。\n- (D) 肋間神經：支配前胸壁及上臂部分皮膚，是轉移痛被感知的神經路徑。\n當痛覺訊號進入脊髓後，大腦依據體表神經輸入判斷疼痛來源。\n因此此處體表感覺由肋間神經負責傳導至中樞神經系統（Central nervous system）。",
+      "level": "unchecked"
+    },
+    "20": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n乳房（breast）淋巴液主要引流至腋淋巴結（axillary lymph nodes）。右側上半身淋巴最終匯入右淋巴管（right lymphatic duct）。不經胸管（thoracic duct）。鎖骨下淋巴幹（subclavian trunk）是下游通道，最後注入靜脈角（venous angle）。通常以右鎖骨關節（right sternoclavicular joint）為界，右側淋巴不經胸管。\n\n**選項解析**\n- (A) 鎖骨下淋巴幹收集腋窩淋巴，右側乳房淋巴會經此處匯入靜脈角。\n- (B) 胸管主要收集左側上半身及下半身淋巴，右側乳房不直接匯入此處。\n- (C) 腋淋巴結是乳房外側及大部分區域的主要引流站。\n- (D) 胸骨旁淋巴結（parasternal lymph nodes）接收內側乳房的淋巴回流至縱隔腔（mediastinum），再進入靜脈角。",
+      "level": "unchecked"
+    },
+    "21": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n橫膈膜 (Diaphragm) 上有三個重要開口，分別對應不同脊椎平面。下腔靜脈裂孔 (Caval opening) 位於第八胸椎。食道裂孔 (Esophageal hiatus) 位於第十胸椎。主動脈裂孔 (Aortic hiatus) 位於第十二胸椎高度。主要容納大血管與淋巴管結構。奇靜脈 (Azygos vein) 常經此處進入胸腔，故與主動脈 (Aorta) 同列。\n\n**選項解析**\n- (A) 胸管 (Thoracic duct) 確實通過主動脈裂孔，而非食道裂孔。\n- (B) 奇靜脈 與主動脈 同經主動脈裂孔，此敘述正確。\n- (C) 迷走神經 (Vagus nerve) 伴隨食道通過食道裂孔，非下腔靜脈裂孔。\n- (D) 交感神經幹 (Sympathetic trunk) 經內側弓狀韌帶 (Medial arcuate ligament) 下方通過，不經過主動脈裂孔。",
+      "level": "unchecked"
+    },
+    "22": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n心臟傳導系統（Cardiac Conduction System）的血液供應取決於冠狀動脈（Coronary Artery）的優勢型別。\n在右心優勢型（Right Dominant）人群中，竇房結（SA node）與房室結（AV node）主要皆由右冠狀動脈（Right Coronary Artery）供血。\n左迴旋支（Left Circumflex Artery）主要供應左心房（Left Atrium）及左心室（Left Ventricle）側壁，並非傳導系統核心節點的主要來源。\n\n**選項解析**\n- (A) 竇房結確實多由右冠狀動脈供血，但房室結通常非左迴旋支供應，故此配對錯誤。\n- (B) 此選項正確，因為約九成人群為右心優勢型，竇房結與房室結皆源自右冠狀動脈分支。\n- (C) 左前降支（Left Anterior Descending Artery）主要供應室間隔（Interventricular Septum）及前壁，不負責房室結供血。\n- (D) 左迴旋支可供應部分竇房結，但非主流來源，且房室結絕非由左迴旋支單獨供應。",
+      "level": "unchecked"
+    },
+    "23": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n腰神經叢（lumbar plexus）主要位於腰大肌（psoas major muscle）深面。\n大部分分支從腰大肌外側緣穿出至大腿或腹壁。\n唯獨閉孔神經（obturator nerve）沿著腰大肌內側緣下行。\n此解剖位置關係是考點所在，需特別記憶。\n\n**選項解析**\n- (A) 股神經（femoral nerve）位於腰大肌外側。穿過腹股溝韌帶（inguinal ligament）下方進入大腿前群肌肉。\n- (B) 生殖股神經（genitofemoral nerve）穿過腰大肌表面下行。位置較表淺，不位於內側深處。\n- (C) 髂腹股溝神經（iliohypogastric nerve）源自腰神經叢。走行於腹壁肌肉之間，主要支配下腹部皮膚與肌肉。\n- (D) 閉孔神經沿著腰大肌內側緣下行。進入骨盆腔（pelvic cavity）後經閉孔管（obturator canal）穿出至大腿內側群肌肉。",
+      "level": "unchecked"
+    },
+    "24": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n子宮（uterus）供血依賴子宮動脈（uterine artery）。\n結紮出血，代表側支循環（collateral circulation）未中斷。\n卵巢動脈（ovarian artery）與子宮動脈形成吻合枝（anastomosis）。\n\n**選項解析**\n- (A) 上膀胱動脈（superior vesical artery）供膀胱（bladder），非出血源。\n- (B) 下直腸動脈（inferior rectal artery）源自內陰部動脈（internal pudendal artery），不供子宮。\n- (C) 卵巢動脈下行至骨盆（pelvis）與子宮動脈吻合。結紮後血流經吻合枝進入子宮致出血。\n- (D) 閉孔動脈（obturator artery）供大腿內收肌群及髖關節（hip joint），非主要來源。",
+      "level": "unchecked"
+    },
+    "25": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n骨盆入口（pelvic inlet）的界限由後方的薦岬（promontory）、側方的弓狀線（arcuate line）及前方的恥骨嵴（pubic crest）共同構成。這些結構連成一條稱為界線（linea terminalis）的連續弧線，將真骨盆（true pelvis）與假骨盆（false pelvis）分開。髂嵴（iliac crest）位於骨盆入口上方，不參與形成此界限。\n\n**選項解析**\n- (A) 薦岬是薦骨（sacrum）上緣向前突出的部分，構成骨盆入口後方的中點。\n- (B) 髂嵴是髂骨（ilium）的上緣，位置高於骨盆入口，因此不形成其界限。\n- (C) 恥骨嵴位於恥骨（pubis）上緣，與弓狀線相連，構成骨盆入口的前方部分。\n- (D) 弓狀線位於髂骨內面，是界線的側方主要組成結構。",
+      "level": "unchecked"
+    },
+    "26": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n此題考的是脛骨（tibia）近端內側的鵝足（pes anserinus）構造。\n鵝足由三條肌腱共同匯聚，附著於脛骨粗隆（tibial tuberosity）下方的內側骨面。\n這三塊肌肉分別是縫匠肌（sartorius）、股薄肌（gracilis）與半腱肌（semitendinosus）。\n它們主要負責膝關節（knee joint）的屈曲與內旋動作。\n\n**選項解析**\n- (A) 半膜肌（semimembranosus）不屬於鵝足構造。其止點位於脛骨內髁（medial condyle of tibia）後方。\n- (B) 縫匠肌、股薄肌、半腱肌三者共同形成鵝足。\n它們的肌腱確實附著於脛骨粗隆內側區域，符合題目描述。\n- (C) 股二頭肌（biceps femoris）止點位於腓骨小頭（fibular head），不參與此處附著。\n半膜肌亦非鵝足成分，且位置較深。\n- (D) 內收長肌（adductor longus）、內收短肌（adductor brevis）、內收大肌（adductor magnus）主要止點位於股骨粗線（linea aspera），而非脛骨。",
+      "level": "unchecked"
+    },
+    "27": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n前臂後群伸肌主要受橈神經（Radial nerve）支配。\n旋後肌（Supinator）由橈神經深支（Deep branch）直接支配。\n骨間背側神經（Posterior interosseous nerve）為橈神經的分支，負責支配前臂伸肌群。\n此神經穿過旋後肌後繼續向下延伸。\n\n**選項解析**\n- (A) 旋前圓肌（Pronator teres）位於前臂前側，由正中神經（Median nerve）支配，與題幹不同。\n- (B) 旋前方肌（Pronator quadratus）位於前臂遠端，由骨間前神經（Anterior interosseous nerve）支配，源自正中神經。\n- (C) 伸拇指短肌（Extensor pollicis brevis）屬於前臂伸肌群，受骨間背側神經支配。\n- (D) 外展拇指短肌（Abductor pollicis brevis）位於手掌魚際區，由正中神經返支（Recurrent branch）支配。",
+      "level": "unchecked"
+    },
+    "28": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n肩胛骨（scapula）背面有一條明顯骨性隆起稱為肩胛棘（spine of scapula）。此構造主要作為肌肉附著點，將背部分為岡上窩（supraspinous fossa）與岡下窩（infraspinous fossa）。斜方肌（trapezius muscle）與三角肌（deltoid muscle）均在此處連接。本題測試考生對背部肌肉骨骼附著關係的記憶。\n\n**選項解析**\n- (A) 斜方肌上束纖維確實附著於肩胛棘頂端及外側緣，此為正確敘述。\n- (B) 提肩胛肌（levator scapulae muscle）主要附著於肩胛骨內側角（medial angle）與上緣（superior border），並非肩胛棘。\n- (C) 後上鋸肌（serratus posterior superior muscle）起自頸椎（cervical vertebrae）與胸椎（thoracic vertebrae）棘突（spinous processes），止於第二至第五肋骨（ribs），不連接肩胛骨。\n- (D) 後下鋸肌（serratus posterior inferior muscle）主要附著於第九至第十二肋骨，與肩胛骨無直接附著關係。",
+      "level": "unchecked"
+    },
+    "29": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n肝臟（liver）在胚胎早期主要負責造血（hematopoiesis）功能。\n肝細胞（hepatocyte）分化成熟後才具備代謝與分泌能力。\n膽汁（bile）合成是胎兒肝臟成熟的重要生理指標之一。\n此功能通常在胚胎期（embryonic period）結束進入胎兒期（fetal period）時開始出現。\n這段時期標誌著器官功能從造血轉向代謝作用。\n因此第12週是臨床上評估肝臟成熟度的關鍵時間點。\n\n**選項解析**\n- (A) 第4週：此時肝芽（liver bud）剛從腸管突出，尚未分化出功能性肝細胞。\n- (B) 第8週：肝臟主要進行造血活動，膽汁分泌機制尚未啟動運作。\n- (C) 第12週：肝細胞開始合成並分泌膽汁，符合教科書記載。\n- (D) 第16週：此時間點過晚，膽汁分泌功能已在之前建立完成。",
+      "level": "unchecked"
+    },
+    "30": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n女性假陰陽人（female pseudohermaphroditism）是指遺傳性別為女性的個體，因胎兒期暴露於過多男性荷爾蒙（androgen），導致外生殖器官（external genitalia）出現男性化特徵。最常見病因是先天性腎上腺皮質增生症（congenital adrenal hyperplasia, CAH）。此疾病特徵為腎上腺（adrenal gland）增生而非萎縮。常因特定酵素（enzyme）缺乏造成類固醇（steroid）合成異常。\n\n**選項解析**\n- (A) 正確。患者體內男性荷爾蒙分泌過多，導致外生殖器發育異常。\n- (B) 正確。染色體（chromosome）核型為 46, XX，代表遺傳性別為女性。\n- (C) 錯誤。肇因於腎上腺增生而非萎縮。常因酵素缺乏導致皮質醇合成受阻，促腎上腺皮質素（ACTH）反饋性增加，長期刺激腺體增大。\n- (D) 正確。過量男性荷爾蒙使外生殖器官出現男性化特徵，如陰蒂肥大。",
+      "level": "unchecked"
+    },
+    "31": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n胎兒（fetus）循環系統中，大部分靜脈（vein）攜帶缺氧血。\n唯獨臍靜脈（umbilical vein）例外，它負責將氧氣從胎盤（placenta）輸送至胎兒。\n此為胚胎學中關於血液含氧量的重要考點。\n母體血液在胎盤進行氣體交換後，氧合血經臍靜脈回流至胎兒肝臟（liver）。\n部分血液會通過靜脈導管（ductus venosus）直接進入下腔靜脈（inferior vena cava）。\n\n**選項解析**\n- (A) 肝靜脈（hepatic vein）收集肝臟代謝後的血液，屬於缺氧血或混合血。\n- (B) 門靜脈（portal vein）將腸道（intestine）吸收的營養物質運送至肝臟，但血液含氧量低。\n- (C) 臍靜脈從胎盤接收母體氧合後的血液，為缺氧血之例外。\n- (D) 子宮靜脈（uterine vein）將子宮（uterus）的代謝廢物帶回母體循環，屬於缺氧血。",
+      "level": "unchecked"
+    },
+    "32": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n胚胎發育過程中，肌肉（muscle）組織主要源自中胚層（mesoderm）。\n然而頭部與眼部特定區域的橫紋肌（striated muscle）例外，源自神經外胚層（neuroectoderm）。\n本題旨在測試學生對不同胚層（germ layer）衍生結構的記憶與分辨能力。\n此類例外情況是國考常見之陷阱，需特別注意。\n\n**選項解析**\n- (A) 肋間肌（intercostal muscles）屬於體壁骨骼肌（skeletal muscle），源自軸旁中胚層（paraxial mesoderm），故為中胚層來源。\n- (B) 虹膜（iris）內的瞳孔括約肌（sphincter pupillae）與開大肌（dilator pupillae）源自神經外胚層，並非中胚層。\n- (C) 心肌（cardiac muscle）屬於心臟（heart）主要成分，源自臟側中胚層（splanchnic mesoderm），故為中胚層來源。\n- (D) 消化道平滑肌（smooth muscle of digestive tract）源自臟側中胚層，故為中胚層來源。",
+      "level": "unchecked"
+    },
+    "33": {
+      "text": "**答案：（D）**\n\n**關鍵觀念**\n外分泌腺（Exocrine gland）依據細胞（Cell）損傷程度，可分為三種主要分泌機制。部分分泌腺體（Merocrine gland）透過胞吐作用（Exocytosis）釋放分泌物，細胞結構保持完整且無損傷。頂質分泌（Apocrine secretion）則是細胞頂端膜包裹分泌物脫落，造成部分細胞質損失。全質分泌（Holocrine secretion）為整個細胞破裂死亡後釋出內容物。\n\n**選項解析**\n- (A) 此敘述描述全質分泌，典型例子為皮脂腺（Sebaceous gland），並非部分分泌腺體特徵。\n- (B) 此敘述描述頂質分泌，典型例子為大汗腺（Apocrine gland），細胞頂端會隨分泌物脫落。\n- (C) 乳腺（Mammary gland）在分泌脂類時，傳統組織學分類歸為頂質分泌。\n- (D) 唾液腺（Salivary gland）是典型的部分分泌腺體，透過胞吐作用釋放黏液或漿液。",
+      "level": "unchecked"
+    },
+    "34": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n軟骨（cartilage）依據基質（matrix）成分不同分為三類。透明軟骨（hyaline cartilage）與彈性軟骨（elastic cartilage）表面通常覆蓋軟骨膜（perichondrium）。纖維軟骨（fibrocartilage）則無軟骨膜包圍。\n\n**選項解析**\n- (A) 透明軟骨含有成熟細胞與周圍的軟骨膜，敘述正確。\n- (B) 纖維軟骨缺乏軟骨膜，此敘述錯誤，故選 B。\n- (C) 彈性軟骨含有未成熟細胞即軟骨母細胞（chondroblast）與成熟細胞。\n- (D) 纖維軟骨基質中同時存在軟骨細胞（chondrocyte）與纖維母細胞（fibroblast）。",
+      "level": "unchecked"
+    },
+    "35": {
+      "text": "**答案：A、C**\n\n**關鍵觀念**\n巴金森氏症（Parkinson’s disease）是神經元（neuron）退化性疾病。主要病變位於大腦黑質（substantia nigra）及基底核（basal ganglia）。病理特徵為多巴胺（dopamine）分泌不足與內含體（Lewy bodies）形成。治療需考慮血腦屏障（blood-brain barrier）限制，不可直接給予藥物。神經絲（neurofilaments）是內含體成分之一。\n\n**選項解析**\n- (A) 此敘述被判定為錯誤。疾病主因是神經元退化死亡，而非單純分泌功能障礙。\n- (B) 此敘述正確。退化神經元中常含神經絲與特定蛋白質交織的內含體。\n- (C) 此敘述錯誤。多巴胺分子無法穿透血腦屏障，故不可直接投予口服或注射。臨床改用左旋多巴（Levodopa）前驅物治療。\n- (D) 此敘述正確。神經元退化後，局部通常伴隨明顯的神經膠樣變性（gliosis）。",
+      "level": "unchecked"
+    },
+    "36": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n毛髮（hair）本體由中心向外依序包含髓質（medulla）、皮質（cortex）及毛小皮（cuticle）。毛囊（hair follicle）包圍毛髮生長，其上皮性根鞘（epithelial root sheath）內層為內根鞘（internal root sheath）。外層則為外根鞘（external root sheath），與結締組織鞘（connective tissue sheath）相連。最外側界線為玻璃膜（glassy membrane），具有基底膜性質，分隔上皮與結締組織。\n\n**選項解析**\n- (A) 錯誤，將毛髮本體結構置於毛囊鞘之外，順序完全顛倒，髓質與皮質應位於內根鞘之前。\n- (B) 錯誤，皮質應包圍髓質，且內根鞘位於外根鞘之內側。\n- (C) 錯誤，皮質與髓質同屬毛髮，應在內根鞘之前，而非之後。\n- (D) 正確，由毛髮中心向外依序為髓質、皮質、內根鞘、外根鞘及玻璃膜。",
+      "level": "unchecked"
+    },
+    "37": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n腸腺（crypts of Lieberkühn）是小腸（small intestine）黏膜的主要構造。這裡包含負責再生的再生幹細胞（regenerative stem cells）與分泌黏液的杯狀細胞（goblet cells）。壁細胞（parietal cells）則位於胃黏膜（gastric mucosa），不屬於腸道組織。潘氏細胞（Paneth cells）存在於小腸基底端，負責抗菌。\n\n**選項解析**\n- (A) 再生幹細胞位於腸腺底部。它負責更新上皮細胞（epithelial cells）。此敘述正確。\n- (B) 杯狀細胞分布於腸腺。它分泌黏液保護黏膜表面。此敘述正確。\n- (C) 壁細胞主要存在於胃底腺（gastric glands）。它負責分泌鹽酸（hydrochloric acid）與內因子（intrinsic factor）。不位於腸腺，故為正確選項。\n- (D) 潘氏細胞位於小腸腸腺底部。它分泌抗菌物質。此敘述正確。",
+      "level": "unchecked"
+    },
+    "38": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n食道（Esophagus）為連接咽與胃的肌性管道。其外肌層（muscularis externa）分布具區域差異，上段含骨骼肌（skeletal muscle），下段為平滑肌（smooth muscle）。黏膜層（mucosa layer）由非角化複層扁平上皮構成，無杯狀細胞（goblet cells）。食道全程缺乏漿膜（serosa），外層皆為纖維外膜（adventitia）。\n\n**選項解析**\n- (A) 上食道之外肌層混合骨骼肌與平滑肌，並非僅含平滑肌。\n- (B) 黏膜層上皮細胞主要為保護功能，不具分泌黏液的杯狀細胞，此特徵常見於小腸（small intestine）。\n- (C) 食道黏膜下層含有豐富的黏膜下腺（submucosal gland），可分泌黏液以潤滑食物通過。\n- (D) 胸腔段食道外層為纖維外膜，因位於縱隔腔（mediastinum）內，無漿膜包覆保護。",
+      "level": "unchecked"
+    },
+    "39": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n甲狀腺上皮細胞（thyroid epithelial cells）負責合成並儲存碘化甲狀腺球蛋白（iodinated thyroglobulin）。\n當促甲狀腺激素刺激時，細胞膜內陷進行內吞作用。\n溶酶體（lysosomes）與含有膠體的吞噬囊泡融合形成自噬溶酶體。\n水解酵素（hydrolytic enzymes）將膠體蛋白質（protein）分解。\n此過程釋放出游離的甲狀腺素（thyroxine）。\n這是激素從儲存形式轉為活性形式的關鍵機轉。\n\n**選項解析**\n- (A) 正確。溶酶體富含酸性蛋白酶，負責分解膠體中的酪氨酸殘基以釋放激素。\n- (B) 錯誤。過氧化酶體（peroxisomes）主要處理活性氧及脂肪酸代謝，不參與此蛋白質降解過程。\n- (C) 錯誤。粒線體（mitochondria）提供 ATP 能量供細胞活動，但不直接執行分解甲狀腺球蛋白的功能。\n- (D) 錯誤。高爾基氏體（Golgi complex）負責加工與包裝新合成的蛋白質至分泌囊泡，而非降解儲存物。",
+      "level": "unchecked"
+    },
+    "40": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n腦砂（Brain sand）是組織學（Histology）中松果腺（Pineal gland）的特徵性構造。\n它又稱為神經結晶體（Corpora arenacea），由鈣鹽與磷酸鹽沉積形成。\n隨著年齡增長，其數量會逐漸增加，可用於判斷骨齡或屍檢參考。\n此現象在成人中極為常見，屬於生理性鈣化過程。\n松果腺位於中腦（Midbrain）背側，主要分泌褪黑激素（Melatonin）。\n\n**選項解析**\n- (A) 腎上腺（Adrenal gland）主要分為皮質與髓質，無腦砂構造。\n- (B) 甲狀腺（Thyroid gland）由濾泡構成，內含膠狀物，不產生腦砂。\n- (C) 腦下垂體（Pituitary gland）分前葉與後葉，組織結構不同於松果腺。\n- (D) 松果腺含有神經膠質細胞（Neuroglia cells）與松果體細胞（Pinealocytes），常見鈣化顆粒即為腦砂。此鈣化現象在顯微鏡下清晰可見。這是診斷該腺體的重要依據。",
+      "level": "unchecked"
+    },
+    "41": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n男性生殖系統（male reproductive system）包含三類主要附屬腺體（accessory glands）。這些腺體負責分泌液體以形成精液（semen），並提供精子（spermatozoa）營養。在實體器官（organ）的質量與體積比較上，前列腺（prostate gland）被定義為最大者。\n\n**選項解析**\n- (A) 前列腺位於膀胱（bladder）下方，包繞尿道（urethra）起始部。它是主要附屬腺體中質量與體積最大的單一器官。因此本題正確答案為 A。\n- (B) 精囊（seminal vesicles）是成對的結構（structure），位於膀胱後方。它們分泌大量果糖（fructose）液體，但整體組織（tissue）體積小於前列腺。\n- (C) 尿道球腺（bulbourethral glands）又稱庫珀氏腺（Cowper's glands），體積非常微小。它們主要分泌黏液潤滑尿道。\n- (D) 尿道腺（urethral glands）分散在尿道黏膜（mucosa）下，屬於小型腺體。其總體積遠小於前列腺與精囊。",
+      "level": "unchecked"
+    },
+    "42": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n肺炎鏈球菌（Streptococcus pneumoniae）為革蘭氏陽性菌（Gram-positive bacteria）。其莢膜（capsule）由多醣構成，是主要致病因子（virulence factor），能抗吞噬細胞（phagocytes）作用。奧普托辛（optochin）試驗與膽汁溶解實驗（bile solubility test）用於鑑別此菌。\n\n**選項解析**\n- (A) 肺炎鏈球菌為α-溶血菌，在血液培養盤上產生草綠色溶血環。此敘述正確。\n- (B) 莢膜可保護細菌，使其具有抗吞噬能力。此為重要致病因子。此敘述正確。\n- (C) 肺炎鏈球菌細胞壁（cell wall）含 C-多醣類（polysaccharide），可與 C-反應蛋白質（C-reactive protein, CRP）結合。但此菌不屬於蘭斯菲爾德分類（Lancefield classification）中的 Group C 抗原。故選項敘述錯誤。\n- (D) 肺炎鏈球菌對奧普托辛敏感，且可被膽汁溶解。此為鑑別特徵。此敘述正確。",
+      "level": "unchecked"
+    },
+    "43": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n白喉棒狀桿菌（Corynebacterium diphtheriae）屬於革蘭氏陽性桿菌（Gram-positive rod）。\n其產生外毒素（exotoxin），結構上屬於 A-B 毒素（A-B toxin）類型。\n毒素進入細胞後，會使延伸因子 2（elongation factor 2, EF-2）發生 ADP 核醣基化（ADP-ribosylation）修飾。\n此作用抑制真核細胞（eukaryotic cell）蛋白質合成（protein synthesis），造成局部組織壞死與全身症狀。\n\n**選項解析**\n- (A) 錯誤，白喉棒狀桿菌為革蘭氏陽性桿菌，非陰性。\n- (B) 正確，其毒力因子為外毒素，具有 A-B 毒素結構與機轉。\n- (C) 錯誤，人類（human）為主要傳染源，動物（animal）並非主要宿主。\n- (D) 錯誤，病原體主要經由呼吸道飛沫（respiratory droplets）傳播，非食物傳染途徑。",
+      "level": "unchecked"
+    },
+    "44": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n脂多醣（Lipopolysaccharides）是革蘭氏陰性菌（Gram-negative bacteria）細胞壁（cell wall）外膜的主要成分。\n內毒素（Endotoxin）即為脂多醣的毒性部分，會引發全身性發炎反應（inflammatory response）。\n金黃色葡萄球菌（Staphylococcus aureus）屬於革蘭氏陽性菌，不含有脂多醣結構。\n細菌感染致死常因敗血症休克（septic shock）引發多器官衰竭。\n\n**選項解析**\n- (A) 甲氧西林抗藥性金黃色葡萄球菌（Methicillin-Resistant Staphylococcus aureus）為革蘭氏陽性菌，主要產生外毒素（exotoxin）而非內毒素。\n- (B) 廣泛的血管內凝固（disseminated intravascular coagulation）是敗血症休克常見的併發症，可能導致器官衰竭與死亡。\n- (C) 病人死於低血壓（hypotension）是因發炎介質（inflammatory mediators）導致血管擴張（vasodilation）與血容積不足，造成循環衰竭。\n- (D) 可引起發燒及休克，導致死亡，這是內毒素誘導細胞激素（cytokines）大量釋放的典型臨床表現。",
+      "level": "unchecked"
+    },
+    "45": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n偽膜性腸炎（pseudomembranous colitis）是廣效抗生素（antibiotics）使用後的嚴重併發症。\n此病主要因正常菌群被抑制，導致病原菌過度生長所致。\n治療方式包含停藥、使用特定藥物或糞便移植（fecal transplantation）。\n\n**選項解析**\n- (A) 正確。偽膜性腸炎最常由艱難梭菌（Clostridium difficile）感染引起，產生毒素（toxin）損傷黏膜（mucosa）。\n- (B) 正確。此病多為內源性（endogenous）菌群失衡，並非皆為外源性（exogenous）感染（infection）之疾病。\n- (C) 錯誤。糞便移植對於復發性病例具有顯著療效，故敘述錯誤。\n- (D) 正確。臨床常用甲硝達唑（Metronidazole）或萬古黴素（Vancomycin）作為治療藥物。",
+      "level": "unchecked"
+    },
+    "46": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n砂眼披衣菌（Chlamydia trachomatis）是一種專性細胞內寄生菌。\n它主要感染黏膜上皮細胞（mucosal epithelial cells），造成局部發炎反應。\n臨床症狀依血清型（serovar）不同，可分為沙眼（trachoma）、生殖道感染及淋巴肉芽腫（lymphogranuloma venereum）。\n腦膜炎（meningitis）並非砂眼披衣菌的典型侵犯部位或疾病表現。\n\n**選項解析**\n- (A) 新生兒經產道時吸入受感染的分泌物，可能引發嬰兒肺炎（infant pneumonia）。\n- (B) 砂眼披衣菌極少引起腦膜炎，此症多由其他細菌或病毒導致。\n- (C) 生殖道及尿道感染（urogenital infections）是該菌最常見的臨床表現，如尿道炎（urethritis）。\n- (D) 特定血清型會導致淋巴肉芽腫，屬性傳播疾病（sexually transmitted disease）。",
+      "level": "unchecked"
+    },
+    "47": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n肺炎退伍軍人桿菌（Legionella pneumophila）屬於苛養細菌。\n初次分離培養時需要使用特殊培養基（culture medium）。\n例如含炭酵母萃取培養基（Buffered Charcoal Yeast Extract agar）。\n該培養基含有活性炭（activated charcoal）與酵母萃取物（yeast extract），並添加 L-半胱胺酸（L-cysteine）。\n此菌生長需要特定的營養因子，特別是 L-半胱胺酸。\n此外還需要鐵離子（iron）才能良好生長與複製。\n因此必須在培養基中額外補充此氨基酸。\n\n**選項解析**\n- (A) 甘油（glycerol）並非此菌初次分離所需的關鍵添加物。\n- (B) 橄欖油（olive oil）不是界定肺炎退伍軍人桿菌生長的主要成分。\n- (C) L-半胱胺酸是該菌合成蛋白質所必需的氨基酸，缺乏則無法培養。\n- (D) 菸鹼酸（nicotinic acid）並非此菌初次分離培養的限制性營養因子。",
+      "level": "unchecked"
+    },
+    "48": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n單核球增生李斯特菌（Listeria monocytogenes）屬於胞內寄生細菌。\n它能在宿主細胞質（host cytoplasm）內進行複製與存活。\n細菌利用肌動蛋白聚合形成尾狀結構，稱為肌動蛋白尾（actin tail）。\n此機制允許細菌移動至鄰近細胞，避免被免疫系統（immune system）清除。\n\n**選項解析**\n- (A) 白喉棒狀桿菌（Corynebacterium diphtheriae）主要產生外毒素（exotoxin）。\n  該毒素會抑制蛋白質合成（protein synthesis），導致上皮細胞（epithelial cells）壞死。\n  它無此能力，也不在胞內複製。\n- (B) 單核球增生李斯特菌能侵入細胞。\n  其表面 ActA 蛋白 (ActA protein) 可活化宿主細胞，引發肌動蛋白聚合。\n  細菌藉此形成肌動蛋白尾，推動自身進入鄰近細胞。\n- (C) 綠膿假單胞桿菌（Pseudomonas aeruginosa）常產生外毒素 A。\n  它易形成生物膜（biofilm），但不以肌動蛋白尾方式移動。\n  主要引起囊腫性纖維化（cystic fibrosis）患者的肺部感染，非胞內運動機制。\n- (D) 肺炎克雷白氏菌（Klebsiella pneumoniae）具有厚莢膜（capsule）。\n  它主要為胞外寄生菌，不具備胞內肌動蛋白運動機制。\n  易致肝膿瘍（liver abscess）或肺炎（pneumonia），無細胞間移動特性。",
+      "level": "unchecked"
+    },
+    "49": {
+      "text": "**答案：(B)**\n\n**關鍵觀念**\n淚液（Tears）是重要的先天免疫防禦機制。\n它含有抗菌蛋白，能防止病原體侵入眼表組織。\n溶菌酶（Lysozyme）是一種水解酵素（Hydrolase），廣泛存在於分泌物中。\n此酵素能專一性分解細菌（Bacteria）細胞壁中的勝肽聚醣（peptidoglycan）。\n它破壞 N-乙酰葡糖胺（N-acetylglucosamine）與 N-乙酰胞壁酸（N-acetylmuramic acid）之間的β-1,4-糖苷鍵。\n革蘭氏陽性菌因細胞壁厚，對此酵素特別敏感。\n\n**選項解析**\n- (A) 乳鐵蛋白質（Lactoferrin）主要功能是螯合鐵離子，使細菌缺乏營養而無法繁殖。\n- (B) 溶菌酶正確，它能直接水解細胞壁骨架導致細菌裂解死亡。\n- (C) 乳過氧化物酶（Lactoperoxidase）透過氧化還原反應產生次氯酸鹽來殺菌。\n- (D) 澱粉酶（Amylase）屬於消化酵素，作用對象為碳水化合物如澱粉。",
+      "level": "unchecked"
+    },
+    "50": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n結核桿菌（Mycobacterium tuberculosis）細胞壁含有大量脂質（lipids）。\n這種特性使其具有特殊的抗酸性染色（acid-fast staining）反應。\n一旦使用齊尼爾氏法（Ziehl-Neelsen stain），酸酒精無法將其脫色。\n此現象主要歸因於細胞壁含大量分枝菌酸（mycolic acid）。\n分枝菌酸使細菌對化學物質具有高度抵抗力。\n因此常規染色法難以使其著色。\n\n**選項解析**\n- (A) 人類是主要宿主，齧齒類動物（rodents）並非此菌之傳播者。\n結核桿菌主要透過飛沫傳染給其他人類。\n- (B) 正確，因細胞壁含大量分枝菌酸導致抗酸性。\n這是鑑別診斷的重要依據之一。\n- (C) 結核桿菌無鞭毛不具移動性，亦不形成內孢子（endospores）。\n芽胞桿菌屬（Bacillus）才會形成內孢子。\n- (D) 致病機轉非外毒素（exotoxin），而是細胞壁成分如索狀因子（cord factor）。\n其毒性來自於細胞壁結構而非分泌性蛋白質。",
+      "level": "unchecked"
+    },
+    "51": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n人體內源性感染（endogenous infection）是指病原體來自患者自身正常菌叢。\n腸道（intestine）是厭氧菌（anaerobe）的主要棲息地，尤其是大腸與盲腸區域。\n鬆脆類桿菌（Bacteroides fragilis）為大腸常見共生菌，當屏障受損時易引發腹腔膿瘍（intra-abdominal abscess）。\n此菌對抗生素具抗性。常作為混合感染中的主要致病菌。故被視為最常見內源性厭氧菌。\n\n**選項解析**\n- (A) 產氣莢膜梭菌（Clostridium perfringens）主要引起壞疽性筋膜炎（necrotizing fasciitis）。多與外傷或外源性孢子有關。\n- (B) 鬆脆類桿菌是腸道內最主要的厭氧共生菌，易因穿孔導致內源性感染。\n- (C) 短雙歧桿菌（Bifidobacterium breve）屬於益生菌，極少引起人體疾病或感染。\n- (D) 炭疽桿菌（Bacillus anthracis）為需氧芽孢（spore）桿菌。透過接觸受污染土壤引發外源性炭疽病（anthrax）。",
+      "level": "unchecked"
+    },
+    "52": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n傳染性蛋白質（Prion）是一種錯誤摺疊的宿主分子（protein）。它會誘導正常蛋白質變異，導致海綿狀腦病變（spongiform encephalopathy）。由於病原體源自自身蛋白，體內不會產生免疫反應（immune response）。\n\n**選項解析**\n- (A) 傳染性蛋白質疾病潛伏期很長，可達數年甚至數十年。此敘述正確。\n- (B) 因為傳染性蛋白質是宿主自身蛋白的異型，身體不會將其視為外來抗原。因此不會引起激烈的免疫反應或發炎現象。此敘述錯誤，為本題答案。\n- (C) 此類疾病可經由醫療行為傳染，例如使用受污染的手術器械或眼角膜移植（corneal transplant）。此敘述正確。\n- (D) 神經（nerve）細胞（cell）受損壞死後，病人常會出現失智（dementia）、運動協調障礙等症狀。此敘述正確。",
+      "level": "unchecked"
+    },
+    "53": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n諾羅病毒（Norovirus）是引起急性胃腸炎（acute gastroenteritis）最常見的病原體。\n此病毒易在封閉場所如老人照護中心造成群聚感染。\n臨床表現包括水樣下痢、噁心及嘔吐。病程通常為自限性，持續 12 至 60 小時。\n\n**選項解析**\n- (A) 巨細胞病毒（Cytomegalovirus）主要引起免疫低下者感染，非急性胃腸炎常見原因。此病毒通常為潛伏感染，罕見引起群聚性下痢。\n- (B) 漢坦病毒（Hantaan virus）主要引起出血熱（hemorrhagic fever）或腎病候群（nephrotic syndrome），與下痢症狀無關。其傳播途徑多為齧齒動物排泄物，非食物傳染為主。\n- (C) 諾羅病毒符合題目描述之群聚感染及急性胃腸炎症狀特徵。\n- (D) B型肝炎病毒（Hepatitis B virus）主要侵害肝臟（liver），引起肝炎（hepatitis）而非急性下痢嘔吐。此病毒主要透過血液或體液傳播，不造成腸道（intestine）症狀。",
+      "level": "unchecked"
+    },
+    "54": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n狂犬病（rabies）是由狂犬病毒（rabies virus）引起的急性傳染病。\n病原體經咬傷進入肌肉（muscle），沿周邊神經（nerve）上行至中樞神經系統（central nervous system）。\n人類通常因被帶毒動物咬傷而感染。\n控制動物族群感染是預防人類發病最有效的策略，因人類無有效治療手段。\n\n**選項解析**\n- (A) 狂犬病是由病毒（virus）引起，並非細菌（bacteria）感染，故稱病毒性疾病，非細菌性。\n- (B) 病原體最初入侵部位為肌肉，最終感染部位為腦部，而非心臟（heart），故敘述錯誤。\n- (C) 對犬貓等動物施打疫苗（vaccine），可阻斷病毒傳播鏈，是最佳預防策略。\n- (D) 潛伏期（incubation period）通常數週至數月，甚至可達數年，並非僅數天即嚴重發病，故敘述錯誤。",
+      "level": "unchecked"
+    },
+    "55": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n登革熱病毒（Dengue virus）屬於黃病毒屬（Flavivirus）。\n患者在急性發熱期會出現明顯的病毒血症（viremia）。\n此時血液中含有高濃度的病毒顆粒。\n因此血液是最適合分離或檢測病毒的檢體。\n診斷時通常採集急性期全血進行 RT-PCR 或細胞培養（cell culture）。\n病毒血症通常發生在發病後一至五天內，此階段檢出率最高。\n過渡期後抗體會上升，此時血清學檢測較適合，但分離需早期血液。\n\n**選項解析**\n- (A) 喉頭拭子（throat swab）：登革熱非呼吸道疾病，此處病毒載量極低。\n- (B) 血液：急性期血漿（plasma）或全血含有大量病毒，適合培養或分子（molecule）檢測。\n- (C) 皮膚：雖有皮疹症狀，但皮膚組織不適合作為常規病毒分離檢體。\n- (D) 肛門拭子（anal swab）：腸道症狀非主要特徵，糞便中病毒量不足以作為診斷依據。",
+      "level": "unchecked"
+    },
+    "56": {
+      "text": "**答案：(C)**\n\n**關鍵觀念**\n人類免疫缺陷病毒（Human immunodeficiency virus, HIV）主要感染表達 CD4 受體（CD4 receptor）之細胞。這些細胞包含輔助性 T 淋巴球（helper T lymphocyte）與巨噬細胞（macrophage）。病毒不會直接感染 B 淋巴球（B lymphocyte）導致免疫功能下降。CD4 T 淋巴球減少會導致免疫系統崩潰，引發機會性感染。\n\n**選項解析**\n- (A) HIV 可感染巨噬細胞，使其抗原呈現功能變差，並成為病毒儲存庫。此敘述正確。\n- (B) HIV 會破壞 CD4 T 淋巴球（lymphocyte），造成其數量顯著減少。這是獲得性免疫缺乏症候群（Acquired Immunodeficiency Syndrome, AIDS）診斷標準之一。此敘述正確。\n- (C) HIV 主要針對 CD4 陽性細胞，並非直接感染 B 淋巴球。B 淋巴球缺乏 CD4 受體，故不受病毒直接感染。因此此敘述錯誤。\n- (D) 由於 CD4 T 淋巴球減少，CD8 T 淋巴球（CD8 T lymphocyte）/CD4 T 淋巴球比例會上升，反映免疫失衡狀態。此敘述正確。",
+      "level": "unchecked"
+    },
+    "57": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n病毒性心臟炎（viral carditis）是指病毒引發的心臟發炎反應，常導致心肌細胞（cardiomyocytes）損傷。在開發中國家與工業化國家中，腸病毒（Enterovirus）屬是最常見的病原體。其中 B 型克沙奇病毒（Coxsackie B virus）具有嗜心肌性。它最容易侵犯心臟組織（cardiac tissue）。\n\n**選項解析**\n- (A) 流行性感冒病毒（Influenza virus）雖可併發心肌炎（myocarditis），但發生率遠低於腸病毒屬，非最主要病原。\n- (B) 單純疱疹病毒（Herpes simplex virus）主要引起皮膚黏膜感染，造成病毒性心臟炎的機率極低，多見於免疫缺陷者。\n- (C) B 型克沙奇病毒是成人與兒童病毒性心肌炎最常見的病原，符合題目描述之最常發生者。\n- (D) 71 型腸病毒（Enterovirus 71）主要引起手足口病（hand-foot-mouth disease）及神經系統（nervous system）併發症，較少導致心臟發炎，非此題最佳答案。",
+      "level": "unchecked"
+    },
+    "58": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n球黴菌（Coccidioides）屬於雙相性黴菌（dimorphic fungus）。在攝氏二十五度培養時，菌絲（hyphae）會斷裂形成桶狀關節孢子（barrel-shaped arthroconidia）。此形態特徵是鑑別診斷的關鍵依據。體溫下則轉為孢子囊（spherule）型態。\n\n**選項解析**\n- (A) 芽生黴菌症（Blastomycosis）的病原體在組織（tissue）中呈現寬基出芽酵母（broad-based budding yeast），不會形成桶狀關節孢子。\n- (B) 球黴菌症（Coccidioidomycosis）的病原體在室溫培養時，菌絲斷裂形成桶狀關節孢子，符合題目描述。\n- (C) 莢膜組織胞漿菌症（Histoplasmosis capsulati）在室溫下產生結節狀大分生孢子（tuberculate macroconidia），其酵母型態為細胞內寄生。\n- (D) 副球黴菌症（Paracoccidioidomycosis）在組織中呈現船錨狀出芽酵母（pilot wheel budding yeast），與題目特徵不符。",
+      "level": "unchecked"
+    },
+    "59": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n抗黴菌藥物（antifungal drugs）作用機轉多樣，需區分靶點差異。\n主要目標包含細胞膜（cell membrane）、細胞壁（cell wall）、核酸（nucleic acid）或蛋白質合成（protein synthesis）途徑。\n氟胞嘧啶（Flucytosine）屬代謝抑制劑，最終干擾遺傳物質複製與轉錄。\n不同藥物針對黴菌特有結構，如麥角固醇或幾丁質進行作用。\n\n**選項解析**\n- (A) 氟胞嘧啶進入黴菌（fungi）後，經胞嘧啶脫氨酶（cytosine deaminase）轉化為 5-氟尿嘧啶，抑制去氧核糖核酸（DNA）與核糖核酸（RNA）合成，故正確。\n- (B) 糞殼菌素（Sordarins）作用於延伸因子 2（elongation factor 2），阻斷蛋白質合成過程，並非抑制細胞壁合成，故錯誤。\n- (C) 華光黴素（Nikkomycin）競爭性抑制幾丁質合成酶（chitin synthase），干擾細胞壁中幾丁質形成，非影響細胞膜結構，故錯誤。\n- (D) 聚乙烯（Polyenes）如製黴菌素，與細胞膜中的麥角固醇（ergosterol）結合，造成細胞膜通透性改變，不直接抑制蛋白質合成，故錯誤。",
+      "level": "unchecked"
+    },
+    "60": {
+      "text": "**答案：（A）**\n\n**關鍵觀念**\n透明黴菌（hyaline molds）是一類在組織（tissue）病理切片中呈現特定形態的真菌（fungi）。它們最顯著的特徵是菌絲（hyphae）具有明顯的分隔（septum）。這與產生色素（pigment）的黴菌（mold）有本質上的區別。在顯微鏡下，這些結構（structure）通常無色或淡藍色。\n\n**選項解析**\n- (A) 正確。透明黴菌在病灶（lesion）組織中，其菌絲通常呈現有分隔的狀態。這是鑑別診斷的重要依據。例如麴菌屬（Aspergillus）。\n- (B) 錯誤。大多數黴菌的菌絲都會產生分枝（branching）。無分枝並非透明黴菌的共同性質。反而可能是其他病原體特徵。\n- (C) 錯誤。雖然部分種類與青黴菌屬（Penicillium）相似，但這不是組織學上的定義標準。形態相似性不足以作為分類依據。需看細胞（cell）壁結構。\n- (D) 錯誤。產生具色素之菌絲屬於暗色黴菌（dematiaceous molds）。透明黴菌的菌絲通常無色或淡色。不會顯現黑色素。",
+      "level": "unchecked"
+    },
+    "61": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n皮下真菌病 (subcutaneous mycosis) 主要侵犯皮膚與皮下組織。\n兩型性 (dimorphic) 病原菌 (pathogen) 在不同溫度下表現不同形態。\n申克孢子絲菌 (Sporothrix schenckii) 是典型代表。\n環境為菌絲型 (hyphal form)，體內為酵母型 (yeast form)。\n此特性有助於其在組織內生存並引發感染。\n\n**選項解析**\n- (A) 疣狀毛癬菌 (Trichophyton verrucosum) 屬於皮膚黴菌 (dermatophyte)，主要引起甲癬或體癬，非兩型性。\n- (B) 申克孢子絲菌 符合皮下真菌病且具兩型性特徵，為正確選項。\n- (C) 副冠耳黴 (Conidiobolus coronatus) 屬於接合菌門 (Zygomycota)，引起鼻面部感染，非兩型性。\n- (D) 蛙糞黴 (Basidiobolus ranarum) 亦為接合菌，常導致皮膚或肌肉侵襲，非兩型性。",
+      "level": "unchecked"
+    },
+    "62": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n人體周邊血（peripheral blood）中的白血球包含多種細胞（cell）。其中淋巴細胞（lymphocyte）為重要族群。在正常健康個體中，T 淋巴細胞（T lymphocyte）的數量佔比最高。約為所有淋巴細胞的七成以上。B 淋巴細胞（B lymphocyte）與自然殺手細胞（natural killer cell）則較少。漿細胞（plasma cell）是分化成熟的 B 細胞。主要位於骨髓（bone marrow）或淋巴組織（lymphoid tissue）。極少出現在周邊血循環中。\n\n**選項解析**\n- (A) T 淋巴細胞負責細胞免疫，在周邊血中數量最多，故為正確答案。\n- (B) B 淋巴細胞主要負責體液免疫，比例低於 T 細胞。\n- (C) 漿細胞主要分泌抗體，正常情況下很少見於周邊血循環。\n- (D) 自然殺手細胞屬於先天免疫系統，數量遠少於 T 淋巴細胞。",
+      "level": "unchecked"
+    },
+    "63": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\nB 細胞（B cell）進行抗體分子類型轉換（class switch）需要 T 輔助細胞（T helper cell）提供訊號。CD40 分子（CD40 molecule）位於 B 細胞表面，必須與活化後 T 細胞上的 CD40 配體（CD40 ligand）結合。此交互作用啟動下游酵素，使抗體從免疫球蛋白 M（IgM）轉換為其他類型。若 CD40L 基因缺損，B 細胞無法接收轉換訊號，導致血清中 IgM 濃度過高，稱為高 IgM 症候群（hyper-IgM syndrome）。\n\n**選項解析**\n- (A) 末端脫氧核苷酸轉移酶（terminal deoxynucleotidyl transferase）參與 V(D)J 重組（V(D)J recombination），影響抗原受體重組，與類型轉換無關。\n- (B) 布魯頓氏酪氨酸激酶（Bruton's tyrosine kinase）缺損會導致 X 連鎖無丙種球蛋白血症（X-linked agammaglobulinemia），造成 B 細胞成熟受阻。\n- (C) CD40 配體基因突變是 I 型高 IgM 症候群的主因，阻斷 B 細胞與 T 細胞的共刺激訊號傳遞。\n- (D) 重組活化基因（recombination-activating gene）缺損會導致嚴重聯合免疫缺乏症（severe combined immunodeficiency disease），影響淋巴球發育早期階段。",
+      "level": "unchecked"
+    },
+    "64": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n未活化之 B 細胞（B cell）同時表現 IgM 與 IgD。這是因為重鏈（heavy chain）基因座包含多個恆定區外顯子（exon）。初級轉錄產物經過不同剪接方式產生 mRNA（messenger RNA）。\n\n**選項解析**\n- (A) 免疫球蛋白（immunoglobulin）基因重組（recombination of Ig variable gene segments）發生在骨髓（bone marrow），決定抗原（antigen）結合部位。此過程不負責同型轉換或 IgD 表現。\n- (B) 免疫球蛋白基因超變異轉換（Ig gene hypermutation）發生於活化後生發中心（germinal center）。目的是增加親和力，與未活化 B 細胞（naïve B cell）膜上 IgD 出現無關。\n- (C) 免疫球蛋白重鏈 RNA 剪接（Ig heavy chain RNA splicing）是正確機制。同一個初級轉錄本可剪接出含 Cμ 或 Cδ 的 mRNA。這讓單一 B 細胞同時製造 IgM 和 IgD。此現象發生於骨髓成熟階段。\n- (D) 免疫球蛋白輕鏈 RNA 剪接（Ig light chain RNA splicing）決定 Kappa（κ）或 Lambda（λ）型別。輕鏈不參與重鏈同型選擇，因此無法解釋 IgD 表現。",
+      "level": "unchecked"
+    },
+    "65": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n抗原受器基因重組（antigen receptor gene rearrangement）依賴 RAG 酵素（RAG enzyme）。此過程亦需 TdT 酵素（terminal deoxynucleotidyl transferase）。N-核苷酸（N-nucleotide）添加發生於接合處。V-D-J 重組（V-D-J recombination）有兩個接合處，機會高於 V-J 重組（V-J recombination）。\n\n**選項解析**\n- (A) 抗體重鏈基因（Ig heavy chain gene）為 V-D-J 重組。含 D 片段（D segment），N-核苷酸添加機會高。\n- (B) 抗體輕鏈基因（Ig light chain gene）僅為 V-J 重組。缺乏 D 片段增加變異，且 N-核苷酸添加頻率相對較低。\n- (C) T 細胞（T cell）受器α-鏈基因（TCR α-chain gene）雖為 V-J 重組。但胸腺（thymus）發育過程中 N-核苷酸添加仍具一定比例。\n- (D) T 細胞受器β-鏈基因（TCR β-chain gene）為 V-D-J 重組。含 D 片段，N-核苷酸添加機會高。",
+      "level": "unchecked"
+    },
+    "66": {
+      "text": "**答案：(B)**\n\n**關鍵觀念**\n第十七型輔助性 T 細胞（T_H17 cell）分化起始需 IL-6 與 TGF-β共同作用。\n但維持其穩定性及功能，則依賴特定分子（molecule）的持續存在。\n此過程主要涉及 IL-23 對 Th17 細胞的調節作用，防止其轉化。\nTh17 細胞主要參與黏膜免疫防禦及自體免疫反應。\n若缺乏此信號，Th17 細胞可能失去發炎活性，導致免疫調節失衡。\n\n**選項解析**\n- (A) IL-12：主要促進第一型輔助性 T 細胞（Th1 cell）分化，誘導干擾素分泌。\n- (B) IL-23：正確。此分子能防止 Th17 轉為其他類型，並維持其發炎功能。\n- (C) IL-10：屬於抗發炎性分子，會抑制 Th17 的活性與分化。\n- (D) IFN-γ：主要由 Th1 細胞分泌，會阻斷 Th17 的分化途徑，並抑制其增生與存活。",
+      "level": "unchecked"
+    },
+    "67": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n轉錄因子 (transcription factor) FoxP3 是調節性 T 細胞 (regulatory T cell) 發育與功能的核心。這些 CD4⁺ T 細胞 (CD4+ T cell) 主要分泌抑制性細胞激素 (cytokine)，包括白介素 -10 (interleukin-10) 及轉化生長因子-β (transforming growth factor-beta)。它們亦表現 CTLA-4 分子 (CTLA-4 molecule)，藥物 (drug) X 促進此機制，代表具有免疫抑制作用。\n\n**選項解析**\n- (A) 移植排斥 (transplant rejection) 是受體 (recipient) 的免疫系統 (immune system) 攻擊移植物 (graft)，使用此藥可抑制免疫反應以保護器官。\n- (B) 紅斑性狼瘡 (systemic lupus erythematosus) 為自體免疫疾病 (autoimmune disease)，免疫抑制可減輕發炎症狀及組織損傷。\n- (C) 氣喘 (asthma) 屬過敏性發炎反應，增強調節性 T 細胞功能有助於緩解過敏反應並恢復耐受性。\n- (D) 腫瘤 (tumor) 治療通常需要活化免疫系統 以攻擊癌細胞 (cancer cell)，免疫抑制反而不利於抗癌，因此最不可能使用。",
+      "level": "unchecked"
+    },
+    "68": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n第四型過敏反應（Type IV hypersensitivity）屬於延遲性細胞媒介免疫反應。\n此機轉主要依賴 T 淋巴球（T lymphocyte）活化後釋放細胞激素（cytokine）。\n結核病、痲瘋與類肉瘤病皆為典型的肉芽腫（granuloma）發炎疾病，歸類於此型過敏。\n\n**選項解析**\n- (A) 結核病（tuberculosis）的舊結素試驗（PPD test）是第四型過敏反應的經典臨床表現。\n- (B) 類肉瘤病（sarcoidosis）特徵為非乾酪樣肉芽腫，其發炎機轉與第四型過敏相似。\n- (C) B型肝炎（hepatitis B）引起的肝臟（liver）損傷雖涉及細胞免疫。全身性併發症常歸於第三型過敏反應（Type III hypersensitivity）的免疫複合體（immune complex）沉積。\n- (D) 痲瘋（leprosy）的皮膚（skin）病變與神經（nerve）受損主要源自第四型過敏反應的細胞媒介性發炎。",
+      "level": "unchecked"
+    },
+    "69": {
+      "text": "**答案：A**\n\n**關鍵觀念**\nWiskott-Aldrich syndrome (WAS) 是一種 X 染色體隱性遺傳疾病。致病基因編碼的 WAS protein (WASP)。它負責調節造血細胞 (hematopoietic cells) 的細胞骨架 (cytoskeleton) 重組。病患因血小板生成異常導致血小板減少症 (thrombocytopenia)。同時伴有微小血小板，而非凝血因子 (coagulation factor) 缺乏。\n\n**選項解析**\n- (A) 第八凝血因子 (Factor VIII) 是用於治療血友病 A (Hemophilia A) 的製劑。WAS 病患的出血主因是血小板數量與功能缺陷。補充凝血因子無法改善此類細胞骨架異常。因此對 WAS 出血症狀最不可能有效。\n- (B) 血小板濃厚血漿 (Platelet concentrate) 可暫時提升血液中血小板數量。這能幫助控制急性出血或手術前的止血需求。\n- (C) 基因治療 (Gene therapy) 旨在修正突變的 WAS 基因。這是針對致病機轉的根本性治療手段之一。\n- (D) 幹細胞移植 (Stem cell transplantation) 是目前唯一可能根治此病的方法。它能重建正常的造血與免疫系統功能。對於嚴重病例是首選治療策略。",
+      "level": "unchecked"
+    },
+    "70": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n第一型過敏反應（Type I hypersensitivity reaction）屬於即時性過敏。\n它主要由免疫球蛋白 E（Immunoglobulin E, IgE）抗體（antibody）介導。\n當過敏原（allergen）進入人體，會刺激 B 細胞（B cell）分化並產生大量特定 IgE。\n這些抗體結合在肥大細胞（mast cell）與嗜鹼性白血球（basophil）表面的 Fc 受體（Fc receptor）上。\n再次接觸相同過敏原時，抗原與抗體交聯，導致細胞去顆粒釋放組織胺（histamine）等發炎介質。\n\n**選項解析**\n- (A) 免疫球蛋白 A（Immunoglobulin A, IgA）主要存在於黏膜表面，負責局部免疫防禦，不參與第一型過敏反應機制。\n- (B) IgE 濃度升高會致敏肥大細胞，引發血管擴張與支氣管收縮等症狀，是正確答案。\n- (C) 免疫球蛋白 G（Immunoglobulin G, IgG）是血清中含量最多的抗體，主要介導第二型或第三型過敏反應及二次免疫記憶。\n- (D) 免疫球蛋白 M（Immunoglobulin M, IgM）是初次免疫反應最早產生的抗體，分子量大，通常不參與第一型過敏反應機制。",
+      "level": "unchecked"
+    },
+    "71": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n調節型 T 細胞（T_reg cells）負責維持免疫耐受性（immune tolerance）。\n此細胞能抑制過度活化之免疫反應，防止攻擊自身組織。\n當其功能缺失時，會導致自體免疫疾病（autoimmune disease）發生。\n多發性硬化症（multiple sclerosis）患者體內，此細胞呈現功能不足或數量減少現象。\n\n**選項解析**\n- (A) 紅斑性狼瘡疾患（systemic lupus erythematosus, SLE）中，主要是免疫耐受性破壞，並非主要抑制初始淋巴球（naïve lymphocytes）歸處。\n- (B) 多發性硬化症屬於自體免疫疾病，調節型 T 細胞在此呈現功能缺失現象，無法有效抑制攻擊神經髓鞘（myelin sheath）的反應。\n- (C) 類風濕性關節炎（rheumatoid arthritis）中，調節型 T 細胞同樣呈現功能不足，而非功能過高現象。\n- (D) 調節型 T 細胞在自體免疫疾病的致病機轉中扮演關鍵角色，並非無角色。",
+      "level": "unchecked"
+    },
+    "72": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n腫瘤抗原（Tumor Antigens）是細胞（Cells）表面或分泌的蛋白質分子（Molecules）。\n它們主要源自自身抗原（Self-antigens）。\n它們的表達量改變。\n它們的結構改變。\n免疫系統（Immune System）通常對這些抗原產生耐受性，導致識別困難。\n\n**選項解析**\n- (A) 多數腫瘤抗原屬於自身抗原。這是因為腫瘤細胞源自正常體細胞。它們保留了許多正常標記。\n- (B) 部分抗原具有腫瘤特異性。例如胎兒抗原在成人腫瘤 (Tumor) 中重新表現，稱為癌胚抗原。\n- (C) 此敘述錯誤。腫瘤抗原不僅在生長前期表現，晚期也會持續存在。免疫監視機制會全程作用於病程。\n- (D) 某些抗原是突變的自身抗原。基因突變導致蛋白質結構改變，成為新抗原供免疫細胞辨識。",
+      "level": "unchecked"
+    },
+    "73": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n腫瘤免疫編輯（cancer immunoediting）理論描述免疫系統（immune system）與腫瘤互動的三個階段。\n第一階段是消滅期（elimination phase）。\n先天與獲得性免疫細胞（immune cell）會偵測並清除異常細胞。\n第二階段是平衡期（equilibrium phase）。\n殘存的腫瘤細胞（tumor cell）進入休眠狀態，無法被完全清除。\n第三階段是逃避期（escape phase）。\n腫瘤細胞演化出機制逃避免疫攻擊而持續生長。\n此過程顯示免疫系統對腫瘤具有選擇性壓力，導致腫瘤抗原表現改變。\n\n**選項解析**\n- (A) 順序錯誤，逃避期應為最後階段，而非起始階段，不符合免疫編輯過程。\n- (B) 順序錯誤，消滅期必須發生在平衡期之前，無法先平衡再消滅。\n- (C) 順序錯誤，平衡期不會先於消滅期發生，免疫偵測需先進行。\n- (D) 正確，依序為消滅期、平衡期與逃避期，符合腫瘤免疫編輯理論。",
+      "level": "unchecked"
+    },
+    "74": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n腎臟移植（kidney transplantation）後數分鐘至數小時內，可能發生超急性排斥（hyperacute rejection）。\n此現象主因是受者體內已有預存抗體（antibodies）。\n這些抗體會結合移植物血管（blood vessel）內的抗原（antigen）。\n這會啟動補體系統（complement system）。\n最終導致血栓形成（thrombosis）。\n這引發缺血性壞死（necrosis）。\n\n**選項解析**\n- (A) 正確。超急性排斥主要攻擊腎臟的血管內皮細胞（vascular endothelial cells）。\n  受者體內預存的抗體會辨識供體血管表面的抗原並結合。\n  此結合會引發補體級聯反應（complement cascade）。這造成內皮損傷與微血栓形成。\n- (B) 錯誤。腎膈細胞（mesangial cell）位於腎小球間質，並非超急性排斥的主要標的。\n  此細胞受損較常見於其他類型之腎臟病變或慢性排斥（chronic rejection）。\n- (C) 錯誤。腎小管上皮細胞（renal tubular epithelial cell）是急性排斥反應（acute rejection）的主要攻擊目標。\n  在超急性排斥中，血管損傷先於實質細胞破壞發生。\n- (D) 錯誤。鮑氏囊（Bowman's capsule）為腎小球外層結構，非血管性標的。\n  此處受損通常與濾過功能障礙相關，而非免疫性血栓形成。",
+      "level": "unchecked"
+    },
+    "75": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n蟠尾絲蟲（Onchocerca volvulus）成蟲寄生於皮下結節組織。微絲蟲（microfilaria）主要分佈於皮膚與眼球組織內。此感染是河盲症（river blindness）的主因。病患皮膚色素脫失會呈現豹皮花紋（leopard skin）。\n\n**選項解析**\n- (A) 1項：錯誤，因為有三個敘述符合醫學事實。\n- (B) 2項：錯誤，正確敘述數量多於兩項。\n- (C) 3項：正確，微絲蟲偶可出現在尿液中。失明與豹皮花紋是典型症狀。蟠尾絲蟲屬於線蟲類寄生蟲。微絲蟲可經血液循環至全身。尿液中檢出微絲蟲雖少見但可能發生。\n- (D) 4項：錯誤，肺部硬幣大小的結節病變（coin lesion）非此蟲特徵。肺部結節病變常見於結核病或腫瘤。蟠尾絲蟲感染不引起肺部病變。\n\n(Count check: ~300 characters. Looks good.)\nWait, I need to make sure I don't repeat English unnecessarily if it's not the first occurrence, but the rule says \"First time... must include\". If I repeat it later, I can omit English or keep it. The rule says \"First time... must write Chinese (English)\". It doesn't forbid repeating. But for brevity and flow, I will keep it consistent.\nActually, looking at the draft, I repeated \"微絲蟲\" multiple times. That is fine as long as the first occurrence had English.\nWait, I need to check the character count again.\nLine 1: **答案：C** (5)\nLine 2: **關鍵觀念** (6)\nLine 3-6: ~80 chars.\nLine 7: **選項解析** (6)\nLine 8-14: ~150 chars.\nTotal ~250+. I need to ensure it's not under 250.\nLet's expand the explanation for D slightly more to be safe.\n\nRevised Plan:\nEnsure total characters are between 250 and 450.\nI will add a sentence about the vector (Black fly) in Key Concept to increase length safely without fabricating disease info.\n\nFinal Text Construction:\n**答案：C**\n\n**關鍵觀念**\n蟠尾絲蟲成蟲寄生於皮下結節組織。微絲蟲主要分佈於皮膚與眼球組織內。此感染是河盲症的主因。病患皮膚色素脫失會呈現豹皮花紋。\n\n**選項解析**\n- (A) 1項：錯誤，因為有三個敘述符合醫學事實。\n- (B) 2項：錯誤，正確敘述數量多於兩項。\n- (C) 3項：正確，微絲蟲偶可出現在尿液中。失明與豹皮花紋是典型症狀。蟠尾絲蟲屬於線蟲類寄生蟲。微絲蟲可經血液循環至全身。尿液中檢出微絲蟲雖少見但可能發生。\n- (D) 4項：錯誤，肺部硬幣大小的結節病變非此蟲特徵。肺部結節病變常見於結核病或腫瘤。蟠尾絲蟲感染不引起肺部病變。\n\n(Count: ~320 characters. Perfect.)\nWait, I need to check if \"線蟲類寄生蟲\" needs English. It's a general term. The rule says \"proper nouns (structures, nerves... diseases)\". \"Parasite\" is a category. I will add (parasite) just in case to be safe on the rule interpretation for \"nouns\". Or stick to specific disease names.\nThe rule lists: 構造、神經、神經節、肌肉、細胞、分子、酵素、藥物、疾病。\n\"寄生蟲\" might not strictly need it, but \"蟠尾絲蟲\" does.\nI will ensure all specific medical terms have English on first use.\n\nLet's refine the text to ensure flow and count.\nI will add a sentence about the vector (Simulium) in Key Concept? No, that might be too much detail not in the question.\nI will stick to the current draft but ensure character count is safe.\nCurrent draft looks around 300 chars.\nLet's verify the \"one sentence one idea\" rule.\n\"蟠尾絲蟲成蟲寄生於皮下結節組織。\" (One idea)\n\"微絲蟲主要分佈於皮膚與眼球組織內。\" (One idea)\n...\nLooks compliant.\n\nOne check: \"硬幣大小的結節病變\". First occurrence has English.\n\"河盲症\". First occurrence has English.\n\"豹皮花紋\". First occurrence has English.\n\"蟠尾絲蟲\". First occurrence has English.\n\"微絲蟲\". First occurrence has English.\n\nOkay, ready to generate.\n\nWait, I need to check the character count again.\n**答案：C** (5)\n**關鍵觀念** (6)\n蟠尾絲蟲成蟲寄生於皮下結節組織。(23)\n微絲蟲主要分佈於皮膚與眼球組織內。(24)\n此感染是河盲症的主因。(19)\n病患皮膚色素脫失會呈現豹皮花紋。(23)\n**選項解析** (6)\n- (A) 1項：錯誤，因為有三個敘述符合醫學事實。(20)\n- (B) 2項：錯誤，正確敘述數量多於兩項。(17)\n- (C) 3項：正確，微絲蟲偶可出現在尿液中。(25)\n失明與豹皮花紋是典型症狀。(13)\n蟠尾絲蟲屬於線蟲類寄生蟲。(22)\n微絲蟲可經血液循環至全身。(19)\n尿液中檢出微絲蟲雖少見但可能發生。(24)\n- (D) 4項：錯誤，肺部硬幣大小的結節病變非此蟲特徵。(30)\n肺部結節病變常見於結核病或腫瘤。(21)\n蟠尾絲蟲感染不引起肺部病變。(23)\n\nTotal: 5+6+23+24+19+23+6+20+17+25+13+22+19+24+30+21+23 = 300 characters approx.\nThis is within 250-450 range.\nI will combine some short lines in the final output to ensure it flows well as paragraphs but keeps sentence structure.\nWait, \"One sentence per idea\" rule implies I should keep them separate or use periods clearly.\nThe format requires specific headers.\nI will write it out now.\n\nWait, one more check on Rule 1: \"Every proper noun... first time... must include English\".\nDoes \"結節病變\" need English? It's a description. \"Coin lesion\" is the term. I wrote \"硬幣大小的結節病變\". That counts.\n\"河盲症\". Counts.\n\"豹皮花紋\". Counts.\n\"蟠尾絲蟲\". Counts.\n\"微絲蟲\". Counts.\nI will ensure I don't miss any other specific medical terms like \"皮下結節組織\". It's a general term, maybe not needed English, but to be safe I can add (subcutaneous nodule) if it feels like a proper noun. But the rule lists examples. I will stick to the specific disease/organ names that are standard terminology.\nI will avoid adding unnecessary English to keep it clean, as long as the key terms have it.\n\nFinal check on constraints:\n- Traditional Chinese: Yes.\n- Taiwan terms: Yes (e.g., 結節病變).\n- Answer C: Yes.\n- No fabrication: Yes.\n- Short sentences: Yes.\n- Word count: ~300 chars.\n- Format: Correct headers.\n\nLet's finalize the text.\nI will combine the explanation for C to make it flow better but keep sentence boundaries clear.\nActually, I should ensure the character count is definitely over 250.\nMy manual count was ~300. It should be safe.\nI will write it now.\n\nOne adjustment: In option C analysis, I listed \"蟠尾絲蟲屬於線蟲類寄生蟲。\" This repeats the English name. The rule says \"First time... must include\". Repeating is allowed but not required. I will keep it for clarity as it's a key term.\nActually, to save space and focus on the logic, I can just say \"此為線蟲類感染\". But repeating the name reinforces the topic. I'll keep it.\n\nWait, I need to make sure I don't exceed 450 characters.\nMy count is ~300. It is safe.\nI will proceed.\n\nOne last check: \"硬幣大小的結節病變\". Is \"硬幣大小\" part of the proper noun? Yes, it describes the coin lesion.\nOkay.\n\nFinal check on Rule 5: \"250-450 characters\".\nMy draft is around 300. I will add a bit more detail to be safe within the range.\nI will expand the explanation for D slightly.\n\"肺部結節病變常見於結核病或腫瘤。蟠尾絲蟲感染不引起肺部病變。\" -> \"肺部結節病變常見於結核病或轉移性腫瘤。蟠尾絲蟲感染不引起肺部病變。\"\nAdded \"轉移性\". That adds characters.\n\nOkay, ready.\n\nOne more thing: The prompt asks for \"250-450 字\". In Chinese context, this usually means characters including punctuation.\nMy count is safe.\n\nLet's write.\n</think>\n\n**答案：C**\n\n**關鍵觀念**\n蟠尾絲蟲成蟲寄生於皮下結節組織。微絲蟲主要分佈於皮膚與眼球組織內。此感染是河盲症的主因。病患皮膚色素脫失會呈現豹皮花紋。\n\n**選項解析**\n- (A) 1項：錯誤，因為有三個敘述符合醫學事實。\n- (B) 2項：錯誤，正確敘述數量多於兩項。\n- (C) 3項：正確，微絲蟲偶可出現在尿液中。失明與豹皮花紋是典型症狀。蟠尾絲蟲屬於線蟲類寄生蟲。微絲蟲可經血液循環至全身。尿液中檢出微絲蟲雖少見但可能發生。\n- (D) 4項：錯誤，肺部硬幣大小的結節病變非此蟲特徵。肺部結節病變常見於結核病或轉移性腫瘤。蟠尾絲蟲感染不引起肺部病變。",
+      "level": "unchecked"
+    },
+    "76": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n旋毛蟲（Trichinella spiralis）是寄生性線蟲。其生活史需經過腸道（intestine）與肌肉（muscle）兩階段。人類感染主要源於食用含有活幼蟲（larvae）的未熟肉品。豬隻在自然循環中同時扮演終宿主（definitive host）與中間宿主（intermediate host）角色。\n\n**選項解析**\n- ① 正確。食入未熟之帶蟲豬肉為人類常見的感染途徑，此為主要傳染源。\n- ② 正確。幼蟲移行至骨骼肌（skeletal muscle）後會發育並形成囊包（cyst），造成肌肉病變。\n- ③ 錯誤。感染初期幼蟲在腸道孵化，最早症狀為噁心、嘔吐或腹瀉，肌肉痛發生於後期幼蟲移行至肌肉時。\n- ④ 正確。豬體內既有成蟲寄生於腸道，亦有幼蟲囊化於肌肉，故豬為終宿主也同時為中間宿主。\n- 綜合以上，敘述①、②、④正確，共三項，故選 (C)。",
+      "level": "unchecked"
+    },
+    "77": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n人體寄生蟲（human parasite）的形態學鑑別是國考重點。絲狀幼蟲（filariform larva）為感染性階段，尾端形狀具特異性。糞小桿線蟲（Strongyloides stercoralis）的尾部特徵明顯。其尾部呈現分叉狀（notched tail）。此特徵用於與鉤蟲（hookworm）鑑別。\n\n**選項解析**\n- (A) 美洲鉤蟲（Necator americanus）的絲狀幼蟲尾端是圓形的。無分叉狀特徵。\n- (B) 十二指腸鉤蟲（Ancylostoma duodenale）的尾部沒有分叉。形態與美洲鉤蟲相似。\n- (C) 糞小桿線蟲的絲狀幼蟲尾端有明顯缺刻。此特徵可用於實驗室鑑別診斷。符合題目。\n- (D) 蟯蟲（Enterobius vermicularis）主要產卵於肛門（anus）周圍。其幼蟲階段不具備此特徵。生活史不同。",
+      "level": "unchecked"
+    },
+    "78": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n中華肝吸蟲（Clonorchis sinensis）感染途徑為食入含囊幼（metacercaria）之淡水魚肉。\n囊幼在十二指腸（duodenum）脫囊，移行至膽管（bile duct）發育為成蟲。\n慢性重度感染會造成膽道（biliary tract）上皮細胞（epithelial cells）增生，是膽管癌（cholangiocarcinoma）之危險因子。\n其蟲卵（eggs）具蓋（operculum），形態與橫川吸蟲（Metagonimus yokogawai）極度相似。\n兩者蟲卵大小相近，常需藉助顯微鏡細部特徵鑑別，故不易區分。\n\n**選項解析**\n- (A) 敘述正確，感染源為未煮熟之淡水魚肉，囊幼經口進入人體。\n- (B) 敘述正確，具感染性，脫囊後始能侵入膽管系統。\n- (C) 敘述錯誤，兩者蟲卵大小與形狀相似，常需藉助顯微鏡細部特徵鑑別。\n- (D) 敘述正確，長期寄生造成慢性發炎，可能誘發惡性腫瘤膽管癌。",
+      "level": "unchecked"
+    },
+    "79": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n片山熱（Katayama fever）是血吸蟲病（Schistosomiasis）的急性全身性反應。此症候群發生於感染初期。因大量蟲卵（Ova）沉積引發免疫複合物（Immune complex）反應。臨床常見症狀包括發燒、嗜酸性球（Eosinophil）增多及肝脾腫大（Hepatosplenomegaly）。\n\n**選項解析**\n- (A) 橫川吸蟲（Metagonimus yokogawai）主要引起腸道（Intestine）症狀，不會導致片山熱。\n- (B) 日本血吸蟲（Schistosoma japonicum）是臺灣與亞洲地區引發片山熱的主要寄生蟲，成蟲寄生於腸繫膜靜脈（Mesenteric vein）。\n- (C) 中華肝吸蟲（Clonorchis sinensis）感染會造成膽管炎（Cholangitis）或膽結石，非此症候群原因。\n- (D) 衛氏肺吸蟲（Paragonimus westermani）主要侵犯肺部（Lung），引起咳嗽與血痰。",
+      "level": "unchecked"
+    },
+    "80": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n隱胞子蟲（Cryptosporidium）的卵囊（oocysts）體積小且對一般自來水處理具有高度抗性。\n氯氣（chlorine）殺菌無法有效破壞其厚實細胞壁結構。\n因此標準過濾及加氯程序不足以完全移除或殺死該病原體。\n此為寄生蟲學中關於水媒傳染病預防的重要考點。\n\n**選項解析**\n- (A) 大腸纖毛蟲（Balantidium coli）滋養體（trophozoites）具一大一小兩個細胞核（nuclei），梨形鞭毛蟲（Giardia lamblia）滋養體亦具兩個細胞核，此敘述正確。\n- (B) 陰道滴蟲症（vaginal trichomoniasis）首選治療藥物為硝基咪唑類（nitroimidazoles），其中甲硝唑（metronidazole）為最常用之標竿用藥，此敘述正確。\n- (C) 隱胞子蟲（Cryptosporidium spp.）卵囊外層厚實，對一般氯處理具抗性，常規過濾亦難完全去除，故自來水廠標準處理無法確保殺死，此敘述錯誤。\n- (D) 野外環境缺乏煮沸條件時，碘液（iodine）可作為替代方案殺滅梨形鞭毛蟲囊體（cysts），但需足夠接觸時間，此敘述正確。",
+      "level": "unchecked"
+    },
+    "81": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n人體寄生性阿米巴（human parasitic amoebae）的寄生部位並非僅限於大腸（large intestine）。部分阿米巴可寄生於口腔或中樞神經系統（central nervous system）。區分致病與非致病種別對於臨床診斷至關重要。\n\n**選項解析**\n- (A) 聚合酶連鎖反應（PCR）技術可用於鑑別痢疾阿米巴（Entamoeba histolytica）及迪斯帕阿米巴（Entamoeba dispar）。因為兩者在形態學上無法區分，分子生物學方法才能精確分辨。\n- (B) 甲硝唑（Metronidazole）為治療痢疾阿米巴症的首選藥物。它能有效殺滅組織內的滋養體（trophozoites），緩解症狀並消除寄生蟲。\n- (C) 痢疾阿米巴的滋養體具有吞噬紅血球（red blood cells）的能力。此特徵是鑑別致病性種別的重要形態學依據，稱為紅血球吞噬現象。\n- (D) 此敘述錯誤，人體寄生性阿米巴之寄生部位並非均在大腸。例如齒齦阿米巴（Entamoeba gingivalis）寄生於口腔，而福氏耐格里阿米巴（Naegleria fowleri）則可侵入中樞神經系統引起腦膜炎（meningitis）。",
+      "level": "unchecked"
+    },
+    "82": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n寄生蟲學（Parasitology）中，原蟲（Protozoa）的感染型（infective form）多為包囊（cyst）。\n成熟包囊（mature cyst）內的細胞核（nucleus）數量是鑑別不同種屬的重要特徵。\n梨形鞭毛蟲（Giardia lamblia）與痢疾阿米巴（Entamoeba histolytica）的成熟包囊均具四個細胞核。\n此特徵可用於臨床檢驗時區分致病性（pathogenicity）與非致病性阿米巴原蟲。\n\n**選項解析**\n- (A) 梨形鞭毛蟲包囊有四個細胞核，但大腸阿米巴（Entamoeba coli）成熟包囊通常有八個細胞核。\n- (B) 兩者成熟包囊皆具四個細胞核，符合題目描述，為正確選項。\n- (C) 哈氏阿米巴（Entamoeba hartmanni）雖有四核，但嗜碘阿米巴（Iodamoeba bütschlii）僅有一個細胞核。\n- (D) 微小阿米巴（Endolimax nana）有四核，但雙核阿米巴（Dientamoeba fragilis）通常無包囊階段，且營養體（trophozoite）具二個細胞核。",
+      "level": "unchecked"
+    },
+    "83": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n此題考的是歸因危險度百分比（Attributable Proportion, AP）的計算方法。\n它代表暴露族群中，可歸因於該暴露因子所導致的疾病比例。\n公式為暴露組（Exposed group）發病率（Incidence rate）減去非暴露組（Unexposed group）發病率。\n再除以暴露組發病率即可得結果。\n亦可用相對危險度（Relative Risk, RR）計算，公式為 (RR-1)/RR。\n此指標顯示若去除該因子，暴露族群中可避免的病例比例。\n\n**選項解析**\n- (A) 1.5% 是兩組發病率的差值，即歸因危險度（Attributable Risk, AR），並非比例。\n- (B) 2% 是暴露組的絕對發病率，未扣除背景風險，故不正確。\n- (C) 45% 計算錯誤，可能混淆了相對危險度或其他公式。\n- (D) 75% 正確，暴露組發病率為 2%，非暴露組為 0.5%，差值除以暴露組即得 75%。",
+      "level": "unchecked"
+    },
+    "84": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n流行病學（epidemiology）是公共衛生（public health）的核心基礎學科之一。它主要研究疾病（disease）在人群（population）中的頻率分布及其決定因子（determinants）。這是美國疾病管制中心（CDC）所採用的標準定義。此定義廣泛應用於預防醫學。這包含時間、地點與人群的三要素分析。\n\n**選項解析**\n- (A) 建立動物模式（animal model）屬於基礎實驗醫學，用於探討病因或治療，非流行病學定義。\n- (B) 此選項正確描述流行病學對疾病頻率分布及其決定因子的研究核心定義。\n- (C) 隨機變異（random variation）是統計學概念，雖用於分析資料，但非流行病學本身的定義。\n- (D) 流行病學研究對象包含傳染性與非傳染性疾病，如癌症亦屬其範圍內。",
+      "level": "unchecked"
+    },
+    "85": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n統計檢定（Statistical Test）是用來判斷觀察到的差異是否具統計意義。\n顯著水準（Significance Level）通常設為 0.05。\n它代表犯第一型錯誤（Type I Error）的風險。\np 值（p-value）小於顯著水準時，代表證據足夠強。\n此時應拒絕虛無假說（Null Hypothesis）。\n\n**選項解析**\n- (A) 兩個獨立樣本（Independent Samples）平均值的比較，常用 t 檢定（t-test），此敘述正確。\n- (B) 三個以上獨立樣本平均值的比較，適合使用變異數分析（ANOVA），此敘述正確。\n- (C) 推論統計（Inferential Statistics）中，樣本平均值的抽樣分布常假設符合常態分布（Normal Distribution）。\n- (D) p 值若小於顯著水準，代表證據足夠強，應拒絕虛無假說，而非接受，故此敘述錯誤。\n醫師國考第一階段常考統計觀念的邏輯判斷能力。\n拒絕虛無假說意味著研究組別間存在顯著差異。\n接受虛無假說通常發生在 p 值大於顯著水準時。",
+      "level": "unchecked"
+    },
+    "86": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n本題考的是條件機率（Conditional Probability）的定義與計算方法。\n在公共衛生統計中，事件（Event）A 發生機率受事件 B 影響時需使用此公式。\nP(A|B) 代表已知爸爸感染下，媽媽也感染的機率。\n計算公式為交集機率除以條件機率，即 P(AB) 除以 P(B)。\n交集機率代表爸媽同時感染的聯合機率（Joint Probability），數值為 0.02。\n\n**選項解析**\n- (A) 0.1 是媽媽單獨感染的邊緣機率（Marginal Probability）P(A)，未考慮爸爸已感染條件。\n- (B) 0.002 數值錯誤，可能是將百分比直接相乘或計算小數點誤差。\n- (C) 0.2 正確，將爸媽同時感染 0.02 除以爸爸感染 0.1 得出結果。\n- (D) 0.005 數值錯誤，不符合條件機率公式的標準計算結果。\n此題提醒考生注意區分獨立事件與條件機率之差異。",
+      "level": "unchecked"
+    },
+    "87": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n病例對照研究（Case-Control Study）使用配對（Matching）是為了控制已知干擾因子。\n研究者需事先決定哪些干擾因子（Confounder）需要透過配對來處理。\n配對後必須進行配對分析（Matched Analysis），才能正確估計暴露與疾病關聯。\n若未做配對分析會導致結果偏差，無法發揮配對之功效。\n過度配對可能導致研究效率下降，需謹慎選擇配對條件。\n此設計初衷即為消除特定變數對因果推論的干擾。\n\n**選項解析**\n- (A) 正確。研究者需事先決定哪些干擾因子需要控制。\n- (B) 正確。透過配對已知干擾因子，可降低其對研究結果的混淆影響。\n- (C) 錯誤。配對目的正是為了控制配對因子之干擾作用，而非無法控制。\n- (D) 正確。因資料已配對，需使用配對分析如麥氏檢定（McNemar test）。",
+      "level": "unchecked"
+    },
+    "88": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n公共衛生統計學（Biostatistics）中，集中趨勢（Central tendency）指標受數據（Data）分布影響。\n若數據之分布（Distribution）為右偏（Right-skewed），代表長尾延伸至數值較大的一側。\n極端高值（Outliers）會顯著拉高平均數（Mean），使其位於最右方。\n此時眾數（Mode）位於最高峰，中位數（Median）則介於兩者中間位置。\n因此數值大小關係為平均數大於中位數，且中位數大於眾數。\n\n**選項解析**\n- (A) 此順序描述的是左偏（Left-skewed）數據的特徵，與題目條件不符。\n- (B) 平均數受極端值影響最大，在右偏時應為最大值，而非最小。\n- (C) 雖提及平均數最大，但中位數與眾數的相對位置描述錯誤。\n- (D) 右偏分布中，長尾在右方拉高平均數，故順序為平均數大於中位數大於眾數。",
+      "level": "unchecked"
+    },
+    "90": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n致癌物（Carcinogen）風險評估（Risk Assessment）的核心假設是線性無閾值模式。這意味著對於基因毒性（Genotoxic）物質，不存在安全劑量閾值（Threshold）。任何暴露劑量都可能增加罹癌機率。評估流程必須包含不確定分析（Uncertainty Analysis）與長期暴露狀況考量。\n\n**選項解析**\n- (A) 此描述最不適用於致癌物風險評估。一般假設致癌作用無閾值，特別是基因毒性致癌物。因此不能預設劑量反應曲線有閾值存在。這與非致癌物的閾值模式不同。\n- (B) 不確定分析是標準步驟之一。它用於量化數據變異與模型推論的不確定性程度。\n- (C) 癌症發展具有長期潛伏特性。評估時必須考量受試者長期暴露的累積效應。\n- (D) 斜率因子（Slope Factor）是計算致癌風險的關鍵參數。它代表單位劑量增加所導致的額外罹癌機率。",
+      "level": "unchecked"
+    },
+    "91": {
+      "text": "**答案：（C）**\n\n**關鍵觀念**\n游離輻射（ionizing radiation）劑量學中，需區分物理吸收與生物風險。\n吸收劑量（absorbed dose）定義為單位質量物質所吸收的輻射能量。\n有效劑量（effective dose）則進一步考量不同組織對輻射致癌風險的敏感度。\n計算時會乘以組織加權因子，以評估全身整體的健康危害程度。\n此單位用於輻射防護標準之制定與劑量限制管理。\n國際單位制（SI unit）中，有效劑量與當量劑量（equivalent dose）皆使用西弗（Sievert）。\n\n**選項解析**\n- (A) 格雷（Gray）是吸收劑量的國際單位，不直接反映生物效應。\n- (B) 雷得（Rad）為吸收劑量的舊制單位，1 Gy 等於 100 Rad，但均不適用於生物風險評估。\n- (C) 西弗是衡量輻射對人體健康影響的有效劑量標準單位。\n- (D) 居里（Curie）用於描述放射性物質的衰變率，即放射性活度（radioactivity），非劑量單位。",
+      "level": "unchecked"
+    },
+    "92": {
+      "text": "**答案：D**\n\n**關鍵觀念**\n疫苗 (vaccine) 注射與癌症 (cancer) 預防的關聯，最早證實於 B 型肝炎 (Hepatitis B) 疫苗。\n慢性 B 型肝炎病毒感染是肝細胞癌 (hepatocellular carcinoma) 的主要危險因子。\n長期感染會導致肝硬化，進而演變成惡性腫瘤。\n慢性發炎反應會促進細胞 (cell) 突變。\n接種疫苗可減少感染率，進而降低肝癌發生風險。\n這是公共衛生領域第一個經研究證實的範例。\n\n**選項解析**\n- (A) 牛痘疫苗（Smallpox vaccine）主要用於預防天花 (Smallpox)，與癌症預防無直接關聯。\n- (B) 沙克疫苗（Salk vaccine）用於預防小兒麻痺症 (Poliomyelitis)，屬於神經系統疾病而非癌症。\n- (C) 人類乳突病毒疫苗（HPV vaccine）雖能預防子宮頸癌 (cervical cancer)，但證實時間晚於 B 型肝炎疫苗。\n- (D) B 型肝炎疫苗（Hepatitis B vaccine）透過阻斷慢性感染，被證實可顯著降低肝細胞癌風險。此發現確立了腫瘤預防性疫苗的基礎概念。",
+      "level": "unchecked"
+    },
+    "93": {
+      "text": "**答案：(C)**\n\n**關鍵觀念**\n氯乙烯單體（Vinyl chloride monomer）是工業上常用的化學原料。\n長期暴露會增加肝臟（Liver）惡性腫瘤（Malignant tumor）風險。\n病理特徵為肝血管內皮細胞（Hepatic vascular endothelial cells）異常增生。\n此特定疾病名稱為肝血管肉瘤（Hepatic angiosarcoma）。\n這是職業醫學與公共衛生的重要考點。\n暴露途徑主要為吸入揮發性氣體或皮膚吸收。\n\n**選項解析**\n- (A) 白血病（Leukemia）通常與苯（Benzene）暴露有關，非氯乙烯特徵。其他血液系統（Hematopoietic system）腫瘤也非此物質主要危害。\n- (B) 肺癌（Lung cancer）常見於石棉（Asbestos）或砷（Arsenic）暴露者。呼吸道（Respiratory tract）癌症多與粉塵或氣體吸入有關。\n- (C) 肝血管肉瘤是氯乙烯單體暴露的特異性職業癌症。\n- (D) 腦瘤（Brain tumor）與此化學物質無明確因果關係，非典型職業病。神經系統腫瘤亦無相關流行病學證據。",
+      "level": "unchecked"
+    },
+    "94": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n鉻（Chromium）化合物依氧化價態不同，毒性表現有所差異。六價鉻（Hexavalent chromium）被國際癌症研究機構列為第一類致癌物（Carcinogen）。吸入暴露主要影響呼吸道與肺部組織細胞。皮膚直接接觸則會引發局部發炎反應或壞死。\n\n**選項解析**\n- (A) 目前人類流行病學證據不足以證實鉻暴露會導致胃癌（Stomach cancer）。因此此選項符合題目不確定的描述，為正確答案。\n- (B) 吸入六價鉻化合物已被證實與肺癌（Lung cancer）風險增加有關。這是職業醫學的共識。\n- (C) 皮膚接觸鉻鹽溶液或粉末，常引起接觸性皮膚炎（Dermatitis）或潰瘍。這屬於常見職業傷害。\n- (D) 長期吸入鉻塵會損傷鼻黏膜。導致鼻中膈穿孔（Nasal septum perforation）。這是經典的職業病徵。",
+      "level": "unchecked"
+    },
+    "95": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n本題考的是健康行為理論中的自我效能（self-efficacy）概念。自我效能是指個人對自身完成特定行為能力的信念。根據社會認知理論（Social Cognitive Theory），提升自我效能最有效的方法是掌握經驗。\n\n**選項解析**\n- (A) 給予社會制裁是外部壓力，無法直接增強內在能力信念。社會制裁可能引發抗拒心理。這不利於長期行為改變。\n- (B) 給予展現成功之自我挑戰經驗，能提供直接的成就證據。這能強化個人對自身能力的信心，故為正確答案。成功的經驗讓個體確認自己有能力達成目標。這種直接經驗比旁觀他人成功更具說服力。\n- (C) 給予後果嚴重度性之威脅，主要引發恐懼而非效能感。過度威脅反而可能導致逃避行為。這降低行動意願。威脅訴求主要針對知覺嚴重度。它與能力評估無關。\n- (D) 給予社會規範及依從動機，影響的是順從程度而非自我信念。這屬於外部動機。非內在效能來源。依從動機來自外部規範。與個人自信無關。",
+      "level": "unchecked"
+    },
+    "96": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n世界衛生組織（World Health Organization）推動健康城市（Healthy City）運動。其核心在於社區賦權（Community empowerment）與居民參與。運作模式強調跨部門合作（Inter-sectoral collaboration）。重視政治承諾（Political commitment）。非單向的行政命令。公共衛生（Public Health）策略需重視社會決定因素。\n\n**選項解析**\n- (A) 健康城市強調社區自主性。並非僅由市政部門（Municipal department）自上而下主導。此非其核心特點。\n- (B) 創新（Innovation）是解決複雜公共衛生問題的必要手段。屬於推動過程中的關鍵特點之一。\n- (C) 跨部門合作是健康城市運動的基石。需整合多領域資源以達成目標。\n- (D) 承諾健康（Commitment to health）要求政治領導者與社區共同承擔責任。為基本要素不可或缺。",
+      "level": "unchecked"
+    },
+    "97": {
+      "text": "**答案：（B）**\n\n**關鍵觀念**\n此題考的是行為改變的跨理論模型 (Transtheoretical Model)。\n醫師評估發現患者已有動機，代表尚未進入行動期。\n此時需要增強意願，屬於深思期的特徵。\n每個階段的定義取決於患者的準備程度。\n\n**選項解析**\n- (A) 懵懂期 (pre-contemplation phase) 患者尚未意識到問題，沒有戒菸動機。\n他們通常否認吸菸有害健康，不打算改變行為。\n- (B) 深思期 (contemplation phase) 患者已有意願，但仍在猶豫，需強化動機。\n此階段患者知道要戒菸，但尚未承諾立即行動。\n醫師應採用增強策略來堅定其戒菸的意願。\n- (C) 準備期 (preparation phase) 患者已決定行動，正在制定具體計畫。\n他們通常已設定戒菸日期，並準備採取實際步驟。\n- (D) 行動期 (action phase) 患者已開始執行戒菸行為超過六個月。\n此階段需要持續支持以預防復吸 (relapse) 發生。",
+      "level": "unchecked"
+    },
+    "98": {
+      "text": "**答案：C**\n\n**關鍵觀念**\n這題考的是衛生經濟學（Health Economics）的基本指標。\n國民醫療保健支出（National Health Expenditure, NHE）是國家醫療花費總額。\n國內生產毛額（Gross Domestic Product, GDP）代表國家整體經濟規模。\n兩者比率反映醫療資源投入程度。\n臺灣的全民健康保險制度（National Health Insurance, NHI）實施後，該比率呈現逐年上升趨勢。\n人口老化導致醫療需求增加，推動支出持續增長。\n考生需熟記近年關鍵年份的統計數值，以判斷政策成效與負擔。\n\n**選項解析**\n- (A) 4.2%：此數值偏低，不符合近十年來醫療支出成長的實際趨勢。\n- (B) 5.2%：此數值較接近早期年份的數據，非 2014 年正確值。\n- (C) 6.2%：根據衛生福利部統計資料，2014 年該比率約為 6.2%，符合實際資料。\n- (D) 7.2%：此數值偏高，接近近年（如 2018 年後）的數據，非 2014 年水準。",
+      "level": "unchecked"
+    },
+    "99": {
+      "text": "**答案：B**\n\n**關鍵觀念**\n評估身體功能障礙時，需區分基本日常生活活動（Activities of Daily Living, ADLs）與工具性日常生活活動（Instrumental Activities of Daily Living, IADLs）。\nADLs 主要涵蓋維持生存所需的基本生理功能，如進食、移動及個人衛生。\nIADLs 則涉及較複雜的社區生活能力，需較高認知功能參與。\n臨床常用 Katz Index 評估 ADLs，而 Lawton Scale 用於評估 IADLs。\n\n**選項解析**\n- (A) 洗澡及穿衣屬於基本自理項目，是標準的 ADLs 評估內容之一。\n- (B) 準備食物與打電話需要較高認知功能，屬於 IADLs 而非 ADLs 項目。\n- (C) 室內走動涉及移動能力，通常被納入轉位（Transferring）或移動（Mobility）的 ADLs 項目。\n- (D) 進食是維持生命的基本需求，屬於最核心的 ADLs 評估項目。",
+      "level": "unchecked"
+    },
+    "100": {
+      "text": "**答案：A**\n\n**關鍵觀念**\n台灣公共衛生體系中，部分財團法人機構隸屬於政府機關。衛生福利部（Ministry of Health and Welfare）直接監督特定醫療與救濟相關組織。考生需辨識哪些基金會具有官方背景或法定任務。此類題目測試對行政架構的熟悉度。\n\n**選項解析**\n- (A) 董氏基金會（Tung Foundation）是民間獨立運作的非營利組織，並非衛生福利部所轄的財團法人機構。其運作較具自主性。\n- (B) 器官捐贈移植登錄中心（Organ Donation and Transplant Registration Center）隸屬於衛生福利部，負責相關資料管理與登錄作業。\n- (C) 藥害救濟基金會（Drug Injury Relief Foundation）依法設立，提供藥物不良反應受害者的救濟金給付。屬於法定救濟機制之一。\n- (D) 醫院評鑑暨醫療品質策進會（Hospital Accreditation and Medical Quality Promotion Association）受衛生福利部委託辦理醫院評鑑工作。確保醫療品質。",
+      "level": "unchecked"
+    }
+  }
+}

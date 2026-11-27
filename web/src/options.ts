@@ -70,15 +70,35 @@ export function relabelExplanation(text: string, order: Order): string {
       .replace(/(^|[^A-Za-z0-9])([（(])([A-D])([)）])(?![A-Za-z0-9])/g, (_, pre, a, l, b) => `${pre}${a}${swap(l)}${b}`)
       .replace(/選項(\s*)([A-D])(?![A-Za-z0-9])/g, (_, s, l) => `選項${s}${swap(l)}`),
   )
-  // 連續的「- (X)」項目照字母排序
+  // 連續的「- (X)」項目照字母排序。105–109 年的詳解（11/27）常把一項寫成好幾行、項目之間空一行，
+  // 所以一項延伸到下一項為止，空行後面還是選項就跟著前一項；最後一項到空行、粗體標題或結尾為止
   const head = (line: string) => /^\s*[-*]\s+[（(]([A-D])[)）]/.exec(line)?.[1]
+  const blank = (line: string) => !line.trim()
+  const heading = (line: string) => /^\s*\*\*[^*]+\*\*\s*$/.test(line)
   for (let i = 0; i < lines.length; i++) {
     if (!head(lines[i])) continue
+    const items: string[][] = []
     let j = i
-    while (j < lines.length && head(lines[j])) j++
-    const run = lines.slice(i, j).sort((a, b) => head(a)!.localeCompare(head(b)!))
-    lines.splice(i, run.length, ...run)
-    i = j
+    while (j < lines.length && head(lines[j])) {
+      const item = [lines[j++]]
+      while (j < lines.length && !head(lines[j]) && !heading(lines[j])) {
+        if (blank(lines[j])) {
+          let k = j
+          while (k < lines.length && blank(lines[k])) k++
+          // 空行後面還是選項：空行跟著這一項；不是的話選項解析到這裡結束，空行留在原位
+          if (k < lines.length && head(lines[k])) {
+            item.push(...lines.slice(j, k))
+            j = k
+          }
+          break
+        }
+        item.push(lines[j++])
+      }
+      items.push(item)
+    }
+    items.sort((a, b) => head(a[0])!.localeCompare(head(b[0])!))
+    lines.splice(i, j - i, ...items.flat())
+    i = j - 1
   }
   return lines.join('\n')
 }

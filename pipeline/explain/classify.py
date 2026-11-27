@@ -13,6 +13,8 @@
 
 每題記下分類時的版本（提示詞加上那科的次主題清單），pipeline/subtopics.json 的範圍說明或 SYSTEM 改了之後
 重跑 run，只有改到的學科會重新分類。
+
+模型明顯分錯的題目寫在 pipeline/subtopic_overrides.json（要寫原因），export 時蓋掉模型結果。
 """
 import argparse
 import hashlib
@@ -24,6 +26,7 @@ from common import (OUT, ROOT, SUBJECTS, Progress, all_exam_ids, chat, format_qu
                     read_json, write_json)
 
 TAXONOMY = ROOT / "pipeline" / "subtopics.json"
+OVERRIDES = ROOT / "pipeline" / "subtopic_overrides.json"  # 人工修正，export 時蓋掉模型結果
 DEST = ROOT / "data" / "subtopics.json"
 MODEL = "qwen3.5:35b-a3b"
 MODEL_NAME = "Qwen3.5-35B-A3B"
@@ -41,6 +44,24 @@ SYSTEM = """你是臺灣的醫學系教師，負責把醫師國考第一階段�
 
 def taxonomy():
     return json.loads(TAXONOMY.read_text(encoding="utf-8"))["subjects"]
+
+
+def load_overrides(tax):
+    """pipeline/subtopic_overrides.json：{(考卷 id, 題號): {"subtopic", "subjects"}}。subjects 是有這個 id 的學科
+    （endocrine、inflammation 這類 id 好幾科都有），匯出時再確認題目的學科在裡面。"""
+    owner = {}
+    for subj, subs in tax.items():
+        for s in subs:
+            owner.setdefault(s["id"], []).append(subj)
+    fixes = {}
+    for exam_id, items in json.loads(OVERRIDES.read_text(encoding="utf-8"))["papers"].items():
+        for num, fix in items.items():
+            if not fix.get("reason"):
+                sys.exit(f"{OVERRIDES.name}：{exam_id} #{num} 沒寫原因")
+            if fix["subtopic"] not in owner:
+                sys.exit(f"{OVERRIDES.name}：{exam_id} #{num} 的次主題 {fix['subtopic']} 不存在")
+            fixes[(exam_id, int(num))] = {"subtopic": fix["subtopic"], "subjects": owner[fix["subtopic"]]}
+    return fixes
 
 
 def versions(tax):
@@ -140,17 +161,29 @@ def main():
         # data/subtopics.json：每份考卷一個陣列，第 n 個是第 n 題的次主題 id（沒分類的是空字串）
         tax = taxonomy()
         folder = folder_for(args.model)
-        papers, missing = {}, 0
+        fixes = load_overrides(tax)
+        papers, missing, applied, same = {}, 0, 0, []
         for exam_id in all_exam_ids():
             exam = load_exam(exam_id)
             got = read_json(folder / f"{exam_id}.json", {"questions": {}})["questions"]
             row = []
             for q in exam["questions"]:
                 sub = (got.get(str(q["number"])) or {}).get("subtopic") or ""
+                fix = fixes.pop((exam_id, q["number"]), None)
+                if fix:
+                    if q["subject"] not in fix["subjects"]:
+                        sys.exit(f"{OVERRIDES.name}：{exam_id} #{q['number']} 是 {q['subject']}，次主題 {fix['subtopic']} 不在這科")
+                    if fix["subtopic"] == sub:
+                        same.append(f"{exam_id} #{q['number']}")
+                    sub = fix["subtopic"]
+                    applied += 1
                 if q["valid"] and not sub:
                     missing += 1
                 row.append(sub)
             papers[exam_id] = row
+        if fixes:
+            sys.exit(f"{OVERRIDES.name} 有題庫裡找不到的題目：{sorted(fixes)}")
+        print(f"人工修正 {applied} 題" + (f"（其中 {len(same)} 題模型已經分對，可以刪掉：{'、'.join(same)}）" if same else ""))
         out = {
             "_說明": "每題的次主題（pipeline/explain/classify.py 產生，不要手改）。papers 的第 n 個是第 n 題，id 對照 subjects 裡那一科的清單；空字串是還沒分類。",
             "model": MODEL_NAME,
